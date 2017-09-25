@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<parameter name="TollCarrierItemTollIntermodal" value="1" />
+<parameter name="TollCarrierItemTollTasmania" value="2" />
+<parameter name="TollCarrierItemTollNQXTollExpress" value="3" />
+<parameter name="TollCarrierItemTollIPEC" value="4" />
+<parameter name="TollCarrierItem" value="5" />
+<parameter name="GlobalExpressDocumentsItem" value="15" />
+<parameter name="ServiceDGFreight" value="1" />
+<parameter name="ServiceExpress" value="2" />
+<parameter name="ServiceGeneral" value="3" />
+<parameter name="ServiceRefrigeration" value="4" />
+<parameter name="TollNQXServiceGeneral" value="1" />
+<parameter name="TollNQXServiceExpress" value="2" />
+<parameter name="TollNQXServicePremium" value="3" /> 
+<parameter name="TollNQXServiceRefrigeration" value="4" />
+<parameter name="TollNQXServiceDangerousGoods" value="5" />
+<parameter name="TollNQXServiceDGExpress" value="6" />
+<parameter name="TollNQXServiceDGRefrigeration" value="7" />
+<parameter name="TollNQXServiceDGRailGeneral" value="8" />
+<parameter name="TollNQXServiceRailDangerousGoods" value="9" />
+<parameter name="TollIPECServiceRoadExpress" value="1" />
+<parameter name="DGContactName" value="Dadd" /> 
+<parameter name="DGContactNumber" value="34324324" />
+<parameter name="DGQuoteNumber" value="12345" />
+<parameter name="WhoPays" value="1" />
+<parameter name="Mode" value="1" />
+<parameter name="Receiver" value="2" />
+<parameter name="Sender" value="3" />
+<parameter name="SenderEmail" value="jagdish.khera@hcl.com" />
+<parameter name="ReceiverEmail" value="ajay.karol@gmail.com" />
+<parameter name="ShipmentRef1" value="012345" />
+<parameter name="ShipmentRef2" value="567879" /> 
+<parameter name="QuoteNumber" value="5123355" />
+<parameter name="DropOffDepot" value="1" />
+<parameter name="CollectionDepot" value="2" />
+<parameter name="ItemTemplateName" value="Automation Template1" />
+<parameter name="NumberOfItems" value="15" />
+<parameter name="Length" value="100" />
+<parameter name="Width" value="200" />
+<parameter name="Height" value="300" />
+<parameter name="Weight" value="900" />
+<parameter name="DGItem" value="2" />
+<parameter name="LookupSearch" value="1234" />
+<parameter name="PackageDescription" value="Test PackageDescription" />
+<parameter name="DgPkgQty" value="20" />
+<parameter name="DgQtyKg" value="10" />
+<parameter name="DGYes" value="1" />
+<parameter name="DGNo" value="2" />
+<parameter name="BillingType" value="1" />
+
+<!---Pallet Information Test data -->
+
+<parameter name="ChepCustomer" value="1234" /> 
+<parameter name="ChepExchange" value="4124" />
+<parameter name="ChepTansferToToll" value="2345" />
+<parameter name="ChepDocketNo" value="7891" />
+<parameter name="LoscamCustomer" value="5671" />
+<parameter name="LoascamExchange" value="6541" />
+<parameter name="LoscamTransferToToll" value="3451" />
+<parameter name="LoscamDocketNo" value="3451" />
+<parameter name="OtherCostomer" value="0123" />
+<parameter name="ChepOtherExchange" value="5678" /> 
+<parameter name="ChepOtherTransferToToll" value="5123" />
+<parameter name="chepOtherDocketNo" value="1111" />
+<parameter name="LoscamOtherExchange" value="2222" />
+<parameter name="LoscamOtherTransferToToll" value="3333" />
+<parameter name="LoscamOtherDocketNo" value="1598" />
+<parameter name="PurchaseOrder" value="Abcd1234" />
+<parameter name="TollExtraSrviceAmount" value="5000" /> 
+<parameter name="SpeceialIns" value="Test Special Ins" /> 
+  <test name="createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General">
+  
+    <classes>
+      <!-- tprioAU><class name="createShipmentE2ETests.TollPriorityAUSTests"/>
+      <class name="createShipmentE2ETests.TollIntermodalTests"/>
+      <class name="createShipmentE2ETests.TollTasmaniaTests"/>
+      <class name="createShipmentE2ETests.TollIPECTests"/></tprioAU-->
+      <class name="createShipmentE2ETests.TollNQXTollExpressTests"/>
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

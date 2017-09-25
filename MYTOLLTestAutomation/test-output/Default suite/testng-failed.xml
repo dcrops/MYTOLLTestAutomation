@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="bookAPickupE2ETests.TollIPECTest">
+        <methods>
+          <include name="BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress"/>
+          <include name="RunSetup"/>
+          <include name="RunTearDown"/>
+        </methods>
+      </class> <!-- bookAPickupE2ETests.TollIPECTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
