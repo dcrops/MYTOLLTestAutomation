@@ -37,7 +37,7 @@ public class TollTasmaniaTest {
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		
 		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(5);
-		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(5);
+		
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		
 		//Verification of Book A Pickup screen, Toll Carrier, Account number, name, phoneNumber
@@ -111,7 +111,7 @@ public class TollTasmaniaTest {
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		
 		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(5);
-		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(5);
+		
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		
 		//Verification of Book A Pickup screen, Toll Carrier, Account number, name, phoneNumber
@@ -170,7 +170,7 @@ public class TollTasmaniaTest {
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		
 		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(5);
-		BookAPickupActions.SelectTollCarrier1(5);
+		
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		
 		//Verification of Book A Pickup screen, Toll Carrier, Account number, name, phoneNumber
@@ -251,7 +251,7 @@ public class TollTasmaniaTest {
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		
 		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(5);
-		BookAPickupActions.SelectTollCarrier1(5);
+		
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		
 		//Verification of Book A Pickup screen, Toll Carrier, Account number, name, phoneNumber
@@ -310,7 +310,7 @@ public class TollTasmaniaTest {
 		//Select TollTasmania
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown),10);
 		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(5);
-		BookAPickupActions.SelectTollCarrier1(5);
+		
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		
 		//Verification of Book A Pickup screen, Toll Carrier, Account number, name, phoneNumber
@@ -368,7 +368,7 @@ public class TollTasmaniaTest {
 		//Select TollTasmania
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown),10);
 		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(5);
-		BookAPickupActions.SelectTollCarrier1(5);
+	
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		
 		//Verification of Book A Pickup screen, Toll Carrier, Account number, name, phoneNumber
@@ -447,7 +447,7 @@ public class TollTasmaniaTest {
 		
 		//Select TollTasmania
 		BookAPickupActions.SelectTollCarrier1(5);
-		BookAPickupActions.SelectTollCarrier1(5);
+		
 		BookAPickupActions.SelectAccountNumber1();
 		
 		//Verification of Book A Pickup screen, Toll Carrier, Account number, name, phoneNumber
@@ -526,7 +526,7 @@ public class TollTasmaniaTest {
 		
 		//Select TollTasmania
 		BookAPickupActions.SelectTollCarrier1(5);
-		BookAPickupActions.SelectTollCarrier1(5);
+		
 		BookAPickupActions.SelectAccountNumber1();
 		
 		//Verification of Book A Pickup screen, Toll Carrier, Account number, name, phoneNumber

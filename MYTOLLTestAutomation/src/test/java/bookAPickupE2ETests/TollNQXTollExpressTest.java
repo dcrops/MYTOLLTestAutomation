@@ -7,6 +7,7 @@ import createShipmentActions.CreateShipmentActions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import GlobalActions.PageBase;
@@ -15,7 +16,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 import reviewYourPickupActions.ReviewYouPickupActions;
 
 public class TollNQXTollExpressTest {
-	public static Integer locationIndex=4;
+	public static Integer locationIndex = 4;
 
 	@BeforeMethod
 	public void RunSetup() throws Exception {
@@ -29,55 +30,59 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test(priority = 1)
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DangerousGoods() {
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDangerousGoods", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"packageDescription","pDgPkgQty","pDgQtyKg", "specialIns" })
 
-		// Select Toll NQX|Toll Express
-		BookAPickupActions.SelectTollCarrier1(2); 
-		
-		BookAPickupActions.SelectAccountNumber1();
-		
-		
-		// Verification of Book A Pickup screen, Toll Carrier,Account number,
-		// name,phoneNumber
+	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DangerousGoods(String TollCarrier,
+			String ServiceDangerousGoods, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String lookupName, String packageDescription, String pDgPkgQty,String pDgQtyKg, String specialIns) {
+
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll NQX | Toll Express");
-		
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
 		BookAPickupActions.SelectLocation2(locationIndex);
-	
-		
-		// Enter data for Quick entry mode, service(=DGExpress),
+
+		// Verification and enter data for Quick entry mode, service(=DG Freight),
+		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(500, 1200)");
-		BookAPickupActions.EnterService("Dangerous Goods");
-		
-		// BookAPickupActions.SelectMode();
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceDangerousGoods);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		// BookAPickupActions.ReceiverAccountNumber("1236654");
 
-		BookAPickupActions.EnterQuantity("15");
+		BookAPickupActions.SelectDestination(destination);
 
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		BookAPickupActions.SelectModeItem(2);
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
-		BookAPickupActions.EnterPalletSpace("6");
-		BookAPickupActions.SelectDestination("melb");
 		// BookAPickupActions.SelectItem(2);
-		BookAPickupActions.EnterItem("Automation Temp1");
-		jse.executeScript("scroll(1000, 1500)");
+		// BookAPickupActions.EnterItem(ItemTemplateName);
+		jse.executeScript("scroll(200, 500)");
 
 		// Shipment contain Dangerous goods=yes and no food items
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter dangerous goods details
-		//BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging description", "123", "456");
-		BookAPickupActions.SelectDangerousGoodsDetails("1234", "Test Dg packaging description", "123", "456");
+		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
+		// description", "123", "456");
+		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
@@ -89,40 +94,42 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test(priority = 2)
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Express() {
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicExpress", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"specialIns" })
 
-		// Select Toll NQX|Toll Express
-		BookAPickupActions.SelectTollCarrier1(2);
-		
-		BookAPickupActions.SelectAccountNumber1();
+	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Express(String TollCarrier,
+			String ServiceExpress, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String lookupName, String specialIns) {
 
-		// Verification of Book A Pickup screen, Toll Carrier,Account number,
-		// name,phoneNumber
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll NQX | Toll Express");
-		
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
 		BookAPickupActions.SelectLocation2(locationIndex);
-		
-		// Enter data for Quick entry mode, service(=DGExpress),
+
+		// Verification and enter data for Quick entry mode, service(=Express),
+		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(500, 1200)");
-
-		BookAPickupActions.EnterService("Express");
-		// BookAPickupActions.SelectMode();
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceExpress);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.SelectModeItem(1);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		// BookAPickupActions.ReceiverAccountNumber("1236654");
 
-		BookAPickupActions.EnterQuantity("15");
+		BookAPickupActions.SelectDestination(destination);
 
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		BookAPickupActions.SelectModeItem(2);
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
-		BookAPickupActions.EnterPalletSpace("6");
-		BookAPickupActions.SelectDestination("melb");
-		
-		// BookAPickupActions.SelectItem(2);
-		BookAPickupActions.EnterItem("Automation Temp1");
-		jse.executeScript("scroll(1000, 1500)");
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
 
@@ -131,7 +138,7 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
@@ -143,40 +150,44 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test(priority = 3)
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_General() {
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceGeneral", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", 
+			"specialIns" })
 
-		// Select Toll NQX|Toll Express
-		BookAPickupActions.SelectTollCarrier1(2);
-		
-		BookAPickupActions.SelectAccountNumber1();
+	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_General(String TollCarrier,
+			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String specialIns) {
 
-		// Verification of Book A Pickup screen, Toll Carrier,Account number,
-		// name,phoneNumber
+
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll NQX | Toll Express");
-		
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
 		BookAPickupActions.SelectLocation2(locationIndex);
-		
-		// Enter data for Quick entry mode, service(=DGExpress),
+
+		// Verification and enter data for Quick entry mode, service(=Express),
+		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(500, 1200)");
-
-		BookAPickupActions.EnterService("General");
-		
-		// BookAPickupActions.SelectMode();
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceGeneral);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.SelectModeItem(1);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		// BookAPickupActions.ReceiverAccountNumber("1236654");
 
-		BookAPickupActions.EnterQuantity("15");
-		BookAPickupActions.EnterPalletSpace("6");
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		BookAPickupActions.SelectDestination(destination);
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
-		BookAPickupActions.SelectDestination("melb");
-		// BookAPickupActions.SelectItem(2);
-		BookAPickupActions.EnterItem("Automation Temp1");
-		jse.executeScript("scroll(1000, 1500)");
-		BookAPickupActions.SelectDangerousGoods(2);
+		BookAPickupActions.SelectModeItem(3);
+
+		BookAPickupActions.selectDangerousGood();
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter Pickup details
@@ -184,7 +195,7 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
@@ -195,40 +206,44 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test(priority = 4)
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Premium() {
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "locationIndex", "ItemTemplateName",
+		"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", 
+		"specialIns" })
+	
+	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Premium(String TollCarrier,
+			String ServicePremium, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String specialIns) {
 
-		// Select Toll NQX|Toll Express
-		BookAPickupActions.SelectTollCarrier1(2);
-		
-		BookAPickupActions.SelectAccountNumber1();
 
-		// Verification of Book A Pickup screen, Toll Carrier,Account number,
-		// name,phoneNumber
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll NQX | Toll Express");
-		
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
 		BookAPickupActions.SelectLocation2(locationIndex);
-		
-		// Enter data for Quick entry mode, service(=DGExpress),
+
+		// Verification and enter data for Quick entry mode, service(=Express),
+		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(500, 1200)");
-
-		BookAPickupActions.EnterService("Premium");
-		
-		// BookAPickupActions.SelectMode();
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServicePremium);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.SelectModeItem(1);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		// BookAPickupActions.ReceiverAccountNumber("1236654");
 
-		BookAPickupActions.EnterQuantity("15");
-		BookAPickupActions.EnterPalletSpace("6");
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		BookAPickupActions.SelectDestination(destination);
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
-		BookAPickupActions.SelectDestination("melb");
-		BookAPickupActions.EnterItem("Automation Temp1");
-		// BookAPickupActions.SelectItem(2);
-		jse.executeScript("scroll(1000, 1500)");
-		BookAPickupActions.SelectDangerousGoods(2);
+		BookAPickupActions.SelectModeItem(3);
+
+		BookAPickupActions.selectDangerousGood();
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter Pickup details
@@ -236,7 +251,7 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
@@ -247,111 +262,114 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test(priority = 5)
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_RailGeneral() {
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailGeneral", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"specialIns" })
 
-		// Select Toll NQX|Toll Express
-		BookAPickupActions.SelectTollCarrier1(2);
-		
-		BookAPickupActions.SelectAccountNumber1();
+	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_RailGeneral(String TollCarrier,
+			String ServiceRailGeneral, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String lookupName, String specialIns) {
 
-		// Verification of Book A Pickup screen, Toll Carrier,Account number,
-		// name,phoneNumber
 
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll NQX | Toll Express");
-		
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
 		BookAPickupActions.SelectLocation2(locationIndex);
-		
-		// Enter data for Quick entry mode, service(=DGExpress),
+
+		// Verification and enter data for Quick entry mode, service(=Express),
+		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(500, 1200)");
-
-		BookAPickupActions.EnterService("Rail General");
-		
-		// BookAPickupActions.SelectMode();
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceRailGeneral);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.SelectModeItem(1);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		// BookAPickupActions.ReceiverAccountNumber("1236654");
 
-		BookAPickupActions.EnterQuantity("15");
-		BookAPickupActions.EnterPalletSpace("6");
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		BookAPickupActions.SelectDestination(destination);
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
-		BookAPickupActions.SelectDestination("melb");
-		// BookAPickupActions.SelectItem(2);
-		BookAPickupActions.EnterItem("Automation Temp1");
-		jse.executeScript("scroll(1000, 1500)");
-		BookAPickupActions.SelectDangerousGoods(2);
-		BookAPickupActions.selectContainFoodItem();
+		BookAPickupActions.SelectModeItem(3);
 
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
-		
+
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		
-		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
+
+		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
 	}
 
 	@Test(priority = 6)
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Refrigeration() {
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"packageDescription","pDgPkgQty","pDgQtyKg",
+			"specialIns" })
 
-		// Select Toll NQX|Toll Express
-		BookAPickupActions.SelectTollCarrier1(2);
-		
-		BookAPickupActions.SelectAccountNumber1();
+	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Refrigeration(String TollCarrier,
+			String ServiceRefrigeration, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String lookupName, String packageDescription, String pDgPkgQty,String pDgQtyKg,String specialIns) {
 
-		// Verification of Book A Pickup screen, Toll Carrier,Account number,
-		// name,phoneNumber
 
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll NQX | Toll Express");
-		
-		BookAPickupActions.SelectLocation2(locationIndex);
-		
-		// Enter data for Quick entry mode, service(=DGExpress),
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(500, 1200)");
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		BookAPickupActions.EnterService("Refrigeration");
+		BookAPickupActions.SelectLocation2(locationIndex);
+
+		// Verification and enter data for Quick entry mode, service(=Express),
 		
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceRefrigeration);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.EnterQuantity("15");
-		BookAPickupActions.EnterPalletSpace("6");
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		BookAPickupActions.SelectDestination(destination);
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
-		BookAPickupActions.SelectDestination("melb");
-		// BookAPickupActions.SelectItem(2);
-		BookAPickupActions.EnterItem("Automation Temp1");
-		jse.executeScript("scroll(1000, 1500)");
-		BookAPickupActions.SelectDangerousGoods(2);
-		BookAPickupActions.selectContainFoodItem();
+		BookAPickupActions.SelectModeItem(3);
 
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-		
+
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.AcceptAlert();
 		ReviewYouPickupActions.ClickEdit();
 		BookAPickupActions.SelectDangerousGoods(1);
-		BookAPickupActions.SelectDangerousGoodsDetails("1234", "Test Dg packaging description", "123", "456");
+		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
@@ -360,50 +378,56 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test(priority = 7)
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DGRefrigerated() {
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGRefrigerated", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"packageDescription","pDgPkgQty","pDgQtyKg",
+			"specialIns" })
 
-		// Select Toll NQX|Toll Express
-		BookAPickupActions.SelectTollCarrier1(2);
-		
-		BookAPickupActions.SelectAccountNumber1();
+	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DGRefrigerated(String TollCarrier,
+			String ServiceDGRefrigerated, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String lookupName, String packageDescription, String pDgPkgQty,String pDgQtyKg, String specialIns) {
 
-		// Verification of Book A Pickup screen, Toll Carrier,Account number,
-		// name,phoneNumber
 
+
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll NQX | Toll Express");
-		
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
 		BookAPickupActions.SelectLocation2(locationIndex);
+
+		// Verification and enter data for Quick entry mode, service(=Express),
 		
-		// Enter data for Quick entry mode, service(=DGExpress),
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(500, 1200)");
-
-		BookAPickupActions.EnterService("DG Refrigerated");
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceDGRefrigerated);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
 		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		
-		BookAPickupActions.EnterQuantity("15");
-		BookAPickupActions.EnterPalletSpace("6");
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
-		BookAPickupActions.SelectDestination("melb");
-		// BookAPickupActions.SelectItem(2);
-		BookAPickupActions.EnterItem("Automation Temp1");
+		BookAPickupActions.SelectDestination(destination);
 		jse.executeScript("scroll(1000, 1500)");
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter dangerous goods details
-		//BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging description", "123", "456");
-		BookAPickupActions.SelectDangerousGoodsDetails("1234", "Test Dg packaging description", "123", "456");
+		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
+		// description", "123", "456");
+		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
@@ -415,51 +439,56 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test(priority = 8)
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_RailDangerousGoods() {
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailDangerousGoods", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"packageDescription","pDgPkgQty","pDgQtyKg",
+			"specialIns" })
 
-		// Select Toll NQX|Toll Express
-		BookAPickupActions.SelectTollCarrier1(2);
-	
-		BookAPickupActions.SelectAccountNumber1();
+	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_RailDangerousGoods(String TollCarrier,
+			String ServiceRailDangerousGoods, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String lookupName, String packageDescription, String pDgPkgQty,String pDgQtyKg,String specialIns) {
 
-		// Verification of Book A Pickup screen, Toll Carrier,Account number,
-		// name,phoneNumber
+
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll NQX | Toll Express");
-		
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
 		BookAPickupActions.SelectLocation2(locationIndex);
-	
-		// Enter data for Quick entry mode, service(=DGExpress),
+
+		// Verification and enter data for Quick entry mode, service(=Express),
+		
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(500, 1200)");
-
-		BookAPickupActions.EnterService("Rail Dangerous Goods");
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceRailDangerousGoods);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
 		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		
-		BookAPickupActions.EnterQuantity("15");
 
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
-		BookAPickupActions.EnterPalletSpace("6");
-		BookAPickupActions.SelectDestination("melb");
-		// BookAPickupActions.SelectItem(2);
-		BookAPickupActions.EnterItem("Automation Temp1");
+		BookAPickupActions.SelectDestination(destination);
 		jse.executeScript("scroll(1000, 1500)");
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
-		
+
 		// Enter dangerous goods details
-		//BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging description", "123", "456");
-		BookAPickupActions.SelectDangerousGoodsDetails("1234", "Test Dg packaging description", "123", "456");
+		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
+		// description", "123", "456");
+		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
 
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
@@ -471,50 +500,54 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test(priority = 9)
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DGExpress() {
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"packageDescription","pDgPkgQty","pDgQtyKg",
+			"specialIns" })
 
-		// Select Toll NQX|Toll Express
-		BookAPickupActions.SelectTollCarrier1(2);
-		
-		BookAPickupActions.SelectAccountNumber1();
+	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DGExpress(String TollCarrier,
+			String ServiceDGExpress, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String lookupName, String packageDescription, String pDgPkgQty,String pDgQtyKg, String specialIns) {
 
-		// Verification of Book A Pickup screen, Toll Carrier,Account number,
-		// name,phoneNumber
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll NQX | Toll Express");
-		
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
 		BookAPickupActions.SelectLocation2(locationIndex);
+
+		// Verification and enter data for Quick entry mode, service(=Express),
 		
-		// Enter data for Quick entry mode, service(=DGExpress),
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(500, 1200)");
-
-		BookAPickupActions.EnterService("DG Express");
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceDGExpress);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
 		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		
-		BookAPickupActions.EnterQuantity("15");
-		BookAPickupActions.EnterPalletSpace("6");
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
-		BookAPickupActions.SelectDestination("melb");
-		BookAPickupActions.EnterItem("Automation Temp1");
+		BookAPickupActions.SelectDestination(destination);
 		jse.executeScript("scroll(1000, 1500)");
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
-		
-		// Enter dangerous goods details
-		//BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging description", "123", "456");
-		BookAPickupActions.SelectDangerousGoodsDetails("1234", "Test Dg packaging description", "123", "456");
 
+		// Enter dangerous goods details
+		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
+		// description", "123", "456");
+		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();

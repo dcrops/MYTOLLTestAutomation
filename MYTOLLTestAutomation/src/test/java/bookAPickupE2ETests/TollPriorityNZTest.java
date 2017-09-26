@@ -30,7 +30,7 @@ public class TollPriorityNZTest {
 	
 			// Select Toll priority NZ Express
 			BookAPickupActions.SelectTollCarrier1(4);
-			BookAPickupActions.SelectTollCarrier1(4);
+			
 			BookAPickupActions.SelectAccountNumber1();
 
 			// Verification of Book A Pickup screen, Toll Carrier,Account number, name,phoneNumber
@@ -74,7 +74,7 @@ public class TollPriorityNZTest {
 	
 			// Select Toll priority NZ Express
 			BookAPickupActions.SelectTollCarrier1(4);
-			BookAPickupActions.SelectTollCarrier1(4);
+			
 			BookAPickupActions.SelectAccountNumber1();
 
 			// Verification of Book A Pickup screen, Toll Carrier,Account number, name,phoneNumber
@@ -115,7 +115,7 @@ public class TollPriorityNZTest {
 	
 			// Select Toll priority NZ Express
 			BookAPickupActions.SelectTollCarrier1(4);
-			BookAPickupActions.SelectTollCarrier1(4);
+			
 			BookAPickupActions.SelectAccountNumber1();
 
 			// Verification of Book A Pickup screen, Toll Carrier,Account number, name,phoneNumber

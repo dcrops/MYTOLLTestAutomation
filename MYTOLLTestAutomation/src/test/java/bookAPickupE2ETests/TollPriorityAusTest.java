@@ -31,7 +31,7 @@ public class TollPriorityAusTest {
 	 
 			// Select Toll NQX|Toll Express
 			BookAPickupActions.SelectTollCarrier1(3);
-			BookAPickupActions.SelectTollCarrier1(3);
+			
 			BookAPickupActions.SelectAccountNumber1();
 
 			// Verification of Book A Pickup screen, Toll Carrier,Account number, name,phoneNumber

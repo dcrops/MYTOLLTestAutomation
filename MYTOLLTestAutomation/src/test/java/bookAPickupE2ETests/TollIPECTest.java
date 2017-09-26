@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
@@ -28,45 +29,44 @@ public class TollIPECTest {
 			}
 	
 	@Test
-	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress()
-	{
-		 
-			
-		//Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown),10);
-		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(1);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-		
-		//Verification of Book A Pickup screen, Toll Carrier, Account number, name, phoneNumber
-		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll IPEC");
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceRoadExpress", "locationIndex", "ItemTemplateName",
+		"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 	
+	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress(String TollCarrier,
+			String ServiceRoadExpress, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
+		 
+
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
+		BookAPickupActions.VerifyBookAPickupScreen();
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
 		BookAPickupActions.SelectLocation2(locationIndex);
-		//BookAPickupActions.SelectLocation1("AACCMMI");
-		//BookAPickupActions.verifyPhonenumber("469 215 568","+61");
-		//BookAPickupActions.VerifyLocation("19070011 Mine Project Catering");
-		
+			
 		//Verification and enter data for Quick entry mode, service(=Express), Mode(=Road)
 		
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
-		BookAPickupActions.Selectservice(1); 
+		BookAPickupActions.EnterService(ServiceRoadExpress);
 		BookAPickupActions.SelectLargestItem(1);
 		
-		BookAPickupActions.EnterQuantity("15");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
 
-		BookAPickupActions.EnterWeight("50");
-		BookAPickupActions.SelectDestination("melb");
+		BookAPickupActions.EnterWeight(Weight);
+		BookAPickupActions.SelectDestination(destination);
 		PageBase.MaximumWaitForElementEnabled();
 		//BookAPickupActions.EnterPalletSpace("6");
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		
 		//BookAPickupActions.SelectMode(); 
 		//BookAPickupActions.SelectChargeToAccount();
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		
 		//BookAPickupActions.ReceiverAccountNumber("1236654");
-		
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		
+			
 		
 		//BookAPickupActions.SelectMode(); 
 			
@@ -81,7 +81,7 @@ public class TollIPECTest {
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber("123456789");
 		BookAPickupActions.SelectPickupFrom(1);
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		BookAPickupActions.ClickReviewBook();
 		
 		ReviewYouPickupActions.ClickConfirmPickup();
@@ -91,7 +91,7 @@ public class TollIPECTest {
 		ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
 		//ReviewYouPickupActions.verifyAccountNumber("123456");
-		ReviewYouPickupActions.verifyTollCarrier("Toll IPEC");
+		ReviewYouPickupActions.verifyTollCarrier(TollCarrier);
 	
 		
 		//ReviewYouPickupActions.ClickConfirmPickup();
@@ -100,42 +100,43 @@ public class TollIPECTest {
 	}
 	
 	@Test
-	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress_ConfirmedDetails()
-	{
-		
-			
-		//Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown),10);
-		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(1);
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceRoadExpress", "locationIndex", "ItemTemplateName",
+		"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+	
+	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress_ConfirmedDetails(String TollCarrier,
+			String ServiceRoadExpress, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
+
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-		
-		//Verification of Book A Pickup screen, Toll Carrier, Account number, name, phoneNumber
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier("Toll IPEC");
-		
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
 		BookAPickupActions.SelectLocation2(locationIndex);
-		
+			
 		//Verification and enter data for Quick entry mode, service(=Express), Mode(=Road)
 		
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
-		BookAPickupActions.Selectservice(1); 
+		BookAPickupActions.EnterService(ServiceRoadExpress);
 		BookAPickupActions.SelectLargestItem(1);
 		
-		BookAPickupActions.EnterQuantity("15");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
 
-		BookAPickupActions.EnterWeight("50");
-		BookAPickupActions.SelectDestination("melb");
+		BookAPickupActions.EnterWeight(Weight);
+		BookAPickupActions.SelectDestination(destination);
 		PageBase.MaximumWaitForElementEnabled();
 		//BookAPickupActions.EnterPalletSpace("6");
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		
 		//BookAPickupActions.SelectMode(); 
 		//BookAPickupActions.SelectChargeToAccount();
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		
 		//BookAPickupActions.ReceiverAccountNumber("1236654");
-		
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		
+			
 		
 		//BookAPickupActions.SelectMode(); 
 			
@@ -150,8 +151,17 @@ public class TollIPECTest {
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber("123456789");
 		BookAPickupActions.SelectPickupFrom(1);
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		BookAPickupActions.ClickReviewBook();
+		
+		ReviewYouPickupActions.ClickConfirmPickup();
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		//Verify Review Your Pickup
+		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
+		ReviewYouPickupActions.verifyPickupDetailsHeading();
+		ReviewYouPickupActions.verifyPickupDateTimeHeading();
+		//ReviewYouPickupActions.verifyAccountNumber("123456");
+		ReviewYouPickupActions.verifyTollCarrier(TollCarrier);
 		
 		//Confirmed Pickup		
 		//ReviewYouPickupActions.ClickConfirmPickup();
