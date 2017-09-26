@@ -3,7 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <parameter name="SpeceialIns" value="Test Special Ins"/>
   <parameter name="OtherCostomer" value="0123"/>
-  <parameter name="TollNQXServiceExpress" value="2"/>
+  <parameter name="TollNQXServiceExpress" value="Express"/>
   <parameter name="ServiceRefrigeration" value="4"/>
   <parameter name="TollNQXServiceDGRailGeneral" value="8"/>
   <parameter name="ItemTemplateName" value="Automation Template1"/>
@@ -17,12 +17,12 @@
   <parameter name="ChepCustomer" value="1234"/>
   <parameter name="DGQuoteNumber" value="12345"/>
   <parameter name="TollNQXServiceRefrigeration" value="4"/>
-  <parameter name="Receiver" value="2"/>
+  <parameter name="Receiver" value="1"/>
   <parameter name="LoscamOtherExchange" value="2222"/>
-  <parameter name="TollCarrierItemTollNQXTollExpress" value="3"/>
+  <parameter name="TollCarrierItemTollNQXTollExpress" value="Toll NQX | Toll Express"/>
   <parameter name="TollNQXServiceRailDangerousGoods" value="9"/>
   <parameter name="Weight" value="900"/>
-  <parameter name="Sender" value="3"/>
+  <parameter name="Sender" value="2"/>
   <parameter name="DropOffDepot" value="1"/>
   <parameter name="NumberOfItems" value="15"/>
   <parameter name="TollCarrierItemTollTasmania" value="2"/>
@@ -38,12 +38,13 @@
   <parameter name="TollCarrierItemTollIntermodal" value="1"/>
   <parameter name="ChepOtherExchange" value="5678"/>
   <parameter name="TollNQXServiceDGRefrigeration" value="7"/>
-  <parameter name="TollNQXServiceGeneral" value="1"/>
+  <parameter name="TollNQXServiceGeneral" value="General"/>
   <parameter name="TollCarrierItem" value="5"/>
   <parameter name="CollectionDepot" value="2"/>
-  <parameter name="TollNQXServicePremium" value="3"/>
+  <parameter name="TollNQXServicePremium" value="Premium"/>
   <parameter name="DgQtyKg" value="10"/>
   <parameter name="Height" value="300"/>
+  <parameter name="DropdownSelector" value="BU-selector"/>
   <parameter name="ServiceExpress" value="2"/>
   <parameter name="ShipmentRef2" value="567879"/>
   <parameter name="ShipmentRef1" value="012345"/>

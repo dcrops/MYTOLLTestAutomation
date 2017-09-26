@@ -46,8 +46,8 @@ public class Toll_IntermodalTest {
 		// Select Toll Intermodal
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-
-		bookAPickupActions.BookAPickupActions.SelectTollCarrier1(6);
+		BookAPickupActions.EnterTollCarrierItem("Toll Intermodal");
+		///bookAPickupActions.BookAPickupActions.SelectTollCarrier1(6);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
@@ -64,8 +64,8 @@ public class Toll_IntermodalTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity("15");
-		BookAPickupActions.Selectservice(4);
-		
+		//BookAPickupActions.Selectservice(4);
+		BookAPickupActions.EnterService("Refrigeration");
 		BookAPickupActions.EnterItem("Automation Temp1");
 
 		BookAPickupActions.EnterPalletSpace("6");
@@ -73,7 +73,7 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.SelectChargeToAccount2(1);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
+		//BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
 
 		BookAPickupActions.SelectDestination("melb");
 

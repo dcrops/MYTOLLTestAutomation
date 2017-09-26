@@ -48,8 +48,8 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectReceiver(Receiver);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
-		CreateShipmentActions.VerifySenderEmail(SenderEmail);
-		CreateShipmentActions.VerifyReceiverEmail(ReceiverEmail);
+		CreateShipmentActions.EnterSenderEmail(SenderEmail);
+		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		CreateShipmentActions.SelectShipmentConsolidated();
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);

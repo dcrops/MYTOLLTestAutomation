@@ -116,16 +116,19 @@ public class BookAPickupActions {
 	public static WebElement elePhoneNumber= BaseWebdriver.driver.findElement(phoneNumber);*/
 	
 	
-	/*public static void SelectTollCarrierItem(int i) {
+	public static void EnterTollCarrierItem(String pTollCarrierName) {//*[@id="BU-selector"]/label/a/i String pDropdownSelector, String pTollCarrierName
 		PageBase.MinimumWaitForElementEnabled();
-		eleTollCarrierDropdown.click();
-		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li[" + i + "]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id='BU-selector']/label/a/i")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']")).click();
 
-	}*/
+	}
+	
 	
 	public static void SelectTollCarrierItem(int i) {
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/label/a/i")).click();  
+		PageBase.MaximumWaitForElementEnabled();
+		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/label/a/i")).click();  
+		BaseWebdriver.driver.findElement(tollCarrier).click();  
 		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li[" + i + "]/div")).click();
 
 	}
@@ -152,6 +155,13 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//a/i")).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//ul/li[" + j + "]/div")).click();
+		PageBase.MinimumWaitForElementEnabled();
+	}
+	
+	public static void EnterService(String pService ) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//a/i")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//ul/li/div[text()='"+pService +"']")).click();
 		PageBase.MinimumWaitForElementEnabled();
 	}
 	
@@ -194,6 +204,7 @@ public class BookAPickupActions {
 	}
 
 	public static void SelectTollCarrier1(Integer i) {
+		
 		SelectTollCarrierItem(i);
 
 	}

@@ -31,8 +31,9 @@ public class TollIntermodalTests {
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		BookAPickupActions.EnterTollCarrierItem("Toll Intermodal");
+		//CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		//CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
 		CreateShipmentActions.SelectService(ServiceDGFreight);
 		;
 		// BookAPickupActions.SelectAccountNumber1();

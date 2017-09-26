@@ -55,8 +55,8 @@ public class TollIPECTests {
 		CreateShipmentActions.SelectReceiver(Receiver);
 		PageBase.MaximumWaitForElementEnabled();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
-		CreateShipmentActions.VerifySenderEmail(SenderEmail);
-		CreateShipmentActions.VerifyReceiverEmail(ReceiverEmail);
+		CreateShipmentActions.EnterSenderEmail(SenderEmail);
+		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		//CreateShipmentActions.SelectShipmentConsolidated();
 		
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);

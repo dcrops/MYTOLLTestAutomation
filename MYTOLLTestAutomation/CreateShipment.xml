@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+<parameter name="DropdownSelector" value="BU-selector" />
 <parameter name="TollCarrierItemTollIntermodal" value="1" />
 <parameter name="TollCarrierItemTollTasmania" value="2" />
-<parameter name="TollCarrierItemTollNQXTollExpress" value="3" />
+<parameter name="TollCarrierItemTollNQXTollExpress" value="Toll NQX | Toll Express" />
 <parameter name="TollCarrierItemTollIPEC" value="4" />
 <parameter name="TollCarrierItem" value="5" />
 <parameter name="GlobalExpressDocumentsItem" value="15" />
@@ -11,9 +12,9 @@
 <parameter name="ServiceExpress" value="2" />
 <parameter name="ServiceGeneral" value="3" />
 <parameter name="ServiceRefrigeration" value="4" />
-<parameter name="TollNQXServiceGeneral" value="1" />
-<parameter name="TollNQXServiceExpress" value="2" />
-<parameter name="TollNQXServicePremium" value="3" /> 
+<parameter name="TollNQXServiceGeneral" value="General" />
+<parameter name="TollNQXServiceExpress" value="Express" />
+<parameter name="TollNQXServicePremium" value="Premium" /> 
 <parameter name="TollNQXServiceRefrigeration" value="4" />
 <parameter name="TollNQXServiceDangerousGoods" value="5" />
 <parameter name="TollNQXServiceDGExpress" value="6" />
@@ -26,8 +27,8 @@
 <parameter name="DGQuoteNumber" value="12345" />
 <parameter name="WhoPays" value="1" />
 <parameter name="Mode" value="1" />
-<parameter name="Receiver" value="2" />
-<parameter name="Sender" value="3" />
+<parameter name="Receiver" value="1" />
+<parameter name="Sender" value="2" />
 <parameter name="SenderEmail" value="jagdish.khera@hcl.com" />
 <parameter name="ReceiverEmail" value="ajay.karol@gmail.com" />
 <parameter name="ShipmentRef1" value="012345" />

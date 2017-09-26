@@ -2,6 +2,8 @@ package bookAPickupE2ETests;
 
 import java.util.concurrent.TimeUnit;
 import bookAPickupActions.BookAPickupActions;
+import createShipmentActions.CreateShipmentActions;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -31,21 +33,23 @@ public class TollNQXTollExpressTest {
 
 		// Select Toll NQX|Toll Express
 		BookAPickupActions.SelectTollCarrier1(2); 
-		BookAPickupActions.SelectTollCarrier1(2);
+		
 		BookAPickupActions.SelectAccountNumber1();
-
+		
+		
 		// Verification of Book A Pickup screen, Toll Carrier,Account number,
 		// name,phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier("Toll NQX | Toll Express");
 		
 		BookAPickupActions.SelectLocation2(locationIndex);
+	
 		
 		// Enter data for Quick entry mode, service(=DGExpress),
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(500, 1200)");
-
-		BookAPickupActions.Selectservice(1);
+		BookAPickupActions.EnterService("Dangerous Goods");
+		
 		// BookAPickupActions.SelectMode();
 		BookAPickupActions.SelectChargeToAccount2(1);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
@@ -89,7 +93,7 @@ public class TollNQXTollExpressTest {
 
 		// Select Toll NQX|Toll Express
 		BookAPickupActions.SelectTollCarrier1(2);
-		BookAPickupActions.SelectTollCarrier1(2);
+		
 		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier,Account number,
@@ -103,7 +107,7 @@ public class TollNQXTollExpressTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(500, 1200)");
 
-		BookAPickupActions.Selectservice(2);
+		BookAPickupActions.EnterService("Express");
 		// BookAPickupActions.SelectMode();
 		BookAPickupActions.SelectChargeToAccount2(1);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
@@ -143,7 +147,7 @@ public class TollNQXTollExpressTest {
 
 		// Select Toll NQX|Toll Express
 		BookAPickupActions.SelectTollCarrier1(2);
-		BookAPickupActions.SelectTollCarrier1(2);
+		
 		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier,Account number,
@@ -157,7 +161,8 @@ public class TollNQXTollExpressTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(500, 1200)");
 
-		BookAPickupActions.Selectservice(3);
+		BookAPickupActions.EnterService("General");
+		
 		// BookAPickupActions.SelectMode();
 		BookAPickupActions.SelectChargeToAccount2(1);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
@@ -194,7 +199,7 @@ public class TollNQXTollExpressTest {
 
 		// Select Toll NQX|Toll Express
 		BookAPickupActions.SelectTollCarrier1(2);
-		BookAPickupActions.SelectTollCarrier1(2);
+		
 		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier,Account number,
@@ -208,7 +213,8 @@ public class TollNQXTollExpressTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(500, 1200)");
 
-		BookAPickupActions.Selectservice(4);
+		BookAPickupActions.EnterService("Premium");
+		
 		// BookAPickupActions.SelectMode();
 		BookAPickupActions.SelectChargeToAccount2(1);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
@@ -245,7 +251,7 @@ public class TollNQXTollExpressTest {
 
 		// Select Toll NQX|Toll Express
 		BookAPickupActions.SelectTollCarrier1(2);
-		BookAPickupActions.SelectTollCarrier1(2);
+		
 		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier,Account number,
@@ -260,7 +266,8 @@ public class TollNQXTollExpressTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(500, 1200)");
 
-		BookAPickupActions.Selectservice(5);
+		BookAPickupActions.EnterService("Rail General");
+		
 		// BookAPickupActions.SelectMode();
 		BookAPickupActions.SelectChargeToAccount2(1);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
@@ -288,17 +295,10 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
 		
-		PageBase.AcceptAlert();
-
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
 		
-	
-		ReviewYouPickupActions.ClickEdit();
-		BookAPickupActions.SelectDangerousGoods(1);
-		BookAPickupActions.SelectDangerousGoodsDetails("1234", "Test Dg packaging description", "123", "456");
-		
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
 	}
 
 	@Test(priority = 6)
@@ -306,7 +306,7 @@ public class TollNQXTollExpressTest {
 
 		// Select Toll NQX|Toll Express
 		BookAPickupActions.SelectTollCarrier1(2);
-		BookAPickupActions.SelectTollCarrier1(2);
+		
 		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier,Account number,
@@ -321,7 +321,7 @@ public class TollNQXTollExpressTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(500, 1200)");
 
-		BookAPickupActions.Selectservice(6);
+		BookAPickupActions.EnterService("Refrigeration");
 		
 		BookAPickupActions.SelectChargeToAccount2(1);
 
@@ -364,7 +364,7 @@ public class TollNQXTollExpressTest {
 
 		// Select Toll NQX|Toll Express
 		BookAPickupActions.SelectTollCarrier1(2);
-		BookAPickupActions.SelectTollCarrier1(2);
+		
 		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier,Account number,
@@ -379,7 +379,7 @@ public class TollNQXTollExpressTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(500, 1200)");
 
-		BookAPickupActions.Selectservice(7);
+		BookAPickupActions.EnterService("DG Refrigerated");
 		
 		BookAPickupActions.SelectChargeToAccount2(1);
 		
@@ -419,7 +419,7 @@ public class TollNQXTollExpressTest {
 
 		// Select Toll NQX|Toll Express
 		BookAPickupActions.SelectTollCarrier1(2);
-		BookAPickupActions.SelectTollCarrier1(2);
+	
 		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier,Account number,
@@ -433,7 +433,7 @@ public class TollNQXTollExpressTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(500, 1200)");
 
-		BookAPickupActions.Selectservice(8);
+		BookAPickupActions.EnterService("Rail Dangerous Goods");
 		
 		BookAPickupActions.SelectChargeToAccount2(1);
 		
@@ -475,7 +475,7 @@ public class TollNQXTollExpressTest {
 
 		// Select Toll NQX|Toll Express
 		BookAPickupActions.SelectTollCarrier1(2);
-		BookAPickupActions.SelectTollCarrier1(2);
+		
 		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier,Account number,
@@ -490,7 +490,7 @@ public class TollNQXTollExpressTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(500, 1200)");
 
-		BookAPickupActions.Selectservice(9);
+		BookAPickupActions.EnterService("DG Express");
 		
 		BookAPickupActions.SelectChargeToAccount2(1);
 		
@@ -500,7 +500,7 @@ public class TollNQXTollExpressTest {
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
 		BookAPickupActions.SelectDestination("melb");
-		BookAPickupActions.SelectItemDescription();
+		BookAPickupActions.EnterItem("Automation Temp1");
 		jse.executeScript("scroll(1000, 1500)");
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();

@@ -3,13 +3,20 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="bookAPickupE2ETests.TollIPECTest">
+      <class name="createShipmentE2ETests.TollNQXTollExpressTests">
         <methods>
-          <include name="BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress"/>
+          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailGeneral"/>
+          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DangerousGoods"/>
+          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General"/>
+          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DGRefrigerated"/>
           <include name="RunSetup"/>
-          <include name="RunTearDown"/>
+          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Premium"/>
+          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailDangerousGoods"/>
+          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DGExpress"/>
+          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Express"/>
+          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Refrigeration"/>
         </methods>
-      </class> <!-- bookAPickupE2ETests.TollIPECTest -->
+      </class> <!-- createShipmentE2ETests.TollNQXTollExpressTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

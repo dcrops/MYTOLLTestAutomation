@@ -16,7 +16,7 @@ public class MyTollHomePageActions {
 	public static By password=By.id("_com_liferay_login_web_portlet_LoginPortlet_password");
 	public static By loginBtn=By.id("login-btn");
 	
-	public static By HmbugerMenu=By.xpath("//*[@id=\"nav-opner\"]/i");
+	public static By HmbugerMenu=By.xpath("//*[@id=\"nav-opner\"]/i"); 
 	public static By Menulist=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a");
 	public static By BookAPickup=By.id("bookaPickup");
 	public static By getRateEnquiry=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a[1]/p");
@@ -41,6 +41,8 @@ public class MyTollHomePageActions {
 
 	public static void ClickMenu()
 	{
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(HmbugerMenu).click();
 		//BaseWebdriver.driver.findElement(Menulist).click();
 	}

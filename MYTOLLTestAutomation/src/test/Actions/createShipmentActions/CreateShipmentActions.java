@@ -86,6 +86,13 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li[" + i + "]/div")).click();
 
 	}
+	
+	public static void EnterService(String pService) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(servicedropdown).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='"+pService+"']")).click();
+
+	}
 
 	public static void SelectMode(int i) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -139,14 +146,27 @@ public class CreateShipmentActions {
 		PageBase.MaximumWaitForElementEnabled();
 	}
 
-	public static void SelectShipmentConsolidated() {
+	public static void SelectShipmentConsolidatedContinue() {
 		PageBase.MaximumWaitForElementEnabled();
+		
+		if (BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]")).isDisplayed()==true) {
+		
 		BaseWebdriver.driver.findElement(shipmentConsolidatedMSGHeading).isDisplayed();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]")).click();
-
-		String myWindowHandle = BaseWebdriver.driver.getWindowHandle();
+		}
+		
+		
+		/*String myWindowHandle = BaseWebdriver.driver.getWindowHandle();
 		BaseWebdriver.driver.switchTo().window(myWindowHandle);
 		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div")).click();
+		BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).click();
+		BaseWebdriver.driver.findElement(consolidatedBtn).click();//*[@id="shipment-cons-popup-wrpr"]/div/div/footer/a[1] */
+
+	}
+	
+	public static void SelectShipmentConsolidated() {
+		PageBase.MaximumWaitForElementEnabled();
+		
 		BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).click();
 		BaseWebdriver.driver.findElement(consolidatedBtn).click();
 
@@ -391,14 +411,14 @@ public class CreateShipmentActions {
 
 	}
 	
-	public static void VerifySenderEmail(String pSenderEmail) {
-		assertEquals(pSenderEmail, BaseWebdriver.driver.findElement(senderEmail).getAttribute("value"));
-
+	public static void EnterSenderEmail(String pSenderEmail) {
+		//assertEquals(pSenderEmail, BaseWebdriver.driver.findElement(senderEmail).getAttribute("value"));
+		BaseWebdriver.driver.findElement(senderEmail).sendKeys(pSenderEmail);
 	}
 	
-	public static void VerifyReceiverEmail(String pReceiverEmail) {
-		assertEquals(pReceiverEmail, BaseWebdriver.driver.findElement(receiverEmail).getAttribute("value"));
-
+	public static void EnterReceiverEmail(String pReceiverEmail) {
+		//assertEquals(pReceiverEmail, BaseWebdriver.driver.findElement(receiverEmail).getAttribute("value"));
+		BaseWebdriver.driver.findElement(receiverEmail).sendKeys(pReceiverEmail);
 	}
 
 }
