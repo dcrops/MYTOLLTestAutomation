@@ -22,8 +22,8 @@ public class BaseWebdriver {
 	public static WebDriver driver;
 	public static StringBuffer verificationErrors = new StringBuffer();
 	public static String url="https://mytoll-sit.tollgroup.com/";  //"http://cesapaut003.toll.com.au:8080/";//"https://mytoll-sit.tollgroup.com/";
-	public static String Username="allbus001@toll.com";//"allbus001@toll.com";  //"superuser@gmail.com"; //
-	public static String Password="Victoria@123"; //"Victoria@123"; //"Toll@123"; ////;
+	public static String Username="ahq_test01@mailinator.com";//"allbus001@toll.com";  //"superuser@gmail.com"; //
+	public static String Password="Toll@123"; //"Victoria@123"; //"Toll@123"; ////;
 	
 	//Createshipment users
 	public static String CreateshipmentTollTasUsername="NNAutomationuser1@gmail.com"; //"allbus001@toll.com";
@@ -73,7 +73,7 @@ public class BaseWebdriver {
 
 	@BeforeMethod
 	public static void setUp() throws Exception {
-
+		
 		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
 	

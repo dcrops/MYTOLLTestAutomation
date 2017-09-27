@@ -11,18 +11,18 @@
   <parameter name="TollNQXServiceDGExpress" value="6"/>
   <parameter name="ChepOtherTransferToToll" value="5123"/>
   <parameter name="ChepTansferToToll" value="2345"/>
-  <parameter name="SenderEmail" value="jagdish.khera@hcl.com"/>
+  <parameter name="SenderEmail" value="CF@TEST.COM"/>
   <parameter name="DGContactName" value="Dadd"/>
   <parameter name="DGItem" value="2"/>
   <parameter name="ChepCustomer" value="1234"/>
   <parameter name="DGQuoteNumber" value="12345"/>
   <parameter name="TollNQXServiceRefrigeration" value="4"/>
-  <parameter name="Receiver" value="1"/>
+  <parameter name="Receiver" value="2"/>
   <parameter name="LoscamOtherExchange" value="2222"/>
   <parameter name="TollCarrierItemTollNQXTollExpress" value="Toll NQX | Toll Express"/>
   <parameter name="TollNQXServiceRailDangerousGoods" value="9"/>
   <parameter name="Weight" value="900"/>
-  <parameter name="Sender" value="2"/>
+  <parameter name="Sender" value="1"/>
   <parameter name="DropOffDepot" value="1"/>
   <parameter name="NumberOfItems" value="15"/>
   <parameter name="TollCarrierItemTollTasmania" value="2"/>
@@ -67,23 +67,17 @@
   <parameter name="PurchaseOrder" value="Abcd1234"/>
   <parameter name="DGContactNumber" value="34324324"/>
   <parameter name="PackageDescription" value="Test PackageDescription"/>
-  <parameter name="ReceiverEmail" value="ajay.karol@gmail.com"/>
+  <parameter name="ReceiverEmail" value="NNAutomationuser2@gmail.com"/>
   <test name="createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General(failed)">
     <classes>
-      <class name="createShipmentE2ETests.TollNQXTollExpressTests">
+      <class name="createShipmentE2ETests.TollPriorityAUSTests">
         <methods>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailGeneral"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DangerousGoods" invocation-numbers="0"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General" invocation-numbers="0"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DGRefrigerated" invocation-numbers="0"/>
+          <include name="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments" invocation-numbers="0"/>
+          <include name="RunTearDown"/>
+          <include name="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection"/>
           <include name="RunSetup"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Premium" invocation-numbers="0"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailDangerousGoods" invocation-numbers="0"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DGExpress" invocation-numbers="0"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Express" invocation-numbers="0"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Refrigeration" invocation-numbers="0"/>
         </methods>
-      </class> <!-- createShipmentE2ETests.TollNQXTollExpressTests -->
+      </class> <!-- createShipmentE2ETests.TollPriorityAUSTests -->
     </classes>
   </test> <!-- createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General(failed) -->
 </suite> <!-- Failed suite [Suite] -->

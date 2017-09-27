@@ -97,32 +97,32 @@ public class ReviewYouPickupActions {
 		assertEquals("PICKUP DATE & TIME", BaseWebdriver.driver.findElement(pickupDateTimeHeading).getText());
 	}
 	
-	public static void verifyAccountNumber(String pAccountNumber) {
+	public static void VerifyAccountNumber(String pAccountNumber) {
 		assertEquals(pAccountNumber,BaseWebdriver.driver.findElement(accountNumber).getText());
 	}
 	
-	public static void verifyTollCarrier(String pTollCarrier) {
+	public static void VerifyTollCarrier(String pTollCarrier) {
 		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
 	}
 	
-	public static void verifyCompany(String pCompany) {
+	public static void VerifyCompany(String pCompany) {
 		assertEquals(pCompany,BaseWebdriver.driver.findElement(company).getText());
 	}
 	
-	public static void verifyLocation(String pLocation) {
+	public static void VerifyLocation(String pLocation) {
 		assertEquals(pLocation, BaseWebdriver.driver.findElement(location).getText());
 	}
 	
-	public static void verifyBookedby(String pBookedBy) {
+	public static void VerifyBookedby(String pBookedBy) {
 		assertEquals(pBookedBy,  BaseWebdriver.driver.findElement(userName).getText());
 	}
 	
-	public static void verifyPhoneNumber() {
-		assertEquals("123456789", BaseWebdriver.driver.findElement(phoneNumber).getText());
+	public static void VerifyPhoneNumber(String pPhoneNumber) {
+		assertEquals(pPhoneNumber, BaseWebdriver.driver.findElement(phoneNumber).getText());
 	}
 	
 	
-	public static void verifyPickupDate() {
+	public static void VerifyPickupDate() {
 		//assertEquals("15-08-2017", BaseWebdriver.driver.findElement(pickupDate).getText());
 	}
 	

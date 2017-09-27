@@ -22,7 +22,7 @@
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
 		<parameter name="ServiceDGExpress" value="DG Express" />
 
-		<parameter name="locationIndex" value="4" />
+		<parameter name="locationIndex" value="1" />
 		<parameter name="ItemTemplateName" value="Automation Template1" />
 		<parameter name="Destination" value="Melbo" />
 		<parameter name="NumberOfItems" value="15" />
@@ -36,10 +36,10 @@
 		<parameter name="temperatureHigh" value="20" />
 		<parameter name="refrigerationRefNum" value="1234" />
 		<parameter name="bookInNum" value="4567" />
-		<parameter name="vendorNum" value="4567" />
+		<parameter name="VendorNum" value="4567" />
 		
 		
-		<parameter name="lookupName" value="1234" />
+		<parameter name="lookupName" value="2024" />
 		<parameter name="lookupItem" value="1" />
 		<parameter name="packageDescription" value="Testing package Description" />
 		<parameter name="pDgPkgQty" value="50" />
@@ -51,12 +51,12 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
+			<!--Blocked><class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollIPECTest" />
 
 			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
-			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
+			<class name="bookAPickupE2ETests.TollTasmaniaTest" /></Blocked-->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

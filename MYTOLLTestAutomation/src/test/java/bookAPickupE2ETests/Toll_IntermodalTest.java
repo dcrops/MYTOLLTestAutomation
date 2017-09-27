@@ -59,9 +59,25 @@ public class Toll_IntermodalTest {
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
-
+		String accno=BookAPickupActions.GetAccountNumber().toString(); 
+		System.out.println(accno);
 		BookAPickupActions.SelectLocation2(locationIndex);
-
+		
+		String company=BookAPickupActions.GetCompany(locationIndex).toString(); 
+		System.out.println(company);
+		
+		String location=BookAPickupActions.GetLocation(locationIndex).toString(); 
+		System.out.println(location);
+		
+		String name=BookAPickupActions.GetName().toString(); 
+		System.out.println(name);
+		
+		String phoneNumber=BookAPickupActions.GetPhoneNumber().toString(); 
+		System.out.println(phoneNumber);
+		
+		 
+		String countryCode=BookAPickupActions.GetCountryCode().toString(); 
+		System.out.println(countryCode);
 		// Verification and enter data for Quick entry mode, service(Refrigeration),
 		// Mode(=Road)
 
@@ -90,15 +106,25 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectReadyTime();
 
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
 
 		PageBase.MaximumWaitForElementEnabled();
-
+		
+		
+		
+		ReviewYouPickupActions.VerifyAccountNumber(accno);
+		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
+		ReviewYouPickupActions.VerifyCompany(company);
+		//ReviewYouPickupActions.VerifyLocation(location);
+		//ReviewYouPickupActions.VerifyBookedby(name); defect
+		ReviewYouPickupActions.VerifyPhoneNumber(phoneNumber);
+		
+		
 		// Verify Review Your Pickup
 		/*
 		 * ReviewYouPickupActions.verifyPickupDetailsHeading();
@@ -262,10 +288,10 @@ public class Toll_IntermodalTest {
 		ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
 
-		ReviewYouPickupActions.verifyTollCarrier(TollCarrier);
+		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
 
-		ReviewYouPickupActions.verifyPhoneNumber();
-		ReviewYouPickupActions.verifyPickupDate();
+		//ReviewYouPickupActions.VerifyPhoneNumber();
+		ReviewYouPickupActions.VerifyPickupDate();
 
 		ReviewYouPickupActions.verifyClosingTime();
 		ReviewYouPickupActions.verifySpecialInstructions();
@@ -473,7 +499,7 @@ public class Toll_IntermodalTest {
 
 	@Test(priority = 7)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "vendorNum", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "VendorNum", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_General(String TollCarrier, String ServiceGeneral,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,

@@ -27,10 +27,10 @@
 <parameter name="DGQuoteNumber" value="12345" />
 <parameter name="WhoPays" value="1" />
 <parameter name="Mode" value="1" />
-<parameter name="Receiver" value="1" />
-<parameter name="Sender" value="2" />
-<parameter name="SenderEmail" value="jagdish.khera@hcl.com" />
-<parameter name="ReceiverEmail" value="ajay.karol@gmail.com" />
+<parameter name="Receiver" value="2" />
+<parameter name="Sender" value="1" />
+<parameter name="SenderEmail" value="CF@TEST.COM" />
+<parameter name="ReceiverEmail" value="NNAutomationuser2@gmail.com" />
 <parameter name="ShipmentRef1" value="012345" />
 <parameter name="ShipmentRef2" value="567879" /> 
 <parameter name="QuoteNumber" value="5123355" />
@@ -74,11 +74,11 @@
   <test name="createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General">
   
     <classes>
-      <!-- tprioAU><class name="createShipmentE2ETests.TollPriorityAUSTests"/>
-      <class name="createShipmentE2ETests.TollIntermodalTests"/>
+      <class name="createShipmentE2ETests.TollPriorityAUSTests"/>
+     <!-- tprioAU> <class name="createShipmentE2ETests.TollIntermodalTests"/>
       <class name="createShipmentE2ETests.TollTasmaniaTests"/>
-      <class name="createShipmentE2ETests.TollIPECTests"/></tprioAU-->
-      <class name="createShipmentE2ETests.TollNQXTollExpressTests"/>
+      <class name="createShipmentE2ETests.TollIPECTests"/>
+      <class name="createShipmentE2ETests.TollNQXTollExpressTests"/></tprioAU-->
       
     </classes>
   </test> <!-- Test -->

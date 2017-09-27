@@ -60,8 +60,7 @@ public class TollTasmaniaTest {
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
 		//BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200","100","50", "5");
-		BookAPickupActions.SelectItemDescription();
-		
+		BookAPickupActions.EnterItem("Automation Temp1");
 		//BookAPickupActions.SelectMode(); 
 			
 		jse.executeScript("scroll(200, 500)");
@@ -82,13 +81,13 @@ public class TollTasmaniaTest {
 		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
 		ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
-		ReviewYouPickupActions.verifyAccountNumber("8723682S");
-		ReviewYouPickupActions.verifyTollCarrier("Toll Tasmania");
-		ReviewYouPickupActions.verifyCompany("19070011 Mine Project Catering");
+		ReviewYouPickupActions.VerifyAccountNumber("8723682S");
+		ReviewYouPickupActions.VerifyTollCarrier("Toll Tasmania");
+		ReviewYouPickupActions.VerifyCompany("19070011 Mine Project Catering");
 		//ReviewYouPickupActions.verifyLocation();
 		//ReviewYouPickupActions.verifyBookedby();
-		ReviewYouPickupActions.verifyPhoneNumber();
-		ReviewYouPickupActions.verifyPickupDate();
+		//ReviewYouPickupActions.VerifyPhoneNumber();
+		ReviewYouPickupActions.VerifyPickupDate();
 		//ReviewYouPickupActions.verifyReadyTime();
 		//ReviewYouPickupActions.verifyClosingTime();
 		ReviewYouPickupActions.verifySpecialInstructions();
@@ -136,7 +135,7 @@ public class TollTasmaniaTest {
 		
 		
 		//BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200","100","50", "5");
-		BookAPickupActions.SelectItemDescription();
+		BookAPickupActions.EnterItem("Automation Temp1");
 		
 		//BookAPickupActions.SelectMode(); 
 			
@@ -221,12 +220,12 @@ public class TollTasmaniaTest {
 		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
 		ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
-		ReviewYouPickupActions.verifyAccountNumber("8723682S");
-		ReviewYouPickupActions.verifyTollCarrier("Toll Tasmania");
-		ReviewYouPickupActions.verifyCompany("19070011 Mine Project Catering");
+		ReviewYouPickupActions.VerifyAccountNumber("8723682S");
+		ReviewYouPickupActions.VerifyTollCarrier("Toll Tasmania");
+		ReviewYouPickupActions.VerifyCompany("19070011 Mine Project Catering");
 		
-		ReviewYouPickupActions.verifyPhoneNumber();
-		ReviewYouPickupActions.verifyPickupDate();
+		//ReviewYouPickupActions.VerifyPhoneNumber();
+		ReviewYouPickupActions.VerifyPickupDate();
 		//ReviewYouPickupActions.verifyReadyTime();
 		//ReviewYouPickupActions.verifyClosingTime();
 		ReviewYouPickupActions.verifySpecialInstructions();
@@ -276,8 +275,7 @@ public class TollTasmaniaTest {
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		BookAPickupActions.SelectDestination("melb");
 		
-		BookAPickupActions.SelectItemDescription();
-		
+		BookAPickupActions.EnterItem("Automation Temp1");
 		//BookAPickupActions.SelectMode(); 
 			
 		jse.executeScript("scroll(200, 500)");
@@ -337,7 +335,7 @@ public class TollTasmaniaTest {
 		
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
-		BookAPickupActions.SelectItemDescription();
+		BookAPickupActions.EnterItem("Automation Temp1");
 		
 		//BookAPickupActions.SelectMode(); 
 			
@@ -395,10 +393,8 @@ public class TollTasmaniaTest {
 		
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
-		BookAPickupActions.SelectItemDescription();
-		
-		//BookAPickupActions.SelectMode(); 
-			
+		BookAPickupActions.EnterItem("Automation Temp1");
+					
 		jse.executeScript("scroll(200, 500)");
 		BookAPickupActions.selectDangerousGood();
 		//BookAPickupActions.selectContainFoodItem();
@@ -415,13 +411,13 @@ public class TollTasmaniaTest {
 		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
 		ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
-		ReviewYouPickupActions.verifyAccountNumber("8723682S");
-		ReviewYouPickupActions.verifyTollCarrier("Toll Tasmania");
-		ReviewYouPickupActions.verifyCompany("18070011 ESS Clermont Coal Mine Project Catering");
+		ReviewYouPickupActions.VerifyAccountNumber("8723682S");
+		ReviewYouPickupActions.VerifyTollCarrier("Toll Tasmania");
+		ReviewYouPickupActions.VerifyCompany("18070011 ESS Clermont Coal Mine Project Catering");
 		//ReviewYouPickupActions.verifyLocation();
 		//ReviewYouPickupActions.verifyBookedby();
-		ReviewYouPickupActions.verifyPhoneNumber();
-		ReviewYouPickupActions.verifyPickupDate();
+		//ReviewYouPickupActions.VerifyPhoneNumber();
+		ReviewYouPickupActions.VerifyPickupDate();
 		//ReviewYouPickupActions.verifyReadyTime();
 		//ReviewYouPickupActions.verifyClosingTime();
 		ReviewYouPickupActions.verifySpecialInstructions();
@@ -468,7 +464,7 @@ public class TollTasmaniaTest {
 		//BookAPickupActions.ReceiverAccountNumber("1236654");
 		BookAPickupActions.SelectDestination("melbo");
 		
-		BookAPickupActions.SelectItemDescription();
+		BookAPickupActions.EnterItem("Automation Temp1");
 		
 		//BookAPickupActions.SelectMode(); 
 			
@@ -492,13 +488,13 @@ public class TollTasmaniaTest {
 		//Verify Review Your Pickup
 		ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
-		ReviewYouPickupActions.verifyAccountNumber("8723682S");
-		ReviewYouPickupActions.verifyTollCarrier("Toll Tasmania");
-		ReviewYouPickupActions.verifyCompany("19070011 Mine Project Catering");
+		ReviewYouPickupActions.VerifyAccountNumber("8723682S");
+		ReviewYouPickupActions.VerifyTollCarrier("Toll Tasmania");
+		ReviewYouPickupActions.VerifyCompany("19070011 Mine Project Catering");
 		//ReviewYouPickupActions.verifyLocation();
 		//ReviewYouPickupActions.verifyBookedby();
-		ReviewYouPickupActions.verifyPhoneNumber();
-		ReviewYouPickupActions.verifyPickupDate();
+		//ReviewYouPickupActions.VerifyPhoneNumber();
+		ReviewYouPickupActions.VerifyPickupDate();
 		ReviewYouPickupActions.verifySpecialInstructions();
 		ReviewYouPickupActions.verifyItemDescription();
 		ReviewYouPickupActions.verifyNumberofItems();
@@ -547,7 +543,7 @@ public class TollTasmaniaTest {
 		//BookAPickupActions.ReceiverAccountNumber("1236654");
 		BookAPickupActions.SelectDestination("melbo");
 	
-		BookAPickupActions.SelectItemDescription();
+		BookAPickupActions.EnterItem("Automation Temp1");
 		
 		//BookAPickupActions.SelectMode(); 
 			

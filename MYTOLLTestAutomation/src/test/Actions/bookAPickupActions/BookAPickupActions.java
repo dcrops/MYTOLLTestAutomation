@@ -24,7 +24,7 @@ public class BookAPickupActions {
 	public static By locationDropdown = By.xpath("//*[@id=\"location-selector\"]/label/a/i");
 	public static By yesBtn = By.xpath("//*[@id=\"pickup-location\"]/div[1]/div[3]/div/label/span[1]");
 	public static By location = By.name("placeholder-location"); 
-	public static By name = By.id("name");
+	public static By name = By.id("name"); 
 	public static By phoneNumber = By.id("phone");
 	public static By countryCode = By.cssSelector("div.selected-dial-code");
 	public static By quickModelabel = By
@@ -226,10 +226,47 @@ public class BookAPickupActions {
 	}
 
 	public static String GetAccountNumber() {
-		return BaseWebdriver.driver.findElement(accountNumber).getAttribute("value");
-		//return eleAccountNumber.getAttribute("value");
-
+		PageBase.MinimumWaitForElementEnabled();
+		String accountNo=BaseWebdriver.driver.findElement(accountNumber).getAttribute("value");
+		return accountNo;
+		
 	}
+	
+	public static String GetCompany(Integer i) {
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(locationDropdown).click(); 
+		PageBase.MinimumWaitForElementEnabled();
+		String vCompany=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"location-selector\"]/div[2]/ul/li["+i+"]/div[1]")).getText();
+		return vCompany;
+		
+	}
+	
+	
+	public static String GetLocation(Integer i) {
+		PageBase.MaximumWaitForElementEnabled();
+		String vLocation=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"location-selector\"]/div[2]/ul/li["+i+"]/div[2]")).getText();
+		return vLocation;
+	
+	}
+	
+	public static String GetName() {
+		PageBase.MaximumWaitForElementEnabled();
+		String vName=BaseWebdriver.driver.findElement(name).getAttribute("value");
+		return vName;
+	}
+	
+	public static String GetPhoneNumber() {
+		PageBase.MaximumWaitForElementEnabled();
+		String vName=BaseWebdriver.driver.findElement(phoneNumber).getAttribute("value");
+		return vName;
+	}
+	
+	public static String GetCountryCode() {
+		PageBase.MaximumWaitForElementEnabled();
+		String vCountryCode=BaseWebdriver.driver.findElement(countryCode).getText();
+		return vCountryCode;
+	}
+
 
 	public static void EnterPhoneNumber() {
 		PageBase.MaximumWaitForElementEnabled();
@@ -275,8 +312,8 @@ public class BookAPickupActions {
 
 	}
 
-	public static void VerifyAccountnumber(String accountNumber1) {
-		assertEquals(GetAccountNumber(), BaseWebdriver.driver.findElement(AccountNumberDropdownitem1).getAttribute("value"));
+	public static void VerifyAccountnumber(String accountNumber) {
+		assertEquals(accountNumber, BaseWebdriver.driver.findElement(AccountNumberDropdownitem1).getAttribute("value"));
 
 	}
 

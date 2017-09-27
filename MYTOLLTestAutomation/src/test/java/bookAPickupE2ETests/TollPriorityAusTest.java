@@ -37,10 +37,11 @@ public class TollPriorityAusTest {
 			// Verification of Book A Pickup screen, Toll Carrier,Account number, name,phoneNumber
 			BookAPickupActions.VerifyBookAPickupScreen();
 			BookAPickupActions.VerifyTollCarrier("Toll Priority (Aus)");
-			BookAPickupActions.VerifyAccountnumber1();
+			//BookAPickupActions.VerifyAccountnumber1();
 			//BookAPickupActions.VerifyAccountnumber("29357923A, Mich Fury");
 			//BookAPickupActions.VerifyName("super superuser");
 			//BookAPickupActions.EnterPhoneNumber();
+			
 			BookAPickupActions.SelectLocation2(locationIndex);
 			//BookAPickupActions.verifyPhonenumber("469 215 568", "+61");
 			//BookAPickupActions.VerifyLocation("19070011 Mine Project Catering");
@@ -48,7 +49,7 @@ public class TollPriorityAusTest {
 			// Enter data for Quick entry mode, service(=DGRefrigerated), 
 			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 						
-			BookAPickupActions.Selectservice(1); 
+			BookAPickupActions.EnterService("Road Express");
 			BookAPickupActions.EnterQuantity("15");
 			
 			BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200","100","50","5");

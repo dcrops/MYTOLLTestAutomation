@@ -29,7 +29,7 @@ public class TollIPECTest {
 			}
 	
 	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceRoadExpress", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 	
 	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress(String TollCarrier,
@@ -91,7 +91,7 @@ public class TollIPECTest {
 		ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
 		//ReviewYouPickupActions.verifyAccountNumber("123456");
-		ReviewYouPickupActions.verifyTollCarrier(TollCarrier);
+		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
 	
 		
 		//ReviewYouPickupActions.ClickConfirmPickup();
@@ -100,7 +100,7 @@ public class TollIPECTest {
 	}
 	
 	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceRoadExpress", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 	
 	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress_ConfirmedDetails(String TollCarrier,
@@ -161,7 +161,7 @@ public class TollIPECTest {
 		ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
 		//ReviewYouPickupActions.verifyAccountNumber("123456");
-		ReviewYouPickupActions.verifyTollCarrier(TollCarrier);
+		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
 		
 		//Confirmed Pickup		
 		//ReviewYouPickupActions.ClickConfirmPickup();
