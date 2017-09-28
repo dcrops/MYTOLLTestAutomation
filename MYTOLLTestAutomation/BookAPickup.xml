@@ -12,7 +12,7 @@
 		<parameter name="TollCarrierTollPrioNZ" value="Toll Priority (NZ)" />
 
 		<parameter name="GlobalExpressDocumentsItem" value="Global Express Documents" />
-		<parameter name="ServiceDGFreight" value="DGFreight" />
+		<parameter name="ServiceDGFreight" value="DG Freight" />
 		<parameter name="ServiceExpress" value="Express" />
 		<parameter name="ServiceGeneral" value="General" />
 		<parameter name="ServiceRefrigeration" value="Refrigeration" />
@@ -21,6 +21,7 @@
 		<parameter name="ServiceDGRefrigerated" value="DG Refrigerated" />
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
 		<parameter name="ServiceDGExpress" value="DG Express" />
+		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 
 		<parameter name="locationIndex" value="1" />
 		<parameter name="ItemTemplateName" value="Automation Template1" />
@@ -52,13 +53,15 @@
 
 		<parameter name="browser" value="chrome" />
 		<classes>
+		<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
+		<!--Blocked><class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-			<!--Blocked><class name="bookAPickupE2ETests.TollPriorityAusTest" />
+			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollIPECTest" />
 
 			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
-			<class name="bookAPickupE2ETests.TollTasmaniaTest" /></Blocked-->
+			</Blocked-->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

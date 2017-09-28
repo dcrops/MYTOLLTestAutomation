@@ -104,11 +104,17 @@ public class Toll_IntermodalTest {
 
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
-		String pickupDate = BookAPickupActions.ReturnPickupDate();
-		System.out.println("pickupDate" + pickupDate);
 		//BookAPickupActions.selectReadyTime();
+		
 
+		String pickupTime=BookAPickupActions.GetReadyTime().toString(); 
+		System.out.println(pickupTime);
+		
 		//BookAPickupActions.selectClosingTime();
+		
+		String closingTime=BookAPickupActions.GetClosingTime().toString(); 
+		System.out.println(closingTime);
+		
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -122,8 +128,11 @@ public class Toll_IntermodalTest {
 		ReviewYouPickupActions.VerifyCompany(company);
 		//ReviewYouPickupActions.VerifyLocation(location);
 		//ReviewYouPickupActions.VerifyBookedby(name); defect
-		ReviewYouPickupActions.VerifyPhoneNumber(phoneNumber);
+		//ReviewYouPickupActions.VerifyPhoneNumber(phoneNumber); defect
 		
+		ReviewYouPickupActions.verifyReadyTime(pickupTime); 
+		ReviewYouPickupActions.verifyClosingTime(closingTime);
+		ReviewYouPickupActions.verifySpecialInstructions(specialIns);
 		
 		// Verify Review Your Pickup
 		/*
@@ -146,6 +155,8 @@ public class Toll_IntermodalTest {
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 		/* ReviewYouPickupActions.VerifyConfirmPickupDetails(); */
+		
+		
 
 	}
 
@@ -293,8 +304,8 @@ public class Toll_IntermodalTest {
 		//ReviewYouPickupActions.VerifyPhoneNumber();
 		ReviewYouPickupActions.VerifyPickupDate();
 
-		ReviewYouPickupActions.verifyClosingTime();
-		ReviewYouPickupActions.verifySpecialInstructions();
+		//ReviewYouPickupActions.verifyClosingTime();
+		ReviewYouPickupActions.verifySpecialInstructions(specialIns);
 		ReviewYouPickupActions.verifyItemDescription();
 		ReviewYouPickupActions.verifyNumberofItems();
 		ReviewYouPickupActions.verifyLengthWidthHeight();
@@ -495,6 +506,8 @@ public class Toll_IntermodalTest {
 		PageBase.MaximumWaitForElementEnabled();
 		ReviewYouPickupActions.VerifyConfirmPickupDetails();
 
+		
+
 	}
 
 	@Test(priority = 7)
@@ -530,7 +543,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.SelectDestination(destination);
 
-		BookAPickupActions.SelectModeItem(3);
+		BookAPickupActions.SelectModeItem(1);
 
 		BookAPickupActions.selectDangerousGood();
 		BookAPickupActions.selectContainFoodItem();
@@ -575,6 +588,7 @@ public class Toll_IntermodalTest {
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		
 
 	}
 

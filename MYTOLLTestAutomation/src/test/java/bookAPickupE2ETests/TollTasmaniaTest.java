@@ -29,7 +29,7 @@ public class TollTasmaniaTest {
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 	
-	@Test(priority=1) 
+	@Test(priority=6) 
 	public void TollTasmania_E2ETest_TID_1033_Service_Refrigeration() {
 
 		//Select TollTasmania
@@ -72,8 +72,8 @@ public class TollTasmaniaTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate=BookAPickupActions.ReturnPickupDate( );
 		System.out.println("pickupDate" +pickupDate);
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
 		BookAPickupActions.ClickReviewBook();
 		
@@ -90,7 +90,7 @@ public class TollTasmaniaTest {
 		ReviewYouPickupActions.VerifyPickupDate();
 		//ReviewYouPickupActions.verifyReadyTime();
 		//ReviewYouPickupActions.verifyClosingTime();
-		ReviewYouPickupActions.verifySpecialInstructions();
+		ReviewYouPickupActions.verifySpecialInstructions("special instructions test");
 		ReviewYouPickupActions.verifyItemDescription();
 		ReviewYouPickupActions.verifyNumberofItems();
 		ReviewYouPickupActions.verifyLengthWidthHeight();
@@ -102,7 +102,7 @@ public class TollTasmaniaTest {
 		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
 	}
 	
-	@Test(priority=2)
+	@Test(priority=6)
 	public void TollTasmania_E2ETest_TID_1033_Service_Refrigeration_ConfirmDetails() {
 
 		//Select TollTasmania
@@ -149,8 +149,8 @@ public class TollTasmaniaTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate=BookAPickupActions.ReturnPickupDate( );
 		System.out.println("pickupDate" +pickupDate);
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
 		BookAPickupActions.ClickReviewBook();
 				
@@ -159,7 +159,7 @@ public class TollTasmaniaTest {
 		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
 	}
 	
-	@Test(priority=3)
+	@Test(priority=1)
 	public void TollTasmania_E2ETest_TID_1033_Service_DGFreight()
 	{
 		
@@ -210,8 +210,8 @@ public class TollTasmaniaTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate=BookAPickupActions.ReturnPickupDate( );
 		System.out.println("pickupDate" +pickupDate);
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
 		BookAPickupActions.ClickReviewBook();
 		
@@ -228,7 +228,7 @@ public class TollTasmaniaTest {
 		ReviewYouPickupActions.VerifyPickupDate();
 		//ReviewYouPickupActions.verifyReadyTime();
 		//ReviewYouPickupActions.verifyClosingTime();
-		ReviewYouPickupActions.verifySpecialInstructions();
+		ReviewYouPickupActions.verifySpecialInstructions("special instructions test");
 		ReviewYouPickupActions.verifyItemDescription();
 		ReviewYouPickupActions.verifyNumberofItems();
 		ReviewYouPickupActions.verifyLengthWidthHeight();
@@ -240,7 +240,7 @@ public class TollTasmaniaTest {
 		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
 	}
 	
-	@Test(priority=4)
+	@Test(priority=2)
 	public void TollTasmania_E2ETest_TID_1033_Service_DGFreight_ConfirmDetails()
 	{
 		
@@ -280,10 +280,9 @@ public class TollTasmaniaTest {
 			
 		jse.executeScript("scroll(200, 500)");
 		BookAPickupActions.SelectDangerousGoods(1);
-		//BookAPickupActions.selectContainFoodItem();
-			
+					
 		// Enter dangerous goods details
-		//BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging description", "123", "456");
+		
 		BookAPickupActions.SelectDangerousGoodsDetails("1234", "Test Dg packaging description", "123", "456");
 
 		jse.executeScript("scroll(500, 800)");
@@ -291,7 +290,7 @@ public class TollTasmaniaTest {
 		String pickupDate=BookAPickupActions.ReturnPickupDate( );
 		System.out.println("pickupDate" +pickupDate);
 		//BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
 		BookAPickupActions.ClickReviewBook();
 				
@@ -346,8 +345,8 @@ public class TollTasmaniaTest {
 		
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
 		BookAPickupActions.ClickReviewBook();
 				
@@ -402,8 +401,8 @@ public class TollTasmaniaTest {
 		
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		////BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
 		BookAPickupActions.ClickReviewBook();
 		
@@ -420,7 +419,7 @@ public class TollTasmaniaTest {
 		ReviewYouPickupActions.VerifyPickupDate();
 		//ReviewYouPickupActions.verifyReadyTime();
 		//ReviewYouPickupActions.verifyClosingTime();
-		ReviewYouPickupActions.verifySpecialInstructions();
+		ReviewYouPickupActions.verifySpecialInstructions("special instructions test");
 		ReviewYouPickupActions.verifyItemDescription();
 		ReviewYouPickupActions.verifyNumberofItems();
 		ReviewYouPickupActions.verifyLengthWidthHeight();
@@ -434,7 +433,7 @@ public class TollTasmaniaTest {
 	}
 	
 		
-	@Test(priority=7)
+	@Test(priority=3)
 	public void BookAPickup_TollTasmania_E2ETest_TID_1033_Service_General()
 	{
 		
@@ -472,16 +471,16 @@ public class TollTasmaniaTest {
 		BookAPickupActions.selectDangerousGood();
 		//BookAPickupActions.selectContainFoodItem();
 			
-		
+		jse.executeScript("scroll(500, 800)");
 		
 		//Add a new item
-		BookAPickupActions.AddANewLine();
-		jse.executeScript("scroll(500, 800)");
+		BookAPickupActions.AddANewLineTollTasmania();
+		
 		BookAPickupActions.selectPickupDate();
 		String pickupDate=BookAPickupActions.ReturnPickupDate( );
 		System.out.println("pickupDate" +pickupDate);
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
 		BookAPickupActions.ClickReviewBook();
 		
@@ -495,7 +494,7 @@ public class TollTasmaniaTest {
 		//ReviewYouPickupActions.verifyBookedby();
 		//ReviewYouPickupActions.VerifyPhoneNumber();
 		ReviewYouPickupActions.VerifyPickupDate();
-		ReviewYouPickupActions.verifySpecialInstructions();
+		ReviewYouPickupActions.verifySpecialInstructions("special instructions test");
 		ReviewYouPickupActions.verifyItemDescription();
 		ReviewYouPickupActions.verifyNumberofItems();
 		ReviewYouPickupActions.verifyLengthWidthHeight();
@@ -513,7 +512,7 @@ public class TollTasmaniaTest {
 		
 	}
 	
-	@Test(priority=8)
+	@Test(priority=4)
 	public void BookAPickup_TollTasmania_E2ETest_TID_1033_Service_General_ConfirmDetails()
 	{
 		
@@ -550,16 +549,16 @@ public class TollTasmaniaTest {
 		jse.executeScript("scroll(200, 500)");
 		BookAPickupActions.selectDangerousGood();
 		//BookAPickupActions.selectContainFoodItem();
-			
+		jse.executeScript("scroll(500, 800)");
 	
 		//Add a new item
-		BookAPickupActions.AddANewLine();
-		jse.executeScript("scroll(500, 800)");
+		BookAPickupActions.AddANewLineTollTasmania();
+		
 		BookAPickupActions.selectPickupDate();
 		String pickupDate=BookAPickupActions.ReturnPickupDate( );
 		System.out.println("pickupDate" +pickupDate);
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
 		BookAPickupActions.ClickReviewBook();
 	

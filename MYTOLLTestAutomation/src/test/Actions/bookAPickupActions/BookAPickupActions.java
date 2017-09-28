@@ -61,6 +61,8 @@ public class BookAPickupActions {
 	public static By UNNumberTextField = By.xpath("//*[@id=\"un-code-selector\"]/div/div/div/input");
 	public static By lookupBtn = By.xpath("//*[@id=\"un-code-selector\"]/div/div/div/a");
 	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector\"]/div/ul/li[1]/div");
+	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector\"]/label/a/i");
+	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li[1]/div");
 	public static By dgPackagingDescription = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[1]/div/input");
 	public static By dgPkgQty = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[2]/div[1]/div/input");
 	public static By dgQtyKg = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[2]/div[2]/div/input");
@@ -203,6 +205,13 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector\"]//ul/li[" + j + "]/div")).click();
 	}
 
+	public static void SelectPackingGroup() {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
+		BaseWebdriver.driver.findElement(packingGroupItem).click();
+		
+	}
+
 	public static void SelectTollCarrier1(Integer i) {
 		
 		SelectTollCarrierItem(i);
@@ -262,9 +271,21 @@ public class BookAPickupActions {
 	}
 	
 	public static String GetCountryCode() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled(); 
 		String vCountryCode=BaseWebdriver.driver.findElement(countryCode).getText();
 		return vCountryCode;
+	}
+	
+	public static String GetReadyTime() {
+		PageBase.MaximumWaitForElementEnabled(); 
+		String vAvailableTime=BaseWebdriver.driver.findElement(availableTime).getAttribute("value");
+		return vAvailableTime; 
+	}
+
+	public static String GetClosingTime() {
+		PageBase.MaximumWaitForElementEnabled(); 
+		String vClosingTime=BaseWebdriver.driver.findElement(closingTime).getAttribute("value");
+		return vClosingTime; 
 	}
 
 
@@ -416,7 +437,7 @@ public class BookAPickupActions {
 	public static void SelectItem(int j) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemDescription).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[" + j + "]/div"))
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[" + j + "]/div"))//*[@id="freight-type-selector"]/div/ul/li[1]/div -selectLargestitem -Letter / Satchel , Box / Carton
 				.click();
 	}
 	
@@ -652,28 +673,44 @@ public class BookAPickupActions {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
 		BookAPickupActions.SelectChargeToAccount2(1);
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		// BookAPickupActions.ReceiverAccountNumber("1236654");
-		// WebElement element2 =
-		// wait.until(ExpectedConditions.elementToBeClickable(BookAPickupObjects.service));
-		// BaseWebdriver.waitForElement(BaseWebdriver.driver.findElement(destination),
-		// 10);
+		
 		BookAPickupActions.SelectDestination("melb");
-		// BookAPickupActions.SelectDestination();
-
-		// BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50",
-		// "5");
-		// BookAPickupActions.SelectMode();
+		
 
 		jse.executeScript("scroll(200, 500);");
-			
-		//BookAPickupActions.SelectItemDescription();
+		
 		BookAPickupActions.EnterItem("Automation Temp1");
 		BookAPickupActions.selectContainFoodItem();
-		// BookAPickupActions.SelectMode();
+	
 		BookAPickupActions.selectDangerousGoodNewLine();
 
 	}
 
+	public static void AddANewLineTollTasmania() {
+
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250);");
+		BaseWebdriver.driver.findElement(addANewLine).click();
+		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+
+		BookAPickupActions.Selectservice(2);
+		BookAPickupActions.EnterQuantity("15");
+
+		BookAPickupActions.EnterPalletSpace("6");
+
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
+		BookAPickupActions.SelectChargeToAccount2(1);
+		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+	
+		BookAPickupActions.SelectDestination("melb");
+		
+		jse.executeScript("scroll(200, 500);");
+		
+		BookAPickupActions.EnterItem("Automation Temp1");
+		
+		BookAPickupActions.selectDangerousGoodNewLine();
+
+	}
 	public static void SaveAsTemplate() {
 
 		BaseWebdriver.driver.findElement(saveAsTemplateBtn).click();

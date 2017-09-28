@@ -126,16 +126,16 @@ public class ReviewYouPickupActions {
 		//assertEquals("15-08-2017", BaseWebdriver.driver.findElement(pickupDate).getText());
 	}
 	
-	public static void verifyReadyTime() {
-		assertEquals(BookAPickupActions.ReadyTime(), BaseWebdriver.driver.findElement(readyTime).getText());
+	public static void verifyReadyTime(String pReadyTime) {
+		assertEquals(pReadyTime, BaseWebdriver.driver.findElement(readyTime).getText());
 	}
 	
-	public static void verifyClosingTime() {
-		assertEquals(BookAPickupActions.ClosingTime(), BaseWebdriver.driver.findElement(closingTime).getText());
+	public static void verifyClosingTime(String pClosingTime) {
+		assertEquals(pClosingTime, BaseWebdriver.driver.findElement(closingTime).getText());
 	}
 	
-	public static void verifySpecialInstructions() {
-		assertEquals("special instructions test", BaseWebdriver.driver.findElement(specialInstructions).getText());
+	public static void verifySpecialInstructions(String pSpecialIns) {
+		assertEquals(pSpecialIns, BaseWebdriver.driver.findElement(specialInstructions).getText());
 	}
 	
 	public static void verifyItemDescription() {

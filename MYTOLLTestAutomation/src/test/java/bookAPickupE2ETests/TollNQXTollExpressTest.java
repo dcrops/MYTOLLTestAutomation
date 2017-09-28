@@ -75,6 +75,7 @@ public class TollNQXTollExpressTest {
 		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
 		// description", "123", "456");
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
+		BookAPickupActions.SelectPackingGroup();
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
@@ -359,6 +360,7 @@ public class TollNQXTollExpressTest {
 		ReviewYouPickupActions.ClickEdit();
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
+		BookAPickupActions.SelectPackingGroup();
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
@@ -411,6 +413,7 @@ public class TollNQXTollExpressTest {
 		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
 		// description", "123", "456");
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
+		BookAPickupActions.SelectPackingGroup();
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
@@ -471,7 +474,7 @@ public class TollNQXTollExpressTest {
 		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
 		// description", "123", "456");
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
-
+		BookAPickupActions.SelectPackingGroup();
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
@@ -531,6 +534,7 @@ public class TollNQXTollExpressTest {
 		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
 		// description", "123", "456");
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
+		BookAPickupActions.SelectPackingGroup();
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();

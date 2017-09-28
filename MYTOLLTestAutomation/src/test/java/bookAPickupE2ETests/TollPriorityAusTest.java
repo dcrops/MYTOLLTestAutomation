@@ -25,10 +25,10 @@ public class TollPriorityAusTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "locationIndex", "ItemTemplateName", "NumberOfItems",
 		"Length", "Width", "Height", "Weight", "palletSpace","reference", "Destination", "specialIns" })
 
-	public void BookAPickup_TollPriority_AUS_E2ETest_TID_620(String TollCarrier, String ServiceRoadExpress,
+	public void BookAPickup_TollPriority_AUS_E2ETest_TID_620(String TollCarrier, String ServiceParcelsOffPeak,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace,String reference, String destination, String specialIns) {
 
@@ -48,7 +48,7 @@ public class TollPriorityAusTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
-		BookAPickupActions.EnterService(ServiceRoadExpress);
+		BookAPickupActions.EnterService(ServiceParcelsOffPeak);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		

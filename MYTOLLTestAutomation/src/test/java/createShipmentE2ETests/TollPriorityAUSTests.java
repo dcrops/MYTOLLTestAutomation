@@ -28,13 +28,13 @@ public class TollPriorityAUSTests {
 			}
 	
 	@Test
-	@Parameters({"TollCarrierItem", "ServiceDXSPalletsOffpeakItem"})
-	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection(Integer TollCarrierItem, Integer ServiceDXSPalletsOffpeakItem)
+	@Parameters({"TollCarrierItem", "ServiceParcelsOffPeak"})
+	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection(Integer TollCarrierItem, String ServiceParcelsOffPeak)
 	{
 		
 		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
 		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		CreateShipmentActions.SelectService(ServiceDXSPalletsOffpeakItem);; 
+		CreateShipmentActions.EnterService(ServiceParcelsOffPeak);
 		//BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(2);
@@ -63,13 +63,13 @@ public class TollPriorityAUSTests {
 	}
 	
 	@Test
-	@Parameters({"TollCarrierItem", "GlobalExpressDocumentsItem"})
-	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(Integer TollCarrierItem, Integer GlobalExpressDocumentsItem)
+	@Parameters({"TollCarrierItem", "ServiceGlobalExpressDocuments"})
+	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(Integer TollCarrierItem, String ServiceGlobalExpressDocuments)
 	{
 		
 		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
 		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		CreateShipmentActions.SelectService(GlobalExpressDocumentsItem); 
+		CreateShipmentActions.EnterService(ServiceGlobalExpressDocuments); 
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(1);
 		CreateShipmentActions.SelectSender(3);

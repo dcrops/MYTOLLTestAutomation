@@ -276,7 +276,7 @@ public class CreateShipmentActions {
 		CreateShipmentActions.NumberOfItem("15");
 		BookAPickupActions.EnterLengthWidthHeight("200", "100", "50");
 		CreateShipmentActions.EnterWeight("20");
-		CreateShipmentActions.SelectBillingType(1);
+		//CreateShipmentActions.SelectBillingType(1); if there is one billing type , it is not visible.
 		CreateShipmentActions.EnterSenderReference("1234", "5678");
 
 	}
