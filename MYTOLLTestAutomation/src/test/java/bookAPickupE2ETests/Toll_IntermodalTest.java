@@ -202,9 +202,9 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectReadyTime();
 
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -276,8 +276,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -360,8 +360,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -414,8 +414,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectContainFoodItem();
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -483,8 +483,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectContainFoodItem();
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -544,8 +544,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -580,7 +580,7 @@ public class Toll_IntermodalTest {
 
 	@Test(priority = 8)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "vendorNum", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "VendorNum", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_General_ConfirmedDetails(String TollCarrier,
 			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
@@ -626,8 +626,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+		//BookAPickupActions.selectReadyTime();
+		//BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();

@@ -9,7 +9,7 @@
 		<parameter name="TollCarrierTollNQXTollExpress" value="Toll NQX | Toll Express" />
 		<parameter name="TollCarrierTollIPEC" value="TollIPEC" />
 		<parameter name="TollCarrierTollPrioAU" value="Toll Priority (Aus)" />
-		<parameter name="TollCarrierTollPrioNZ" value="Toll Priority NZ" />
+		<parameter name="TollCarrierTollPrioNZ" value="Toll Priority (NZ)" />
 
 		<parameter name="GlobalExpressDocumentsItem" value="Global Express Documents" />
 		<parameter name="ServiceDGFreight" value="DGFreight" />
@@ -25,12 +25,14 @@
 		<parameter name="locationIndex" value="1" />
 		<parameter name="ItemTemplateName" value="Automation Template1" />
 		<parameter name="Destination" value="Melbo" />
+		<parameter name="DestinationNZ" value="Wellington" />
 		<parameter name="NumberOfItems" value="15" />
 		<parameter name="Length" value="100" />
 		<parameter name="Width" value="200" />
 		<parameter name="Height" value="300" />
 		<parameter name="Weight" value="900" />
 		<parameter name="palletSpace" value="5" />
+		<parameter name="reference" value="12345" />
 		
 		<parameter name="temperatureLow" value="10" />
 		<parameter name="temperatureHigh" value="20" />

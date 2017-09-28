@@ -3,20 +3,29 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="createShipmentE2ETests.TollNQXTollExpressTests">
+      <class name="bookAPickupE2ETests.TollPriorityAusTest">
         <methods>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailGeneral"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DangerousGoods"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DGRefrigerated"/>
           <include name="RunSetup"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Premium"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailDangerousGoods"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DGExpress"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Express"/>
-          <include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Refrigeration"/>
+          <include name="BookAPickup_TollPriority_AUS_E2ETest_TID_620"/>
+          <include name="RunTearDown"/>
         </methods>
-      </class> <!-- createShipmentE2ETests.TollNQXTollExpressTests -->
+      </class> <!-- bookAPickupE2ETests.TollPriorityAusTest -->
+      <class name="bookAPickupE2ETests.TollIPECTest">
+        <methods>
+          <include name="BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress"/>
+          <include name="RunSetup"/>
+          <include name="BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress_ConfirmedDetails"/>
+          <include name="RunTearDown"/>
+        </methods>
+      </class> <!-- bookAPickupE2ETests.TollIPECTest -->
+      <class name="bookAPickupE2ETests.TollPriorityNZTest">
+        <methods>
+          <include name="RunTearDown"/>
+          <include name="BookAPickup_TollPriority_NZ_E2ETest_TID_619_VerifyDetails"/>
+          <include name="RunSetup"/>
+          <include name="BookAPickup_TollPriority_NZ_E2ETest_TID_619"/>
+        </methods>
+      </class> <!-- bookAPickupE2ETests.TollPriorityNZTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

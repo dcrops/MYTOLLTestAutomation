@@ -4,6 +4,7 @@ package bookAPickupE2ETests;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import baseWebdriver.BaseWebdriver;
@@ -26,70 +27,86 @@ public class TollPriorityNZTest {
 				MyTollHomePageActions.ClickBookAPIckupMenu();
 			}
 	@Test
-	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619() {
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName", "NumberOfItems",
+		"Length", "Width", "Height", "Weight", "palletSpace","reference", "DestinationNZ", "specialIns" })
 	
-			// Select Toll priority NZ Express
-			BookAPickupActions.SelectTollCarrier1(4);
-			
-			BookAPickupActions.SelectAccountNumber1();
+	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619(String TollCarrier, String ServiceGlobalExpressDocuments,
+			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
+			String Height, String Weight, String palletSpace,String reference, String destination, String specialIns) {
+	
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-			// Verification of Book A Pickup screen, Toll Carrier,Account number, name,phoneNumber
-			BookAPickupActions.VerifyBookAPickupScreen();
-			BookAPickupActions.VerifyTollCarrier("Toll Priority (NZ)");
-	
-			BookAPickupActions.SelectLocation2(locationIndex);
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
+		BookAPickupActions.VerifyBookAPickupScreen();
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
+		BookAPickupActions.SelectLocation2(locationIndex);
+
+		
+			// Enter data for Quick entry mode, service(=GlobalExpress), 
+			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+			BookAPickupActions.EnterService(ServiceGlobalExpressDocuments);	
 		
 			// Enter data for Quick entry mode, service(=DGRefrigerated), 
-			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-			BookAPickupActions.SelectDestination("Wellington");			
-			BookAPickupActions.Selectservice(2); 
-			BookAPickupActions.EnterQuantity("15");
 			
-			BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200","100","50","5");
+			BookAPickupActions.SelectDestination(destination);			
+			//BookAPickupActions.Selectservice(2); 
+			BookAPickupActions.EnterQuantity(NumberOfItems);
+			
+			BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 			
 			BookAPickupActions.SelectItemDescription();
 			jse.executeScript("scroll(1000, 1500)");
 			BookAPickupActions.SelectDangerousGoods(2);
-						
+			
 			
 			//Enter Pickup details
 			jse.executeScript("scroll(500, 800)");
 			BookAPickupActions.selectPickupDate();
 			BookAPickupActions.selectReadyTime();
 			BookAPickupActions.selectClosingTime();
-			BookAPickupActions.EnterReferenceNumber("123456789");
+			BookAPickupActions.EnterReferenceNumber(reference);
 			BookAPickupActions.SelectPickupFrom(1);
-			BookAPickupActions.EnterSpecialInstructions("special instructions test");
+			BookAPickupActions.EnterSpecialInstructions(specialIns);
 			
 			BookAPickupActions.ClickReviewBook();
-			
-			//Confirm Pickup and Verify pickup confirmation details
-			ReviewYouPickupActions.ClickConfirmPickup();
-			//ReviewYouPickupActions.VerifyConfirmPickupDetails();
 
 	}
 	
 	@Test
-	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_VerifyDetails() {
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName", "NumberOfItems",
+		"Length", "Width", "Height", "Weight", "palletSpace","reference", "DestinationNZ", "specialIns" })
 	
-			// Select Toll priority NZ Express
-			BookAPickupActions.SelectTollCarrier1(4);
-			
-			BookAPickupActions.SelectAccountNumber1();
+	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_VerifyDetails(String TollCarrier, String ServiceGlobalExpressDocuments,
+			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
+			String Height, String Weight, String palletSpace,String reference, String destination, String specialIns) {
+	
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-			// Verification of Book A Pickup screen, Toll Carrier,Account number, name,phoneNumber
-			BookAPickupActions.VerifyBookAPickupScreen();
-			BookAPickupActions.VerifyTollCarrier("Toll Priority (NZ)");
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
+		BookAPickupActions.VerifyBookAPickupScreen();
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
+		BookAPickupActions.SelectLocation2(locationIndex);
+
 		
-			BookAPickupActions.SelectLocation2(locationIndex);
+			// Enter data for Quick entry mode, service(=GlobalExpress), 
+			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+			BookAPickupActions.EnterService(ServiceGlobalExpressDocuments);	
 		
 			// Enter data for Quick entry mode, service(=DGRefrigerated), 
-			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-			BookAPickupActions.SelectDestination("Wellington");			
-			BookAPickupActions.Selectservice(2); 
-			BookAPickupActions.EnterQuantity("15");
 			
-			BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200","100","50","5");
+			BookAPickupActions.SelectDestination(destination);			
+			//BookAPickupActions.Selectservice(2); 
+			BookAPickupActions.EnterQuantity(NumberOfItems);
+			
+			BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 			
 			BookAPickupActions.SelectItemDescription();
 			jse.executeScript("scroll(1000, 1500)");
@@ -101,9 +118,9 @@ public class TollPriorityNZTest {
 			BookAPickupActions.selectPickupDate();
 			BookAPickupActions.selectReadyTime();
 			BookAPickupActions.selectClosingTime();
-			BookAPickupActions.EnterReferenceNumber("123456789");
+			BookAPickupActions.EnterReferenceNumber(reference);
 			BookAPickupActions.SelectPickupFrom(1);
-			BookAPickupActions.EnterSpecialInstructions("special instructions test");
+			BookAPickupActions.EnterSpecialInstructions(specialIns);
 			
 			BookAPickupActions.ClickReviewBook();
 						
@@ -111,27 +128,34 @@ public class TollPriorityNZTest {
 	}
 	
 	@Test(priority = 1)
-	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_GlobalExpress() {
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName", "NumberOfItems",
+		"Length", "Width", "Height", "Weight", "palletSpace","reference", "Destination", "specialIns" })
 	
-			// Select Toll priority NZ Express
-			BookAPickupActions.SelectTollCarrier1(4);
-			
-			BookAPickupActions.SelectAccountNumber1();
-
-			// Verification of Book A Pickup screen, Toll Carrier,Account number, name,phoneNumber
-			BookAPickupActions.VerifyBookAPickupScreen();
-			BookAPickupActions.VerifyTollCarrier("Toll Priority (NZ)");
+	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_GlobalExpress(String TollCarrier, String ServiceGlobalExpressDocuments,
+			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
+			String Height, String Weight, String palletSpace,String reference, String destination, String specialIns) {
 	
-			BookAPickupActions.SelectLocation2(locationIndex);
 		
-			// Enter data for Quick entry mode, service(=DGRefrigerated), 
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
+		BookAPickupActions.VerifyBookAPickupScreen();
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
+		BookAPickupActions.SelectLocation2(locationIndex);
+
+		
+			// Enter data for Quick entry mode, service(=GlobalExpress), 
 			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-				
-			BookAPickupActions.Selectservice(12); 
+			BookAPickupActions.EnterService(ServiceGlobalExpressDocuments);	
+			//BookAPickupActions.Selectservice(12); 
 			BookAPickupActions.SelectDestinationCountry(12);
 			
 			
-			BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200","100","50","5");
+			BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 			
 			BookAPickupActions.SelectItemDescription();
 			jse.executeScript("scroll(1000, 1500)");
@@ -143,9 +167,9 @@ public class TollPriorityNZTest {
 			BookAPickupActions.selectPickupDate();
 			BookAPickupActions.selectReadyTime();
 			BookAPickupActions.selectClosingTime();
-			BookAPickupActions.EnterReferenceNumber("123456789");
+			BookAPickupActions.EnterReferenceNumber(reference);
 			BookAPickupActions.SelectPickupFrom(1);
-			BookAPickupActions.EnterSpecialInstructions("special instructions test");
+			BookAPickupActions.EnterSpecialInstructions(specialIns);
 			
 			BookAPickupActions.ClickReviewBook();
 			
