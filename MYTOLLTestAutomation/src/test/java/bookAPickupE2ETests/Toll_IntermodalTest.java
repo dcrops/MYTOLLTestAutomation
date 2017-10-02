@@ -510,7 +510,7 @@ public class Toll_IntermodalTest {
 		// Confirmed Pickup
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
 
 	}
 
