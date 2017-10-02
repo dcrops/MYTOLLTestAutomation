@@ -59,25 +59,28 @@ public class Toll_IntermodalTest {
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
-		String accno=BookAPickupActions.GetAccountNumber().toString(); 
+		String accno = BookAPickupActions.GetAccountNumber().toString();
 		System.out.println(accno);
 		BookAPickupActions.SelectLocation2(locationIndex);
-		
-		String company=BookAPickupActions.GetCompany(locationIndex).toString(); 
+
+		String company = BookAPickupActions.GetCompany(locationIndex).toString();
 		System.out.println(company);
-		
-		String location=BookAPickupActions.GetLocation(locationIndex).toString(); 
+
+		String location = BookAPickupActions.GetLocation(locationIndex).toString();
 		System.out.println(location);
-		
-		String name=BookAPickupActions.GetName().toString(); 
+
+		String name = BookAPickupActions.GetName().toString();
 		System.out.println(name);
-		
-		String phoneNumber=BookAPickupActions.GetPhoneNumber().toString(); 
+
+		String phoneNumber = BookAPickupActions.GetPhoneNumber().toString();
 		System.out.println(phoneNumber);
-		
-		 
-		String countryCode=BookAPickupActions.GetCountryCode().toString(); 
+
+		String countryCode = BookAPickupActions.GetCountryCode().toString();
 		System.out.println(countryCode);
+
+		String volume = BookAPickupActions.GetVoulme().toString();
+		System.out.println(volume);
+
 		// Verification and enter data for Quick entry mode, service(Refrigeration),
 		// Mode(=Road)
 
@@ -104,38 +107,41 @@ public class Toll_IntermodalTest {
 
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
-		//BookAPickupActions.selectReadyTime();
-		
+		// BookAPickupActions.selectReadyTime();
 
-		String pickupTime=BookAPickupActions.GetReadyTime().toString(); 
+		String pickupTime = BookAPickupActions.GetReadyTime().toString();
 		System.out.println(pickupTime);
-		
-		//BookAPickupActions.selectClosingTime();
-		
-		String closingTime=BookAPickupActions.GetClosingTime().toString(); 
+
+		// BookAPickupActions.selectClosingTime();
+
+		String closingTime = BookAPickupActions.GetClosingTime().toString();
 		System.out.println(closingTime);
-		
+
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
 
 		PageBase.MaximumWaitForElementEnabled();
-		
-		
-		
+
 		ReviewYouPickupActions.VerifyAccountNumber(accno);
 		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
 		ReviewYouPickupActions.VerifyCompany(company);
-		//ReviewYouPickupActions.VerifyLocation(location);
-		//ReviewYouPickupActions.VerifyBookedby(name); defect
-		//ReviewYouPickupActions.VerifyPhoneNumber(phoneNumber); defect
-		
-		ReviewYouPickupActions.verifyReadyTime(pickupTime); 
+		// ReviewYouPickupActions.VerifyLocation(location);
+		// ReviewYouPickupActions.VerifyBookedby(name); defect
+		// ReviewYouPickupActions.VerifyPhoneNumber(phoneNumber); defect
+
+		ReviewYouPickupActions.verifyReadyTime(pickupTime);
 		ReviewYouPickupActions.verifyClosingTime(closingTime);
 		ReviewYouPickupActions.verifySpecialInstructions(specialIns);
-		
+
+		ReviewYouPickupActions.verifyLengthWidthHeight(Length + "X" + Width + "X" + Height + " CM3");
+		//ReviewYouPickupActions.verifyVolume(volume + " M3");
+		//ReviewYouPickupActions.verifyWeight(Weight + " Kg");
+
 		// Verify Review Your Pickup
 		/*
+		 * ReviewYouPickupActions.verifyNumberofItems(NumberOfItems+" Items");
+		 * 
 		 * ReviewYouPickupActions.verifyPickupDetailsHeading();
 		 * ReviewYouPickupActions.verifyPickupDateTimeHeading();
 		 * 
@@ -155,8 +161,6 @@ public class Toll_IntermodalTest {
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 		/* ReviewYouPickupActions.VerifyConfirmPickupDetails(); */
-		
-		
 
 	}
 
@@ -213,9 +217,9 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		//BookAPickupActions.selectReadyTime();
+		// BookAPickupActions.selectReadyTime();
 
-		//BookAPickupActions.selectClosingTime();
+		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -265,6 +269,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.SelectChargeToAccount2(1);
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
+		String volume = BookAPickupActions.GetVoulme().toString();
+		System.out.println(volume);
 
 		BookAPickupActions.SelectDestination(destination);
 
@@ -287,8 +293,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 
-		//BookAPickupActions.selectReadyTime();
-		//BookAPickupActions.selectClosingTime();
+		// BookAPickupActions.selectReadyTime();
+		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -301,16 +307,16 @@ public class Toll_IntermodalTest {
 
 		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
 
-		//ReviewYouPickupActions.VerifyPhoneNumber();
+		// ReviewYouPickupActions.VerifyPhoneNumber();
 		ReviewYouPickupActions.VerifyPickupDate();
 
-		//ReviewYouPickupActions.verifyClosingTime();
+		// ReviewYouPickupActions.verifyClosingTime();
 		ReviewYouPickupActions.verifySpecialInstructions(specialIns);
 		ReviewYouPickupActions.verifyItemDescription();
-		ReviewYouPickupActions.verifyNumberofItems();
-		ReviewYouPickupActions.verifyLengthWidthHeight();
-		ReviewYouPickupActions.verifyVolume();
-		ReviewYouPickupActions.verifyWeight();
+		ReviewYouPickupActions.verifyNumberofItems(NumberOfItems + " Items");
+		ReviewYouPickupActions.verifyLengthWidthHeight(Length + "X" + Width + "X" + Height + " CM3");
+		//ReviewYouPickupActions.verifyVolume(volume + " M3");
+		//ReviewYouPickupActions.verifyWeight(Weight + " Kg");
 
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
@@ -371,8 +377,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 
-		//BookAPickupActions.selectReadyTime();
-		//BookAPickupActions.selectClosingTime();
+		// BookAPickupActions.selectReadyTime();
+		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -425,8 +431,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectContainFoodItem();
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
-		//BookAPickupActions.selectReadyTime();
-		//BookAPickupActions.selectClosingTime();
+		// BookAPickupActions.selectReadyTime();
+		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -494,8 +500,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectContainFoodItem();
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
-		//BookAPickupActions.selectReadyTime();
-		//BookAPickupActions.selectClosingTime();
+		// BookAPickupActions.selectReadyTime();
+		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -505,8 +511,6 @@ public class Toll_IntermodalTest {
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 		ReviewYouPickupActions.VerifyConfirmPickupDetails();
-
-		
 
 	}
 
@@ -557,8 +561,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		//BookAPickupActions.selectReadyTime();
-		//BookAPickupActions.selectClosingTime();
+		// BookAPickupActions.selectReadyTime();
+		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
@@ -588,7 +592,6 @@ public class Toll_IntermodalTest {
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
-		
 
 	}
 
@@ -640,8 +643,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		//BookAPickupActions.selectReadyTime();
-		//BookAPickupActions.selectClosingTime();
+		// BookAPickupActions.selectReadyTime();
+		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();

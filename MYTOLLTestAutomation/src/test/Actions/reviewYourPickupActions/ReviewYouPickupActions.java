@@ -142,20 +142,20 @@ public class ReviewYouPickupActions {
 		//assertEquals("Industrial Paint",BaseWebdriver.driver.findElement(itemDescription).getText());
 	}
 	
-	public static void verifyNumberofItems() {
-		assertEquals("4 Items",  BaseWebdriver.driver.findElement(numberofItems).getText());
+	public static void verifyNumberofItems(String pNumberOfItems) {
+		assertEquals(pNumberOfItems,  BaseWebdriver.driver.findElement(numberofItems).getText());
 	}
 	
-	public static void verifyLengthWidthHeight() {
-		assertEquals("200X150X140 CM3",  BaseWebdriver.driver.findElement(lengthWidthHeight).getText());
+	public static void verifyLengthWidthHeight(String pLengthWidthHeight) {
+		assertEquals(pLengthWidthHeight,  BaseWebdriver.driver.findElement(lengthWidthHeight).getText()); 
 	}
 	
-	public static void verifyVolume() {
-		assertEquals("11.80 M3", BaseWebdriver.driver.findElement(volume1).getText());
+	public static void verifyVolume(String pVolume) {
+		assertEquals(pVolume, BaseWebdriver.driver.findElement(volume1).getText()); 
 	}
 	
-	public static void verifyWeight() {
-		assertEquals("50 Kg",  BaseWebdriver.driver.findElement(weight1).getText());
+	public static void verifyWeight(String pWeight) {
+		assertEquals(pWeight,  BaseWebdriver.driver.findElement(weight1).getText()); 
 	}
 	
 	public static void VerifyItemDetails() {

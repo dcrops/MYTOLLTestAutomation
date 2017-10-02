@@ -92,10 +92,10 @@ public class TollTasmaniaTest {
 		//ReviewYouPickupActions.verifyClosingTime();
 		ReviewYouPickupActions.verifySpecialInstructions("special instructions test");
 		ReviewYouPickupActions.verifyItemDescription();
-		ReviewYouPickupActions.verifyNumberofItems();
-		ReviewYouPickupActions.verifyLengthWidthHeight();
-		ReviewYouPickupActions.verifyVolume();
-		ReviewYouPickupActions.verifyWeight();
+		//ReviewYouPickupActions.verifyNumberofItems(NumberOfItems+" Items");
+		//ReviewYouPickupActions.verifyLengthWidthHeight(Length+"*"+ Width+"*"+Height+" CM3");
+		//ReviewYouPickupActions.verifyVolume();
+		//ReviewYouPickupActions.verifyWeight();
 		
 		//Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
@@ -230,10 +230,10 @@ public class TollTasmaniaTest {
 		//ReviewYouPickupActions.verifyClosingTime();
 		ReviewYouPickupActions.verifySpecialInstructions("special instructions test");
 		ReviewYouPickupActions.verifyItemDescription();
-		ReviewYouPickupActions.verifyNumberofItems();
-		ReviewYouPickupActions.verifyLengthWidthHeight();
-		ReviewYouPickupActions.verifyVolume();
-		ReviewYouPickupActions.verifyWeight();
+		//ReviewYouPickupActions.verifyNumberofItems(NumberOfItems+" Items");
+		 //ReviewYouPickupActions.verifyLengthWidthHeight(Length+"*"+ Width+"*"+Height+" CM3");
+		//ReviewYouPickupActions.verifyVolume();
+		//ReviewYouPickupActions.verifyWeight();
 		
 		//Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
@@ -387,7 +387,9 @@ public class TollTasmaniaTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200","100","50", "5");
 		BookAPickupActions.SelectDestination("melbo");
 		BookAPickupActions.SelectChargeToAccount2(1);
-				
+		String volume = BookAPickupActions.GetVoulme().toString();
+		System.out.println(volume);
+
 		//BookAPickupActions.ReceiverAccountNumber("1236654");
 		
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -421,10 +423,10 @@ public class TollTasmaniaTest {
 		//ReviewYouPickupActions.verifyClosingTime();
 		ReviewYouPickupActions.verifySpecialInstructions("special instructions test");
 		ReviewYouPickupActions.verifyItemDescription();
-		ReviewYouPickupActions.verifyNumberofItems();
-		ReviewYouPickupActions.verifyLengthWidthHeight();
-		ReviewYouPickupActions.verifyVolume();
-		ReviewYouPickupActions.verifyWeight();
+		//ReviewYouPickupActions.verifyNumberofItems(NumberOfItems+" Items");
+		 //ReviewYouPickupActions.verifyLengthWidthHeight(Length+"*"+ Width+"*"+Height+" CM3");
+		//ReviewYouPickupActions.verifyVolume();
+		//ReviewYouPickupActions.verifyWeight();
 		
 		//Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
@@ -496,10 +498,10 @@ public class TollTasmaniaTest {
 		ReviewYouPickupActions.VerifyPickupDate();
 		ReviewYouPickupActions.verifySpecialInstructions("special instructions test");
 		ReviewYouPickupActions.verifyItemDescription();
-		ReviewYouPickupActions.verifyNumberofItems();
-		ReviewYouPickupActions.verifyLengthWidthHeight();
-		ReviewYouPickupActions.verifyVolume();
-		ReviewYouPickupActions.verifyWeight();
+		//ReviewYouPickupActions.verifyNumberofItems(NumberOfItems+" Items");
+		//ReviewYouPickupActions.verifyLengthWidthHeight(Length+"*"+ Width+"*"+Height+" CM3");
+		//ReviewYouPickupActions.verifyVolume();
+		//ReviewYouPickupActions.verifyWeight();
 		
 		//Verify item details
 		ReviewYouPickupActions.VerifyItemDetails();

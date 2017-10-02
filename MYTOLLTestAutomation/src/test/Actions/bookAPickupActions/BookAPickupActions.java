@@ -276,6 +276,12 @@ public class BookAPickupActions {
 		return vCountryCode;
 	}
 	
+	public static String GetVoulme() {
+		PageBase.MaximumWaitForElementEnabled(); 
+		String vVolume=BaseWebdriver.driver.findElement(volume).getAttribute("value");
+		return vVolume;
+	}
+	
 	public static String GetReadyTime() {
 		PageBase.MaximumWaitForElementEnabled(); 
 		String vAvailableTime=BaseWebdriver.driver.findElement(availableTime).getAttribute("value");
