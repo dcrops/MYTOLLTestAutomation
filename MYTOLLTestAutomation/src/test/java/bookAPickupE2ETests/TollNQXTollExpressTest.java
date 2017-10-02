@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import GlobalActions.GlobalVariables;
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import myTollHomePageActions.MyTollHomePageActions;
@@ -88,8 +89,7 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
-
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@Test(priority = 2)
@@ -142,7 +142,7 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 
 	}
 
@@ -197,7 +197,7 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@Test(priority = 4)
@@ -252,7 +252,7 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@Test(priority = 5)
@@ -360,12 +360,12 @@ public class TollNQXTollExpressTest {
 		ReviewYouPickupActions.ClickEdit();
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
-		BookAPickupActions.SelectPackingGroup();
+		BookAPickupActions.SelectPackgingGroup("II");
+		//BookAPickupActions.SelectPackingGroup();
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
-
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@Test(priority = 7)
@@ -413,7 +413,8 @@ public class TollNQXTollExpressTest {
 		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
 		// description", "123", "456");
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
-		BookAPickupActions.SelectPackingGroup();
+		BookAPickupActions.SelectPackgingGroup("II");
+		//BookAPickupActions.SelectPackingGroup();
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
@@ -426,8 +427,7 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
-
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@Test(priority = 8)
@@ -474,7 +474,8 @@ public class TollNQXTollExpressTest {
 		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
 		// description", "123", "456");
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
-		BookAPickupActions.SelectPackingGroup();
+		BookAPickupActions.SelectPackgingGroup("II");
+		//BookAPickupActions.SelectPackingGroup();
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
@@ -487,8 +488,7 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
-
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@Test(priority = 9)
@@ -534,7 +534,8 @@ public class TollNQXTollExpressTest {
 		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
 		// description", "123", "456");
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
-		BookAPickupActions.SelectPackingGroup();
+		BookAPickupActions.SelectPackgingGroup("II");
+		//BookAPickupActions.SelectPackingGroup();
 		// Enter Pickup details
 		jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
@@ -547,8 +548,7 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
-
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@AfterMethod

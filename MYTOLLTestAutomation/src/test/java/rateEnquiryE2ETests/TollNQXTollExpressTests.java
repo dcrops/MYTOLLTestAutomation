@@ -48,7 +48,9 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
@@ -89,7 +91,9 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
@@ -131,7 +135,8 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
@@ -172,7 +177,9 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
@@ -213,7 +220,9 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
@@ -254,7 +263,9 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
@@ -296,7 +307,9 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 	
 		RateEnquiryActions.ClickPriceNow();
@@ -338,7 +351,9 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
@@ -379,7 +394,9 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();

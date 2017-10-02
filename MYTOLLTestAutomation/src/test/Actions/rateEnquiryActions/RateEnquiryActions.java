@@ -28,7 +28,7 @@ public class RateEnquiryActions {
 	public static By quantityType = By.xpath("//*[@id=\"item-type-selector\"]/div[1]/a/i"); 
 	public static By numberofGarments = By.id("garments-count");
 	public static By weight = By.id("item-weight");
-	public static By billingTypeTDF = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/a/i");
+	public static By billingTypeTDF = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/a/i"); 
 	public static By billingType = By.xpath("//*[@id=\"billing-type-selector0\"]/div[1]/a/i"); //*[@id="billing-type-selector"]/div[1]/a/i
 	public static By billingTypeAddLineItem = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/a/i");
 	public static By addNewLine = By.id("add-freight-item");
@@ -184,6 +184,14 @@ public class RateEnquiryActions {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector0\"]/div[2]/ul/li/div")).click();
 	}
+	
+	public static void EnterBillingType(String pBillingType) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(billingTypeTDF).click();
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+pBillingType+"']")).click();
+	}
+
 
 	// Toll Intermodal, Toll NQX
 	public static void SelectBillingTypeItem1TDF(int i) {
@@ -194,6 +202,15 @@ public class RateEnquiryActions {
 	}
 
 	// Toll Intermodal, Toll NQX
+	
+	public static void EnterBillingTypeTDF(String pBillingType) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(billingTypeTDF).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+pBillingType+"']")).click();
+	}
+	
+
+	
 	public static void SelectBillingTypeTDF(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(billingTypeTDF).click();
@@ -241,7 +258,7 @@ public class RateEnquiryActions {
 		BookAPickupActions.EnterLengthWidthHeight("200", "100", "50");
 		RateEnquiryActions.EnterWeight("20");
 
-		RateEnquiryActions.SelectBillingTypeTDF(2);
+		RateEnquiryActions.EnterBillingTypeTDF("General Freight");
 
 	}
 

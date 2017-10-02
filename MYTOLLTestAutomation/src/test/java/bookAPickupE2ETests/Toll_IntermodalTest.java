@@ -1,6 +1,8 @@
 package bookAPickupE2ETests;
 
 import GlobalActions.PageBase;
+import GlobalActions.GlobalVariables;
+
 import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
@@ -77,9 +79,7 @@ public class Toll_IntermodalTest {
 
 		String countryCode = BookAPickupActions.GetCountryCode().toString();
 		System.out.println(countryCode);
-
-		String volume = BookAPickupActions.GetVoulme().toString();
-		System.out.println(volume);
+		
 
 		// Verification and enter data for Quick entry mode, service(Refrigeration),
 		// Mode(=Road)
@@ -94,7 +94,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
-
+		String volume = BookAPickupActions.GetVoulme().toString();
+		System.out.println(volume);
 		BookAPickupActions.SelectDestination(destination);
 
 		// BookAPickupActions.SelectMode(); defect
@@ -135,8 +136,8 @@ public class Toll_IntermodalTest {
 		ReviewYouPickupActions.verifySpecialInstructions(specialIns);
 
 		ReviewYouPickupActions.verifyLengthWidthHeight(Length + "X" + Width + "X" + Height + " CM3");
-		//ReviewYouPickupActions.verifyVolume(volume + " M3");
-		//ReviewYouPickupActions.verifyWeight(Weight + " Kg");
+		ReviewYouPickupActions.verifyVolume(volume + " M3");
+		ReviewYouPickupActions.verifyWeight(Weight + " Kg");
 
 		// Verify Review Your Pickup
 		/*
@@ -287,7 +288,7 @@ public class Toll_IntermodalTest {
 
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
-
+		BookAPickupActions.SelectPackgingGroup("II");
 		jse.executeScript("scroll(500, 800)");
 
 		BookAPickupActions.selectPickupDate();
@@ -320,7 +321,7 @@ public class Toll_IntermodalTest {
 
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 
 	}
 
@@ -371,6 +372,7 @@ public class Toll_IntermodalTest {
 
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
+		BookAPickupActions.SelectPackgingGroup("II");
 
 		// Pickup details
 		jse.executeScript("scroll(500, 800)");
@@ -556,7 +558,7 @@ public class Toll_IntermodalTest {
 
 		// Add a new item
 		BookAPickupActions.AddANewLine(); // defect
-		BookAPickupActions.EnterVendorDetails(vendorNum);
+		
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
@@ -638,7 +640,7 @@ public class Toll_IntermodalTest {
 
 		// Add a new item
 		BookAPickupActions.AddANewLine(); // defect
-		BookAPickupActions.EnterVendorDetails(vendorNum);
+	
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();

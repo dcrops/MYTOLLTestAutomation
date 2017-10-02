@@ -51,7 +51,7 @@ public class BookAPickupActions {
 	public static By length = By.id("length");
 	public static By width = By.id("width");
 	public static By height = By.id("height");
-	public static By volume = By.id("volume");
+	public static By volume = By.xpath("//*[@id=\"volume\"]");
 	public static By weight = By.id("weight");
 
 	public static By dangerousGoodNo = By.xpath("(//input[@name='dangerous-radios'])[2]"); 
@@ -545,28 +545,28 @@ public class BookAPickupActions {
 		/*BaseWebdriver.driver.findElement(decreaseReadyTime).click();
 		BaseWebdriver.driver.findElement(decreaseReadyTime).click();
 		BaseWebdriver.driver.findElement(decreaseReadyTime).click();*/
-		Integer i;
+		/*Integer i;
 		for (i=1; i<=17; i++) {
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		/* BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();*/
+		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
+		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
 		}
 	
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeminutes).click();
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeminutes).click();
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeminutes).click();
-		 BaseWebdriver.driver.findElement(increaseAvailableTimeminutes).click();
+		 BaseWebdriver.driver.findElement(increaseAvailableTimeminutes).click();*/
 		
 	}
 
 	public static void selectClosingTime() {
-		BaseWebdriver.driver.findElement(closingTime).click();
+		/*BaseWebdriver.driver.findElement(closingTime).click();
 		BaseWebdriver.driver.findElement(increaseClosingTimeHours).click();
 		BaseWebdriver.driver.findElement(increaseClosingTimeHours).click();
 		BaseWebdriver.driver.findElement(increaseClosingTimeHours).click();
@@ -574,7 +574,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(increaseClosingTimeMinutes).click();
 		BaseWebdriver.driver.findElement(increaseClosingTimeMinutes).click();
 		BaseWebdriver.driver.findElement(increaseClosingTimeMinutes).click();
-		BaseWebdriver.driver.findElement(increaseClosingTimeMinutes).click();
+		BaseWebdriver.driver.findElement(increaseClosingTimeMinutes).click();*/
 	}
 
 	public static void selectConsignmentNotes(int j) {
@@ -756,12 +756,23 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
 
 	}
+	
+	public static void SelectPackgingGroup(String packagingGroup) {
+		// BookAPickupActions.SelectUNNumber(j,lookupItem);
+
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li/div[text()='"+packagingGroup+"']")).click();
+		
+	}
 
 	public static void ClickConfirm() {
 
 		BaseWebdriver.driver.findElement(confirmBtn).click();
 
 	}
+	
+	
 	
 	
 }

@@ -11,7 +11,7 @@ import bookAPickupActions.BookAPickupActions;
 public class ReviewYouPickupActions {
 	
 	
-	public static By reviewYourPickupHeading=By.xpath("//@[id='book-a-pickup-placeholder']/div/div/h1/i");//By.cssSelector("h1");
+	public static By reviewYourPickupHeading=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]/div/header/div/h1"); 
 	public static By pickupDetailsHeading=By.cssSelector("h5.review-box-label");
 	public static By pickupDateTimeHeading=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div[2]/div/h5");
 	public static By accountNumber=By.cssSelector("p.pickup-summary__form-control-static");
@@ -206,7 +206,7 @@ public class ReviewYouPickupActions {
 		BaseWebdriver.driver.findElement(EditBtn).click();
 	}
 
-	public static void VerifyConfirmPickupDetails() {
+	public static void VerifyConfirmPickupDetails(String userName) {
 		// assertEquals("PICKUP Submitted", BaseWebdriver.driver.findElement(pickupConfirmed).getText());
 		 assertEquals("Pickup Submitted", BaseWebdriver.driver.findElement(pickupSubmitted).getText());
 		 assertEquals("Pickedup", BaseWebdriver.driver.findElement(pickedupLable).getText());
@@ -215,7 +215,7 @@ public class ReviewYouPickupActions {
 		 assertEquals("Delivered", BaseWebdriver.driver.findElement(deliveredLable).getText());
 		// assertEquals("We have sent you an email confirming your pickup booking to:superuser@gmail.com" 
 		 //		, BaseWebdriver.driver.findElement(emailLable).getText());
-		 assertEquals("allbus001@toll.com", BaseWebdriver.driver.findElement(emailAddress).getText());
+		 assertEquals(userName, BaseWebdriver.driver.findElement(emailAddress).getText());
 
 	}
 }

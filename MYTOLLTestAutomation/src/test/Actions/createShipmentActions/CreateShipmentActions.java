@@ -257,6 +257,15 @@ public class CreateShipmentActions {
 
 	}
 
+	public static void EnterBillingType(String pBillingType) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(billingTypedropdown).click();
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+pBillingType+"']")).click();
+				
+
+	}
+	
 	public static void SelectBillingType(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(billingTypedropdown).click();
@@ -265,7 +274,14 @@ public class CreateShipmentActions {
 				.click();
 
 	}
+	
+	public static void EnterTollCarrierItem(String pTollCarrierName) {//*[@id="BU-selector"]/label/a/i String pDropdownSelector, String pTollCarrierName
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id='BU-selector']/label/a/i")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']")).click();
 
+	}
+	
 	public static void AddANewLineNZAUS() {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
