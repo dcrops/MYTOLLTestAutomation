@@ -188,6 +188,13 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li[" + j + "]/div")).click();
 
 	}
+	
+	public static void EnterChargeToAccount(String pChargeToAccount) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(chargeToAccount).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li/div[text()='"+pChargeToAccount+"']")).click();
+
+	}
 
 	public static void SelectDangerousGoods(int j) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -377,7 +384,7 @@ public class BookAPickupActions {
 		SelectServiceItemItem(j);
 
 	}
-
+	
 	public static void SelectDestination(String pDestination) {
 
 		PageBase.MaximumWaitForElementEnabled();
@@ -386,6 +393,19 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
 		
+		PageBase.retryingFindClick(destinationaddress);
+		
+
+	} 
+	
+	public static void EnterDestination(String pDestination) {
+
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.retryingFindClick(destination);
+		PageBase.waitForElement(BaseWebdriver.driver.findElement(destination), 10);
+		BaseWebdriver.driver.findElement(destination).clear();
+		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[text()='"+pDestination+"']")).click();
 		PageBase.retryingFindClick(destinationaddress);
 		
 

@@ -23,16 +23,17 @@ public class TollIntermodalTests {
 	}
 
 	@Test(priority = 4)
-	@Parameters({ "TollCarrierItemTollIntermodal", "ServiceDGFreight", "DropOffDepot", "CollectionDepot",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "DropOffDepot", "CollectionDepot",
 			"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 			"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
-	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight(Integer TollCarrierItem,
+	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight(String TollCarrier,
 			Integer ServiceDGFreight, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
-		BookAPickupActions.EnterTollCarrierItem("Toll Intermodal");
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
 		
 		CreateShipmentActions.SelectService(ServiceDGFreight);
 		
@@ -77,17 +78,18 @@ public class TollIntermodalTests {
 	}
 	
 	@Test(priority = 4)
-	@Parameters({ "TollCarrierItemTollIntermodal", "ServiceDGFreight", "DropOffDepot", "CollectionDepot",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "DropOffDepot", "CollectionDepot",
 			"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 			"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
-	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight_ShipmentReview(Integer TollCarrierItem,
+	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight_ShipmentReview(String TollCarrier,
 			Integer ServiceDGFreight, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
-		BookAPickupActions.EnterTollCarrierItem("Toll Intermodal");
-		
+		//CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
 		CreateShipmentActions.SelectService(ServiceDGFreight);
 		
 		// BookAPickupActions.SelectAccountNumber1();
@@ -155,17 +157,18 @@ public class TollIntermodalTests {
 
 
 	@Test(priority = 3)
-	@Parameters({ "TollCarrierItemTollIntermodal", "ServiceExpress", "DropOffDepot", "CollectionDepot", "DGContactName",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "DropOffDepot", "CollectionDepot", "DGContactName",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height",
 			"Weight","DGYes", "DGNo", "BillingType", "SpeceialIns" }) 
-	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express(Integer TollCarrierItem,
+	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express(String TollCarrier,
 			Integer ServiceExpress, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		
+		//CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
 		CreateShipmentActions.SelectService(ServiceExpress);
 		
 		// BookAPickupActions.SelectAccountNumber1();
@@ -211,17 +214,17 @@ public class TollIntermodalTests {
 	}
 	
 	//@Test(priority = 3)
-	@Parameters({ "TollCarrierItemTollIntermodal", "ServiceExpress", "DropOffDepot", "CollectionDepot", "DGContactName",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "DropOffDepot", "CollectionDepot", "DGContactName",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height",
 			"Weight","DGYes", "DGNo", "BillingType", "SpeceialIns" }) 
-	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express_ShipmentReview(Integer TollCarrierItem,
+	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express_ShipmentReview(String TollCarrier,
 			Integer ServiceExpress, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
 		CreateShipmentActions.SelectService(ServiceExpress);
 		
 		// BookAPickupActions.SelectAccountNumber1();
@@ -288,16 +291,17 @@ public class TollIntermodalTests {
 	}
 
 	@Test(priority = 2)
-	@Parameters({ "TollCarrierItemTollIntermodal", "ServiceGeneral", "DropOffDepot", "CollectionDepot", "DGContactName",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "DropOffDepot", "CollectionDepot", "DGContactName",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height",
 			"Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
-	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_General(Integer TollCarrierItem,
+	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_General(String TollCarrier,
 			Integer ServiceGeneral, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
 		CreateShipmentActions.SelectService(ServiceGeneral);
 		
 		// BookAPickupActions.SelectAccountNumber1();
@@ -339,16 +343,17 @@ public class TollIntermodalTests {
 	}
 
 	@Test(priority = 2)
-	@Parameters({ "TollCarrierItemTollIntermodal", "ServiceGeneral", "DropOffDepot", "CollectionDepot", "DGContactName",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "DropOffDepot", "CollectionDepot", "DGContactName",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height",
 			"Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
-	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_General_ShipmentReview(Integer TollCarrierItem,
+	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_General_ShipmentReview(String TollCarrier,
 			Integer ServiceGeneral, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
 		CreateShipmentActions.SelectService(ServiceGeneral);
 		
 		// BookAPickupActions.SelectAccountNumber1();
@@ -414,16 +419,17 @@ public class TollIntermodalTests {
 
 	
 	@Test(priority = 1)
-	@Parameters({ "TollCarrierItemTollIntermodal", "ServiceRefrigeration", "DropOffDepot", "CollectionDepot",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "DropOffDepot", "CollectionDepot",
 			"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 			"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
-	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Refrigeration(Integer TollCarrierItem,
+	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Refrigeration(String TollCarrier,
 			Integer ServiceRefrigeration, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
 		CreateShipmentActions.SelectService(ServiceRefrigeration);
 		
 		// BookAPickupActions.SelectAccountNumber1();
@@ -466,16 +472,17 @@ public class TollIntermodalTests {
 	}
 	
 	//@Test(priority = 1)
-		@Parameters({ "TollCarrierItemTollIntermodal", "ServiceRefrigeration", "DropOffDepot", "CollectionDepot",
+		@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "DropOffDepot", "CollectionDepot",
 				"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 				"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
-		public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Refrigeration_ShipmentReview(Integer TollCarrierItem,
+		public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Refrigeration_ShipmentReview(String TollCarrier,
 				Integer ServiceRefrigeration, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 				String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 				String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 				String SpeceialIns) {
 
-			CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+			BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
 			CreateShipmentActions.SelectService(ServiceRefrigeration);
 			
 			// BookAPickupActions.SelectAccountNumber1();
