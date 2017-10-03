@@ -84,10 +84,12 @@
   <test name="createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General">
   
     <classes>
-      <class name="createShipmentE2ETests.TollPriorityAUSTests"/>
-     <!-- tprioAU> <class name="createShipmentE2ETests.TollIntermodalTests"/>
+    <class name="createShipmentE2ETests.TollIntermodalTests"/>
+     
+     <!-- tprioAU> 
       <class name="createShipmentE2ETests.TollTasmaniaTests"/>
       <class name="createShipmentE2ETests.TollIPECTests"/>
+       <class name="createShipmentE2ETests.TollPriorityAUSTests"/>
       <class name="createShipmentE2ETests.TollNQXTollExpressTests"/></tprioAU-->
       
     </classes>

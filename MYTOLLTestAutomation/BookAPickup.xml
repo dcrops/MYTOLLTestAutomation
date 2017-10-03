@@ -37,7 +37,7 @@
 		<parameter name="Weight" value="900" />
 		<parameter name="palletSpace" value="5" />
 		<parameter name="reference" value="12345" />
-		
+
 		<parameter name="temperatureLow" value="10" />
 		<parameter name="temperatureHigh" value="20" />
 		<parameter name="refrigerationRefNum" value="1234" />
@@ -49,20 +49,21 @@
 		<parameter name="packageDescription" value="Testing package Description" />
 		<parameter name="pDgPkgQty" value="50" />
 		<parameter name="pDgQtyKg" value="600" />
+		<parameter name="technicalName" value="Test Technical name" />
+
 
 		<parameter name="specialIns" value="special instructions test" />
 
 		<parameter name="browser" value="chrome" />
 		<classes>
-
-			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-
-			<!--Blocked> <class name="bookAPickupE2ETests.TollPriorityNZTest" /> 
-			<class name="bookAPickupE2ETests.TollIPECTest" /> 
-			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
-				 <class name="bookAPickupE2ETests.TollPriorityAusTest"/>
-				  <class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-				  <class name="bookAPickupE2ETests.TollNQXTollExpressTest"/> </Blocked -->
+<class name="bookAPickupE2ETests.TollTasmaniaTest" /> 
+			<!--Blocked><class name="bookAPickupE2ETests.Toll_IntermodalTest" />
+			 <class name="bookAPickupE2ETests.TollTasmaniaTest" /> 
+			<class 	name="bookAPickupE2ETests.TollNQXTollExpressTest"/> 
+				<class name="bookAPickupE2ETests.TollPriorityNZTest" 
+				/> <class name="bookAPickupE2ETests.TollIPECTest" /> <class name="bookAPickupE2ETests.TollTasmaniaTest" 
+				/> <class name="bookAPickupE2ETests.TollPriorityAusTest"/> <class name="bookAPickupE2ETests.Toll_IntermodalTest" 
+				/> <class name="bookAPickupE2ETests.TollNQXTollExpressTest"/> </Blocked -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

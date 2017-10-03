@@ -54,12 +54,15 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.EnterDGContactName(DGContactName);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
 
+		
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-
+		
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
 
@@ -67,9 +70,7 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-
+		jse.executeScript("scroll(500, 800)");
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -109,12 +110,14 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.EnterDGContactName(DGContactName);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-
+		
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
 
@@ -122,9 +125,8 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-
+		jse.executeScript("scroll(500, 800)");
+		
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -188,12 +190,14 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectMode(1);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-
+		
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -201,8 +205,7 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		jse.executeScript("scroll(500, 800)");
 
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -244,12 +247,14 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectMode(1);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-
+		
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -257,9 +262,8 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-
+		jse.executeScript("scroll(500, 800)");
+		
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -319,6 +323,8 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectMode(1);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
@@ -332,8 +338,8 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		
+		jse.executeScript("scroll(500, 800)");
 
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -371,6 +377,8 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectMode(1);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
@@ -384,9 +392,8 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-
+		jse.executeScript("scroll(500, 800)");
+		
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -449,6 +456,8 @@ public class TollIntermodalTests {
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
@@ -461,9 +470,9 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		jse.executeScript("scroll(500, 800)");
 
+		
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -501,6 +510,8 @@ public class TollIntermodalTests {
 			CreateShipmentActions.SelectMode(1);
 
 			CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
+			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+			jse.executeScript("scroll(0, 250)");
 
 			BookAPickupActions.EnterItem(ItemTemplateName);
 			CreateShipmentActions.NumberOfItem(NumberOfItems);
@@ -514,9 +525,8 @@ public class TollIntermodalTests {
 			// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 			CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-			jse.executeScript("scroll(0, 250)");
-
+			jse.executeScript("scroll(500, 800)");
+			
 			CreateShipmentActions.AddANewLineNZAUS();
 			BookAPickupActions.SelectDangerousGoods(DGNo);
 

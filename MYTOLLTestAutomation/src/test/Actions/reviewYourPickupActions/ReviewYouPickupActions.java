@@ -42,6 +42,7 @@ public class ReviewYouPickupActions {
 	public static By tempHigh=By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div/div[2]/div/p");
 	public static By refNumber=By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div/div[3]/div/p");
 	public static By bookInNumbers=By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div/div[4]/div/p");
+	public static By technicalName=By.xpath("//*[@id=\"dg-line-00\"]/div[2]/div[2]/div[4]/div/p");
 	
 	public static By confirmPickupBtn=By.id("submit-pickup");
 	public static By pickupConfirmed=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]/div[1]/div[1]/div[1]/h1");
@@ -201,6 +202,11 @@ public class ReviewYouPickupActions {
 	  //  assertEquals("Wednesday, 16 August 2017", driver.findElement(By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div[2]/div[2]/div/p")).getText());
 	    //assertEquals("16:00", driver.findElement(By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div[2]/div[3]/div/p")).getText());
 	} 
+	
+	public static void VerifyDangerousGoodsDetails(String pTechnicalName ) { 
+		assertEquals(pTechnicalName, BaseWebdriver.driver.findElement(tempLow).getText());
+		  
+		} 
 	
 	public static void ClickConfirmPickup()
 	{

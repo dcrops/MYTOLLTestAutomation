@@ -33,7 +33,7 @@ public class TollPriorityAUSTests {
 	{
 		
 		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		
 		CreateShipmentActions.EnterService(ServiceParcelsOffPeak);
 		//BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumber1();
@@ -68,7 +68,7 @@ public class TollPriorityAUSTests {
 	{
 		
 		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+	
 		CreateShipmentActions.EnterService(ServiceGlobalExpressDocuments); 
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(1);

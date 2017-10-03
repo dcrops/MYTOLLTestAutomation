@@ -66,6 +66,7 @@ public class BookAPickupActions {
 	public static By dgPackagingDescription = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[1]/div/input");
 	public static By dgPkgQty = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[2]/div[1]/div/input");
 	public static By dgQtyKg = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[2]/div[2]/div/input");
+	public static By technicalName = By.id("technical-name");
 	public static By saveAsTemplateBtn = By.id("save-as-template");
 
 	public static By pickupDate = By.id("pickup-date");
@@ -80,7 +81,8 @@ public class BookAPickupActions {
 	public static By closingTime = By.id("location-closing-time");
 	public static By increaseClosingTimeHours = By
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[1]/div[1]/i");
-	public static By increaseClosingTimeMinutes = By
+	public static By confirmReadyTime = By.id("confirm-true"); 
+			public static By increaseClosingTimeMinutes = By
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[3]/div[1]/i");
 	public static By specialInstructions = By.id("comments");
 	public static By referenceNumber = By.xpath("//*[@id=\"custom-ref-num\"]");
@@ -545,6 +547,15 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(dangerousItemsNewLine).click();
 	}
 
+	
+	public static void EnterTechnicalName(String pTechnicalName) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(technicalName).click();
+		BaseWebdriver.driver.findElement(technicalName).clear();
+		BaseWebdriver.driver.findElement(technicalName).sendKeys(pTechnicalName);
+	}
+
+	
 	public static void selectContainFoodItem() {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(containFoodItem).click();
@@ -611,6 +622,11 @@ public class BookAPickupActions {
 
 	public static void ClickReviewBook() {
 		BaseWebdriver.driver.findElement(reviewBookBtn).click();
+
+	}
+	
+	public static void ContinueReadyTime() {
+		BaseWebdriver.driver.findElement(confirmReadyTime).click();
 
 	}
 
