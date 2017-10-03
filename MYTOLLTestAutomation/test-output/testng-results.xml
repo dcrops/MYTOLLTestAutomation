@@ -1,55 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="49962" started-at="2017-09-27T07:24:00Z" finished-at="2017-09-27T07:24:50Z">
+  <suite name="Suite" duration-ms="103176" started-at="2017-10-02T04:44:48Z" finished-at="2017-10-02T04:46:32Z">
     <groups>
     </groups>
-    <test name="createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General" duration-ms="49962" started-at="2017-09-27T07:24:00Z" finished-at="2017-09-27T07:24:50Z">
-      <class name="createShipmentE2ETests.TollPriorityAUSTests">
-        <test-method status="PASS" signature="RunSetup()[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="RunSetup" is-config="true" duration-ms="23945" started-at="2017-09-27T17:24:00Z" finished-at="2017-09-27T17:24:24Z">
+    <test name="chromeTest" duration-ms="103176" started-at="2017-10-02T04:44:48Z" finished-at="2017-10-02T04:46:32Z">
+      <class name="bookAPickupE2ETests.TollPriorityAusTest">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:bookAPickupE2ETests.TollPriorityAusTest@68c4039c]" name="RunSetup" is-config="true" duration-ms="49191" started-at="2017-10-02T15:44:48Z" finished-at="2017-10-02T15:45:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunSetup -->
-        <test-method status="FAIL" signature="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(java.lang.Integer, java.lang.Integer)[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments" duration-ms="25993" started-at="2017-09-27T17:24:24Z" finished-at="2017-09-27T17:24:50Z">
+        <test-method status="FAIL" signature="BookAPickup_TollPriority_AUS_E2ETest_TID_620(java.lang.String, java.lang.String, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:bookAPickupE2ETests.TollPriorityAusTest@68c4039c]" name="BookAPickup_TollPriority_AUS_E2ETest_TID_620" duration-ms="53949" started-at="2017-10-02T15:45:38Z" finished-at="2017-10-02T15:46:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[5]]>
+                <![CDATA[Toll Priority (Aus)]]>
               </value>
             </param>
             <param index="1">
               <value>
+                <![CDATA[Parcels - Off Peak]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Automation Template1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
                 <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[300]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[900]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Melbo]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[special instructions test]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="service-selector"]/div/ul/li[15]/div"}
-  (Session info: chrome=60.0.3112.113)
-  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 20.08 seconds
+              <![CDATA[no such element: Unable to locate element: {"method":"id","selector":"submit-pickup"}
+  (Session info: chrome=61.0.3163.100)
+  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.03 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
-System info: host: 'PC12159', ip: '172.28.181.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+System info: host: 'DESKTOP-GTKVGKN', ip: '192.168.19.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\2712\AppData\Local\Temp\scoped_dir56068_23239}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: 8946611f8c1a3ebde4130df35627f0a9
-*** Element info: {Using=xpath, value=//*[@id="service-selector"]/div/ul/li[15]/div}]]>
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\SHEYAN~1\AppData\Local\Temp\scoped_dir3952_25238}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=61.0.3163.100, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 2c841f4726ff4015a12f6085715ea171
+*** Element info: {Using=id, value=submit-pickup}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="service-selector"]/div/ul/li[15]/div"}
-  (Session info: chrome=60.0.3112.113)
-  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 20.08 seconds
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"submit-pickup"}
+  (Session info: chrome=61.0.3163.100)
+  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.03 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
-System info: host: 'PC12159', ip: '172.28.181.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+System info: host: 'DESKTOP-GTKVGKN', ip: '192.168.19.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\2712\AppData\Local\Temp\scoped_dir56068_23239}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: 8946611f8c1a3ebde4130df35627f0a9
-*** Element info: {Using=xpath, value=//*[@id="service-selector"]/div/ul/li[15]/div}
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\SHEYAN~1\AppData\Local\Temp\scoped_dir3952_25238}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=61.0.3163.100, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 2c841f4726ff4015a12f6085715ea171
+*** Element info: {Using=id, value=submit-pickup}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -58,11 +113,11 @@ Session ID: 8946611f8c1a3ebde4130df35627f0a9
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:453)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-	at createShipmentActions.CreateShipmentActions.SelectService(CreateShipmentActions.java:86)
-	at createShipmentE2ETests.TollPriorityAUSTests.CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(TollPriorityAUSTests.java:72)
+	at reviewYourPickupActions.ReviewYouPickupActions.ClickConfirmPickup(ReviewYouPickupActions.java:201)
+	at bookAPickupE2ETests.TollPriorityAusTest.BookAPickup_TollPriority_AUS_E2ETest_TID_620(TollPriorityAusTest.java:73)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -93,53 +148,12 @@ Session ID: 8946611f8c1a3ebde4130df35627f0a9
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments -->
-        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="RunTearDown" is-config="true" duration-ms="1" started-at="2017-09-27T17:24:50Z" finished-at="2017-09-27T17:24:50Z">
+        </test-method> <!-- BookAPickup_TollPriority_AUS_E2ETest_TID_620 -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:bookAPickupE2ETests.TollPriorityAusTest@68c4039c]" name="RunTearDown" is-config="true" duration-ms="0" started-at="2017-10-02T15:46:32Z" finished-at="2017-10-02T15:46:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunTearDown -->
-        <test-method status="FAIL" signature="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection(java.lang.Integer, java.lang.Integer)[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection" duration-ms="0" started-at="2017-09-27T17:24:50Z" finished-at="2017-09-27T17:24:50Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Parameter 'ServiceDXSPalletsOffpeakItem' is required by @Test on method CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection but has not been marked @Optional or defined
-in C:\Source\MYTOLLTestAutomation\CreateShipment.xml]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'ServiceDXSPalletsOffpeakItem' is required by @Test on method CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection but has not been marked @Optional or defined
-in C:\Source\MYTOLLTestAutomation\CreateShipment.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:248)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:286)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:547)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:672)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1316)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:1044)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1134)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:776)
-	at org.testng.TestRunner.run(TestRunner.java:634)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
-	at org.testng.TestNG.runSuites(TestNG.java:1161)
-	at org.testng.TestNG.run(TestNG.java:1129)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection -->
-      </class> <!-- createShipmentE2ETests.TollPriorityAUSTests -->
-    </test> <!-- createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General -->
+      </class> <!-- bookAPickupE2ETests.TollPriorityAusTest -->
+    </test> <!-- chromeTest -->
   </suite> <!-- Suite -->
 </testng-results>
