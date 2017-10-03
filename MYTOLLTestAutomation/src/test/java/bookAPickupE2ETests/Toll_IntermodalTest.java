@@ -96,8 +96,8 @@ public class Toll_IntermodalTest {
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
 		String volume = BookAPickupActions.GetVoulme().toString();
 		System.out.println(volume);
-		//BookAPickupActions.SelectDestination(destination);
-		BookAPickupActions.EnterDestination(destination);
+		BookAPickupActions.SelectDestination(destination);
+		//BookAPickupActions.EnterDestination(destination);
 		// BookAPickupActions.SelectMode(); defect
 
 		BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
@@ -545,8 +545,8 @@ public class Toll_IntermodalTest {
 		System.out.println(volume);
 		//BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterChargeToAccount(ChargeToAccount);
-		//BookAPickupActions.SelectDestination(destination);
-		BookAPickupActions.EnterDestination(destination);
+		BookAPickupActions.SelectDestination(destination);
+		//BookAPickupActions.EnterDestination(destination);
 		BookAPickupActions.SelectModeItem(1);
 
 		BookAPickupActions.selectDangerousGood();

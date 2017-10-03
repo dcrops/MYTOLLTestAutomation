@@ -86,7 +86,7 @@ public class TollNQXTollExpressTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-
+		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
 		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
@@ -139,7 +139,7 @@ public class TollNQXTollExpressTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-
+		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
 		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
@@ -194,7 +194,7 @@ public class TollNQXTollExpressTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-
+		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
 		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
@@ -249,7 +249,7 @@ public class TollNQXTollExpressTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-
+		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
 		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
