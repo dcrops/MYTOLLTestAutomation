@@ -28,7 +28,7 @@ public class TollPriorityAUSTests {
 			}
 	
 	@Test
-	@Parameters({"TollCarrierItem", "ServiceParcelsOffPeak"})
+	@Parameters({"TollCarrierTollPrioAU", "ServiceParcelsOffPeak"})
 	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection(Integer TollCarrierItem, String ServiceParcelsOffPeak)
 	{
 		
@@ -63,11 +63,11 @@ public class TollPriorityAUSTests {
 	}
 	
 	@Test
-	@Parameters({"TollCarrierItem", "ServiceGlobalExpressDocuments"})
-	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(Integer TollCarrierItem, String ServiceGlobalExpressDocuments)
+	@Parameters({"TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments"})
+	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(Integer TollCarrier, String ServiceGlobalExpressDocuments)
 	{
 		
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		CreateShipmentActions.SelectTollCarrierItem(TollCarrier);
 	
 		CreateShipmentActions.EnterService(ServiceGlobalExpressDocuments); 
 		BookAPickupActions.SelectAccountNumber1();

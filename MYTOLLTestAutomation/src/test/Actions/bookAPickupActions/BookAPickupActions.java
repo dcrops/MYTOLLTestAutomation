@@ -57,16 +57,16 @@ public class BookAPickupActions {
 	public static By dangerousGoodNo = By.xpath("(//input[@name='dangerous-radios'])[2]"); 
 	public static By dangerousItemsNewLine = By.xpath("//*[@id=\"dg-radios\"]/label[2]/input"); 
 	public static By containFoodItem = By.xpath("//*[@id=\"containsFoodItems-no\"]");
-	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector\"]/label/a/i");
-	public static By UNNumberTextField = By.xpath("//*[@id=\"un-code-selector\"]/div/div/div/input");
-	public static By lookupBtn = By.xpath("//*[@id=\"un-code-selector\"]/div/div/div/a");
-	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector\"]/div/ul/li[1]/div");
-	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector\"]/label/a/i");
-	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li[1]/div");
-	public static By dgPackagingDescription = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[1]/div/input");
+	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector-\"]/label/a/i"); 
+	public static By UNNumberTextField = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/input");
+	public static By lookupBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/a");
+	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div");//*[@id="un-code-selector-"]/div/ul/li/div
+	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i");//*[@id="packaging-grp-selector-"]/label/a
+	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li[1]/div");
+	public static By dgPackagingDescription = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[1]/div/input");//*[@id="dg-form"]/div/div[3]/div[1]/div/input
 	public static By dgPkgQty = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[2]/div[1]/div/input");
 	public static By dgQtyKg = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[2]/div[2]/div/input");
-	public static By technicalName = By.id("technical-name");
+	public static By technicalName = By.id("technical-name-");
 	public static By saveAsTemplateBtn = By.id("save-as-template");
 
 	public static By pickupDate = By.id("pickup-date");
@@ -570,23 +570,32 @@ public class BookAPickupActions {
 	public static String ReturnPickupDate() {
 		return BaseWebdriver.driver.findElement(pickupDate).getText();
 	}
-
+	
 	public static void selectReadyTime() {
+		
+		String readyTime=GetReadyTime().toString();
+		String newReadyTime=readyTime.substring(0,2);
+		System.out.println(newReadyTime);
+		Integer readyTimeInt=Integer.parseInt(newReadyTime);
+		System.out.println(readyTimeInt);
+		
+		if(readyTimeInt>=15)
+		{
 		BaseWebdriver.driver.findElement(availableTime).click();
-		/*BaseWebdriver.driver.findElement(decreaseReadyTime).click();
 		BaseWebdriver.driver.findElement(decreaseReadyTime).click();
-		BaseWebdriver.driver.findElement(decreaseReadyTime).click();*/
+		BaseWebdriver.driver.findElement(decreaseReadyTime).click();
+		}
+		
+		if(readyTimeInt<=8)
+		{
+		BaseWebdriver.driver.findElement(availableTime).click();
+		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
+		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
+		}
 		/*Integer i;
 		for (i=1; i<=17; i++) {
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		 BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
+		 
 		}
 	
 		 BaseWebdriver.driver.findElement(increaseAvailableTimeminutes).click();
@@ -597,15 +606,9 @@ public class BookAPickupActions {
 	}
 
 	public static void selectClosingTime() {
-		/*BaseWebdriver.driver.findElement(closingTime).click();
+		BaseWebdriver.driver.findElement(closingTime).click();
 		BaseWebdriver.driver.findElement(increaseClosingTimeHours).click();
-		BaseWebdriver.driver.findElement(increaseClosingTimeHours).click();
-		BaseWebdriver.driver.findElement(increaseClosingTimeHours).click();
-		BaseWebdriver.driver.findElement(increaseClosingTimeHours).click();
-		BaseWebdriver.driver.findElement(increaseClosingTimeMinutes).click();
-		BaseWebdriver.driver.findElement(increaseClosingTimeMinutes).click();
-		BaseWebdriver.driver.findElement(increaseClosingTimeMinutes).click();
-		BaseWebdriver.driver.findElement(increaseClosingTimeMinutes).click();*/
+		
 	}
 
 	public static void selectConsignmentNotes(int j) {
@@ -768,7 +771,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 		BaseWebdriver.driver.findElement(lookupBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector\"]/div/ul/li[" + j + "]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li[" + j + "]/div")).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 		BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
@@ -785,7 +788,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 		BaseWebdriver.driver.findElement(lookupBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector\"]/div/ul/li/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div")).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 		BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
@@ -798,12 +801,13 @@ public class BookAPickupActions {
 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li/div[text()='"+packagingGroup+"']")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li/div[text()='"+packagingGroup+"']")).click();
 		
 	}
 
 	public static void ClickConfirm() {
-
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(confirmBtn).click();
 		BaseWebdriver.driver.findElement(confirmBtn).click();
 
 	}

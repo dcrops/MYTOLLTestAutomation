@@ -30,7 +30,8 @@ public class ReviewYouPickupActions {
 	public static By volume1=By.cssSelector("div.volume.hide-open");
 	public static By weight1=By.cssSelector("div.weight.hide-open");
 	
-	public static By itemArrowDown=By.cssSelector("i.ico-arrow-down-green");
+	//Item details validation
+	public static By itemArrowDownItem1=By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[7]/a/i"); 
 	public static By destination=By.xpath("//div[@id='line-item-0']/div[2]/div/div/div[2]/div/p");
 	public static By itemDescription=By.xpath("//*[@id=\"line-item-0\"]/div[2]/div/div[1]/div[1]/div/p");
 	public static By lenghthHeightWeight=By.xpath("//div[@id='line-item-0']/div[2]/div/div[2]/div/div/p");
@@ -55,6 +56,16 @@ public class ReviewYouPickupActions {
 	public static By emailAddress=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]/div[1]/div[1]/div[2]/h4/a");
 	
 	public static By EditBtn= By.id("edit-pickup");
+	
+	public static void ClickItemArrowdown(int itemIineNumber) {
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id='line-item-"+itemIineNumber+"']/div[1]/div[7]/a/i")).click();
+	}
+	
+	public static String VerifyItemDescription(int lineNumber) {
+		return BaseWebdriver.driver.findElement(By.xpath("//*[@id='line-item-"+lineNumber+"']/div[2]/div/div[1]/div[1]/div/p")).getText();
+		
+		
+	}
 	
 	public static String VerifyService(int lineNumber) {
 		return BaseWebdriver.driver.findElement(By.xpath("//div[@id='line-item-"+lineNumber+"']/div[2]/div/div/div[3]/div/p")).getText();
@@ -159,9 +170,9 @@ public class ReviewYouPickupActions {
 		assertEquals(pWeight,  BaseWebdriver.driver.findElement(weight1).getText()); 
 	}
 	
-	public static void VerifyItemDetails(String pItemName, String pDestination, String pPostCode, String Service, String chargeToAccount,String noOfItems, String palletSpace, 
+	public static void VerifyItemDetails1(String lineNumber, String pItemName, String pDestination, String pPostCode, String Service, String chargeToAccount,String noOfItems, String palletSpace, 
 			String length,  String width,String height, String pVolume, String pWeight, String pDangerousGoods, String pFoodItems ) {
-		BaseWebdriver.driver.findElement(itemArrowDown).click();
+		BaseWebdriver.driver.findElement(itemArrowDownItem1).click();
 		assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription).getText()); 
 	    assertEquals(pDestination+","+ pPostCode, BaseWebdriver.driver.findElement(destination).getText());
 	    assertEquals(Service, VerifyService(0));
@@ -175,21 +186,46 @@ public class ReviewYouPickupActions {
 	    assertEquals(pFoodItems, VerifyFoodItem(0));
 	} 
 	
-	public static void VerifyNewItemDetails(String pItemName, String pDestination, String pPostCode, String Service, String chargeToAccount,String noOfItems, String palletSpace, 
-			String length,  String width,String height, String pVolume, String pWeight ) {
+	public static void VerifyItemDetails(int itemLineNumber, String pItemName, String pDestination, String pPostCode, String Service, String chargeToAccount,String noOfItems, String palletSpace, 
+			String length,  String width,String height, String pVolume, String pWeight, String pDangerousGoods, String pFoodItems ) {
 		
-		BaseWebdriver.driver.findElement(By.cssSelector("#line-item-1 > div.item-header.clearfix > div.edit-wrpr > a.edit > i.ico-arrow-down-green")).click();
-		assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription).getText());
-	    assertEquals(pDestination+","+ pPostCode, BaseWebdriver.driver.findElement(destination).getText());
-	    assertEquals(Service, VerifyService(1));
-	    assertEquals(chargeToAccount, VerifyChargeToAccount(1));
-	    assertEquals(noOfItems,VerifyNumberofItems(1));
-	    assertEquals(palletSpace, VerifyPalletSpace(1));
+		//BaseWebdriver.driver.findElement(itemArrowDownItem1).click();
+		
+		ReviewYouPickupActions.ClickItemArrowdown(itemLineNumber);
+		assertEquals(pItemName, VerifyItemDescription(itemLineNumber));
+		//assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription).getText()); 
+	    assertEquals(pDestination+", "+ pPostCode, BaseWebdriver.driver.findElement(destination).getText());
+	    assertEquals(Service, VerifyService(itemLineNumber));
+	    assertEquals(chargeToAccount, VerifyChargeToAccount(itemLineNumber));
+	    assertEquals(noOfItems, VerifyNumberofItems(itemLineNumber));
+	    assertEquals(palletSpace, VerifyPalletSpace(itemLineNumber));
 	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(lenghthHeightWeight).getText());
 	    assertEquals(pVolume, BaseWebdriver.driver.findElement(volume).getText());
-	    assertEquals(pWeight, BaseWebdriver.driver.findElement(weight).getText());
-	    assertEquals("No", VerifyDangerousItems(1));
-	    assertEquals("No", VerifyFoodItem(1));
+	    assertEquals(pWeight+" kgs", BaseWebdriver.driver.findElement(weight).getText());
+	    assertEquals(pDangerousGoods, VerifyDangerousItems(0));
+	    assertEquals(pFoodItems, VerifyFoodItem(0));
+	    
+	    
+	} 
+	
+	public static void VerifyNewItemDetails(int itemLineNumber,String pItemName, String pDestination, String pPostCode, String Service, String chargeToAccount,String noOfItems, String palletSpace, 
+			String length,  String width,String height, String pVolume, String pWeight ) {
+		
+		ReviewYouPickupActions.ClickItemArrowdown(itemLineNumber);
+		//BaseWebdriver.driver.findElement(By.cssSelector("#line-item-1 > div.item-header.clearfix > div.edit-wrpr > a.edit > i.ico-arrow-down-green")).click();
+		//assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription).getText());
+		assertEquals(pItemName, VerifyItemDescription(itemLineNumber));
+		
+	    assertEquals(pDestination+ ", "+ pPostCode, BaseWebdriver.driver.findElement(destination).getText());
+	    assertEquals(Service, VerifyService(1));
+	    assertEquals(chargeToAccount, VerifyChargeToAccount(itemLineNumber));
+	    assertEquals(noOfItems,VerifyNumberofItems(itemLineNumber));
+	    assertEquals(palletSpace, VerifyPalletSpace(itemLineNumber));
+	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(lenghthHeightWeight).getText());
+	    assertEquals(pVolume, BaseWebdriver.driver.findElement(volume).getText());
+	    assertEquals(pWeight+" kgs", BaseWebdriver.driver.findElement(weight).getText());
+	    assertEquals("No", VerifyDangerousItems(itemLineNumber));
+	    assertEquals("No", VerifyFoodItem(itemLineNumber));
 	    
 	}
 	

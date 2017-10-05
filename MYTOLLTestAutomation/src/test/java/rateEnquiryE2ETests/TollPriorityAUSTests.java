@@ -26,7 +26,7 @@ public class TollPriorityAUSTests {
 	{
 		
 		RateEnquiryActions.SelectTollCarrierItem(5);
-		RateEnquiryActions.SelectTollCarrierItem(5);
+		
 		RateEnquiryActions.SelectService(1);; 
 		BookAPickupActions.SelectAccountNumber1();
 		
@@ -64,7 +64,7 @@ public class TollPriorityAUSTests {
 	{
 		
 		RateEnquiryActions.SelectTollCarrierItem(5);
-		RateEnquiryActions.SelectTollCarrierItem(5);
+		
 		RateEnquiryActions.SelectService(18);; 
 		BookAPickupActions.SelectAccountNumber1();
 		

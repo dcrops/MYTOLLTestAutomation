@@ -1,6 +1,7 @@
 package createShipmentE2ETests;
 
 import org.openqa.selenium.JavascriptExecutor;
+import GlobalActions.PageBase;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ import createShipmentActions.ShipmentReviewActions;
 
 
 public class TollIntermodalTests {
+	
 
 	@BeforeMethod
 	public void RunSetup() throws Exception {
@@ -27,42 +29,40 @@ public class TollIntermodalTests {
 			"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 			"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight(String TollCarrier,
-			Integer ServiceDGFreight, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String ServiceDGFreight, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
-
+		CreateShipmentActions.EnterService(ServiceDGFreight);
 		
-		CreateShipmentActions.SelectService(ServiceDGFreight);
+		//CreateShipmentActions.SelectService(ServiceDGFreight);
 		
 		// BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(1); 
+		
 		// CreateShipmentActions.EnterAccountNumber("123");
 		CreateShipmentActions.SelectMode(1);
+		PageBase.Scrollbar(250, 500);
+		
 		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(3);
-		// new WebDriverWait(BaseWebdriver.driver,
-		// 10).until(ExpectedConditions.alertIsPresent());
-		// BaseWebdriver.driver.switchTo().alert().accept();
-		// CreateShipmentActions.SelectShipmentConsolidated();
-
+		
+		 CreateShipmentActions.SelectShipmentConsolidated();
+		PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
-		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.EnterDGContactName(DGContactName);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-
-		
+	
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		
+		PageBase.Scrollbar(500, 1000);
+
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
 
@@ -70,7 +70,7 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		jse.executeScript("scroll(500, 800)");
+		
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -83,36 +83,35 @@ public class TollIntermodalTests {
 			"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 			"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight_ShipmentReview(String TollCarrier,
-			Integer ServiceDGFreight, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String ServiceDGFreight, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
 		//CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
-
-		CreateShipmentActions.SelectService(ServiceDGFreight);
+		CreateShipmentActions.EnterService(ServiceDGFreight);
+		//CreateShipmentActions.SelectService(ServiceDGFreight);
 		
 		// BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(1); 
+		
 		// CreateShipmentActions.EnterAccountNumber("123");
 		CreateShipmentActions.SelectMode(1);
+		PageBase.Scrollbar(250, 500);
+		
 		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(3);
-		// new WebDriverWait(BaseWebdriver.driver,
-		// 10).until(ExpectedConditions.alertIsPresent());
-		// BaseWebdriver.driver.switchTo().alert().accept();
-		// CreateShipmentActions.SelectShipmentConsolidated();
-
+		
+		 CreateShipmentActions.SelectShipmentConsolidated();
+		PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
-		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.EnterDGContactName(DGContactName);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-
+	
+		PageBase.Scrollbar(500, 1000);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
@@ -125,7 +124,6 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		jse.executeScript("scroll(500, 800)");
 		
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -163,41 +161,38 @@ public class TollIntermodalTests {
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height",
 			"Weight","DGYes", "DGNo", "BillingType", "SpeceialIns" }) 
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express(String TollCarrier,
-			Integer ServiceExpress, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String ServiceExpress, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
 		//CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
-
-		CreateShipmentActions.SelectService(ServiceExpress);
+		CreateShipmentActions.EnterService(ServiceExpress);
+		//CreateShipmentActions.SelectService(ServiceExpress);
 		
 		// BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(1);
-		// CreateShipmentActions.EnterAccountNumber("123");
+		
 		CreateShipmentActions.SelectMode(1);
+		PageBase.Scrollbar(250, 500);
+		
 		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(3);
-		// new WebDriverWait(BaseWebdriver.driver,
-		// 10).until(ExpectedConditions.alertIsPresent());
-		// BaseWebdriver.driver.switchTo().alert().accept();
-		// CreateShipmentActions.SelectShipmentConsolidated();
-
+		
+		 CreateShipmentActions.SelectShipmentConsolidated();
+		PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
-		CreateShipmentActions.SelectMode(1);
-
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		
+		PageBase.Scrollbar(500, 1000);
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -205,8 +200,7 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		jse.executeScript("scroll(500, 800)");
-
+		
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -221,35 +215,32 @@ public class TollIntermodalTests {
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height",
 			"Weight","DGYes", "DGNo", "BillingType", "SpeceialIns" }) 
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express_ShipmentReview(String TollCarrier,
-			Integer ServiceExpress, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String ServiceExpress, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
-
-		CreateShipmentActions.SelectService(ServiceExpress);
+		CreateShipmentActions.EnterService(ServiceExpress);
+		//CreateShipmentActions.SelectService(ServiceExpress);
 		
 		// BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(1);
+		
 		// CreateShipmentActions.EnterAccountNumber("123");
 		CreateShipmentActions.SelectMode(1);
+		PageBase.Scrollbar(250, 500);
+		
 		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(3);
-		// new WebDriverWait(BaseWebdriver.driver,
-		// 10).until(ExpectedConditions.alertIsPresent());
-		// BaseWebdriver.driver.switchTo().alert().accept();
-		// CreateShipmentActions.SelectShipmentConsolidated();
-
+		
+		 CreateShipmentActions.SelectShipmentConsolidated();
+		PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
-		CreateShipmentActions.SelectMode(1);
-
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-
+		PageBase.Scrollbar(500, 1000);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
@@ -262,8 +253,7 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		jse.executeScript("scroll(500, 800)");
-		
+				
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -299,38 +289,37 @@ public class TollIntermodalTests {
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height",
 			"Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_General(String TollCarrier,
-			Integer ServiceGeneral, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String ServiceGeneral, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
-
-		CreateShipmentActions.SelectService(ServiceGeneral);
+		CreateShipmentActions.EnterService(ServiceGeneral);
+		//CreateShipmentActions.SelectService(ServiceGeneral);
 		
 		// BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(1);
+		
 		// CreateShipmentActions.EnterAccountNumber("123");
 		CreateShipmentActions.SelectMode(1);
+		PageBase.Scrollbar(250, 500);
+		
 		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(3);
 		
-		// CreateShipmentActions.SelectShipmentConsolidated();
-
+		 CreateShipmentActions.SelectShipmentConsolidated();
+		PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
-		CreateShipmentActions.SelectMode(1);
-
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-
+		PageBase.Scrollbar(500, 1000);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-
+		
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -339,7 +328,7 @@ public class TollIntermodalTests {
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		
-		jse.executeScript("scroll(500, 800)");
+		
 
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -353,38 +342,39 @@ public class TollIntermodalTests {
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height",
 			"Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_General_ShipmentReview(String TollCarrier,
-			Integer ServiceGeneral, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String ServiceGeneral, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
-
-		CreateShipmentActions.SelectService(ServiceGeneral);
+		CreateShipmentActions.EnterService(ServiceGeneral);
+		//CreateShipmentActions.SelectService(ServiceGeneral);
 		
 		// BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(1);
+		
 		// CreateShipmentActions.EnterAccountNumber("123");
 		CreateShipmentActions.SelectMode(1);
+		PageBase.Scrollbar(250, 500);
+		
 		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(3);
 		
-		// CreateShipmentActions.SelectShipmentConsolidated();
-
+		 CreateShipmentActions.SelectShipmentConsolidated();
+		PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
-		CreateShipmentActions.SelectMode(1);
-
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+	
+		PageBase.Scrollbar(500, 1000);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-
+	
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -392,8 +382,7 @@ public class TollIntermodalTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		jse.executeScript("scroll(500, 800)");
-		
+		PageBase.Scrollbar(1000,1200);
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -430,52 +419,49 @@ public class TollIntermodalTests {
 			"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 			"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Refrigeration(String TollCarrier,
-			Integer ServiceRefrigeration, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String ServiceRefrigeration, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		CreateShipmentActions.SelectService(ServiceRefrigeration);
-		
+		CreateShipmentActions.EnterService(ServiceRefrigeration);
+		//BookAPickupActions.EnterService(ServiceRefrigeration);
 		// BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectTempratureType(1);
 		CreateShipmentActions.SelectWhoPays(1);
+		
 		// CreateShipmentActions.EnterAccountNumber("123");
 		CreateShipmentActions.SelectMode(1);
+		PageBase.Scrollbar(250, 500);
+		
 		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(3);
 		
-		// CreateShipmentActions.SelectShipmentConsolidated();
-
+		 CreateShipmentActions.SelectShipmentConsolidated();
+		PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
-		CreateShipmentActions.SelectMode(1);
+		
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.Scrollbar(500, 1000);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
+		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
+		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
-
-		//CreateShipmentActions.SelectBillingType(BillingType);
-		// RateEnquiryActions.SelectBillingTypeTDF(1);
-
-		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		jse.executeScript("scroll(500, 800)");
-
 		
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
-
+		PageBase.Scrollbar(1000,1200);
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 		CreateShipmentActions.ClickReviewCreateShipment();
 	}
@@ -485,39 +471,39 @@ public class TollIntermodalTests {
 				"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 				"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
 		public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Refrigeration_ShipmentReview(String TollCarrier,
-				Integer ServiceRefrigeration, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+				String ServiceRefrigeration, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 				String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 				String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 				String SpeceialIns) {
 
 			BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-			CreateShipmentActions.SelectService(ServiceRefrigeration);
+			CreateShipmentActions.EnterService(ServiceRefrigeration);
 			
 			// BookAPickupActions.SelectAccountNumber1();
 			BookAPickupActions.SelectAccountNumber1();
 			CreateShipmentActions.SelectTempratureType(1);
 			CreateShipmentActions.SelectWhoPays(1);
+		
 			// CreateShipmentActions.EnterAccountNumber("123");
 			CreateShipmentActions.SelectMode(1);
+			PageBase.Scrollbar(250, 500);
+			
 			CreateShipmentActions.SelectSender(2);
 			CreateShipmentActions.SelectReceiver(3);
 			
-			// CreateShipmentActions.SelectShipmentConsolidated();
-
+			 CreateShipmentActions.SelectShipmentConsolidated();
+			PageBase.Scrollbar(250, 500);
 			CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 			CreateShipmentActions.SelectCollectionDepot(collectionDepot);
-			CreateShipmentActions.SelectMode(1);
-
 			CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-			jse.executeScript("scroll(0, 250)");
+			PageBase.Scrollbar(800, 1000);
 
 			BookAPickupActions.EnterItem(ItemTemplateName);
 			CreateShipmentActions.NumberOfItem(NumberOfItems);
 			BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 			CreateShipmentActions.EnterWeight(Weight);
-
+			
 			// Shipment contain Dangerous goods=no and no food items
 			BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -525,7 +511,6 @@ public class TollIntermodalTests {
 			// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 			CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-			jse.executeScript("scroll(500, 800)");
 			
 			CreateShipmentActions.AddANewLineNZAUS();
 			BookAPickupActions.SelectDangerousGoods(DGNo);

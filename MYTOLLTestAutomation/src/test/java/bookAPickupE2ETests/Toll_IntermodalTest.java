@@ -239,13 +239,13 @@ public class Toll_IntermodalTest {
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh", "refrigerationRefNum",
 			"bookInNum", "VendorNum", "palletSpace", "Destination", "lookupName", "lookupItem", "packageDescription",
-			"pDgPkgQty", "pDgQtyKg", "specialIns" })
+			"pDgPkgQty", "pDgQtyKg","technicalName", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_DGFreight(String TollCarrier,
 			String ServiceDGFreight, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String lookupName,
-			Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg, String specialIns) {
+			Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg,String technicalName, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
@@ -281,10 +281,12 @@ public class Toll_IntermodalTest {
 		// Shipment contain Dangerous goods=yes and no food items
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
-
+		PageBase.Scrollbar(250, 500);
+		
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
 		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.EnterTechnicalName(technicalName);
 		jse.executeScript("scroll(500, 800)");
 
 		BookAPickupActions.selectPickupDate();
@@ -324,12 +326,12 @@ public class Toll_IntermodalTest {
 	@Test(priority = 4)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName", "lookupItem",
-			"packageDescription", "pDgPkgQty", "pDgQtyKg", "specialIns" })
+			"packageDescription", "pDgPkgQty", "pDgQtyKg","technicalName", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_DGFreight_ConfirmedDetails(String TollCarrier,
 			String ServiceDGFreight, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
-			String lookupName, Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg,
+			String lookupName, Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName,
 			String specialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
@@ -365,13 +367,15 @@ public class Toll_IntermodalTest {
 		// Shipment contain Dangerous goods=yes and no food items
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
-
+		PageBase.Scrollbar(250, 500);
+		
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
 		BookAPickupActions.SelectPackgingGroup("II");
-
+		BookAPickupActions.EnterTechnicalName(technicalName);
 		// Pickup details
-		jse.executeScript("scroll(500, 800)");
+		PageBase.Scrollbar(500, 1000);
+		
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 
@@ -551,21 +555,23 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.selectDangerousGood();
 		BookAPickupActions.selectContainFoodItem();
-
+		PageBase.Scrollbar(250, 500);
+		
 		jse.executeScript("scroll(500, 800)");
 
 		// Add a new item
 		BookAPickupActions.AddANewLine(); // defect
 		
-		jse.executeScript("scroll(500, 800)");
+		jse.executeScript("scroll(800, 1000)");
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		// BookAPickupActions.selectReadyTime();
+		 BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		jse.executeScript("scroll(1000, 1200)");
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.ClickConfirm();
 		PageBase.MaximumWaitForElementEnabled();
 
 		// Verify Review Your Pickup
@@ -585,10 +591,10 @@ public class Toll_IntermodalTest {
 		 */
 
 		// Verify item details
-		ReviewYouPickupActions.VerifyItemDetails(ItemTemplateName,destination,Postcode,ServiceGeneral,ChargeToAccount,NumberOfItems,palletSpace
+		ReviewYouPickupActions.VerifyItemDetails(0,ItemTemplateName,destination,Postcode,ServiceGeneral,ChargeToAccount,NumberOfItems,palletSpace
 				,Length,Width, Height,volume, Weight, "No", "No");
-		jse.executeScript("scroll(800, 1000)");
-		ReviewYouPickupActions.VerifyNewItemDetails(ItemTemplateName,destination,Postcode,ServiceGeneral,ChargeToAccount,NumberOfItems,palletSpace
+		
+		ReviewYouPickupActions.VerifyNewItemDetails(1,ItemTemplateName,destination,Postcode,ServiceGeneral,ChargeToAccount,NumberOfItems,palletSpace
 				,Length,Width, Height,volume, Weight);
 
 		ReviewYouPickupActions.ClickConfirmPickup();
@@ -634,13 +640,14 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.selectDangerousGood();
 		BookAPickupActions.selectContainFoodItem();
-
+		PageBase.Scrollbar(250, 500);
+		
 		jse.executeScript("scroll(500, 800)");
 
 		// Add a new item
 		BookAPickupActions.AddANewLine(); // defect
 	
-		jse.executeScript("scroll(500, 800)");
+		jse.executeScript("scroll(800, 1000)");
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);

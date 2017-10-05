@@ -22,8 +22,10 @@ public class CreateShipmentActions {
 	public static By senderdropdown = By.xpath("//*[@id=\"sender-selector\"]/label/a/i");
 	public static By accountNumber = By.name("account-text");
 	public static By receiverdropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i"); //*[@id="shipment-cons-popup-wrpr"]/div/div/header/h2
-	public static By shipmentConsolidatedMSGHeading=By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/header/h2");
+	public static By shipmentConsolidatedMSGHeading=By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/header/h2"); 
 	public static By shipmentConsolidatedRadioBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[1]/label");
+	public static By shipmentConsolidatedArrowdown = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]");
+	public static By shipmentConsolidatedContinue = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]"); 
 	public static By consolidatedBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[2]");
 	public static By dgContactName = By.xpath("//*[@id=\"dg-contact-dtls-wrpr\"]/div[1]/div/input");  
 	public static By dgContactNumber= By.xpath("//*[@id=\"dg-contact-dtls-wrpr\"]/div[2]/div/input"); 
@@ -87,6 +89,15 @@ public class CreateShipmentActions {
 
 	}
 	
+	/*public static void EnterService(String pService) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(servicedropdown).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li[text()='\"+pService +\"']/div")).click();
+
+	}*/
+	
+	
+	
 	public static void EnterService(String pService) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(servicedropdown).click();
@@ -97,7 +108,7 @@ public class CreateShipmentActions {
 	public static void SelectMode(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(mode).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[\" + i + \"]/div")).click();
 
 	}
 	
@@ -111,23 +122,23 @@ public class CreateShipmentActions {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(TempretureTypeDropdown).click();
 		BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[2]/ul/li[" + i + "]/div")).click();
+				.findElement(By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[2]/ul/li[\" + i + \"]/div")).click();
 
 	}
 
 	public static void SelectWhoPays(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(whoPaysdropdown).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[" + i + "]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[\" + i + \"]/div")).click();
 
 	}
 
 	public static void SelectSender(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(senderdropdown).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[\" + i + \"]/div[2]"))
 				.click();
-		
+		//*[@id="sender-selector"]/div[2]/ul/li[2]/div[2]
 	}
 
 	public static void EnterAccountNumber(String pAccountNumber) {
@@ -140,9 +151,11 @@ public class CreateShipmentActions {
 
 	public static void SelectReceiver(int i) {
 		PageBase.MaximumWaitForElementEnabled();
+		
 		BaseWebdriver.driver.findElement(receiverdropdown).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[\" + i + \"]/div[2]"))
 				.click();
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 	}
 
@@ -165,12 +178,22 @@ public class CreateShipmentActions {
 	}
 	
 	public static void SelectShipmentConsolidated() {
+		try {
 		PageBase.MaximumWaitForElementEnabled();
+		Boolean results=BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).isDisplayed();
+		if (results=true) {
+		BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).click();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		}
+		}
 		
-		BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).click();
-		BaseWebdriver.driver.findElement(consolidatedBtn).click();
-
-	}
+		catch(Exception ex) {
+			System.out.println(ex);
+		}
+		}
+		
+		
 
 	public static void EnterDGContactName(String pDGContactName) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -207,16 +230,17 @@ public class CreateShipmentActions {
 
 	public static void SelectDropOffDepot(int i) {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		
 		BaseWebdriver.driver.findElement(dropoffDepotdropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"drop-off-depot-selector\"]/div[2]/ul/li[" + i + "]/div"))
 				.click();
-
+		PageBase.MaximumWaitForElementEnabled();
 	}
 
 	public static void SelectCollectionDepot(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(collectionDepotdropdown).click();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"collection-depot-selector\"]/div[2]/ul/li[" + i + "]/div"))
 				.click();
 
@@ -284,8 +308,6 @@ public class CreateShipmentActions {
 	
 	public static void AddANewLineNZAUS() {
 
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250);");
 		BaseWebdriver.driver.findElement(addNewLine).click();
 
 		BookAPickupActions.EnterItem("Automation Temp2");

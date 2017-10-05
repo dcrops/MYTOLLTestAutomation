@@ -1,6 +1,7 @@
 package GlobalActions;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -129,5 +130,11 @@ public class PageBase {
 			 10).until(ExpectedConditions.alertIsPresent());
 		 BaseWebdriver.driver.switchTo().alert().accept();
 	}
-
+	
+	public static void Scrollbar(Integer coord1, Integer coord2) {
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll("+coord1+", "+coord2+")");
+		}
+	
+	
 }

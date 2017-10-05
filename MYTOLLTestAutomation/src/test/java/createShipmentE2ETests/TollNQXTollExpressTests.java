@@ -25,13 +25,13 @@ public class TollNQXTollExpressTests {
 	}
 
 	@Test(priority = 1)
-	@Parameters({ "TollCarrierItemTollNQXTollExpress", "TollNQXServiceGeneral","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceGeneral","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
 			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
 	
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General(
-			String TollCarrierItem,String TollNQXServiceGeneral,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String TollCarrierItem,String ServiceGeneral,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,
 			String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
@@ -40,18 +40,20 @@ public class TollNQXTollExpressTests {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrierItem);
 		
-		CreateShipmentActions.EnterService(TollNQXServiceGeneral);
+		CreateShipmentActions.EnterService(ServiceGeneral);
 		
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(WhoPays);
+		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 		// CreateShipmentActions.EnterAccountNumber("123");
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
 		//CreateShipmentActions.SelectShipmentConsolidated();
-		CreateShipmentActions.SelectShipmentConsolidatedContinue();
+		CreateShipmentActions.SelectShipmentConsolidated();
+			PageBase.Scrollbar(250, 500);
 		PageBase.MediumWaitForElementEnabled();
-		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
+	
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
@@ -65,7 +67,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.SelectBillingType(BillingType);
+		//CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -97,13 +99,13 @@ public class TollNQXTollExpressTests {
 	}
 
 	@Test(priority = 2)
-	@Parameters({ "TollCarrierItemTollNQXTollExpress", "TollNQXServiceExpress","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
 			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
 	
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Express(
-			String TollCarrierItem,String TollNQXServiceExpress,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String TollCarrierItem,String ServiceExpress,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,
 			String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
@@ -112,17 +114,18 @@ public class TollNQXTollExpressTests {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrierItem);
 		
-		CreateShipmentActions.EnterService(TollNQXServiceExpress);
+		CreateShipmentActions.EnterService(ServiceExpress);
 		
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(WhoPays);
-		// CreateShipmentActions.EnterAccountNumber("123");
+		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
-		CreateShipmentActions.SelectShipmentConsolidatedContinue();
+		 CreateShipmentActions.SelectShipmentConsolidated();
+			PageBase.Scrollbar(250, 500);
 		PageBase.MediumWaitForElementEnabled();
-		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
+		
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
@@ -136,7 +139,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.SelectBillingType(BillingType);
+		//CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -168,7 +171,7 @@ public class TollNQXTollExpressTests {
 	}
 	
 	@Test(priority = 3)
-	@Parameters({"TollCarrierItemTollNQXTollExpress", "TollNQXServicePremium","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServicePremium","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
 			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
@@ -191,8 +194,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
-		CreateShipmentActions.SelectShipmentConsolidatedContinue();
-		PageBase.MediumWaitForElementEnabled();
+		 CreateShipmentActions.SelectShipmentConsolidated();
+			PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
@@ -207,7 +210,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.SelectBillingType(BillingType);
+		//CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -239,13 +242,13 @@ public class TollNQXTollExpressTests {
 	}
 	
 	@Test(priority = 4)
-	@Parameters({"TollCarrierItemTollNQXTollExpress", "TollNQXServiceRefrigeration","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceRefrigeration","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
 			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
 	
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Refrigeration(
-			String TollCarrierItem,Integer TollNQXServiceRefrigeration,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String TollCarrierItem,String ServiceRefrigeration,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,
 			String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
@@ -254,8 +257,7 @@ public class TollNQXTollExpressTests {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrierItem);
 		
-		CreateShipmentActions.SelectService(TollNQXServiceRefrigeration);
-		//CreateShipmentActions.ClickContinueAccountChangeMsg();
+		CreateShipmentActions.EnterService(ServiceRefrigeration);
 		
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectTempratureType(1);
@@ -264,8 +266,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
-		CreateShipmentActions.SelectShipmentConsolidatedContinue();
-		PageBase.MediumWaitForElementEnabled();
+		 CreateShipmentActions.SelectShipmentConsolidated();
+			PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
@@ -280,7 +282,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.SelectBillingType(BillingType);
+		//CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -312,13 +314,13 @@ public class TollNQXTollExpressTests {
 	}
 	
 	@Test(priority = 5)
-	@Parameters({"TollCarrierItemTollNQXTollExpress", "TollNQXServiceDangerousGoods","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail","ReceiverEmail",
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceDangerousGoods","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
 			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
 	
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DangerousGoods(
-			String TollCarrierItem,Integer TollNQXServiceDangerousGoods,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName, String DGContactNumber,
+			String TollCarrierItem,String ServiceDangerousGoods,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName, String DGContactNumber,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,
 			String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
@@ -327,7 +329,7 @@ public class TollNQXTollExpressTests {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrierItem);
 		
-		CreateShipmentActions.SelectService(TollNQXServiceDangerousGoods);
+		CreateShipmentActions.EnterService(ServiceDangerousGoods);
 		//CreateShipmentActions.ClickContinueAccountChangeMsg();
 		
 		BookAPickupActions.SelectAccountNumber1();
@@ -337,8 +339,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
-		CreateShipmentActions.SelectShipmentConsolidatedContinue();
-		PageBase.MediumWaitForElementEnabled();
+		 CreateShipmentActions.SelectShipmentConsolidated();
+			PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.VerifyDGContactName(DGContactName);
 		CreateShipmentActions.VerifyDGContactNumber(DGContactNumber);
 		
@@ -356,7 +358,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.SelectBillingType(BillingType);
+		//CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
@@ -389,13 +391,13 @@ public class TollNQXTollExpressTests {
 	}
 	
 	@Test(priority = 6)
-	@Parameters({ "TollCarrierItemTollNQXTollExpress", "TollNQXServiceDGExpress","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail","ReceiverEmail",
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGExpress","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
 			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
 	
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DGExpress(
-			String TollCarrierItem,Integer TollNQXServiceDGExpress,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName, String DGContactNumber,
+			String TollCarrierItem,String ServiceDGExpress,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName, String DGContactNumber,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,
 			String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
@@ -404,7 +406,7 @@ public class TollNQXTollExpressTests {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrierItem);
 		
-		CreateShipmentActions.SelectService(TollNQXServiceDGExpress);
+		CreateShipmentActions.EnterService(ServiceDGExpress);
 		//CreateShipmentActions.ClickContinueAccountChangeMsg();
 		
 		BookAPickupActions.SelectAccountNumber1();
@@ -413,7 +415,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
-		PageBase.MediumWaitForElementEnabled();
+		 CreateShipmentActions.SelectShipmentConsolidated();
+			PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.VerifyDGContactName(DGContactName);
 		CreateShipmentActions.VerifyDGContactNumber(DGContactNumber);
 		
@@ -431,7 +434,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.SelectBillingType(BillingType);
+	//	CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
@@ -464,22 +467,23 @@ public class TollNQXTollExpressTests {
 	}
 	
 	@Test(priority = 7)
-	@Parameters({"TollCarrierItemTollNQXTollExpress", "TollNQXServiceDGRefrigeration","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail","ReceiverEmail",
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceDGRefrigerated","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
 			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
 	
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DGRefrigerated(
-			String TollCarrierItem,Integer TollNQXServiceDGRefrigeration,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName, String DGContactNumber,
+			String TollCarrierItem,String ServiceDGRefrigerated,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName, String DGContactNumber,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,
 			String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
 			String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
 
+
 		BookAPickupActions.EnterTollCarrierItem(TollCarrierItem);
 		
-		CreateShipmentActions.SelectService(TollNQXServiceDGRefrigeration);
+		CreateShipmentActions.EnterService(ServiceDGRefrigerated);
 		//CreateShipmentActions.ClickContinueAccountChangeMsg();
 		
 		BookAPickupActions.SelectAccountNumber1();
@@ -489,7 +493,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
-		CreateShipmentActions.SelectShipmentConsolidatedContinue();
+		 CreateShipmentActions.SelectShipmentConsolidated();
+			PageBase.Scrollbar(250, 500);
 		PageBase.MaximumWaitForElementEnabled();
 		CreateShipmentActions.VerifyDGContactName(DGContactName);
 		CreateShipmentActions.VerifyDGContactNumber(DGContactNumber);
@@ -508,7 +513,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.SelectBillingType(BillingType);
+		//CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
@@ -541,23 +546,22 @@ public class TollNQXTollExpressTests {
 	}
 	
 	@Test(priority = 8)
-	@Parameters({ "TollCarrierItemTollNQXTollExpress", "TollNQXServiceRailGeneral","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail","ReceiverEmail",
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailGeneral","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
 			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
 	
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailGeneral(
-			String TollCarrierItem,Integer TollNQXServiceRailGeneral,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName, String DGContactNumber,
+			String TollCarrierItem,String ServiceRailGeneral,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName, String DGContactNumber,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,
 			String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
 			String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
-
-		BookAPickupActions.EnterTollCarrierItem(TollCarrierItem);
+	    BookAPickupActions.EnterTollCarrierItem(TollCarrierItem);
 		
-		CreateShipmentActions.SelectService(TollNQXServiceRailGeneral);
-		CreateShipmentActions.ClickContinueAccountChangeMsg();
+		CreateShipmentActions.EnterService(ServiceRailGeneral);
+		
 		
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(WhoPays);
@@ -565,7 +569,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
-		CreateShipmentActions.SelectShipmentConsolidatedContinue();
+		 CreateShipmentActions.SelectShipmentConsolidated();
+			PageBase.Scrollbar(250, 500);
 		PageBase.MediumWaitForElementEnabled();
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
@@ -581,7 +586,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.SelectBillingType(BillingType);
+		//CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
@@ -615,23 +620,22 @@ public class TollNQXTollExpressTests {
 	
 
 	@Test(priority = 9)
-	@Parameters({"TollCarrierItemTollNQXTollExpress", "TollNQXServiceRailDangerousGoods","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail","ReceiverEmail",
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceRailDangerousGoods","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
 			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
 	
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailDangerousGoods(
-			String TollCarrierItem,Integer TollNQXServiceRailDangerousGoods,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName, String DGContactNumber,
+			String TollCarrierItem,String ServiceRailDangerousGoods,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName, String DGContactNumber,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,
 			String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
 			String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrierItem);
-		
-		CreateShipmentActions.SelectService(TollNQXServiceRailDangerousGoods);
-		CreateShipmentActions.ClickContinueAccountChangeMsg();
+		 BookAPickupActions.EnterTollCarrierItem(TollCarrierItem);
+			
+		CreateShipmentActions.EnterService(ServiceRailDangerousGoods);
 		
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(WhoPays);
@@ -639,8 +643,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
-		CreateShipmentActions.SelectShipmentConsolidatedContinue();
-		PageBase.MaximumWaitForElementEnabled();
+		 CreateShipmentActions.SelectShipmentConsolidated();
+			PageBase.Scrollbar(250, 500);
 		CreateShipmentActions.VerifyDGContactName(DGContactName);
 		CreateShipmentActions.VerifyDGContactNumber(DGContactNumber);
 		
@@ -658,7 +662,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.SelectBillingType(BillingType);
+		//CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);

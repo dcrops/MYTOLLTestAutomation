@@ -27,7 +27,7 @@ public class TollPriorityNZTest {
 				MyTollHomePageActions.ClickBookAPIckupMenu();
 			}
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName", "NumberOfItems",
+	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName", "NumberOfItems",
 		"Length", "Width", "Height", "Weight", "palletSpace","reference", "DestinationNZ", "specialIns" })
 	
 	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619(String TollCarrier, String ServiceGlobalExpressDocuments,
@@ -59,7 +59,7 @@ public class TollPriorityNZTest {
 			BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 			
 			BookAPickupActions.SelectItemDescription();
-			jse.executeScript("scroll(1000, 1500)");
+			jse.executeScript("scroll(100, 150)");
 			BookAPickupActions.SelectDangerousGoods(2);
 			
 			
@@ -77,7 +77,7 @@ public class TollPriorityNZTest {
 	}
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName", "NumberOfItems",
+	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName", "NumberOfItems",
 		"Length", "Width", "Height", "Weight", "palletSpace","reference", "DestinationNZ", "specialIns" })
 	
 	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_VerifyDetails(String TollCarrier, String ServiceGlobalExpressDocuments,
@@ -109,7 +109,7 @@ public class TollPriorityNZTest {
 			BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 			
 			BookAPickupActions.SelectItemDescription();
-			jse.executeScript("scroll(1000, 1500)");
+			jse.executeScript("scroll(100, 500)");
 			BookAPickupActions.SelectDangerousGoods(2);
 			
 			
@@ -128,7 +128,7 @@ public class TollPriorityNZTest {
 	}
 	
 	@Test(priority = 1)
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName", "NumberOfItems",
+	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName", "NumberOfItems",
 		"Length", "Width", "Height", "Weight", "palletSpace","reference", "Destination", "specialIns" })
 	
 	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_GlobalExpress(String TollCarrier, String ServiceGlobalExpressDocuments,
@@ -158,7 +158,7 @@ public class TollPriorityNZTest {
 			BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 			
 			BookAPickupActions.SelectItemDescription();
-			jse.executeScript("scroll(1000, 1500)");
+			jse.executeScript("scroll(100, 500)");
 			BookAPickupActions.SelectDangerousGoods(2);
 						
 			

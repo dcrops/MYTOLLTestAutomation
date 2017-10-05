@@ -43,7 +43,7 @@ public class TollIPECTests {
 			) {
 
 		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+	
 		CreateShipmentActions.SelectService(TollIPECServiceRoadExpress);
 		
 		
