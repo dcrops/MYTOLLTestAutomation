@@ -31,7 +31,8 @@ public class TollIntermodalTests {
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight(String TollCarrier,
 			String ServiceDGFreight, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
-			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
+			String Width, String Height, String Weight, Integer DGYes, Integer DGNo,String lookupName,
+			Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg,String technicalName, Integer BillingType,
 			String SpeceialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
@@ -65,6 +66,11 @@ public class TollIntermodalTests {
 
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
+		
+		// Enter dangerous goods details
+		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
+		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.EnterTechnicalName(technicalName);
 
 		//CreateShipmentActions.SelectBillingType(BillingType);
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
@@ -81,11 +87,13 @@ public class TollIntermodalTests {
 	@Test(priority = 4)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "DropOffDepot", "CollectionDepot",
 			"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
-			"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
+			"Height", "Weight", "DGYes", "DGNo",  "lookupName", "lookupItem", "packageDescription",
+			"pDgPkgQty", "pDgQtyKg","technicalName","BillingType", "SpeceialIns" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight_ShipmentReview(String TollCarrier,
 			String ServiceDGFreight, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
-			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
+			String Width, String Height, String Weight, Integer DGYes, Integer DGNo,String lookupName,
+			Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg,String technicalName, Integer BillingType,
 			String SpeceialIns) {
 
 		//CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
@@ -119,7 +127,12 @@ public class TollIntermodalTests {
 		
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
-
+		
+		// Enter dangerous goods details
+		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
+		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.EnterTechnicalName(technicalName);
+		
 		//CreateShipmentActions.SelectBillingType(BillingType);
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
@@ -182,7 +195,7 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectReceiver(3);
 		
 		 CreateShipmentActions.SelectShipmentConsolidated();
-		PageBase.Scrollbar(250, 500);
+		PageBase.Scrollbar(500, 800);
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
@@ -192,7 +205,7 @@ public class TollIntermodalTests {
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		PageBase.Scrollbar(500, 1000);
+		PageBase.Scrollbar(800, 1000);
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -415,11 +428,11 @@ public class TollIntermodalTests {
 
 	
 	@Test(priority = 1)
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "DropOffDepot", "CollectionDepot",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration","AccountNumber","ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot",
 			"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 			"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Refrigeration(String TollCarrier,
-			String ServiceRefrigeration, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String ServiceRefrigeration, String AccountNumber,String ReceiverName, String ReceiverItem, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 			String SpeceialIns) {
@@ -429,7 +442,8 @@ public class TollIntermodalTests {
 		CreateShipmentActions.EnterService(ServiceRefrigeration);
 		//BookAPickupActions.EnterService(ServiceRefrigeration);
 		// BookAPickupActions.SelectAccountNumber1();
-		BookAPickupActions.SelectAccountNumber1();
+		//BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumber);
 		CreateShipmentActions.SelectTempratureType(1);
 		CreateShipmentActions.SelectWhoPays(1);
 		
@@ -438,7 +452,8 @@ public class TollIntermodalTests {
 		PageBase.Scrollbar(250, 500);
 		
 		CreateShipmentActions.SelectSender(2);
-		CreateShipmentActions.SelectReceiver(3);
+		CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
+		//CreateShipmentActions.SelectReceiver(3);
 		
 		 CreateShipmentActions.SelectShipmentConsolidated();
 		PageBase.Scrollbar(250, 500);
@@ -467,11 +482,11 @@ public class TollIntermodalTests {
 	}
 	
 	//@Test(priority = 1)
-		@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "DropOffDepot", "CollectionDepot",
+		@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration","AccountNumber","ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot",
 				"DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 				"Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns" })
 		public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Refrigeration_ShipmentReview(String TollCarrier,
-				String ServiceRefrigeration, Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+				String ServiceRefrigeration,String AccountNumber, String ReceiverName, String ReceiverItem,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 				String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 				String Width, String Height, String Weight, Integer DGYes, Integer DGNo, Integer BillingType,
 				String SpeceialIns) {
@@ -480,8 +495,7 @@ public class TollIntermodalTests {
 
 			CreateShipmentActions.EnterService(ServiceRefrigeration);
 			
-			// BookAPickupActions.SelectAccountNumber1();
-			BookAPickupActions.SelectAccountNumber1();
+			BookAPickupActions.EnterAccountNumber(AccountNumber);
 			CreateShipmentActions.SelectTempratureType(1);
 			CreateShipmentActions.SelectWhoPays(1);
 		
@@ -490,7 +504,7 @@ public class TollIntermodalTests {
 			PageBase.Scrollbar(250, 500);
 			
 			CreateShipmentActions.SelectSender(2);
-			CreateShipmentActions.SelectReceiver(3);
+			CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
 			
 			 CreateShipmentActions.SelectShipmentConsolidated();
 			PageBase.Scrollbar(250, 500);

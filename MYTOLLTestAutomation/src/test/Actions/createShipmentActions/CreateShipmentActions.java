@@ -21,7 +21,8 @@ public class CreateShipmentActions {
 	public static By whoPaysdropdown = By.xpath("//*[@id=\"payer-selector\"]/label/a/i");
 	public static By senderdropdown = By.xpath("//*[@id=\"sender-selector\"]/label/a/i");
 	public static By accountNumber = By.name("account-text");
-	public static By receiverdropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i"); //*[@id="shipment-cons-popup-wrpr"]/div/div/header/h2
+	public static By receiverdropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i");
+	public static By receiverTextfield = By.xpath("//*[@id=\"receiver-selector\"]/label/input[2]");
 	public static By shipmentConsolidatedMSGHeading=By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/header/h2"); 
 	public static By shipmentConsolidatedRadioBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[1]/label");
 	public static By shipmentConsolidatedArrowdown = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]");
@@ -141,6 +142,14 @@ public class CreateShipmentActions {
 		//*[@id="sender-selector"]/div[2]/ul/li[2]/div[2]
 	}
 
+	public static String GetSender(String pSender) {
+		PageBase.MaximumWaitForElementEnabled();
+		String vSender=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[\" + i + \"]/div[2]")).getText();
+		//String vSender=BaseWebdriver.driver.findElement(By.xpath("By.xpath(\"//*[@id='\"sender-selector\"]/div[2]/ul/li/div[text()='"+pSender+"']")).getText();
+		return vSender;
+	
+	}
+	
 	public static void EnterAccountNumber(String pAccountNumber) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(accountNumber).click();
@@ -151,14 +160,26 @@ public class CreateShipmentActions {
 
 	public static void SelectReceiver(int i) {
 		PageBase.MaximumWaitForElementEnabled();
-		
 		BaseWebdriver.driver.findElement(receiverdropdown).click();
+		PageBase.Scrollbar(500, 800);
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[\" + i + \"]/div[2]"))
 				.click();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 	}
 
+	public static void EnterReceiver(String Receiver,String pReceiver) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(receiverTextfield).click();
+		BaseWebdriver.driver.findElement(receiverTextfield).clear();
+		BaseWebdriver.driver.findElement(receiverTextfield).sendKeys(Receiver);
+		PageBase.Scrollbar(500, 800);
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='"+pReceiver+"']")).click();
+				
+		PageBase.MaximumWaitForElementEnabled();//*[@id="receiver-selector"]/div[2]/ul/li[2]/div[1]
+		PageBase.MaximumWaitForElementEnabled();
+	}
+	
 	public static void SelectShipmentConsolidatedContinue() {
 		PageBase.MaximumWaitForElementEnabled();
 		
@@ -219,6 +240,8 @@ public class CreateShipmentActions {
 
 	public static void EnterShipmentReferences(String pShipmentRef1, String pShipmentRef2) {
 		PageBase.MaximumWaitForElementEnabled();
+		PageBase.Scrollbar(0, 800);
+		try {
 		BaseWebdriver.driver.findElement(shipmentReference1).click();
 		BaseWebdriver.driver.findElement(shipmentReference1).clear();
 		BaseWebdriver.driver.findElement(shipmentReference1).sendKeys(pShipmentRef1);
@@ -226,7 +249,12 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(shipmentReference2).click();
 		BaseWebdriver.driver.findElement(shipmentReference2).clear();
 		BaseWebdriver.driver.findElement(shipmentReference2).sendKeys(pShipmentRef2);
+		}
+		catch(Exception ex){
+			System.out.println(ex);
+		}
 	}
+
 
 	public static void SelectDropOffDepot(int i) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -307,9 +335,9 @@ public class CreateShipmentActions {
 	}
 	
 	public static void AddANewLineNZAUS() {
-
+		PageBase.Scrollbar(500,800);
 		BaseWebdriver.driver.findElement(addNewLine).click();
-
+		
 		BookAPickupActions.EnterItem("Automation Temp2");
 		CreateShipmentActions.NumberOfItem("15");
 		BookAPickupActions.EnterLengthWidthHeight("200", "100", "50");
@@ -321,8 +349,7 @@ public class CreateShipmentActions {
 	
 	public static void AddANewLineTIPEC() {
 
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250);");
+		PageBase.Scrollbar(500,1200);
 		BaseWebdriver.driver.findElement(addNewLine).click();
 
 		BookAPickupActions.EnterItem("Automation Temp2");

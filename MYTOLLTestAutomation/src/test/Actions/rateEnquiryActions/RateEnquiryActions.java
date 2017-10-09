@@ -10,11 +10,12 @@ import bookAPickupActions.BookAPickupActions;
 
 public class RateEnquiryActions {
 
+	public static By TollCarrierTextfield = By.name("placeholder-bu");
 	public static By collectionDate = By.name("date");
 	public static By collectionDateItem = By.xpath("//*[@id=\"pickup-location\"]/div[1]/div[1]/div/div/ul/li[2]");
 	public static By message = By.id("selected-bu-content");
 	public static By messageHeading = By.id("selected-bu-header");
-	public static By servicedropdown = By.xpath("//*[@id=\"service-selector\"]/label/a/i");
+	public static By servicedropdown = By.xpath("//*[@id=\"service-selector\"]/label/a/i");//*[@id="service-selector"]/label/input[2]
 	public static By serviceTextField = By.xpath("//*[@id=\"service-selector\"]/label/input[2]");
 	public static By selectMode = By.xpath("//*[@id=\"mode-selector\"]/label/a/i");
 	public static By originSuburbPostCode = By.xpath("//*[@id=\"sender-selector\"]/div[1]/a/i");
@@ -37,7 +38,9 @@ public class RateEnquiryActions {
 	public static By totalCharge = By.xpath("//*[@id=\"show-calculated-rate\"]/div[1]/p[1]");
 	public static By rate = By.xpath("//*[@id=\"show-calculated-rate\"]/div[1]/p[2]/span[1]");
 	public static By gst = By.xpath("//*[@id=\"show-calculated-rate\"]/div[1]/p[2]/span[2]");
-	public static By createShipmentBtn = By.id("move-to-create-shipmnt");
+	public static By createShipmentBtn = By.id("move-to-create-shipmnt"); 
+	public static By createShipmentContinue = By.id("confirm-true");
+
 
 	
 	public static void SelectTollCarrierItem(int i) {
@@ -46,6 +49,13 @@ public class RateEnquiryActions {
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/div[2]/ul/li[" + i + "]")).click();
 
 	}
+	
+	public static void EnterTollCarrier(String pTollCarrierName) {
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(TollCarrierTextfield).click();
+		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']")).click();
+		
+	}//*[@id="BU-selector"]/div[2]/ul/li[1]/div
 
 	public static void VerifyMessage(String msgHeading, String msgContent) {
 		PageBase.MinimumWaitForElementEnabled();
@@ -59,6 +69,14 @@ public class RateEnquiryActions {
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li[" + i + "]")).click();
 
 	}
+	
+	public static void EnterService(String pService ) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(servicedropdown).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='"+pService +"']")).click();
+		PageBase.MinimumWaitForElementEnabled();
+	}
+	
 
 	public static void SelectModeItem(int j) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -97,6 +115,17 @@ public class RateEnquiryActions {
 				.findElement(By.xpath("//*[@id=\"enquiry-step1\"]/div[3]/div[2]/div/div/ul/li[" + j + "]/div")).click();
 
 	}
+	
+	public static void EnterOriginSuburbPostcodeRateEnquiryTollPrioAU(String pSuburb,String pSuburbItem ) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).click();
+		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).clear();
+		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).sendKeys(pSuburb);
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"enquiry-step1\"]/div[3]/div[2]/div/div/ul/li/div[text()='"+pSuburbItem+"']")).click();
+
+	}
 
 	public static void SelectDestinationSuburbPostcode(int j) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -127,20 +156,37 @@ public class RateEnquiryActions {
 		BaseWebdriver.driver.findElement(destinationCountryTextField).clear();
 		// BaseWebdriver.driver.findElement(destinationCountryTextField).sendKeys(pCountry);
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"country-selector\"]/div/ul/li[" + j + "]/div")).click(); // *[@id="country-selector"]/div/ul/li[220]/div
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"country-selector\"]/div/ul/li[" + j + "]/div")).click(); //*[@id="country-selector"]/div/ul/li[220]/div
 
 	}
+	
+	public static void EnterDestinationCountry(String pCountry,String pCountryItem) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.retryingFindClick(destinationCountryTextField);
+		BaseWebdriver.driver.findElement(destinationCountryTextField).click();
+		BaseWebdriver.driver.findElement(destinationCountryTextField).clear();
+		BaseWebdriver.driver.findElement(destinationCountryTextField).sendKeys(pCountry);
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"country-selector\"]/div/ul/li/div[text()='"+pCountryItem+"']")).click(); //*[@id="country-selector"]/div/ul/li[220]/div
+		//*[@id="country-selector"]/div/ul/li[12]/div
+		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"country-selector\"]/div/ul/li[" + j + "]/div")).click(); //*[@id="country-selector"]/div/ul/li[220]/div
+
+	}
+
 
 	public static void EnterDestinationPostcode(String pDestinationPostcode) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(destinationPostCode).click();
 		BaseWebdriver.driver.findElement(destinationPostCode).clear();
 		BaseWebdriver.driver.findElement(destinationPostCode).sendKeys(pDestinationPostcode);
-
+		PageBase.Scrollbar(250, 500);
+		
 	}
 
 	public static void SelectItemDescription(int j) {
 		PageBase.MinimumWaitForElementEnabled();
+		PageBase.Scrollbar(0, 500);
+		
 		BaseWebdriver.driver.findElement(itemDescription).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div[2]/ul/li[" + j + "]/div"))
 				.click();
@@ -247,7 +293,7 @@ public class RateEnquiryActions {
 	public static void AddANewLineTDF() {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250);");
+		jse.executeScript("scroll(250,800);");
 		BaseWebdriver.driver.findElement(addNewLine).click();
 
 		RateEnquiryActions.SelectItemDescription(1);
@@ -278,10 +324,48 @@ public class RateEnquiryActions {
 
 	public static void ClickPriceNow() {
 		PageBase.MinimumWaitForElementEnabled();
+		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
+		jse.executeScript("scroll(250, 800);");
 		BaseWebdriver.driver.findElement(pricenowBtn).click();
 
 	}
 
+	public static void ContinueCreateShipment() {
+		try {
+		PageBase.MaximumWaitForElementEnabled();
+		Boolean results=BaseWebdriver.driver.findElement(createShipmentContinue).isDisplayed();
+		if (results=true) {
+		BaseWebdriver.driver.findElement(createShipmentContinue).click();
+		PageBase.MaximumWaitForElementEnabled();
+		}
+		}
+		
+		catch(Exception ex) {
+			System.out.println(ex);
+			RateEnquiryActions.VerifyPriceNowDetails();
+			RateEnquiryActions.ClickCreateShipment();
+		}
+		}
+		
+	public static void VerifyPriceNowDetails() {
+		try {
+		PageBase.MaximumWaitForElementEnabled();
+		Boolean results=BaseWebdriver.driver.findElement(totalCharge).isDisplayed();
+		if (results=true) {
+		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
+			
+			RateEnquiryActions.VerifyToatlCharge("Total Charge:");
+			RateEnquiryActions.VerifyGST("GST:");
+			RateEnquiryActions.VerifyRate("Rate:"); 
+		PageBase.MinimumWaitForElementEnabled();
+		}
+		}
+		
+		catch(Exception ex) {
+			System.out.println(ex);
+		}
+		}
+		
 	public static void VerifyPricenowMessage(String pPricenowMsg) {
 		PageBase.MinimumWaitForElementEnabled();
 		assertEquals(pPricenowMsg, BaseWebdriver.driver.findElement(pricenowMsg).getText());

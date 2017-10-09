@@ -361,7 +361,7 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.ClickReviewBook();
 
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.AcceptAlert();
+		//PageBase.AcceptAlert();
 		ReviewYouPickupActions.ClickEdit();
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
@@ -563,7 +563,7 @@ public class TollNQXTollExpressTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 

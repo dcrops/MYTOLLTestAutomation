@@ -72,10 +72,11 @@ public class ReviewYouPickupActions {
 		
 	}
 	
-	public static String VerifyChargeToAccount(int lineNumber) {
-		return BaseWebdriver.driver.findElement(By.xpath("//div[@id='line-item-"+lineNumber+"']/div[2]/div/div/div[4]/div/p")).getText();
+	public static String VerifyChargeToAccount(int lineNumber, String pChargeToAccount) {
+		return BaseWebdriver.driver.findElement(By.xpath("//div[@id='line-item-"+lineNumber+"']/div[2]/div/div[1]/div[label(text()='"+pChargeToAccount+"')]/div/p")).getText();
 		
-	}
+	}//*[@id="line-item-0"]/div[2]/div/div[1]/div[5]/label
+	//*[@id="line-item-0"]/div[2]/div/div[1]/div[5]/div/p
 	
 	public static String VerifyNumberofItems(int lineNumber) {
 		return BaseWebdriver.driver.findElement(By.xpath("//div[@id='line-item-"+lineNumber+"']/div[2]/div/div/div[5]/div/p")).getText();
@@ -98,7 +99,7 @@ public class ReviewYouPickupActions {
 	}
 	
 	public static void verifyReviewYourPickupScreenHeadings() {
-		assertEquals("REVIEW YOUR PICKUP",BaseWebdriver.driver.findElement(reviewYourPickupHeading).getText());
+		assertEquals("BOOK A PICKUP",BaseWebdriver.driver.findElement(reviewYourPickupHeading).getText());
 	}
 	
 	public static void verifyPickupDetailsHeading() {
@@ -176,7 +177,7 @@ public class ReviewYouPickupActions {
 		assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription).getText()); 
 	    assertEquals(pDestination+","+ pPostCode, BaseWebdriver.driver.findElement(destination).getText());
 	    assertEquals(Service, VerifyService(0));
-	    assertEquals(chargeToAccount, VerifyChargeToAccount(0));
+	    assertEquals(chargeToAccount, VerifyChargeToAccount(0,chargeToAccount));
 	    assertEquals(noOfItems, VerifyNumberofItems(0));
 	    assertEquals(palletSpace, VerifyPalletSpace(0));
 	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(lenghthHeightWeight).getText());
@@ -196,7 +197,7 @@ public class ReviewYouPickupActions {
 		//assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription).getText()); 
 	    assertEquals(pDestination+", "+ pPostCode, BaseWebdriver.driver.findElement(destination).getText());
 	    assertEquals(Service, VerifyService(itemLineNumber));
-	    assertEquals(chargeToAccount, VerifyChargeToAccount(itemLineNumber));
+	    assertEquals(chargeToAccount, VerifyChargeToAccount(itemLineNumber,"Charge to"));
 	    assertEquals(noOfItems, VerifyNumberofItems(itemLineNumber));
 	    assertEquals(palletSpace, VerifyPalletSpace(itemLineNumber));
 	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(lenghthHeightWeight).getText());
@@ -218,7 +219,7 @@ public class ReviewYouPickupActions {
 		
 	    assertEquals(pDestination+ ", "+ pPostCode, BaseWebdriver.driver.findElement(destination).getText());
 	    assertEquals(Service, VerifyService(1));
-	    assertEquals(chargeToAccount, VerifyChargeToAccount(itemLineNumber));
+	    assertEquals(chargeToAccount, VerifyChargeToAccount(itemLineNumber,chargeToAccount));
 	    assertEquals(noOfItems,VerifyNumberofItems(itemLineNumber));
 	    assertEquals(palletSpace, VerifyPalletSpace(itemLineNumber));
 	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(lenghthHeightWeight).getText());

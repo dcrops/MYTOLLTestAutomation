@@ -15,9 +15,11 @@ import baseWebdriver.BaseWebdriver;
 
 public class BookAPickupActions {
 
-	public static By TollCarrierDropdown = By.xpath("//*[@id=\"BU-selector\"]/label/a/i");  
+	public static By TollCarrierDropdown = By.xpath("//*[@id=\"BU-selector\"]/label/a/i"); 
+	public static By TollCarrierTextField = By.name("placeholder-bu"); 
 	public static By AccountNumberDropdown = By.xpath("//*[@id=\"account-selector\"]/label/a/i"); 
 	public static By AccountNumberDropdownitem1 = By.xpath("//*[@id=\"account-selector\"]/div/ul/li[1]/div[1]");
+	public static By ServiceDropdown = By.xpath("//*[@id=\"service-type-selector\"]//a/i"); 
 	public static By BookaPickupScreenHeading = By.cssSelector("h1");
 	public static By tollCarrier = By.name("placeholder-bu");
 	public static By accountNumber = By.name("placeholder-account");
@@ -31,8 +33,10 @@ public class BookAPickupActions {
 			.xpath("//*[@id=\"grid-view-selector-wrpr\"]/div/label[text(), 'Quick entry mode']");
 	public static By destinationDropdown=By.xpath("//*[@id=\"destination-country-selector\"]/label/a/i");
 	
-	public static By destination = By.id("destination-address");
+	public static By destination = By.id("destination-address"); 
+	public static By destinationCountry = By.xpath("//*[@id=\"destination-country-selector\"]/label/input[2]");
 	public static By destinationaddress = By.cssSelector("ul.option-list > li > div");
+	public static By destinationCountryItem = By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li[12]/div");
 	public static By service = By.xpath("//*[@id=\"service-type-selector\"]/div[1]/a/i");
 	public static By serviceItem = By.xpath("//*[@id=\"service-type-selector\"]/div[2]/ul/li[3]/div");
 	public static By mode = By
@@ -110,28 +114,18 @@ public class BookAPickupActions {
 	public static By addANewLine = By.id("add-line-item");
 	public static By confirmBtn = By.id("confirm-true");
 	
-	/*public static WebElement eleTollCarrer= BaseWebdriver.driver.findElement(tollCarrier);
-	public static WebElement eleTollCarrierDropdown= BaseWebdriver.driver.findElement(TollCarrierDropdown);
-	public static WebElement eleAccountNumber= BaseWebdriver.driver.findElement(accountNumber);
-	public static WebElement eleAccountNumberDropdownItem= BaseWebdriver.driver.findElement(AccountNumberDropdownitem1);
-	public static WebElement elelocationDropdown= BaseWebdriver.driver.findElement(locationDropdown);
-	public static WebElement eleLocation= BaseWebdriver.driver.findElement(location);
-	public static WebElement eleName= BaseWebdriver.driver.findElement(name);
-	public static WebElement elePhoneNumber= BaseWebdriver.driver.findElement(phoneNumber);*/
-	
-	
-	public static void EnterTollCarrierItem(String pTollCarrierName) {//*[@id="BU-selector"]/label/a/i String pDropdownSelector, String pTollCarrierName
+		
+	public static void EnterTollCarrierItem(String pTollCarrierName) {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id='BU-selector']/label/a/i")).click();
+		BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']")).click();
-
+		
 	}
 	
 	
 	public static void SelectTollCarrierItem(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/label/a/i")).click();  
 		BaseWebdriver.driver.findElement(tollCarrier).click();  
 		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li[" + i + "]/div")).click();
 
@@ -140,7 +134,6 @@ public class BookAPickupActions {
 	public static void SelectTollCarrier(int i) { 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/label/a/i")).click();  
-		//eleTollCarrierDropdown.click();
 		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li[" + i + "]/div")).click();
 
 	}
@@ -148,10 +141,17 @@ public class BookAPickupActions {
 
 	public static void SelectAccountNumberItem(int j) {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"account-selector\"]/label/a/i")).click();  
-		//eleAccountNumber.click();
+		BaseWebdriver.driver.findElement(AccountNumberDropdown).click();  
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"account-selector\"]/div/ul/li[" + j + "]+/div[2]"))
 				.click();
+
+	}
+	
+	public static void EnterAccountNumber(String pAccountNumber) {
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(AccountNumberDropdown).click();  
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()="+pAccountNumber+"]")).click();
+
 
 	}
 
@@ -164,7 +164,7 @@ public class BookAPickupActions {
 	
 	public static void EnterService(String pService ) {
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//a/i")).click();
+		BaseWebdriver.driver.findElement(ServiceDropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//ul/li/div[text()='"+pService +"']")).click();
 		PageBase.MinimumWaitForElementEnabled();
 	}
@@ -400,6 +400,19 @@ public class BookAPickupActions {
 
 	} 
 	
+	public static void SelectDestinationCountry(String pDestination) {
+
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.retryingFindClick(destinationCountry);
+		PageBase.waitForElement(BaseWebdriver.driver.findElement(destinationCountry), 10);
+		BaseWebdriver.driver.findElement(destinationCountry).clear();
+		BaseWebdriver.driver.findElement(destinationCountry).sendKeys(pDestination);
+		
+		PageBase.retryingFindClick(destinationCountryItem);
+		
+
+	} 
+	
 	public static void EnterDestination(String pDestination) {
 
 		PageBase.MaximumWaitForElementEnabled();
@@ -409,10 +422,25 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[text()='"+pDestination+"']")).click();
 		PageBase.retryingFindClick(destinationaddress);
-		
+	
 
 	} 
 	
+	public static void EnterDestinationNZ(String pDestination, String pDestinationItem) {
+
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.retryingFindClick(destination);
+		PageBase.waitForElement(BaseWebdriver.driver.findElement(destination), 10);
+		BaseWebdriver.driver.findElement(destination).clear();
+		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[1]/div")).click();
+		
+		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[text()='"+pDestinationItem+"']/div")).click();
+		//PageBase.retryingFindClick(destinationaddress);
+		//*[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[1]/div
+
+	} 
 	public static void SelectDestinationCountry(int j) {
 
 		PageBase.MaximumWaitForElementEnabled();
@@ -459,7 +487,7 @@ public class BookAPickupActions {
 	public static void SelectItemDescriptionTollPriorityAU() {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemDescription).click();
-		BaseWebdriver.driver.findElement(selectItemDescriptionTollPrioAU).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[2]/div")).click();
 	}
 
 	public static void SelectItem(int j) {
@@ -644,6 +672,7 @@ public class BookAPickupActions {
 	}
 
 	public static void EnterReferenceNumber(String ref) {
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(referenceNumber).click();
 		BaseWebdriver.driver.findElement(referenceNumber).clear();
 		BaseWebdriver.driver.findElement(referenceNumber).sendKeys(ref);
@@ -705,8 +734,8 @@ public class BookAPickupActions {
 
 	public static void AddANewLine() {
 
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250);");
+		//JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		//jse.executeScript("scroll(0, 250);");
 		BaseWebdriver.driver.findElement(addANewLine).click();
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
@@ -719,10 +748,10 @@ public class BookAPickupActions {
 		BookAPickupActions.SelectChargeToAccount2(1);
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
-		BookAPickupActions.SelectDestination("melb");
+		BookAPickupActions.SelectDestination("melbou");
 		
 
-		jse.executeScript("scroll(200, 500);");
+		//jse.executeScript("scroll(200, 500);");
 		
 		BookAPickupActions.EnterItem("Automation Temp1");
 		BookAPickupActions.selectContainFoodItem();
@@ -731,14 +760,13 @@ public class BookAPickupActions {
 
 	}
 
-	public static void AddANewLineTollTasmania() {
-
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250);");
+	public static void AddANewLineTollTasmania(String ServiceGeneral) {
+		PageBase.Scrollbar(800, 1000);
 		BaseWebdriver.driver.findElement(addANewLine).click();
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-
+		PageBase.Scrollbar(250, 800);
 		BookAPickupActions.Selectservice(2);
+		//BookAPickupActions.EnterService(ServiceGeneral);
 		BookAPickupActions.EnterQuantity("15");
 
 		BookAPickupActions.EnterPalletSpace("6");
@@ -749,11 +777,11 @@ public class BookAPickupActions {
 	
 		BookAPickupActions.SelectDestination("melb");
 		
-		jse.executeScript("scroll(200, 500);");
-		
 		BookAPickupActions.EnterItem("Automation Temp1");
 		
 		BookAPickupActions.selectDangerousGoodNewLine();
+		BookAPickupActions.selectContainFoodItem();
+		PageBase.Scrollbar(800, 1200);
 
 	}
 	public static void SaveAsTemplate() {
@@ -764,8 +792,7 @@ public class BookAPickupActions {
 
 	public static void EnterDangerousGoodsDetails(int j, String lookupItem, String packageDescription, String pDgPkgQty,
 			String pDgQtyKg) {
-		// BookAPickupActions.SelectUNNumber(j,lookupItem);
-
+		
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
@@ -807,9 +834,8 @@ public class BookAPickupActions {
 
 	public static void ClickConfirm() {
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(confirmBtn).click();
-		BaseWebdriver.driver.findElement(confirmBtn).click();
-
+		//BaseWebdriver.driver.findElement(confirmBtn).click();
+		
 	}
 	
 	

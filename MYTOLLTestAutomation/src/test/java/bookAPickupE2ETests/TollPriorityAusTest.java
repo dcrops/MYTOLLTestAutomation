@@ -78,8 +78,7 @@ public class TollPriorityAusTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// EnvConfig.tearDown();
-
+		 BaseWebdriver.tearDown();
 	}
 
 }

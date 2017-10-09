@@ -172,7 +172,7 @@ public class TollIPECTest {
 	@AfterMethod
 	  public void RunTearDown() throws Exception
 		{
-			//EnvConfig.tearDown();
+		 BaseWebdriver.tearDown();
 	
 		}
 

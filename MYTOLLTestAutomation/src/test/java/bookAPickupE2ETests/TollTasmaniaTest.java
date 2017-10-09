@@ -249,9 +249,6 @@ public class TollTasmaniaTest {
 		String volume = BookAPickupActions.GetVoulme().toString();
 		System.out.println(volume);
 	
-
-		// BookAPickupActions.SelectMode();
-		// Shipment contain Dangerous goods=yes and no food items
 		BookAPickupActions.SelectDangerousGoods(1);
 		PageBase.Scrollbar(500, 1000);
 		// Enter dangerous goods details
@@ -335,16 +332,16 @@ public class TollTasmaniaTest {
 
 		jse.executeScript("scroll(200, 500)");
 		BookAPickupActions.SelectDangerousGoods(1);
-		PageBase.Scrollbar(500, 1000);
+		PageBase.Scrollbar(500, 800);
 		// Enter dangerous goods details
-		// Enter dangerous goods details
+	
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
 		BookAPickupActions.SelectPackgingGroup("II");
 		BookAPickupActions.EnterTechnicalName(technicalName);
 
 
 		// Pickup details
-	
+		PageBase.Scrollbar(800, 1000);
 		BookAPickupActions.selectPickupDate();
 		//String pickupDate = BookAPickupActions.ReturnPickupDate();
 
@@ -458,8 +455,6 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
-		BookAPickupActions.ClickReviewBook();
-
 		// Verify Review Your Pickup
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
@@ -513,13 +508,11 @@ public class TollTasmaniaTest {
 
 		jse.executeScript("scroll(200, 500)");
 		BookAPickupActions.SelectDangerousGoods(2);
-		// BookAPickupActions.selectContainFoodItem();
-
-		PageBase.Scrollbar(800, 1000);
+		BookAPickupActions.selectContainFoodItem();
 
 		// Add a new item
-		BookAPickupActions.AddANewLineTollTasmania();
-
+		BookAPickupActions.AddANewLineTollTasmania(ServiceGeneral);
+	
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
@@ -604,7 +597,7 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.selectContainFoodItem();
 		PageBase.Scrollbar(500, 1000);
 		// Add a new item
-		BookAPickupActions.AddANewLineTollTasmania();
+		BookAPickupActions.AddANewLineTollTasmania(ServiceGeneral);
 
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
@@ -624,8 +617,7 @@ public class TollTasmaniaTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
-
+		 BaseWebdriver.tearDown();
 	}
 
 }

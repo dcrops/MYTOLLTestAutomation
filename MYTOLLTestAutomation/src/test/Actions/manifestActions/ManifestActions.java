@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 import baseWebdriver.BaseWebdriver;
 
-public class manifestActions {
+public class ManifestActions {
 	
 	public static By status= By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet10SNAPSHOT\"]/div/div/div/div/div[1]/div[1]/ul/li[2]/div[2]/p");
 	public static By dispatchDate=By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet10SNAPSHOT\"]/div/div/div/div/div[1]/div[1]/ul/li[1]/div[3]/h3");
@@ -33,12 +33,12 @@ public class manifestActions {
 	public static By move=By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet10SNAPSHOT\"]/div/div/div/div/div[1]/div[2]/ul/li[2]/div[2]/div/ul/li[3]/a/i");
 	
 	
-	public static void VerifyManifestDetails(String pStatus,String pDispatchDate,String pSenderLocation, String pTollCarrier, String pReceiver, String pReceiverLocation,
+	public static void VerifyManifestDetails(String pStatus,String pSenderLocation, String pTollCarrier, String pReceiver, String pReceiverLocation,
 			String pService, String pNoOfItems, String pWeight,String pOpenArrowdown, String pItemTemplate, String pNoOfItemsLine1, String pTotalWeight, String pMisc, String pLWH,
 			String pTotalVolume, String pReference1, String pReference2 ) {
 		
 		assertEquals(pStatus,BaseWebdriver.driver.findElement(status).getText());
-		assertEquals(pDispatchDate,BaseWebdriver.driver.findElement(dispatchDate).getText());
+		//assertEquals(pDispatchDate,BaseWebdriver.driver.findElement(dispatchDate).getText());
 		assertEquals(pSenderLocation,BaseWebdriver.driver.findElement(senderLocation).getText());
 		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
 		assertEquals(pReceiver,BaseWebdriver.driver.findElement(receiver).getText());

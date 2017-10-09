@@ -76,17 +76,20 @@ public class BaseWebdriver {
 		//DesiredCapabilities capabilities = new DesiredCapabilities();
 		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
+		
 	    Point point=new Point(0,1920);
 	    driver.manage().window().setPosition(point);
 		MyTollHomePageActions.LaunchMyToll(url);
 		BaseWebdriver.driver.manage().window().maximize();
+		System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 	}
 
 	@AfterMethod
 	public static void tearDown() throws Exception {
-		driver.quit();
+		//driver.quit();
+		//driver.close();
 
 	}
 

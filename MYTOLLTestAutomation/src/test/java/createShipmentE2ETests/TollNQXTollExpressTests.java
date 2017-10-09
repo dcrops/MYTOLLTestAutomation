@@ -78,8 +78,7 @@ public class TollNQXTollExpressTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		
-		jse.executeScript("scroll(0, 250)");
+	
 
 		CreateShipmentActions.AddANewLineNZAUS();
 		CreateShipmentActions.ItemType(2);
@@ -643,10 +642,10 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
-		 CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidated();
 			PageBase.Scrollbar(250, 500);
-		CreateShipmentActions.VerifyDGContactName(DGContactName);
-		CreateShipmentActions.VerifyDGContactNumber(DGContactNumber);
+		//CreateShipmentActions.VerifyDGContactName(DGContactName);
+		//CreateShipmentActions.VerifyDGContactNumber(DGContactNumber);
 		
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 		CreateShipmentActions.SelectNotifySenderAndReceiver();

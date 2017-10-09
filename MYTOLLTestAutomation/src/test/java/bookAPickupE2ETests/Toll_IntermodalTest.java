@@ -55,7 +55,7 @@ public class Toll_IntermodalTest {
 		
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -181,7 +181,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -249,7 +249,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -287,8 +287,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
 		BookAPickupActions.SelectPackgingGroup("II");
 		BookAPickupActions.EnterTechnicalName(technicalName);
-		jse.executeScript("scroll(500, 800)");
-
+		PageBase.Scrollbar(500, 1200);
+		
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 
@@ -336,7 +336,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -374,8 +374,7 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.SelectPackgingGroup("II");
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		// Pickup details
-		PageBase.Scrollbar(500, 1000);
-		
+		PageBase.Scrollbar(500, 1200);
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 
@@ -404,7 +403,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -473,7 +472,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -526,7 +525,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+	    BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -614,7 +613,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -668,7 +667,7 @@ public class Toll_IntermodalTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 
