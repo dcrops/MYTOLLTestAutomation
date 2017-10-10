@@ -1,6 +1,8 @@
 package bookAPickupE2ETests;
 
 import GlobalActions.PageBase;
+import GlobalActions.GlobalVariables;
+
 import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
@@ -24,7 +26,6 @@ import reviewYourPickupActions.ReviewYouPickupActions;
 
 public class Toll_IntermodalTest {
 
-	public static Integer locationIndex = 4;
 
 	@BeforeMethod
 	public void RunSetup() throws Exception {
@@ -37,7 +38,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 7)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
@@ -51,9 +52,10 @@ public class Toll_IntermodalTest {
 		// Select Toll Intermodal
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -77,9 +79,7 @@ public class Toll_IntermodalTest {
 
 		String countryCode = BookAPickupActions.GetCountryCode().toString();
 		System.out.println(countryCode);
-
-		String volume = BookAPickupActions.GetVoulme().toString();
-		System.out.println(volume);
+		
 
 		// Verification and enter data for Quick entry mode, service(Refrigeration),
 		// Mode(=Road)
@@ -94,9 +94,10 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
-
+		String volume = BookAPickupActions.GetVoulme().toString();
+		System.out.println(volume);
 		BookAPickupActions.SelectDestination(destination);
-
+		//BookAPickupActions.EnterDestination(destination);
 		// BookAPickupActions.SelectMode(); defect
 
 		BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
@@ -135,8 +136,8 @@ public class Toll_IntermodalTest {
 		ReviewYouPickupActions.verifySpecialInstructions(specialIns);
 
 		ReviewYouPickupActions.verifyLengthWidthHeight(Length + "X" + Width + "X" + Height + " CM3");
-		//ReviewYouPickupActions.verifyVolume(volume + " M3");
-		//ReviewYouPickupActions.verifyWeight(Weight + " Kg");
+		ReviewYouPickupActions.verifyVolume(volume + " M3");
+		ReviewYouPickupActions.verifyWeight(Weight + " Kg");
 
 		// Verify Review Your Pickup
 		/*
@@ -180,7 +181,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -230,6 +231,7 @@ public class Toll_IntermodalTest {
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 		/* ReviewYouPickupActions.VerifyConfirmPickupDetails(); */
+		//ReviewYouPickupActions.VerifyRefrigerationDetails();
 
 	}
 
@@ -237,17 +239,17 @@ public class Toll_IntermodalTest {
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh", "refrigerationRefNum",
 			"bookInNum", "VendorNum", "palletSpace", "Destination", "lookupName", "lookupItem", "packageDescription",
-			"pDgPkgQty", "pDgQtyKg", "specialIns" })
+			"pDgPkgQty", "pDgQtyKg","technicalName", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_DGFreight(String TollCarrier,
 			String ServiceDGFreight, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String lookupName,
-			Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg, String specialIns) {
+			Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg,String technicalName, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -276,20 +278,17 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.SelectModeItem(2);
 
-		// BookAPickupActions.SelectItem(2);
-		BookAPickupActions.EnterItem(ItemTemplateName);
-		jse.executeScript("scroll(200, 500)");
-		BookAPickupActions.selectContainFoodItem();
-
 		// Shipment contain Dangerous goods=yes and no food items
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
-
+		PageBase.Scrollbar(250, 500);
+		
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
-
-		jse.executeScript("scroll(500, 800)");
-
+		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.EnterTechnicalName(technicalName);
+		PageBase.Scrollbar(500, 1200);
+		
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 
@@ -320,24 +319,24 @@ public class Toll_IntermodalTest {
 
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 
 	}
 
 	@Test(priority = 4)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName", "lookupItem",
-			"packageDescription", "pDgPkgQty", "pDgQtyKg", "specialIns" })
+			"packageDescription", "pDgPkgQty", "pDgQtyKg","technicalName", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_DGFreight_ConfirmedDetails(String TollCarrier,
 			String ServiceDGFreight, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
-			String lookupName, Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg,
+			String lookupName, Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName,
 			String specialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -368,12 +367,14 @@ public class Toll_IntermodalTest {
 		// Shipment contain Dangerous goods=yes and no food items
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
-
+		PageBase.Scrollbar(250, 500);
+		
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
-
+		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.EnterTechnicalName(technicalName);
 		// Pickup details
-		jse.executeScript("scroll(500, 800)");
+		PageBase.Scrollbar(500, 1200);
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 
@@ -402,7 +403,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -471,7 +472,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -514,17 +515,17 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test(priority = 7)
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "VendorNum", "specialIns" })
+	@Test(priority = 1)
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "locationIndex", "ItemTemplateName","ChargeToAccount", "NumberOfItems",
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","Postcode", "VendorNum", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_General(String TollCarrier, String ServiceGeneral,
-			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-			String Height, String Weight, String palletSpace, String destination, String vendorNum, String specialIns) {
+			Integer locationIndex, String ItemTemplateName,String ChargeToAccount, String Length, String NumberOfItems, String Width,
+			String Height, String Weight, String palletSpace, String destination,String Postcode, String vendorNum, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+	    BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -543,29 +544,33 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.SelectModeItem(1);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
-
+		String volume = BookAPickupActions.GetVoulme().toString();
+		System.out.println(volume);
+		//BookAPickupActions.SelectChargeToAccount2(1);
+		BookAPickupActions.EnterChargeToAccount(ChargeToAccount);
 		BookAPickupActions.SelectDestination(destination);
-
+		//BookAPickupActions.EnterDestination(destination);
 		BookAPickupActions.SelectModeItem(1);
 
 		BookAPickupActions.selectDangerousGood();
 		BookAPickupActions.selectContainFoodItem();
-
+		PageBase.Scrollbar(250, 500);
+		
 		jse.executeScript("scroll(500, 800)");
 
 		// Add a new item
 		BookAPickupActions.AddANewLine(); // defect
-		BookAPickupActions.EnterVendorDetails(vendorNum);
-		jse.executeScript("scroll(500, 800)");
+		
+		jse.executeScript("scroll(800, 1000)");
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		// BookAPickupActions.selectReadyTime();
+		 BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		jse.executeScript("scroll(1000, 1200)");
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.ClickConfirm();
 		PageBase.MaximumWaitForElementEnabled();
 
 		// Verify Review Your Pickup
@@ -585,9 +590,11 @@ public class Toll_IntermodalTest {
 		 */
 
 		// Verify item details
-		ReviewYouPickupActions.VerifyItemDetails();
-		jse.executeScript("scroll(800, 1000)");
-		ReviewYouPickupActions.VerifyNewItemDetails();
+		ReviewYouPickupActions.VerifyItemDetails(0,ItemTemplateName,destination,Postcode,ServiceGeneral,ChargeToAccount,NumberOfItems,palletSpace
+				,Length,Width, Height,volume, Weight, "No", "No");
+		
+		ReviewYouPickupActions.VerifyNewItemDetails(1,ItemTemplateName,destination,Postcode,ServiceGeneral,ChargeToAccount,NumberOfItems,palletSpace
+				,Length,Width, Height,volume, Weight);
 
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
@@ -606,7 +613,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -615,8 +622,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 
-		// Verification and enter data for Quick entry mode, service(=Express),
-		// Mode(=Road)
+
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -633,13 +639,14 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.selectDangerousGood();
 		BookAPickupActions.selectContainFoodItem();
-
+		PageBase.Scrollbar(250, 500);
+		
 		jse.executeScript("scroll(500, 800)");
 
 		// Add a new item
 		BookAPickupActions.AddANewLine(); // defect
-		BookAPickupActions.EnterVendorDetails(vendorNum);
-		jse.executeScript("scroll(500, 800)");
+	
+		jse.executeScript("scroll(800, 1000)");
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
@@ -660,7 +667,7 @@ public class Toll_IntermodalTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 

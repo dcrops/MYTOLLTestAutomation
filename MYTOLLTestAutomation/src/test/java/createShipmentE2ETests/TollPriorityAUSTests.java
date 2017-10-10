@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import myTollHomePageActions.MyTollHomePageActions;
@@ -28,22 +29,20 @@ public class TollPriorityAUSTests {
 			}
 	
 	@Test
-	@Parameters({"TollCarrierItem", "ServiceParcelsOffPeak"})
-	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection(Integer TollCarrierItem, String ServiceParcelsOffPeak)
+	@Parameters({"TollCarrierTollPrioAU", "ServiceParcelsOffPeak"})
+	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection(String TollCarrier, String ServiceParcelsOffPeak)
 	{
 		
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceParcelsOffPeak);
-		//BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(2);
-		CreateShipmentActions.EnterAccountNumber("123");
-		CreateShipmentActions.SelectSender(2); 
-		CreateShipmentActions.SelectReceiver(2);
-		//new WebDriverWait(BaseWebdriver.driver, 10).until(ExpectedConditions.alertIsPresent());
-		//BaseWebdriver.driver.switchTo().alert().accept();
-		//CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectSender(1); 
+		//CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.EnterReceiver("Test", "Test174");
+		
+		CreateShipmentActions.SelectShipmentConsolidated();
 		CreateShipmentActions.EnterShipmentReferences("1234", "6789");
 		BookAPickupActions.EnterItem("Automation Temp1");
 		CreateShipmentActions.NumberOfItem("15"); 
@@ -63,36 +62,30 @@ public class TollPriorityAUSTests {
 	}
 	
 	@Test
-	@Parameters({"TollCarrierItem", "ServiceGlobalExpressDocuments"})
-	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(Integer TollCarrierItem, String ServiceGlobalExpressDocuments)
+	@Parameters({"TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments"})
+	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(String TollCarrier, String ServiceGlobalExpressDocuments)
 	{
 		
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
+		//CreateShipmentActions.SelectTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceGlobalExpressDocuments); 
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(1);
-		CreateShipmentActions.SelectSender(3);
-		CreateShipmentActions.SelectReceiver(2);
-		//Alert alert = BaseWebdriver.driver.switchTo().alert();
-		//alert.accept();
-		//CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectSender(2);
+		CreateShipmentActions.SelectReceiver(3);
+		
+		CreateShipmentActions.SelectShipmentConsolidated();
 		CreateShipmentActions.EnterShipmentReferences("1234", "6789");
 		BookAPickupActions.EnterItem("Automation Temp1");
 		CreateShipmentActions.NumberOfItem("15"); 
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		CreateShipmentActions.EnterWeight("20");
+		PageBase.Scrollbar(500, 800);
 		BookAPickupActions.selectDangerousGood();
-		
-	
-		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-		
-				
+		PageBase.Scrollbar(1200,1500);
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.selectDangerousGood();
-		
+		PageBase.Scrollbar(800, 1000);
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
 		CreateShipmentActions.ClickReviewCreateShipment();
 	}

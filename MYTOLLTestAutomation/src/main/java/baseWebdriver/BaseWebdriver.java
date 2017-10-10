@@ -17,8 +17,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import myTollHomePageActions.MyTollHomePageActions;
 
-
-
 public class BaseWebdriver {
 
 	public static WebDriver driver;
@@ -32,9 +30,6 @@ public class BaseWebdriver {
 	public static String CreateshipmentTollTasPassword="tolTOL123!@#";//"Victoria@123";
 	
 	//*[@id="service-type-selector"]/label/a/i
-	
-	
-	
 	
 	@BeforeMethod
 	public static void RunSetup(String browser) throws Exception {
@@ -78,19 +73,23 @@ public class BaseWebdriver {
 
 	@BeforeMethod
 	public static void setUp() throws Exception {
-		
+		//DesiredCapabilities capabilities = new DesiredCapabilities();
 		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
-	
+		
+	    Point point=new Point(0,1920);
+	    driver.manage().window().setPosition(point);
 		MyTollHomePageActions.LaunchMyToll(url);
 		BaseWebdriver.driver.manage().window().maximize();
+		System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 	}
 
 	@AfterMethod
 	public static void tearDown() throws Exception {
-		driver.quit();
+		//driver.quit();
+		//driver.close();
 
 	}
 

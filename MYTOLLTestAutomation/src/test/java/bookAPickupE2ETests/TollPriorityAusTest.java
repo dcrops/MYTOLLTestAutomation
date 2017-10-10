@@ -5,6 +5,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import GlobalActions.GlobalVariables;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import myTollHomePageActions.MyTollHomePageActions;
@@ -71,14 +73,12 @@ public class TollPriorityAusTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails();
-
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// EnvConfig.tearDown();
-
+		 BaseWebdriver.tearDown();
 	}
 
 }

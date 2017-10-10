@@ -38,6 +38,9 @@ public class ShipmentReviewActions {
 	public static By reference2=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[8]/p");
 	public static By ShipmentContainDGGoods=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[9]/p");
 	
+	// 
+	
+	public static By continueBtn=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[2]/div[1]/a[1]");
 	
 	public static void VerifyDispatchDate(String pDispatchDate) {
 		assertEquals(pDispatchDate,BaseWebdriver.driver.findElement(dispatchDate).getText());
@@ -116,4 +119,9 @@ public class ShipmentReviewActions {
 	public static void VerifyShipmentContainDGGoods(String pShipmentContainDGGoods) {
 		assertEquals(pShipmentContainDGGoods,  BaseWebdriver.driver.findElement(ShipmentContainDGGoods).getText());
 	}
+	
+	public static void ClickContinue() {
+		BaseWebdriver.driver.findElement(continueBtn).click();
+	}
+	
 }

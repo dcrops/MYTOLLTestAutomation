@@ -48,18 +48,13 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:");
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 	}
 	
 	@Test
@@ -89,18 +84,13 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:");
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 	
 	}
 	
@@ -131,18 +121,12 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:");
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 	}
 	
 	
@@ -160,30 +144,23 @@ public class TollNQXTollExpressTests {
 		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
 		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("Melbo",2);
 	
-		BookAPickupActions.SelectAccountNumber1();
+		//BookAPickupActions.SelectAccountNumber1();
 		
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-		
-		RateEnquiryActions.SelectItemDescription(1);
-		
+		jse.executeScript("scroll(0, 500)");
+				
 		RateEnquiryActions.NumberOfItem("15"); 
 		RateEnquiryActions.QuantityType(2);
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:");
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 	}
 	
 	@Test
@@ -204,7 +181,7 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.SelectAccountNumber1();
 		
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		jse.executeScript("scroll(0, 500)");
 		
 		RateEnquiryActions.SelectItemDescription(1);
 		
@@ -213,18 +190,13 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:");
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 	}
 	
 	@Test
@@ -254,19 +226,13 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:");
-		
-		RateEnquiryActions.ClickCreateShipment();
-	
+		RateEnquiryActions.ContinueCreateShipment();
 	}
 	
 	@Test
@@ -296,18 +262,13 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 	
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:");
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 	}
 	
 	
@@ -338,17 +299,13 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-	
-		RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:");
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 		
 	}
 	
@@ -379,18 +336,13 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+		//RateEnquiryActions.SelectBillingTypeTDF(1);
+		RateEnquiryActions.EnterBillingType("General Freight");
+		RateEnquiryActions.EnterBillingType("General Freight");
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		/*RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:"); */
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 	
 	}
 	

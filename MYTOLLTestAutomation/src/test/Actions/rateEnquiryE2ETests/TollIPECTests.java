@@ -47,6 +47,9 @@ public class TollIPECTests {
 		RateEnquiryActions.EnterWeight("20");
 		
 		RateEnquiryActions.AddANewLine();
+		
+		RateEnquiryActions.ClickPriceNow();
+		RateEnquiryActions.ContinueCreateShipment();
 	
 	}
 	

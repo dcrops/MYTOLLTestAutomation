@@ -28,7 +28,7 @@ public class TollPriorityNZTests {
 	{
 		
 		RateEnquiryActions.SelectTollCarrierItem(tollCarrier);
-		RateEnquiryActions.SelectTollCarrierItem(tollCarrier);
+	
 		RateEnquiryActions.SelectService(4);; 
 		BookAPickupActions.SelectAccountNumber1();
 		
@@ -38,9 +38,9 @@ public class TollPriorityNZTests {
 		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("CHRISTCHURCH CENTRAL",2);
 	
 		RateEnquiryActions.SelectItemDescription(3);
-		
+		//BookAPickupActions.EnterItem("Automation Template");
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		jse.executeScript("scroll(0, 500)");
 		
 		RateEnquiryActions.NumberOfItem("15"); 
 		//RateEnquiryActions.QuantityType(2);
@@ -50,14 +50,8 @@ public class TollPriorityNZTests {
 		RateEnquiryActions.AddANewLineNZAUS();
 		
 		RateEnquiryActions.ClickPriceNow();
+		RateEnquiryActions.ContinueCreateShipment();
 		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		/*RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:"); */
-		
-		RateEnquiryActions.ClickCreateShipment();
 	
 	}
 	
@@ -66,20 +60,22 @@ public class TollPriorityNZTests {
 	{
 		
 		RateEnquiryActions.SelectTollCarrierItem(tollCarrier);
-		RateEnquiryActions.SelectTollCarrierItem(tollCarrier);
-		RateEnquiryActions.SelectService(1);; 
+	
+		RateEnquiryActions.SelectService(6);; 
 		BookAPickupActions.SelectAccountNumber1();
-		
+	
 		//RateEnquiryActions.SelectModeItem(1); 
 		//RateEnquiryActions.VerifyMessage("Toll IPEC","Toll IPEC is a leading provider of express road freight within Australia with the capability to create customised solutions to meet our customers’ freight distribution needs, no matter their size or urgency.");
 		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiry("WELLINGTON",3);
-		RateEnquiryActions.SelectDestinationCountry("Australia",13);
+		//RateEnquiryActions.SelectDestinationCountry("Australia",13);
+		RateEnquiryActions.EnterDestinationCountry("Aus", "AUSTRALIA");
 		RateEnquiryActions.EnterDestinationPostcode("3000");
 	
-		RateEnquiryActions.SelectItemDescription(1);
+		//RateEnquiryActions.SelectItemDescription(1);
+		BookAPickupActions.EnterItem("Automation Template");
 		
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+	
 		
 		RateEnquiryActions.NumberOfItem("15"); 
 		//RateEnquiryActions.QuantityType(2);
@@ -90,13 +86,9 @@ public class TollPriorityNZTests {
 		
 		RateEnquiryActions.ClickPriceNow();
 		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
+		RateEnquiryActions.ContinueCreateShipment();
 		
-		/*RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:"); */
-		
-		RateEnquiryActions.ClickCreateShipment();
+	
 	
 	}
 	

@@ -3,6 +3,7 @@ package rateEnquiryE2ETests;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import baseWebdriver.BaseWebdriver;
@@ -22,79 +23,71 @@ public class TollPriorityAUSTests {
 			}
 	
 	@Test
-	public void RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_OvernightRegionalCollection()
+	@Parameters({ "TollCarrierTollPrioAU","ServiceParcelsOffPeak"})
+	public void RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_ParcelOffPeak(String TollCarrier,
+			String ServiceParcelsOffPeak)
 	{
 		
-		RateEnquiryActions.SelectTollCarrierItem(5);
-		RateEnquiryActions.SelectTollCarrierItem(5);
-		RateEnquiryActions.SelectService(1);; 
+		//RateEnquiryActions.SelectTollCarrierItem(5);
+		RateEnquiryActions.EnterTollCarrier(TollCarrier);
+		RateEnquiryActions.EnterService(ServiceParcelsOffPeak);
+				
 		BookAPickupActions.SelectAccountNumber1();
 		
 		//RateEnquiryActions.SelectModeItem(1); 
 		//RateEnquiryActions.VerifyMessage("Toll IPEC","Toll IPEC is a leading provider of express road freight within Australia with the capability to create customised solutions to meet our customers’ freight distribution needs, no matter their size or urgency.");
 		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Mel",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("MELBO",2);
+		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("MELBO",1);
 	
 		RateEnquiryActions.SelectItemDescription(3);
+		//BookAPickupActions.EnterItem("Automation Template");
 		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
 		 
-		RateEnquiryActions.NumberOfItem("15"); 
+		//RateEnquiryActions.NumberOfItem("15"); 
 		//RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
+		//BookAPickupActions.EnterLengthWidthHeight("200","100","50");
+		//RateEnquiryActions.EnterWeight("3");
 		
 		RateEnquiryActions.AddANewLineNZAUS();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		/*RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:"); */
-		
-		RateEnquiryActions.ClickCreateShipment(); 
+		RateEnquiryActions.ContinueCreateShipment();
 	
 	}
 	
-	@Test
-	public void RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_GlobalExpressDocuments()
+	@Test 
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments"})
+	public void RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_GlobalExpressDocuments(String TollCarrier,
+			String ServiceGlobalExpressDocuments)
 	{
 		
-		RateEnquiryActions.SelectTollCarrierItem(5);
-		RateEnquiryActions.SelectTollCarrierItem(5);
-		RateEnquiryActions.SelectService(18);; 
+		//RateEnquiryActions.SelectTollCarrierItem(5);
+		RateEnquiryActions.EnterTollCarrier(TollCarrier);
+		RateEnquiryActions.EnterService(ServiceGlobalExpressDocuments);
 		BookAPickupActions.SelectAccountNumber1();
+		
 		
 		//RateEnquiryActions.SelectModeItem(1); 
 		//RateEnquiryActions.VerifyMessage("Toll IPEC","Toll IPEC is a leading provider of express road freight within Australia with the capability to create customised solutions to meet our customers’ freight distribution needs, no matter their size or urgency.");
 		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
-		RateEnquiryActions.SelectDestinationCountry("United States",220);
-	
-		RateEnquiryActions.SelectItemDescription(3);
-		
+		//RateEnquiryActions.EnterOriginSuburbPostcodeRateEnquiryTollPrioAU("Melbou","3000, MELBOURNE, VIC, AU");
+		//RateEnquiryActions.SelectDestinationCountry("United States",220);
+		RateEnquiryActions.EnterDestinationCountry("United States", "UNITED STATES");
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterItem("Automation Template");
 		
+		jse.executeScript("scroll(0, 250)");
+		//RateEnquiryActions.SelectItemDescription(3);
+		
+	
 		RateEnquiryActions.NumberOfItem("15"); 
 		//RateEnquiryActions.QuantityType(2);
 		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
 		RateEnquiryActions.EnterWeight("20");
 		
 		RateEnquiryActions.AddANewLineNZAUS();
-		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		/*RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:"); */
-		
-		RateEnquiryActions.ClickCreateShipment();
-	
+		RateEnquiryActions.ContinueCreateShipment();
 	}
 	
 	@AfterMethod

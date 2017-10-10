@@ -1,88 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="4" passed="3">
+<testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
   <reporter-output>
-    <line>
-      <![CDATA[Expected Text : TEMPLATE SUCCESSFULLY SAVED Matched the Text on Screen :TEMPLATE SUCCESSFULLY SAVED]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br>]]>
-    </line>
-    <line>
-      <![CDATA[Expected Text : TestToll Intermodal2890 Matched the Text on Screen :TestToll Intermodal2890]]>
-    </line>
-    <line>
-      <![CDATA[Expected Text : TEMPLATE SUCCESSFULLY SAVED Matched the Text on Screen :TEMPLATE SUCCESSFULLY SAVED]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br>]]>
-    </line>
-    <line>
-      <![CDATA[Expected Text : TestToll Tasmania6236 Matched the Text on Screen :TestToll Tasmania6236]]>
-    </line>
-    <line>
-      <![CDATA[Expected Text : TEMPLATE SUCCESSFULLY SAVED Matched the Text on Screen :TEMPLATE SUCCESSFULLY SAVED]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br>]]>
-    </line>
-    <line>
-      <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br>]]>
-    </line>
-    <line>
-      <![CDATA[Expected Text : TestToll NQX | Toll Express412 Matched the Text on Screen :TestToll NQX | Toll Express412]]>
-    </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="426624" started-at="2017-10-09T05:56:34Z" finished-at="2017-10-09T06:03:40Z">
+  <suite name="Suite" duration-ms="49962" started-at="2017-09-27T07:24:00Z" finished-at="2017-09-27T07:24:50Z">
     <groups>
     </groups>
-    <test name="chromeTest" duration-ms="426624" started-at="2017-10-09T05:56:34Z" finished-at="2017-10-09T06:03:40Z">
-      <class name="bookAPickupE2ETests.Toll_Add_Template">
-        <test-method status="PASS" signature="RunSetup()[pri:0, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="RunSetup" is-config="true" duration-ms="14994" started-at="2017-10-09T16:56:34Z" finished-at="2017-10-09T16:56:49Z">
+    <test name="createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General" duration-ms="49962" started-at="2017-09-27T07:24:00Z" finished-at="2017-09-27T07:24:50Z">
+      <class name="createShipmentE2ETests.TollPriorityAUSTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="RunSetup" is-config="true" duration-ms="23945" started-at="2017-09-27T17:24:00Z" finished-at="2017-09-27T17:24:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunSetup -->
-        <test-method status="FAIL" signature="addTemplate()[pri:1, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="addTemplate" duration-ms="27981" started-at="2017-10-09T16:56:49Z" finished-at="2017-10-09T16:57:17Z">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method status="FAIL" signature="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(java.lang.Integer, java.lang.Integer)[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments" duration-ms="25993" started-at="2017-09-27T17:24:24Z" finished-at="2017-09-27T17:24:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id="bu-dropdown-new"]/div/ul/li/div[text()='Sheyan'] (tried for 10 second(s) with 500 MILLISECONDS interval)]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="service-selector"]/div/ul/li[15]/div"}
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.08 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'PC12159', ip: '172.28.181.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\2712\AppData\Local\Temp\scoped_dir56068_23239}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 8946611f8c1a3ebde4130df35627f0a9
+*** Element info: {Using=xpath, value=//*[@id="service-selector"]/div/ul/li[15]/div}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id="bu-dropdown-new"]/div/ul/li/div[text()='Sheyan'] (tried for 10 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at GlobalActions.PageBase.click(PageBase.java:53)
-	at bookAPickupE2ETests.Toll_Add_Template.add(Toll_Add_Template.java:66)
-	at bookAPickupE2ETests.Toll_Add_Template.addTemplate(Toll_Add_Template.java:39)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="service-selector"]/div/ul/li[15]/div"}
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.08 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'PC12159', ip: '172.28.181.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\2712\AppData\Local\Temp\scoped_dir56068_23239}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 8946611f8c1a3ebde4130df35627f0a9
+*** Element info: {Using=xpath, value=//*[@id="service-selector"]/div/ul/li[15]/div}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
+	at createShipmentActions.CreateShipmentActions.SelectService(CreateShipmentActions.java:86)
+	at createShipmentE2ETests.TollPriorityAUSTests.CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(TollPriorityAUSTests.java:72)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -108,126 +88,58 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //*[@id="bu-dropdown-new"]/div/ul/li/div[text()='Sheyan']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
-System info: host: 'DESKTOP-GTKVGKN', ip: '192.168.19.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:183)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:180)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 28 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addTemplate -->
-        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="RunTearDown" is-config="true" duration-ms="1205" started-at="2017-10-09T16:57:17Z" finished-at="2017-10-09T16:57:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RunTearDown -->
-        <test-method status="PASS" signature="RunSetup()[pri:0, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="RunSetup" is-config="true" duration-ms="14608" started-at="2017-10-09T16:57:18Z" finished-at="2017-10-09T16:57:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RunSetup -->
-        <test-method status="PASS" signature="addTemplate2()[pri:2, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="addTemplate2" duration-ms="97950" started-at="2017-10-09T16:57:33Z" finished-at="2017-10-09T16:59:10Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Expected Text : TEMPLATE SUCCESSFULLY SAVED Matched the Text on Screen :TEMPLATE SUCCESSFULLY SAVED]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br>]]>
-            </line>
-            <line>
-              <![CDATA[Expected Text : TestToll Intermodal2890 Matched the Text on Screen :TestToll Intermodal2890]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- addTemplate2 -->
-        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="RunTearDown" is-config="true" duration-ms="1046" started-at="2017-10-09T16:59:10Z" finished-at="2017-10-09T16:59:12Z">
+        </test-method> <!-- CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="RunTearDown" is-config="true" duration-ms="1" started-at="2017-09-27T17:24:50Z" finished-at="2017-09-27T17:24:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunTearDown -->
-        <test-method status="PASS" signature="RunSetup()[pri:0, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="RunSetup" is-config="true" duration-ms="14082" started-at="2017-10-09T16:59:12Z" finished-at="2017-10-09T16:59:26Z">
+        <test-method status="FAIL" signature="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection(java.lang.Integer, java.lang.Integer)[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection" duration-ms="0" started-at="2017-09-27T17:24:50Z" finished-at="2017-09-27T17:24:50Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'ServiceDXSPalletsOffpeakItem' is required by @Test on method CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection but has not been marked @Optional or defined
+in C:\Source\MYTOLLTestAutomation\CreateShipment.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'ServiceDXSPalletsOffpeakItem' is required by @Test on method CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection but has not been marked @Optional or defined
+in C:\Source\MYTOLLTestAutomation\CreateShipment.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:248)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:286)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:547)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:672)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1316)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:1044)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1134)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:776)
+	at org.testng.TestRunner.run(TestRunner.java:634)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
+	at org.testng.TestNG.runSuites(TestNG.java:1161)
+	at org.testng.TestNG.run(TestNG.java:1129)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RunSetup -->
-        <test-method status="PASS" signature="addTemplate3()[pri:3, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="addTemplate3" duration-ms="118910" started-at="2017-10-09T16:59:26Z" finished-at="2017-10-09T17:01:25Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Expected Text : TEMPLATE SUCCESSFULLY SAVED Matched the Text on Screen :TEMPLATE SUCCESSFULLY SAVED]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br>]]>
-            </line>
-            <line>
-              <![CDATA[Expected Text : TestToll Tasmania6236 Matched the Text on Screen :TestToll Tasmania6236]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- addTemplate3 -->
-        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="RunTearDown" is-config="true" duration-ms="990" started-at="2017-10-09T17:01:25Z" finished-at="2017-10-09T17:01:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RunTearDown -->
-        <test-method status="PASS" signature="RunSetup()[pri:0, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="RunSetup" is-config="true" duration-ms="14979" started-at="2017-10-09T17:01:26Z" finished-at="2017-10-09T17:01:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RunSetup -->
-        <test-method status="PASS" signature="addTemplate4()[pri:4, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="addTemplate4" duration-ms="118882" started-at="2017-10-09T17:01:40Z" finished-at="2017-10-09T17:03:39Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Expected Text : TEMPLATE SUCCESSFULLY SAVED Matched the Text on Screen :TEMPLATE SUCCESSFULLY SAVED]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br>]]>
-            </line>
-            <line>
-              <![CDATA[xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br>]]>
-            </line>
-            <line>
-              <![CDATA[Expected Text : TestToll NQX | Toll Express412 Matched the Text on Screen :TestToll NQX | Toll Express412]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- addTemplate4 -->
-        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:bookAPickupE2ETests.Toll_Add_Template@59f99ea]" name="RunTearDown" is-config="true" duration-ms="961" started-at="2017-10-09T17:03:39Z" finished-at="2017-10-09T17:03:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RunTearDown -->
-      </class> <!-- bookAPickupE2ETests.Toll_Add_Template -->
-    </test> <!-- chromeTest -->
+        </test-method> <!-- CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection -->
+      </class> <!-- createShipmentE2ETests.TollPriorityAUSTests -->
+    </test> <!-- createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General -->
   </suite> <!-- Suite -->
 </testng-results>

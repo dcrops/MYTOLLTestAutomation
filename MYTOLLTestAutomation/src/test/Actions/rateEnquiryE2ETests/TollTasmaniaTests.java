@@ -55,15 +55,7 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		/*RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:"); */
-		
-		RateEnquiryActions.ClickCreateShipment();
-	
+		RateEnquiryActions.ContinueCreateShipment();
 	}
 	
 	@Test(priority=2)
@@ -98,14 +90,7 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		/*RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:"); */
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 	
 	}
 	
@@ -141,14 +126,7 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		/*RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:"); */
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 	
 	}
 	
@@ -187,14 +165,7 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.AddANewLineTDF();
 		
 		RateEnquiryActions.ClickPriceNow();
-		
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		
-		/*RateEnquiryActions.VerifyToatlCharge("Total Charge:");
-		RateEnquiryActions.VerifyGST("GST:");
-		RateEnquiryActions.VerifyRate("Rate:"); */
-		
-		RateEnquiryActions.ClickCreateShipment();
+		RateEnquiryActions.ContinueCreateShipment();
 	
 	}
 	

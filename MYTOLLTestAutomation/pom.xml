@@ -29,6 +29,6 @@
           <locales>en,fr</locales>
         </configuration>
       </plugin>
-      </plugins>
+    </plugins>
   </build>
 </project>

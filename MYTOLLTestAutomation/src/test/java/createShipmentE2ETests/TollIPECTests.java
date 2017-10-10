@@ -32,20 +32,19 @@ public class TollIPECTests {
 	}
 
 	@Test(priority = 1)
-	@Parameters({"TollCarrierItemTollIPEC", "TollIPECServiceRoadExpress","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
+	@Parameters({"TollCarrierTollIPEC", "ServiceRoadExpress","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","TollExtraSrviceAmount"})
 	
 	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress(
-			Integer TollCarrierItem,Integer TollIPECServiceRoadExpress,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String TollCarrier,String ServiceRoadExpress,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String TollExtraSrviceAmount
 			) {
 
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrierItem);
-		CreateShipmentActions.SelectService(TollIPECServiceRoadExpress);
-		
+
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		CreateShipmentActions.EnterService(ServiceRoadExpress);
 		
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(WhoPays);
@@ -77,7 +76,7 @@ public class TollIPECTests {
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		
-		jse.executeScript("scroll(0, 250)");
+		jse.executeScript("scroll(500, 800)");
 
 		CreateShipmentActions.AddANewLineTIPEC();
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -92,20 +91,19 @@ public class TollIPECTests {
 
 
 	@Test(priority = 1)
-	@Parameters({"TollCarrierItemTollIPEC", "TollIPECServiceRoadExpress","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
+	@Parameters({"TollCarrierTollIPEC", "ServiceRoadExpress","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
 			"PackageDescription","DgPkgQty" ,"DgQtyKg","TollExtraSrviceAmount"})
 	
 	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress_ShipmentReview(
-			Integer TollCarrier,Integer TollIPECServiceRoadExpress,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String TollCarrier,String ServiceRoadExpress,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String TollExtraSrviceAmount
 			) {
 
-		CreateShipmentActions.SelectTollCarrierItem(TollCarrier);
-		
-		CreateShipmentActions.SelectService(TollIPECServiceRoadExpress);
-		
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		CreateShipmentActions.EnterService(ServiceRoadExpress);
+			
 		
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(WhoPays);

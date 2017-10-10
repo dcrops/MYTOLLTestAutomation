@@ -4,11 +4,9 @@ import GlobalActions.PageBase;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
@@ -23,9 +21,12 @@ public class CreateShipmentActions {
 	public static By whoPaysdropdown = By.xpath("//*[@id=\"payer-selector\"]/label/a/i");
 	public static By senderdropdown = By.xpath("//*[@id=\"sender-selector\"]/label/a/i");
 	public static By accountNumber = By.name("account-text");
-	public static By receiverdropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i"); //*[@id="shipment-cons-popup-wrpr"]/div/div/header/h2
-	public static By shipmentConsolidatedMSGHeading=By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/header/h2");
+	public static By receiverdropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i");
+	public static By receiverTextfield = By.xpath("//*[@id=\"receiver-selector\"]/label/input[2]");
+	public static By shipmentConsolidatedMSGHeading=By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/header/h2"); 
 	public static By shipmentConsolidatedRadioBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[1]/label");
+	public static By shipmentConsolidatedArrowdown = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]");
+	public static By shipmentConsolidatedContinue = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]"); 
 	public static By consolidatedBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[2]");
 	public static By dgContactName = By.xpath("//*[@id=\"dg-contact-dtls-wrpr\"]/div[1]/div/input");  
 	public static By dgContactNumber= By.xpath("//*[@id=\"dg-contact-dtls-wrpr\"]/div[2]/div/input"); 
@@ -70,31 +71,6 @@ public class CreateShipmentActions {
 	public static By reviewCreateShipmentBtn = By.id("create-shipment-btn");
 
 	public static By acceptAccountChangeMSG = By.id("confirm-true");
-	
-	// Add Address
-	public static final By SenderAddress_Dropdown = By.xpath("//*[@id=\"sender-selector\"]/label/a/i");
-	public static final By SenderAddress_Location_Selected= By.xpath("//*[@id=\"sender-selector\"]/label/input[@name=\"placeholder-location\"]");
-	public static final By SenderAddress_Add_Address= By.xpath("//*[@id=\"sender-selector\"]//*//div[@class=\"add-new-elem\"]");
-	public static final By New_AddressCompanName= By.id("add-adrr-company-aut");
-	public static final By New_AddressSearch= By.id("address-srch");
-	public static final By New_AddressSearch_Select= By.xpath("//*[@id=\"address-srch-wrpr\"]/div/ul/li[1]/div");
-	public static final By New_AddressSearch_Contine= By.id("addr-continue-autmatic");
-	public static final By New_Address_Name = By.id("add-addr-name");
-	public static final By New_Address_Number = By.id("add-addr-phone");
-	public static final By New_Address_Email = By.id("add-addr-email");
-	public static final By New_Address_DGName = By.id("add-addr-dg-contact-name");
-	public static final By New_Address_DGNumber = By.id("add-addr-dg-contact-phone");
-	public static final By New_Address_Add = By.id("add-address-btn-final");
-	public static final By ReceiverAddress_Dropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i");
-	public static final By ReceiverAddress_Location_Selected= By.xpath("//*[@id=\"receiver-selector\"]/label/input[@name=\"placeholder-location\"]");
-	public static final By ReceiverAddress_Add_Address= By.xpath("//*[@id=\"receiver-selector\"]//*//div[@class=\"add-new-elem\"]");
-	
-	public static final String SenderAddressCompanyName = "TestSender";
-	public static final String SenderAddressCompanyAdd = "60 Collins Street, MELBOURNE VIC 3000";
-	public static final String ReceiverAddressCompanyName = "TestReceiver";
-	public static final String ReceiverAddressCompanyAdd = "60 Colliery Street, NEATH  NSW  2326";
-	
-	
 	public static void ClickShipment() {
 		BaseWebdriver.driver.findElement(shipments).click();
 
@@ -114,6 +90,15 @@ public class CreateShipmentActions {
 
 	}
 	
+	/*public static void EnterService(String pService) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(servicedropdown).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li[text()='\"+pService +\"']/div")).click();
+
+	}*/
+	
+	
+	
 	public static void EnterService(String pService) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(servicedropdown).click();
@@ -124,7 +109,7 @@ public class CreateShipmentActions {
 	public static void SelectMode(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(mode).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[\" + i + \"]/div")).click();
 
 	}
 	
@@ -138,25 +123,33 @@ public class CreateShipmentActions {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(TempretureTypeDropdown).click();
 		BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[2]/ul/li[" + i + "]/div")).click();
+				.findElement(By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[2]/ul/li[\" + i + \"]/div")).click();
 
 	}
 
 	public static void SelectWhoPays(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(whoPaysdropdown).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[" + i + "]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[\" + i + \"]/div")).click();
 
 	}
 
 	public static void SelectSender(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(senderdropdown).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[\" + i + \"]/div[2]"))
 				.click();
-
+		//*[@id="sender-selector"]/div[2]/ul/li[2]/div[2]
 	}
 
+	public static String GetSender(String pSender) {
+		PageBase.MaximumWaitForElementEnabled();
+		String vSender=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[\" + i + \"]/div[2]")).getText();
+		//String vSender=BaseWebdriver.driver.findElement(By.xpath("By.xpath(\"//*[@id='\"sender-selector\"]/div[2]/ul/li/div[text()='"+pSender+"']")).getText();
+		return vSender;
+	
+	}
+	
 	public static void EnterAccountNumber(String pAccountNumber) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(accountNumber).click();
@@ -168,11 +161,25 @@ public class CreateShipmentActions {
 	public static void SelectReceiver(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(receiverdropdown).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
+		PageBase.Scrollbar(500, 800);
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[\" + i + \"]/div[2]"))
 				.click();
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 	}
 
+	public static void EnterReceiver(String Receiver,String pReceiver) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(receiverTextfield).click();
+		BaseWebdriver.driver.findElement(receiverTextfield).clear();
+		BaseWebdriver.driver.findElement(receiverTextfield).sendKeys(Receiver);
+		PageBase.Scrollbar(500, 800);
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='"+pReceiver+"']")).click();
+				
+		PageBase.MaximumWaitForElementEnabled();//*[@id="receiver-selector"]/div[2]/ul/li[2]/div[1]
+		PageBase.MaximumWaitForElementEnabled();
+	}
+	
 	public static void SelectShipmentConsolidatedContinue() {
 		PageBase.MaximumWaitForElementEnabled();
 		
@@ -192,12 +199,22 @@ public class CreateShipmentActions {
 	}
 	
 	public static void SelectShipmentConsolidated() {
+		try {
 		PageBase.MaximumWaitForElementEnabled();
+		Boolean results=BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).isDisplayed();
+		if (results=true) {
+		BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).click();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		}
+		}
 		
-		BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).click();
-		BaseWebdriver.driver.findElement(consolidatedBtn).click();
-
-	}
+		catch(Exception ex) {
+			System.out.println(ex);
+		}
+		}
+		
+		
 
 	public static void EnterDGContactName(String pDGContactName) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -223,6 +240,8 @@ public class CreateShipmentActions {
 
 	public static void EnterShipmentReferences(String pShipmentRef1, String pShipmentRef2) {
 		PageBase.MaximumWaitForElementEnabled();
+		PageBase.Scrollbar(0, 800);
+		try {
 		BaseWebdriver.driver.findElement(shipmentReference1).click();
 		BaseWebdriver.driver.findElement(shipmentReference1).clear();
 		BaseWebdriver.driver.findElement(shipmentReference1).sendKeys(pShipmentRef1);
@@ -230,20 +249,26 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(shipmentReference2).click();
 		BaseWebdriver.driver.findElement(shipmentReference2).clear();
 		BaseWebdriver.driver.findElement(shipmentReference2).sendKeys(pShipmentRef2);
+		}
+		catch(Exception ex){
+			System.out.println(ex);
+		}
 	}
+
 
 	public static void SelectDropOffDepot(int i) {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		
 		BaseWebdriver.driver.findElement(dropoffDepotdropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"drop-off-depot-selector\"]/div[2]/ul/li[" + i + "]/div"))
 				.click();
-
+		PageBase.MaximumWaitForElementEnabled();
 	}
 
 	public static void SelectCollectionDepot(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(collectionDepotdropdown).click();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"collection-depot-selector\"]/div[2]/ul/li[" + i + "]/div"))
 				.click();
 
@@ -284,6 +309,15 @@ public class CreateShipmentActions {
 
 	}
 
+	public static void EnterBillingType(String pBillingType) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(billingTypedropdown).click();
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+pBillingType+"']")).click();
+				
+
+	}
+	
 	public static void SelectBillingType(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(billingTypedropdown).click();
@@ -292,13 +326,18 @@ public class CreateShipmentActions {
 				.click();
 
 	}
+	
+	public static void EnterTollCarrierItem(String pTollCarrierName) {//*[@id="BU-selector"]/label/a/i String pDropdownSelector, String pTollCarrierName
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id='BU-selector']/label/a/i")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']")).click();
 
+	}
+	
 	public static void AddANewLineNZAUS() {
-
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250);");
+		PageBase.Scrollbar(500,800);
 		BaseWebdriver.driver.findElement(addNewLine).click();
-
+		
 		BookAPickupActions.EnterItem("Automation Temp2");
 		CreateShipmentActions.NumberOfItem("15");
 		BookAPickupActions.EnterLengthWidthHeight("200", "100", "50");
@@ -310,8 +349,7 @@ public class CreateShipmentActions {
 	
 	public static void AddANewLineTIPEC() {
 
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250);");
+		PageBase.Scrollbar(500,1200);
 		BaseWebdriver.driver.findElement(addNewLine).click();
 
 		BookAPickupActions.EnterItem("Automation Temp2");
@@ -447,87 +485,5 @@ public class CreateShipmentActions {
 		//assertEquals(pReceiverEmail, BaseWebdriver.driver.findElement(receiverEmail).getAttribute("value"));
 		BaseWebdriver.driver.findElement(receiverEmail).sendKeys(pReceiverEmail);
 	}
-	
-	public static void addSenderAdderess(){
-		PageBase.waitForElement(senderdropdown, 10);
-		PageBase.click(senderdropdown, 10);
-		
-		
-		PageBase.waitForElement(SenderAddress_Add_Address, 10);
-		PageBase.click(SenderAddress_Add_Address, 10);
-		
-		int Number = (int) (Math.random()*10000);
-		String newNumber = String.valueOf(Number);
-		String NewCompanyName = SenderAddressCompanyName+newNumber;
-		PageBase.sendText(New_AddressCompanName, 10, NewCompanyName );
-		PageBase.click(New_AddressSearch, 10);
-		PageBase.sendText(New_AddressSearch, 10, SenderAddressCompanyAdd);
-		PageBase.click(New_AddressSearch_Select, 10);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.click(New_AddressSearch_Contine, 10);
-		PageBase.sendText(New_Address_Name, 10, NewCompanyName);
-		PageBase.sendText(New_Address_Number, 10, "0452456876");
-		PageBase.sendText(New_Address_Email, 10, "Test@test.com");
-		//Verify if DG fields exists
-		Boolean DG = PageBase.isElementPresent(New_Address_DGName);
-		if (DG == true) {
-			PageBase.sendText(New_Address_DGName, 10, "Test	");
-			PageBase.sendText(New_Address_DGNumber, 10, "0452567879");
-		}
-		PageBase.click(New_Address_Add, 10);
-		PageBase.MaximumWaitForElementEnabled();
-		//Verify Address is Selected
-		PageBase.verifyTextExistAttribute(SenderAddress_Location_Selected, NewCompanyName);
-		
-		String Address = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();
-			if (Address.contains(Address)) {
-				System.out.println("New Sender Address Exists in Location Feild AS EXPECTED");
-			} else {
-				System.out.println("FAILED: New Sender Address DOEN NOT Exists in Location Feild");
-				Reporter.log("FAILED: New Sender Address DOEN NOT Exists in Location Feild");
-				Assert.fail("FAILED: New Sender Address DOEN NOT Exists in Location Feild");
-			}
-	}
-	
-	public static void addReceiverAdderess(){
-		PageBase.waitForElement(receiverdropdown, 10);
-		PageBase.click(receiverdropdown, 10);
-		PageBase.waitForElement(ReceiverAddress_Add_Address, 10);
-		PageBase.click(ReceiverAddress_Add_Address, 10);
-		
-		int Number = (int) (Math.random()*10000);
-		String newNumber = String.valueOf(Number);
-		String NewCompanyName = ReceiverAddressCompanyName+newNumber;
-		PageBase.sendText(New_AddressCompanName, 10, NewCompanyName );
-		PageBase.click(New_AddressSearch, 10);
-		PageBase.sendText(New_AddressSearch, 10, ReceiverAddressCompanyAdd);
-		PageBase.click(New_AddressSearch_Select, 10);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.click(New_AddressSearch_Contine, 10);
-		PageBase.sendText(New_Address_Name, 10, NewCompanyName);
-		PageBase.sendText(New_Address_Number, 10, "0452456876");
-		PageBase.sendText(New_Address_Email, 10, "Test@test.com");
-		//Verify if DG fields exists
-		Boolean DG = PageBase.isElementPresent(New_Address_DGName);
-		if (DG == true) {
-			PageBase.sendText(New_Address_DGName, 10, "Test	");
-			PageBase.sendText(New_Address_DGNumber, 10, "0452567879");
-		}
-		PageBase.click(New_Address_Add, 10);
-		PageBase.MaximumWaitForElementEnabled();
-		//Verify Address is Selected
-		PageBase.verifyTextExistAttribute(ReceiverAddress_Location_Selected, NewCompanyName);
-		
-		String Address = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[2]")).getText();
-			if (Address.contains(Address)) {
-				System.out.println("New Receiver Address Exists in Location Feild AS EXPECTED");
-			} else {
-				System.out.println("FAILED: New Receiver Address DOEN NOT Exists in Location Feild");
-				Reporter.log("FAILED: New Receiver Address DOEN NOT Exists in Location Feild");
-				Assert.fail("FAILED: New Receiver Address DOEN NOT Exists in Location Feild");
-			}
-	}
-	
-	
 
 }
