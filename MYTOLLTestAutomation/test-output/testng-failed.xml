@@ -44,13 +44,13 @@
     <parameter name="specialIns" value="special instructions test"/>
     <parameter name="TollCarrierTollPrioAU" value="Toll Priority (Aus)"/>
     <classes>
-      <class name="bookAPickupE2ETests.TollPriorityAusTest">
+      <class name="bookAPickupE2ETests.Toll_Add_Template">
         <methods>
           <include name="RunSetup"/>
-          <include name="BookAPickup_TollPriority_AUS_E2ETest_TID_620" invocation-numbers="0"/>
+          <include name="addTemplate"/>
           <include name="RunTearDown"/>
         </methods>
-      </class> <!-- bookAPickupE2ETests.TollPriorityAusTest -->
+      </class> <!-- bookAPickupE2ETests.Toll_Add_Template -->
     </classes>
   </test> <!-- chromeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

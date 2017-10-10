@@ -5,10 +5,12 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
 
@@ -116,6 +118,41 @@ public class BookAPickupActions {
 	public static WebElement eleLocation= BaseWebdriver.driver.findElement(location);
 	public static WebElement eleName= BaseWebdriver.driver.findElement(name);
 	public static WebElement elePhoneNumber= BaseWebdriver.driver.findElement(phoneNumber);*/
+	
+	// Add Address
+	public static final By BookAPickup_Location_Dropdown = By.xpath("//*[@id=\"location-selector\"]/label/a/i");
+	public static final By BookAPickup_Location_Selected= By.name("placeholder-location");
+	public static final By BookAPickup_Add_Address= By.className("add-new-elem");
+	public static final By BookAPickup_New_AddressCompanName= By.id("add-adrr-company-aut");
+	public static final By BookAPickup_New_AddressSearch= By.id("address-srch");
+	public static final By BookAPickup_New_AddressSearch_Select= By.xpath("//*[@id=\"address-srch-wrpr\"]/div/ul/li[1]/div");
+	public static final By BookAPickup_New_AddressSearch_Contine= By.id("addr-continue-autmatic");
+	public static final By BookAPickup_New_Address_Name = By.id("add-addr-name");
+	public static final By BookAPickup_New_Address_Number = By.id("add-addr-phone");
+	public static final By BookAPickup_New_Address_Email = By.id("add-addr-email");
+	public static final By BookAPickup_New_Address_DGName = By.id("add-addr-dg-contact-name");
+	public static final By BookAPickup_New_Address_DGNumber = By.id("add-addr-dg-contact-phone");
+	public static final By BookAPickup_New_Address_Add = By.id("add-address-btn-final");
+	public static final By BookAPickup_CompanyName = By.id("name");
+	
+	public static final String NewAddressCompanyName = "Test";
+	public static final String NewAddressCompanyAdd = "60 Collins Street, MELBOURNE VIC 3000";
+	
+	//Add Template
+	public static final By addTemplate = By.linkText("ADD TEMPLATE");
+	public static final By addTemplateCarrier = By.xpath("//*[@id=\"bu-dropdown-new\"]/label/a/i");
+	public static final By addTemplateName = By.xpath("//*[@id=\"newTemplate\"]//*//input[@name=\"templateName\"]");
+	public static final By addTemplateQty = By.id("addQuantity");
+	public static final By addTemplateWeight = By.xpath("//*[@id=\"newTemplate\"]//*//input[@name=\"templateTotalWight\"]");
+	public static final By addTemplateLenght = By.id("addLength");
+	public static final By addTemplateWidth  = By.id("addWidth");
+	public static final By addTemplateHeight = By.id("addHeight");
+	public static final By addTemplateSave= By.id("templateSave");
+	public static final By addTemplateSaveMsg= By.xpath("//*[@id=\"response-poup-wrpr\"]//*//h2");
+	public static final By addTemplateSaveMsgClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
+	public static final By addTemplateViewMore = By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//a[text()='View More']");
+	
+	
 	
 	
 	public static void EnterTollCarrierItem(String pTollCarrierName) {//*[@id="BU-selector"]/label/a/i String pDropdownSelector, String pTollCarrierName
@@ -761,6 +798,52 @@ public class BookAPickupActions {
 
 		BaseWebdriver.driver.findElement(confirmBtn).click();
 
+	}
+	
+	
+	public static void addAdderess(){
+		//Add Address
+		PageBase.waitForElement(BookAPickup_Location_Dropdown, 10);
+		PageBase.click(BookAPickup_Location_Dropdown, 10);
+		
+		PageBase.waitForElement(BookAPickup_Add_Address, 10);
+		PageBase.click(BookAPickup_Add_Address, 10);
+		
+		int Number = (int) (Math.random()*10000);
+		String newNumber = String.valueOf(Number);
+		String NewCompanyName = NewAddressCompanyName+newNumber;
+		PageBase.sendText(BookAPickup_New_AddressCompanName, 10, NewCompanyName );
+		PageBase.click(BookAPickup_New_AddressSearch, 10);
+		PageBase.sendText(BookAPickup_New_AddressSearch, 10, NewAddressCompanyAdd);
+		PageBase.click(BookAPickup_New_AddressSearch_Select, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(BookAPickup_New_AddressSearch_Contine, 10);
+		PageBase.sendText(BookAPickup_New_Address_Name, 10, NewCompanyName);
+		PageBase.sendText(BookAPickup_New_Address_Number, 10, "0452456876");
+		PageBase.sendText(BookAPickup_New_Address_Email, 10, "Test@test.com");
+		
+		//Verify if DG fields exists
+		Boolean DG = PageBase.isElementPresent(BookAPickup_New_Address_DGName);
+		if (DG == true) {
+			PageBase.sendText(BookAPickup_New_Address_DGName, 10, "Test	");
+			PageBase.sendText(BookAPickup_New_Address_DGNumber, 10, "0452567879");
+		}
+		PageBase.click(BookAPickup_New_Address_Add, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		
+		//Verify Address is Selected
+		PageBase.verifyTextExistAttribute(BookAPickup_Location_Selected, NewCompanyName);
+		
+		String Address = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[2]")).getText();
+			if (Address.contains(Address)) {
+				System.out.println("New Address Exists in Location Feild AS EXPECTED");
+			} else {
+				System.out.println("FAILED: New Address DOEN NOT Exists in Location Feild");
+				Reporter.log("FAILED: New Address DOEN NOT Exists in Location Feild");
+				Assert.fail("FAILED: New Address DOEN NOT Exists in Location Feild");
+			}
+		PageBase.verifyTextExistAttribute(BookAPickup_CompanyName, NewCompanyName);
+			
 	}
 	
 	

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="none">
+<!-- <listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+</listeners> -->
 	<test name="chromeTest">
 		<parameter name="email" value="superuser@gmail.com"></parameter>
 
@@ -47,14 +51,15 @@
 		<parameter name="packageDescription" value="Testing package Description" />
 		<parameter name="pDgPkgQty" value="50" />
 		<parameter name="pDgQtyKg" value="600" />
+		
 	
 		
 		<parameter name="specialIns" value="special instructions test" />
 
 		<parameter name="browser" value="chrome" />
 		<classes>
-		<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-		<class name="bookAPickupE2ETests.TollPriorityAusTest" />
+		<class name="bookAPickupE2ETests.Toll_Add_Template" />
+		<!-- <class name="bookAPickupE2ETests.TollPriorityAusTest" /> -->
 		<!--Blocked><class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollIPECTest" />

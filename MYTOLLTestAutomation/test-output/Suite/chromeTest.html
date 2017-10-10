@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>chromeTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 02 15:44:48 AEDT 2017</td>
+<td>Started on:</td><td>Mon Oct 09 16:56:34 AEDT 2017</td>
 </tr>
-<tr><td>Total time:</td><td>103 seconds (103176 ms)</td>
+<tr><td>Total time:</td><td>426 seconds (426624 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,52 +75,33 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='bookAPickupE2ETests.TollPriorityAusTest.BookAPickup_TollPriority_AUS_E2ETest_TID_620()'><b>BookAPickup_TollPriority_AUS_E2ETest_TID_620</b><br>Test class: bookAPickupE2ETests.TollPriorityAusTest<br>Parameters: Toll Priority (Aus), Parcels - Off Peak, 1, Automation Template1, 15, 100, 200, 300, 900, 5, 12345, Melbo, special instructions test</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;submit-pickup&quot;}
-  (Session info: chrome=61.0.3163.100)
-  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 20.03 seconds
+<td title='bookAPickupE2ETests.Toll_Add_Template.addTemplate()'><b>addTemplate</b><br>Test class: bookAPickupE2ETests.Toll_Add_Template</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id=&quot;bu-dropdown-new&quot;]/div/ul/li/div[text()=&apos;Sheyan&apos;] (tried for 10 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at GlobalActions.PageBase.click(PageBase.java:53)
+	at bookAPickupE2ETests.Toll_Add_Template.add(Toll_Add_Template.java:66)
+	at bookAPickupE2ETests.Toll_Add_Template.addTemplate(Toll_Add_Template.java:39)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //*[@id=&quot;bu-dropdown-new&quot;]/div/ul/li/div[text()=&apos;Sheyan&apos;]
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;unknown&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
 System info: host: &apos;DESKTOP-GTKVGKN&apos;, ip: &apos;192.168.19.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_131&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\SHEYAN~1\AppData\Local\Temp\scoped_dir3952_25238}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=61.0.3163.100, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: 2c841f4726ff4015a12f6085715ea171
-*** Element info: {Using=id, value=submit-pickup}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:453)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-	at reviewYourPickupActions.ReviewYouPickupActions.ClickConfirmPickup(ReviewYouPickupActions.java:201)
-	at bookAPickupE2ETests.TollPriorityAusTest.BookAPickup_TollPriority_AUS_E2ETest_TID_620(TollPriorityAusTest.java:73)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2104973502", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2104973502'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;submit-pickup&quot;}
-  (Session info: chrome=61.0.3163.100)
-  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 20.03 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;unknown&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;DESKTOP-GTKVGKN&apos;, ip: &apos;192.168.19.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_131&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\SHEYAN~1\AppData\Local\Temp\scoped_dir3952_25238}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=61.0.3163.100, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: 2c841f4726ff4015a12f6085715ea171
-*** Element info: {Using=id, value=submit-pickup}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:453)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-	at reviewYourPickupActions.ReviewYouPickupActions.ClickConfirmPickup(ReviewYouPickupActions.java:201)
-	at bookAPickupE2ETests.TollPriorityAusTest.BookAPickup_TollPriority_AUS_E2ETest_TID_620(TollPriorityAusTest.java:73)
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:183)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:180)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 28 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1072377306", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1072377306'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id=&quot;bu-dropdown-new&quot;]/div/ul/li/div[text()=&apos;Sheyan&apos;] (tried for 10 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at GlobalActions.PageBase.click(PageBase.java:53)
+	at bookAPickupE2ETests.Toll_Add_Template.add(Toll_Add_Template.java:66)
+	at bookAPickupE2ETests.Toll_Add_Template.addTemplate(Toll_Add_Template.java:39)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -146,9 +127,83 @@ Session ID: 2c841f4726ff4015a12f6085715ea171
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //*[@id=&quot;bu-dropdown-new&quot;]/div/ul/li/div[text()=&apos;Sheyan&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;unknown&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;DESKTOP-GTKVGKN&apos;, ip: &apos;192.168.19.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_131&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:183)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:180)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 28 more
 </pre></div></td>
-<td>53</td>
-<td>bookAPickupE2ETests.TollPriorityAusTest@68c4039c</td></tr>
+<td>27</td>
+<td>bookAPickupE2ETests.Toll_Add_Template@59f99ea</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='bookAPickupE2ETests.Toll_Add_Template.addTemplate2()'><b>addTemplate2</b><br>Test class: bookAPickupE2ETests.Toll_Add_Template<br/>
+<a href="#Output-431506362" onClick='toggleBox("Output-431506362", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-431506362" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-431506362">
+Expected Text : TEMPLATE SUCCESSFULLY SAVED Matched the Text on Screen :TEMPLATE SUCCESSFULLY SAVED<br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Intermodal2890']<br><br/>
+Expected Text : TestToll Intermodal2890 Matched the Text on Screen :TestToll Intermodal2890<br/>
+</div>
+</td>
+<td></td>
+<td>97</td>
+<td>bookAPickupE2ETests.Toll_Add_Template@59f99ea</td></tr>
+<tr>
+<td title='bookAPickupE2ETests.Toll_Add_Template.addTemplate3()'><b>addTemplate3</b><br>Test class: bookAPickupE2ETests.Toll_Add_Template<br/>
+<a href="#Output-44559647" onClick='toggleBox("Output-44559647", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-44559647" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-44559647">
+Expected Text : TEMPLATE SUCCESSFULLY SAVED Matched the Text on Screen :TEMPLATE SUCCESSFULLY SAVED<br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll Tasmania6236']<br><br/>
+Expected Text : TestToll Tasmania6236 Matched the Text on Screen :TestToll Tasmania6236<br/>
+</div>
+</td>
+<td></td>
+<td>118</td>
+<td>bookAPickupE2ETests.Toll_Add_Template@59f99ea</td></tr>
+<tr>
+<td title='bookAPickupE2ETests.Toll_Add_Template.addTemplate4()'><b>addTemplate4</b><br>Test class: bookAPickupE2ETests.Toll_Add_Template<br/>
+<a href="#Output-1800976873" onClick='toggleBox("Output-1800976873", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1800976873" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1800976873">
+Expected Text : TEMPLATE SUCCESSFULLY SAVED Matched the Text on Screen :TEMPLATE SUCCESSFULLY SAVED<br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br><br/>
+xpath not found: By.xpath: //*[@id="portlet_mytolltemplateportlet_WAR_mytolltemplateportlet"]//*//p[text()='TestToll NQX | Toll Express412']<br><br/>
+Expected Text : TestToll NQX | Toll Express412 Matched the Text on Screen :TestToll NQX | Toll Express412<br/>
+</div>
+</td>
+<td></td>
+<td>118</td>
+<td>bookAPickupE2ETests.Toll_Add_Template@59f99ea</td></tr>
 </table><p>
 </body>
 </html>
