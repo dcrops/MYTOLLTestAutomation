@@ -60,18 +60,19 @@ public class TollPriorityNZTest {
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
 
 		// Enter Pickup details
-		jse.executeScript("scroll(500, 800)");
+		//jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber(reference);
 		BookAPickupActions.SelectPickupFrom(1);
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+		
 		BookAPickupActions.ClickReviewBook();
 
 	}
@@ -110,18 +111,21 @@ public class TollPriorityNZTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
 		BookAPickupActions.SelectItemDescription();
-		jse.executeScript("scroll(100, 500)");
+		//jse.executeScript("scroll(100, 500)");
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		
 		BookAPickupActions.SelectDangerousGoods(2);
 
 		// Enter Pickup details
-		jse.executeScript("scroll(500, 800)");
+		//jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber(reference);
 		BookAPickupActions.SelectPickupFrom(1);
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+		
 		BookAPickupActions.ClickReviewBook();
 
 	}
@@ -159,18 +163,21 @@ public class TollPriorityNZTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
 		BookAPickupActions.EnterQuantity(NumberOfItems);
-		jse.executeScript("scroll(100, 500)");
+		//jse.executeScript("scroll(100, 500)");
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		
 		BookAPickupActions.SelectDangerousGoods(2);
 
 		// Enter Pickup details
-		jse.executeScript("scroll(500, 800)");
+		//jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber(reference);
 		BookAPickupActions.SelectPickupFrom(1);
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+		
 		BookAPickupActions.ClickReviewBook();
 
 	}

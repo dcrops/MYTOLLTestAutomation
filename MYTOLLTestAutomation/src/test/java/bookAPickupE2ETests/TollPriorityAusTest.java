@@ -7,6 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import GlobalActions.GlobalVariables;
+import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import myTollHomePageActions.MyTollHomePageActions;
@@ -57,18 +58,21 @@ public class TollPriorityAusTest {
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.SelectItemDescriptionTollPriorityAU("Box / Carton");
-		jse.executeScript("scroll(1000, 1500)");
+		//jse.executeScript("scroll(1000, 1500)");
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		
 		BookAPickupActions.SelectDangerousGoods(2);
 
 		// Enter Pickup details
-		jse.executeScript("scroll(500, 800)");
+		//jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber(reference);
 		BookAPickupActions.SelectPickupFrom(1);
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+		
 		BookAPickupActions.ClickReviewBook();
 
 		// Confirm Pickup and Verify pickup confirmation details

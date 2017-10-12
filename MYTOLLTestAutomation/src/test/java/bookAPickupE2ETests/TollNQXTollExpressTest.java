@@ -57,17 +57,18 @@ public class TollNQXTollExpressTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDangerousGoods);
+		BookAPickupActions.SelectDestination(destination);
+
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.SelectDestination(destination);
-
+	
 		// BookAPickupActions.SelectItem(2);
 		// BookAPickupActions.EnterItem(ItemTemplateName);
 		//jse.executeScript("scroll(200, 500)");
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo,BookAPickupActions.weight);
 		// Shipment contain Dangerous goods=yes and no food items
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
@@ -122,19 +123,19 @@ public class TollNQXTollExpressTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-
-		BookAPickupActions.SelectDestination(destination);
+	
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter Pickup details
-		jse.executeScript("scroll(1500, 1700)");
+		//jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
@@ -178,13 +179,14 @@ public class TollNQXTollExpressTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceGeneral);
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.SelectDestination(destination);
+	
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
@@ -233,14 +235,14 @@ public class TollNQXTollExpressTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServicePremium);
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.SelectDestination(destination);
-
+		
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
@@ -298,6 +300,8 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.SelectChargeToAccount2(1);
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		BookAPickupActions.SelectDangerousGoods(2);
+		BookAPickupActions.selectContainFoodItem();
 		// Enter Pickup details
 		//jse.executeScript("scroll(1500, 1700)");
 		BookAPickupActions.selectPickupDate();
@@ -355,6 +359,8 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.SelectChargeToAccount2(1);
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		BookAPickupActions.SelectDangerousGoods(2);
+		BookAPickupActions.selectContainFoodItem();
 		// Enter Pickup details
 		//jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
@@ -367,15 +373,7 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.ClickReviewBook();
 
 		PageBase.MaximumWaitForElementEnabled();
-		//PageBase.AcceptAlert();
-		ReviewYouPickupActions.ClickEdit();
-		BookAPickupActions.SelectDangerousGoods(1);
-		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
-		BookAPickupActions.SelectPackgingGroup("II");
-		BookAPickupActions.EnterTechnicalName(technicalName);
-		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
-		//BookAPickupActions.SelectPackingGroup();
-
+	
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
 		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
@@ -411,15 +409,17 @@ public class TollNQXTollExpressTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGRefrigerated);
+		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.SelectDestination(destination);
+		
 		//jse.executeScript("scroll(1000, 1500)");
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.dangerousGoodNo);
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
 
@@ -476,15 +476,16 @@ public class TollNQXTollExpressTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceRailDangerousGoods);
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.SelectDestination(destination);
+		
 		//jse.executeScript("scroll(1000, 1500)");
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo,BookAPickupActions.weight );
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
 
@@ -540,15 +541,16 @@ public class TollNQXTollExpressTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGExpress);
+		BookAPickupActions.SelectDestination(destination);
+
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.SelectDestination(destination);
-		//jse.executeScript("scroll(1000, 1500)");
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+				//jse.executeScript("scroll(1000, 1500)");
+		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo,BookAPickupActions.weight);
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
 

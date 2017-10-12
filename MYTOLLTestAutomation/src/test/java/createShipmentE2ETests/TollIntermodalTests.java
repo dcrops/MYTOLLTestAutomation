@@ -60,7 +60,7 @@ public class TollIntermodalTests {
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		CreateShipmentActions.ItemType(2);
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-
+		CreateShipmentActions.EnterBillingType(BillingType);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
 		// PageBase.Scrollbar(500, 1000);
