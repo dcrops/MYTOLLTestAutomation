@@ -1,118 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-<test name="CreateShipment">
-	<!---Toll carriers test data -->
+	<test name="CreateShipment">
+		<!---Toll carriers test data -->
 
-	<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
-	<parameter name="TollCarrierTollTasmania" value="Toll Tasmania" />
-	<parameter name="TollCarrierTollNQXTollExpress" value="Toll NQX | Toll Express" />
-	<parameter name="TollCarrierTollIPEC" value="Toll IPEC" />
-	<parameter name="TollCarrierTollPrioAU" value="Toll Priority (Aus)" />
-	<parameter name="TollCarrierTollPrioNZ" value="Toll Priority (NZ)" />
+		<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
+		<parameter name="TollCarrierTollTasmania" value="Toll Tasmania" />
+		<parameter name="TollCarrierTollNQXTollExpress" value="Toll NQX | Toll Express" />
+		<parameter name="TollCarrierTollIPEC" value="Toll IPEC" />
+		<parameter name="TollCarrierTollPrioAU" value="Toll Priority (Aus)" />
+		<parameter name="TollCarrierTollPrioNZ" value="Toll Priority (NZ)" />
 
-	<!---Services test data -->
+		<!---Services test data -->
 
-	<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
-	<parameter name="ServiceDGFreight" value="DG Freight" />
-	<parameter name="ServiceExpress" value="Express" />
-	<parameter name="ServiceGeneral" value="General" />
-	<parameter name="ServicePremium" value="Premium" />
-	<parameter name="ServiceRailGeneral" value="Rail General" />
-	<parameter name="ServicePremium" value="Premium" />
-	<parameter name="ServiceRefrigeration" value="Refrigeration" />
-	<parameter name="ServiceRoadExpress" value="Road Express" />
-	<parameter name="ServiceDangerousGoods" value="Dangerous Goods" />
-	<parameter name="ServiceDGRefrigerated" value="DG Refrigerated" />
-	<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
-	<parameter name="ServiceDGExpress" value="DG Express" />
-	<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
+		<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
+		<parameter name="ServiceDGFreight" value="DG Freight" />
+		<parameter name="ServiceExpress" value="Express" />
+		<parameter name="ServiceGeneral" value="General" />
+		<parameter name="ServicePremium" value="Premium" />
+		<parameter name="ServiceRailGeneral" value="Rail General" />
+		<parameter name="ServicePremium" value="Premium" />
+		<parameter name="ServiceRefrigeration" value="Refrigeration" />
+		<parameter name="ServiceRoadExpress" value="Road Express" />
+		<parameter name="ServiceDangerousGoods" value="Dangerous Goods" />
+		<parameter name="ServiceDGRefrigerated" value="DG Refrigerated" />
+		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
+		<parameter name="ServiceDGExpress" value="DG Express" />
+		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 
-	<!---Create shipment Test data -->
-	<parameter name="AccountNumber" value="1" />
-	<!---Item test data -->
+		<!---Create shipment Test data -->
+		<parameter name="AccountNumber" value="106119" />
+		<parameter name="SenderName" value="COLLINS" />
+		<parameter name="SenderItem" value="COLLINS COMPUTERS 8 TO 8" />
+		<!---Item test data -->
 
-	<parameter name="locationIndex" value="1" />
-	<parameter name="ItemTemplateName" value="Automation Template1" />
-	<parameter name="ChargeToAccount" value="Sender" />
-	<parameter name="Destination" value="MELALEUCA" />
-	<parameter name="DestinationItem" value="6065, MELALEUCA, WA, AU" />
-	<parameter name="Postcode" value="6065" />
-	<parameter name="DestinationNZ" value="Wellington" />
-	<parameter name="DestinationNZItem" value="6011, WELLINGTON, NZ" />
-	<parameter name="DestinationCountry" value="AUSTRALIA" />
-	<parameter name="NumberOfItems" value="15" />
-	<parameter name="Length" value="100" />
-	<parameter name="Width" value="200" />
-	<parameter name="Height" value="300" />
-	<parameter name="Weight" value="900" />
-	<parameter name="palletSpace" value="5" />
-	<parameter name="reference" value="12345" />
+		<parameter name="locationIndex" value="1" />
+		<parameter name="ItemTemplateName" value="Automation Template1" />
+		<parameter name="ChargeToAccount" value="Sender" />
+		<parameter name="Destination" value="MELALEUCA" />
+		<parameter name="DestinationItem" value="6065, MELALEUCA, WA, AU" />
+		<parameter name="Postcode" value="6065" />
+		<parameter name="DestinationNZ" value="Wellington" />
+		<parameter name="DestinationNZItem" value="6011, WELLINGTON, NZ" />
+		<parameter name="DestinationCountry" value="AUSTRALIA" />
+		<parameter name="NumberOfItems" value="15" />
+		<parameter name="Length" value="100" />
+		<parameter name="Width" value="200" />
+		<parameter name="Height" value="300" />
+		<parameter name="Weight" value="900" />
+		<parameter name="palletSpace" value="5" />
+		<parameter name="reference" value="12345" />
 
-	<!---Dangerous goods test data -->
+		<!---Dangerous goods test data -->
 
-	<parameter name="DGGoods" value="No" />
-	<parameter name="FoodItems" value="No" />
-	<parameter name="lookupName" value="2025" />
-	<parameter name="lookupItem" value="1" />
-	<parameter name="packageDescription" value="Testing package Description" />
-	<parameter name="PackageDescription" value="Testing package Description" />
-	<parameter name="pDgPkgQty" value="5" />
-	<parameter name="pDgQtyKg" value="60" />
-	<parameter name="technicalName" value="Test Technical name" />
-	<parameter name="DGItem" value="2" />
-	<parameter name="LookupSearch" value="1234" />
-	<parameter name="DgPkgQty" value="20" />
-	<parameter name="DgQtyKg" value="10" />
-	<parameter name="DGYes" value="1" />
-	<parameter name="DGNo" value="2" />
+		<parameter name="DGGoods" value="No" />
+		<parameter name="FoodItems" value="No" />
+		<parameter name="lookupName" value="2025" />
+		<parameter name="lookupItem" value="1" />
+		<parameter name="packageDescription" value="Testing package Description" />
+		<parameter name="PackageDescription" value="Testing package Description" />
+		<parameter name="PackingGroup" value="II" />
+		<parameter name="pDgPkgQty" value="5" />
+		<parameter name="pDgQtyKg" value="60" />
+		<parameter name="technicalName" value="Test Technical name" />
+		<parameter name="DGItem" value="2" />
+		<parameter name="LookupSearch" value="1234" />
+		<parameter name="DgPkgQty" value="20" />
+		<parameter name="DgQtyKg" value="10" />
+		<parameter name="DGYes" value="1" />
+		<parameter name="DGNo" value="2" />
+		<parameter name="DGoodsNo" value="No" />
 
-	<parameter name="DGContactName" value="Dadd" />
-	<parameter name="DGContactNumber" value="34324324" />
-	<parameter name="DGQuoteNumber" value="12345" />
-	<parameter name="WhoPays" value="1" />
-	<parameter name="Mode" value="1" />
-	<parameter name="Receiver" value="2" />
-	<parameter name="Sender" value="1" />
-	<parameter name="ReceiverName" value="Test" />
-	<parameter name="ReceiverItem" value="Test174" />
-	<parameter name="SenderEmail" value="CF@TEST.COM" />
-	<parameter name="ReceiverEmail" value="NNAutomationuser2@gmail.com" />
-	<parameter name="ShipmentRef1" value="012345" />
-	<parameter name="ShipmentRef2" value="567879" />
-	<parameter name="QuoteNumber" value="5123355" />
-	<parameter name="DropOffDepot" value="1" />
-	<parameter name="CollectionDepot" value="2" />
-	<parameter name="BillingType" value="1" />
+		<parameter name="DGContactName" value="Dadd" />
+		<parameter name="DGContactNumber" value="34324324" />
+		<parameter name="DGQuoteNumber" value="12345" />
+		<parameter name="WhoPays" value="1" />
+		<parameter name="Mode" value="1" />
+		<parameter name="Receiver" value="2" />
+		<parameter name="Sender" value="1" />
+		<parameter name="ReceiverName" value="Test" />
+		<parameter name="ReceiverItem" value="Test174" />
+		<parameter name="SenderEmail" value="CF@TEST.COM" />
+		<parameter name="ReceiverEmail" value="NNAutomationuser2@gmail.com" />
+		<parameter name="ShipmentRef1" value="012345" />
+		<parameter name="ShipmentRef2" value="567879" />
+		<parameter name="QuoteNumber" value="5123355" />
+		<parameter name="DropOffDepot" value="ACT TOLLFAST" />
+		<parameter name="CollectionDepot" value="ADC Port Adelaide (TMS)" />
+		<parameter name="BillingType" value="General Freight" />
 
-	<!---Pallet Information Test data -->
+		<!---Pallet Information Test data -->
 
-	<parameter name="ChepCustomer" value="1234" />
-	<parameter name="ChepExchange" value="4124" />
-	<parameter name="ChepTansferToToll" value="2345" />
-	<parameter name="ChepDocketNo" value="7891" />
-	<parameter name="LoscamCustomer" value="5671" />
-	<parameter name="LoascamExchange" value="6541" />
-	<parameter name="LoscamTransferToToll" value="3451" />
-	<parameter name="LoscamDocketNo" value="3451" />
-	<parameter name="OtherCostomer" value="0123" />
-	<parameter name="ChepOtherExchange" value="5678" />
-	<parameter name="ChepOtherTransferToToll" value="5123" />
-	<parameter name="chepOtherDocketNo" value="1111" />
-	<parameter name="LoscamOtherExchange" value="2222" />
-	<parameter name="LoscamOtherTransferToToll" value="3333" />
-	<parameter name="LoscamOtherDocketNo" value="1598" />
-	<parameter name="PurchaseOrder" value="Abcd1234" />
-	<parameter name="TollExtraSrviceAmount" value="5000" />
-	<parameter name="specialIns" value="Test Special Ins" />
-	<parameter name="SpeceialIns" value="Test Special Ins" />
+		<parameter name="ChepCustomer" value="1234" />
+		<parameter name="ChepExchange" value="4124" />
+		<parameter name="ChepTansferToToll" value="2345" />
+		<parameter name="ChepDocketNo" value="7891" />
+		<parameter name="LoscamCustomer" value="5671" />
+		<parameter name="LoascamExchange" value="6541" />
+		<parameter name="LoscamTransferToToll" value="3451" />
+		<parameter name="LoscamDocketNo" value="3451" />
+		<parameter name="OtherCostomer" value="0123" />
+		<parameter name="ChepOtherExchange" value="5678" />
+		<parameter name="ChepOtherTransferToToll" value="5123" />
+		<parameter name="chepOtherDocketNo" value="1111" />
+		<parameter name="LoscamOtherExchange" value="2222" />
+		<parameter name="LoscamOtherTransferToToll" value="3333" />
+		<parameter name="LoscamOtherDocketNo" value="1598" />
+		<parameter name="PurchaseOrder" value="Abcd1234" />
+		<parameter name="specialIns" value="Test Special Ins" />
+		<parameter name="SpeceialIns" value="Test Special Ins" />
+		<parameter name="TollExtraServiceAmount" value="5000" />
+		
 
-			<classes>
+		<classes>
 			<class name="createShipmentE2ETests.TollIntermodalTests" />
-			<class name="createShipmentE2ETests.TollTasmaniaTests" />
-			<class name="createShipmentE2ETests.TollIPECTests" />
-			<class name="createShipmentE2ETests.TollPriorityAUSTests" />
-			<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
+
+			<!--Blocked><class name="createShipmentE2ETests.TollTasmaniaTests" /> 
+				<class name="createShipmentE2ETests.TollIntermodalTests" /> <class name="createShipmentE2ETests.TollIntermodalTests" 
+				/> <class name="createShipmentE2ETests.TollIPECTests" /> <class name="createShipmentE2ETests.TollPriorityAUSTests" 
+				/> <class name="createShipmentE2ETests.TollNQXTollExpressTests" /></Blocked -->
 
 		</classes>
 	</test> <!-- Test -->

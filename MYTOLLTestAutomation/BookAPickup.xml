@@ -83,11 +83,11 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
-			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
+			<!--Blocked><class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollIPECTest" />
-			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
+			<class name="bookAPickupE2ETests.TollPriorityAusTest" /></Blocked -->
 
 		</classes>
 	</test> <!-- Test -->

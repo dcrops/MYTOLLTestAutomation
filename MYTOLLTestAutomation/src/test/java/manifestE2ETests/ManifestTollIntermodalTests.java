@@ -69,7 +69,7 @@ public class ManifestTollIntermodalTests {
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		
-		CreateShipmentActions.AddANewLineNZAUS();
+		CreateShipmentActions.AddANewLineNZAUS(1000,1200);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);

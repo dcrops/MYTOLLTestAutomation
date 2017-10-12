@@ -27,7 +27,8 @@ public class ShipmentReviewActions {
 	public static By PalletTransactionsInformation=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[1]/div[2]/div[1]/div[2]/ul/li[4]/div[2]/p");
 	
 	//Line Item 
-	
+	public static By Item1ArrowDown=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li[1]/div[1]/div[3]");
+	public static By Item2ArrowDown=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li[2]/div[1]/div[3]");
 	public static By itemName1=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[1]/div[2]/h3");
 	public static By itemDescription1=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[1]/p");
 	public static By numberOfItems=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[2]/p");
@@ -38,11 +39,20 @@ public class ShipmentReviewActions {
 	public static By reference2=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[8]/p");
 	public static By ShipmentContainDGGoods=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[9]/p");
 	
-	// 
+	// //*[@id="shipment-placeholder"]/div[1]/div[1]/div/div[2]/ul/li[2]/div[2]/div[2]/div[1]/p
 	
 	public static By continueBtn=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[2]/div[1]/a[1]");
 	
+	public static void ClickItem1Arrowdown() {
+		BaseWebdriver.driver.findElement(Item1ArrowDown).click();
+	}
+	
+	public static void ClickItem2ArrowdownItem2() {
+		BaseWebdriver.driver.findElement(Item2ArrowDown).click();
+	}
+	
 	public static void VerifyDispatchDate(String pDispatchDate) {
+	  
 		assertEquals(pDispatchDate,BaseWebdriver.driver.findElement(dispatchDate).getText());
 	}
 	

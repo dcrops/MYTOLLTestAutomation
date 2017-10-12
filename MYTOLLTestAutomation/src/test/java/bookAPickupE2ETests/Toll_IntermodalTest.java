@@ -86,9 +86,9 @@ public class Toll_IntermodalTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
-		BookAPickupActions.EnterQuantity(NumberOfItems);
-		// Select service
 		BookAPickupActions.EnterService(ServiceRefrigeration);
+		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
@@ -96,17 +96,18 @@ public class Toll_IntermodalTest {
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
 		String volume = BookAPickupActions.GetVoulme().toString();
 		System.out.println(volume);
-		BookAPickupActions.SelectDestination(destination);
+	
 		//BookAPickupActions.EnterDestination(destination);
 		// BookAPickupActions.SelectMode(); defect
 
 		BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
 		BookAPickupActions.EnterVendorDetails(vendorNum);
 		BookAPickupActions.EnterTimeSlot();
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.selectDangerousGood();
 		BookAPickupActions.selectContainFoodItem();
 
-		jse.executeScript("scroll(500, 800)");
+		//jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		// BookAPickupActions.selectReadyTime();
 
@@ -119,6 +120,8 @@ public class Toll_IntermodalTest {
 		System.out.println(closingTime);
 
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+		
 
 		BookAPickupActions.ClickReviewBook();
 
@@ -195,26 +198,27 @@ public class Toll_IntermodalTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
-		BookAPickupActions.EnterQuantity(NumberOfItems);
+		
 		// Select service
 		BookAPickupActions.EnterService(ServiceRefrigeration);
+		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
-
-		BookAPickupActions.SelectDestination(destination);
-
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		// BookAPickupActions.SelectMode(); defect
 
 		BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
 		BookAPickupActions.EnterVendorDetails(vendorNum);
 		BookAPickupActions.EnterTimeSlot();
+		PageBase.MoveToElement(BookAPickupActions.temperatureHigh, BookAPickupActions.vendorNumber);
 		BookAPickupActions.selectDangerousGood();
 		BookAPickupActions.selectContainFoodItem();
 
-		jse.executeScript("scroll(500, 800)");
+		//jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
@@ -222,7 +226,8 @@ public class Toll_IntermodalTest {
 
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+		
 		BookAPickupActions.ClickReviewBook();
 
 		PageBase.MaximumWaitForElementEnabled();

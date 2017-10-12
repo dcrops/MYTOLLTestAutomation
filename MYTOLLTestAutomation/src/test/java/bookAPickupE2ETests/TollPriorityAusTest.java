@@ -56,7 +56,7 @@ public class TollPriorityAusTest {
 		
 		BookAPickupActions.SelectDestination(destination);
 
-		BookAPickupActions.SelectItemDescriptionTollPriorityAU();
+		BookAPickupActions.SelectItemDescriptionTollPriorityAU("Box / Carton");
 		jse.executeScript("scroll(1000, 1500)");
 		BookAPickupActions.SelectDangerousGoods(2);
 

@@ -2,6 +2,9 @@ package myTollHomePageActions;
 
 import GlobalActions.PageBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+
 import baseWebdriver.BaseWebdriver;
 
 
@@ -20,7 +23,9 @@ public class MyTollHomePageActions {
 	public static By Menulist=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a");
 	public static By BookAPickup=By.id("bookaPickup");
 	public static By getRateEnquiry=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a[1]/p");
-	
+	public static By MyDashboard=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[1]/a/p");
+	public static By myManifest=By.id("manifestTabAnchor");
+	public static By manualManifest=By.xpath("//*[@id=\"manifestHasMoreDiv\"]/button[2]");
 	
 	public static void LaunchMyToll(String url)
 	{
@@ -56,6 +61,44 @@ public class MyTollHomePageActions {
 	public static void ClickGetRateEnquiery()
 	{
 		BaseWebdriver.driver.findElement(getRateEnquiry).click();
+		
+	}
+	public static void ClickMyDashboard()
+	{
+		BaseWebdriver.driver.findElement(MyDashboard).click();
+		
+	}
+		
+	public static void ClickMyManifest()
+	{
+		BaseWebdriver.driver.findElement(myManifest).click();
+		
+	}
+	
+	public static boolean ClickManualManifest()
+	{
+		
+		try {
+		Boolean results=false;
+		while (results=true)
+	   {
+		results =BaseWebdriver.driver.findElement(myManifest).isDisplayed();
+		if (results=false)
+		{
+			PageBase.Scrollbar(250, 500);
+			results =BaseWebdriver.driver.findElement(myManifest).isDisplayed();
+		}
+		}
+		//return results;
+		
+		}
+				
+		catch (Exception ex)
+		{
+			
+		}
+		return false;
+		
 		
 	}
 }

@@ -1,6 +1,7 @@
 package bookAPickupActions;
 
 import GlobalActions.PageBase;
+import createShipmentActions.CreateShipmentActions;
 import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
@@ -44,7 +45,7 @@ public class BookAPickupActions {
 	public static By modeItem = By.xpath("//*[@id=\"mode-type-selector\"]/div/ul/li");
 	public static By chargeToAccountItem = By.xpath("//*[@id=\"charge-to-selector\"]/div/ul/li[1]/div");
 	public static By chargeToAccount = By.xpath("//*[@id=\"charge-to-selector\"]/label/a/i");
-	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i"); 
+	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i"); //*[@id="freight-type-selector"]/label/a/i
 	public static By itemDescriptionTextField = By.id("item-description");
 	public static By selectItemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[3]/div");
 	public static By selectItemDescriptionTollPrioAU = By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li/div");
@@ -484,17 +485,16 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(selectItemDescription).click();
 	}
 	
-	public static void SelectItemDescriptionTollPriorityAU() {
+	public static void SelectItemDescriptionTollPriorityAU(String pItem) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemDescription).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[2]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li/div[text()='"+pItem+"']")).click();
 	}
 
 	public static void SelectItem(int j) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemDescription).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[" + j + "]/div"))//*[@id="freight-type-selector"]/div/ul/li[1]/div -selectLargestitem -Letter / Satchel , Box / Carton
-				.click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[" + j + "]/div")).click();
 	}
 	
 	public static void EnterItem(String itemName) {
@@ -761,27 +761,26 @@ public class BookAPickupActions {
 	}
 
 	public static void AddANewLineTollTasmania(String ServiceGeneral) {
-		PageBase.Scrollbar(800, 1000);
+		//PageBase.Scrollbar(800, 1000);
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		
 		BaseWebdriver.driver.findElement(addANewLine).click();
-		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		PageBase.Scrollbar(250, 800);
+		//BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		//PageBase.Scrollbar(250, 800);
+		BookAPickupActions.EnterItem("Automation Temp1");
 		BookAPickupActions.Selectservice(2);
+		BookAPickupActions.SelectDestination("melb");
+		BookAPickupActions.SelectChargeToAccount2(1);
 		//BookAPickupActions.EnterService(ServiceGeneral);
 		BookAPickupActions.EnterQuantity("15");
-
 		BookAPickupActions.EnterPalletSpace("6");
-
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
-		BookAPickupActions.SelectChargeToAccount2(1);
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-	
-		BookAPickupActions.SelectDestination("melb");
-		
-		BookAPickupActions.EnterItem("Automation Temp1");
-		
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);		
 		BookAPickupActions.selectDangerousGoodNewLine();
-		BookAPickupActions.selectContainFoodItem();
-		PageBase.Scrollbar(800, 1200);
+		//BookAPickupActions.selectContainFoodItem(); removed
+		//PageBase.Scrollbar(800, 1200);
+		
+		
 
 	}
 	public static void SaveAsTemplate() {
@@ -792,7 +791,7 @@ public class BookAPickupActions {
 
 	public static void EnterDangerousGoodsDetails(int j, String lookupItem, String packageDescription, String pDgPkgQty,
 			String pDgQtyKg) {
-		
+		try {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
@@ -803,6 +802,12 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 		BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
 		BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
+		}
+		
+		catch (Exception ex)
+		{
+			CreateShipmentActions.EnterDangerousGoodsDetails( j, lookupItem, packageDescription, pDgPkgQty, pDgQtyKg);
+		}
 
 	}
 	
@@ -825,11 +830,16 @@ public class BookAPickupActions {
 	
 	public static void SelectPackgingGroup(String packagingGroup) {
 		// BookAPickupActions.SelectUNNumber(j,lookupItem);
-
+		try {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li/div[text()='"+packagingGroup+"']")).click();
+		}
 		
+		catch(Exception ex)
+		{
+		CreateShipmentActions.SelectPackgingGroup(packagingGroup);
+		}
 	}
 
 	public static void ClickConfirm() {

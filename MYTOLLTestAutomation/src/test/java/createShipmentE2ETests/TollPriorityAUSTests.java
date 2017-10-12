@@ -54,7 +54,7 @@ public class TollPriorityAUSTests {
 		jse.executeScript("scroll(0, 250)");
 		
 				
-		CreateShipmentActions.AddANewLineNZAUS();
+		CreateShipmentActions.AddANewLineNZAUS(500, 800);
 		BookAPickupActions.selectDangerousGood();
 		
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
@@ -83,7 +83,7 @@ public class TollPriorityAUSTests {
 		PageBase.Scrollbar(500, 800);
 		BookAPickupActions.selectDangerousGood();
 		PageBase.Scrollbar(1200,1500);
-		CreateShipmentActions.AddANewLineNZAUS();
+		CreateShipmentActions.AddANewLineNZAUS(500,800);
 		BookAPickupActions.selectDangerousGood();
 		PageBase.Scrollbar(800, 1000);
 		BookAPickupActions.EnterSpecialInstructions("special instructions test");
