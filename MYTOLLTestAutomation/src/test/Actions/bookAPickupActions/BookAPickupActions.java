@@ -736,6 +736,7 @@ public class BookAPickupActions {
 
 		//JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		//jse.executeScript("scroll(0, 250);");
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BaseWebdriver.driver.findElement(addANewLine).click();
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
@@ -754,8 +755,9 @@ public class BookAPickupActions {
 		//jse.executeScript("scroll(200, 500);");
 		
 		BookAPickupActions.EnterItem("Automation Temp1");
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.selectContainFoodItem();
-	
+		
 		BookAPickupActions.selectDangerousGoodNewLine();
 
 	}

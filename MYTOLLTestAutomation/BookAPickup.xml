@@ -37,7 +37,7 @@
 		<parameter name="ItemTemplateName" value="Automation Template1" />
 		<parameter name="ChargeToAccount" value="Sender" />
 		<parameter name="Destination" value="MELALEUCA" />
-		<parameter name="DestinationItem" value="6065, MELALEUCA, WA, AU" />
+		<parameter name="DestinationItem" value="6079, MELALEUCA, WA, AU" />
 		<parameter name="Postcode" value="6065" />
 		<parameter name="DestinationNZ" value="Wellington" />
 		<parameter name="DestinationNZItem" value="6011, WELLINGTON, NZ" />
@@ -82,7 +82,7 @@
 
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
+			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
 			<!--Blocked><class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
