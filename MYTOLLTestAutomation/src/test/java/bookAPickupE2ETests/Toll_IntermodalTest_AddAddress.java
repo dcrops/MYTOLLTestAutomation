@@ -24,9 +24,8 @@ import baseWebdriver.BaseWebdriver;
 import myTollHomePageActions.MyTollHomePageActions;
 import reviewYourPickupActions.ReviewYouPickupActions;
 
-import GlobalActions.GlobalConstants;
 
-public class Toll_IntermodalTest_AddAddress implements GlobalConstants {
+public class Toll_IntermodalTest_AddAddress {
 
 	public static Integer locationIndex = 4;
 	

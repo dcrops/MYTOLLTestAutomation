@@ -3,29 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="bookAPickupE2ETests.TollPriorityAusTest">
-        <methods>
-          <include name="RunSetup"/>
-          <include name="BookAPickup_TollPriority_AUS_E2ETest_TID_620"/>
-          <include name="RunTearDown"/>
-        </methods>
-      </class> <!-- bookAPickupE2ETests.TollPriorityAusTest -->
-      <class name="bookAPickupE2ETests.TollIPECTest">
-        <methods>
-          <include name="BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress"/>
-          <include name="RunSetup"/>
-          <include name="BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress_ConfirmedDetails"/>
-          <include name="RunTearDown"/>
-        </methods>
-      </class> <!-- bookAPickupE2ETests.TollIPECTest -->
-      <class name="bookAPickupE2ETests.TollPriorityNZTest">
+      <class name="rateEnquiryE2ETests.TollIPECTests">
         <methods>
           <include name="RunTearDown"/>
-          <include name="BookAPickup_TollPriority_NZ_E2ETest_TID_619_VerifyDetails"/>
+          <include name="RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_RoadExpress"/>
           <include name="RunSetup"/>
-          <include name="BookAPickup_TollPriority_NZ_E2ETest_TID_619"/>
         </methods>
-      </class> <!-- bookAPickupE2ETests.TollPriorityNZTest -->
+      </class> <!-- rateEnquiryE2ETests.TollIPECTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

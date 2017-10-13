@@ -2,8 +2,11 @@ package rateEnquiryActions;
 
 import GlobalActions.PageBase;
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
@@ -25,10 +28,12 @@ public class RateEnquiryActions {
 	public static By destinationCountryTextField = By.name("placeholder-country");
 	public static By destinationPostCode = By.id("destination-postcode");
 	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/div[1]/a/i");
+	public static By itemDescriptionType = By.id("item-description");
 	public static By numberOfItem = By.id("numberOfItem");
 	public static By quantityType = By.xpath("//*[@id=\"item-type-selector\"]/div[1]/a/i"); 
 	public static By numberofGarments = By.id("garments-count");
 	public static By weight = By.id("item-weight");
+	public static By billingTypeTextFeild = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/input[2]"); 
 	public static By billingTypeTDF = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/a/i"); 
 	public static By billingType = By.xpath("//*[@id=\"billing-type-selector0\"]/div[1]/a/i"); //*[@id="billing-type-selector"]/div[1]/a/i
 	public static By billingTypeAddLineItem = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/a/i");
@@ -40,6 +45,13 @@ public class RateEnquiryActions {
 	public static By gst = By.xpath("//*[@id=\"show-calculated-rate\"]/div[1]/p[2]/span[2]");
 	public static By createShipmentBtn = By.id("move-to-create-shipmnt"); 
 	public static By createShipmentContinue = By.id("confirm-true");
+	public static By enterAccountNumber = By.xpath("//*[@id=\"account-selector\"]/label/input[2]");
+	public static Boolean valid;
+	public static By shipmentCarrierName= By.xpath("//*[@id=\"carrier-name\"]");
+	public static By shipmentService= By.xpath("//*[@id=\"service-selector\"]/label/input[2]");
+	public static By shipmentAccountNo= By.xpath("//*[@id=\"account\"]");
+	public static By country = By.xpath("//*[@id=\"country-selector\"]/label/input[2]");
+	public static By countryPostCode = By.xpath("//*[@id=\"destination-postcode\"]");
 
 
 	
@@ -71,18 +83,31 @@ public class RateEnquiryActions {
 	}
 	
 	public static void EnterService(String pService ) {
-		PageBase.MaximumWaitForElementEnabled();
+		/*PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(servicedropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='"+pService +"']")).click();
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();*/
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.sendText(shipmentService, 10, pService);
+		PageBase.click(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='"+pService +"']"), 5);
 	}
 	
+	public static void EnterAccountNumberAndSelect(String account) {
+		PageBase.sendText(enterAccountNumber, 10, account);
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.click(By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()='"+account+"']"), 5);
+	}
 
 	public static void SelectModeItem(int j) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(selectMode).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div/ul/li[" + j + "]/div")).click();
 
+	}
+	
+	public static void SelectMode(String mode) {
+		PageBase.click(selectMode, 5);
+		PageBase.click(By.xpath("//*[@id=\"mode-selector\"]/div/ul/li/div[text()='"+mode+"']"), 5);
 	}
 
 	public static void SelectOriginSuburbPostcode(int j) {
@@ -104,6 +129,36 @@ public class RateEnquiryActions {
 				.click();
 		
 	}
+	
+	public static void SelectOrigin(String Suburb, String PostCode) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.sendText(originSuburbPostCodeTextField, 5, Suburb);
+		PageBase.click(originSuburbPostCodeTextField, 2);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(By.xpath("//*[@id=\"origin-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
+	}
+	
+	public static void SelecDestination(String Suburb, String PostCode) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.sendText(destinationSuburbPostcodeTextField, 5, Suburb);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(By.xpath("//*[@id=\"destination-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
+	}
+	
+	
+	public static void SelectCountry(String Country) {
+		PageBase.MediumWaitForElementEnabled();
+		PageBase.sendText(country, 5, Country);
+		PageBase.MediumWaitForElementEnabled();
+		PageBase.click(By.xpath("//*[@id=\"country-selector\"]/div/ul/li/div[text()='"+Country+"']"), 5);
+	}
+	
+	
+	public static void SelectCountryPostCode(String PostCode) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.sendText(countryPostCode, 5, PostCode);
+	}
+	
 
 	public static void SelectOriginSuburbPostcodeRateEnquiryTollNQX(String pSuburb, int j) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -197,7 +252,6 @@ public class RateEnquiryActions {
 		BaseWebdriver.driver.findElement(numberOfItem).click();
 		BaseWebdriver.driver.findElement(numberOfItem).clear();
 		BaseWebdriver.driver.findElement(numberOfItem).sendKeys(pnumberOfItem);
-
 	}
 
 	public static void QuantityType(int j) {
@@ -207,6 +261,13 @@ public class RateEnquiryActions {
 				.click();
 
 	}
+	
+	public static void QuantityTypeSelect(String  QtyType) {
+		PageBase.click(quantityType, 2);
+		PageBase.click(By.xpath("//*[@id=\"item-type-selector\"]/div[2]/ul/li/div[text()='"+QtyType+"']"), 2);
+	}
+	
+	
 
 	public static void NumberOfGarments(String pNumberOfGarments) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -253,6 +314,13 @@ public class RateEnquiryActions {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(billingTypeTDF).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+pBillingType+"']")).click();
+	}
+	
+	public static void BillingType(String BillingType) {
+		
+		PageBase.sendText(billingTypeTextFeild, 5, BillingType);
+		PageBase.MediumWaitForElementEnabled();
+		PageBase.click(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+BillingType+"']"), 5);
 	}
 	
 
@@ -323,25 +391,41 @@ public class RateEnquiryActions {
 	}
 
 	public static void ClickPriceNow() {
-		PageBase.MinimumWaitForElementEnabled();
+	/*	PageBase.MinimumWaitForElementEnabled();
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
 		jse.executeScript("scroll(250, 800);");
 		BaseWebdriver.driver.findElement(pricenowBtn).click();
+		*/
+		PageBase.moveToElement(pricenowBtn);
+		PageBase.click(pricenowBtn, 2);
 
+	}
+	
+	public static void validShipement (Boolean valid) {
+		
 	}
 
 	public static void ContinueCreateShipment() {
 		try {
 		PageBase.MaximumWaitForElementEnabled();
 		Boolean results=BaseWebdriver.driver.findElement(createShipmentContinue).isDisplayed();
+		
+		if (results=true && valid) {
+			Reporter.log("FAILED - Valid Shipment Price Unavailable");
+			System.out.println("FAILED - Valid Shipment Price Unavailable");
+			Assert.fail("FAILED - Valid Shipment Price Unavailable");
+			
+		}
+		
 		if (results=true) {
+		System.out.println("PopUp: Continue to Shipment");
 		BaseWebdriver.driver.findElement(createShipmentContinue).click();
 		PageBase.MaximumWaitForElementEnabled();
 		}
 		}
 		
-		catch(Exception ex) {
-			System.out.println(ex);
+		catch(Exception e) {
+			System.out.println("Continue Verifying Price and Move to Shipment");
 			RateEnquiryActions.VerifyPriceNowDetails();
 			RateEnquiryActions.ClickCreateShipment();
 		}
@@ -354,7 +438,7 @@ public class RateEnquiryActions {
 		if (results=true) {
 		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
 			
-			RateEnquiryActions.VerifyToatlCharge("Total Charge:");
+			RateEnquiryActions.VerifyTotalCharge("Total Charge:");
 			RateEnquiryActions.VerifyGST("GST:");
 			RateEnquiryActions.VerifyRate("Rate:"); 
 		PageBase.MinimumWaitForElementEnabled();
@@ -368,31 +452,64 @@ public class RateEnquiryActions {
 		
 	public static void VerifyPricenowMessage(String pPricenowMsg) {
 		PageBase.MinimumWaitForElementEnabled();
-		assertEquals(pPricenowMsg, BaseWebdriver.driver.findElement(pricenowMsg).getText());
+		//assertEquals(pPricenowMsg, BaseWebdriver.driver.findElement(pricenowMsg).getText());
+		PageBase.verifyTextExist(pricenowMsg, pPricenowMsg);
 
 	}
 
-	public static void VerifyToatlCharge(String pTotalCharge) {
+	public static void VerifyTotalCharge(String pTotalCharge) {
 		PageBase.MinimumWaitForElementEnabled();
-		assertEquals(pTotalCharge, BaseWebdriver.driver.findElement(totalCharge).getText());
+		//assertEquals(pTotalCharge, BaseWebdriver.driver.findElement(totalCharge).getText());
+		String fullCharge = BaseWebdriver.driver.findElement(totalCharge).getText();
+		Reporter.log("Full Charge: "+fullCharge);
+		System.out.println("Full Charge: "+fullCharge);
+		String getText = BaseWebdriver.driver.findElement(totalCharge).getText().substring(0, 13);
+		
+		if (getText.equals(pTotalCharge)){
+			Reporter.log("Expected Text : "+pTotalCharge+ " Matched the Text on Screen :" +getText);
+			System.out.println("Expected Text : "+pTotalCharge+ " Matched the Text on Screen :" +getText);
+		}else{
+			Reporter.log("FAILED: Expected Text : "+pTotalCharge+ " DOES NOT Match the Text on Screen :" +getText);
+			Assert.fail("FAILED: Expected Text : "+pTotalCharge+ " DOES NOT Match the Text on Screen :" +getText);
+		}
 
 	}
 
 	public static void VerifyGST(String pGST) {
 		PageBase.MinimumWaitForElementEnabled();
-		assertEquals(pGST, BaseWebdriver.driver.findElement(gst).getText());
+		//assertEquals(pGST, BaseWebdriver.driver.findElement(gst).getText());
+		String getText = BaseWebdriver.driver.findElement(gst).getText().substring(0, 4);
+	
+		if (getText.equals(pGST)){
+			Reporter.log("Expected Text : "+pGST+ " Matched the Text on Screen :" +getText);
+			System.out.println("Expected Text : "+pGST+ " Matched the Text on Screen :" +getText);
+		}else{
+			Reporter.log("FAILED: Expected Text : "+pGST+ " DOES NOT Match the Text on Screen :" +getText);
+			Assert.fail("FAILED: Expected Text : "+pGST+ " DOES NOT Match the Text on Screen :" +getText);
+		}
 
 	}
 
 	public static void VerifyRate(String pRate) {
 		PageBase.MinimumWaitForElementEnabled();
-		assertEquals(pRate, BaseWebdriver.driver.findElement(rate).getText());
+		//assertEquals(pRate, BaseWebdriver.driver.findElement(rate).getText());
+		String getText = BaseWebdriver.driver.findElement(rate).getText().substring(0, 5);
+		if (getText.equals(pRate)){
+			Reporter.log("Expected Text : "+pRate+ " Matched the Text on Screen :" +getText);
+			System.out.println("Expected Text : "+pRate+ " Matched the Text on Screen :" +getText);
+		}else{
+			Reporter.log("FAILED: Expected Text : "+pRate+ " DOES NOT Match the Text on Screen :" +getText);
+			Assert.fail("FAILED: Expected Text : "+pRate+ " DOES NOT Match the Text on Screen :" +getText);
+		}
 
 	}
 
 	public static void ClickCreateShipment() {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(createShipmentBtn).click();
-
+		//BaseWebdriver.driver.findElement(createShipmentBtn).click();
+		PageBase.click(createShipmentBtn, 2);
 	}
+	
+	
+	
 }

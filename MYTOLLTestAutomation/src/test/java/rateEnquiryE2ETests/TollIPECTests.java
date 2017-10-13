@@ -1,17 +1,40 @@
 package rateEnquiryE2ETests;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import myTollHomePageActions.MyTollHomePageActions;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import GlobalActions.PageBase;
+import baseWebdriver.BaseWebdriver;
 import rateEnquiryActions.RateEnquiryActions;
 
 public class TollIPECTests {
 	
-	public static Integer tollCarrier=4;
+	String AccountNo = "2230899";
+	String BillingType = "ALL FREIGHT";
+	String Qty = "10";
+	String QtyType = "Items";
+	String Lenght = "10";
+	String Width = "10";
+	String Height = "10";
+	String Weight = "10";
+	String OriginSuburb ="MELBOURNE";
+	String OriginPostCode ="3000";
+	String DesSuburb ="FOOTSCRAY";
+	String DesPostCode ="3011";	
+	
 	
 	@BeforeMethod
 	public void RunSetup() throws Exception
@@ -23,42 +46,49 @@ public class TollIPECTests {
 			}
 	
 	@Test
-	public void RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_Refrigeration()
+	@Parameters({"TollCarrierTollIPEC", "ServiceRoadExpress"})
+	public void RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_RoadExpress(String Carrier, String Service)
 	{
-		 
-		RateEnquiryActions.SelectTollCarrierItem(tollCarrier);
-		RateEnquiryActions.SelectTollCarrierItem(tollCarrier);
-		RateEnquiryActions.SelectService(1);; 
-		BookAPickupActions.SelectAccountNumber1();
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		
-		//RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll IPEC","Toll IPEC is a leading provider of express road freight within Australia with the capability to create customised solutions to meet our customers’ freight distribution needs, no matter their size or urgency.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiry("Mel",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("MEL",2);
-	
-		RateEnquiryActions.SelectItemDescription(1);
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
-		RateEnquiryActions.NumberOfItem("15"); 
-		RateEnquiryActions.NumberOfGarments("10");
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
+		PageBase.sendText(RateEnquiryActions.itemDescriptionType, 2, "Test_Automation");
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
+		PageBase.sendText(RateEnquiryActions.numberOfItem, 5, Qty);
+		PageBase.sendText(BookAPickupActions.length, 2, Lenght);
+		PageBase.sendText(BookAPickupActions.width, 2, Width );
+		PageBase.sendText(BookAPickupActions.height, 2, Height);
+		PageBase.sendText(RateEnquiryActions.weight, 2, Weight);
 		
-		RateEnquiryActions.AddANewLine();
-		
+		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
-	
+		
+		//Verify Details on Shipment Page
+		//Wait below needs to be fixed
+		/*PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();*/
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 	}
 	
 	
 	@AfterMethod
 	  public void RunTearDown() throws Exception
 		{
-			//EnvConfig.tearDown();
-	
+		BaseWebdriver.tearDown();
+		//BaseWebdriver.driver.quit();
 		}
 
 }

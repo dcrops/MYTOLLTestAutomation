@@ -15,14 +15,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 import myTollHomePageActions.MyTollHomePageActions;
 
 public class BaseWebdriver {
 
 	public static WebDriver driver;
 	public static StringBuffer verificationErrors = new StringBuffer();
-	public static String url="https://mytoll-sit.tollgroup.com/";  //"http://cesapaut003.toll.com.au:8080/";//"https://mytoll-sit.tollgroup.com/";
-	public static String Username="ahq_test01@mailinator.com";//"allbus001@toll.com";  //"superuser@gmail.com"; //
+	public static String url="https://www-ppd.mytoll.com";  //"http://cesapaut003.toll.com.au:8080/";//"https://mytoll-sit.tollgroup.com/";
+	public static String Username="tim_BVT@mailinator.com";//"allbus001@toll.com";  //"superuser@gmail.com"; //
 	public static String Password="Toll@123"; //"Victoria@123"; //"Toll@123"; ////;
 	
 	//Createshipment users
@@ -77,8 +78,8 @@ public class BaseWebdriver {
 		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
 		
-	    Point point=new Point(0,1920);
-	    driver.manage().window().setPosition(point);
+	    //Point point=new Point(0,1920);
+	    //driver.manage().window().setPosition(point);
 		MyTollHomePageActions.LaunchMyToll(url);
 		BaseWebdriver.driver.manage().window().maximize();
 		System.out.println(driver.manage().window().getSize());
@@ -88,7 +89,7 @@ public class BaseWebdriver {
 
 	@AfterMethod
 	public static void tearDown() throws Exception {
-		//driver.quit();
+		BaseWebdriver.driver.quit();
 		//driver.close();
 
 	}

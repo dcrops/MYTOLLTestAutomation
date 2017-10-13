@@ -4,9 +4,11 @@ import GlobalActions.PageBase;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
@@ -69,6 +71,30 @@ public class CreateShipmentActions {
 	public static By authorityToLeaveNoBtn= By.xpath("//*[@id=\"steps-3\"]/div[5]/div/div[2]/label/span[2]");
 	public static By tollExtraSrviceAmount= By.id("toll-extra-service"); 
 	public static By reviewCreateShipmentBtn = By.id("create-shipment-btn");
+
+	// Add Address
+	public static final By SenderAddress_Dropdown = By.xpath("//*[@id=\"sender-selector\"]/label/a/i");
+	public static final By SenderAddress_Location_Selected= By.xpath("//*[@id=\"sender-selector\"]/label/input[@name=\"placeholder-location\"]");
+	public static final By SenderAddress_Add_Address= By.xpath("//*[@id=\"sender-selector\"]//*//div[@class=\"add-new-elem\"]");
+	public static final By New_AddressCompanName= By.id("add-adrr-company-aut");
+	public static final By New_AddressSearch= By.id("address-srch");
+	public static final By New_AddressSearch_Select= By.xpath("//*[@id=\"address-srch-wrpr\"]/div/ul/li[1]/div");
+	public static final By New_AddressSearch_Contine= By.id("addr-continue-autmatic");
+	public static final By New_Address_Name = By.id("add-addr-name");
+	public static final By New_Address_Number = By.id("add-addr-phone");
+	public static final By New_Address_Email = By.id("add-addr-email");
+	public static final By New_Address_DGName = By.id("add-addr-dg-contact-name");
+	public static final By New_Address_DGNumber = By.id("add-addr-dg-contact-phone");
+	public static final By New_Address_Add = By.id("add-address-btn-final");
+	public static final By ReceiverAddress_Dropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i");
+	public static final By ReceiverAddress_Location_Selected= By.xpath("//*[@id=\"receiver-selector\"]/label/input[@name=\"placeholder-location\"]");
+	public static final By ReceiverAddress_Add_Address= By.xpath("//*[@id=\"receiver-selector\"]//*//div[@class=\"add-new-elem\"]");
+	
+	public static final String SenderAddressCompanyName = "TestSender";
+	public static final String SenderAddressCompanyAdd = "60 Collins Street, MELBOURNE VIC 3000";
+	public static final String ReceiverAddressCompanyName = "TestReceiver";
+	public static final String ReceiverAddressCompanyAdd = "60 Colliery Street, NEATH  NSW  2326";
+	
 
 	public static By acceptAccountChangeMSG = By.id("confirm-true");
 	public static void ClickShipment() {
@@ -484,6 +510,86 @@ public class CreateShipmentActions {
 	public static void EnterReceiverEmail(String pReceiverEmail) {
 		//assertEquals(pReceiverEmail, BaseWebdriver.driver.findElement(receiverEmail).getAttribute("value"));
 		BaseWebdriver.driver.findElement(receiverEmail).sendKeys(pReceiverEmail);
+	}
+	
+	public static void addSenderAdderess(){
+		PageBase.waitForElement(senderdropdown, 10);
+		PageBase.click(senderdropdown, 10);
+		
+		
+		PageBase.waitForElement(SenderAddress_Add_Address, 10);
+		PageBase.click(SenderAddress_Add_Address, 10);
+		
+		int Number = (int) (Math.random()*10000);
+		String newNumber = String.valueOf(Number);
+		String NewCompanyName = SenderAddressCompanyName+newNumber;
+		PageBase.sendText(New_AddressCompanName, 10, NewCompanyName );
+		PageBase.click(New_AddressSearch, 10);
+		PageBase.sendText(New_AddressSearch, 10, SenderAddressCompanyAdd);
+		PageBase.click(New_AddressSearch_Select, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(New_AddressSearch_Contine, 10);
+		PageBase.sendText(New_Address_Name, 10, NewCompanyName);
+		PageBase.sendText(New_Address_Number, 10, "0452456876");
+		PageBase.sendText(New_Address_Email, 10, "Test@test.com");
+		//Verify if DG fields exists
+		Boolean DG = PageBase.isElementPresent(New_Address_DGName);
+		if (DG == true) {
+			PageBase.sendText(New_Address_DGName, 10, "Test	");
+			PageBase.sendText(New_Address_DGNumber, 10, "0452567879");
+		}
+		PageBase.click(New_Address_Add, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		//Verify Address is Selected
+		PageBase.verifyTextExistAttribute(SenderAddress_Location_Selected, NewCompanyName);
+		
+		String Address = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();
+			if (Address.contains(Address)) {
+				System.out.println("New Sender Address Exists in Location Feild AS EXPECTED");
+			} else {
+				System.out.println("FAILED: New Sender Address DOEN NOT Exists in Location Feild");
+				Reporter.log("FAILED: New Sender Address DOEN NOT Exists in Location Feild");
+				Assert.fail("FAILED: New Sender Address DOEN NOT Exists in Location Feild");
+			}
+	}
+	
+	public static void addReceiverAdderess(){
+		PageBase.waitForElement(receiverdropdown, 10);
+		PageBase.click(receiverdropdown, 10);
+		PageBase.waitForElement(ReceiverAddress_Add_Address, 10);
+		PageBase.click(ReceiverAddress_Add_Address, 10);
+		
+		int Number = (int) (Math.random()*10000);
+		String newNumber = String.valueOf(Number);
+		String NewCompanyName = ReceiverAddressCompanyName+newNumber;
+		PageBase.sendText(New_AddressCompanName, 10, NewCompanyName );
+		PageBase.click(New_AddressSearch, 10);
+		PageBase.sendText(New_AddressSearch, 10, ReceiverAddressCompanyAdd);
+		PageBase.click(New_AddressSearch_Select, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(New_AddressSearch_Contine, 10);
+		PageBase.sendText(New_Address_Name, 10, NewCompanyName);
+		PageBase.sendText(New_Address_Number, 10, "0452456876");
+		PageBase.sendText(New_Address_Email, 10, "Test@test.com");
+		//Verify if DG fields exists
+		Boolean DG = PageBase.isElementPresent(New_Address_DGName);
+		if (DG == true) {
+			PageBase.sendText(New_Address_DGName, 10, "Test	");
+			PageBase.sendText(New_Address_DGNumber, 10, "0452567879");
+		}
+		PageBase.click(New_Address_Add, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		//Verify Address is Selected
+		PageBase.verifyTextExistAttribute(ReceiverAddress_Location_Selected, NewCompanyName);
+		
+		String Address = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[2]")).getText();
+			if (Address.contains(Address)) {
+				System.out.println("New Receiver Address Exists in Location Feild AS EXPECTED");
+			} else {
+				System.out.println("FAILED: New Receiver Address DOEN NOT Exists in Location Feild");
+				Reporter.log("FAILED: New Receiver Address DOEN NOT Exists in Location Feild");
+				Assert.fail("FAILED: New Receiver Address DOEN NOT Exists in Location Feild");
+			}
 	}
 
 }

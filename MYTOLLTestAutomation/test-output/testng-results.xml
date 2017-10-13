@@ -1,55 +1,1360 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
+<testng-results skipped="0" failed="4" ignored="0" total="21" passed="17">
   <reporter-output>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $290.49]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : DG Freight Matched the Text on Screen :DG Freight]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 106119 Matched the Text on Screen :106119]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Express Matched the Text on Screen :Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 106119 Matched the Text on Screen :106119]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $290.49]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : General Matched the Text on Screen :General]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 106119 Matched the Text on Screen :106119]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Refrigeration Matched the Text on Screen :Refrigeration]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 106119 Matched the Text on Screen :106119]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $9.58]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[FAILED: Expected Text : Toll Priority (Aus) DOES NOT Match the Text on Screen :]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $50.50]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Priority (Aus) Matched the Text on Screen :Toll Priority (Aus)]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Global - Express Documents Matched the Text on Screen :Global - Express Documents]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 401509 Matched the Text on Screen :401509]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Priority (Aus) Matched the Text on Screen :Toll Priority (Aus)]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Parcels - Off Peak Matched the Text on Screen :Parcels - Off Peak]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 401509 Matched the Text on Screen :401509]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $278.50]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : DG Express Matched the Text on Screen :DG Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $261.81]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Dangerous Goods Matched the Text on Screen :Dangerous Goods]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $133.19]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Express Matched the Text on Screen :Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $116.49]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : General Matched the Text on Screen :General]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $176.23]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Premium Matched the Text on Screen :Premium]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Refrigeration Matched the Text on Screen :Refrigeration]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $116.83]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Tasmania Matched the Text on Screen :Toll Tasmania]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : DG Freight Matched the Text on Screen :DG Freight]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 100428 Matched the Text on Screen :100428]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $116.83]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Tasmania Matched the Text on Screen :Toll Tasmania]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Express Matched the Text on Screen :Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 100428 Matched the Text on Screen :100428]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $116.83]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Tasmania Matched the Text on Screen :Toll Tasmania]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : General Matched the Text on Screen :General]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 100428 Matched the Text on Screen :100428]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: AUD $126.48]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll IPEC Matched the Text on Screen :Toll IPEC]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Road Express Matched the Text on Screen :Road Express]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 2230899 Matched the Text on Screen :2230899]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: NZD $163.12]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Priority (NZ) Matched the Text on Screen :Toll Priority (NZ)]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Global - Express Parcels Matched the Text on Screen :Global - Express Parcels]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 100181 Matched the Text on Screen :100181]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+    </line>
+    <line>
+      <![CDATA[Full Charge: Total Charge: NZD $32.05]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+    </line>
+    <line>
+      <![CDATA[xpath not found: By.xpath: //*[@id="carrier-name"]<br>]]>
+    </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="49962" started-at="2017-09-27T07:24:00Z" finished-at="2017-09-27T07:24:50Z">
+  <suite name="Suite" duration-ms="1792822" started-at="2017-10-12T23:02:11Z" finished-at="2017-10-12T23:32:04Z">
     <groups>
     </groups>
-    <test name="createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General" duration-ms="49962" started-at="2017-09-27T07:24:00Z" finished-at="2017-09-27T07:24:50Z">
-      <class name="createShipmentE2ETests.TollPriorityAUSTests">
-        <test-method status="PASS" signature="RunSetup()[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="RunSetup" is-config="true" duration-ms="23945" started-at="2017-09-27T17:24:00Z" finished-at="2017-09-27T17:24:24Z">
+    <test name="RateEnquiry" duration-ms="1792822" started-at="2017-10-12T23:02:11Z" finished-at="2017-10-12T23:32:04Z">
+      <class name="rateEnquiryE2ETests.TollTasmaniaTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RunSetup" is-config="true" duration-ms="24416" started-at="2017-10-13T10:21:13Z" finished-at="2017-10-13T10:21:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunSetup -->
-        <test-method status="FAIL" signature="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(java.lang.Integer, java.lang.Integer)[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments" duration-ms="25993" started-at="2017-09-27T17:24:24Z" finished-at="2017-09-27T17:24:50Z">
+        <test-method status="PASS" signature="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight" duration-ms="61052" started-at="2017-10-13T10:21:37Z" finished-at="2017-10-13T10:22:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[5]]>
+                <![CDATA[Toll Tasmania]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[15]]>
+                <![CDATA[DG Freight]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $116.83]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Tasmania Matched the Text on Screen :Toll Tasmania]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : DG Freight Matched the Text on Screen :DG Freight]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 100428 Matched the Text on Screen :100428]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RunTearDown" is-config="true" duration-ms="1009" started-at="2017-10-13T10:22:38Z" finished-at="2017-10-13T10:22:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RunSetup" is-config="true" duration-ms="25410" started-at="2017-10-13T10:22:39Z" finished-at="2017-10-13T10:23:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Express(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Express" duration-ms="59961" started-at="2017-10-13T10:23:05Z" finished-at="2017-10-13T10:24:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Tasmania]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Express]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $116.83]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Tasmania Matched the Text on Screen :Toll Tasmania]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Express Matched the Text on Screen :Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 100428 Matched the Text on Screen :100428]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Express -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RunTearDown" is-config="true" duration-ms="999" started-at="2017-10-13T10:24:05Z" finished-at="2017-10-13T10:24:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RunSetup" is-config="true" duration-ms="25020" started-at="2017-10-13T10:24:06Z" finished-at="2017-10-13T10:24:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_General(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_General" duration-ms="60886" started-at="2017-10-13T10:24:31Z" finished-at="2017-10-13T10:25:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Tasmania]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[General]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $116.83]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Tasmania Matched the Text on Screen :Toll Tasmania]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : General Matched the Text on Screen :General]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 100428 Matched the Text on Screen :100428]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_General -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RunTearDown" is-config="true" duration-ms="1004" started-at="2017-10-13T10:25:32Z" finished-at="2017-10-13T10:25:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RunSetup" is-config="true" duration-ms="24065" started-at="2017-10-13T10:25:33Z" finished-at="2017-10-13T10:25:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="FAIL" signature="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Refrigeration(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Refrigeration" duration-ms="32425" started-at="2017-10-13T10:25:57Z" finished-at="2017-10-13T10:26:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Tasmania]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Refrigeration]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id="origin-suburb-postcode"]/div[1]/ul/li/div[contains(text(),'3170') and contains(text(),'MULGRAVE')] (tried for 5 second(s) with 500 MILLISECONDS interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id="origin-suburb-postcode"]/div[1]/ul/li/div[contains(text(),'3170') and contains(text(),'MULGRAVE')] (tried for 5 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at GlobalActions.PageBase.click(PageBase.java:159)
+	at rateEnquiryActions.RateEnquiryActions.SelectOrigin(RateEnquiryActions.java:138)
+	at rateEnquiryE2ETests.TollTasmaniaTests.RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Refrigeration(TollTasmaniaTests.java:131)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:669)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1201)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:776)
+	at org.testng.TestRunner.run(TestRunner.java:634)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
+	at org.testng.TestNG.runSuites(TestNG.java:1161)
+	at org.testng.TestNG.run(TestNG.java:1129)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //*[@id="origin-suburb-postcode"]/div[1]/ul/li/div[contains(text(),'3170') and contains(text(),'MULGRAVE')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'DESKTOP-GTKVGKN', ip: '192.168.19.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:183)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:180)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Refrigeration -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollTasmaniaTests@3e6fa38a]" name="RunTearDown" is-config="true" duration-ms="1178" started-at="2017-10-13T10:26:29Z" finished-at="2017-10-13T10:26:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+      </class> <!-- rateEnquiryE2ETests.TollTasmaniaTests -->
+      <class name="rateEnquiryE2ETests.TollIPECTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollIPECTests@66a3ffec]" name="RunSetup" is-config="true" duration-ms="22771" started-at="2017-10-13T10:26:30Z" finished-at="2017-10-13T10:26:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_RoadExpress(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollIPECTests@66a3ffec]" name="RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_RoadExpress" duration-ms="56676" started-at="2017-10-13T10:26:53Z" finished-at="2017-10-13T10:27:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll IPEC]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Road Express]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $126.48]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll IPEC Matched the Text on Screen :Toll IPEC]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Road Express Matched the Text on Screen :Road Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 2230899 Matched the Text on Screen :2230899]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_RoadExpress -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollIPECTests@66a3ffec]" name="RunTearDown" is-config="true" duration-ms="1012" started-at="2017-10-13T10:27:50Z" finished-at="2017-10-13T10:27:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+      </class> <!-- rateEnquiryE2ETests.TollIPECTests -->
+      <class name="rateEnquiryE2ETests.TollNQXTollExpressTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunSetup" is-config="true" duration-ms="53750" started-at="2017-10-13T10:11:58Z" finished-at="2017-10-13T10:12:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DGExpress(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DGExpress" duration-ms="61553" started-at="2017-10-13T10:12:52Z" finished-at="2017-10-13T10:13:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll NQX | Toll Express]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DG Express]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $278.50]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : DG Express Matched the Text on Screen :DG Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DGExpress -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunTearDown" is-config="true" duration-ms="1055" started-at="2017-10-13T10:13:54Z" finished-at="2017-10-13T10:13:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunSetup" is-config="true" duration-ms="23925" started-at="2017-10-13T10:13:55Z" finished-at="2017-10-13T10:14:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DangerousGoods(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DangerousGoods" duration-ms="61705" started-at="2017-10-13T10:14:19Z" finished-at="2017-10-13T10:15:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll NQX | Toll Express]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Dangerous Goods]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $261.81]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Dangerous Goods Matched the Text on Screen :Dangerous Goods]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DangerousGoods -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunTearDown" is-config="true" duration-ms="1016" started-at="2017-10-13T10:15:20Z" finished-at="2017-10-13T10:15:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunSetup" is-config="true" duration-ms="54737" started-at="2017-10-13T10:15:21Z" finished-at="2017-10-13T10:16:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Express(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Express" duration-ms="59626" started-at="2017-10-13T10:16:16Z" finished-at="2017-10-13T10:17:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll NQX | Toll Express]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Express]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $133.19]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Express Matched the Text on Screen :Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Express -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunTearDown" is-config="true" duration-ms="1107" started-at="2017-10-13T10:17:16Z" finished-at="2017-10-13T10:17:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunSetup" is-config="true" duration-ms="26490" started-at="2017-10-13T10:17:17Z" finished-at="2017-10-13T10:17:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_General(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_General" duration-ms="59241" started-at="2017-10-13T10:17:43Z" finished-at="2017-10-13T10:18:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll NQX | Toll Express]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[General]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $116.49]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : General Matched the Text on Screen :General]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_General -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunTearDown" is-config="true" duration-ms="994" started-at="2017-10-13T10:18:43Z" finished-at="2017-10-13T10:18:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunSetup" is-config="true" duration-ms="24121" started-at="2017-10-13T10:18:44Z" finished-at="2017-10-13T10:19:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Premium(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Premium" duration-ms="58914" started-at="2017-10-13T10:19:08Z" finished-at="2017-10-13T10:20:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll NQX | Toll Express]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Premium]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $176.23]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Premium Matched the Text on Screen :Premium]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Premium -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunTearDown" is-config="true" duration-ms="997" started-at="2017-10-13T10:20:07Z" finished-at="2017-10-13T10:20:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunSetup" is-config="true" duration-ms="24540" started-at="2017-10-13T10:20:08Z" finished-at="2017-10-13T10:20:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Refrigeration(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Refrigeration" duration-ms="39754" started-at="2017-10-13T10:20:32Z" finished-at="2017-10-13T10:21:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll NQX | Toll Express]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Refrigeration]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Refrigeration Matched the Text on Screen :Refrigeration]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 614060 Matched the Text on Screen :614060]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Refrigeration -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollNQXTollExpressTests@47c62251]" name="RunTearDown" is-config="true" duration-ms="995" started-at="2017-10-13T10:21:12Z" finished-at="2017-10-13T10:21:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+      </class> <!-- rateEnquiryE2ETests.TollNQXTollExpressTests -->
+      <class name="rateEnquiryE2ETests.TollIntermodalTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RunSetup" is-config="true" duration-ms="26094" started-at="2017-10-13T10:02:11Z" finished-at="2017-10-13T10:02:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight" duration-ms="61006" started-at="2017-10-13T10:02:38Z" finished-at="2017-10-13T10:03:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Intermodal]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DG Freight]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $290.49]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : DG Freight Matched the Text on Screen :DG Freight]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 106119 Matched the Text on Screen :106119]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RunTearDown" is-config="true" duration-ms="1250" started-at="2017-10-13T10:03:39Z" finished-at="2017-10-13T10:03:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RunSetup" is-config="true" duration-ms="23664" started-at="2017-10-13T10:03:40Z" finished-at="2017-10-13T10:04:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Express(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Express" duration-ms="36942" started-at="2017-10-13T10:04:03Z" finished-at="2017-10-13T10:04:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Intermodal]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Express]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Express Matched the Text on Screen :Express]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 106119 Matched the Text on Screen :106119]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Express -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RunTearDown" is-config="true" duration-ms="993" started-at="2017-10-13T10:04:40Z" finished-at="2017-10-13T10:04:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RunSetup" is-config="true" duration-ms="54015" started-at="2017-10-13T10:04:41Z" finished-at="2017-10-13T10:05:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_General(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_General" duration-ms="60154" started-at="2017-10-13T10:05:35Z" finished-at="2017-10-13T10:06:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Intermodal]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[General]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $290.49]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : General Matched the Text on Screen :General]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 106119 Matched the Text on Screen :106119]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_General -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RunTearDown" is-config="true" duration-ms="1177" started-at="2017-10-13T10:06:36Z" finished-at="2017-10-13T10:06:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RunSetup" is-config="true" duration-ms="43157" started-at="2017-10-13T10:06:37Z" finished-at="2017-10-13T10:07:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Refrigeration(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Refrigeration" duration-ms="34464" started-at="2017-10-13T10:07:20Z" finished-at="2017-10-13T10:07:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Intermodal]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Refrigeration]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Refrigeration Matched the Text on Screen :Refrigeration]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 106119 Matched the Text on Screen :106119]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Refrigeration -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollIntermodalTests@27efef64]" name="RunTearDown" is-config="true" duration-ms="1010" started-at="2017-10-13T10:07:54Z" finished-at="2017-10-13T10:07:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+      </class> <!-- rateEnquiryE2ETests.TollIntermodalTests -->
+      <class name="rateEnquiryE2ETests.TollPriorityAUSTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollPriorityAUSTests@6f7fd0e6]" name="RunSetup" is-config="true" duration-ms="53634" started-at="2017-10-13T10:07:55Z" finished-at="2017-10-13T10:08:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="FAIL" signature="RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_AuswideSatchel(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollPriorityAUSTests@6f7fd0e6]" name="RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_AuswideSatchel" duration-ms="59067" started-at="2017-10-13T10:08:49Z" finished-at="2017-10-13T10:09:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Priority (Aus)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Auswide 3kg Satchel - Overnight]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[FAILED: Expected Text : Toll Priority (Aus) DOES NOT Match the Text on Screen :]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: FAILED: Expected Text : Toll Priority (Aus) DOES NOT Match the Text on Screen :
+	at org.junit.Assert.fail(Assert.java:88)
+	at GlobalActions.PageBase.verifyTextExistAttribute(PageBase.java:191)
+	at rateEnquiryE2ETests.TollPriorityAUSTests.RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_AuswideSatchel(TollPriorityAUSTests.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:669)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1201)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:776)
+	at org.testng.TestRunner.run(TestRunner.java:634)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
+	at org.testng.TestNG.runSuites(TestNG.java:1161)
+	at org.testng.TestNG.run(TestNG.java:1129)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $9.58]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[FAILED: Expected Text : Toll Priority (Aus) DOES NOT Match the Text on Screen :]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_AuswideSatchel -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollPriorityAUSTests@6f7fd0e6]" name="RunTearDown" is-config="true" duration-ms="958" started-at="2017-10-13T10:09:48Z" finished-at="2017-10-13T10:09:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollPriorityAUSTests@6f7fd0e6]" name="RunSetup" is-config="true" duration-ms="25897" started-at="2017-10-13T10:09:49Z" finished-at="2017-10-13T10:10:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_GlobalExpressDocuments(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollPriorityAUSTests@6f7fd0e6]" name="RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_GlobalExpressDocuments" duration-ms="49832" started-at="2017-10-13T10:10:15Z" finished-at="2017-10-13T10:11:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Priority (Aus)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Global - Express Documents]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: AUD $50.50]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Priority (Aus) Matched the Text on Screen :Toll Priority (Aus)]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Global - Express Documents Matched the Text on Screen :Global - Express Documents]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 401509 Matched the Text on Screen :401509]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_GlobalExpressDocuments -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollPriorityAUSTests@6f7fd0e6]" name="RunTearDown" is-config="true" duration-ms="978" started-at="2017-10-13T10:11:05Z" finished-at="2017-10-13T10:11:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollPriorityAUSTests@6f7fd0e6]" name="RunSetup" is-config="true" duration-ms="23742" started-at="2017-10-13T10:11:06Z" finished-at="2017-10-13T10:11:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_ParcelOffPeak(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollPriorityAUSTests@6f7fd0e6]" name="RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_ParcelOffPeak" duration-ms="27887" started-at="2017-10-13T10:11:29Z" finished-at="2017-10-13T10:11:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Priority (Aus)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Parcels - Off Peak]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Toll Priority (Aus) Matched the Text on Screen :Toll Priority (Aus)]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Parcels - Off Peak Matched the Text on Screen :Parcels - Off Peak]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 401509 Matched the Text on Screen :401509]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_ParcelOffPeak -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollPriorityAUSTests@6f7fd0e6]" name="RunTearDown" is-config="true" duration-ms="1055" started-at="2017-10-13T10:11:57Z" finished-at="2017-10-13T10:11:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+      </class> <!-- rateEnquiryE2ETests.TollPriorityAUSTests -->
+      <class name="rateEnquiryE2ETests.TollPriorityNZTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollPriorityNZTests@77caeb3e]" name="RunSetup" is-config="true" duration-ms="24036" started-at="2017-10-13T10:27:51Z" finished-at="2017-10-13T10:28:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollPriorityNZTests@77caeb3e]" name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels" duration-ms="53423" started-at="2017-10-13T10:28:15Z" finished-at="2017-10-13T10:29:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Priority (NZ)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Global - Express Parcels]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: NZD $163.12]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Priority (NZ) Matched the Text on Screen :Toll Priority (NZ)]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Global - Express Parcels Matched the Text on Screen :Global - Express Parcels]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 100181 Matched the Text on Screen :100181]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollPriorityNZTests@77caeb3e]" name="RunTearDown" is-config="true" duration-ms="1026" started-at="2017-10-13T10:29:08Z" finished-at="2017-10-13T10:29:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollPriorityNZTests@77caeb3e]" name="RunSetup" is-config="true" duration-ms="24531" started-at="2017-10-13T10:29:09Z" finished-at="2017-10-13T10:29:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="FAIL" signature="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelOffPeak(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollPriorityNZTests@77caeb3e]" name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelOffPeak" duration-ms="92008" started-at="2017-10-13T10:29:34Z" finished-at="2017-10-13T10:31:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Priority (NZ)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Parcels - Off Peak]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="service-selector"]/div/ul/li[15]/div"}
-  (Session info: chrome=60.0.3112.113)
-  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 20.08 seconds
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="carrier-name"]"}
+  (Session info: chrome=61.0.3163.100)
+  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.04 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
-System info: host: 'PC12159', ip: '172.28.181.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+System info: host: 'DESKTOP-GTKVGKN', ip: '192.168.19.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\2712\AppData\Local\Temp\scoped_dir56068_23239}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: 8946611f8c1a3ebde4130df35627f0a9
-*** Element info: {Using=xpath, value=//*[@id="service-selector"]/div/ul/li[15]/div}]]>
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\SHEYAN~1\AppData\Local\Temp\scoped_dir19024_16204}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=61.0.3163.100, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: ee163c078bb243fc033ec92878bd21b4
+*** Element info: {Using=xpath, value=//*[@id="carrier-name"]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="service-selector"]/div/ul/li[15]/div"}
-  (Session info: chrome=60.0.3112.113)
-  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 20.08 seconds
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="carrier-name"]"}
+  (Session info: chrome=61.0.3163.100)
+  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.04 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
-System info: host: 'PC12159', ip: '172.28.181.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+System info: host: 'DESKTOP-GTKVGKN', ip: '192.168.19.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\2712\AppData\Local\Temp\scoped_dir56068_23239}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: 8946611f8c1a3ebde4130df35627f0a9
-*** Element info: {Using=xpath, value=//*[@id="service-selector"]/div/ul/li[15]/div}
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir=C:\Users\SHEYAN~1\AppData\Local\Temp\scoped_dir19024_16204}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=61.0.3163.100, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: ee163c078bb243fc033ec92878bd21b4
+*** Element info: {Using=xpath, value=//*[@id="carrier-name"]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -61,8 +1366,8 @@ Session ID: 8946611f8c1a3ebde4130df35627f0a9
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-	at createShipmentActions.CreateShipmentActions.SelectService(CreateShipmentActions.java:86)
-	at createShipmentE2ETests.TollPriorityAUSTests.CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(TollPriorityAUSTests.java:72)
+	at GlobalActions.PageBase.verifyTextExistAttribute(PageBase.java:184)
+	at rateEnquiryE2ETests.TollPriorityNZTests.RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelOffPeak(TollPriorityNZTests.java:102)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -92,30 +1397,66 @@ Session ID: 8946611f8c1a3ebde4130df35627f0a9
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
+            <line>
+              <![CDATA[Expected Text : Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above. Matched the Text on Screen :Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.]]>
+            </line>
+            <line>
+              <![CDATA[Full Charge: Total Charge: NZD $32.05]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Total Charge: Matched the Text on Screen :Total Charge:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : GST: Matched the Text on Screen :GST:]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Rate: Matched the Text on Screen :Rate:]]>
+            </line>
+            <line>
+              <![CDATA[xpath not found: By.xpath: //*[@id="carrier-name"]<br>]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments -->
-        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="RunTearDown" is-config="true" duration-ms="1" started-at="2017-09-27T17:24:50Z" finished-at="2017-09-27T17:24:50Z">
+        </test-method> <!-- RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelOffPeak -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollPriorityNZTests@77caeb3e]" name="RunTearDown" is-config="true" duration-ms="1064" started-at="2017-10-13T10:31:06Z" finished-at="2017-10-13T10:31:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunTearDown -->
-        <test-method status="FAIL" signature="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection(java.lang.Integer, java.lang.Integer)[pri:0, instance:createShipmentE2ETests.TollPriorityAUSTests@61832929]" name="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection" duration-ms="0" started-at="2017-09-27T17:24:50Z" finished-at="2017-09-27T17:24:50Z">
-          <exception class="org.testng.TestNGException">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.TollPriorityNZTests@77caeb3e]" name="RunSetup" is-config="true" duration-ms="23564" started-at="2017-10-13T10:31:07Z" finished-at="2017-10-13T10:31:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="FAIL" signature="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelsSameDay(java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.TollPriorityNZTests@77caeb3e]" name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelsSameDay" duration-ms="32680" started-at="2017-10-13T10:31:31Z" finished-at="2017-10-13T10:32:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Priority (NZ)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Parcels - Same Day]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[
-Parameter 'ServiceDXSPalletsOffpeakItem' is required by @Test on method CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection but has not been marked @Optional or defined
-in C:\Source\MYTOLLTestAutomation\CreateShipment.xml]]>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id="origin-suburb-postcode"]/div[1]/ul/li/div[contains(text(),'1001') and contains(text(),'NEWTON')] (tried for 5 second(s) with 500 MILLISECONDS interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'ServiceDXSPalletsOffpeakItem' is required by @Test on method CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection but has not been marked @Optional or defined
-in C:\Source\MYTOLLTestAutomation\CreateShipment.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:248)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:286)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:547)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:672)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1316)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:1044)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1134)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id="origin-suburb-postcode"]/div[1]/ul/li/div[contains(text(),'1001') and contains(text(),'NEWTON')] (tried for 5 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at GlobalActions.PageBase.click(PageBase.java:159)
+	at rateEnquiryActions.RateEnquiryActions.SelectOrigin(RateEnquiryActions.java:138)
+	at rateEnquiryE2ETests.TollPriorityNZTests.RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelsSameDay(TollPriorityNZTests.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:669)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1201)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 	at org.testng.TestRunner.privateRun(TestRunner.java:776)
@@ -133,13 +1474,30 @@ in C:\Source\MYTOLLTestAutomation\CreateShipment.xml
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //*[@id="origin-suburb-postcode"]/div[1]/ul/li/div[contains(text(),'1001') and contains(text(),'NEWTON')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'DESKTOP-GTKVGKN', ip: '192.168.19.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:183)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:180)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 28 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection -->
-      </class> <!-- createShipmentE2ETests.TollPriorityAUSTests -->
-    </test> <!-- createShipmentE2ETests.TollNQXTollExpressTests.CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General -->
+        </test-method> <!-- RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelsSameDay -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.TollPriorityNZTests@77caeb3e]" name="RunTearDown" is-config="true" duration-ms="1037" started-at="2017-10-13T10:32:03Z" finished-at="2017-10-13T10:32:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+      </class> <!-- rateEnquiryE2ETests.TollPriorityNZTests -->
+    </test> <!-- RateEnquiry -->
   </suite> <!-- Suite -->
 </testng-results>
