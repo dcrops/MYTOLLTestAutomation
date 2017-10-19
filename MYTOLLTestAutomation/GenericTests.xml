@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="GenericTests">
+  <!---Toll carriers test data -->
+
+		<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
+		<parameter name="TollCarrierTollPrioNZ" value="Toll Priority (NZ)" />
+	
+		<!---Item test data -->
+
+		<parameter name="ItemTemplateName" value="Automation Template" />
+		<parameter name="NumberOfItems" value="15" />
+		<parameter name="Length" value="100" />
+		<parameter name="Width" value="200" />
+		<parameter name="Height" value="300" />
+		<parameter name="Weight" value="900" />
+  <classes>
+	<class name="GenericTests.AddTemplates" />
+	</classes>
+		
+	
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

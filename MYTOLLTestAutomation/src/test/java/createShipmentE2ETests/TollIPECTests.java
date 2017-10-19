@@ -43,7 +43,7 @@ public class TollIPECTests {
 			) {
 
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceRoadExpress);
 		
 		BookAPickupActions.SelectAccountNumber1();
@@ -101,7 +101,7 @@ public class TollIPECTests {
 			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String TollExtraSrviceAmount
 			) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceRoadExpress);
 			
 		

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<test name="CreateShipment">
-		<!---Toll carriers test data -->
-
-		<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
+  <test name="ManifestTest">
+  <parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
 		<parameter name="TollCarrierTollTasmania" value="Toll Tasmania" />
 		<parameter name="TollCarrierTollNQXTollExpress" value="Toll NQX | Toll Express" />
 		<parameter name="TollCarrierTollIPEC" value="Toll IPEC" />
@@ -115,15 +113,14 @@
 		<parameter name="SpeceialIns" value="Test Special Ins" />
 		<parameter name="TollExtraServiceAmount" value="5000" />
 		
+			<!---Manifest test data -->
 
+		<parameter name="ManifestName" value="Automation" />
+		
+		
 		<classes>
-			<class name="createShipmentE2ETests.TollIntermodalTests" />
-
-			<!--Blocked><class name="createShipmentE2ETests.TollTasmaniaTests" /> 
-				<class name="createShipmentE2ETests.TollIntermodalTests" /> <class name="createShipmentE2ETests.TollIntermodalTests" 
-				/> <class name="createShipmentE2ETests.TollIPECTests" /> <class name="createShipmentE2ETests.TollPriorityAUSTests" 
-				/> <class name="createShipmentE2ETests.TollNQXTollExpressTests" /></Blocked -->
+			<class name="manifestE2ETests.ManifestTollIntermodalTests" />
 
 		</classes>
-	</test> <!-- Test -->
+  </test> <!-- Test -->
 </suite> <!-- Suite -->

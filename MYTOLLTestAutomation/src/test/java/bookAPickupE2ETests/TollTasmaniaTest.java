@@ -43,7 +43,7 @@ public class TollTasmaniaTest {
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -141,7 +141,7 @@ public class TollTasmaniaTest {
 		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
 	}
 
-	@Test(priority = 6)
+	//@Test(priority = 6)
 	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
@@ -155,7 +155,7 @@ public class TollTasmaniaTest {
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -213,13 +213,13 @@ public class TollTasmaniaTest {
 
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh", "refrigerationRefNum",
-			"bookInNum", "VendorNum", "palletSpace", "Destination", "lookupName", "lookupItem", "packageDescription",
+			"bookInNum", "VendorNum", "palletSpace", "Destination", "lookupName", "lookupItem", "PackingGroup","packageDescription",
 			"pDgPkgQty", "pDgQtyKg", "technicalName","specialIns" })
 
 	public void TollTasmania_E2ETest_TID_1033_Service_DGFreight(String TollCarrier, String ServiceDGFreight,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String tempLow, String tempHigh, String ref, String BookNo, String vendorNum,
-			String palletSpace, String destination, String lookupName, Integer lookupItem, String packageDescription,
+			String palletSpace, String destination, String lookupName, Integer lookupItem, Integer PackingGroup,String packageDescription,
 			String pDgPkgQty, String pDgQtyKg, String technicalName, String specialIns) {
 
 		// Select TollTasmania
@@ -227,7 +227,7 @@ public class TollTasmaniaTest {
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -259,7 +259,7 @@ public class TollTasmaniaTest {
 		//PageBase.Scrollbar(500, 1000);
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
-		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		//jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		
@@ -298,14 +298,14 @@ public class TollTasmaniaTest {
 		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
-	@Test(priority = 4)
+	//@Test(priority = 4)
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName", "lookupItem",
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName", "lookupItem","PackingGroup",
 			"packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName","specialIns" })
 	public void TollTasmania_E2ETest_TID_1033_Service_DGFreight_ConfirmDetails(String TollCarrier,
 			String ServiceDGFreight, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
-			String lookupName, Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName,
+			String lookupName, Integer lookupItem, Integer PackingGroup,String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName,
 			String specialIns) {
 
 		// Select TollTasmania
@@ -313,7 +313,7 @@ public class TollTasmaniaTest {
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -330,12 +330,13 @@ public class TollTasmaniaTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGFreight);
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.SelectDestination(destination);
+		
 		// BookAPickupActions.SelectMode();
 
 		//jse.executeScript("scroll(200, 500)");
@@ -345,7 +346,7 @@ public class TollTasmaniaTest {
 		// Enter dangerous goods details
 	
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
-		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
@@ -375,7 +376,7 @@ public class TollTasmaniaTest {
 			String Height, String Weight, String palletSpace, String destination, String specialIns) {
 		// Select TollTasmania
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -417,7 +418,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	@Test(priority = 6)
+	//@Test(priority = 6)
 	@Parameters({ "TollCarrierTollTasmania", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -427,7 +428,7 @@ public class TollTasmaniaTest {
 
 		// Select TollTasmania
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -488,7 +489,7 @@ public class TollTasmaniaTest {
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
 
 		// Select TollTasmania
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -565,7 +566,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	@Test(priority = 2)
+	//@Test(priority = 2)
 
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems","ChargeToAccount",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
@@ -577,7 +578,7 @@ public class TollTasmaniaTest {
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
 
 		// Select TollTasmania
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 

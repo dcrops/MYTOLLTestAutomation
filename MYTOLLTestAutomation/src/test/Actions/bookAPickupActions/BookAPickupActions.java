@@ -45,7 +45,8 @@ public class BookAPickupActions {
 	public static By modeItem = By.xpath("//*[@id=\"mode-type-selector\"]/div/ul/li");
 	public static By chargeToAccountItem = By.xpath("//*[@id=\"charge-to-selector\"]/div/ul/li[1]/div");
 	public static By chargeToAccount = By.xpath("//*[@id=\"charge-to-selector\"]/label/a/i");
-	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i"); //*[@id="freight-type-selector"]/label/a/i
+	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i"); 
+	public static By itemDescriptionDropdown = By.xpath("//*[@id=\"freight-type-selector\"]/div[1]/a/i");
 	public static By itemDescriptionTextField = By.id("item-description");
 	public static By selectItemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[3]/div");
 	public static By selectItemDescriptionTollPrioAU = By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li/div");
@@ -64,14 +65,15 @@ public class BookAPickupActions {
 	public static By containFoodItem = By.xpath("//*[@id=\"containsFoodItems-no\"]");
 	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector-\"]/label/a/i"); 
 	public static By UNNumberTextField = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/input");
-	public static By lookupBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/a");
-	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div");//*[@id="un-code-selector-"]/div/ul/li/div
-	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i");//*[@id="packaging-grp-selector-"]/label/a
+	public static By searchBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/span/i");
+	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div");
+	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i");
 	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li[1]/div");
-	public static By dgPackagingDescription = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[1]/div/input");//*[@id="dg-form"]/div/div[3]/div[1]/div/input
+	public static By dgPackagingDescription = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[1]/div/input");
 	public static By dgPkgQty = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[2]/div[1]/div/input");
 	public static By dgQtyKg = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[2]/div[2]/div/input");
 	public static By technicalName = By.id("technical-name-");
+	public static By add = By.id("add-dg-item");
 	public static By saveAsTemplateBtn = By.id("save-as-template");
 
 	public static By pickupDate = By.id("pickup-date");
@@ -116,7 +118,7 @@ public class BookAPickupActions {
 	public static By confirmBtn = By.id("confirm-true");
 	
 		
-	public static void EnterTollCarrierItem(String pTollCarrierName) {
+	public static void EnterTollCarrier(String pTollCarrierName) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']")).click();
@@ -138,7 +140,6 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li[" + i + "]/div")).click();
 
 	}
-
 
 	public static void SelectAccountNumberItem(int j) {
 		PageBase.MinimumWaitForElementEnabled();
@@ -165,9 +166,20 @@ public class BookAPickupActions {
 	
 	public static void EnterService(String pService ) {
 		PageBase.MaximumWaitForElementEnabled();
+		try {
+		PageBase.MoveToElement(BookAPickupActions.accountNumber, BookAPickupActions.name);
 		BaseWebdriver.driver.findElement(ServiceDropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//ul/li/div[text()='"+pService +"']")).click();
 		PageBase.MinimumWaitForElementEnabled();
+		}
+		catch(Exception ex)
+		{
+			PageBase.MoveToElement(BookAPickupActions.name, BookAPickupActions.serviceItem);
+			BaseWebdriver.driver.findElement(ServiceDropdown).click();
+			BaseWebdriver.driver.findElement(ServiceDropdown).click();
+			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//ul/li/div[text()='"+pService +"']")).click();
+			PageBase.MinimumWaitForElementEnabled();
+		}
 	}
 	
 	public static void SelectServiceItemByText(String pService) {
@@ -210,7 +222,7 @@ public class BookAPickupActions {
 
 		BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
-		BaseWebdriver.driver.findElement(lookupBtn).click();
+		BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector\"]//ul/li[" + j + "]/div")).click();
 	}
@@ -244,6 +256,12 @@ public class BookAPickupActions {
 		PageBase.MinimumWaitForElementEnabled();
 	}
 
+	public static String GetSelectedTollCarrierName() {
+		PageBase.MinimumWaitForElementEnabled();
+		String tollCarrierTextField =BaseWebdriver.driver.findElement(TollCarrierTextField).getText();
+		return tollCarrierTextField;
+	}
+	
 	public static String GetAccountNumber() {
 		PageBase.MinimumWaitForElementEnabled();
 		String accountNo=BaseWebdriver.driver.findElement(accountNumber).getAttribute("value");
@@ -502,6 +520,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).click();
 		//BaseWebdriver.driver.findElement(itemDescription).clear();;
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).sendKeys(itemName);
+		BaseWebdriver.driver.findElement(itemDescriptionDropdown).click();
 	
 	}
 
@@ -582,6 +601,12 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(technicalName).clear();
 		BaseWebdriver.driver.findElement(technicalName).sendKeys(pTechnicalName);
 	}
+	
+	public static void ClickAdd() {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(add).click();
+	}
+
 
 	
 	public static void selectContainFoodItem() {
@@ -797,7 +822,7 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
-		BaseWebdriver.driver.findElement(lookupBtn).click();
+		BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li[" + j + "]/div")).click();
 		PageBase.MaximumWaitForElementEnabled();
@@ -820,7 +845,7 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
-		BaseWebdriver.driver.findElement(lookupBtn).click();
+		BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div")).click();
 		PageBase.MaximumWaitForElementEnabled();
@@ -830,14 +855,28 @@ public class BookAPickupActions {
 
 	}
 	
-	public static void SelectPackgingGroup(String packagingGroup) {
+	public static void EnterPackgingGroup(Integer packagingGroup) {
 		// BookAPickupActions.SelectUNNumber(j,lookupItem);
 		try {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li/div[text()='"+packagingGroup+"']")).click();
 		}
-		
+		catch(Exception ex)
+		{
+		CreateShipmentActions.SelectPackgingGroup(packagingGroup);
+		}
+	}
+	
+	public static void SelectPackgingGroup(Integer packagingGroup) {
+		// BookAPickupActions.SelectUNNumber(j,lookupItem);
+		try {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li["+packagingGroup+"]/div")).click();
+		}
 		catch(Exception ex)
 		{
 		CreateShipmentActions.SelectPackgingGroup(packagingGroup);

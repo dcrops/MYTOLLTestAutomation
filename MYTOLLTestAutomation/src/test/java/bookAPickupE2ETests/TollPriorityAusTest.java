@@ -35,7 +35,7 @@ public class TollPriorityAusTest {
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace,String reference, String destination, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 

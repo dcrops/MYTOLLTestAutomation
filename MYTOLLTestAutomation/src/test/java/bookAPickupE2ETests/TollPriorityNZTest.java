@@ -35,7 +35,7 @@ public class TollPriorityNZTest {
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace, String reference, String destination, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -49,6 +49,7 @@ public class TollPriorityNZTest {
 		PageBase.Scrollbar(250, 500);
 		// Enter data for Quick entry mode, service(=GlobalExpress),
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		PageBase.MoveToElement(BookAPickupActions.name, BookAPickupActions.location);
 		BookAPickupActions.EnterService(ServiceGlobalExpressDocuments);
 
 		// Enter data for Quick entry mode, service(=DGRefrigerated),
@@ -87,7 +88,7 @@ public class TollPriorityNZTest {
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String reference,
 			String destination, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -101,6 +102,7 @@ public class TollPriorityNZTest {
 		// Enter data for Quick entry mode, service(=GlobalExpress),
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		PageBase.Scrollbar(250, 500);
+		
 		BookAPickupActions.EnterService(ServiceGlobalExpressDocuments);
 
 		// Enter data for Quick entry mode, service
@@ -140,7 +142,7 @@ public class TollPriorityNZTest {
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String reference,
 			String destination,String destinationItem, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -154,6 +156,7 @@ public class TollPriorityNZTest {
 		PageBase.Scrollbar(250, 500);
 		// Enter data for Quick entry mode, service(=GlobalExpress),
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		
 		BookAPickupActions.EnterService(ServiceParcelsOffPeak);
 		// BookAPickupActions.Selectservice(12);
 		

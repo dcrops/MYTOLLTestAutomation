@@ -36,7 +36,7 @@ public class TollTasmaniaTests {
 			String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceDGFreight);
 		//CreateShipmentActions.SelectService(ServiceDGFreight);
 		
@@ -106,7 +106,7 @@ public class TollTasmaniaTests {
 			String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 		
 		// BookAPickupActions.SelectAccountNumber1();
@@ -177,7 +177,7 @@ public class TollTasmaniaTests {
 			String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceGeneral);
 		// BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -247,7 +247,7 @@ public class TollTasmaniaTests {
 			String ChepOtherExchange,String ChepOtherTransferToToll,String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceRefrigeration);
 		
 		// BookAPickupActions.SelectAccountNumber1();

@@ -256,10 +256,10 @@ public class ReviewYouPickupActions {
 
 	public static void VerifyConfirmPickupDetails(String userName) {
 		// assertEquals("PICKUP Submitted", BaseWebdriver.driver.findElement(pickupConfirmed).getText());
-		 assertEquals("Pickup Submitted", BaseWebdriver.driver.findElement(pickupSubmitted).getText());
-		 assertEquals("Pickedup", BaseWebdriver.driver.findElement(pickedupLable).getText());
-		 assertEquals("Intransit", BaseWebdriver.driver.findElement(intransit).getText());
-		 assertEquals("Out for Delivery", BaseWebdriver.driver.findElement(outForDeliveryLable).getText());
+		 assertEquals("Pickup booked", BaseWebdriver.driver.findElement(pickupSubmitted).getText());
+		 assertEquals("Picked up", BaseWebdriver.driver.findElement(pickedupLable).getText());
+		 assertEquals("In transit", BaseWebdriver.driver.findElement(intransit).getText());
+		 assertEquals("Out for delivery", BaseWebdriver.driver.findElement(outForDeliveryLable).getText());
 		 assertEquals("Delivered", BaseWebdriver.driver.findElement(deliveredLable).getText());
 		// assertEquals("We have sent you an email confirming your pickup booking to:superuser@gmail.com" 
 		 //		, BaseWebdriver.driver.findElement(emailLable).getText());

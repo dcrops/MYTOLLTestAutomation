@@ -22,7 +22,7 @@ public class TollPriorityNZ {
 	{
 	
 	//CreateShipmentActions.SelectTollCarrierItem(TollCarrier);
-			BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+			BookAPickupActions.EnterTollCarrier(TollCarrier);
 			CreateShipmentActions.EnterService(ServiceGlobalExpressDocuments); 
 			BookAPickupActions.SelectAccountNumber1();
 			CreateShipmentActions.SelectWhoPays(1);
@@ -52,7 +52,7 @@ public class TollPriorityNZ {
 	{
 		
 		
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceParcelsOffPeak);
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(2);

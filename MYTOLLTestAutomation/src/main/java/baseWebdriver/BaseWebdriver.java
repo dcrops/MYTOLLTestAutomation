@@ -22,7 +22,7 @@ public class BaseWebdriver {
 	public static WebDriver driver;
 	public static StringBuffer verificationErrors = new StringBuffer();
 	public static String url="https://www-ppd.mytoll.com/"; //"https://mytoll-sit.tollgroup.com/";  //"http://cesapaut003.toll.com.au:8080/";//"https://mytoll-sit.tollgroup.com/";
-	public static String Username="pnnperera@gmail.com";//"ahq_test01@mailinator.com";//"allbus001@toll.com";  //"superuser@gmail.com"; //
+	public static String Username="tim_BVT@mailinator.com"; //"tim_BVT@mailinator.com";//"ahq_test01@mailinator.com";//"allbus001@toll.com";  //"superuser@gmail.com"; //
 	public static String Password="Toll@123"; //"Victoria@123"; //"Toll@123"; ////;
 	
 	//Createshipment users

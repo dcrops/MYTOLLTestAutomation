@@ -32,15 +32,15 @@ public class TollNQXTollExpressTest {
 
 	@Test(priority = 1)
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDangerousGoods", "locationIndex", "ItemTemplateName",
-			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName","PackingGroup",
 			"packageDescription","pDgPkgQty","pDgQtyKg","technicalName", "specialIns" })
 
 	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DangerousGoods(String TollCarrier,
 			String ServiceDangerousGoods, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
-			String lookupName, String packageDescription, String pDgPkgQty,String pDgQtyKg, String technicalName, String specialIns) {
+			String lookupName, Integer PackingGroup,String packageDescription, String pDgPkgQty,String pDgQtyKg, String technicalName, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -77,7 +77,7 @@ public class TollNQXTollExpressTest {
 		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
 		// description", "123", "456");
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
-		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
 		// Enter Pickup details
@@ -93,7 +93,7 @@ public class TollNQXTollExpressTest {
 		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
 	@Test(priority = 2)
@@ -106,7 +106,7 @@ public class TollNQXTollExpressTest {
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -147,7 +147,7 @@ public class TollNQXTollExpressTest {
 		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 
 	}
 
@@ -162,7 +162,7 @@ public class TollNQXTollExpressTest {
 			String specialIns) {
 
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -204,7 +204,7 @@ public class TollNQXTollExpressTest {
 		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
 	@Test(priority = 4)
@@ -218,7 +218,7 @@ public class TollNQXTollExpressTest {
 			String specialIns) {
 
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -274,7 +274,7 @@ public class TollNQXTollExpressTest {
 			String lookupName, String specialIns) {
 
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -332,7 +332,7 @@ public class TollNQXTollExpressTest {
 			String lookupName, String packageDescription, String pDgPkgQty,String pDgQtyKg,String technicalName,String specialIns) {
 
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -376,23 +376,23 @@ public class TollNQXTollExpressTest {
 	
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
 	@Test(priority = 7)
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGRefrigerated", "locationIndex", "ItemTemplateName",
-			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName","PackingGroup",
 			"packageDescription","pDgPkgQty","pDgQtyKg", "technicalName",
 			"specialIns" })
 
 	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DGRefrigerated(String TollCarrier,
 			String ServiceDGRefrigerated, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
-			String lookupName, String packageDescription, String pDgPkgQty,String pDgQtyKg, String technicalName, String specialIns) {
+			String lookupName,Integer PackingGroup, String packageDescription, String pDgPkgQty,String pDgQtyKg, String technicalName, String specialIns) {
 
 
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -417,22 +417,19 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		
-		//jse.executeScript("scroll(1000, 1500)");
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.dangerousGoodNo);
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter dangerous goods details
-		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
-		// description", "123", "456");
+	
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
-		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
-		//BookAPickupActions.SelectPackingGroup();
+		
 		// Enter Pickup details
-		//jse.executeScript("scroll(1500, 1700)");
+		
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
@@ -444,22 +441,22 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
 	@Test(priority = 8)
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailDangerousGoods", "locationIndex", "ItemTemplateName",
-			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName","PackingGroup",
 			"packageDescription","pDgPkgQty","pDgQtyKg","technicalName",
 			"specialIns" })
 
 	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_RailDangerousGoods(String TollCarrier,
 			String ServiceRailDangerousGoods, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
-			String lookupName, String packageDescription, String pDgPkgQty,String pDgQtyKg, String technicalName, String specialIns) {
+			String lookupName,Integer PackingGroup, String packageDescription, String pDgPkgQty,String pDgQtyKg, String technicalName, String specialIns) {
 
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -493,7 +490,7 @@ public class TollNQXTollExpressTest {
 		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
 		// description", "123", "456");
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
-		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
 		//BookAPickupActions.SelectPackingGroup();
@@ -510,21 +507,21 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
 	@Test(priority = 9)
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
-			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName","PackingGroup",
 			"packageDescription","pDgPkgQty","pDgQtyKg","technicalName",
 			"specialIns" })
 
 	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DGExpress(String TollCarrier,
 			String ServiceDGExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
-			String lookupName, String packageDescription, String pDgPkgQty,String pDgQtyKg, String technicalName, String specialIns) {
+			String lookupName,Integer PackingGroup, String packageDescription, String pDgPkgQty,String pDgQtyKg, String technicalName, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
@@ -558,7 +555,7 @@ public class TollNQXTollExpressTest {
 		// BookAPickupActions.EnterDangerousGoodsDetails(2, "1234", "Test Dg packaging
 		// description", "123", "456");
 		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty,pDgQtyKg);
-		BookAPickupActions.SelectPackgingGroup("II");
+		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
 		//BookAPickupActions.SelectPackingGroup();
