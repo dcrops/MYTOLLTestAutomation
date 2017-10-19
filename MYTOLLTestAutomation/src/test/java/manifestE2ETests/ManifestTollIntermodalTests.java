@@ -145,7 +145,7 @@ public class ManifestTollIntermodalTests {
 
 		String RandomManifestName=ManifestActions.RandomManifestName(ManifestName);
 		ManifestActions.AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(RandomManifestName);
-		ShipmentReviewActions.ClickAddToManifestManually();
+		//ShipmentReviewActions.ClickAddToManifestManually();
 		String NewManifestName=ManifestActions.RandomManifestName(ManifestName);
 		ManifestActions.MoveToManifestAndCreateNewManifest(NewManifestName);
 		
