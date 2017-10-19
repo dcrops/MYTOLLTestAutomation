@@ -71,6 +71,7 @@ public class TollPriorityNZTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Lenght+" x "+Width+" x "+Height+" cm" );
 	}
 	
 	@Test
@@ -102,6 +103,7 @@ public class TollPriorityNZTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Lenght+" x "+Width+" x "+Height+" cm" );
 	}
 	
 	@Test
@@ -133,6 +135,7 @@ public class TollPriorityNZTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Lenght+" x "+Width+" x "+Height+" cm" );
 	}
 	
 	

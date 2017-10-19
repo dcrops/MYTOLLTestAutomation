@@ -21,6 +21,7 @@ public class MyTollHomePageActions {
 	public static By BookAPickup=By.id("bookaPickup");
 	public static By getRateEnquiry=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a[1]/p");
 	public static By templateMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My Templates']");
+	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']");
 	
 	
 	public static void LaunchMyToll(String url)

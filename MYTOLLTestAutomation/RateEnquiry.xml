@@ -32,13 +32,15 @@
 		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
 		
 		    <classes>
-		         <class name="rateEnquiryE2ETests.TollIntermodalTests"/> 
+		    
+				 <class name="rateEnquiryE2ETests.TollIPECTests"/>
+		          <!--<class name="rateEnquiryE2ETests.TollIntermodalTests"/> 
 		         <class name="rateEnquiryE2ETests.TollPriorityAUSTests"/>
 		     	 <class name="rateEnquiryE2ETests.TollNQXTollExpressTests"/>
 		         <class name="rateEnquiryE2ETests.TollTasmaniaTests"/>
-		         <class name="rateEnquiryE2ETests.TollIPECTests"/>
-		         <class name="rateEnquiryE2ETests.TollPriorityNZTests"/>
-		        
+		 
+		         <class name="rateEnquiryE2ETests.TollPriorityNZTests"/> -->
+		         
 		    </classes>
 		    
   </test> <!-- Test -->

@@ -81,14 +81,22 @@
 		<parameter name="specialIns" value="special instructions test" />
 
 		<parameter name="browser" value="chrome" />
+		
+		<parameter name="AccountAccessTypeStandard" value="Standard" />
+		<parameter name="AccountAccessTypeThirdparty" value="Third party" />
+		<parameter name="AccountAccessTypeFullFinancial" value="Full financial" />
+		<parameter name="AccountNumberl" value="" />
+		
 		<classes>
-			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
+			<!-- <class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollIPECTest" />
 			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
-
+ 			-->
+ 			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" />
+ 			
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

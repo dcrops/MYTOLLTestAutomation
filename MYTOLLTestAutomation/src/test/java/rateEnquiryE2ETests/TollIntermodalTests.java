@@ -22,19 +22,19 @@ import rateEnquiryActions.RateEnquiryActions;
 
 public class TollIntermodalTests {
 	
-	String AccountNo = "106119";
-	String Mode = "RAIL";
-	String BillingType = "SIDELIFTER - PU OR DEL";
+	String AccountNo = "5685";
+	String Mode = "ROAD";
+	String BillingType = "CARTONS - OVER 301KG";
 	String Qty = "1";
 	String QtyType = "Items";
-	String Lenght = "150";
-	String Width = "150";
-	String Height = "150";
-	String Weight = "500";
-	String OriginSuburb ="BANGHOLME";
-	String OriginPostCode ="3175";
-	String DesSuburb ="ADELAIDE";
-	String DesPostCode ="5000";	
+	String Lenght = "20";
+	String Width = "20";
+	String Height = "20";
+	String Weight = "100";
+	String OriginSuburb ="ROWLAND FLAT";
+	String OriginPostCode ="5352";
+	String DesSuburb ="ALBERT PARK";
+	String DesPostCode ="5014";	
 	
 
 	@BeforeMethod
@@ -85,6 +85,7 @@ public class TollIntermodalTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Lenght+" x "+Width+" x "+Height+" cm" );
 	}
 		
 	@Test
@@ -125,6 +126,7 @@ public class TollIntermodalTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Lenght+" x "+Width+" x "+Height+" cm" );
 		
 	}
 	
@@ -166,6 +168,7 @@ public class TollIntermodalTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Lenght+" x "+Width+" x "+Height+" cm" );
 		
 	}
 	
@@ -208,6 +211,7 @@ public class TollIntermodalTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Lenght+" x "+Width+" x "+Height+" cm" );
 		
 	}
 	

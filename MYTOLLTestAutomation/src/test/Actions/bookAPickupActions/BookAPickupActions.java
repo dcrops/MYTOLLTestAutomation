@@ -148,6 +148,17 @@ public class BookAPickupActions {
 		public static final By addTemplateSaveMsg= By.xpath("//*[@id=\"response-poup-wrpr\"]//*//h2");
 		public static final By addTemplateSaveMsgClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
 		public static final By addTemplateViewMore = By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//a[text()='View More']");
+		
+		//Add Accounts
+		public static final By addAccount = By.linkText("ADD ACCOUNT");
+		public static final By addAccountCarrier = By.xpath("//*[@id=\"addAccountForm\"]//*//label/a/i" );
+		public static final By addAccountNumber = By.xpath("//*[@id=\"addAccountForm\"]//*//div/input[@name=\"AccountCode\"]");
+		public static final By addAccountAccessType = By.xpath("//*[@id=\"addAccountForm\"]//*//div[@data-placeholder=\"Select Access Type\"]/label/a/i");
+		public static final By addAccountSave = By.linkText("SAVE");
+		public static final By addAccountSaveMsg= By.xpath("//*[@id=\"response-poup-wrpr\"]//*//h2");
+		public static final By addAccountSaveMsgClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
+		public static final By addAccountViewMore = By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//a[text()='VIEW MORE']");
+		
 	
 		
 	public static void EnterTollCarrierItem(String pTollCarrierName) {

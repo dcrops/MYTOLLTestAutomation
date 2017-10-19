@@ -108,12 +108,12 @@
 	<parameter name="SpeceialIns" value="Test Special Ins" />
 
 			<classes>
-			<class name="createShipmentE2ETests.TollIntermodalTests" />
-			<class name="createShipmentE2ETests.TollTasmaniaTests" />
+			<class name="createShipmentE2ETests.TollIntermodalTest100" />
+			<!-- <class name="createShipmentE2ETests.TollTasmaniaTests" />
 			<class name="createShipmentE2ETests.TollIPECTests" />
 			<class name="createShipmentE2ETests.TollPriorityAUSTests" />
 			<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
-
+ -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
