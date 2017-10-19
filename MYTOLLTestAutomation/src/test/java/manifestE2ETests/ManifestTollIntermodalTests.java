@@ -150,6 +150,20 @@ public class ManifestTollIntermodalTests {
 		ManifestActions.MoveToManifestAndCreateNewManifest(NewManifestName);
 		
 		
+		BookAPickupActions.SelectDangerousGoods(DGNo);
+		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
+		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
+		PageBase.MoveToElement(CreateShipmentActions.addPalletYes, CreateShipmentActions.tollExtraSrviceNOBtn);
+		CreateShipmentActions.SelectPalletTransactionsYes();
+		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraServiceAmount);
+		CreateShipmentActions.ClickReviewCreateShipment();
+
+		String RandomManifestName2=ManifestActions.RandomManifestName(ManifestName);
+		ManifestActions.AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(RandomManifestName);
+		//ShipmentReviewActions.ClickAddToManifestManually();
+		String NewManifestName2=ManifestActions.RandomManifestName(ManifestName);
+		ManifestActions.MoveToManifestAndCreateNewManifest(NewManifestName);
+		
 		
 	}
 	
