@@ -1,10 +1,12 @@
 package rateEnquiryE2ETests;
 
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import myTollHomePageActions.MyTollHomePageActions;
@@ -12,6 +14,7 @@ import rateEnquiryActions.RateEnquiryActions;
 
 public class TollNQXTollExpressTests {
 	
+		
 	@BeforeMethod
 	public void RunSetup() throws Exception
 			{
@@ -21,336 +24,239 @@ public class TollNQXTollExpressTests {
 				MyTollHomePageActions.ClickGetRateEnquiery();
 			}
 	
-	@Test
-	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Refrigeration()
-	{
-		
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		RateEnquiryActions.SelectTollCarrierItem(3); 
-		BookAPickupActions.SelectAccountNumber1();
-		RateEnquiryActions.SelectService(6);; 
-		
-		
-		RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll NQX | Toll Express", "Backed by an unbeatable national network, we deliver freight and logistics solutions across Australia that are driven by our commitment to innovation, safety and service excellence.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("Melbo",2);
-	
-		BookAPickupActions.SelectAccountNumber1();
-		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-		
-		RateEnquiryActions.SelectItemDescription(1);
-		
-		RateEnquiryActions.NumberOfItem("15"); 
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
-		
-		//RateEnquiryActions.SelectBillingTypeTDF(1);
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.AddANewLineTDF();
-		
-		RateEnquiryActions.ClickPriceNow();
-		RateEnquiryActions.ContinueCreateShipment();
-	}
 	
 	@Test
-	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DangerousGoods()
-	{
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","TNAccountNo","ItemTemplateName","TNBillingType","Mode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_General(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		BookAPickupActions.SelectAccountNumber1();
-		RateEnquiryActions.SelectService(1);; 
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.SelectMode(Mode);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		
-		RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll NQX | Toll Express", "Backed by an unbeatable national network, we deliver freight and logistics solutions across Australia that are driven by our commitment to innovation, safety and service excellence.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("Melbo",2);
-	
-		BookAPickupActions.SelectAccountNumber1();
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
 		
-		RateEnquiryActions.SelectItemDescription(1);
+
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.QuantityTypeSelect(QtyType);	
 		
-		RateEnquiryActions.NumberOfItem("15"); 
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
 		
-		//RateEnquiryActions.SelectBillingTypeTDF(1);
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.AddANewLineTDF();
-		
+		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
-	
-	}
-	
-	@Test
-	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Express()
-	{
 		
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		BookAPickupActions.SelectAccountNumber1();
-		RateEnquiryActions.SelectService(2);; 
-		
-		
-		RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll NQX | Toll Express", "Backed by an unbeatable national network, we deliver freight and logistics solutions across Australia that are driven by our commitment to innovation, safety and service excellence.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("Melbo",2);
-	
-		BookAPickupActions.SelectAccountNumber1();
-		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-		
-		RateEnquiryActions.SelectItemDescription(1);
-		
-		RateEnquiryActions.NumberOfItem("15"); 
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
-		
-		//RateEnquiryActions.SelectBillingTypeTDF(1);
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.AddANewLineTDF();
-		
-		RateEnquiryActions.ClickPriceNow();
-		RateEnquiryActions.ContinueCreateShipment();
+		//Verify Details on Shipment Page
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
 	}
 	
 	
 	@Test
-	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_General()
-	{
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceExpress","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Express(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		BookAPickupActions.SelectAccountNumber1();
-		RateEnquiryActions.SelectService(3);; 
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.SelectMode(Mode);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
+		
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
+		
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
+		
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.QuantityTypeSelect(QtyType);	
+		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
+			
+		//Check for Price and Continue to Shipment
+		RateEnquiryActions.ClickPriceNow();
+		RateEnquiryActions.ContinueCreateShipment();
+		
+		//Verify Details on Shipment Page
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+	}
+	
+	
+	@Test
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServicePremium","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Premium(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.SelectMode(Mode);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
+		
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
+		
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
+		
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.QuantityTypeSelect(QtyType);	
+		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
+		
+		//Check for Price and Continue to Shipment
+		RateEnquiryActions.ClickPriceNow();
+		RateEnquiryActions.ContinueCreateShipment();
 				
-		RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll NQX | Toll Express", "Backed by an unbeatable national network, we deliver freight and logistics solutions across Australia that are driven by our commitment to innovation, safety and service excellence.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("Melbo",2);
-	
-		//BookAPickupActions.SelectAccountNumber1();
-		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 500)");
-				
-		RateEnquiryActions.NumberOfItem("15"); 
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
-		
-		//RateEnquiryActions.SelectBillingTypeTDF(1);
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.AddANewLineTDF();
-		
-		RateEnquiryActions.ClickPriceNow();
-		RateEnquiryActions.ContinueCreateShipment();
-	}
-	
-	@Test
-	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Premium()
-	{
-		
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		BookAPickupActions.SelectAccountNumber1();
-		RateEnquiryActions.SelectService(4);; 
-		
-		
-		RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll NQX | Toll Express", "Backed by an unbeatable national network, we deliver freight and logistics solutions across Australia that are driven by our commitment to innovation, safety and service excellence.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("Melbo",2);
-	
-		BookAPickupActions.SelectAccountNumber1();
-		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 500)");
-		
-		RateEnquiryActions.SelectItemDescription(1);
-		
-		RateEnquiryActions.NumberOfItem("15"); 
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
-		
-		//RateEnquiryActions.SelectBillingTypeTDF(1);
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.AddANewLineTDF();
-		
-		RateEnquiryActions.ClickPriceNow();
-		RateEnquiryActions.ContinueCreateShipment();
-	}
-	
-	@Test
-	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_RailGeneral()
-	{
-		
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		BookAPickupActions.SelectAccountNumber1();
-		RateEnquiryActions.SelectService(5);; 
-		
-		
-		RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll NQX | Toll Express", "Backed by an unbeatable national network, we deliver freight and logistics solutions across Australia that are driven by our commitment to innovation, safety and service excellence.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("Melbo",2);
-	
-		BookAPickupActions.SelectAccountNumber1();
-		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-		
-		RateEnquiryActions.SelectItemDescription(1);
-		
-		RateEnquiryActions.NumberOfItem("15"); 
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
-		
-		//RateEnquiryActions.SelectBillingTypeTDF(1);
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.AddANewLineTDF();
-		
-		RateEnquiryActions.ClickPriceNow();
-		RateEnquiryActions.ContinueCreateShipment();
-	}
-	
-	@Test
-	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DGRefrigerated()
-	{
-		
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		BookAPickupActions.SelectAccountNumber1();
-		RateEnquiryActions.SelectService(7);; 
-		
-		
-		RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll NQX | Toll Express", "Backed by an unbeatable national network, we deliver freight and logistics solutions across Australia that are driven by our commitment to innovation, safety and service excellence.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("Melbo",2);
-	
-		BookAPickupActions.SelectAccountNumber1();
-		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-		
-		RateEnquiryActions.SelectItemDescription(1);
-		
-		RateEnquiryActions.NumberOfItem("15"); 
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
-		
-		//RateEnquiryActions.SelectBillingTypeTDF(1);
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.AddANewLineTDF();
-	
-		RateEnquiryActions.ClickPriceNow();
-		RateEnquiryActions.ContinueCreateShipment();
+		//Verify Details on Shipment Page
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
 	}
 	
 	
 	@Test
-	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_RailDangerousGoods()
-	{
-		
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		BookAPickupActions.SelectAccountNumber1();
-		RateEnquiryActions.SelectService(8);; 
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceRefrigeration","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Refrigeration(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
 		
-		RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll NQX | Toll Express", "Backed by an unbeatable national network, we deliver freight and logistics solutions across Australia that are driven by our commitment to innovation, safety and service excellence.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("Melbo",2);
-	
-		BookAPickupActions.SelectAccountNumber1();
+		RateEnquiryActions.valid = false;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.SelectMode(Mode);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		
-		RateEnquiryActions.SelectItemDescription(1);
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
-		RateEnquiryActions.NumberOfItem("15"); 
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
 		
-		//RateEnquiryActions.SelectBillingTypeTDF(1);
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.AddANewLineTDF();
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.QuantityTypeSelect(QtyType);	
 		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
+		
+		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 		
+		//Verify Details on Shipment Page
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
 	}
 	
 	@Test
-	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DGExpress()
-	{
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceDangerousGoods","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DangerousGoods(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		RateEnquiryActions.SelectTollCarrierItem(3);
-		BookAPickupActions.SelectAccountNumber1();
-		RateEnquiryActions.SelectService(9);; 
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.SelectMode(Mode);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		
-		RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll NQX | Toll Express", "Backed by an unbeatable national network, we deliver freight and logistics solutions across Australia that are driven by our commitment to innovation, safety and service excellence.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiryTollNQX("Melbo",1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("Melbo",2);
-	
-		BookAPickupActions.SelectAccountNumber1();
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
 		
-		RateEnquiryActions.SelectItemDescription(1);
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.QuantityTypeSelect(QtyType);	
 		
-		RateEnquiryActions.NumberOfItem("15"); 
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
 		
-		//RateEnquiryActions.SelectBillingTypeTDF(1);
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.EnterBillingType("General Freight");
-		RateEnquiryActions.AddANewLineTDF();
-		
+		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
+		
+		//Verify Details on Shipment Page
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+	}
 	
+	@Test
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceDGExpress","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DGExpress(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.SelectMode(Mode);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
+		
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
+		
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
+		
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.QuantityTypeSelect(QtyType);	
+		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
+		
+		//Check for Price and Continue to Shipment
+		RateEnquiryActions.ClickPriceNow();
+		RateEnquiryActions.ContinueCreateShipment();
+		
+		//Verify Details on Shipment Page
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
 	}
 	
 	@AfterMethod
-	  public void RunTearDown() throws Exception
-		{
-			//BaseWebdriver.tearDown();
-	
-		}
+	public void RunTearDown() throws Exception
+	{
+		BaseWebdriver.tearDown();
+
+	}
 
 }

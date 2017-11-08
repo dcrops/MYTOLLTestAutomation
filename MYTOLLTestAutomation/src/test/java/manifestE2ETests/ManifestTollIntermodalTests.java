@@ -14,7 +14,7 @@ import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import myTollHomePageActions.MyTollHomePageActions;
 import manifestActions.ManifestActions;
-import createShipmentActions.ShipmentReviewActions;
+
 
 public class ManifestTollIntermodalTests {
 	
@@ -46,11 +46,11 @@ public class ManifestTollIntermodalTests {
 
 		CreateShipmentActions.SelectMode(1);
 		
-		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
+		PageBase.MoveToElement(CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
 		CreateShipmentActions.SelectReceiver(1);
-
+		String receiver=CreateShipmentActions.GetRecieverCompanyName();
 		
 		CreateShipmentActions.SelectShipmentConsolidated();
 		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
@@ -82,7 +82,7 @@ public class ManifestTollIntermodalTests {
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraServiceAmount);
 		CreateShipmentActions.ClickReviewCreateShipment();
 		
-		//ManifestActions.VerifyManifestDetails(StatusInprogress,location,TollCarrier,ChargeToAccount,);
+		//ManifestActions.VerifyManifestDetails(StatusInprogress,location,TollCarrier,ChargeToAccount,receiver, ServiceExpress, NumberOfItems, ItemTemplateName, Weight );
 		
 		
 		

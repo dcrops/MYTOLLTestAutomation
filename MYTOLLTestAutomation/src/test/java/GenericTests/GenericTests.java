@@ -20,8 +20,7 @@ public class GenericTests {
 	@BeforeMethod
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
-		MyTollHomePageActions.ClickName();
+		
 		/*MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 		MyTollHomePageActions.ClickMenu();
@@ -30,12 +29,23 @@ public class GenericTests {
 	}
 	
 
-	@Test(priority = 1)
+	/*@Test(priority = 2)
 	@Parameters({ "TollCarrierTollPrioNZ", "ItemTemplateName","NumberOfItems", "Length", "Width", "Height", "Weight" })
 	public void MyProfile_AddTemplates(String TollCarrier,String ItemTemplateName, String NumberOfItems, String Weight,String Length, String Width, String Height) {
-
-		for (int i=1; i<=1000; i++) {
+		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.ClickName();
+		for (int i=1; i<=10; i++) {
 		MyTollHomePageActions.AddTemplates(TollCarrier,ItemTemplateName,NumberOfItems,Weight,Length,Width,Height);
 		}
+	}*/
+	
+	
+
+	@Test(priority = 1)
+	@Parameters({ "FirstName", "LastName","NewEmail", "MobileNumber", "Password", "MemorableAnswer"})
+	public void MyProfile_UserRegistration(String FirstName,  String LastName,String NewEmail, String MobileNumber, String Password, String MemorableAnswer) {
+
+		MyTollHomePageActions.NewUserRegistration(FirstName, LastName, NewEmail, MobileNumber, Password, MemorableAnswer);
+		
 	}
 }

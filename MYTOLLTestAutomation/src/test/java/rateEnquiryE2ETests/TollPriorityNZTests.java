@@ -1,10 +1,11 @@
 package rateEnquiryE2ETests;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import myTollHomePageActions.MyTollHomePageActions;
@@ -12,7 +13,7 @@ import rateEnquiryActions.RateEnquiryActions;
 
 public class TollPriorityNZTests {
 
-	public static Integer tollCarrier=6;
+	
 	
 	@BeforeMethod
 	public void RunSetup() throws Exception
@@ -23,79 +24,107 @@ public class TollPriorityNZTests {
 				MyTollHomePageActions.ClickGetRateEnquiery();
 			}
 	
+	
 	@Test
-	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelsSameDay()
-	{
+	@Parameters({"TollCarrierTollPrioNZ", "ServiceGlobalExpressParcels", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode", "TNZCountry", "CountryPostCode"})
+	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode, String Country, String CountryPostCode) {
 		
-		RateEnquiryActions.SelectTollCarrierItem(tollCarrier);
-	
-		RateEnquiryActions.SelectService(4);; 
-		BookAPickupActions.SelectAccountNumber1();
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
+		RateEnquiryActions.SelectCountry(Country);
+		RateEnquiryActions.SelectCountryPostCode(CountryPostCode);
 		
-		//RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll IPEC","Toll IPEC is a leading provider of express road freight within Australia with the capability to create customised solutions to meet our customers’ freight distribution needs, no matter their size or urgency.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiry("WELLINGTON",3);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("CHRISTCHURCH CENTRAL",2);
-	
-		RateEnquiryActions.SelectItemDescription(3);
-		//BookAPickupActions.EnterItem("Automation Template");
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 500)");
+		BookAPickupActions.EnterItem(ItemTemplateName);
 		
-		RateEnquiryActions.NumberOfItem("15"); 
-		//RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50"); 
-		RateEnquiryActions.EnterWeight("20");
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
 		
-		RateEnquiryActions.AddANewLineNZAUS();
-		
+
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
+		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 		
-	
+		//Verify Details on Shipment Page
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
 	}
 	
 	@Test
-	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressDocuments()
-	{
+	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode", "Country", "CountryPostCode"})
+	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelOffPeak(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
-		RateEnquiryActions.SelectTollCarrierItem(tollCarrier);
-	
-		RateEnquiryActions.SelectService(6);; 
-		BookAPickupActions.SelectAccountNumber1();
-	
-		//RateEnquiryActions.SelectModeItem(1); 
-		//RateEnquiryActions.VerifyMessage("Toll IPEC","Toll IPEC is a leading provider of express road freight within Australia with the capability to create customised solutions to meet our customers’ freight distribution needs, no matter their size or urgency.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiry("WELLINGTON",3);
-		//RateEnquiryActions.SelectDestinationCountry("Australia",13);
-		RateEnquiryActions.EnterDestinationCountry("Aus", "AUSTRALIA");
-		RateEnquiryActions.EnterDestinationPostcode("3000");
-	
-		//RateEnquiryActions.SelectItemDescription(1);
-		BookAPickupActions.EnterItem("Automation Template");
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
+
+		BookAPickupActions.EnterItem(ItemTemplateName);
 		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
-	
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
 		
-		RateEnquiryActions.NumberOfItem("15"); 
-		//RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		RateEnquiryActions.EnterWeight("20");
-		
-		RateEnquiryActions.AddANewLineNZAUS();
-		
+
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
+		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
-		
 		RateEnquiryActions.ContinueCreateShipment();
 		
-	
-	
+		//Verify Details on Shipment Page
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
 	}
+	
+	@Test
+	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsSameDays", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode", "Country", "CountryPostCode"})
+	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelsSameDay(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
+		
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		
+
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
+		//Check for Price and Continue to Shipment
+		RateEnquiryActions.ClickPriceNow();
+		RateEnquiryActions.ContinueCreateShipment();
+		
+		//Verify Details on Shipment Page
+	
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+	}
+	
 	
 	@AfterMethod
 	  public void RunTearDown() throws Exception
 		{
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 	
 		}
 }

@@ -2,24 +2,18 @@ package rateEnquiryE2ETests;
 
 import bookAPickupActions.BookAPickupActions;
 import myTollHomePageActions.MyTollHomePageActions;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import rateEnquiryActions.RateEnquiryActions;
 
 public class TollIntermodalTests {
-
+	
+	
 	@BeforeMethod
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
@@ -28,142 +22,158 @@ public class TollIntermodalTests {
 		MyTollHomePageActions.ClickGetRateEnquiery();
 	}
 
-	@Test(priority = 1)
-	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Refrigeration() {
+	@Test
+	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_General(String Carrier, String Service,String AccountNo, String ItemTemplateName,String BillingType, String Mode,String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode ) {
+		
+		
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.SelectMode(Mode);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
+		
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
+		
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.QuantityTypeSelect(QtyType);	
+		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		
+		//Check for Price and Continue to Shipment
+		RateEnquiryActions.ClickPriceNow();
+		RateEnquiryActions.ContinueCreateShipment();
+	
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+	}
+		
+	@Test
+	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight(String Carrier, String Service, String AccountNo, String ItemTemplateName,String BillingType, String Mode, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		
+		RateEnquiryActions.valid = true;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.SelectMode(Mode);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
+		
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
+		
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
+		
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.QuantityTypeSelect(QtyType);	
+		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
-		RateEnquiryActions.SelectTollCarrierItem(1);
-
-		RateEnquiryActions.SelectService(1);
-		BookAPickupActions.SelectAccountNumber1();
-
-		RateEnquiryActions.SelectModeItem(1);
-
-		// RateEnquiryActions.VerifyMessage("Toll Intermodal","Toll Intermodal is a
-		// freight transport partner of choice, offering end-to-end road, rail, coastal
-		// shipping and wharf cartage services. We have an extensive range of linehaul
-		// equipment that enables us to meet our customers� diverse requirements.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiry("Melb", 1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("MEL", 2);
-
-		RateEnquiryActions.SelectItemDescription(2);
-
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 500)");
-
-		RateEnquiryActions.NumberOfItem("15");
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200", "100", "50");
-		RateEnquiryActions.EnterWeight("20");
-
-		RateEnquiryActions.SelectBillingTypeTDF(1);
-
-		RateEnquiryActions.AddANewLineTDF();
-
+		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 		
-	}
-
-	@Test(priority = 2)
-	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Express() {
-
-		RateEnquiryActions.SelectTollCarrierItem(1);
-
-		RateEnquiryActions.SelectService(3);
-		;
-		BookAPickupActions.SelectAccountNumber1();
-
-		RateEnquiryActions.SelectModeItem(1);
-		// RateEnquiryActions.VerifyMessage("Toll Intermodal ","Toll Intermodal is a
-		// freight transport partner of choice, offering end-to-end road, rail, coastal
-		// shipping and wharf cartage services. We have an extensive range of linehaul
-		// equipment that enables us to meet our customers� diverse requirements.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiry("Melb", 1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("MEL", 2);
-
-		RateEnquiryActions.SelectItemDescription(2);
-
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-
-		RateEnquiryActions.NumberOfItem("15");
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200", "100", "50");
-		RateEnquiryActions.EnterWeight("20");
-
-		RateEnquiryActions.SelectBillingTypeTDF(1);
-
-		RateEnquiryActions.AddANewLineTDF();
-
-		RateEnquiryActions.ClickPriceNow();
-
-	}
-
-	@Test(priority = 3)
-	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight() {
-
-		RateEnquiryActions.SelectTollCarrierItem(1);
-
-		RateEnquiryActions.SelectService(2);
-		;
-		BookAPickupActions.SelectAccountNumber1();
-
-		RateEnquiryActions.SelectModeItem(1);
-		// RateEnquiryActions.VerifyMessage("Toll Intermodal ","Toll Intermodal is a
-		// freight transport partner of choice, offering end-to-end road, rail, coastal
-		// shipping and wharf cartage services. We have an extensive range of linehaul
-		// equipment that enables us to meet our customers� diverse requirements.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiry("Melb", 1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("MEL", 2);
-		RateEnquiryActions.SelectItemDescription(2);
-
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		jse.executeScript("scroll(0, 250)");
-
-		RateEnquiryActions.NumberOfItem("15");
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200", "100", "50");
-		RateEnquiryActions.EnterWeight("20");
-		RateEnquiryActions.SelectBillingTypeTDF(1);
-
-		RateEnquiryActions.AddANewLineTDF();
-		RateEnquiryActions.ClickPriceNow();
-		RateEnquiryActions.ContinueCreateShipment();
-	}
-
-	@Test(priority = 4)
-	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_General() {
-
-		RateEnquiryActions.SelectTollCarrierItem(1);
-
-		RateEnquiryActions.SelectService(4);
-		;
-		BookAPickupActions.SelectAccountNumber1();
-
-		RateEnquiryActions.SelectModeItem(1);
-		// RateEnquiryActions.VerifyMessage("Toll Intermodal ","Toll Intermodal is a
-		// freight transport partner of choice, offering end-to-end road, rail, coastal
-		// shipping and wharf cartage services. We have an extensive range of linehaul
-		// equipment that enables us to meet our customers� diverse requirements.");
-		RateEnquiryActions.SelectOriginSuburbPostcodeRateEnquiry("Melb", 1);
-		RateEnquiryActions.SelectDestinationSuburbPostcodeRateEnquiry("MEL", 2);
-
-		RateEnquiryActions.SelectItemDescription(2);
+	
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
 		
-		RateEnquiryActions.NumberOfItem("15");
-		RateEnquiryActions.QuantityType(2);
-		BookAPickupActions.EnterLengthWidthHeight("200", "100", "50");
-		RateEnquiryActions.EnterWeight("20");
-		RateEnquiryActions.SelectBillingTypeTDF(1);
+	}
+	
+	@Test
+	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Refrigeration(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		
+		RateEnquiryActions.valid = false;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.SelectMode(Mode);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
+		
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
+		
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
 
-		RateEnquiryActions.AddANewLineTDF();
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.QuantityTypeSelect(QtyType);	
+		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
+		
+		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
+		
+		//Verify Details on Shipment Page
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		
 	}
+	
+	
+	@Test
+	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Express(String Carrier, String Service,String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		
+		RateEnquiryActions.valid = false;
+		RateEnquiryActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterService(Service);
+		RateEnquiryActions.SelectMode(Mode);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		
+		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
+		
+		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
+		
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
+		RateEnquiryActions.BillingType(BillingType);
+		
+		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.QuantityTypeSelect(QtyType);	
+		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
+		//Check for Price and Continue to Shipment
+		RateEnquiryActions.ClickPriceNow();
+		RateEnquiryActions.ContinueCreateShipment();
+		
+		//Verify Details on Shipment Page
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		
+	}
+	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
+		//BaseWebdriver.driver.quit();
 
 	}
 }

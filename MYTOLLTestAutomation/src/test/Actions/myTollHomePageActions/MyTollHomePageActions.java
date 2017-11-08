@@ -5,10 +5,9 @@ import GlobalActions.PageBase;
 import java.util.Date;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-
 import baseWebdriver.BaseWebdriver;
+import bookAPickupActions.BookAPickupActions;
+import createShipmentActions.CreateShipmentActions;
 
 
 public class MyTollHomePageActions {
@@ -24,13 +23,14 @@ public class MyTollHomePageActions {
 	public static By Name=By.xpath("//*[@id=\"header-right-ctrls\"]/div/ul/li[1]/a[1]");
 	public static By MyProfile=By.xpath("//*[@id=\"header-right-ctrls\"]/div/ul/li[1]/ul/li[1]/a"); //.linkText("/group/guest/ups-home-page");
 	
+	
 	public static By HmbugerMenu=By.xpath("//*[@id=\"nav-opner\"]/i"); 
 	public static By Menulist=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a");
 	public static By BookAPickup=By.id("bookaPickup");
 	public static By getRateEnquiry=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a[1]/p");
-	public static By MyDashboard=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[1]/a/p");
-	public static By myManifest=By.id("manifestTabAnchor");
-	public static By manualManifest=By.xpath("//*[@id=\"manifestHasMoreDiv\"]/button[2]");
+	public static By templateMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My Templates']");
+	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']");
+	
 	
 	//Add Template
 	public static By MyTemplates=By.xpath("//a[@href='/group/guest/my-templates']"); //"/group/guest/my-templates");
@@ -44,6 +44,22 @@ public class MyTollHomePageActions {
 	public static By weight = By.xpath("//*[@id=\"newTemplate\"]/div/section/div[3]/div[1]/div[2]/div/input"); //.name("templateTotalWight");
 	public static By SaveTemplate=By.id("templateSave");//*[@id="response-poup-wrpr"]/div[2]/div/a/i
 	public static By CloseNewTemplate=By.xpath("//*[@id=\"response-poup-wrpr\"]/div[2]/div/a/i");
+	
+	// User registration  registerlink
+	
+	public static By register=By.name("registerlink");
+	public static By firstName=By.id("_userregistrationportlet_WAR_userprofileportlet_firstName");
+	public static By lastName=By.id("_userregistrationportlet_WAR_userprofileportlet_lastName");
+	public static By newEmailAddress=By.id("_userregistrationportlet_WAR_userprofileportlet_emailAddress");
+	public static By mobileNumber=By.id("_userregistrationportlet_WAR_userprofileportlet_mobileNum");
+	public static By newPassword=By.id("_userregistrationportlet_WAR_userprofileportlet_pwd");
+	public static By memerobleQuesDropdown=By.id("_userregistrationportlet_WAR_userprofileportlet_memorableQuestion");
+	public static By memerobleQuesOption=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_memorableQuestion\"]/option[4]");
+	public static By memerobleAnswer=By.id("_userregistrationportlet_WAR_userprofileportlet_answer");
+	public static By recaptchalable=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_userRegForm\"]/div/div[1]/div[10]/div/label[1]");
+	public static By robotCheckBox=By.xpath("//*[@id=\"recaptcha-anchor\"]/div[5]"); //*[@id="recaptcha-anchor"]/div[5]
+	
+	
 	
 	public static void LaunchMyToll(String url)
 	{
@@ -143,43 +159,43 @@ public class MyTollHomePageActions {
 		BaseWebdriver.driver.findElement(getRateEnquiry).click();
 		
 	}
-	public static void ClickMyDashboard()
+	
+	public static void NewUserRegistration(String pFirstName, String pLastName, String pNewEmail, String pMobileNumber, String pNewPassword, String pMemerobleAnswer)
 	{
-		BaseWebdriver.driver.findElement(MyDashboard).click();
+		BaseWebdriver.driver.findElement(register).click();
+		BaseWebdriver.driver.findElement(firstName).click();
+		BaseWebdriver.driver.findElement(firstName).clear();
+		BaseWebdriver.driver.findElement(firstName).sendKeys(pFirstName);
+		BaseWebdriver.driver.findElement(lastName).click();
+		BaseWebdriver.driver.findElement(lastName).clear();
+		BaseWebdriver.driver.findElement(lastName).sendKeys(pLastName);
+		BaseWebdriver.driver.findElement(newEmailAddress).click();
+		BaseWebdriver.driver.findElement(newEmailAddress).clear();
+		BaseWebdriver.driver.findElement(newEmailAddress).sendKeys(pNewEmail);
+		BaseWebdriver.driver.findElement(mobileNumber).click();
+		BaseWebdriver.driver.findElement(mobileNumber).clear();
+		BaseWebdriver.driver.findElement(mobileNumber).sendKeys(pMobileNumber);
+		BaseWebdriver.driver.findElement(newPassword).click();
+		BaseWebdriver.driver.findElement(newPassword).clear();
+		BaseWebdriver.driver.findElement(newPassword).sendKeys(pNewPassword);
+		PageBase.MoveToElement(MyTollHomePageActions.newPassword,MyTollHomePageActions.mobileNumber);
+		BaseWebdriver.driver.findElement(memerobleQuesDropdown).click();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(memerobleQuesOption).click();
+		PageBase.MaximumWaitForElementEnabled();
+
+		BaseWebdriver.driver.findElement(memerobleAnswer).click();
+		BaseWebdriver.driver.findElement(memerobleAnswer).clear();
 		
-	}
+		BaseWebdriver.driver.findElement(memerobleAnswer).sendKeys(pMemerobleAnswer);
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(robotCheckBox).click();
+		BaseWebdriver.driver.findElement(recaptchalable).click();
+	
 		
-	public static void ClickMyManifest()
-	{
-		BaseWebdriver.driver.findElement(myManifest).click();
 		
 	}
 	
-	public static boolean ClickManualManifest()
-	{
-		
-		try {
-		Boolean results=false;
-		while (results=true)
-	   {
-		results =BaseWebdriver.driver.findElement(myManifest).isDisplayed();
-		if (results=false)
-		{
-			PageBase.Scrollbar(250, 500);
-			results =BaseWebdriver.driver.findElement(myManifest).isDisplayed();
-		}
-		}
-		//return results;
-		
-		}
-				
-		catch (Exception ex)
-		{
-			
-		}
-		return false;
-		
-		
-	}
 }
 

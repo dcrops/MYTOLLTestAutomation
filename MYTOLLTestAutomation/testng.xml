@@ -2,9 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" >
 <suite-files>
-	<!--Blocked><suite-file path="RateEnquiry.xml"></suite-file></Blocked-->
-	<suite-file path="BookAPickup.xml"></suite-file>
-	<!--Blocked><suite-file path="CreateShipment.xml"></suite-file> </Blocked-->
+<suite-file path="BookAPickup.xml"></suite-file>
+	<!-- Blocked>	<suite-file path="RateEnquiry.xml"></suite-file>
+<suite-file path="BookAPickup.xml"></suite-file>
+	<suite-file path="CreateShipment.xml"></suite-file> </Blocked-->
 </suite-files>
 
 </suite> <!-- Suite -->

@@ -75,7 +75,8 @@ public class ReviewYouPickupActions {
 	public static String VerifyChargeToAccount(int lineNumber, String pChargeToAccount) {
 		return BaseWebdriver.driver.findElement(By.xpath("//div[@id='line-item-"+lineNumber+"']/div[2]/div/div[1]/div[label(text()='"+pChargeToAccount+"')]/div/p")).getText();
 		
-	}
+	}//*[@id="line-item-0"]/div[2]/div/div[1]/div[5]/label
+	//*[@id="line-item-0"]/div[2]/div/div[1]/div[5]/div/p
 	
 	public static String VerifyNumberofItems(int lineNumber) {
 		return BaseWebdriver.driver.findElement(By.xpath("//div[@id='line-item-"+lineNumber+"']/div[2]/div/div/div[5]/div/p")).getText();

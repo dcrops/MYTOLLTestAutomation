@@ -27,14 +27,95 @@
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
 		<parameter name="ServiceDGExpress" value="DG Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
-    <classes>
-     <class name="rateEnquiryE2ETests.TollPriorityAUSTests"/>
-      <!--Blocked> <class name="rateEnquiryE2ETests.TollIntermodalTests"/>
-      <class name="rateEnquiryE2ETests.TollNQXTollExpressTests"/>
-      <class name="rateEnquiryE2ETests.TollTasmaniaTests"/>
-       <class name="rateEnquiryE2ETests.TollPriorityNZTests"/>
-      <class name="rateEnquiryE2ETests.TollPriorityAUSTests"/>
-      <class name="rateEnquiryE2ETests.TollIPECTests"/></Blocked-->
-    </classes>
+		<parameter name="ServiceParcelsSameDays" value="Parcels - Same Day" />
+		<parameter name="ServiceAusWideSatchel" value="Auswide 3kg Satchel - Overnight" />
+		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
+		
+		<!---Toll Intermodal test data -->
+		<parameter name="TIAccountNo" value="5685" />
+		<parameter name="ItemTemplateName" value="Automation Template" />
+		<parameter name="Mode" value="ROAD" />
+		<parameter name="TIBillingType" value="CARTONS - OVER 301KG" />
+		<parameter name="TINumberOfItems" value="1" />
+		<parameter name="TILength" value="20" />
+		<parameter name="TIWidth" value="20" />
+		<parameter name="TIHeight" value="20" />
+		<parameter name="TIWeight" value="100" />
+		<parameter name="QtyType" value="Items" />
+		<parameter name="TIOriginSuburb" value="ROWLAND FLAT" />
+		<parameter name="TIOriginPostCode" value="5352" />
+		<parameter name="TIDesSuburb" value="ALBERT PARK" />
+		<parameter name="TIDesPostCode" value="5o14" />
+				
+		<!---Toll NQX test data -->
+		<parameter name="TNAccountNo" value="614060" />
+		<parameter name="TNOriginSuburb" value="MELBOURNE" />
+		<parameter name="TNOriginPostCode" value="3000" />
+		<parameter name="TNDesSuburb" value="SYDNEY" />
+		<parameter name="TNDesPostCode" value="2000" />	
+		
+		<!---Toll Tasmania test data -->
+		<parameter name="TTAccountNo" value="100428" />
+		<parameter name="TTOriginSuburb" value="MULGRAVE" />
+		<parameter name="TTOriginPostCode" value="3170" />
+		<parameter name="TTPDesSuburb" value="GLEBE" />
+		<parameter name="TTPDesPostCode" value="7000" />		
+		
+		<!---Toll NQX ,Toll Tasmania, Toll Priority NZ common test data -->
+		<parameter name="BillingType" value="General Freight" />
+		<parameter name="NumberOfItems" value="3" />
+		<parameter name="Length" value="33" />
+		<parameter name="Width" value="33" />
+		<parameter name="Height" value="33" />
+		<parameter name="Weight" value="3" />	
+		
+		<!---Toll IPEC test data -->
+		<parameter name="TIPAccountNo" value="2230899" />
+		<parameter name="ItemTemplateName" value="Automation Template" />
+		<parameter name="Mode" value="ROAD" />
+		<parameter name="TIPBillingType" value="ALL FREIGHT" />
+		<parameter name="TIPNumberOfItems" value="10" />
+		<parameter name="TIPWeight" value="10" />
+		<parameter name="QtyType" value="Items" />
+		<parameter name="TIPDesSuburb" value="FOOTSCRAY" />
+		<parameter name="TIPDesPostCode" value="3011" />
+		
+		<!---Toll Priority AUS test data -->
+		<parameter name="TPAccountNo" value="401509" />
+		<parameter name="TPNumberOfItems" value="1" />
+		<parameter name="TPWeight" value="3" />
+		<parameter name="TPDesSuburb" value="MELBOURNE" />
+		<parameter name="TPDesPostCode" value="3000" />	
+		<parameter name="Country" value="HONG KONG" />	
+		
+		<!---Toll Priority, Toll IPEC  common test data -->
+		<parameter name="TIPLength" value="10" />
+		<parameter name="TIPWidth" value="10" />
+		<parameter name="TIPHeight" value="10" />
+		<parameter name="TIPOriginSuburb" value="MELBOURNE" />
+		<parameter name="TIPOriginPostCode" value="3000" />
+		
+		<!---Toll Priority NZ test data -->
+		<parameter name="TNZccountNo" value="100181" />
+		<parameter name="TNZNumberOfItems" value="3" />
+		<parameter name="TNZOriginSuburb" value="NEWTON" />
+		<parameter name="TNZOriginPostCode" value="1001" />
+		<parameter name="TNZDesSuburb" value="BEERESCOURT" />
+		<parameter name="TNZDesPostCode" value="3210" />	
+		<parameter name="TNZCountry" value="AUSTRALIA" />	
+		<parameter name="CountryPostCode" value="3000" />	
+			
+		    <classes>
+		    <class name="rateEnquiryE2ETests.TollIntermodalTests"/> 
+			  <!--	 <class name="rateEnquiryE2ETests.TollIPECTests"/>
+		        <class name="rateEnquiryE2ETests.TollIntermodalTests"/> 
+		         <class name="rateEnquiryE2ETests.TollPriorityAUSTests"/>
+		     	 <class name="rateEnquiryE2ETests.TollNQXTollExpressTests"/>
+		         <class name="rateEnquiryE2ETests.TollTasmaniaTests"/>
+		 
+		         <class name="rateEnquiryE2ETests.TollPriorityNZTests"/> -->
+		         
+		    </classes>
+		    
   </test> <!-- Test -->
 </suite> <!-- Suite -->

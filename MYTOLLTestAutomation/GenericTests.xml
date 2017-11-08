@@ -15,8 +15,19 @@
 		<parameter name="Width" value="200" />
 		<parameter name="Height" value="300" />
 		<parameter name="Weight" value="900" />
+		
+		<!---User registration-->
+
+		<parameter name="FirstName" value="BvtTollUser" />
+		<parameter name="LastName" value="Test" />
+		<parameter name="NewEmail" value="BvtTollUser@mailnator.com" />
+		<parameter name="MobileNumber" value="0413234567" />
+		<parameter name="Password" value="Toll@123" />
+		<parameter name="MemorableAnswer" value="TestABC" />
+		
   <classes>
-	<class name="GenericTests.AddTemplates" />
+	<class name="GenericTests.GenericTests" />
+	
 	</classes>
 		
 	

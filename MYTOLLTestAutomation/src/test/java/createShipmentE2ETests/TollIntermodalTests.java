@@ -1,6 +1,6 @@
 package createShipmentE2ETests;
 
-import org.openqa.selenium.JavascriptExecutor;
+
 import GlobalActions.PageBase;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;

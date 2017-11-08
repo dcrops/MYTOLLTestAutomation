@@ -74,14 +74,14 @@ public class BaseWebdriver {
 	@BeforeMethod
 	public static void setUp() throws Exception {
 		//DesiredCapabilities capabilities = new DesiredCapabilities();
-		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
 		
 		//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 		//BaseWebdriver.driver = new InternetExplorerDriver();
 		
-	    Point point=new Point(0,1920);
-	    driver.manage().window().setPosition(point);
+	   // Point point=new Point(0,1920);
+	  //  driver.manage().window().setPosition(point);
 		MyTollHomePageActions.LaunchMyToll(url);
 		BaseWebdriver.driver.manage().window().maximize();
 		System.out.println(driver.manage().window().getSize());

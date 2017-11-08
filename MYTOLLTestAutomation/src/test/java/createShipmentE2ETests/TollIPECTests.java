@@ -82,7 +82,7 @@ public class TollIPECTests {
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 		CreateShipmentActions.SelectAuthorityToLeaveYes();
 		CreateShipmentActions.SelectTollExtraYes();
-		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
+		CreateShipmentActions.EnterTollExtraSrviceAmount(TollExtraSrviceAmount);
 		
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 		
@@ -141,7 +141,7 @@ public class TollIPECTests {
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 		CreateShipmentActions.SelectAuthorityToLeaveYes();
 		CreateShipmentActions.SelectTollExtraYes();
-		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
+		CreateShipmentActions.EnterTollExtraSrviceAmount(TollExtraSrviceAmount);
 		
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 		

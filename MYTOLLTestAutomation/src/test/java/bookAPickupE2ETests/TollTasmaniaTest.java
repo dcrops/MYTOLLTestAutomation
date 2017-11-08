@@ -87,17 +87,16 @@ public class TollTasmaniaTest {
 		String volume = BookAPickupActions.GetVoulme().toString();
 		System.out.println(volume);
 	
-		//PageBase.Scrollbar(500, 1000);
+		PageBase.Scrollbar(500, 1000);
 		//BookAPickupActions.EnterDestination(destination);
 		// BookAPickupActions.SelectMode(); defect
 
-		/*BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
+		BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
 		BookAPickupActions.EnterVendorDetails(vendorNum);
-		BookAPickupActions.EnterTimeSlot();*/
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		BookAPickupActions.EnterTimeSlot();
 		BookAPickupActions.selectDangerousGood();
 	
-		//jse.executeScript("scroll(500, 800)");
+		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		// BookAPickupActions.selectReadyTime();
 
@@ -110,8 +109,7 @@ public class TollTasmaniaTest {
 		System.out.println(closingTime);
 
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
-		
+
 		BookAPickupActions.ClickReviewBook();
 
 			// Verify Review Your Pickup
@@ -128,7 +126,6 @@ public class TollTasmaniaTest {
 		// ReviewYouPickupActions.verifyReadyTime();
 		// ReviewYouPickupActions.verifyClosingTime();
 		ReviewYouPickupActions.verifySpecialInstructions(specialIns);
-		
 		//ReviewYouPickupActions.verifyItemDescription();
 		// ReviewYouPickupActions.verifyNumberofItems(NumberOfItems+" Items");
 		// ReviewYouPickupActions.verifyLengthWidthHeight(Length+"*"+ Width+"*"+Height+"
@@ -183,13 +180,12 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
 
 	
-		//PageBase.Scrollbar(500, 1000);
+		PageBase.Scrollbar(500, 1000);
 		// BookAPickupActions.SelectMode(); defect
 
-		/*BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
+		BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
 		BookAPickupActions.EnterVendorDetails(vendorNum);
-		BookAPickupActions.EnterTimeSlot();*/
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		BookAPickupActions.EnterTimeSlot();
 		BookAPickupActions.selectDangerousGood();
 		
 		jse.executeScript("scroll(500, 800)");
@@ -200,8 +196,6 @@ public class TollTasmaniaTest {
 
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
-		
 		BookAPickupActions.ClickReviewBook();
 
 		// Confirm Pickup and Verify pickup confirmation details
@@ -254,24 +248,22 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
 		String volume = BookAPickupActions.GetVoulme().toString();
 		System.out.println(volume);
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+	
 		BookAPickupActions.SelectDangerousGoods(1);
-		//PageBase.Scrollbar(500, 1000);
+		PageBase.Scrollbar(500, 1000);
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
-		//jse.executeScript("scroll(500, 800)");
+		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.EnterTechnicalName(technicalName);
-		
-		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
+
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 
 		// BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
-		
+
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -339,27 +331,25 @@ public class TollTasmaniaTest {
 		
 		// BookAPickupActions.SelectMode();
 
-		//jse.executeScript("scroll(200, 500)");
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		jse.executeScript("scroll(200, 500)");
 		BookAPickupActions.SelectDangerousGoods(1);
-		//PageBase.Scrollbar(500, 800);
+		PageBase.Scrollbar(500, 800);
 		// Enter dangerous goods details
 	
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 
-		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
+
 		// Pickup details
-		//PageBase.Scrollbar(800, 1000);
+		PageBase.Scrollbar(800, 1000);
 		BookAPickupActions.selectPickupDate();
 		//String pickupDate = BookAPickupActions.ReturnPickupDate();
 
 		// BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
-		
+
 		BookAPickupActions.ClickReviewBook();
 
 		// Confirm Pickup and Verify pickup confirmation details
@@ -391,24 +381,27 @@ public class TollTasmaniaTest {
 		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
 		BookAPickupActions.SelectDestination(destination);
-		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+
+		
+
+		// BookAPickupActions.ReceiverAccountNumber("1236654");
+
 		BookAPickupActions.SelectDangerousGoods(2);
-		//PageBase.Scrollbar(500, 1000);
-		//jse.executeScript("scroll(500, 800)");
+		PageBase.Scrollbar(500, 1000);
+		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		// BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
-		
+
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -443,10 +436,9 @@ public class TollTasmaniaTest {
 		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
 		BookAPickupActions.SelectDestination(destination);
-		BookAPickupActions.EnterQuantity(NumberOfItems);
-		
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
@@ -456,15 +448,14 @@ public class TollTasmaniaTest {
 		System.out.println(volume);
 
 		
-		//PageBase.Scrollbar(500, 1000);
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		PageBase.Scrollbar(500, 1000);
 		BookAPickupActions.SelectDangerousGoods(2);
 		
 		BookAPickupActions.selectPickupDate();
 		// BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+
 		// Verify Review Your Pickup
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
@@ -503,10 +494,8 @@ public class TollTasmaniaTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
-		
-		BookAPickupActions.EnterService(ServiceGeneral);
-		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceGeneral);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
@@ -514,11 +503,13 @@ public class TollTasmaniaTest {
 		System.out.println(volume);
 		// BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterChargeToAccount(ChargeToAccount);
-		
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
-		
+		BookAPickupActions.SelectDestination(destination);
+
+		// BookAPickupActions.SelectMode();
+
+		jse.executeScript("scroll(200, 500)");
 		BookAPickupActions.SelectDangerousGoods(2);
-		//BookAPickupActions.selectContainFoodItem();
+		BookAPickupActions.selectContainFoodItem();
 
 		// Add a new item
 		BookAPickupActions.AddANewLineTollTasmania(ServiceGeneral);
@@ -529,8 +520,6 @@ public class TollTasmaniaTest {
 		 BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
-		
 		BookAPickupActions.ClickReviewBook();
 		
 
@@ -568,11 +557,11 @@ public class TollTasmaniaTest {
 
 	//@Test(priority = 2)
 
-	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems","ChargeToAccount",
+	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
 	public void BookAPickup_TollTasmania_E2ETest_TID_1033_Service_General_ConfirmDetails(String TollCarrier,
-			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,String ChargeToAccount,
+			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
@@ -593,23 +582,21 @@ public class TollTasmaniaTest {
 		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
-
-		BookAPickupActions.EnterService(ServiceGeneral);
-		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceGeneral);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
+		
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		String volume = BookAPickupActions.GetVoulme().toString();
-		System.out.println(volume);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		//BookAPickupActions.EnterChargeToAccount(ChargeToAccount);
-		
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
-		
+
+		BookAPickupActions.SelectDestination(destination);
+		// BookAPickupActions.SelectMode();
+
+		jse.executeScript("scroll(200, 500)");
 		BookAPickupActions.SelectDangerousGoods(2);
 		// BookAPickupActions.selectContainFoodItem();
-		//PageBase.Scrollbar(500, 1000);
+		PageBase.Scrollbar(500, 1000);
 		// Add a new item
 		BookAPickupActions.AddANewLineTollTasmania(ServiceGeneral);
 
@@ -619,8 +606,7 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
-		
+
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
 
