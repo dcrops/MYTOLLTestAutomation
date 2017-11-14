@@ -17,21 +17,21 @@ public class TollTasmaniaTests {
 	@BeforeMethod
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.CreateshipmentTollTasUsername, BaseWebdriver.CreateshipmentTollTasPassword);
+		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();
 	}
 
 	@Test(priority = 1)
-	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","SenderEmail","ReceiverEmail",
+	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight","WhoPays","Mode", "Sender", "Receiver","QuoteNumber","DropOffDepot", "CollectionDepot", "DGContactName","DGContactNumber","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
-			"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
-			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
+			"PackageDescription","DgPkgQty" ,"DgQtyKg","PackingGroup","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
+			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraServiceAmount"})
 	
 	public void CreateShipment_TollTasmania_E2ETest_TID_920_Service_DGFreight(
-			String TollCarrier,String ServiceDGFreight,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,Integer dropOffDepot, Integer collectionDepot, String DGContactName,
+			String TollCarrier,String ServiceDGFreight,Integer WhoPays,Integer Mode,Integer Sender,Integer Receiver, String QuoteNumber,String dropOffDepot, String collectionDepot, String DGContactName,String DGContactNumber,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,	String Width, String Height, String Weight, 
-			Integer DGYes, Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,
+			Integer DGYes, Integer DGNo, String BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, Integer PackingGroup,  String ChepCustomer, String ChepExchange,
 			String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
 			String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
@@ -46,37 +46,41 @@ public class TollTasmaniaTests {
 		// CreateShipmentActions.EnterAccountNumber("123");
 		CreateShipmentActions.SelectMode(Mode);
 		CreateShipmentActions.SelectSender(Sender);
+		CreateShipmentActions.EnterDGContactDetails(DGContactName,DGContactNumber);
 		CreateShipmentActions.SelectReceiver(Receiver);
 
 		 CreateShipmentActions.SelectShipmentConsolidated();
 		PageBase.Scrollbar(250, 500);
 		
-		CreateShipmentActions.SelectNotifySenderAndReceiver();
+		//CreateShipmentActions.SelectNotifySenderAndReceiver();
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		CreateShipmentActions.SelectShipmentConsolidated();
-		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
-		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
+		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
+		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+		//CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
+		//CreateShipmentActions.SelectCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		//CreateShipmentActions.SelectBillingType(BillingType);
-
+	
+		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
 
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(DGItem, LookupSearch, PackageDescription,DgPkgQty, DgQtyKg);
-				
+		BookAPickupActions.SelectPackgingGroup(PackingGroup);		
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
-
+		BookAPickupActions.ClickAdd();
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		
-		CreateShipmentActions.AddANewLineNZAUS();
+		CreateShipmentActions.AddANewLineTollTasmania(BillingType);
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 		CreateShipmentActions.SelectPalletTransactionsYes();
@@ -96,12 +100,12 @@ public class TollTasmaniaTests {
 	@Parameters({ "TollCarrierTollTasmania", "ServiceExpress","WhoPays","Mode","QuoteNumber", "Sender", "Receiver","DropOffDepot", "CollectionDepot", "DGQuoteNumber","SenderEmail","ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", 
 			"LookupSearch","PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo",
-			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
+			"OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraServiceAmount"})
 	
 	public void CreateShipment_TollTasmania_E2ETest_TID_920_Service_Express(
-			String TollCarrier,String ServiceExpress,Integer WhoPays,Integer Mode, String QuoteNumber,Integer Sender,Integer Receiver, Integer dropOffDepot, Integer collectionDepot, String DGQuoteNumber,
+			String TollCarrier,String ServiceExpress,Integer WhoPays,Integer Mode, String QuoteNumber,Integer Sender,Integer Receiver, String dropOffDepot, String collectionDepot, String DGQuoteNumber,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,String Width, String Height, String Weight, Integer DGYes,
-			Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,String ChepTansferToToll,
+			Integer DGNo, String BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,String ChepTansferToToll,
 			String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
 			String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
@@ -121,31 +125,35 @@ public class TollTasmaniaTests {
 		 CreateShipmentActions.SelectShipmentConsolidated();
 		PageBase.Scrollbar(250, 500);
 
-		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
-		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
+	//	CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
+		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+	//	CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
+	//	CreateShipmentActions.SelectCollectionDepot(collectionDepot);
 		
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
 		//CreateShipmentActions.SelectBillingType(BillingType);
-
+		
+		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		// Shipment contain Dangerous goods=no and no food items
-		BookAPickupActions.SelectDangerousGoods(DGYes);
+		BookAPickupActions.SelectDangerousGoods(DGNo);
 
 		// Enter dangerous goods details
-		BookAPickupActions.EnterDangerousGoodsDetails(DGItem, LookupSearch, PackageDescription,DgPkgQty, DgQtyKg);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		//BookAPickupActions.EnterDangerousGoodsDetails(DGItem, LookupSearch, PackageDescription,DgPkgQty, DgQtyKg);
+		//JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		
-		CreateShipmentActions.AddANewLineNZAUS();
+		CreateShipmentActions.AddANewLineTollTasmania(BillingType);
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 		
@@ -167,12 +175,12 @@ public class TollTasmaniaTests {
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem",
 			"LookupSearch","PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange",
 			"LoscamTransferToToll", "LoscamDocketNo","OtherCostomer", "ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll",
-			"LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
+			"LoscamOtherDocketNo", "PurchaseOrder", "TollExtraServiceAmount"})
 	
 	public void CreateShipment_TollTasmania_E2ETest_TID_920_Service_General(
-			String TollCarrier,String ServiceGeneral,Integer WhoPays,Integer Mode, String QuoteNumber,Integer Sender,Integer Receiver, Integer dropOffDepot, Integer collectionDepot, String DGQuoteNumber,
+			String TollCarrier,String ServiceGeneral,Integer WhoPays,Integer Mode, String QuoteNumber,Integer Sender,Integer Receiver,String dropOffDepot, String collectionDepot, String DGQuoteNumber,
 			String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,String Width, String Height, String Weight, Integer DGYes,
-			Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,String ChepTansferToToll,
+			Integer DGNo, String BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, String ChepCustomer, String ChepExchange,String ChepTansferToToll,
 			String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,String ChepOtherExchange,String ChepOtherTransferToToll,
 			String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
@@ -192,31 +200,35 @@ public class TollTasmaniaTests {
 		 CreateShipmentActions.SelectShipmentConsolidated();
 		PageBase.Scrollbar(250, 500);
 		
-		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
-		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
+	//	CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
+		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+	//	CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
+	//	CreateShipmentActions.SelectCollectionDepot(collectionDepot);
 	
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
+		
 		//CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
-		BookAPickupActions.SelectDangerousGoods(DGYes);
+		BookAPickupActions.SelectDangerousGoods(DGNo);
 
 		// Enter dangerous goods details
-		BookAPickupActions.EnterDangerousGoodsDetails(DGItem, LookupSearch, PackageDescription,DgPkgQty, DgQtyKg);
-		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		//BookAPickupActions.EnterDangerousGoodsDetails(DGItem, LookupSearch, PackageDescription,DgPkgQty, DgQtyKg);
+		//JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		
-		CreateShipmentActions.AddANewLineNZAUS();
+		CreateShipmentActions.AddANewLineTollTasmania(BillingType);
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 		
@@ -236,13 +248,13 @@ public class TollTasmaniaTests {
 	@Test(priority = 4)
 	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration","WhoPays","Mode","QuoteNumber", "Sender", "Receiver","DropOffDepot", "CollectionDepot", "DGQuoteNumber","DGContactName","SenderEmail","ReceiverEmail",
 		"DGContactNumber","ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGYes", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
-		"PackageDescription","DgPkgQty" ,"DgQtyKg","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo","OtherCostomer", 
-		"ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraSrviceAmount"})
+		"PackageDescription","DgPkgQty" ,"DgQtyKg","PackingGroup","ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo","OtherCostomer", 
+		"ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraServiceAmount"})
 	
 	public void CreateShipment_TollTasmania_E2ETest_TID_920_Service_Refrigeration(
-			String TollCarrier,String ServiceRefrigeration,Integer WhoPays,Integer Mode, String QuoteNumber,Integer Sender,Integer Receiver, Integer dropOffDepot, Integer collectionDepot, String DGQuoteNumber,
+			String TollCarrier,String ServiceRefrigeration,Integer WhoPays,Integer Mode, String QuoteNumber,Integer Sender,Integer Receiver,String dropOffDepot, String collectionDepot, String DGQuoteNumber,
 			String DGContactName,String DGContactNumber,String SenderEmail, String ReceiverEmail,String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,String 
-			Width, String Height,String Weight, Integer DGYes,Integer DGNo, Integer BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg,
+			Width, String Height,String Weight, Integer DGYes,Integer DGNo, String BillingType,String SpeceialIns, Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg, Integer PackingGroup, 
 			String ChepCustomer, String ChepExchange,String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,
 			String ChepOtherExchange,String ChepOtherTransferToToll,String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder, String TollExtraSrviceAmount
 			) {
@@ -265,8 +277,10 @@ public class TollTasmaniaTests {
 		
 		// CreateShipmentActions.SelectShipmentConsolidated();
 
-		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
-		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
+		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
+		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+		//CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
+		//CreateShipmentActions.SelectCollectionDepot(collectionDepot);
 		
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
@@ -276,20 +290,21 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
+		CreateShipmentActions.EnterBillingType(BillingType);
 		//CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items
-		BookAPickupActions.SelectDangerousGoods(DGYes);
+		BookAPickupActions.SelectDangerousGoods(DGNo);
 
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(DGItem, LookupSearch, PackageDescription,DgPkgQty, DgQtyKg);
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		
+		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		
-		CreateShipmentActions.AddANewLineNZAUS();
+		CreateShipmentActions.AddANewLineTollTasmania(BillingType);
 		CreateShipmentActions.ItemType(2);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 

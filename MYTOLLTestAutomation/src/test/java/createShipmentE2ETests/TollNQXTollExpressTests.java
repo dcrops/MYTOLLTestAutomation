@@ -77,7 +77,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		// BookAPickupActions.SelectDangerousGoods(DGNo);
+		 BookAPickupActions.SelectDangerousGoods(DGNo);
 		// PageBase.Scrollbar(800, 1000);
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, BookAPickupActions.dangerousGoodNo);
 
@@ -95,7 +95,7 @@ public class TollNQXTollExpressTests {
 
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
 		CreateShipmentActions.SelectFoodPackagingYes();
-		CreateShipmentActions.SelectTollExtraYes();
+		//CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
 
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
@@ -173,7 +173,7 @@ public class TollNQXTollExpressTests {
 				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.SelectFoodPackagingYes();
+		//CreateShipmentActions.SelectFoodPackagingYes();
 		CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
 
@@ -252,7 +252,7 @@ public class TollNQXTollExpressTests {
 				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.SelectFoodPackagingYes();
+		//CreateShipmentActions.SelectFoodPackagingYes();
 		CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
 
@@ -333,7 +333,7 @@ public class TollNQXTollExpressTests {
 				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.SelectFoodPackagingYes();
+		//CreateShipmentActions.SelectFoodPackagingYes();
 		CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
 
@@ -418,7 +418,7 @@ public class TollNQXTollExpressTests {
 				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.SelectFoodPackagingYes();
+		//CreateShipmentActions.SelectFoodPackagingYes();
 		CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraServiceAmount);
 
@@ -501,7 +501,7 @@ public class TollNQXTollExpressTests {
 				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.SelectFoodPackagingYes();
+		//CreateShipmentActions.SelectFoodPackagingYes();
 		CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
 
@@ -588,7 +588,7 @@ public class TollNQXTollExpressTests {
 				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.SelectFoodPackagingYes();
+		//CreateShipmentActions.SelectFoodPackagingYes();
 		CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
 
@@ -673,7 +673,7 @@ public class TollNQXTollExpressTests {
 				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.SelectFoodPackagingYes();
+		//CreateShipmentActions.SelectFoodPackagingYes();
 		CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
 
@@ -761,7 +761,7 @@ public class TollNQXTollExpressTests {
 				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.SelectFoodPackagingYes();
+		//CreateShipmentActions.SelectFoodPackagingYes();
 		CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
 

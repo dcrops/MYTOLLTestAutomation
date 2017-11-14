@@ -584,7 +584,7 @@ public class Toll_IntermodalTest {
 		jse.executeScript("scroll(500, 800)");
 
 		// Add a new item
-		BookAPickupActions.AddANewLine(); // defect
+		BookAPickupActions.AddANewLine(destination); 
 		
 		jse.executeScript("scroll(800, 1000)");
 		BookAPickupActions.selectPickupDate();
@@ -670,7 +670,7 @@ public class Toll_IntermodalTest {
 		jse.executeScript("scroll(500, 800)");
 
 		// Add a new item
-		BookAPickupActions.AddANewLine(); // defect
+		BookAPickupActions.AddANewLine(destination); 
 	
 		jse.executeScript("scroll(800, 1000)");
 		BookAPickupActions.selectPickupDate();

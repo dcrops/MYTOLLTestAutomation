@@ -1,3 +1,4 @@
+
 package bookAPickupActions;
 
 import GlobalActions.PageBase;
@@ -9,11 +10,9 @@ import static org.junit.Assert.assertEquals;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 import baseWebdriver.BaseWebdriver;
+import rateEnquiryActions.RateEnquiryActions;
 
 
 public class BookAPickupActions {
@@ -163,7 +162,14 @@ public class BookAPickupActions {
 			public static final By addAccountSaveMsgClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
 			public static final By addAccountViewMore = By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//a[text()='VIEW MORE']");
 			
-		
+
+			
+	public static void EnterTollCarrierItem(String pTollCarrierName) {
+				PageBase.MinimumWaitForElementEnabled();
+				BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
+				BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']")).click();
+				
+			}
 	public static void EnterTollCarrier(String pTollCarrierName) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
@@ -572,7 +578,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).click();
 		//BaseWebdriver.driver.findElement(itemDescription).clear();;
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).sendKeys(itemName);
-		BaseWebdriver.driver.findElement(itemDescriptionDropdown).click();
+		
 	
 	}
 
@@ -601,19 +607,27 @@ public class BookAPickupActions {
 
 	public static void EnterLengthWidthHeightVolumeWeight(String plength, String pwidth, String pheight,
 			String pweight) {
-		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(length).click();
-		BaseWebdriver.driver.findElement(length).clear();
-		BaseWebdriver.driver.findElement(length).sendKeys(plength);
-		BaseWebdriver.driver.findElement(width).click();
-		BaseWebdriver.driver.findElement(width).clear();
-		BaseWebdriver.driver.findElement(width).sendKeys(pwidth);
-		BaseWebdriver.driver.findElement(height).click();
-		BaseWebdriver.driver.findElement(height).clear();
-		BaseWebdriver.driver.findElement(height).sendKeys(pheight);
-		BaseWebdriver.driver.findElement(weight).click();
-		BaseWebdriver.driver.findElement(weight).clear();
-		BaseWebdriver.driver.findElement(weight).sendKeys(pweight);
+		try {
+			PageBase.MinimumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(length).click();
+			BaseWebdriver.driver.findElement(length).clear();
+			BaseWebdriver.driver.findElement(length).sendKeys(plength);
+			BaseWebdriver.driver.findElement(width).click();
+			BaseWebdriver.driver.findElement(width).clear();
+			BaseWebdriver.driver.findElement(width).sendKeys(pwidth);
+			BaseWebdriver.driver.findElement(height).click();
+			BaseWebdriver.driver.findElement(height).clear();
+			BaseWebdriver.driver.findElement(height).sendKeys(pheight);
+			PageBase.MinimumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(weight).click();
+			BaseWebdriver.driver.findElement(weight).clear();
+			BaseWebdriver.driver.findElement(weight).sendKeys(pweight);
+			}
+			
+			catch(Exception ex)
+			{
+				RateEnquiryActions.EnterWeight(pweight);
+			}
 	}
 
 	public static void EnterLengthWidthHeight(String plength, String pwidth, String pheight) {
@@ -824,7 +838,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(increaseTimeMinutes).click();
 	}
 
-	public static void AddANewLine() {
+	public static void AddANewLine(String pDestination) {
 
 		//JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		//jse.executeScript("scroll(0, 250);");
@@ -841,7 +855,7 @@ public class BookAPickupActions {
 		BookAPickupActions.SelectChargeToAccount2(1);
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
-		BookAPickupActions.SelectDestination("melbou");
+		BookAPickupActions.SelectDestination(pDestination);
 		
 
 		//jse.executeScript("scroll(200, 500);");
@@ -896,6 +910,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 		BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
 		BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
+	
 		}
 		
 		catch (Exception ex)
@@ -949,6 +964,7 @@ public class BookAPickupActions {
 		CreateShipmentActions.SelectPackgingGroup(packagingGroup);
 		}
 	}
+
 
 	public static void ClickConfirm() {
 		PageBase.MaximumWaitForElementEnabled();
