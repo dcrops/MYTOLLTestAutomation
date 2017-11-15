@@ -7,8 +7,10 @@ import reviewYourPickupActions.ReviewYouPickupActions;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 import baseWebdriver.BaseWebdriver;
@@ -82,8 +84,8 @@ public class BookAPickupActions {
 	public static By pickupFrom = By.xpath("//*[@id=\"other-pick-location-selector\"]/label/a/i");
 	public static By availableTime = By.id("available-time");
 	public static By increaseAvailableTimeHours = By
-			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[2]/div[2]/div/div[1]/div[3]/i"); 
-	public static By decreaseReadyTime = By.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[2]/div[2]/div/div[1]/div[3]/i");
+			.xpath("//*[@id=\"steps-3\"]//*//i[@class=\"ico-accordian-up\"]"); 
+	public static By decreaseReadyTime = By.xpath("//*[@id=\"steps-3\"]//*//i[@class=\"ico-accordian-down\"]");
 	public static By increaseAvailableTimeminutes = By
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[2]/div[2]/div/div[3]/div[1]/i");
 	public static By closingTime = By.id("location-closing-time");
@@ -162,7 +164,9 @@ public class BookAPickupActions {
 			public static final By addAccountSaveMsgClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
 			public static final By addAccountViewMore = By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//a[text()='VIEW MORE']");
 			
-
+			public static By confirmPickupBtn=By.id("submit-pickup");
+			public static By  pickUpReferenceNumber = By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//*//span[@class=\"reference-no\"]/span");
+			public static ArrayList BookAPickUpNumbers = new ArrayList();
 			
 	public static void EnterTollCarrierItem(String pTollCarrierName) {
 				PageBase.MinimumWaitForElementEnabled();
@@ -584,10 +588,11 @@ public class BookAPickupActions {
 
 	public static void SelectLargestItem(int j) {
 
-		BaseWebdriver.driver.findElement(selectLargestItem).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[" + j + "]/div"))
-				.click();
-
+		//BaseWebdriver.driver.findElement(selectLargestItem).click();
+		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[" + j + "]/div"))
+		//		.click();
+		PageBase.click(selectLargestItem, 2);
+		PageBase.click(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[" + j + "]/div"), 2);
 	}
 
 	public static void EnterQuantity(String quntity) {
@@ -743,8 +748,8 @@ public class BookAPickupActions {
 	}
 
 	public static void ClickReviewBook() {
-		BaseWebdriver.driver.findElement(reviewBookBtn).click();
-
+		//BaseWebdriver.driver.findElement(reviewBookBtn).click();
+		PageBase.click(reviewBookBtn, 2);
 	}
 	
 	public static void ConfirmReadyTimeAndConfirmPickup() {
@@ -972,6 +977,21 @@ public class BookAPickupActions {
 	}
 	
 	
-	
+	public static void ConfirmPickUpandGetReferenceNo() {
+		PageBase.waitForElement(confirmPickupBtn, 10);
+		PageBase.click(confirmPickupBtn, 2);
+		PageBase.waitForElement(pickUpReferenceNumber, 10);
+		String ReferenceNumber = BaseWebdriver.driver.findElement(pickUpReferenceNumber).getText().substring(19);
+		if (ReferenceNumber != null && !ReferenceNumber.contains("undefined") ) {
+			System.out.println("Reference No: "+ReferenceNumber);
+			BookAPickUpNumbers.add(ReferenceNumber);
+		}
+		else {
+			System.out.println("FAILED : Book A PickUp was not submitted properly, Reference No: "+ReferenceNumber);
+			Assert.fail("FAILED : Book A PickUp was not submitted properly, Reference No: "+ReferenceNumber);
+		}
+		
+		System.out.println("Book a Pick Up Array : "+BookAPickUpNumbers);
+	}
 	
 }

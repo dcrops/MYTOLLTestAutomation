@@ -24,13 +24,13 @@ public class TollPriorityNZTests {
 				MyTollHomePageActions.ClickGetRateEnquiery();
 			}
 	
-	
+/*	
 	@Test
 	@Parameters({"TollCarrierTollPrioNZ", "ServiceGlobalExpressParcels", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode", "TNZCountry", "CountryPostCode"})
 	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode, String Country, String CountryPostCode) {
 		
-		RateEnquiryActions.valid = true;
+		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
@@ -38,73 +38,77 @@ public class TollPriorityNZTests {
 		RateEnquiryActions.SelectCountry(Country);
 		RateEnquiryActions.SelectCountryPostCode(CountryPostCode);
 		
-		BookAPickupActions.EnterItem(ItemTemplateName);
-		
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
-		
+		RateEnquiryActions.EnterItem(ItemTemplateName);
+		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 	}
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode"})
+	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode", "Country", "CountryPostCode"})
 	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelOffPeak(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
-			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode, String Country, String CountryPostCode) {
 		
-		RateEnquiryActions.valid = true;
+		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 
-		BookAPickupActions.EnterItem(ItemTemplateName);
-		
-	
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
+		RateEnquiryActions.EnterItem(ItemTemplateName);
+		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
-	}
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+	}*/
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsSameDays", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode"})
+	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsSameDays", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode", "Country", "CountryPostCode"})
 	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelsSameDay(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
-			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode, String Country, String CountryPostCode) {
 		
-		RateEnquiryActions.valid = true;
+		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
-		BookAPickupActions.EnterItem(ItemTemplateName);
-		
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
-		
+		RateEnquiryActions.EnterItem(ItemTemplateName);
+		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
-
+	
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 	}
 	
 	

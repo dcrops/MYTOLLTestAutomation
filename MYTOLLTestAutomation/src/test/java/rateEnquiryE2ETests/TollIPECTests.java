@@ -21,7 +21,7 @@ import baseWebdriver.BaseWebdriver;
 import rateEnquiryActions.RateEnquiryActions;
 
 public class TollIPECTests {
-
+		
 	
 	@BeforeMethod
 	public void RunSetup() throws Exception
@@ -46,14 +46,14 @@ public class TollIPECTests {
 		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
-		BookAPickupActions.EnterItem(ItemTemplateName);
+		RateEnquiryActions.EnterItem(ItemTemplateName);
 		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
 		RateEnquiryActions.BillingType(BillingType);
 		
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
 		
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
 		
 		//Check for Price and Continue to Shipment
@@ -61,9 +61,13 @@ public class TollIPECTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
-
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+	
 	}
 	
 	

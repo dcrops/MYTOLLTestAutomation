@@ -21,6 +21,7 @@ public class TollIntermodalTests {
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickGetRateEnquiery();
 	}
+	
 
 	@Test
 	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
@@ -28,7 +29,7 @@ public class TollIntermodalTests {
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode ) {
 		
 		
-		RateEnquiryActions.valid = true;
+		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.SelectMode(Mode);
@@ -38,28 +39,31 @@ public class TollIntermodalTests {
 		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
-		BookAPickupActions.EnterItem(ItemTemplateName);
+		RateEnquiryActions.EnterItem(ItemTemplateName);
 		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
 		RateEnquiryActions.BillingType(BillingType);
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
 		RateEnquiryActions.QuantityTypeSelect(QtyType);	
 		
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 	
-		//Verify Details on Shipment Page
-		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 	}
 		
 	@Test
-	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	@Parameters({"TollCarrierTollIntermodal", "ServiceDGFreight","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
 	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight(String Carrier, String Service, String AccountNo, String ItemTemplateName,String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
-		RateEnquiryActions.valid = true;
+		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.SelectMode(Mode);
@@ -68,29 +72,31 @@ public class TollIntermodalTests {
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
-		
-		BookAPickupActions.EnterItem(ItemTemplateName);
+		RateEnquiryActions.EnterItem(ItemTemplateName);
 		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
 		RateEnquiryActions.BillingType(BillingType);
 		
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
 		RateEnquiryActions.QuantityTypeSelect(QtyType);	
 		
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 		
-		//Verify Details on Shipment Page
-		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
 	
-	
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		
 	}
 	
+	
 	@Test
-	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	@Parameters({"TollCarrierTollIntermodal", "ServiceRefrigeration","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
 	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Refrigeration(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -104,14 +110,14 @@ public class TollIntermodalTests {
 		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
-		BookAPickupActions.EnterItem(ItemTemplateName);
+		RateEnquiryActions.EnterItem(ItemTemplateName);
 		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
 		RateEnquiryActions.BillingType(BillingType);
 
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
 		RateEnquiryActions.QuantityTypeSelect(QtyType);	
 		
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
 		
 		//Check for Price and Continue to Shipment
@@ -119,16 +125,17 @@ public class TollIntermodalTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
-	
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		
-	
-
 	}
 	
 	
 	@Test
-	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	@Parameters({"TollCarrierTollIntermodal", "ServiceExpress","TIAccountNo","ItemTemplateName","TIBillingType","Mode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","QtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
 	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Express(String Carrier, String Service,String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -142,30 +149,33 @@ public class TollIntermodalTests {
 		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
-		BookAPickupActions.EnterItem(ItemTemplateName);
+		RateEnquiryActions.EnterItem(ItemTemplateName);
 		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
 		RateEnquiryActions.BillingType(BillingType);
 		
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
 		RateEnquiryActions.QuantityTypeSelect(QtyType);	
 		
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		
-	
-
 	}
+
 	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
-		//BaseWebdriver.driver.quit();
+		//BaseWebdriver.tearDown();
+		BaseWebdriver.driver.quit();
 
 	}
 }

@@ -530,6 +530,17 @@ public class RateEnquiryActions {
 		PageBase.click(createShipmentBtn, 2);
 	}
 	
+	public static void EnterItem(String itemName) {
+		PageBase.sendText(RateEnquiryActions.itemDescriptionType, 2, itemName);
 	
+	}
+	
+	public static void EnterLengthWidthHeightVolumeWeight(String plength, String pwidth, String pheight,
+			String pweight) {
+		PageBase.sendText(BookAPickupActions.length, 2, plength);
+		PageBase.sendText(BookAPickupActions.width, 2, pwidth );
+		PageBase.sendText(BookAPickupActions.height, 2, pheight);
+		PageBase.sendText(RateEnquiryActions.weight, 2, pweight);
+	}
 	
 }
