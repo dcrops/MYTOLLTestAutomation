@@ -46,14 +46,14 @@ public class TollIPECTests {
 		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
-		RateEnquiryActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterItem(ItemTemplateName);
 		PageBase.moveToElement(RateEnquiryActions.billingTypeTDF);
 		RateEnquiryActions.BillingType(BillingType);
 		
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
 		
 
-		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
 		
 		//Check for Price and Continue to Shipment
@@ -61,19 +61,9 @@ public class TollIPECTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-<<<<<<< HEAD
-		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
-	
-=======
 		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
 
 		
->>>>>>> 71b800104d08d4e757c8715d096c1fcd1689978b
 	}
 	
 	

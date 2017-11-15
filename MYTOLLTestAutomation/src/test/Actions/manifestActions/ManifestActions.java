@@ -2,25 +2,19 @@ package manifestActions;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.ShipmentReviewActions;
 
 public class ManifestActions {
 
 		
 	public static By manifestHeading = By.xpath(
-			"//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]//*//header/div/div/h1");
+			"//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]/div/div/div/div/header/div/div/h1");
 	public static By status = By.xpath(
 			"//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet10SNAPSHOT\"]/div/div/div/div/div[1]/div[1]/ul/li[2]/div[2]/p");
 	public static By dispatchDate = By.xpath(
@@ -83,30 +77,6 @@ public class ManifestActions {
 			.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[2]/div/div[2]/input"); 
 	public static By CloseAddToManifest = By
 			.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/a/i");
-	
-	//add Manifest Manually
-	public static By MyManifestTab = By.id("manifestTabAnchor");
-	public static By AddManifestManuallyButton = By.xpath("//*[@id=\"manifestHasMoreDiv\"]/button[text()='+ MANUAL MANIFEST']");
-	public static By ManifestViewMore = By.xpath("//*[@id=\"manifestHasMoreButton\"]");
-	public static By ManualManifestName = By.id("manifest-name");
-	public static By ManualManifestSave = By.id("save-manifest");
-	public static By AddNewShipment = By.linkText("ADD NEW SHIPMENT");
-	public static By TollCarier = By.xpath("//*[@id=\"carrier-name\"]");
-	
-	public static final By ContinuetoManifest = By.xpath("//*[@id=\"shipment-placeholder\"]//*//a[text()=\"continue\"]");
-	
-	public static ArrayList shipmentNumbers = new ArrayList();
-	public static By PrintCloseManifest = By.linkText("PRINT & CLOSE MANIFEST");
-	public static By ShipmentManifestTab = By.xpath("//*[@id=\"print-mani-popup\"]/div/div/section/ul/li[2]/a");
-	public static By ShipmentDownloadPDF = By.xpath("//*[@id=\"manifest-ship-download-btn\"]");
-	public static By ShipmentManifestPopupClose = By.xpath("//*[@id=\"print-mani-popup\"]/div/div/a/i");
-	public static By ShipmentManifestID = By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]//*//ul/li[2]/div[1]/p");
-	public static By ShipmentManifestStatus = By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]//*//ul/li[2]/div[2]/p");
-	public static By ShipmentManifestTotalNo = By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]/div/div/div/div/div[1]/div[2]/ul/li");
-	public static By ShipmentNo =By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]//*//ul[@class=\"shipments-list\"]/li[2]//*//a");
-	public static By GoToDashboard = By.linkText("GO TO DASHBOARD");	
-		
-	
 	
 	
 	public static void VerifyManifestDetails(String pStatus, String pSenderLocation, String pTollCarrier,
@@ -300,90 +270,5 @@ public class ManifestActions {
 		BaseWebdriver.driver.findElement(addNewShipmentBtn).click();
 
 	}
-	
-	public static void addManifestManually() {
-		PageBase.waitForElement(MyManifestTab, 5);
-		PageBase.click(MyManifestTab, 2);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.click(AddManifestManuallyButton, 2);	
-	}
 
-	public static void submitandPrintManifest() {
-		//Retiving shipment details, printing and completing
-		String ManifestID = BaseWebdriver.driver.findElement(ShipmentManifestID).getText();
-		System.out.println("Manifest ID : "+ManifestID);
-		String CurrentStatus = BaseWebdriver.driver.findElement(ShipmentManifestStatus).getText();
-		System.out.println("Current Status : "+CurrentStatus);
-		
-		//Get Shipment Number
-		List <WebElement> shipment = BaseWebdriver.driver.findElements(ShipmentManifestTotalNo);
-		int noOfShipments = shipment.size() - 2;
-		System.out.println("No if Shipments in Manifest = " + noOfShipments);
-	    String ShipmentID = BaseWebdriver.driver.findElement(ShipmentNo).getText();
-	    System.out.println("Shipment ID : "+ShipmentID);
-	    shipmentNumbers.add(ShipmentID);
-	    System.out.println("Shipment Array : "+shipmentNumbers);
-		//Print and Close Manifest
-		PageBase.moveToElement(PrintCloseManifest);
-		PageBase.click(PrintCloseManifest, 2);
-		PageBase.waitForElement(ShipmentManifestTab, 2);
-		PageBase.moveToElement(ShipmentManifestTab);
-		PageBase.click(ShipmentManifestTab, 2);
-		PageBase.click(ShipmentDownloadPDF, 2);
-		System.out.println("Downloading PDF instead of Printing, Content of PDF not CHECKED");
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.waitForElement(ShipmentManifestPopupClose, 2);
-		PageBase.click(ShipmentManifestPopupClose, 2);
-		PageBase.MaximumWaitForElementEnabled();
-		
-		//Get Current Status of Manifest
-		String UpdatedStatus = BaseWebdriver.driver.findElement(ShipmentManifestStatus).getText();
-		if ("Completed".equals(UpdatedStatus)) {
-			System.out.println("Updated Status : "+UpdatedStatus);
-		}
-		else {
-			System.out.println("FAILED : Manifest Satus was not updated. Manifest was not submitted properly");
-			Assert.fail("FAILED : Manifest Satus was not updated. Manifest was not submitted properly");
-		}
-		
-	}
-	
-	public static void manifestToBookaPickUp (String ManifestName) {
-		//Move to Manifest Tab
-		PageBase.waitForElement(MyManifestTab, 5);
-		PageBase.click(MyManifestTab, 2);
-		//Search for Manifest and Click Book A Pickup
-		while(PageBase.waitForElement(By.xpath("//*[@id=\"manifestDataTbody\"]/tr/td[contains(text(),'"+ManifestName+"')]"), 1) == null) {
-			PageBase.click(ManifestActions.ManifestViewMore, 5);
-		}
-		
-		String Status = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifestDataTbody\"]/tr/td[contains(text(),'"+ManifestName+"')]/following::td[7]/a")).getText();
-		
-		if ("Book a Pickup".equals(Status)) {
-			System.out.println("Manifes Status = " +Status);	
-			PageBase.click(By.xpath("//*[@id=\"manifestDataTbody\"]/tr/td[contains(text(),'"+ManifestName+"')]/following::td[7]/a"), 5);
-		}
-		else {
-			System.out.println("FAILED : Manifest Satus = '"+Status+ "' Unable to proceed to Book A PickUp");
-			Assert.fail("FAILED : Manifest Satus = '"+Status+ "' Unable to proceed to Book A PickUp");
-		}
-	}
-	
-	
-	public static void selectPickupDate() {
-		PageBase.click(BookAPickupActions.pickupDate, 2);
-		PageBase.click(BookAPickupActions.pickupDateTomorrow, 2);
-
-	}
-	
-	public static void selectReadyTimeJS(String time) {
-		((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('available-time').removeAttribute('readonly',0);");
-        ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('available-time').setAttribute('data-timepicki-time','"+time+"');");
-		WebElement fromDateBox= BaseWebdriver.driver.findElement(BookAPickupActions.availableTime);
-		fromDateBox.clear();
-		PageBase.click(BookAPickupActions.decreaseReadyTime, 1);
-		PageBase.click(BookAPickupActions.increaseAvailableTimeHours, 1);
-		PageBase.verifyTextExistAttribute(BookAPickupActions.availableTime, time);	
-	}
-	
 }

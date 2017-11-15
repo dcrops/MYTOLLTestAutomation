@@ -27,7 +27,7 @@
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 
 		<!---Create shipment Test data -->
-		<parameter name="AccountNumberTSPD" value="106119" />
+		<parameter name="AccountNumberTINTER" value="106119" />
 		<parameter name="AccountNumberTNQX" value="614060" />
 		<parameter name="SenderName" value="COLLINS" />
 		<parameter name="SenderItem" value="COLLINS COMPUTERS 8 TO 8" />
@@ -119,14 +119,7 @@
 		
 		
 		<classes>
-			<!--  <class name="manifestE2ETests.ManualManifestTollIntermodalTests" /> 
-			<class name="manifestE2ETests.ManualManifestTollIPECTest" />
-			<class name="manifestE2ETests.ManualManifestTollNQXTollExpressTests" />
-			<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" /> -->
-			<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
-			<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" />
-		
-			
+			<class name="manifestE2ETests.ManifestTollIntermodalTests" />
 
 		</classes>
   </test> <!-- Test -->

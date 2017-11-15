@@ -57,11 +57,13 @@ public class Toll_IntermodalTest_AddAddress {
 		// Select Toll Intermodal
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-	//	BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+
+		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 		//Select Account
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		PageBase.MaximumWaitForElementEnabled();
-	//	bookAPickupActions.BookAPickupActions.addAdderess();
+		//bookAPickupActions.BookAPickupActions.addAdderess();
+
 		
 	}
 	

@@ -15,12 +15,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 import myTollHomePageActions.MyTollHomePageActions;
 
 public class BaseWebdriver {
 
 	public static WebDriver driver;
 	public static StringBuffer verificationErrors = new StringBuffer();
+
 	public static String url="https://www-ppd.mytoll.com/"; //"https://mytoll-sit.tollgroup.com/";  //"http://cesapaut003.toll.com.au:8080/";//"https://mytoll-sit.tollgroup.com/";
 	public static String Username="tim_BVT@mailinator.com"; //"tim_BVT@mailinator.com";//"ahq_test01@mailinator.com";//"allbus001@toll.com";  //"superuser@gmail.com"; //
 
@@ -93,7 +95,6 @@ public class BaseWebdriver {
 
 	@AfterMethod
 	public static void tearDown() throws Exception {
-		driver.quit();
 		BaseWebdriver.driver.quit();
 		//driver.close();
 
