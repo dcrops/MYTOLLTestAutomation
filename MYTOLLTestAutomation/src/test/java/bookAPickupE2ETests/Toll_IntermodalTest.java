@@ -551,7 +551,7 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.SelectLocation2(locationIndex);
 
 		// Verification and enter data for Quick entry mode, service(=Express),
-		// Mode(=Road)
+	
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterService(ServiceGeneral);
@@ -564,10 +564,10 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		String volume = BookAPickupActions.GetVoulme().toString();
 		System.out.println(volume);
-		//BookAPickupActions.SelectChargeToAccount2(1);
+		
 		BookAPickupActions.EnterChargeToAccount(ChargeToAccount);
 		BookAPickupActions.SelectDestination(destination);
-		//BookAPickupActions.EnterDestination(destination);
+	
 		BookAPickupActions.SelectModeItem(1);
 
 		BookAPickupActions.selectDangerousGood();
@@ -579,7 +579,6 @@ public class Toll_IntermodalTest {
 		// Add a new item
 		BookAPickupActions.AddANewLine(destination); // defect
 		
-		//jse.executeScript("scroll(800, 1000)");
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
@@ -663,14 +662,10 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.selectDangerousGood();
 		BookAPickupActions.selectContainFoodItem();
-		//PageBase.Scrollbar(250, 500);
 		
-		//jse.executeScript("scroll(500, 800)");
-
 		// Add a new item
 		BookAPickupActions.AddANewLine(destination); // defect
 	
-		//jse.executeScript("scroll(800, 1000)");
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
