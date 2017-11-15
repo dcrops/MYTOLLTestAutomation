@@ -82,6 +82,9 @@
 		
 		<!---Toll Priority AUS test data -->
 		<parameter name="TPAccountNo" value="401509" />
+		<parameter name="TPALength" value="0" />
+		<parameter name="TPAWidth" value="0" />
+		<parameter name="TPAHeight" value="0" />
 		<parameter name="TPNumberOfItems" value="1" />
 		<parameter name="TPWeight" value="3" />
 		<parameter name="TPDesSuburb" value="MELBOURNE" />

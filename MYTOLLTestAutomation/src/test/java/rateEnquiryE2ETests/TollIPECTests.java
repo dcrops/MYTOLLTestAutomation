@@ -21,7 +21,7 @@ import baseWebdriver.BaseWebdriver;
 import rateEnquiryActions.RateEnquiryActions;
 
 public class TollIPECTests {
-		
+
 	
 	@BeforeMethod
 	public void RunSetup() throws Exception
@@ -61,6 +61,7 @@ public class TollIPECTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
+<<<<<<< HEAD
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
@@ -68,6 +69,11 @@ public class TollIPECTests {
 		
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 	
+=======
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+
+		
+>>>>>>> 71b800104d08d4e757c8715d096c1fcd1689978b
 	}
 	
 	

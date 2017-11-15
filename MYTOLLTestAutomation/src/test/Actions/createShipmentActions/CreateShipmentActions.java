@@ -6,13 +6,10 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
-import rateEnquiryActions.RateEnquiryActions;
 
 public class CreateShipmentActions {
 

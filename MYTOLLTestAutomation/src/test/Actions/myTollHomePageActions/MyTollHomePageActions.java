@@ -6,8 +6,6 @@ import java.util.Date;
 
 import org.openqa.selenium.By;
 import baseWebdriver.BaseWebdriver;
-import bookAPickupActions.BookAPickupActions;
-import createShipmentActions.CreateShipmentActions;
 
 
 public class MyTollHomePageActions {
@@ -30,7 +28,6 @@ public class MyTollHomePageActions {
 	public static By getRateEnquiry=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a[1]/p");
 	public static By templateMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My Templates']");
 	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']");
-	
 	
 	//Add Template
 	public static By MyTemplates=By.xpath("//a[@href='/group/guest/my-templates']"); //"/group/guest/my-templates");
@@ -59,7 +56,7 @@ public class MyTollHomePageActions {
 	public static By recaptchalable=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_userRegForm\"]/div/div[1]/div[10]/div/label[1]");
 	public static By robotCheckBox=By.xpath("//*[@id=\"recaptcha-anchor\"]/div[5]"); //*[@id="recaptcha-anchor"]/div[5]
 	
-	
+
 	
 	public static void LaunchMyToll(String url)
 	{
@@ -159,6 +156,7 @@ public class MyTollHomePageActions {
 		BaseWebdriver.driver.findElement(getRateEnquiry).click();
 		
 	}
+
 	
 	public static void NewUserRegistration(String pFirstName, String pLastName, String pNewEmail, String pMobileNumber, String pNewPassword, String pMemerobleAnswer)
 	{
@@ -196,6 +194,6 @@ public class MyTollHomePageActions {
 		
 		
 	}
-	
+
 }
 

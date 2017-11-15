@@ -51,11 +51,16 @@ public class TollIntermodalTests {
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 	
+<<<<<<< HEAD
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+=======
+		//Verify Details on Shipment Page
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+>>>>>>> 71b800104d08d4e757c8715d096c1fcd1689978b
 	}
 		
 	@Test
@@ -85,12 +90,18 @@ public class TollIntermodalTests {
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 		
+		//Verify Details on Shipment Page
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
 	
+	
+<<<<<<< HEAD
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+=======
+>>>>>>> 71b800104d08d4e757c8715d096c1fcd1689978b
 		
 	}
 	
@@ -125,12 +136,19 @@ public class TollIntermodalTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
+<<<<<<< HEAD
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+=======
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+	
+>>>>>>> 71b800104d08d4e757c8715d096c1fcd1689978b
 		
+	
+
 	}
 	
 	
@@ -163,12 +181,18 @@ public class TollIntermodalTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
+<<<<<<< HEAD
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+=======
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+>>>>>>> 71b800104d08d4e757c8715d096c1fcd1689978b
 		
+	
+
 	}
 
 	

@@ -91,7 +91,7 @@
 		<parameter name="CollectionDepot" value="ADC Port Adelaide (TMS)" />
 		<parameter name="dropOffDepot" value="1" />
 		<parameter name="collectionDepot" value="2" />
-		<parameter name="BillingType" value="General Freight" />
+		<parameter name="BillingType" value="General Freight" /> 
 
 		<!---Pallet Information Test data -->
 

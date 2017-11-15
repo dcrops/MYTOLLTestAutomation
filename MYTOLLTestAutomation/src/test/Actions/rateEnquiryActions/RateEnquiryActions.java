@@ -145,6 +145,12 @@ public class RateEnquiryActions {
 		PageBase.click(destinationSuburbPostcodeTextField, 2);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.click(By.xpath("//*[@id=\"destination-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MoveToElement(destinationSuburbPostcodeTextField, originSuburbPostCodeTextField);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 	}
 	
 	
@@ -502,6 +508,23 @@ public class RateEnquiryActions {
 
 	}
 
+	public static void VerifyRateEnquiryDetails(String Carrier, String Service, String AccountNo, String Length, String Width, String Height) {
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+
+	}
+	
+	public static void VerifyRateEnquiryDetails_TollPriorityAUS(String Carrier, String Service, String AccountNo, String Length, String Width, String Height) {
+		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+"cm x "+Height+"cm" );
+
+	}
 	public static void ClickCreateShipment() {
 		PageBase.MinimumWaitForElementEnabled();
 		//BaseWebdriver.driver.findElement(createShipmentBtn).click();

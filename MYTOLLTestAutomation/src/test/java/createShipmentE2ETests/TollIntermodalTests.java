@@ -59,10 +59,11 @@ public class TollIntermodalTests {
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		CreateShipmentActions.ItemType(2);
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		CreateShipmentActions.EnterBillingType(BillingType);
+		
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
 		// PageBase.Scrollbar(500, 1000);
@@ -173,7 +174,7 @@ public class TollIntermodalTests {
 		ShipmentReviewActions.VerifyService(ServiceDGFreight);
 		// ShipmentReviewActions.VerifyWhopays();
 		// ShipmentReviewActions.VerifyFoodPackaging(pFoodPackaging);
-		ShipmentReviewActions.ClickItem1Arrowdown();
+		//ShipmentReviewActions.ClickItem1Arrowdown();
 		ShipmentReviewActions.VerifyItemName1(ItemTemplateName);
 		ShipmentReviewActions.VerifyPalletTransactionsInformation("Pallet Transactions information");
 		// ShipmentReviewActions.VerifyItemDescription1();

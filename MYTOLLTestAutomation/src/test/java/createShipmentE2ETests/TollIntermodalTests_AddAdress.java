@@ -1,8 +1,6 @@
 package createShipmentE2ETests;
 
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -13,7 +11,7 @@ import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import myTollHomePageActions.MyTollHomePageActions;
-import createShipmentActions.ShipmentReviewActions;
+
 
 
 public class TollIntermodalTests_AddAdress {
@@ -42,7 +40,9 @@ public class TollIntermodalTests_AddAdress {
 		
 		//Add Address
 		CreateShipmentActions.addSenderAdderess();
+
 		CreateShipmentActions.addReceiverAdderess(); 
+
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		

@@ -13,8 +13,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 import rateEnquiryActions.RateEnquiryActions;
 
 public class TollTasmaniaTests {
-	
-	
+
 	@BeforeMethod
 	public void RunSetup() throws Exception
 			{
@@ -55,11 +54,15 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
+<<<<<<< HEAD
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+=======
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+>>>>>>> 71b800104d08d4e757c8715d096c1fcd1689978b
 	}
 		
 	@Test
@@ -91,11 +94,15 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
+<<<<<<< HEAD
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+=======
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+>>>>>>> 71b800104d08d4e757c8715d096c1fcd1689978b
 		
 	}
 	
@@ -129,11 +136,15 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
+<<<<<<< HEAD
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+=======
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+>>>>>>> 71b800104d08d4e757c8715d096c1fcd1689978b
 		
 	}
 	
@@ -168,12 +179,17 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
+<<<<<<< HEAD
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		
+=======
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+
+>>>>>>> 71b800104d08d4e757c8715d096c1fcd1689978b
 	}
 
 	@AfterMethod
