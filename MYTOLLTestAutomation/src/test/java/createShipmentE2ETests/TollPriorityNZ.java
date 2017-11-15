@@ -7,18 +7,15 @@ import org.testng.annotations.Test;
 import GlobalActions.PageBase;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
-import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickupActions.BookAPickupActions;
-import myTollHomePageActions.MyTollHomePageActions;
-import rateEnquiryActions.RateEnquiryActions;
-import createShipmentActions.CreateShipmentActions;
+
 
 public class TollPriorityNZ {
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments"})
-	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_GlobalExpressDocuments(String TollCarrier, String ServiceGlobalExpressDocuments)
+	@Parameters({"TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "ShipmentRef1", "ShipmentRef2","ItemTemplateName","NumberOfItems", "Length", "Width", "Height", "Weight","SpeceialIns"})
+	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_GlobalExpressDocuments(String TollCarrier, String ServiceGlobalExpressDocuments, String ShipmentRef1,
+			String ShipmentRef2,String ItemTemplateName, String NumberOfItems, String Length, String Width, String Height, String Weight, String SpeceialIns)
 	{
 	
 	//CreateShipmentActions.SelectTollCarrierItem(TollCarrier);
@@ -30,25 +27,25 @@ public class TollPriorityNZ {
 			CreateShipmentActions.SelectReceiver(3);
 			
 			CreateShipmentActions.SelectShipmentConsolidated();
-			CreateShipmentActions.EnterShipmentReferences("1234", "6789");
-			BookAPickupActions.EnterItem("Automation Temp1");
-			CreateShipmentActions.NumberOfItem("15"); 
-			BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-			CreateShipmentActions.EnterWeight("20");
-			PageBase.Scrollbar(500, 800);
+			CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
+			BookAPickupActions.EnterItem(ItemTemplateName);
+			CreateShipmentActions.NumberOfItem(NumberOfItems); 
+			BookAPickupActions.EnterLengthWidthHeight(Length,Width,Height);
+			CreateShipmentActions.EnterWeight(Weight);
 			BookAPickupActions.selectDangerousGood();
 			PageBase.Scrollbar(1200,1500);
 			CreateShipmentActions.AddANewLineNZAUS(500,800);
 			BookAPickupActions.selectDangerousGood();
 			PageBase.Scrollbar(800, 1000);
-			BookAPickupActions.EnterSpecialInstructions("special instructions test");
+			BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 			CreateShipmentActions.ClickReviewCreateShipment();
 
 }
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak"})
-	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_ParcelsOffPeak(String TollCarrier, String ServiceParcelsOffPeak)
+	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "ShipmentRef1", "ShipmentRef2","ItemTemplateName","NumberOfItems", "Length", "Width", "Height", "Weight","SpeceialIns"})
+	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_ParcelsOffPeak(String TollCarrier, String ServiceParcelsOffPeak, String ShipmentRef1,
+			String ShipmentRef2,String ItemTemplateName, String NumberOfItems, String Length, String Width, String Height, String Weight, String SpeceialIns)
 	{
 		
 		
@@ -61,11 +58,11 @@ public class TollPriorityNZ {
 		CreateShipmentActions.EnterReceiver("Test", "Test174");
 		
 		CreateShipmentActions.SelectShipmentConsolidated();
-		CreateShipmentActions.EnterShipmentReferences("1234", "6789");
-		BookAPickupActions.EnterItem("Automation Temp1");
-		CreateShipmentActions.NumberOfItem("15"); 
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		CreateShipmentActions.EnterWeight("20");
+		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		CreateShipmentActions.NumberOfItem(NumberOfItems); 
+		BookAPickupActions.EnterLengthWidthHeight(Length,Width,Height);
+		CreateShipmentActions.EnterWeight(Weight);
 		BookAPickupActions.selectDangerousGood();
 		
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
@@ -75,7 +72,7 @@ public class TollPriorityNZ {
 		CreateShipmentActions.AddANewLineNZAUS(500, 800);
 		BookAPickupActions.selectDangerousGood();
 		
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 		CreateShipmentActions.ClickReviewCreateShipment();
 	}
 }

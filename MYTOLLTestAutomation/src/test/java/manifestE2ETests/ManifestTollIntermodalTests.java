@@ -2,8 +2,6 @@ package manifestE2ETests;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.Date;
-
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -73,7 +71,6 @@ public class ManifestTollIntermodalTests {
 	
 		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.itemDescriptionTextField);
 
-		
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);

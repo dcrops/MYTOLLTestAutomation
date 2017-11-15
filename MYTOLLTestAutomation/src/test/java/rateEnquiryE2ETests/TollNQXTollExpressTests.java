@@ -1,6 +1,4 @@
 package rateEnquiryE2ETests;
-
-
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -26,7 +24,7 @@ public class TollNQXTollExpressTests {
 	
 	
 	@Test
-	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","TNAccountNo","ItemTemplateName","TNBillingType","Mode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","TNAccountNo","ItemTemplateName","BillingType","Mode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_General(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -56,11 +54,7 @@ public class TollNQXTollExpressTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
 	}
 	
 	
@@ -94,11 +88,7 @@ public class TollNQXTollExpressTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
 	}
 	
 	
@@ -132,11 +122,7 @@ public class TollNQXTollExpressTests {
 		RateEnquiryActions.ContinueCreateShipment();
 				
 		//Verify Details on Shipment Page
-		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
 	}
 	
 	
@@ -171,11 +157,7 @@ public class TollNQXTollExpressTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
 	}
 	
 	@Test
@@ -208,11 +190,7 @@ public class TollNQXTollExpressTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
 	}
 	
 	@Test
@@ -245,11 +223,8 @@ public class TollNQXTollExpressTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+
 	}
 	
 	@AfterMethod

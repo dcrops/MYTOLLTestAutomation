@@ -30,7 +30,7 @@ public class TollPriorityAusTest {
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "locationIndex", "ItemTemplateName", "NumberOfItems",
 		"Length", "Width", "Height", "Weight", "palletSpace","reference", "Destination", "specialIns" })
 
-	public void BookAPickup_TollPriority_AUS_E2ETest_TID_620(String TollCarrier, String ServiceParcelsOffPeak,
+	public void BookAPickup_TollPriority_AUS_E2ETest_TID_620_Service_ServiceParcelsOffPeak(String TollCarrier, String ServiceParcelsOffPeak,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace,String reference, String destination, String specialIns) {
 

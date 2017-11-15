@@ -31,7 +31,7 @@ public class TollPriorityNZTest {
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference", "DestinationCountry",
 			"specialIns" })
 
-	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_ServiceGlobalExpressDocuments(String TollCarrier, String ServiceGlobalExpressDocuments,
+	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_GlobalExpressDocuments(String TollCarrier, String ServiceGlobalExpressDocuments,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace, String reference, String destination, String specialIns) {
 

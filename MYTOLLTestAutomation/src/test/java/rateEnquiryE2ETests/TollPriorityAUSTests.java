@@ -24,7 +24,7 @@ public class TollPriorityAUSTests {
 			}
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioAU", "ServiceAusWideSatchel", "TPAccountNo","ItemTemplateName","TPNumberOfItems","TIPLength", "TIPWidth", "TIPHeight", "TPWeight","QtyType", "TIPOriginSuburb","TIPOriginPostCode", "TPDesSuburb", "TPDesPostCode"})
+	@Parameters({"TollCarrierTollPrioAU", "ServiceAusWideSatchel", "TPAccountNo","ItemTemplateName","TPNumberOfItems","TPALength", "TPAWidth", "TPAHeight", "TPWeight","QtyType", "TIPOriginSuburb","TIPOriginPostCode", "TPDesSuburb", "TPDesPostCode"})
 	public void RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_AuswideSatchel(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -41,11 +41,7 @@ public class TollPriorityAUSTests {
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		RateEnquiryActions.VerifyRateEnquiryDetails_TollPriorityAUS(Carrier, Service, AccountNo, Length, Width, Height);
 	}
 	
 	
@@ -63,21 +59,15 @@ public class TollPriorityAUSTests {
 		
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
 		
-
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
 		
 		//Verify Details on Shipment Page
-		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
 	}
 	
 	
@@ -94,23 +84,18 @@ public class TollPriorityAUSTests {
 		RateEnquiryActions.SelectCountry(Country);
 		
 		BookAPickupActions.EnterItem(ItemTemplateName);
+	
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		
 		RateEnquiryActions.NumberOfItem(NumberOfItems);
 		
-
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
-		
-		
+				
 		//Verify Details on Shipment Page
-		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+" x "+Width+" x "+Height+" cm" );
+		RateEnquiryActions.VerifyRateEnquiryDetails(Carrier, Service, AccountNo, Length, Width, Height);
+
 	}
 	
 	

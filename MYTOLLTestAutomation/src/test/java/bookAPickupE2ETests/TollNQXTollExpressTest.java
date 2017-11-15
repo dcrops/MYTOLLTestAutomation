@@ -1,9 +1,6 @@
 package bookAPickupE2ETests;
 
-import java.util.concurrent.TimeUnit;
 import bookAPickupActions.BookAPickupActions;
-import createShipmentActions.CreateShipmentActions;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -123,14 +120,14 @@ public class TollNQXTollExpressTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
-		BookAPickupActions.SelectDestination(destination);
+
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-	
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		BookAPickupActions.SelectDestination(destination);
+		//PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
 

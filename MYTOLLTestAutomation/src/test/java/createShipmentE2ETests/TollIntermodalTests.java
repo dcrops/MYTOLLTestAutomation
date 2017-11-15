@@ -23,13 +23,13 @@ public class TollIntermodalTests {
 	}
 
 	@Test(priority = 1)
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER", "ReceiverName", "ReceiverItem","DGContactName","DGContactNumber",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 			"dropOffDepot", "collectionDepot",  "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "PackingGroup", "DGNo", 
 			"lookupName", "lookupItem", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "BillingType",
 			"SpeceialIns", "TollExtraServiceAmount" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight(String TollCarrier,
-			String ServiceDGFreight, String AccountNumber, String ReceiverName, String DGContactName, String DGContactNumber,String ReceiverItem,
+			String ServiceDGFreight, String AccountNumber, String ReceiverName, String ReceiverItem,
 			Integer dropOffDepot, Integer collectionDepot, String ShipmentRef1,
 			String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, Integer DGYes, Integer PackingGroup, Integer DGNo, String lookupName,
@@ -47,7 +47,7 @@ public class TollIntermodalTests {
 
 		CreateShipmentActions.SelectSender(1);
 		//CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		CreateShipmentActions.SelectShipmentConsolidated();
 		// PageBase.Scrollbar(250, 500);
@@ -55,7 +55,7 @@ public class TollIntermodalTests {
 
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
-		CreateShipmentActions.EnterDGContactDetails(DGContactName,DGContactNumber);
+		//CreateShipmentActions.EnterDGContactName(DGContactName);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -63,7 +63,7 @@ public class TollIntermodalTests {
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		CreateShipmentActions.ItemType(2);
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-	
+		
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
 		// PageBase.Scrollbar(500, 1000);
@@ -92,13 +92,13 @@ public class TollIntermodalTests {
 
 	@Test(priority = 8)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER", "SenderName", "SenderItem",
-			"ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot", "BillingType", "DGContactName","DGContactNumber",
+			"ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot", "BillingType", "DGContactName",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
 			"DGYes","PackingGroup", "DGNo", "DGoodsNo", "lookupName", "lookupItem", "packageDescription", "pDgPkgQty", "pDgQtyKg",
 			"technicalName",  "SpeceialIns", "TollExtraServiceAmount" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight_ShipmentReview(String TollCarrier,
 			String ServiceDGFreight, String AccountNumber, String SenderName, String SenderItem, String ReceiverName,
-			String ReceiverItem, String dropOffDepot, String collectionDepot, String BillingType, String DGContactName,String DGContactNumber,
+			String ReceiverItem, String dropOffDepot, String collectionDepot, String BillingType, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, Integer DGYes, Integer PackingGroup, Integer DGNo, String DGoodsNo, String lookupName,
 			Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName,
@@ -118,12 +118,12 @@ public class TollIntermodalTests {
 		// CreateShipmentActions.EnterSender(SenderName, SenderItem);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
 		System.out.println(sender);
-		CreateShipmentActions.SelectReceiver(2);
-		CreateShipmentActions.EnterDGContactDetails(DGContactName,DGContactNumber);
+		CreateShipmentActions.SelectReceiver(1);
+
 		//CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);
-		
+		//CreateShipmentActions.EnterDGContactName(DGContactName);
 
 		CreateShipmentActions.SelectShipmentConsolidated();
 		// PageBase.Scrollbar(250, 500);
@@ -150,7 +150,7 @@ public class TollIntermodalTests {
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		CreateShipmentActions.EnterTechnicalName(technicalName);
 		BookAPickupActions.ClickAdd();
-		//PageBase.MoveToElement(CreateShipmentActions.addNewLine, CreateShipmentActions.UNNumberDropdown);
+		PageBase.MoveToElement(CreateShipmentActions.addNewLine, CreateShipmentActions.UNNumberDropdown);
 
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -174,7 +174,7 @@ public class TollIntermodalTests {
 		ShipmentReviewActions.VerifyService(ServiceDGFreight);
 		// ShipmentReviewActions.VerifyWhopays();
 		// ShipmentReviewActions.VerifyFoodPackaging(pFoodPackaging);
-		ShipmentReviewActions.ClickItem1Arrowdown();
+		//ShipmentReviewActions.ClickItem1Arrowdown();
 		ShipmentReviewActions.VerifyItemName1(ItemTemplateName);
 		ShipmentReviewActions.VerifyPalletTransactionsInformation("Pallet Transactions information");
 		// ShipmentReviewActions.VerifyItemDescription1();
@@ -209,7 +209,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		//CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
 
@@ -268,7 +268,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		//CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
 
@@ -346,7 +346,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		//CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
 
@@ -403,7 +403,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		//CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
 
@@ -483,7 +483,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		//CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
 
@@ -540,7 +540,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		//CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
 
