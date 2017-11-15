@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="GenericTests.GenericTests">
+      <class name="manifestE2ETests.ManualManifestTollIntermodalTests">
         <methods>
-          <include name="MyProfile_UserRegistration"/>
           <include name="RunSetup"/>
+          <include name="RunTearDown"/>
+          <include name="Manifest_TollIntermodal_E2ETest_TID_1127_Service_Express_AddManifestManual"/>
         </methods>
-      </class> <!-- GenericTests.GenericTests -->
+      </class> <!-- manifestE2ETests.ManualManifestTollIntermodalTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

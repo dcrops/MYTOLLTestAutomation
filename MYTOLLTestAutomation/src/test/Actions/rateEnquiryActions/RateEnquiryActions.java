@@ -142,6 +142,7 @@ public class RateEnquiryActions {
 	public static void SelecDestination(String Suburb, String PostCode) {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.sendText(destinationSuburbPostcodeTextField, 5, Suburb);
+		PageBase.click(destinationSuburbPostcodeTextField, 2);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.click(By.xpath("//*[@id=\"destination-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
 	}
@@ -505,6 +506,19 @@ public class RateEnquiryActions {
 		PageBase.MinimumWaitForElementEnabled();
 		//BaseWebdriver.driver.findElement(createShipmentBtn).click();
 		PageBase.click(createShipmentBtn, 2);
+	}
+	
+	public static void EnterItem(String itemName) {
+		PageBase.sendText(RateEnquiryActions.itemDescriptionType, 2, itemName);
+	
+	}
+	
+	public static void EnterLengthWidthHeightVolumeWeight(String plength, String pwidth, String pheight,
+			String pweight) {
+		PageBase.sendText(BookAPickupActions.length, 2, plength);
+		PageBase.sendText(BookAPickupActions.width, 2, pwidth );
+		PageBase.sendText(BookAPickupActions.height, 2, pheight);
+		PageBase.sendText(RateEnquiryActions.weight, 2, pweight);
 	}
 	
 	

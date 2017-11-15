@@ -250,6 +250,7 @@ public class PageBase {
 			Assert.fail("element with: " + locator.toString() + " not found" +"<br>");
 			//return null;
 		}
+		PageBase.moveToElement(locator);
 		we.click();
 		return we;
 	}

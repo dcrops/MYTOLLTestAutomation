@@ -91,7 +91,7 @@ public class BaseWebdriver {
 
 	@AfterMethod
 	public static void tearDown() throws Exception {
-		//driver.quit();
+		driver.quit();
 		//driver.close();
 
 	}
