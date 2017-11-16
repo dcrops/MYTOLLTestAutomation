@@ -64,11 +64,12 @@ public class RateEnquiryActions {
 	}
 	
 	public static void EnterTollCarrier(String pTollCarrierName) {
+		Reporter.log("User Selects Toll Carrier - "+pTollCarrierName);
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(TollCarrierTextfield).click();
-		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']")).click();
+		PageBase.click(TollCarrierTextfield, 5);
+		PageBase.click(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']"), 5);
 		
-	}//*[@id="BU-selector"]/div[2]/ul/li[1]/div
+	}
 
 	public static void VerifyMessage(String msgHeading, String msgContent) {
 		PageBase.MinimumWaitForElementEnabled();
@@ -88,12 +89,14 @@ public class RateEnquiryActions {
 		BaseWebdriver.driver.findElement(servicedropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='"+pService +"']")).click();
 		PageBase.MinimumWaitForElementEnabled();*/
+		Reporter.log("User Selects Service - "+pService);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.sendText(shipmentService, 10, pService);
 		PageBase.click(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='"+pService +"']"), 5);
 	}
 	
 	public static void EnterAccountNumberAndSelect(String account) {
+		Reporter.log("User Enters Account No - "+account);
 		PageBase.sendText(enterAccountNumber, 10, account);
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.click(By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()='"+account+"']"), 5);
@@ -107,6 +110,7 @@ public class RateEnquiryActions {
 	}
 	
 	public static void SelectMode(String mode) {
+		Reporter.log("User Selects Mode - "+mode);
 		PageBase.click(selectMode, 5);
 		PageBase.click(By.xpath("//*[@id=\"mode-selector\"]/div/ul/li/div[text()='"+mode+"']"), 5);
 	}
@@ -132,6 +136,7 @@ public class RateEnquiryActions {
 	}
 	
 	public static void SelectOrigin(String Suburb, String PostCode) {
+		Reporter.log("User Selects Orgin - Surburb:"+Suburb+" PostCode:"+PostCode);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.sendText(originSuburbPostCodeTextField, 5, Suburb);
 		PageBase.click(originSuburbPostCodeTextField, 2);
@@ -140,16 +145,12 @@ public class RateEnquiryActions {
 	}
 	
 	public static void SelecDestination(String Suburb, String PostCode) {
+		Reporter.log("User Selects Destination - Surburb:"+Suburb+" PostCode:"+PostCode);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.sendText(destinationSuburbPostcodeTextField, 5, Suburb);
+		PageBase.click(destinationSuburbPostcodeTextField, 2);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.click(By.xpath("//*[@id=\"destination-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MoveToElement(destinationSuburbPostcodeTextField, originSuburbPostCodeTextField);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
 	}
 	
 	
@@ -251,10 +252,12 @@ public class RateEnquiryActions {
 	}
 
 	public static void NumberOfItem(String pnumberOfItem) {
+		Reporter.log("User Enters No. of Items - "+pnumberOfItem);
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(numberOfItem).click();
-		BaseWebdriver.driver.findElement(numberOfItem).clear();
-		BaseWebdriver.driver.findElement(numberOfItem).sendKeys(pnumberOfItem);
+		//BaseWebdriver.driver.findElement(numberOfItem).click();
+		//BaseWebdriver.driver.findElement(numberOfItem).clear();
+		//BaseWebdriver.driver.findElement(numberOfItem).sendKeys(pnumberOfItem);
+		PageBase.sendText(numberOfItem, 2, pnumberOfItem);
 	}
 
 	public static void QuantityType(int j) {
@@ -266,6 +269,7 @@ public class RateEnquiryActions {
 	}
 	
 	public static void QuantityTypeSelect(String  QtyType) {
+		Reporter.log("User Selects Quantity Type - "+QtyType);
 		PageBase.click(quantityType, 2);
 		PageBase.click(By.xpath("//*[@id=\"item-type-selector\"]/div[2]/ul/li/div[text()='"+QtyType+"']"), 2);
 	}
@@ -320,7 +324,7 @@ public class RateEnquiryActions {
 	}
 	
 	public static void BillingType(String BillingType) {
-		
+		Reporter.log("User Billing Type - "+BillingType);
 		PageBase.sendText(billingTypeTextFeild, 5, BillingType);
 		PageBase.MediumWaitForElementEnabled();
 		PageBase.click(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+BillingType+"']"), 5);
@@ -394,6 +398,7 @@ public class RateEnquiryActions {
 	}
 
 	public static void ClickPriceNow() {
+		Reporter.log("User Clicks Price Now");
 	/*	PageBase.MinimumWaitForElementEnabled();
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
 		jse.executeScript("scroll(250, 800);");
@@ -422,6 +427,7 @@ public class RateEnquiryActions {
 		
 		if (results=true) {
 		System.out.println("PopUp: Continue to Shipment");
+		Reporter.log("Popup Exits as Price is Unavailable, Moving to Shipment");
 		BaseWebdriver.driver.findElement(createShipmentContinue).click();
 		PageBase.MaximumWaitForElementEnabled();
 		}
@@ -531,12 +537,14 @@ public class RateEnquiryActions {
 	}
 	
 	public static void EnterItem(String itemName) {
+		Reporter.log("User Enters Item Description - "+itemName);
 		PageBase.sendText(RateEnquiryActions.itemDescriptionType, 2, itemName);
 	
 	}
 	
 	public static void EnterLengthWidthHeightVolumeWeight(String plength, String pwidth, String pheight,
 			String pweight) {
+		Reporter.log("User Enters Dimension - Length:"+plength+", Width:"+pwidth+", Height:"+pheight+", Weight:"+pweight);
 		PageBase.sendText(BookAPickupActions.length, 2, plength);
 		PageBase.sendText(BookAPickupActions.width, 2, pwidth );
 		PageBase.sendText(BookAPickupActions.height, 2, pheight);

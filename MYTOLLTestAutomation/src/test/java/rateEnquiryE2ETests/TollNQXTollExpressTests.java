@@ -1,6 +1,7 @@
 package rateEnquiryE2ETests;
 
 
+import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -61,6 +62,7 @@ public class TollNQXTollExpressTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		Reporter.log("---------------END OF TEST---------------");
 	}
 	
 	
@@ -99,6 +101,7 @@ public class TollNQXTollExpressTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		Reporter.log("---------------END OF TEST---------------");
 	}
 	
 	
@@ -137,6 +140,7 @@ public class TollNQXTollExpressTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		Reporter.log("---------------END OF TEST---------------");
 	}
 	
 	
@@ -176,6 +180,7 @@ public class TollNQXTollExpressTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		Reporter.log("---------------END OF TEST---------------");
 	}
 	
 	@Test
@@ -213,6 +218,7 @@ public class TollNQXTollExpressTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		Reporter.log("---------------END OF TEST---------------");
 	}
 	
 	@Test
@@ -250,6 +256,7 @@ public class TollNQXTollExpressTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		Reporter.log("---------------END OF TEST---------------");
 	}
 	
 	@AfterMethod
