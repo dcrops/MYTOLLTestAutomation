@@ -37,7 +37,8 @@ public class ShipmentReviewActions {
 	// Pallet Information
 	public static By chepCustomerOwn=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Chep']/following::div[1]/span");
 	public static By chepExchange=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Chep']/following::div[2]/span");
-	
+	public static By chepTransfer=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Chep']/following::div[3]/span");
+	public static By chepDocketNumber=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Chep']/following::div[4]/span");
 	
 	
 	//Line Item 
