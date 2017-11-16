@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
 import rateEnquiryActions.RateEnquiryActions;
@@ -978,16 +979,19 @@ public class BookAPickupActions {
 	
 	
 	public static void ConfirmPickUpandGetReferenceNo() {
+		Reporter.log("User Clicks Confirm Pick Up and Awaits Reference Number");
 		PageBase.waitForElement(confirmPickupBtn, 10);
 		PageBase.click(confirmPickupBtn, 2);
 		PageBase.waitForElement(pickUpReferenceNumber, 10);
 		String ReferenceNumber = BaseWebdriver.driver.findElement(pickUpReferenceNumber).getText().substring(19);
 		if (ReferenceNumber != null && !ReferenceNumber.contains("undefined") ) {
 			System.out.println("Reference No: "+ReferenceNumber);
+			Reporter.log("Reference No: "+ReferenceNumber);
 			BookAPickUpNumbers.add(ReferenceNumber);
 		}
 		else {
 			System.out.println("FAILED : Book A PickUp was not submitted properly, Reference No: "+ReferenceNumber);
+			Reporter.log("FAILED : Book A PickUp was not submitted properly, Reference No: "+ReferenceNumber);
 			Assert.fail("FAILED : Book A PickUp was not submitted properly, Reference No: "+ReferenceNumber);
 		}
 		

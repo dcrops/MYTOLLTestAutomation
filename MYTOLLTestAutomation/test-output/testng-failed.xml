@@ -16,6 +16,7 @@
     <parameter name="TPDesSuburb" value="MELBOURNE"/>
     <parameter name="ServiceRefrigeration" value="Refrigeration"/>
     <parameter name="TIPOriginSuburb" value="MELBOURNE"/>
+    <parameter name="TTDesPostCode" value="7000"/>
     <parameter name="TNZDesPostCode" value="3210"/>
     <parameter name="ItemTemplateName" value="Automation Template"/>
     <parameter name="TIPAccountNo" value="2230899"/>
@@ -23,20 +24,21 @@
     <parameter name="ServiceRailGeneral" value="Rail General"/>
     <parameter name="TollCarrierTollIntermodal" value="Toll Intermodal"/>
     <parameter name="TollCarrierTollTasmania" value="Toll Tasmania"/>
-    <parameter name="TTPDesSuburb" value="GLEBE"/>
     <parameter name="TPWeight" value="3"/>
-    <parameter name="TIDesPostCode" value="5o14"/>
-    <parameter name="TNZccountNo" value="100181"/>
+    <parameter name="TIDesPostCode" value="5014"/>
+    <parameter name="TPAHeight" value="0"/>
     <parameter name="TPDesPostCode" value="3000"/>
     <parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels"/>
     <parameter name="TTOriginSuburb" value="MULGRAVE"/>
     <parameter name="Weight" value="3"/>
     <parameter name="CountryPostCode" value="3000"/>
     <parameter name="TIBillingType" value="CARTONS - OVER 301KG"/>
+    <parameter name="TPALength" value="0"/>
     <parameter name="NumberOfItems" value="3"/>
     <parameter name="TIPHeight" value="10"/>
     <parameter name="Country" value="HONG KONG"/>
     <parameter name="TIPDesSuburb" value="FOOTSCRAY"/>
+    <parameter name="TPAWidth" value="0"/>
     <parameter name="TNZCountry" value="AUSTRALIA"/>
     <parameter name="TPAccountNo" value="401509"/>
     <parameter name="TollCarrierTollNQXTollExpress" value="Toll NQX | Toll Express"/>
@@ -54,6 +56,7 @@
     <parameter name="TNOriginPostCode" value="3000"/>
     <parameter name="ServiceDGExpress" value="DG Express"/>
     <parameter name="ServiceParcelsSameDays" value="Parcels - Same Day"/>
+    <parameter name="TNZAccountNo" value="100181"/>
     <parameter name="TINumberOfItems" value="1"/>
     <parameter name="TIOriginPostCode" value="5352"/>
     <parameter name="Height" value="33"/>
@@ -61,11 +64,11 @@
     <parameter name="TIHeight" value="20"/>
     <parameter name="Width" value="33"/>
     <parameter name="TIAccountNo" value="5685"/>
-    <parameter name="TTPDesPostCode" value="7000"/>
     <parameter name="BillingType" value="General Freight"/>
     <parameter name="TollCarrierTollIPEC" value="Toll IPEC"/>
     <parameter name="TNDesSuburb" value="SYDNEY"/>
     <parameter name="ServiceDGFreight" value="DG Freight"/>
+    <parameter name="TTDesSuburb" value="GLEBE"/>
     <parameter name="ServiceDangerousGoods" value="Dangerous Goods"/>
     <parameter name="Mode" value="ROAD"/>
     <parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak"/>
@@ -80,13 +83,29 @@
     <parameter name="TIOriginSuburb" value="ROWLAND FLAT"/>
     <parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents"/>
     <classes>
-      <class name="rateEnquiryE2ETests.TollIPECTests">
+      <class name="rateEnquiryE2ETests.TollIntermodalTests">
         <methods>
-          <include name="RunTearDown"/>
-          <include name="RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_RoadExpress" invocation-numbers="0"/>
           <include name="RunSetup"/>
+          <include name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Express" invocation-numbers="0"/>
+          <include name="RunTearDown"/>
         </methods>
-      </class> <!-- rateEnquiryE2ETests.TollIPECTests -->
+      </class> <!-- rateEnquiryE2ETests.TollIntermodalTests -->
+      <class name="rateEnquiryE2ETests.TollTasmaniaTests">
+        <methods>
+          <include name="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Express" invocation-numbers="0"/>
+          <include name="RunSetup"/>
+          <include name="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight" invocation-numbers="0"/>
+          <include name="RunTearDown"/>
+        </methods>
+      </class> <!-- rateEnquiryE2ETests.TollTasmaniaTests -->
+      <class name="rateEnquiryE2ETests.TollPriorityNZTests">
+        <methods>
+          <include name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelOffPeak" invocation-numbers="0"/>
+          <include name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelsSameDay" invocation-numbers="0"/>
+          <include name="RunSetup"/>
+          <include name="RunTearDown"/>
+        </methods>
+      </class> <!-- rateEnquiryE2ETests.TollPriorityNZTests -->
     </classes>
   </test> <!-- RateEnquiry(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -6,6 +6,7 @@ import java.util.Date;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -16,6 +17,7 @@ import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import myTollHomePageActions.MyTollHomePageActions;
+import rateEnquiryActions.RateEnquiryActions;
 import manifestActions.ManifestActions;
 
 
@@ -49,15 +51,14 @@ public class ManualManifestTollIntermodalTests {
 		PageBase.MaximumWaitForElementEnabled();
 		
 		//Create Manifest Pop Up
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-		CreateShipmentActions.SelectSender(2);
-		PageBase.sendText(ManifestActions.ManualManifestName, 5, NewManifestName);
-		PageBase.click(ManifestActions.ManualManifestSave, 5);
+		ManifestActions.createManifestPopUp(TollCarrier, 2, NewManifestName);
 		
 		//Verify Manifest and proceed to shipment
 		PageBase.verifyTextExist(ManifestActions.manifestHeading, "MANIFEST - "+NewManifestName);
+		Reporter.log("User Clicks Add New Shipment");
 		PageBase.click(ManifestActions.AddNewShipment, 5);
 		PageBase.verifyTextExistAttribute(ManifestActions.TollCarier, TollCarrier);
+		Reporter.log("User Enters Shipment Details");
 		CreateShipmentActions.EnterService(ServiceExpress);
 		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectWhoPays(1);
@@ -74,12 +75,15 @@ public class ManualManifestTollIntermodalTests {
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
 		//Submit Shipment and Print Manifest
+		Reporter.log("User Clicks Review Shipment");
 		PageBase.click(CreateShipmentActions.reviewCreateShipmentBtn,5);
+		Reporter.log("User Clicks Continue to Manifest");
 		PageBase.waitForElement(ManifestActions.ContinuetoManifest, 5);
 		PageBase.click(ManifestActions.ContinuetoManifest, 5);
 		ManifestActions.submitandPrintManifest();		
 		
 		//Move from Manifest to Book a PickUp
+		Reporter.log("User Clicks Go To Dashboard to Book a Pick Up");
 		PageBase.click(ManifestActions.GoToDashboard, 2);
 		ManifestActions.manifestToBookaPickUp(NewManifestName);
 		
@@ -88,18 +92,20 @@ public class ManualManifestTollIntermodalTests {
 		PageBase.verifyTextExistAttribute(BookAPickupActions.TollCarrierTextField, TollCarrier);
 		ManifestActions.selectPickupDate();
 		ManifestActions.selectReadyTimeJS("09:15");
+		Reporter.log("User Clicks Review Book Up");
 		BookAPickupActions.ClickReviewBook();
 		
 		//Submit and Get PickUp Reference Number
 		PageBase.MaximumWaitForElementEnabled();
 		BookAPickupActions.ConfirmPickUpandGetReferenceNo();
+		Reporter.log("---------------END OF TEST---------------");
 	}
 	
 	
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 	}
 	
 }

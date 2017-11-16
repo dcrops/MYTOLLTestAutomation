@@ -10,11 +10,14 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
 
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
+import createShipmentActions.CreateShipmentActions;
 import createShipmentActions.ShipmentReviewActions;
+import rateEnquiryActions.RateEnquiryActions;
 
 public class ManifestActions {
 
@@ -302,6 +305,7 @@ public class ManifestActions {
 	}
 	
 	public static void addManifestManually() {
+		Reporter.log("User Navigates to Manifest Tab and Selects Add Manifest Manually");
 		PageBase.waitForElement(MyManifestTab, 5);
 		PageBase.click(MyManifestTab, 2);
 		PageBase.MaximumWaitForElementEnabled();
@@ -312,26 +316,34 @@ public class ManifestActions {
 		//Retiving shipment details, printing and completing
 		String ManifestID = BaseWebdriver.driver.findElement(ShipmentManifestID).getText();
 		System.out.println("Manifest ID : "+ManifestID);
+		Reporter.log("Manifest ID : "+ManifestID);
 		String CurrentStatus = BaseWebdriver.driver.findElement(ShipmentManifestStatus).getText();
-		System.out.println("Current Status : "+CurrentStatus);
+		System.out.println("Current Manifest Status : "+CurrentStatus);
+		Reporter.log("Current Status : "+CurrentStatus);
 		
 		//Get Shipment Number
 		List <WebElement> shipment = BaseWebdriver.driver.findElements(ShipmentManifestTotalNo);
 		int noOfShipments = shipment.size() - 2;
 		System.out.println("No if Shipments in Manifest = " + noOfShipments);
+		Reporter.log("No if Shipments in Manifest = " + noOfShipments);
 	    String ShipmentID = BaseWebdriver.driver.findElement(ShipmentNo).getText();
 	    System.out.println("Shipment ID : "+ShipmentID);
+	    Reporter.log("Shipment ID : "+ShipmentID);
 	    shipmentNumbers.add(ShipmentID);
 	    System.out.println("Shipment Array : "+shipmentNumbers);
+	    Reporter.log("Shipment Array : "+shipmentNumbers);
 		//Print and Close Manifest
+	    Reporter.log("User Clicks Print and Close Manifest");
 		PageBase.moveToElement(PrintCloseManifest);
 		PageBase.click(PrintCloseManifest, 2);
 		PageBase.waitForElement(ShipmentManifestTab, 2);
 		PageBase.moveToElement(ShipmentManifestTab);
 		PageBase.click(ShipmentManifestTab, 2);
+		Reporter.log("User Select Download PDF from Shipment/Manifest Tab");
 		PageBase.click(ShipmentDownloadPDF, 2);
 		System.out.println("Downloading PDF instead of Printing, Content of PDF not CHECKED");
 		PageBase.MaximumWaitForElementEnabled();
+		Reporter.log("User Closes Popup to verify Manifest Status");
 		PageBase.waitForElement(ShipmentManifestPopupClose, 2);
 		PageBase.click(ShipmentManifestPopupClose, 2);
 		PageBase.MaximumWaitForElementEnabled();
@@ -339,10 +351,12 @@ public class ManifestActions {
 		//Get Current Status of Manifest
 		String UpdatedStatus = BaseWebdriver.driver.findElement(ShipmentManifestStatus).getText();
 		if ("Completed".equals(UpdatedStatus)) {
-			System.out.println("Updated Status : "+UpdatedStatus);
+			System.out.println("Updated Manifest Status : "+UpdatedStatus);
+			Reporter.log("Updated Manifest Status : "+UpdatedStatus);
 		}
 		else {
 			System.out.println("FAILED : Manifest Satus was not updated. Manifest was not submitted properly");
+			Reporter.log("FAILED : Manifest Satus was not updated. Manifest was not submitted properly");
 			Assert.fail("FAILED : Manifest Satus was not updated. Manifest was not submitted properly");
 		}
 		
@@ -352,6 +366,7 @@ public class ManifestActions {
 		//Move to Manifest Tab
 		PageBase.waitForElement(MyManifestTab, 5);
 		PageBase.click(MyManifestTab, 2);
+		Reporter.log("User Searches for the Manifest -"+ManifestName);
 		//Search for Manifest and Click Book A Pickup
 		while(PageBase.waitForElement(By.xpath("//*[@id=\"manifestDataTbody\"]/tr/td[contains(text(),'"+ManifestName+"')]"), 1) == null) {
 			PageBase.click(ManifestActions.ManifestViewMore, 5);
@@ -360,23 +375,27 @@ public class ManifestActions {
 		String Status = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifestDataTbody\"]/tr/td[contains(text(),'"+ManifestName+"')]/following::td[7]/a")).getText();
 		
 		if ("Book a Pickup".equals(Status)) {
-			System.out.println("Manifes Status = " +Status);	
+			System.out.println("Manifes Status on DashBoard = '" +Status+ "' - Proceed to Book A Pick Up");	
+			Reporter.log("Manifes Status on DashBoard = '" +Status+ "' - Proceed to Book A Pick Up");	
 			PageBase.click(By.xpath("//*[@id=\"manifestDataTbody\"]/tr/td[contains(text(),'"+ManifestName+"')]/following::td[7]/a"), 5);
 		}
 		else {
-			System.out.println("FAILED : Manifest Satus = '"+Status+ "' Unable to proceed to Book A PickUp");
-			Assert.fail("FAILED : Manifest Satus = '"+Status+ "' Unable to proceed to Book A PickUp");
+			System.out.println("FAILED : Manifest Satus on Dahsboard = '"+Status+ "' Unable to proceed to Book A PickUp");
+			Reporter.log("FAILED : Manifest Satus on Dahsboard = '"+Status+ "' Unable to proceed to Book A PickUp");
+			Assert.fail("FAILED : Manifest Satus on Dahsboard = '"+Status+ "' Unable to proceed to Book A PickUp");
 		}
 	}
 	
 	
 	public static void selectPickupDate() {
+		Reporter.log("User Selects Pick Up Date as Tomorrow");
 		PageBase.click(BookAPickupActions.pickupDate, 2);
 		PageBase.click(BookAPickupActions.pickupDateTomorrow, 2);
 
 	}
 	
 	public static void selectReadyTimeJS(String time) {
+		Reporter.log("User Sets Ready Time as -"+time);
 		((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('available-time').removeAttribute('readonly',0);");
         ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('available-time').setAttribute('data-timepicki-time','"+time+"');");
 		WebElement fromDateBox= BaseWebdriver.driver.findElement(BookAPickupActions.availableTime);
@@ -384,6 +403,17 @@ public class ManifestActions {
 		PageBase.click(BookAPickupActions.decreaseReadyTime, 1);
 		PageBase.click(BookAPickupActions.increaseAvailableTimeHours, 1);
 		PageBase.verifyTextExistAttribute(BookAPickupActions.availableTime, time);	
+	}
+	
+	public static void createManifestPopUp (String TollCarrier, int senderInder, String ManifestName) {
+		RateEnquiryActions.EnterTollCarrier(TollCarrier);
+		Reporter.log("User Selects Sender");
+		CreateShipmentActions.SelectSender(senderInder);
+		Reporter.log("User Enters ManifestName - '"+ManifestName+"'");
+		PageBase.sendText(ManifestActions.ManualManifestName, 5, ManifestName);
+		PageBase.click(ManifestActions.ManualManifestSave, 5);
+		Reporter.log("User Saves Manifest and Proceeds");
+		
 	}
 	
 }
