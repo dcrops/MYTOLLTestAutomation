@@ -77,7 +77,8 @@ public class CreateShipmentActions {
 	public static By loscamOtherExchange= By.id("loscamOtherExchange"); 
 	public static By loscamOtherTransfer= By.id("loscamOtherTransfer");
 	public static By loscamOtherDocket= By.id("loscamOtherCustomer");
-	public static By purchaseorderTextField= By.id("purchase-order");
+	public static By purchaseorderTextField= By.id("purchase-order"); 
+	public static By addPurchaseOrderBtn= By.xpath("//*[@id=\"add-po\"]/i");
 	public static By tollExtraSrviceNOBtn= By.id("toll-extra-service-check"); //.xpath("//*[@id=\"steps-3\"]/div[8]/div/div/div[1]/div/label/span[2]");//*[@id="food-items-check"]  //*[@id="toll-extra-service-check"]
 	public static By foodPackagingNOBtn= By.xpath("//*[@id=\"food-items-check\"]/span/span");
 	public static By authorityToLeaveNoBtn= By.xpath("//*[@id=\"steps-3\"]/div[5]/div/div[2]/label/span[2]");
@@ -433,6 +434,7 @@ public class CreateShipmentActions {
 
 		public static void EnterBillingType(String pBillingType) {
 					
+			try {
 			PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,CreateShipmentActions.shipmentReference1);
 			//BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionDropdown).click();
 			Boolean results=BaseWebdriver.driver.findElement(billingTypedropdown).isDisplayed();
@@ -441,6 +443,11 @@ public class CreateShipmentActions {
 			BaseWebdriver.driver.findElement(billingTypedropdown).click();
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+pBillingType+"']")).click();
+			}
+			}
+			catch(Exception ex)
+			{
+				PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,CreateShipmentActions.shipmentReference1);	
 			}
 			
 						
@@ -631,7 +638,7 @@ public class CreateShipmentActions {
 			BaseWebdriver.driver.findElement(purchaseorderTextField).click();
 			BaseWebdriver.driver.findElement(purchaseorderTextField).clear();
 			BaseWebdriver.driver.findElement(purchaseorderTextField).sendKeys(pPurchaseOrder);
-			
+			BaseWebdriver.driver.findElement(addPurchaseOrderBtn).click();
 		}
 		
 		

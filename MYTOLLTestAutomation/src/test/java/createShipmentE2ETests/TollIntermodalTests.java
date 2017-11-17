@@ -23,18 +23,18 @@ public class TollIntermodalTests {
 	}
 
 	@Test(priority = 1)
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER", "ReceiverName", "ReceiverItem","DropOffDepot","CollectionDepot",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER","whoPays","Mode", "ReceiverName", "ReceiverItem","DropOffDepot","CollectionDepot",
 			"dropOffDepot", "collectionDepot","DGContactName", "DGContactNumber", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "PackingGroup", "DGNo", 
-			"lookupName", "lookupItem", "packageDescription", "pDgPkgQty", "pDgQtyKg", "ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo","OtherCostomer", 
+			"lookupName", "lookupItem", "packageDescription", "pDgPkgQty", "pDgQtyKg","PalletTransactionsInfo", "ChepCustomer", "ChepExchange","ChepTansferToToll","ChepDocketNo","LoscamCustomer","LoascamExchange","LoscamTransferToToll", "LoscamDocketNo","OtherCostomer", 
 			"ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo","LoscamOtherExchange", "LoscamOtherTransferToToll", "LoscamOtherDocketNo","PurchaseOrder","technicalName", "BillingType",
 			"SpeceialIns", "TollExtraServiceAmount" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight(String TollCarrier,
-			String ServiceDGFreight, String AccountNumber, String ReceiverName, String ReceiverItem, String DropOffDepot,String CollectionDepot,
+			String ServiceDGFreight, String AccountNumber,String whoPays, String Mode,String ReceiverName, String ReceiverItem, String DropOffDepot,String CollectionDepot,
 			Integer dropOffDepot, Integer collectionDepot, String DGContactName,String DGContactNumber,String ShipmentRef1,
 			String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, Integer DGYes, Integer PackingGroup, Integer DGNo, String lookupName,
-			Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg, String ChepCustomer, String ChepExchange,String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,
+			Integer lookupItem, String packageDescription, String pDgPkgQty, String pDgQtyKg,String PalletTransactionsInfo, String ChepCustomer, String ChepExchange,String ChepTansferToToll,String ChepDocketNo, String LoscamCustomer,String LoascamExchange,String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer,
 			String ChepOtherExchange,String ChepOtherTransferToToll,String chepOtherDocketNo,String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder,String technicalName,
 			String BillingType, String SpeceialIns, String TollExtraServiceAmount) {
 
@@ -101,13 +101,21 @@ public class TollIntermodalTests {
 		CreateShipmentActions.EnterPalletTransActionInformations(ChepCustomer,ChepExchange,ChepTansferToToll,ChepDocketNo,LoscamCustomer,LoascamExchange,LoscamTransferToToll,LoscamDocketNo,
 				OtherCostomer,ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,LoscamOtherTransferToToll, LoscamOtherDocketNo);
 		
+		
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraServiceAmount);
 		CreateShipmentActions.ClickReviewCreateShipment();
 		
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier,AccountNumber,sender,senderLocation,receiver,receiverLocation,ShipmentRef1,ShipmentRef2, DropOffDepot,ServiceDGFreight,
-				"Sender",CollectionDepot,"RAIL");
+				whoPays,CollectionDepot,Mode);
+		
+		String tollExtraServiceAmount="$"+TollExtraServiceAmount;
+		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns,PalletTransactionsInfo,PurchaseOrder,tollExtraServiceAmount);
+		
+		ShipmentReviewActions.VerifyPalletTransactionsInformations(ChepCustomer,ChepExchange,ChepTansferToToll,ChepDocketNo,LoscamCustomer,LoascamExchange,LoscamTransferToToll,LoscamDocketNo,
+				OtherCostomer,ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,LoscamOtherTransferToToll, LoscamOtherDocketNo);
+		
 		//ShipmentReviewActions.VerifyDispatchDate(pDispatchDate);
 		ShipmentReviewActions.VerifyAccountNumber(AccountNumber);
 		ShipmentReviewActions.VerifyTollCarrier(TollCarrier);

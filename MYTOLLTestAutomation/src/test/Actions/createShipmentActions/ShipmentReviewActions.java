@@ -40,6 +40,21 @@ public class ShipmentReviewActions {
 	public static By chepTransfer=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Chep']/following::div[3]/span");
 	public static By chepDocketNumber=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Chep']/following::div[4]/span");
 	
+	public static By LoscamCustomerOwn=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Loscam']/following::div[1]/span");
+	public static By LoscamExchange=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Loscam']/following::div[2]/span");
+	public static By LoscamTransfer=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Loscam']/following::div[3]/span");
+	public static By LoscamDocketNumber=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Loscam']/following::div[4]/span"); 
+	
+	public static By OtherCustomerOwn=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Other']/following::div[1]/span");
+	
+	public static By ChepOtherExchange=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Chep other']/following::div[2]/span");
+	public static By ChepOtherTransfer=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Chep other']/following::div[3]/span");
+	public static By ChepOtherDocketNumber=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Chep other']/following::div[4]/span"); 
+
+	public static By LoscamOtherExchange=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Loscam other']/following::div[2]/span");
+	public static By LoscamOtherTransfer=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Loscam other']/following::div[3]/span");
+	public static By LoscamOtherDocketNumber=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Loscam other']/following::div[4]/span"); 
+	
 	
 	//Line Item 
 
@@ -63,13 +78,14 @@ public class ShipmentReviewActions {
 	}
 	
 	public static void VerifyAdditionalInformation(String pSpecialInstructions, String pPalletTransactionsInformation, String pPurchaseOrders,String pValueOfGoods ) {
-		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(tollCarrier).getText());
-		assertEquals(pPalletTransactionsInformation,BaseWebdriver.driver.findElement(accountNumber).getText());
-		assertEquals(pPurchaseOrders, BaseWebdriver.driver.findElement(senderCompanyName).getText());
-		assertEquals(pValueOfGoods, BaseWebdriver.driver.findElement(senderLocation).getText());
+		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(specialInstructions).getText());
+		assertEquals(pPalletTransactionsInformation,BaseWebdriver.driver.findElement(palletTransactionsInformation).getText());
+		assertEquals(pPurchaseOrders, BaseWebdriver.driver.findElement(purchaseOrders).getText());
+		assertEquals(pValueOfGoods, BaseWebdriver.driver.findElement(valueOfGoods).getText());
 		
 	}
 	
+
 	public static void VerifyShipmentOverview(String pTollCarrier, String pAccountNumber, String pSenderCompanyName,String pSenderLocation,String pReceiverCompanyName, String pReceiverLocation,String pShipmentRef1, String pShipmentRef2,
 			String pDropOffDepot,String pService,String pWhopays, String pCollectionDepot, String pMode ) {
 		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
@@ -86,6 +102,26 @@ public class ShipmentReviewActions {
 		assertEquals( pCollectionDepot, BaseWebdriver.driver.findElement(collectionDepot).getText());
 		assertEquals(pMode, BaseWebdriver.driver.findElement(mode).getText());
 	}
+	
+	public static void VerifyPalletTransactionsInformations(String pChepCustomerOwn, String pChepExchange, String pChepTransfer,String pChepDocketNumber,String pLoscamCustomerOwn, String pLoscamExchange,String pLoscamTransfer, String pLoscamDocketNumber,
+			String pOtherCustomerOwn,String pChepOtherExchange,String pChepOtherTransfer, String pChepOtherDocketNumber,String pLoscamOtherExchange, String pLoscamOtherTransfer , String pLoscamOtherDocketNumber) {
+		assertEquals(pChepCustomerOwn,BaseWebdriver.driver.findElement(chepCustomerOwn).getText());
+		assertEquals(pChepExchange,BaseWebdriver.driver.findElement(chepExchange).getText());
+		assertEquals(pChepTransfer, BaseWebdriver.driver.findElement(chepTransfer).getText());
+		assertEquals(pChepDocketNumber, BaseWebdriver.driver.findElement(chepDocketNumber).getText());
+		assertEquals(pLoscamCustomerOwn,  BaseWebdriver.driver.findElement(LoscamCustomerOwn).getText());
+		assertEquals(pLoscamExchange, BaseWebdriver.driver.findElement(LoscamExchange).getText());
+		assertEquals(pLoscamTransfer,  BaseWebdriver.driver.findElement(LoscamTransfer).getText());
+		assertEquals(pLoscamDocketNumber, BaseWebdriver.driver.findElement(LoscamDocketNumber).getText());
+		assertEquals(pOtherCustomerOwn, BaseWebdriver.driver.findElement(OtherCustomerOwn).getText());
+		assertEquals(pChepOtherExchange, BaseWebdriver.driver.findElement(ChepOtherExchange).getText());
+		assertEquals(pChepOtherTransfer, BaseWebdriver.driver.findElement(ChepOtherTransfer).getText());
+		assertEquals(pChepOtherDocketNumber, BaseWebdriver.driver.findElement(ChepOtherDocketNumber).getText());
+		assertEquals(pLoscamOtherExchange, BaseWebdriver.driver.findElement(LoscamOtherExchange).getText());
+		assertEquals(pLoscamOtherTransfer, BaseWebdriver.driver.findElement(LoscamOtherTransfer).getText());
+		assertEquals(pLoscamOtherDocketNumber, BaseWebdriver.driver.findElement(LoscamOtherDocketNumber).getText());
+	}
+	
 	
 	public static void VerifyTollCarrier(String pTollCarrier) {
 		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
