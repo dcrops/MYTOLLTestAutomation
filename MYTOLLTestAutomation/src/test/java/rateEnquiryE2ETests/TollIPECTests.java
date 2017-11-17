@@ -60,7 +60,6 @@ public class TollIPECTests {
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
 		RateEnquiryActions.ContinueCreateShipment();
-		
 		//Verify Details on Shipment Page
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
@@ -68,6 +67,7 @@ public class TollIPECTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	

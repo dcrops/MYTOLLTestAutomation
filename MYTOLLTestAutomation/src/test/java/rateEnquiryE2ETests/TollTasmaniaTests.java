@@ -61,6 +61,7 @@ public class TollTasmaniaTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 		Reporter.log("---------------END OF TEST---------------");
 	}
 		
@@ -98,6 +99,7 @@ public class TollTasmaniaTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
@@ -136,6 +138,7 @@ public class TollTasmaniaTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
@@ -175,6 +178,7 @@ public class TollTasmaniaTests {
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 		Reporter.log("---------------END OF TEST---------------");
 	}
 

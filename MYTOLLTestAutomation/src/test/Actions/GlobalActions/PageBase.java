@@ -1,5 +1,7 @@
 package GlobalActions;
 
+import java.sql.Timestamp;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -180,6 +182,7 @@ public class PageBase {
 			Assert.fail("element with: " + locator.toString() + " not found" +"<br>");
 			//return null;
 		}
+		PageBase.moveToElement(locator);
 		we.click();
 		return we;
 	}
@@ -252,6 +255,29 @@ public class PageBase {
 			
 		}
 		
+	}
+	
+	public static void waitForPageLoadingEnd (By locator, int seconds, String pageName) {
+		boolean loadingExists = BaseWebdriver.driver.findElement(locator).isDisplayed();
+		try {
+			for (int i = 1; i <= seconds; i++){
+				if (loadingExists == false) {
+					Reporter.log(pageName+ " - Page Load Completed");
+					break;
+				}
+				else if(i == seconds){
+					Reporter.log("FAILED - "+pageName+ " Page is Not loaded completely after '"+ seconds+"' Seconds");
+					Assert.fail("FAILED - "+pageName+ " Page is Not loaded completely after '"+ seconds+"' Seconds");
+				}
+				else {
+					Thread.sleep(1000);
+				}
+			}
+		}	
+				
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 	}
 
 

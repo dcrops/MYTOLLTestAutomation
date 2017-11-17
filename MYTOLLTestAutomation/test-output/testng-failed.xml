@@ -83,29 +83,44 @@
     <parameter name="TIOriginSuburb" value="ROWLAND FLAT"/>
     <parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents"/>
     <classes>
-      <class name="rateEnquiryE2ETests.TollIntermodalTests">
+      <class name="rateEnquiryE2ETests.TollPriorityAUSTests">
         <methods>
           <include name="RunSetup"/>
-          <include name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Express" invocation-numbers="0"/>
+          <include name="RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_AuswideSatchel" invocation-numbers="0"/>
+          <include name="RunTearDown"/>
+        </methods>
+      </class> <!-- rateEnquiryE2ETests.TollPriorityAUSTests -->
+      <class name="rateEnquiryE2ETests.TollIntermodalTests">
+        <methods>
+          <include name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight" invocation-numbers="0"/>
+          <include name="RunSetup"/>
           <include name="RunTearDown"/>
         </methods>
       </class> <!-- rateEnquiryE2ETests.TollIntermodalTests -->
+      <class name="rateEnquiryE2ETests.TollNQXTollExpressTests">
+        <methods>
+          <include name="RunSetup"/>
+          <include name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DangerousGoods" invocation-numbers="0"/>
+          <include name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DGExpress" invocation-numbers="0"/>
+          <include name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_General" invocation-numbers="0"/>
+          <include name="RunTearDown"/>
+        </methods>
+      </class> <!-- rateEnquiryE2ETests.TollNQXTollExpressTests -->
+      <class name="rateEnquiryE2ETests.TollPriorityNZTests">
+        <methods>
+          <include name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelOffPeak" invocation-numbers="0"/>
+          <include name="RunSetup"/>
+          <include name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels" invocation-numbers="0"/>
+          <include name="RunTearDown"/>
+        </methods>
+      </class> <!-- rateEnquiryE2ETests.TollPriorityNZTests -->
       <class name="rateEnquiryE2ETests.TollTasmaniaTests">
         <methods>
           <include name="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Express" invocation-numbers="0"/>
           <include name="RunSetup"/>
-          <include name="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight" invocation-numbers="0"/>
           <include name="RunTearDown"/>
         </methods>
       </class> <!-- rateEnquiryE2ETests.TollTasmaniaTests -->
-      <class name="rateEnquiryE2ETests.TollPriorityNZTests">
-        <methods>
-          <include name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelOffPeak" invocation-numbers="0"/>
-          <include name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelsSameDay" invocation-numbers="0"/>
-          <include name="RunSetup"/>
-          <include name="RunTearDown"/>
-        </methods>
-      </class> <!-- rateEnquiryE2ETests.TollPriorityNZTests -->
     </classes>
   </test> <!-- RateEnquiry(failed) -->
 </suite> <!-- Failed suite [Suite] -->

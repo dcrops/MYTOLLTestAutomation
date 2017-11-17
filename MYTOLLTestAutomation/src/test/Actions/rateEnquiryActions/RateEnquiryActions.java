@@ -53,7 +53,7 @@ public class RateEnquiryActions {
 	public static By country = By.xpath("//*[@id=\"country-selector\"]/label/input[2]");
 	public static By countryPostCode = By.xpath("//*[@id=\"destination-postcode\"]");
 	public static By ShipmentDimention = By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[4]");
-
+	public static By PageLoadingBox = By.xpath("//*[@id=\"page-loader\"]/div/i");
 
 	
 	public static void SelectTollCarrierItem(int i) {
@@ -434,7 +434,8 @@ public class RateEnquiryActions {
 		}
 		
 		catch(Exception e) {
-			System.out.println("Continue Verifying Price and Move to Shipment");
+			System.out.println("Continue Verifying Price and Moves to Shipment");
+			Reporter.log("User Continues Verifying Price and Moves to Shipment");
 			RateEnquiryActions.VerifyPriceNowDetails();
 			RateEnquiryActions.ClickCreateShipment();
 		}
