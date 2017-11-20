@@ -86,7 +86,7 @@
 		<parameter name="ReceiverItem" value="Toll Group Test" />
 		<parameter name="SenderEmail" value="CF@TEST.COM" />
 		<parameter name="ReceiverEmail" value="NNAutomationuser2@gmail.com" />
-		<parameter name="ShipmentRef1" value="012345" />
+		<parameter name="ShipmentRef1" value="12345" />
 		<parameter name="ShipmentRef2" value="567879" />
 		<parameter name="QuoteNumber" value="5123355" />
 		<parameter name="DropOffDepot" value="ACACIA RIDGE INTERMODAL" />

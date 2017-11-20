@@ -107,7 +107,7 @@ public class PageBase {
 
 	public static void MediumWaitForElementEnabled() {
 		try {
-			Thread.sleep(500);
+			Thread.sleep(300);
 
 		}
 

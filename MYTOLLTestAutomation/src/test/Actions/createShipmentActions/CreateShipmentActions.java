@@ -52,13 +52,16 @@ public class CreateShipmentActions {
 	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector\"]/label/a/i"); 
 	public static By UNNumberTextField = By.xpath("//*[@id=\"un-code-selector\"]/div/div/div/input");
 	public static By lookupBtn = By.xpath("//*[@id=\"un-code-selector\"]/div/div/div/a");
-	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector\"]/div/ul/li/div");
+	public static By searchBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/span/i");
+	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector0-0\"]/label/input[2]");
 	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector\"]/label/a/i");
 	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li[1]/div");
 	public static By dgPackagingDescription = By.id("packing-description");
 	public static By dgPkgQty = By.id("dg-pkg-qty");
 	public static By dgQtyKg = By.id("dg-qty");
 	public static By technicalName = By.id("technical-name");
+	public static By lineItem1Arrowdown = By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[8]/a/i");
+	public static By dangerousGoodsArrowdown = By.xpath("//*[@id=\"dg-line-0-0\"]/div[1]/div[8]/a/i");
 	public static By addNewLine = By.id("add-line-item");; 
 	public static By addPalletYes =By.xpath("//*[@id=\"steps-3\"]/div[1]/div/div/div/label/span[2]"); //.xpath("//*label[text()='addPallet')]/span/span[class()='switch-handle']");//("//*[@id=\"addPallet\"]/span/span");//*label[contains(text(), Add pallet transactions?)]//[@id="addPallet"]/span/span
 	public static By addPalletNo = By.id("addPallet");
@@ -469,14 +472,23 @@ public class CreateShipmentActions {
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 			BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
-			BaseWebdriver.driver.findElement(lookupBtn).click();
+			BaseWebdriver.driver.findElement(searchBtn).click();
 			PageBase.MaximumWaitForElementEnabled();
+			//String UNNumber=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li[" + j + "]/div")).getAttribute("value").toString();
+			//System.out.println("UnNumber----"+ UNNumber);
 			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector\"]/div/ul/li[" + j + "]/div")).click();
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 			BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
 			BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
 
+		}
+		
+		public static String GetUNNumber() {
+			BaseWebdriver.driver.findElement(lineItem1Arrowdown).click();
+			BaseWebdriver.driver.findElement(dangerousGoodsArrowdown).click();
+			return BaseWebdriver.driver.findElement(UNNumberItem).getText().toString();
+			
 		}
 		
 		public static void SelectPackgingGroup(Integer packagingGroup) {

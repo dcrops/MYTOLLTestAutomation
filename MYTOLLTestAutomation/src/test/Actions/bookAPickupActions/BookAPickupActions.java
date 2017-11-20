@@ -68,7 +68,8 @@ public class BookAPickupActions {
 	public static By dangerousItemsNewLine = By.xpath("//*[@id=\"dg-radios\"]/label[2]/input"); 
 	public static By containFoodItem = By.xpath("//*[@id=\"containsFoodItems-no\"]");
 	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector-\"]/label/a/i"); 
-	public static By UNNumberTextField = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/input");
+	public static By UNNumberTextField = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/input"); //*[@id="un-code-selector0-0"]/label/input[2]
+	public static By UNNumberName = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div"); 
 	public static By searchBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/span/i");
 	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div");
 	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i");
@@ -911,16 +912,20 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 		BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li[" + j + "]/div")).click();
+		//String UNNumber=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li[" + j + "]/div")).getAttribute("value").toString();
+		//System.out.println("UnNumber----"+ UNNumber);
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li[" + j + "]/div")).click(); 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 		BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
 		BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
+		
 		}
 		
 		catch (Exception ex)
 		{
 			CreateShipmentActions.EnterDangerousGoodsDetails( j, lookupItem, packageDescription, pDgPkgQty, pDgQtyKg);
+			
 		}
 
 	}
@@ -941,6 +946,8 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
 
 	}
+	
+
 	
 	public static void EnterPackgingGroup(Integer packagingGroup) {
 		// BookAPickupActions.SelectUNNumber(j,lookupItem);
