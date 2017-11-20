@@ -1,126 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="RateEnquiry(failed)">
-    <parameter name="TTAccountNo" value="100428"/>
-    <parameter name="TIPWeight" value="10"/>
-    <parameter name="TNAccountNo" value="614060"/>
-    <parameter name="TNDesPostCode" value="2000"/>
-    <parameter name="TIPWidth" value="10"/>
+  <test name="ManifestTest(failed)">
+    <parameter name="AccountNumberTNQX" value="614060"/>
+    <parameter name="DestinationCountry" value="AUSTRALIA"/>
+    <parameter name="SpeceialIns" value="Test Special Ins"/>
     <parameter name="TollCarrierTollPrioNZ" value="Toll Priority (NZ)"/>
-    <parameter name="TNZNumberOfItems" value="3"/>
-    <parameter name="TPNumberOfItems" value="1"/>
-    <parameter name="TNOriginSuburb" value="MELBOURNE"/>
+    <parameter name="collectionDepot" value="2"/>
+    <parameter name="ReceiverItem" value="Toll Group Test"/>
+    <parameter name="OtherCostomer" value="0123"/>
     <parameter name="ServiceRoadExpress" value="Road Express"/>
     <parameter name="ServiceDGRefrigerated" value="DG Refrigerated"/>
-    <parameter name="TPDesSuburb" value="MELBOURNE"/>
+    <parameter name="palletSpace" value="5"/>
     <parameter name="ServiceRefrigeration" value="Refrigeration"/>
-    <parameter name="TIPOriginSuburb" value="MELBOURNE"/>
-    <parameter name="TTDesPostCode" value="7000"/>
-    <parameter name="TNZDesPostCode" value="3210"/>
-    <parameter name="ItemTemplateName" value="Automation Template"/>
-    <parameter name="TIPAccountNo" value="2230899"/>
-    <parameter name="TIPNumberOfItems" value="10"/>
+    <parameter name="DGoodsNo" value="No"/>
+    <parameter name="reference" value="12345"/>
+    <parameter name="ItemTemplateName" value="Automation Template1"/>
+    <parameter name="packageDescription" value="Testing package Description"/>
+    <parameter name="ChepOtherTransferToToll" value="5123"/>
     <parameter name="ServiceRailGeneral" value="Rail General"/>
+    <parameter name="ChepTansferToToll" value="2345"/>
     <parameter name="TollCarrierTollIntermodal" value="Toll Intermodal"/>
     <parameter name="TollCarrierTollTasmania" value="Toll Tasmania"/>
-    <parameter name="TPWeight" value="3"/>
-    <parameter name="TIDesPostCode" value="5014"/>
-    <parameter name="TPAHeight" value="0"/>
-    <parameter name="TPDesPostCode" value="3000"/>
-    <parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels"/>
-    <parameter name="TTOriginSuburb" value="MULGRAVE"/>
-    <parameter name="Weight" value="3"/>
-    <parameter name="CountryPostCode" value="3000"/>
-    <parameter name="TIBillingType" value="CARTONS - OVER 301KG"/>
-    <parameter name="TPALength" value="0"/>
-    <parameter name="NumberOfItems" value="3"/>
-    <parameter name="TIPHeight" value="10"/>
-    <parameter name="Country" value="HONG KONG"/>
-    <parameter name="TIPDesSuburb" value="FOOTSCRAY"/>
-    <parameter name="TPAWidth" value="0"/>
-    <parameter name="TNZCountry" value="AUSTRALIA"/>
-    <parameter name="TPAccountNo" value="401509"/>
+    <parameter name="SenderEmail" value="CF@TEST.COM"/>
+    <parameter name="PackingGroup" value="3"/>
+    <parameter name="DGContactName" value="Dadd"/>
+    <parameter name="DGItem" value="2"/>
+    <parameter name="ChepCustomer" value="1234"/>
+    <parameter name="DGQuoteNumber" value="12345"/>
+    <parameter name="Receiver" value="2"/>
+    <parameter name="LoscamOtherExchange" value="2222"/>
+    <parameter name="locationIndex" value="1"/>
+    <parameter name="Postcode" value="6065"/>
+    <parameter name="technicalName" value="Test Technical name"/>
+    <parameter name="dropOffDepot" value="1"/>
+    <parameter name="Weight" value="900"/>
+    <parameter name="Sender" value="1"/>
+    <parameter name="DropOffDepot" value="ACT TOLLFAST"/>
+    <parameter name="AccountNumberTSPD" value="106119"/>
+    <parameter name="NumberOfItems" value="15"/>
+    <parameter name="LookupSearch" value="1234"/>
+    <parameter name="DGYes" value="1"/>
+    <parameter name="DGNo" value="2"/>
+    <parameter name="chepOtherDocketNo" value="1111"/>
+    <parameter name="Destination" value="MELALEUCA"/>
+    <parameter name="LoascamExchange" value="6541"/>
     <parameter name="TollCarrierTollNQXTollExpress" value="Toll NQX | Toll Express"/>
-    <parameter name="TIPOriginPostCode" value="3000"/>
-    <parameter name="TNZOriginPostCode" value="1001"/>
-    <parameter name="TILength" value="20"/>
+    <parameter name="SenderName" value="COLLINS"/>
+    <parameter name="pDgPkgQty" value="5"/>
+    <parameter name="DgPkgQty" value="20"/>
+    <parameter name="LoscamCustomer" value="5671"/>
+    <parameter name="LoscamOtherDocketNo" value="1598"/>
+    <parameter name="pDgQtyKg" value="60"/>
+    <parameter name="LoscamDocketNo" value="3451"/>
     <parameter name="ServicePremium" value="Premium"/>
-    <parameter name="TIWidth" value="20"/>
-    <parameter name="TIPBillingType" value="ALL FREIGHT"/>
+    <parameter name="SenderItem" value="COLLINS COMPUTERS 8 TO 8"/>
     <parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods"/>
-    <parameter name="TIDesSuburb" value="ALBERT PARK"/>
-    <parameter name="TIPLength" value="10"/>
-    <parameter name="ServiceAusWideSatchel" value="Auswide 3kg Satchel - Overnight"/>
-    <parameter name="TNZOriginSuburb" value="NEWTON"/>
-    <parameter name="TNOriginPostCode" value="3000"/>
+    <parameter name="ChepOtherExchange" value="5678"/>
+    <parameter name="CollectionDepot" value="ADC Port Adelaide (TMS)"/>
+    <parameter name="lookupItem" value="1"/>
+    <parameter name="ChargeToAccount" value="Sender"/>
     <parameter name="ServiceDGExpress" value="DG Express"/>
-    <parameter name="ServiceParcelsSameDays" value="Parcels - Same Day"/>
-    <parameter name="TNZAccountNo" value="100181"/>
-    <parameter name="TINumberOfItems" value="1"/>
-    <parameter name="TIOriginPostCode" value="5352"/>
-    <parameter name="Height" value="33"/>
+    <parameter name="DgQtyKg" value="10"/>
+    <parameter name="Height" value="300"/>
     <parameter name="ServiceExpress" value="Express"/>
-    <parameter name="TIHeight" value="20"/>
-    <parameter name="Width" value="33"/>
-    <parameter name="TIAccountNo" value="5685"/>
+    <parameter name="ShipmentRef2" value="567879"/>
+    <parameter name="Width" value="200"/>
+    <parameter name="packingGroup" value="II"/>
+    <parameter name="ShipmentRef1" value="012345"/>
+    <parameter name="DestinationItem" value="6065, MELALEUCA, WA, AU"/>
+    <parameter name="DestinationNZ" value="Wellington"/>
+    <parameter name="lookupName" value="2025"/>
     <parameter name="BillingType" value="General Freight"/>
     <parameter name="TollCarrierTollIPEC" value="Toll IPEC"/>
-    <parameter name="TNDesSuburb" value="SYDNEY"/>
     <parameter name="ServiceDGFreight" value="DG Freight"/>
-    <parameter name="TTDesSuburb" value="GLEBE"/>
+    <parameter name="DestinationNZItem" value="6011, WELLINGTON, NZ"/>
     <parameter name="ServiceDangerousGoods" value="Dangerous Goods"/>
-    <parameter name="Mode" value="ROAD"/>
+    <parameter name="ChepDocketNo" value="7891"/>
+    <parameter name="LoscamTransferToToll" value="3451"/>
+    <parameter name="Mode" value="1"/>
     <parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak"/>
-    <parameter name="TIPDesPostCode" value="3011"/>
-    <parameter name="TNZDesSuburb" value="BEERESCOURT"/>
-    <parameter name="QtyType" value="Items"/>
-    <parameter name="TTOriginPostCode" value="3170"/>
     <parameter name="ServiceGeneral" value="General"/>
-    <parameter name="TIWeight" value="100"/>
-    <parameter name="Length" value="33"/>
+    <parameter name="FoodItems" value="No"/>
+    <parameter name="WhoPays" value="1"/>
+    <parameter name="QuoteNumber" value="5123355"/>
+    <parameter name="LoscamOtherTransferToToll" value="3333"/>
+    <parameter name="ManifestName" value="Automation"/>
+    <parameter name="Length" value="100"/>
+    <parameter name="ChepExchange" value="4124"/>
+    <parameter name="specialIns" value="Test Special Ins"/>
+    <parameter name="PurchaseOrder" value="Abcd1234"/>
+    <parameter name="TollExtraServiceAmount" value="5000"/>
     <parameter name="TollCarrierTollPrioAU" value="Toll Priority (Aus)"/>
-    <parameter name="TIOriginSuburb" value="ROWLAND FLAT"/>
+    <parameter name="DGContactNumber" value="34324324"/>
+    <parameter name="ReceiverName" value="Test"/>
+    <parameter name="PackageDescription" value="Testing package Description"/>
     <parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents"/>
+    <parameter name="DGGoods" value="No"/>
+    <parameter name="ReceiverEmail" value="NNAutomationuser2@gmail.com"/>
     <classes>
-      <class name="rateEnquiryE2ETests.TollPriorityAUSTests">
+      <class name="manifestE2ETests.ManualManifestTollIntermodalTests">
         <methods>
           <include name="RunSetup"/>
-          <include name="RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_AuswideSatchel" invocation-numbers="0"/>
           <include name="RunTearDown"/>
+          <include name="Manifest_TollIntermodal_E2ETest_TID_1127_Service_Express_AddManifestManual" invocation-numbers="0"/>
         </methods>
-      </class> <!-- rateEnquiryE2ETests.TollPriorityAUSTests -->
-      <class name="rateEnquiryE2ETests.TollIntermodalTests">
-        <methods>
-          <include name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight" invocation-numbers="0"/>
-          <include name="RunSetup"/>
-          <include name="RunTearDown"/>
-        </methods>
-      </class> <!-- rateEnquiryE2ETests.TollIntermodalTests -->
-      <class name="rateEnquiryE2ETests.TollNQXTollExpressTests">
+      </class> <!-- manifestE2ETests.ManualManifestTollIntermodalTests -->
+      <class name="manifestE2ETests.ManualManifestTollNQXTollExpressTests">
         <methods>
           <include name="RunSetup"/>
-          <include name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DangerousGoods" invocation-numbers="0"/>
-          <include name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DGExpress" invocation-numbers="0"/>
-          <include name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_General" invocation-numbers="0"/>
           <include name="RunTearDown"/>
+          <include name="Manifest_TollNQXTollExpress_E2ETest_TID_1127_Service_Premium_AddManifestManual" invocation-numbers="0"/>
         </methods>
-      </class> <!-- rateEnquiryE2ETests.TollNQXTollExpressTests -->
-      <class name="rateEnquiryE2ETests.TollPriorityNZTests">
+      </class> <!-- manifestE2ETests.ManualManifestTollNQXTollExpressTests -->
+      <class name="manifestE2ETests.ManualManifestTollTasmaniaTests">
         <methods>
-          <include name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_ParcelOffPeak" invocation-numbers="0"/>
-          <include name="RunSetup"/>
-          <include name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels" invocation-numbers="0"/>
           <include name="RunTearDown"/>
-        </methods>
-      </class> <!-- rateEnquiryE2ETests.TollPriorityNZTests -->
-      <class name="rateEnquiryE2ETests.TollTasmaniaTests">
-        <methods>
-          <include name="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Express" invocation-numbers="0"/>
           <include name="RunSetup"/>
-          <include name="RunTearDown"/>
+          <include name="Manifest_TollTasmania_E2ETest_TID_1127_Service_General_AddManifestManual" invocation-numbers="0"/>
         </methods>
-      </class> <!-- rateEnquiryE2ETests.TollTasmaniaTests -->
+      </class> <!-- manifestE2ETests.ManualManifestTollTasmaniaTests -->
     </classes>
-  </test> <!-- RateEnquiry(failed) -->
+  </test> <!-- ManifestTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->
