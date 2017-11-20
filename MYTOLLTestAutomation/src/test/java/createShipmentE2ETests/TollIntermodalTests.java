@@ -85,9 +85,12 @@ public class TollIntermodalTests {
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty,
 				pDgQtyKg);
+		
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		BookAPickupActions.ClickAdd();
+		String un=CreateShipmentActions.GetUNNumber();//*[@id="un-code-selector0-0"]/label/input[2]
+		System.out.println("Un----"+un);
 		//PageBase.MoveToElement(CreateShipmentActions.addNewLine, CreateShipmentActions.UNNumberDropdown);
 		
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500);
@@ -115,7 +118,13 @@ public class TollIntermodalTests {
 		
 		ShipmentReviewActions.VerifyPalletTransactionsInformations(ChepCustomer,ChepExchange,ChepTansferToToll,ChepDocketNo,LoscamCustomer,LoascamExchange,LoscamTransferToToll,LoscamDocketNo,
 				OtherCostomer,ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,LoscamOtherTransferToToll, LoscamOtherDocketNo);
-		
+		String numberOfItems="Items "+NumberOfItems;
+		ShipmentReviewActions.VerifyLineItem1Headings("Line Item 1",ItemTemplateName, numberOfItems, "Item description", "Items", "Billing type","Dimensions","Total volume (m3)", "Weight (kg)","Reference1",
+				"Reference2", "Shipment contain dangerous goods");
+		String dimensions=Length+"cm x "+Width+"cm x "+Height+"cm";
+		String weight=Weight+"kg";
+		ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName,NumberOfItems,BillingType,dimensions,"90 m3",weight,ShipmentRef1, ShipmentRef2,"Yes");
+	//	ShipmentReviewActions.VerifyDangerousGoodsDetails("DANGEROUS GOODS DETAILS",lookupName,);
 		//ShipmentReviewActions.VerifyDispatchDate(pDispatchDate);
 		ShipmentReviewActions.VerifyAccountNumber(AccountNumber);
 		ShipmentReviewActions.VerifyTollCarrier(TollCarrier);
