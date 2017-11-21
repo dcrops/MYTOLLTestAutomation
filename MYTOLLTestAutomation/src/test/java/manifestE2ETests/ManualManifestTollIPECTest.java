@@ -60,6 +60,7 @@ public class ManualManifestTollIPECTest {
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectReceiver(2);
+		ManifestActions.SelectShipmentConsolidated();
 		
 		//Shipment Product Details
 		PageBase.moveToElement(BookAPickupActions.itemDescriptionTextField);

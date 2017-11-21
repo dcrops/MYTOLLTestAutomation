@@ -60,6 +60,7 @@ public class ManualManifestTollPriorityNZTests {
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectReceiver(1);
+		ManifestActions.SelectShipmentConsolidated();
 		
 		//Shipment Product Details
 		PageBase.moveToElement(BookAPickupActions.itemDescriptionTextField);
