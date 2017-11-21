@@ -12,7 +12,7 @@ import baseWebdriver.BaseWebdriver;
 public class ShipmentReviewActions {
 	
 	
-	public static By dispatchDate=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[1]/div[1]/div[1]/div[2]/ul/li[1]/div[2]/p");
+	
 	public static By tollCarrier=By.id("toll-carrier"); 
 	public static By accountNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Account number']/following::div/p"); 
 	public static By senderCompanyName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Sender company name']/following::div/p"); 
@@ -56,8 +56,7 @@ public class ShipmentReviewActions {
 	public static By LoscamOtherDocketNumber=By.xpath("//*[@id=\"pallet-box\"]//label[text()='Loscam other']/following::div[4]/span"); 
 	
 	
-	//Line Item 1 Headings validation
-
+	//Line Item 1 Headings 
 	public static By lineItemNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-head']/div[@class='line-item-index']/h2");
 	public static By itemDescription1=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-head']/div[@class='line-item-title']/h3");
 	public static By numberOfItems=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-head']/div[@class='item-numbers']/h3");
@@ -73,7 +72,7 @@ public class ShipmentReviewActions {
 	public static By reference2Heading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col reference2']/h3");
 	public static By shipmentContainDangerousGoodsHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col shipment-dg']/h3");
 
-	
+	//Line Item 1 values
 	public static By itemDescription1Value=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col item-desc']//p");
 	public static By itemsValue=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col total-items']//p");
 	public static By billingTypeValue=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col billing-type']//p");
@@ -84,22 +83,47 @@ public class ShipmentReviewActions {
 	public static By reference2Value=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col reference2']//p");
 	public static By shipmentContainDangerousGoodsValue=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col shipment-dg']//p");
 	
-	//Dangerous Goods Details validation  //*[@id="shipment-placeholder"]/div[1]/div[1]/div/div[2]/ul/li[1]/div[2]/div[3]/h5
+	//Dangerous Goods Details validation  
 	public static By dangerousGoodsHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='clearfix']/h5");
 	public static By dangerousGoodsArrowdown=By.xpath("//*[@id=\"dg-line-00\"]/div[1]/div[7]/a/i");
 	public static By unNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='UN number']/following::div/p");
 	public static By classDivision=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Class / Division']/following::div/p");
 	public static By packingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Packaging group']/following::div/p");
 	public static By subrisk=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Sub risk']/following::div/p");
-	public static By properShippingName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Proper shipping name']/following::div/p");
+	public static By properShippingName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Proper shipping name ']/following::div/p");
 	public static By dgPackingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='DG packaging description']/following::div/p");
 	public static By dgPKG=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='DG pkg (qty)']/following::div/p");
 	public static By dgQTY=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='DG qty (kg or L)']/following::div/p");
 	public static By technicalName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Technical name']/following::div/p");
 	
 	
+	//Line Item 2 Headings validation
+	public static By lineItemNumber2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-head']/div[@class='line-item-index']/h2");
+	public static By itemDescription2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-head']/div[@class='line-item-title']/h3");
+	public static By numberOfItems2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-head']/div[@class='item-numbers']/h3");
+	public static By line2Arrowdown=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li[2]/div[1]/div[3]");
 	
+	public static By itemDescriptionHeading2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col item-desc']/h3");
+	public static By itemsHeading2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col total-items']/h3");
+	public static By billingTypeHeading2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col billing-type']/h3");
+	public static By dimensionsHeading2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col dimensions']/h3");
+	public static By totalVolumeHeading2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col total-vol']/h3");
+	public static By weightHeading2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col weight']/h3");
+	public static By reference1Heading2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col reference1']/h3");
+	public static By reference2Heading2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col reference2']/h3");
+	public static By shipmentContainDangerousGoodsHeading2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col shipment-dg']/h3");
 	
+	//Line Item 2 values
+	public static By itemDescriptionValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col item-desc']//p");
+	public static By itemsValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col total-items']//p");
+	public static By billingTypeValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col billing-type']//p");
+	public static By dimensionsValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col dimensions']//p");
+	public static By totalVolumeValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col total-vol']//p");
+	public static By weightValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col weight']//p");
+	public static By reference1Value2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col reference1']//p");
+	public static By reference2Value2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col reference2']//p");
+	public static By shipmentContainDangerousGoodsValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col shipment-dg']//p");
+
 	public static By dimensions=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[4]/p");
 	public static By volume=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[5]/p");
 	public static By weight=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[6]/p");
@@ -113,7 +137,7 @@ public class ShipmentReviewActions {
 
 	
 	public static void VerifyDispatchDate(String pDispatchDate) {
-		assertEquals(pDispatchDate,BaseWebdriver.driver.findElement(dispatchDate).getText());
+		//assertEquals(pDispatchDate,BaseWebdriver.driver.findElement(dispatchDate).getText());
 	}
 	
 	// Shipment additional information verification
@@ -212,7 +236,40 @@ public class ShipmentReviewActions {
 			assertEquals(pTechnicalName, BaseWebdriver.driver.findElement(technicalName).getText());
 		}
 		
-	
+		// Line item2 Headings verification
+		public static void VerifyLineItem2Headings(String pLineItemHeading, String pItemDescription1, String pNumberOfItems,String pItemDescriptionHeading, String pItemsHeading, String pBillingTypeHeading, 
+			String pDimensionsHeading, String pTotalVolumeHeading, String pWeightHeading, String pReference1Heading, String pReference2Heading, String pShipmentContainDangerousGoodsHeading) {
+			assertEquals(pLineItemHeading,BaseWebdriver.driver.findElement(lineItemNumber2).getText());
+			assertEquals(pItemDescription1,BaseWebdriver.driver.findElement(itemDescription2).getText());
+			assertEquals(pNumberOfItems, BaseWebdriver.driver.findElement(numberOfItems2).getText());
+			BaseWebdriver.driver.findElement(line2Arrowdown).click();
+			PageBase.MediumWaitForElementEnabled();
+			assertEquals(pItemDescriptionHeading, BaseWebdriver.driver.findElement(itemDescriptionHeading2).getText());
+			assertEquals(pItemsHeading,BaseWebdriver.driver.findElement(itemsHeading2).getText());
+			assertEquals(pBillingTypeHeading,BaseWebdriver.driver.findElement(billingTypeHeading2).getText());
+			assertEquals(pDimensionsHeading, BaseWebdriver.driver.findElement(dimensionsHeading2).getText());
+			assertEquals(pTotalVolumeHeading, BaseWebdriver.driver.findElement(totalVolumeHeading2).getText());
+			assertEquals(pWeightHeading,BaseWebdriver.driver.findElement(weightHeading2).getText());
+			assertEquals(pReference1Heading, BaseWebdriver.driver.findElement(reference1Heading2).getText());
+			assertEquals(pReference2Heading, BaseWebdriver.driver.findElement(reference2Heading2).getText());
+			assertEquals(pShipmentContainDangerousGoodsHeading, BaseWebdriver.driver.findElement(shipmentContainDangerousGoodsHeading2).getText());
+		}
+		
+		
+		// Line item2 Values verification
+		public static void VerifyLineItem2Values(String pItemDescription1Value, String pItemsValue,String pBillingTypeValue, String pDimensionsValue, String pTotalVolumeValue, 
+			 String pWeightValue, String pReference1Value, String pReference2Value, String pShipmentContainDangerousGoodsValue) {
+			assertEquals(pItemDescription1Value,BaseWebdriver.driver.findElement(itemDescriptionValue2).getText());
+			assertEquals(pItemsValue, BaseWebdriver.driver.findElement(itemsValue2).getText());
+			//assertEquals(pBillingTypeValue, BaseWebdriver.driver.findElement(billingTypeValue).getText());
+			assertEquals(pDimensionsValue,BaseWebdriver.driver.findElement(dimensionsValue2).getText());
+			assertEquals(pTotalVolumeValue, BaseWebdriver.driver.findElement(totalVolumeValue2).getText());
+			assertEquals(pWeightValue,BaseWebdriver.driver.findElement(weightValue2).getText());
+			assertEquals(pReference1Value, BaseWebdriver.driver.findElement(reference1Value2).getText());
+			assertEquals(pReference2Value, BaseWebdriver.driver.findElement(reference2Value2).getText());
+			assertEquals(pShipmentContainDangerousGoodsValue, BaseWebdriver.driver.findElement(shipmentContainDangerousGoodsValue2).getText());
+				}
+				
 	public static void VerifyTollCarrier(String pTollCarrier) {
 		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
 	}
