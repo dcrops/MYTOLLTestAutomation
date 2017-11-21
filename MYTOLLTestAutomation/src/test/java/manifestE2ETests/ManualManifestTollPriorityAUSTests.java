@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.Date;
 
+import org.junit.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,6 +15,7 @@ import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
+import createShipmentActions.ShipmentReviewActions;
 import myTollHomePageActions.MyTollHomePageActions;
 import manifestActions.ManifestActions;
 
@@ -74,6 +76,7 @@ public class ManualManifestTollPriorityAUSTests {
 		//Submit Shipment and Print Manifest
 		Reporter.log("User Clicks Review Shipment");
 		PageBase.click(CreateShipmentActions.reviewCreateShipmentBtn,5);
+		String AccountNo = BaseWebdriver.driver.findElement(ShipmentReviewActions.accountNumber).getText();
 		Reporter.log("User Clicks Continue to Manifest");
 		PageBase.waitForElement(ManifestActions.ContinuetoManifest, 5);
 		PageBase.click(ManifestActions.ContinuetoManifest, 5);
@@ -87,6 +90,14 @@ public class ManualManifestTollPriorityAUSTests {
 		//Book a Pick Up Page
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
 		PageBase.verifyTextExistAttribute(BookAPickupActions.TollCarrierTextField, TollCarrier);
+		String pickABookUpAccountNo = BaseWebdriver.driver.findElement(BookAPickupActions.accountNumber).getAttribute("value");
+		if (pickABookUpAccountNo.contains(AccountNo)) {
+			Reporter.log("Expected Text : "+AccountNo+ " Matched the Text on Screen :" +pickABookUpAccountNo);
+			System.out.println("Expected Text : "+AccountNo+ " Matched the Text on Screen :" +pickABookUpAccountNo);
+		}else{
+			Reporter.log("FAILED: Expected Text : "+AccountNo+ " DOES NOT Match the Text on Screen :" +pickABookUpAccountNo);
+			Assert.fail("FAILED: Expected Text : "+AccountNo+ " DOES NOT Match the Text on Screen :" +pickABookUpAccountNo);
+		}
 		BookAPickupActions.SelectItemDescriptionTollPriorityAU();
 		ManifestActions.selectPickupDate();
 		ManifestActions.selectReadyTimeJS("09:15");
