@@ -100,8 +100,10 @@ public class ManifestActions {
 	
 	public static ArrayList shipmentNumbers = new ArrayList();
 	public static By PrintCloseManifest = By.linkText("PRINT & CLOSE MANIFEST");
-	public static By ShipmentManifestTab = By.xpath("//*[@id=\"print-mani-popup\"]/div/div/section/ul/li[2]/a");
+	public static By ShipmentManifestTab = By.xpath("//*[@id=\"print-mani-popup\"]//*//section/ul/li/a[@title=\"Shipment\"]");
+	public static By LabelTab = By.xpath("//*[@id=\"print-mani-popup\"]//*//section/ul/li/a[@title=\"Labels\"]");
 	public static By ShipmentDownloadPDF = By.xpath("//*[@id=\"manifest-ship-download-btn\"]");
+	public static By manifestLabelDownloadPDF = By.xpath("//*[@id=\"manifest-label-download-btn\"]");
 	public static By ShipmentManifestPopupClose = By.xpath("//*[@id=\"print-mani-popup\"]/div/div/a/i");
 	public static By ShipmentManifestID = By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]//*//ul/li[2]/div[1]/p");
 	public static By ShipmentManifestStatus = By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]//*//ul/li[2]/div[2]/p");
@@ -332,16 +334,29 @@ public class ManifestActions {
 	    shipmentNumbers.add(ShipmentID);
 	    System.out.println("Shipment Array : "+shipmentNumbers);
 	    Reporter.log("Shipment Array : "+shipmentNumbers);
-		//Print and Close Manifest
+		
+	    //Print and Close Manifest
 	    Reporter.log("User Clicks Print and Close Manifest");
 		PageBase.moveToElement(PrintCloseManifest);
 		PageBase.click(PrintCloseManifest, 2);
+		
+		//Label Tab
+		PageBase.waitForElement(LabelTab, 2);
+		PageBase.click(LabelTab, 2);
+		Reporter.log("User Select Download PDF from Label Tab");
+		PageBase.click(manifestLabelDownloadPDF, 2);
+		System.out.println("Downloading PDF instead of Printing, Content of PDF not CHECKED");
+		
+		//Shipment & Manifest Tab
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.waitForElement(ShipmentManifestTab, 2);
 		PageBase.moveToElement(ShipmentManifestTab);
 		PageBase.click(ShipmentManifestTab, 2);
 		Reporter.log("User Select Download PDF from Shipment/Manifest Tab");
 		PageBase.click(ShipmentDownloadPDF, 2);
 		System.out.println("Downloading PDF instead of Printing, Content of PDF not CHECKED");
+		
+		//Close Pop Up
 		PageBase.MaximumWaitForElementEnabled();
 		Reporter.log("User Closes Popup to verify Manifest Status");
 		PageBase.waitForElement(ShipmentManifestPopupClose, 2);
@@ -414,6 +429,34 @@ public class ManifestActions {
 		PageBase.click(ManifestActions.ManualManifestSave, 5);
 		Reporter.log("User Saves Manifest and Proceeds");
 		
+	}
+	
+	
+	public static void SelectShipmentConsolidated() {
+		try {
+		PageBase.MaximumWaitForElementEnabled();
+		Boolean results=BaseWebdriver.driver.findElement(CreateShipmentActions.shipmentConsolidatedContinue).isDisplayed();
+		if (results=true) {
+			PageBase.click(CreateShipmentActions.shipmentConsolidatedContinue,2);
+			}
+		}
+		
+		catch(Exception ex) {
+			System.out.println("No Shipments consolidate pop up msg");	
+		}
+		}
+	
+	public static void SelectBillingType(int i) {
+		try {
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.click(CreateShipmentActions.billingTypedropdown,2);
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.click(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + i + "]/div"),2);
+		}
+		catch(Exception ex){
+			System.out.println("Billing Type Unavailable");	
+		}
+
 	}
 	
 }

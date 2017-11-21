@@ -61,14 +61,16 @@ public class ManualManifestTollTasmaniaTests {
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectReceiver(2);
+		ManifestActions.SelectShipmentConsolidated();
 		
 		//Shipment Product Details
 		PageBase.moveToElement(BookAPickupActions.itemDescriptionTextField);
 		PageBase.sendText(BookAPickupActions.itemDescriptionTextField, 2, ItemTemplateName);
-		CreateShipmentActions.SelectBillingType(1);
-		CreateShipmentActions.NumberOfItem(NumberOfItems);
+		ManifestActions.SelectBillingType(1);
+		
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
+		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
 		//Submit Shipment and Print Manifest
