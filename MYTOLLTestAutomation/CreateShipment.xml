@@ -37,6 +37,7 @@
 
 		<parameter name="locationIndex" value="1" />
 		<parameter name="ItemTemplateName" value="Automation Template1" />
+		<parameter name="ItemTemplateName2" value="Automation Template2" />
 		<parameter name="ChargeToAccount" value="Sender" />
 		<parameter name="Mode" value="Rail" />
 		<parameter name="Destination" value="MELALEUCA" />
@@ -50,6 +51,11 @@
 		<parameter name="Width" value="200" />
 		<parameter name="Height" value="300" />
 		<parameter name="Weight" value="900" />
+		<parameter name="NumberOfItems2" value="15" />
+		<parameter name="Length2" value="200" />
+		<parameter name="Width2" value="100" />
+		<parameter name="Height2" value="50" />
+		<parameter name="Weight2" value="20" />
 		<parameter name="palletSpace" value="5" />
 		<parameter name="reference" value="12345" />
 
@@ -118,17 +124,38 @@
 		<parameter name="SpeceialIns" value="Test Special Ins" />
 		<parameter name="TollExtraServiceAmount" value="5000" />
 		
-
+		<!--- Shipment View Headings Test data -->
+		
+		<parameter name="LineItemName1Heading" value="Line Item 1" />
+		<parameter name="LineItemName2Heading" value="Line Item 2" />
+		<parameter name="ItemDescriptionHeading" value="Item description" />
+		<parameter name="ItemsHeading" value="Items" />
+		<parameter name="BillingTypeHeading" value="Billing type" />
+		<parameter name="DimensionsHeading" value="Dimensions" />
+		<parameter name="TotalVolumeHeading" value="Total volume (m3)" />
+		<parameter name="ItemsHeading" value="Items" />
+		<parameter name="WeightHeading" value="Weight (kg)" />
+		<parameter name="Reference1Heading" value="Reference1" />
+		<parameter name="Reference2Heading" value="Reference2" />
+		<parameter name="ShipmentContainDangerousGoodsHeading" value="Shipment contain dangerous goods" /> 
+		<parameter name="ShipmentContainDangerousGoodsYes" value="Yes" /> 
+		<parameter name="ShipmentContainDangerousGoodsNo" value="No" /> 
+		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" /> 
+		<parameter name="VolumeLineItem1" value="90 m3" />
+		<parameter name="VolumeLineItem2" value="15 m3" />
+		<parameter name="ShipmentContainDangerousGoodsHeading" value="Shipment contain dangerous goods" /> 
+		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" /> 
 		<classes>
 	<class name="createShipmentE2ETests.TollIntermodalTests" />
-	
 
-			<!--Blocked><class name="createShipmentE2ETests.TollTasmaniaTests" /> 
+
+		<!-- Blocked>	<class name="createShipmentE2ETests.TollTasmaniaTests" /> 
 				<class name="createShipmentE2ETests.TollIntermodalTests" /> <class name="createShipmentE2ETests.TollIntermodalTests" 
 				/> <class name="createShipmentE2ETests.TollIPECTests" /> <class name="createShipmentE2ETests.TollPriorityAUSTests" 
-				/> <class name="createShipmentE2ETests.TollNQXTollExpressTests" /></Blocked -->
+				/> <class name="createShipmentE2ETests.TollNQXTollExpressTests" />	</Blocked -->
 
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
+
 

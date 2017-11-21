@@ -13,9 +13,10 @@ import baseWebdriver.BaseWebdriver;
 public class TollPriorityNZ {
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "ShipmentRef1", "ShipmentRef2","ItemTemplateName","NumberOfItems", "Length", "Width", "Height", "Weight","SpeceialIns"})
+	@Parameters({"TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "ShipmentRef1", "ShipmentRef2","ItemTemplateName","BillingType","NumberOfItems", "Length", "Width", "Height", "Weight","ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2","SpeceialIns"})
 	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_GlobalExpressDocuments(String TollCarrier, String ServiceGlobalExpressDocuments, String ShipmentRef1,
-			String ShipmentRef2,String ItemTemplateName, String NumberOfItems, String Length, String Width, String Height, String Weight, String SpeceialIns)
+			String ShipmentRef2,String ItemTemplateName, String BillingType, String NumberOfItems, String Length, String Width, String Height, String Weight,String ItemTemplateName2,
+			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, String SpeceialIns)
 	{
 	
 	//CreateShipmentActions.SelectTollCarrierItem(TollCarrier);
@@ -34,7 +35,7 @@ public class TollPriorityNZ {
 			CreateShipmentActions.EnterWeight(Weight);
 			BookAPickupActions.selectDangerousGood();
 			PageBase.Scrollbar(1200,1500);
-			CreateShipmentActions.AddANewLineNZAUS(500,800);
+			CreateShipmentActions.AddANewLineNZAUS(1000, 1500,ItemTemplateName2,BillingType,NumberOfItems2, Length2, Width2, Height2, Weight2,ShipmentRef1, ShipmentRef2);
 			BookAPickupActions.selectDangerousGood();
 			PageBase.Scrollbar(800, 1000);
 			BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
@@ -43,9 +44,10 @@ public class TollPriorityNZ {
 }
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "ShipmentRef1", "ShipmentRef2","ItemTemplateName","NumberOfItems", "Length", "Width", "Height", "Weight","SpeceialIns"})
+	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "ShipmentRef1", "ShipmentRef2","ItemTemplateName","BillingType","NumberOfItems", "Length", "Width", "Height", "Weight","ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2","SpeceialIns"})
 	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_ParcelsOffPeak(String TollCarrier, String ServiceParcelsOffPeak, String ShipmentRef1,
-			String ShipmentRef2,String ItemTemplateName, String NumberOfItems, String Length, String Width, String Height, String Weight, String SpeceialIns)
+			String ShipmentRef2,String ItemTemplateName, String BillingType, String NumberOfItems, String Length, String Width, String Height, String Weight, String ItemTemplateName2,
+			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2,String SpeceialIns)
 	{
 		
 		
@@ -69,7 +71,7 @@ public class TollPriorityNZ {
 		jse.executeScript("scroll(0, 250)");
 		
 				
-		CreateShipmentActions.AddANewLineNZAUS(500, 800);
+		CreateShipmentActions.AddANewLineNZAUS(1000, 1500,ItemTemplateName2,BillingType,NumberOfItems2, Length2, Width2, Height2, Weight2,ShipmentRef1, ShipmentRef2);
 		BookAPickupActions.selectDangerousGood();
 		
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);

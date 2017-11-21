@@ -1,9 +1,8 @@
 package rateEnquiryE2ETests;
 
-import bookAPickupActions.BookAPickupActions;
+
 import myTollHomePageActions.MyTollHomePageActions;
 
-import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
