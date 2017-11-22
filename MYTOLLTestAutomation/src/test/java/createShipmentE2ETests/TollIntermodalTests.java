@@ -21,7 +21,7 @@ public class TollIntermodalTests {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 7)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER", "whoPays", "Mode",
 			"ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot", "dropOffDepot", "collectionDepot",
 			"DGContactName", "DGContactNumber", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -115,9 +115,7 @@ public class TollIntermodalTests {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = CreateShipmentActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
-		// PageBase.MoveToElement(CreateShipmentActions.addNewLine,
-		// CreateShipmentActions.UNNumberDropdown);
-
+	
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
 				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
@@ -208,7 +206,7 @@ public class TollIntermodalTests {
 		// CreateShipmentActions.EnterDGContactName(DGContactName);
 
 		CreateShipmentActions.SelectShipmentConsolidated();
-		// PageBase.Scrollbar(250, 500);
+		
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
@@ -226,7 +224,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, BookAPickupActions.dangerousGoodNo);
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGYes);
-		// PageBase.Scrollbar(800, 1200);
+		
 		// Enter dangerous goods details
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
@@ -245,42 +243,34 @@ public class TollIntermodalTests {
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraServiceAmount);
 		CreateShipmentActions.ClickReviewCreateShipment();
 
-		// Shipment Review
-
-		// ShipmentReviewActions.VerifyDispatchDate(pDispatchDate);
-
-		ShipmentReviewActions.VerifyAccountNumber(AccountNumber);
-		ShipmentReviewActions.VerifyTollCarrier(TollCarrier);
-		ShipmentReviewActions.VerifySenderCompanyName(sender);
-		ShipmentReviewActions.VerifyReceiverCompanyName(receiver);
-		// ShipmentReviewActions.VerifyReceiverLocation();
-		ShipmentReviewActions.VerifyService(ServiceDGFreight);
-		// ShipmentReviewActions.VerifyWhopays();
-		// ShipmentReviewActions.VerifyFoodPackaging(pFoodPackaging);
-		// ShipmentReviewActions.ClickItem1Arrowdown();
-		ShipmentReviewActions.VerifyItemName1(ItemTemplateName);
-		ShipmentReviewActions.VerifyPalletTransactionsInformation("Pallet Transactions information");
-		// ShipmentReviewActions.VerifyItemDescription1();
-		ShipmentReviewActions.VerifyNumberOfItems(NumberOfItems);
-		ShipmentReviewActions.VerifyDimensions(Length + "cm *" + Width + "cm *" + Height + "cm");
-		ShipmentReviewActions.VerifyVolume(Length + " m3");
-		ShipmentReviewActions.VerifyWeight(Weight);
-		ShipmentReviewActions.VerifyReference1(ShipmentRef1);
-		ShipmentReviewActions.VerifyReference2(ShipmentRef2);
-		ShipmentReviewActions.VerifyShipmentContainDGGoods(DGoodsNo);
 	}
 
-	@Test(priority = 7)
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
-			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
+	@Test(priority = 1)
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER","whoPays","Mode", "ReceiverName", "ReceiverItem",
+			"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
-			"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns", "TollExtraServiceAmount" })
-	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express(String TollCarrier, String ServiceExpress,
-			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
+			"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns","PalletTransactionsInfo", "ChepCustomer", "ChepExchange", "ChepTansferToToll", "ChepDocketNo",
+			"LoscamCustomer", "LoascamExchange", "LoscamTransferToToll", "LoscamDocketNo", "OtherCostomer",
+			"ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo", "LoscamOtherExchange",
+			"LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder","TollExtraServiceAmount","LineItemName1Heading", "LineItemName2Heading",
+			"ItemDescriptionHeading", "ItemsHeading", "BillingTypeHeading", "DimensionsHeading", "TotalVolumeHeading",
+			"WeightHeading", "Reference1Heading", "Reference2Heading", "ShipmentContainDangerousGoodsHeading",
+			"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
+			"ShipmentContainDangerousGoodsNo"  })
+	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express_ShipmentReview(String TollCarrier, String ServiceExpress,
+			String AccountNumber, String whoPays,String Mode,String ReceiverName, String ReceiverItem,String DropOffDepot, String CollectionDepot, Integer dropOffDepot, Integer collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String ItemTemplateName2, String NumberOfItems, String Length, String Width, String Height, String Weight,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
-			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount) {
+			Integer DGNo, String BillingType, String SpeceialIns,String PalletTransactionsInfo,String ChepCustomer, String ChepExchange, String ChepTansferToToll,
+			String ChepDocketNo, String LoscamCustomer, String LoascamExchange, String LoscamTransferToToll,
+			String LoscamDocketNo, String OtherCostomer, String ChepOtherExchange, String ChepOtherTransferToToll,
+			String chepOtherDocketNo, String LoscamOtherExchange, String LoscamOtherTransferToToll,
+			String LoscamOtherDocketNo, String PurchaseOrder,  String TollExtraServiceAmount, String LineItemName1Heading, String LineItemName2Heading,
+			String ItemDescriptionHeading, String ItemsHeading, String BillingTypeHeading, String DimensionsHeading,
+			String TotalVolumeHeading, String WeightHeading, String Reference1Heading, String Reference2Heading,
+			String ShipmentContainDangerousGoodsHeading, String DangerousGoodsDetailsHeading, String VolumeLineItem1,
+			String VolumeLineItem2, String ShipmentContainDangerousGoodsYes, String ShipmentContainDangerousGoodsNo) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
@@ -293,9 +283,17 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
-
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		System.out.println(sender);
+		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
+		System.out.println(senderLocation);
 		// CreateShipmentActions.EnterReceiver(ReceiverName, ReceiverItem);
+		CreateShipmentActions.SelectReceiver(2);
+		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
+		System.out.println(receiver);
+
+		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
+		System.out.println(receiverLocation);
 
 		CreateShipmentActions.SelectShipmentConsolidated();
 		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox,
@@ -305,8 +303,11 @@ public class TollIntermodalTests {
 
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
-		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
-		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
+		//CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+
+		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
+		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -317,7 +318,7 @@ public class TollIntermodalTests {
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
 		// BookAPickupActions.SelectDangerousGoods(DGNo);
-		// PageBase.Scrollbar(800, 1000);
+	
 		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.itemDescriptionTextField);
 
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
@@ -325,10 +326,57 @@ public class TollIntermodalTests {
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
-		PageBase.MoveToElement(CreateShipmentActions.addPalletYes, CreateShipmentActions.tollExtraSrviceNOBtn);
 		CreateShipmentActions.SelectPalletTransactionsYes();
+
+		CreateShipmentActions.EnterPalletTransActionInformations(ChepCustomer, ChepExchange, ChepTansferToToll,
+				ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
+				ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
+				LoscamOtherTransferToToll, LoscamOtherDocketNo);
+
+		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraServiceAmount);
 		CreateShipmentActions.ClickReviewCreateShipment();
+		
+		// Shipment Review-VerifyOverview
+		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+						receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceExpress, whoPays, CollectionDepot,
+						Mode);
+
+		String tollExtraServiceAmount = "$" + TollExtraServiceAmount;
+		
+		// Shipment Review-VerifyAdditionalInformation
+		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
+						tollExtraServiceAmount);
+		
+		// Shipment Review-VerifyPalletTransactionsInformations
+		ShipmentReviewActions.VerifyPalletTransactionsInformations(ChepCustomer, ChepExchange, ChepTansferToToll,
+						ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
+						ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
+						LoscamOtherTransferToToll, LoscamOtherDocketNo);
+		String numberOfItems = ItemsHeading+" " + NumberOfItems;
+		
+		// Shipment Review-VerifyLineItem1Headings
+		ShipmentReviewActions.VerifyLineItem1Headings(LineItemName1Heading, ItemTemplateName, numberOfItems,
+				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
+				WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
+		String dimensions = Length + "cm x " + Width + "cm x " + Height + "cm";
+		String weight = Weight + "kg";
+		
+		// Shipment Review-VerifyLineItem1Values
+		ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName, NumberOfItems, BillingType, dimensions,
+				VolumeLineItem1, weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+		
+		// Shipment Review-VerifyLineItem2Headings
+		ShipmentReviewActions.VerifyLineItem2Headings(LineItemName2Heading, ItemTemplateName2, numberOfItems,
+				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
+				WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
+		String dimensions2 = Length2 + "cm x " + Width2 + "cm x " + Height2 + "cm";
+		String weight2 = Weight2 + "kg";
+
+		// Shipment Review-VerifyLineItem2Values
+		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
+				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+		
 
 	}
 
@@ -337,7 +385,7 @@ public class TollIntermodalTests {
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
 			"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns", "TollExtraServiceAmount" })
-	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express_ShipmentReview(String TollCarrier,
+	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express(String TollCarrier,
 			String ServiceExpress, String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot,
 			String collectionDepot, String DGContactName, String ShipmentRef1, String ShipmentRef2,
 			String ItemTemplateName, String ItemTemplateName2, String NumberOfItems, String Length, String Width,
@@ -509,26 +557,7 @@ public class TollIntermodalTests {
 
 		// Shipment Review
 
-		/*
-		 * ShipmentReviewActions.VerifyDispatchDate(pDispatchDate);
-		 * ShipmentReviewActions.VerifyAccountNumber(pAccountNumber);
-		 * ShipmentReviewActions.VerifyTollCarrier(pTollCarrier);
-		 * ShipmentReviewActions.VerifySenderCompanyName();
-		 * ShipmentReviewActions.VerifyReceiverCompanyName();
-		 * ShipmentReviewActions.VerifyReceiverLocation();
-		 * ShipmentReviewActions.VerifyService(pService);
-		 * ShipmentReviewActions.VerifyWhopays();
-		 * ShipmentReviewActions.VerifyFoodPackaging(pFoodPackaging);
-		 * ShipmentReviewActions.VerifyItemName1(pItemName1);
-		 * ShipmentReviewActions.VerifyPalletTransactionsInformation();
-		 * ShipmentReviewActions.VerifyItemDescription1();
-		 * ShipmentReviewActions.VerifyNumberOfItems();
-		 * ShipmentReviewActions.VerifyDimensions();
-		 * ShipmentReviewActions.VerifyVolume(); ShipmentReviewActions.VerifyWeight();
-		 * ShipmentReviewActions.VerifyReference1();
-		 * ShipmentReviewActions.VerifyReference2();
-		 * ShipmentReviewActions.VerifyShipmentContainDGGoods();
-		 */
+		
 
 	}
 
