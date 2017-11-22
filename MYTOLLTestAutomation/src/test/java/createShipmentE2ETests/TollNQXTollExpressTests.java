@@ -55,12 +55,10 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
-		// CreateShipmentActions.EnterAccountNumber("123");
 		CreateShipmentActions.SelectMode(Mode);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
-		// CreateShipmentActions.SelectShipmentConsolidated();
 		CreateShipmentActions.SelectShipmentConsolidated();
 
 		// CreateShipmentActions.SelectNotifySenderAndReceiver();

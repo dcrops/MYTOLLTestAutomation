@@ -18,6 +18,9 @@ public class CreateShipmentActions {
 	public static By servicedropdown = By.xpath("//*[@id=\"service-selector\"]/label/a/i");
 	public static By mode = By.xpath("//*[@id=\"mode-selector\"]/div[1]/a/i");
 	public static By TempretureTypeDropdown = By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[1]/a/i");
+	public static By TempretureTypeTextField = By.name("placeholder-refrigeration-type");
+	public static By TempretureFromTextField = By.id("temp-from");
+	public static By TempretureToTextField = By.id("temp-to");
 	public static By whoPaysdropdown = By.xpath("//*[@id=\"payer-selector\"]/label/a/i");
 	public static By senderdropdown = By.xpath("//*[@id=\"sender-selector\"]/label/a/i");
 	public static By accountNumber = By.name("account-text");
@@ -35,7 +38,7 @@ public class CreateShipmentActions {
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]");
 	public static By consolidatedBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[2]");
 	public static By dgContactName = By.id("sh-dg-contact-name");
-	public static By dgContactNumber = By.name("dg-contact-num"); // .xpath("//*[@id=\"dg-contact-dtls-wrpr\"]/div[2]/div/input");
+	public static By dgContactNumber = By.name("dg-contact-num"); 
 	public static By quoteNumber = By.id("quote_num");
 	public static By shipmentReference1 = By.name("reference-1");
 	public static By shipmentReference2 = By.name("reference-2");
@@ -92,11 +95,10 @@ public class CreateShipmentActions {
 	public static By loscamOtherDocket = By.id("loscamOtherCustomer");
 	public static By purchaseorderTextField = By.id("purchase-order");
 	public static By addPurchaseOrderBtn = By.xpath("//*[@id=\"add-po\"]/i");
-	public static By tollExtraSrviceNOBtn = By.id("toll-extra-service-check"); // .xpath("//*[@id=\"steps-3\"]/div[8]/div/div/div[1]/div/label/span[2]");//*[@id="food-items-check"]
-																				// //*[@id="toll-extra-service-check"]
+	public static By tollExtraSrviceNOBtn = By.id("toll-extra-service-check"); 
 	public static By foodPackagingNOBtn = By.xpath("//*[@id=\"food-items-check\"]/span/span");
 	public static By authorityToLeaveNoBtn = By.xpath("//*[@id=\"steps-3\"]/div[5]/div/div[2]/label/span[2]");
-	public static By tollExtraSrviceAmount = By.id("toll-extra-service"); // *[@id="steps-3"]/div[7]/div[2]/div/div[1]/div/label/span[2]
+	public static By tollExtraSrviceAmount = By.id("toll-extra-service"); 
 	public static By reviewCreateShipmentBtn = By.id("create-shipment-btn");
 
 	public static By acceptAccountChangeMSG = By.id("confirm-true");
@@ -190,16 +192,32 @@ public class CreateShipmentActions {
 	public static void SelectTempratureType(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(TempretureTypeDropdown).click();
-		BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[2]/ul/li[\" + i + \"]/div"))
-				.click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[2]/ul/li[\" + i + \"]/div")).click();
+
+	}
+	
+	public static String GetTempratureType() {
+		PageBase.MaximumWaitForElementEnabled();
+		return BaseWebdriver.driver.findElement(TempretureTypeTextField).getAttribute("value");
+
+	}
+
+	public static String GetTempratureFrom() {
+		PageBase.MaximumWaitForElementEnabled();
+		return BaseWebdriver.driver.findElement(TempretureFromTextField).getAttribute("value");
+
+	}
+
+	public static String GetTempratureTo() {
+		PageBase.MaximumWaitForElementEnabled();
+		return BaseWebdriver.driver.findElement(TempretureToTextField).getAttribute("value");
 
 	}
 
 	public static void SelectWhoPays(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(whoPaysdropdown).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[\" + i + \"]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[" + i + "]/div")).click();
 
 	}
 
