@@ -27,7 +27,7 @@ public class TollNQXTollExpressTests {
 	
 	
 	@Test
-	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_General(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -68,7 +68,7 @@ public class TollNQXTollExpressTests {
 	
 	
 	@Test
-	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceExpress","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Express(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -108,7 +108,7 @@ public class TollNQXTollExpressTests {
 	
 	
 	@Test
-	@Parameters({"TollCarrierTollNQXTollExpress", "ServicePremium","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Premium(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -147,7 +147,7 @@ public class TollNQXTollExpressTests {
 	
 	
 	@Test
-	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceRefrigeration","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Refrigeration(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -186,7 +186,7 @@ public class TollNQXTollExpressTests {
 	}
 	
 	@Test
-	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceDangerousGoods","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DangerousGoods(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -224,7 +224,7 @@ public class TollNQXTollExpressTests {
 	}
 	
 	@Test
-	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceDGExpress","TNAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_DGExpress(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		

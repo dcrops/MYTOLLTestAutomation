@@ -71,7 +71,7 @@
 		<parameter name="DGNo" value="2" />
 		<parameter name="DGoodsNo" value="No" />
 
-		<parameter name="DGContactName" value="Dadd" />
+		<parameter name="DGContactName" value="DG Contact" />
 		<parameter name="DGContactNumber" value="34324324" />
 		<parameter name="DGQuoteNumber" value="12345" />
 		<parameter name="WhoPays" value="1" />

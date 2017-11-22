@@ -27,7 +27,7 @@ public class TollTasmaniaTests {
 	
 	
 	@Test
-	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral","TTAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
+	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral","TTAccountNo","ItemTemplateName","TTBillingType","TTMode", "TTNumberOfItems","TTLength", "TTWidth", "TTHeight", "TTWeight","TTQtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_General(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -66,7 +66,7 @@ public class TollTasmaniaTests {
 	}
 		
 	@Test
-	@Parameters({"TollCarrierTollTasmania", "ServiceDGFreight", "TTAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
+	@Parameters({"TollCarrierTollTasmania", "ServiceDGFreight","TTAccountNo","ItemTemplateName","TTBillingType","TTMode", "TTNumberOfItems","TTLength", "TTWidth", "TTHeight", "TTWeight","TTQtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -104,7 +104,7 @@ public class TollTasmaniaTests {
 	}
 	
 	@Test
-	@Parameters({"TollCarrierTollTasmania", "ServiceRefrigeration","TTAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
+	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral","TTAccountNo","ItemTemplateName","TTBillingType","TTMode", "TTNumberOfItems","TTLength", "TTWidth", "TTHeight", "TTWeight","TTQtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Refrigeration(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -144,7 +144,7 @@ public class TollTasmaniaTests {
 	
 	
 	@Test
-	@Parameters({"TollCarrierTollTasmania", "ServiceExpress","TTAccountNo","ItemTemplateName","BillingType","Mode", "NumberOfItems","Length", "Width", "Height", "Weight","QtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
+	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral","TTAccountNo","ItemTemplateName","TTBillingType","TTMode", "TTNumberOfItems","TTLength", "TTWidth", "TTHeight", "TTWeight","TTQtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Express(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 	

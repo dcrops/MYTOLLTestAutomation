@@ -72,14 +72,14 @@ public class TollPriorityAUSTests2 {
 			RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 			RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 			
-			if ("Global".contains(Service)) {
+			if (Service.contains("Global")) {
 			RateEnquiryActions.SelectCountry(Country);
 			}
 			else {
 				RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);	
 			}
 			
-			if ("Satchel".contains(Service)) {
+			if (Service.contains("Satchel")) {
 				RateEnquiryActions.EnterItem(ItemTemplateName);
 			}
 			else {
@@ -96,7 +96,9 @@ public class TollPriorityAUSTests2 {
 			PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
 			PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
 			PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
+			if (Service.contains("Satchel") == false) {
 			PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+			}
 			PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 			Reporter.log("---------------END OF TEST---------------");
 			
@@ -108,7 +110,7 @@ public class TollPriorityAUSTests2 {
 	@AfterMethod
 	  public void RunTearDown() throws Exception
 		{
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 	
 		}
 
