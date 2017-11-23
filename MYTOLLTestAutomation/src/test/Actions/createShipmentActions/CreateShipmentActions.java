@@ -96,7 +96,7 @@ public class CreateShipmentActions {
 	public static By purchaseorderTextField = By.id("purchase-order");
 	public static By addPurchaseOrderBtn = By.xpath("//*[@id=\"add-po\"]/i");
 	public static By tollExtraSrviceNOBtn = By.id("toll-extra-service-check"); 
-	public static By foodPackagingNOBtn = By.xpath("//*[@id=\"food-items-check\"]/span/span");
+	public static By foodPackagingNOBtn = By.xpath("//*[@id=\"steps-3\"]/div[8]/div[1]/div/label/span[2]"); //.xpath("//*[@id=\"food-items-check\"]/span/span");//*[@id="steps-3"]/div[8]/div[1]/div/label/span[2]
 	public static By authorityToLeaveNoBtn = By.xpath("//*[@id=\"steps-3\"]/div[5]/div/div[2]/label/span[2]");
 	public static By tollExtraSrviceAmount = By.id("toll-extra-service"); 
 	public static By reviewCreateShipmentBtn = By.id("create-shipment-btn");
@@ -179,7 +179,7 @@ public class CreateShipmentActions {
 	public static void SelectMode(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(mode).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[\" + i + \"]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).click();
 
 	}
 
@@ -779,7 +779,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void ClickReviewCreateShipment() {
-		// PageBase.Scrollbar(800, 1000);
+		
 		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.specialInstructions);
 		BaseWebdriver.driver.findElement(reviewCreateShipmentBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
@@ -800,14 +800,14 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterSenderEmail(String pSenderEmail) {
-		// assertEquals(pSenderEmail,
-		// BaseWebdriver.driver.findElement(senderEmail).getAttribute("value"));
+		
+		BaseWebdriver.driver.findElement(senderEmail).clear();
 		BaseWebdriver.driver.findElement(senderEmail).sendKeys(pSenderEmail);
 	}
 
 	public static void EnterReceiverEmail(String pReceiverEmail) {
-		// assertEquals(pReceiverEmail,
-		// BaseWebdriver.driver.findElement(receiverEmail).getAttribute("value"));
+		
+		BaseWebdriver.driver.findElement(receiverEmail).clear();
 		BaseWebdriver.driver.findElement(receiverEmail).sendKeys(pReceiverEmail);
 	}
 
