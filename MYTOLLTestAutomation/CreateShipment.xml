@@ -40,6 +40,7 @@
 		<parameter name="ItemTemplateName2" value="Automation Template2" />
 		<parameter name="ChargeToAccount" value="Sender" />
 		<parameter name="Mode" value="Rail" />
+		<parameter name="ModeRoad" value="ROAD" />
 		<parameter name="Destination" value="MELALEUCA" />
 		<parameter name="DestinationItem" value="6065, MELALEUCA, WA, AU" />
 		<parameter name="Postcode" value="6065" />
@@ -86,6 +87,7 @@
 		<parameter name="WhoPays" value="1" />
 		<parameter name="whoPays" value="Sender" />
 		<parameter name="Mode" value="RAIL" />
+		<parameter name="ModeInt" value="1" />
 		<parameter name="Receiver" value="2" />
 		<parameter name="Sender" value="1" />
 		<parameter name="ReceiverName" value="Test" />
@@ -146,7 +148,7 @@
 		<parameter name="ShipmentContainDangerousGoodsHeading" value="Shipment contain dangerous goods" /> 
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" /> 
 		<classes>
-	<class name="createShipmentE2ETests.TollIntermodalTests" />
+<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
 
 
 		<!-- Blocked>	<class name="createShipmentE2ETests.TollTasmaniaTests" /> 
