@@ -177,7 +177,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectMode(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(mode).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).click();
 
@@ -215,14 +215,14 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectWhoPays(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(whoPaysdropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[" + i + "]/div")).click();
 
 	}
 
 	public static void SelectSender(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MediumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(senderdropdown).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
@@ -245,7 +245,7 @@ public class CreateShipmentActions {
 	}
 
 	public static String GetSenderCompanyName() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		// String
 		// vSender=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[\"
 		// + i + \"]/div[2]")).getText();
@@ -255,7 +255,7 @@ public class CreateShipmentActions {
 	}
 
 	public static String GetSenderLocation() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		String vSenderLocationLine1 = BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();
 		String vSenderLocationLine2 = BaseWebdriver.driver
@@ -300,7 +300,7 @@ public class CreateShipmentActions {
 	}
 
 	public static String GetRecieverCompanyName() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		// String
 		// vSender=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[\"
 		// + i + \"]/div[2]")).getText();
@@ -310,7 +310,7 @@ public class CreateShipmentActions {
 	}
 
 	public static String GetReceiverLocation() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		String ReceiverLocationLine1 = BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[2]")).getText();
 		String ReceiverLocationLine2 = BaseWebdriver.driver
@@ -349,7 +349,7 @@ public class CreateShipmentActions {
 
 	public static void SelectShipmentConsolidated() {
 		try {
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MediumWaitForElementEnabled();
 			Boolean results = BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).isDisplayed();
 			if (results = true) {
 				BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).click();
@@ -369,7 +369,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterDGContactDetails(String pDGContactName, String pDGContactNumber) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dgContactName).click();
 		BaseWebdriver.driver.findElement(dgContactName).clear();
 		BaseWebdriver.driver.findElement(dgContactName).sendKeys(pDGContactName);
@@ -379,7 +379,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterQuoteNumber(String pQuoteNumber) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(quoteNumber).click();
 		BaseWebdriver.driver.findElement(quoteNumber).clear();
 		BaseWebdriver.driver.findElement(quoteNumber).sendKeys(pQuoteNumber);
@@ -398,7 +398,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterShipmentReferences(String pShipmentRef1, String pShipmentRef2) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		// PageBase.Scrollbar(0, 800);
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 		BaseWebdriver.driver.findElement(shipmentReference1).click();
@@ -412,29 +412,29 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectDropOffDepot(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		PageBase.MoveToElement(CreateShipmentActions.dropoffDepotdropdown, CreateShipmentActions.notifySenderCheckBox);
 		BaseWebdriver.driver.findElement(dropoffDepotdropdown).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"drop-off-depot-selector\"]/div[2]/ul/li[" + i + "]/div"))
 				.click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 	}
 
 	public static void EnterDropOffDepot(String pDropOffDepot) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference1);
 		BaseWebdriver.driver.findElement(dropoffDepotTextField).click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver
 				.findElement(By
 						.xpath("//*[@id=\"drop-off-depot-selector\"]/div[2]/ul/li/div[text()='" + pDropOffDepot + "']"))
 				.click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 	}
 
 	public static void SelectCollectionDepot(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(collectionDepotdropdown).click();
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"collection-depot-selector\"]/div[2]/ul/li[" + i + "]/div"))
@@ -443,9 +443,9 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterCollectionDepot(String pCollectionDepotdropdown) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(collectionDepotTextField).click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath(
 				"//*[@id=\"collection-depot-selector\"]/div[2]/ul/li/div[text()='" + pCollectionDepotdropdown + "']"))
 				.click();
@@ -453,7 +453,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void NumberOfItem(String pnumberOfItem) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(numberOfItem).click();
 		BaseWebdriver.driver.findElement(numberOfItem).clear();
 		BaseWebdriver.driver.findElement(numberOfItem).sendKeys(pnumberOfItem);
@@ -461,7 +461,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void ItemType(int j) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemType).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"outr-pkg-selector\"]/div[2]/ul/li[" + j + "]/div"))
 				.click();
@@ -469,7 +469,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterWeight(String pweight) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(weight).click();
 		BaseWebdriver.driver.findElement(weight).clear();
 		BaseWebdriver.driver.findElement(weight).sendKeys(pweight);
@@ -477,7 +477,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterSenderReference(String pSenderReference, String pReceiverReference) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(senderReference).click();
 		BaseWebdriver.driver.findElement(senderReference).clear();
 		BaseWebdriver.driver.findElement(senderReference).sendKeys(pSenderReference);
@@ -497,7 +497,7 @@ public class CreateShipmentActions {
 			System.out.println("Billing type displayed");
 			if (results = true) {
 				BaseWebdriver.driver.findElement(billingTypedropdown).click();
-				PageBase.MaximumWaitForElementEnabled();
+				PageBase.MinimumWaitForElementEnabled();
 				BaseWebdriver.driver
 						.findElement(By.xpath(
 								"//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='" + pBillingType + "']"))
@@ -522,7 +522,7 @@ public class CreateShipmentActions {
 	public static void EnterDangerousGoodsDetails(int j, String lookupItem, String packageDescription, String pDgPkgQty,
 			String pDgQtyKg) {
 
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 		BaseWebdriver.driver.findElement(searchBtn).click();
