@@ -1160,7 +1160,7 @@ public class TollNQXTollExpressTests {
 		BookAPickupActions.EnterDangerousGoodsDetails(lookupItem, lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
 
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
-		BookAPickupActions.EnterTechnicalName(technicalName);
+		//BookAPickupActions.EnterTechnicalName(technicalName);
 		BookAPickupActions.ClickAdd();
 		String un = CreateShipmentActions.GetUNNumber();
 		System.out.println("Un----" + un);
