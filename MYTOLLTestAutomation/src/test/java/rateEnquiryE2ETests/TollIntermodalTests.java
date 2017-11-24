@@ -63,7 +63,7 @@ public class TollIntermodalTests {
 	}
 		
 	@Test
-	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","TIMode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","TIQtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	@Parameters({"TollCarrierTollIntermodal", "ServiceDGFreight","TIAccountNo","ItemTemplateName","TIBillingType","TIMode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","TIQtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
 	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight(String Carrier, String Service, String AccountNo, String ItemTemplateName,String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -100,7 +100,7 @@ public class TollIntermodalTests {
 	
 	
 	@Test
-	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","TIMode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","TIQtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	@Parameters({"TollCarrierTollIntermodal", "ServiceRefrigeration","TIAccountNo","ItemTemplateName","TIBillingType","TIMode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","TIQtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
 	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Refrigeration(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
@@ -140,7 +140,7 @@ public class TollIntermodalTests {
 	
 	
 	@Test
-	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","TIMode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","TIQtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	@Parameters({"TollCarrierTollIntermodal", "ServiceExpress","TIAccountNo","ItemTemplateName","TIBillingType","TIMode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","TIQtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
 	public void RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_Express(String Carrier, String Service,String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
