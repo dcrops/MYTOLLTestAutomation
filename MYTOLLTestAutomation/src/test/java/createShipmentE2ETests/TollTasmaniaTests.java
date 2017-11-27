@@ -22,7 +22,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	//@Test(priority = 1)
+	@Test(priority = 4)
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -169,7 +169,7 @@ public class TollTasmaniaTests {
 
 	}
 
-//	@Test(priority = 2)
+	@Test(priority = 2)
 	@Parameters({ "TollCarrierTollTasmania", "ServiceExpress", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -241,7 +241,7 @@ public class TollTasmaniaTests {
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
 		CreateShipmentActions.EnterBillingType(BillingType);
-
+		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -294,7 +294,7 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	//@Test(priority = 3)
+	@Test(priority = 3)
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -366,7 +366,7 @@ public class TollTasmaniaTests {
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
 		CreateShipmentActions.EnterBillingType(BillingType);
-
+		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		// Shipment contain Dangerous goods=no and no food items
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
@@ -504,7 +504,7 @@ public class TollTasmaniaTests {
 				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.SelectFoodPackagingYes();
+		
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
 
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
