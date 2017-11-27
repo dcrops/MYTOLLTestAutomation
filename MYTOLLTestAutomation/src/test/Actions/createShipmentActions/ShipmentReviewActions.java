@@ -149,6 +149,15 @@ public class ShipmentReviewActions {
 		
 	}
 	
+	public static void VerifyAdditionalInformationForDangerousGoods(String pSpecialInstructions, String pPalletTransactionsInformation, String pPurchaseOrders ) {
+		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(specialInstructions).getText());
+		assertEquals(pPalletTransactionsInformation,BaseWebdriver.driver.findElement(palletTransactionsInformation).getText());
+		assertEquals(pPurchaseOrders, BaseWebdriver.driver.findElement(purchaseOrders).getText());
+	
+		
+	}
+	
+	
 	// Shipment overview verification
 	public static void VerifyShipmentOverview(String pTollCarrier, String pAccountNumber, String pSenderCompanyName,String pSenderLocation,String pReceiverCompanyName, String pReceiverLocation,String pShipmentRef1, String pShipmentRef2,
 			String pDropOffDepot,String pService,String pWhopays, String pCollectionDepot, String pMode ) {
@@ -194,7 +203,7 @@ public class ShipmentReviewActions {
 		assertEquals(pItemDescription1,BaseWebdriver.driver.findElement(itemDescription1).getText());
 		assertEquals(pNumberOfItems, BaseWebdriver.driver.findElement(numberOfItems).getText());
 		 BaseWebdriver.driver.findElement(line1Arrowdown).click();
-		 PageBase.MediumWaitForElementEnabled();
+		 PageBase.MaximumWaitForElementEnabled();
 		assertEquals(pItemDescriptionHeading, BaseWebdriver.driver.findElement(itemDescriptionHeading).getText());
 		assertEquals(pItemsHeading,BaseWebdriver.driver.findElement(itemsHeading).getText());
 		assertEquals(pBillingTypeHeading,BaseWebdriver.driver.findElement(billingTypeHeading).getText());
