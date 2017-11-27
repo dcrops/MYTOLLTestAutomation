@@ -31,6 +31,7 @@
 		<!---Create shipment Test data -->
 		<parameter name="AccountNumberTINTER" value="106119" />
 		<parameter name="AccountNumberTNQX" value="614060" />
+		<parameter name="AccountNumberTTas" value="100428" />
 		<parameter name="SenderName" value="COLLINS" />
 		<parameter name="SenderItem" value="COLLINS COMPUTERS 8 TO 8" />
 		<!---Item test data -->
@@ -148,14 +149,17 @@
 		<parameter name="ShipmentContainDangerousGoodsHeading" value="Shipment contain dangerous goods" /> 
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" /> 
 		<classes>
-<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
-
-
-		<!-- Blocked>	<class name="createShipmentE2ETests.TollTasmaniaTests" /> 
-				<class name="createShipmentE2ETests.TollIntermodalTests" /> <class name="createShipmentE2ETests.TollIntermodalTests" 
-				/> <class name="createShipmentE2ETests.TollIPECTests" /> <class name="createShipmentE2ETests.TollPriorityAUSTests" 
-				/> <class name="createShipmentE2ETests.TollNQXTollExpressTests" />	</Blocked -->
-
+			<class name="createShipmentE2ETests.TollTasmaniaTests"> 
+			<!-- Blocked>	<class name="createShipmentE2ETests.TollNQXTollExpressTests" >
+			    <methods><include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailGeneral"></include>
+			    
+			    </methods>    
+			 </class>
+		<class name="createShipmentE2ETests.TollTasmaniaTests"> 
+				<class name="createShipmentE2ETests.TollIntermodalTests"> <class name="createShipmentE2ETests.TollIntermodalTests"> 
+				 <class name="createShipmentE2ETests.TollIPECTests"> <class name="createShipmentE2ETests.TollPriorityAUSTests"> 
+				 <class name="createShipmentE2ETests.TollNQXTollExpressTests">	</Blocked -->
+ </class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

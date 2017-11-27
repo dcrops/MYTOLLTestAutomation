@@ -230,7 +230,7 @@ public class TollIntermodalTests {
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		CreateShipmentActions.EnterTechnicalName(technicalName);
 		BookAPickupActions.ClickAdd();
-		PageBase.MoveToElement(CreateShipmentActions.addNewLine, CreateShipmentActions.UNNumberDropdown);
+		//PageBase.MoveToElement(CreateShipmentActions.addNewLine, CreateShipmentActions.UNNumberDropdown);
 
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
 				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);

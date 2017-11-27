@@ -904,6 +904,7 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li[" + j + "]/div")).click(); 

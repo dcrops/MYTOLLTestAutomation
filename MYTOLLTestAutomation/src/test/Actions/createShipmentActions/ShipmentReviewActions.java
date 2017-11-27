@@ -161,6 +161,7 @@ public class ShipmentReviewActions {
 	// Shipment overview verification
 	public static void VerifyShipmentOverview(String pTollCarrier, String pAccountNumber, String pSenderCompanyName,String pSenderLocation,String pReceiverCompanyName, String pReceiverLocation,String pShipmentRef1, String pShipmentRef2,
 			String pDropOffDepot,String pService,String pWhopays, String pCollectionDepot, String pMode ) {
+		 PageBase.MaximumWaitForElementEnabled();
 		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
 		assertEquals(pAccountNumber,BaseWebdriver.driver.findElement(accountNumber).getText());
 		assertEquals(pSenderCompanyName, BaseWebdriver.driver.findElement(senderCompanyName).getText());
@@ -170,6 +171,23 @@ public class ShipmentReviewActions {
 		assertEquals(pShipmentRef1,  BaseWebdriver.driver.findElement(shipmentReference1).getText());
 		assertEquals(pShipmentRef2, BaseWebdriver.driver.findElement(shipmentReference2).getText());
 		assertEquals(pDropOffDepot, BaseWebdriver.driver.findElement(dropOffDepot).getText());
+		assertEquals(pService, BaseWebdriver.driver.findElement(service).getText());
+		assertEquals(pWhopays, BaseWebdriver.driver.findElement(whoPays).getText());
+		assertEquals( pCollectionDepot, BaseWebdriver.driver.findElement(collectionDepot).getText());
+		assertEquals(pMode, BaseWebdriver.driver.findElement(mode).getText());
+	}
+	
+	public static void VerifyShipmentOverviewTollTasmania(String pTollCarrier, String pAccountNumber, String pSenderCompanyName,String pSenderLocation,String pReceiverCompanyName, String pReceiverLocation,String pShipmentRef1, String pShipmentRef2,
+			String pService,String pWhopays, String pCollectionDepot, String pMode ) {
+		 PageBase.MaximumWaitForElementEnabled();
+		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
+		assertEquals(pAccountNumber,BaseWebdriver.driver.findElement(accountNumber).getText());
+		assertEquals(pSenderCompanyName, BaseWebdriver.driver.findElement(senderCompanyName).getText());
+		assertEquals(pSenderLocation, BaseWebdriver.driver.findElement(senderLocation).getText());
+		assertEquals(pReceiverCompanyName,  BaseWebdriver.driver.findElement(receiverCompanyName).getText());
+		assertEquals(pReceiverLocation, BaseWebdriver.driver.findElement(receiverLocation).getText());
+		assertEquals(pShipmentRef1,  BaseWebdriver.driver.findElement(shipmentReference1).getText());
+		assertEquals(pShipmentRef2, BaseWebdriver.driver.findElement(shipmentReference2).getText());
 		assertEquals(pService, BaseWebdriver.driver.findElement(service).getText());
 		assertEquals(pWhopays, BaseWebdriver.driver.findElement(whoPays).getText());
 		assertEquals( pCollectionDepot, BaseWebdriver.driver.findElement(collectionDepot).getText());
