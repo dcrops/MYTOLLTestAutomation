@@ -242,7 +242,7 @@ public class PageBase {
 		try {
 			String getText = BaseWebdriver.driver.findElement(locator).getText();
 			
-			if (getText.equals(expectedText)){
+			if (getText.equalsIgnoreCase(expectedText)){
 				Reporter.log("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getText);
 				System.out.println("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getText);
 			}else{
