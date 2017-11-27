@@ -54,6 +54,20 @@ public class RateEnquiryActions {
 	public static By countryPostCode = By.xpath("//*[@id=\"destination-postcode\"]");
 	public static By ShipmentDimention = By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[4]");
 	public static By PageLoadingBox = By.xpath("//*[@id=\"page-loader\"]/div/i");
+	
+	//Error Msg Check - Negative Scenario
+	public static By errorMsgItemDescription = By.xpath("//*[@id=\"steps-2\"]/div[1]/div[1]/div/span");
+	public static By errorMsgBillingType = By.xpath("//*[@id=\"steps-2\"]/div[1]/div[2]/div/span");
+	public static By errorMsgNoOfItems = By.xpath("//*[@id=\"items-number\"]/span");
+	public static By errorMsgNoOfItemsExceedQty = By.xpath("//*[@id=\"error-bottom\"]/div[1]/div[2]/h3");
+	public static By errorMsgQuantityType = By.xpath("//*[@id=\"steps-2\"]/div[2]/div[1]/div[2]/div/span");
+	public static By errorMsgLength = By.xpath("//*[@id=\"dimensions-length\"]/span[2]");
+	public static By errorMsgWidth = By.xpath("//*[@id=\"dimensions-width\"]/span[2]");
+	public static By errorMsgHeight = By.xpath("//*[@id=\"dimensions-height\"]/span[2]");
+	public static By errorMsgWeight = By.xpath("//*[@id=\"item-total-weight\"]/span[2]");
+	public static By errorMsgCubicVolume = By.xpath("//*[@id=\"volume-container\"]/div/span[2]");
+	
+	
 
 	
 	public static void SelectTollCarrierItem(int i) {

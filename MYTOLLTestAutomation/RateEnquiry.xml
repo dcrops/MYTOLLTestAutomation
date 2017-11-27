@@ -106,6 +106,8 @@
 		<parameter name="TNZHeight" value="33" />
 		<parameter name="TNZWeight" value="3" />	
 		<parameter name="TNZQtyType" value="Items" />
+		<parameter name="TNZOriginSuburb1" value="AUCKLAND" />
+		<parameter name="TNZOriginPostCode1" value="1001" />
 		
 		
 		<!---Toll Tasmania test data -->
@@ -126,7 +128,7 @@
 
 			
 		    <classes>
-		   <class name="rateEnquiryE2ETests.TollTasmaniaTests"/>
+		   <class name="rateEnquiryE2ETests.TollIntermodalTests_NegativeScenario"/>
 		   		 <!-- <class name="rateEnquiryE2ETests.TollIntermodalTests"/> 
 		         <class name="rateEnquiryE2ETests.TollPriorityAUSTests"/>
 		     	 <class name="rateEnquiryE2ETests.TollNQXTollExpressTests"/>
