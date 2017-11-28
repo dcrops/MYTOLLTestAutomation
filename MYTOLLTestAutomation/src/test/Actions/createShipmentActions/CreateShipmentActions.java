@@ -54,7 +54,9 @@ public class CreateShipmentActions {
 	public static By senderReference = By.id("sender-reference");
 	public static By receiverReference = By.id("reciever-reference");
 	public static By numberOfItem = By.id("quantity");
-	public static By itemType = By.xpath("//*[@id=\"outr-pkg-selector\"]/div[1]/a");
+	public static By itemType = By.xpath("//*[@id=\"outr-pkg-selector\"]/div[1]/a"); 
+	public static By itemTypeTextField = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/input[2]"); 
+	public static By numberOfGarments = By.id("garmentsCount"); 
 	public static By weight = By.id("weight");
 	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector\"]/label/a/i");
 	public static By UNNumberTextField = By.xpath("//*[@id=\"un-code-selector\"]/div/div/div/input");
@@ -246,9 +248,7 @@ public class CreateShipmentActions {
 
 	public static String GetSenderCompanyName() {
 		PageBase.MinimumWaitForElementEnabled();
-		// String
-		// vSender=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[\"
-		// + i + \"]/div[2]")).getText();
+		
 		String vSender = BaseWebdriver.driver.findElement(senderTextfield).getAttribute("value");
 		return vSender;
 
@@ -301,9 +301,7 @@ public class CreateShipmentActions {
 
 	public static String GetRecieverCompanyName() {
 		PageBase.MinimumWaitForElementEnabled();
-		// String
-		// vSender=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[\"
-		// + i + \"]/div[2]")).getText();
+		
 		String vSender = BaseWebdriver.driver.findElement(receiverTextfield).getAttribute("value");
 		return vSender;
 
@@ -357,8 +355,7 @@ public class CreateShipmentActions {
 				SelectNotifySenderAndReceiver();
 				PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 						CreateShipmentActions.notifyReceiverCheckBox);
-				// PageBase.MoveToElement(CreateShipmentActions.shipmentReference1,
-				// CreateShipmentActions.shipmentReference2);
+			
 			}
 		}
 
@@ -387,10 +384,13 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectNotifySenderAndReceiver() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		try {
 			BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
+			
+			PageBase.MinimumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(notifyReceiverCheckBox).click();
+			
 		} catch (Exception ex) {
 			PageBase.MoveToElement(CreateShipmentActions.quoteNumber, CreateShipmentActions.accountNumber);
 		}
@@ -399,7 +399,7 @@ public class CreateShipmentActions {
 
 	public static void EnterShipmentReferences(String pShipmentRef1, String pShipmentRef2) {
 		PageBase.MinimumWaitForElementEnabled();
-		// PageBase.Scrollbar(0, 800);
+		
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 		BaseWebdriver.driver.findElement(shipmentReference1).click();
 		BaseWebdriver.driver.findElement(shipmentReference1).clear();
@@ -409,6 +409,15 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(shipmentReference2).clear();
 		BaseWebdriver.driver.findElement(shipmentReference2).sendKeys(pShipmentRef2);
 
+	}
+
+	public static void EnterShipmentReference1(String pShipmentRef1) {
+		PageBase.MinimumWaitForElementEnabled();
+		
+		BaseWebdriver.driver.findElement(shipmentReference1).click();
+		BaseWebdriver.driver.findElement(shipmentReference1).clear();
+		BaseWebdriver.driver.findElement(shipmentReference1).sendKeys(pShipmentRef1);
+		
 	}
 
 	public static void SelectDropOffDepot(int i) {
@@ -461,13 +470,21 @@ public class CreateShipmentActions {
 	}
 
 	public static void ItemType(int j) {
-		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(itemType).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"outr-pkg-selector\"]/div[2]/ul/li[" + j + "]/div"))
+		PageBase.MediumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(itemTypeTextField).click();
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + j + "]/div")) 
 				.click();
 
 	}
 
+	public static void NumberOfGarments(String pNumberOfGarments) {
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(numberOfGarments).click();
+		BaseWebdriver.driver.findElement(numberOfGarments).clear();
+		BaseWebdriver.driver.findElement(numberOfGarments).sendKeys(pNumberOfGarments);
+	}
+	
 	public static void EnterWeight(String pweight) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(weight).click();
@@ -492,7 +509,6 @@ public class CreateShipmentActions {
 		try {
 			PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,
 					CreateShipmentActions.shipmentReference1);
-			// BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionDropdown).click();
 			Boolean results = BaseWebdriver.driver.findElement(billingTypedropdown).isDisplayed();
 			System.out.println("Billing type displayed");
 			if (results = true) {
@@ -527,10 +543,7 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 		BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
-		// String
-		// UNNumber=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li["
-		// + j + "]/div")).getAttribute("value").toString();
-		// System.out.println("UnNumber----"+ UNNumber);
+		
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector\"]/div/ul/li[" + j + "]/div")).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
@@ -541,8 +554,7 @@ public class CreateShipmentActions {
 
 	public static String GetUNNumber() {
 		PageBase.MediumWaitForElementEnabled();
-		// BaseWebdriver.driver.findElement(lineItem1Arrowdown).click();
-		// PageBase.MediumWaitForElementEnabled();
+		
 		BaseWebdriver.driver.findElement(dangerousGoodsArrowdown).click();
 		return BaseWebdriver.driver.findElement(UNNumberItem).getAttribute("value").toString();
 
@@ -573,7 +585,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectPackgingGroup(Integer packagingGroup) {
-		// BookAPickupActions.SelectUNNumber(j,lookupItem);
+	
 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
@@ -581,7 +593,6 @@ public class CreateShipmentActions {
 				.findElement(By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li[" + packagingGroup + "]/div"))
 				.click();
 
-		// *[@id="packaging-grp-selector-"]/div/ul/li[1]/div
 	}
 
 	public static void EnterPackgingGroup(Integer packagingGroup) {
@@ -594,7 +605,7 @@ public class CreateShipmentActions {
 						By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li/div[text()='" + packagingGroup + "']"))
 				.click();
 
-		// *[@id="packaging-grp-selector-"]/div/ul/li[1]/div
+		
 	}
 
 	public static void EnterTechnicalName(String pTechnicalName) {
@@ -655,17 +666,17 @@ public class CreateShipmentActions {
 
 	}
 
-	public static void AddANewLineTIPEC() {
+	public static void AddANewLineTIPEC(String ItemTemplate, String NumberOfItems, String Length, String Width, String Height, String Weight, String Ref1, String Ref2) {
 
 		PageBase.Scrollbar(500, 1200);
 		BaseWebdriver.driver.findElement(addNewLine).click();
 
-		BookAPickupActions.EnterItem("Automation Temp2");
-		CreateShipmentActions.NumberOfItem("15");
-		BookAPickupActions.EnterLengthWidthHeight("200", "100", "50");
-		CreateShipmentActions.EnterWeight("20");
+		BookAPickupActions.EnterItem(ItemTemplate);
+		CreateShipmentActions.NumberOfItem(NumberOfItems);
+		BookAPickupActions.EnterLengthWidthHeight(Length,Width, Height);
+		CreateShipmentActions.EnterWeight(Weight);
 
-		CreateShipmentActions.EnterSenderReference("1234", "5678");
+		CreateShipmentActions.EnterSenderReference(Ref1, Ref2);
 
 	}
 

@@ -21,7 +21,8 @@ public class TollIntermodalTests {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(priority = 7)
+	//@Test(priority = 7)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER", "whoPays", "Mode",
 			"ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot", "dropOffDepot", "collectionDepot",
 			"DGContactName", "DGContactNumber", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -54,6 +55,7 @@ public class TollIntermodalTests {
 			String TotalVolumeHeading, String WeightHeading, String Reference1Heading, String Reference2Heading,
 			String ShipmentContainDangerousGoodsHeading, String DangerousGoodsDetailsHeading, String VolumeLineItem1,
 			String VolumeLineItem2, String ShipmentContainDangerousGoodsYes, String ShipmentContainDangerousGoodsNo) {
+	
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceDGFreight);
@@ -167,7 +169,8 @@ public class TollIntermodalTests {
 
 	}
 
-	@Test(priority = 8)
+	//@Test(priority = 8)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER", "SenderName", "SenderItem",
 			"ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot", "BillingType", "DGContactName",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2", "NumberOfItems", "Length", "Width",
@@ -245,7 +248,8 @@ public class TollIntermodalTests {
 
 	}
 
-	@Test(priority = 1)
+	//@Test(priority = 1)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER","whoPays","Mode", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
@@ -378,7 +382,8 @@ public class TollIntermodalTests {
 
 	}
 
-	@Test(priority = 2)
+	//@Test(priority = 2)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
@@ -437,7 +442,8 @@ public class TollIntermodalTests {
 
 	}
 
-	@Test(priority = 3)
+	//@Test(priority = 3)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
@@ -491,7 +497,8 @@ public class TollIntermodalTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 	}
 
-	@Test(priority = 4)
+	//@Test(priority = 4)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER","whoPays","Mode", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
@@ -618,7 +625,8 @@ public class TollIntermodalTests {
 
 	}
 
-	@Test(priority = 5)
+	//@Test(priority = 5)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "AccountNumberTINTER", "ReceiverName",
 			"ReceiverItem", "DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight",
@@ -676,7 +684,8 @@ public class TollIntermodalTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 	}
 
-	@Test(priority = 6)
+	//@Test(priority = 6)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "AccountNumberTINTER","whoPays","Mode", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",

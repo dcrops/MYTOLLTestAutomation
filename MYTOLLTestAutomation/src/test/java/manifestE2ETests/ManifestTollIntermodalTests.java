@@ -47,7 +47,7 @@ public class ManifestTollIntermodalTests {
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(1);
+		CreateShipmentActions.SelectReceiver(2);
 		String receiver=CreateShipmentActions.GetRecieverCompanyName();
 		
 		CreateShipmentActions.SelectShipmentConsolidated();
@@ -85,7 +85,7 @@ public class ManifestTollIntermodalTests {
 		
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 1)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -107,7 +107,7 @@ public class ManifestTollIntermodalTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(1);
+		CreateShipmentActions.SelectReceiver(2);
 
 		
 
@@ -164,7 +164,7 @@ public class ManifestTollIntermodalTests {
 		
 	}
 	
-	@Test(priority = 1)
+	@Test(priority = 2)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -186,7 +186,7 @@ public class ManifestTollIntermodalTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(1);
+		CreateShipmentActions.SelectReceiver(2);
 
 		
 
@@ -258,7 +258,7 @@ public class ManifestTollIntermodalTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(1);
+		CreateShipmentActions.SelectReceiver(2);
 
 		
 
@@ -328,7 +328,7 @@ public class ManifestTollIntermodalTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(1);
+		CreateShipmentActions.SelectReceiver(2);
 
 		
 		CreateShipmentActions.SelectShipmentConsolidated();

@@ -83,7 +83,7 @@
 
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
+			<class name="bookAPickupE2ETests.Toll_IntermodalTest"/>
 			<!--Blocked><class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />

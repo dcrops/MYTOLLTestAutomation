@@ -471,7 +471,20 @@ public class BookAPickupActions {
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(destination), 10);
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[text()='"+pDestination+"']")).click();
+		PageBase.retryingFindClick(destinationaddress);
 		
+
+	} 
+	
+	public static void SelectDestination1(String pDestination, String pDestinationValue) {
+
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.retryingFindClick(destination);
+		PageBase.waitForElement(BaseWebdriver.driver.findElement(destination), 10);
+		BaseWebdriver.driver.findElement(destination).clear();
+		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"destination-address\"]/div/ul/li[text()='"+pDestinationValue+"']/div")).click();
 		PageBase.retryingFindClick(destinationaddress);
 		
 
@@ -486,7 +499,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destinationCountry).sendKeys(pDestination);
 		
 		PageBase.retryingFindClick(destinationCountryItem);
-		
+		//*[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[2]/div
 
 	} 
 	
@@ -569,14 +582,14 @@ public class BookAPickupActions {
 
 	public static void SelectItem(int j) {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(itemDescription).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[" + j + "]/div")).click();
+		BaseWebdriver.driver.findElement(itemDescriptionTextField).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div[2]/ul/li[" + j + "]/div")).click();
 	}
 	
 	public static void SelectItemDescriptionTollPriorityAU() {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemDescription).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[2]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[2]/div")).click();  
 	}
 	
 	public static void EnterItem(String itemName) {
@@ -763,8 +776,8 @@ public class BookAPickupActions {
 		catch(Exception ex)
 		{
 			System.out.println(ex);
-			ReviewYouPickupActions.ClickConfirmPickup();
-			
+			//ReviewYouPickupActions.ClickConfirmPickup();
+			BookAPickupActions.ClickReviewBook();
 
 		}
 		
@@ -860,10 +873,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
 		BookAPickupActions.SelectDestination(pDestination);
-		
-
-		//jse.executeScript("scroll(200, 500);");
-		
+				
 		BookAPickupActions.EnterItem("Automation Temp1");
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.selectContainFoodItem();

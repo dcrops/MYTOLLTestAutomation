@@ -476,13 +476,13 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test(priority = 6)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "DestinationItem","specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_Express_ConfirmedDetails(String TollCarrier,
 			String ServiceExpress, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
-			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
+			String Width, String Height, String Weight, String palletSpace, String destination,String DestinationItem, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -509,7 +509,7 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.SelectDestination1(destination,DestinationItem);
 
 		BookAPickupActions.SelectModeItem(2);
 
@@ -664,8 +664,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectContainFoodItem();
 		
 		// Add a new item
-		BookAPickupActions.AddANewLine(destination); // defect
-	
+		BookAPickupActions.AddANewLine(destination); 
+		BookAPickupActions.SelectModeItem(2);
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);

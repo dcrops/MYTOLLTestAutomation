@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test name="RateEnquiry">
-  	<!---Toll carriers test data -->
+	<test name="RateEnquiry">
+		<!---Toll carriers test data -->
 
 		<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
 		<parameter name="TollCarrierTollTasmania" value="Toll Tasmania" />
@@ -30,7 +30,7 @@
 		<parameter name="ServiceParcelsSameDays" value="Parcels - Same Day" />
 		<parameter name="ServiceAusWideSatchel" value="Auswide 3kg Satchel - Overnight" />
 		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
-		
+
 		<!---Toll Intermodal test data -->
 		<parameter name="TIAccountNo" value="5685" />
 		<parameter name="ItemTemplateName" value="Automation Template" />
@@ -46,7 +46,7 @@
 		<parameter name="TIOriginPostCode" value="5352" />
 		<parameter name="TIDesSuburb" value="ALBERT PARK" />
 		<parameter name="TIDesPostCode" value="5014" />
-		
+
 		<!---Toll IPEC test data -->
 		<parameter name="TIPAccountNo" value="2230899" />
 		<parameter name="ItemTemplateName" value="Automation Template" />
@@ -62,22 +62,22 @@
 		<parameter name="TIPHeight" value="10" />
 		<parameter name="TIPOriginSuburb" value="MELBOURNE" />
 		<parameter name="TIPOriginPostCode" value="3000" />
-				
+
 		<!---Toll NQX test data -->
 		<parameter name="TNAccountNo" value="614060" />
 		<parameter name="TNOriginSuburb" value="MELBOURNE" />
 		<parameter name="TNOriginPostCode" value="3000" />
 		<parameter name="TNDesSuburb" value="SYDNEY" />
-		<parameter name="TNDesPostCode" value="2000" />	
+		<parameter name="TNDesPostCode" value="2000" />
 		<parameter name="TNBillingType" value="General Freight" />
 		<parameter name="TNNumberOfItems" value="3" />
 		<parameter name="TNLength" value="33" />
 		<parameter name="TNWidth" value="33" />
 		<parameter name="TNHeight" value="33" />
-		<parameter name="TNWeight" value="3" />	
+		<parameter name="TNWeight" value="3" />
 		<parameter name="TNMode" value="ROAD" />
 		<parameter name="TNQtyType" value="Items" />
-		
+
 		<!---Toll Priority AUS test data -->
 		<parameter name="TPAccountNo" value="401509" />
 		<parameter name="TPALength" value="10" />
@@ -86,57 +86,80 @@
 		<parameter name="TPANumberOfItems" value="1" />
 		<parameter name="TPAWeight" value="3" />
 		<parameter name="TPADesSuburb" value="MELBOURNE" />
-		<parameter name="TPADesPostCode" value="3000" />	
+		<parameter name="TPADesPostCode" value="3000" />
 		<parameter name="Country" value="HONG KONG" />
 		<parameter name="TPAOriginSuburb" value="MELBOURNE" />
 		<parameter name="TPAOriginPostCode" value="3000" />
 		<parameter name="TPAQtyType" value="Items" />
-		
+
 		<!---Toll Priority NZ test data -->
 		<parameter name="TNZAccountNo" value="100181" />
 		<parameter name="TNZNumberOfItems" value="3" />
 		<parameter name="TNZOriginSuburb" value="NEWTON" />
 		<parameter name="TNZOriginPostCode" value="1001" />
 		<parameter name="TNZDesSuburb" value="BEERESCOURT" />
-		<parameter name="TNZDesPostCode" value="3210" />	
-		<parameter name="TNZCountry" value="AUSTRALIA" />	
+		<parameter name="TNZDesPostCode" value="3210" />
+		<parameter name="TNZCountry" value="AUSTRALIA" />
 		<parameter name="CountryPostCode" value="3000" />
 		<parameter name="TNZLength" value="33" />
 		<parameter name="TNZWidth" value="33" />
 		<parameter name="TNZHeight" value="33" />
-		<parameter name="TNZWeight" value="3" />	
+		<parameter name="TNZWeight" value="3" />
 		<parameter name="TNZQtyType" value="Items" />
 		<parameter name="TNZOriginSuburb1" value="AUCKLAND" />
 		<parameter name="TNZOriginPostCode1" value="1001" />
-		
-		
+
+
 		<!---Toll Tasmania test data -->
 		<parameter name="TTAccountNo" value="100428" />
 		<parameter name="TTOriginSuburb" value="MULGRAVE" />
 		<parameter name="TTOriginPostCode" value="3170" />
 		<parameter name="TTDesSuburb" value="GLEBE" />
-		<parameter name="TTDesPostCode" value="7000" />	
+		<parameter name="TTDesPostCode" value="7000" />
 		<parameter name="TTBillingType" value="General Freight" />
 		<parameter name="TTNumberOfItems" value="3" />
 		<parameter name="TTLength" value="33" />
 		<parameter name="TTWidth" value="33" />
 		<parameter name="TTHeight" value="33" />
-		<parameter name="TTWeight" value="3" />	
-		<parameter name="TTQtyType" value="Items"/>
+		<parameter name="TTWeight" value="3" />
+		<parameter name="TTQtyType" value="Items" />
 		<parameter name="TTMode" value="ROAD" />
 
 
-			
-		    <classes>
-		   <class name="rateEnquiryE2ETests.TollIntermodalTests_NegativeScenario"/>
-		   		 <!-- <class name="rateEnquiryE2ETests.TollIntermodalTests"/> 
-		         <class name="rateEnquiryE2ETests.TollPriorityAUSTests"/>
-		     	 <class name="rateEnquiryE2ETests.TollNQXTollExpressTests"/>
-		         <class name="rateEnquiryE2ETests.TollTasmaniaTests"/>
-				 <class name="rateEnquiryE2ETests.TollIPECTests"/>
-		         <class name="rateEnquiryE2ETests.TollPriorityNZTests"/> -->
-		         
-		    </classes>
-		    
-  </test> <!-- Test -->
+
+		<classes>
+			<class name="rateEnquiryE2ETests.TollNQXTollExpressTests">
+				<methods>
+					<include
+						name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Express"></include>
+				</methods>
+			</class>
+			<class name="rateEnquiryE2ETests.TollPriorityNZTests">
+				<methods>
+					<include
+						name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels"></include>
+				</methods>
+			</class>
+			<!--<class name="rateEnquiryE2ETests.TollIPECTests">
+				<methods>
+					<include
+						name=" RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_RoadExpress"></include>
+				</methods>
+			</class>
+			<class name="rateEnquiryE2ETests.TollIntermodalTests">
+				<methods>
+					<include
+						name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight"></include>
+				</methods>
+			</class>
+
+
+			 <class name="rateEnquiryE2ETests.TollIntermodalTests_NegativeScenario"/> 
+				<class name="rateEnquiryE2ETests.TollIntermodalTests"/> <class name="rateEnquiryE2ETests.TollPriorityAUSTests"/> 
+				<class name="rateEnquiryE2ETests.TollNQXTollExpressTests"/> <class name="rateEnquiryE2ETests.TollTasmaniaTests"/> 
+				<class name="rateEnquiryE2ETests.TollIPECTests"/> <class name="rateEnquiryE2ETests.TollPriorityNZTests"/> -->
+
+		</classes>
+
+	</test> <!-- Test -->
 </suite> <!-- Suite -->
