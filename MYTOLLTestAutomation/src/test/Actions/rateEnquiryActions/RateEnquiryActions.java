@@ -67,8 +67,13 @@ public class RateEnquiryActions {
 	public static By errorMsgWeight = By.xpath("//*[@id=\"item-total-weight\"]/span[2]");
 	public static By errorMsgCubicVolume = By.xpath("//*[@id=\"volume-container\"]/div/span[2]");
 	
+	//TES
+	public static By tollExtraServiceLable = By.xpath("//*[@id=\"is-extra-service\"]/div/div/div[1]/label");
+	public static By tollExtraServiceSlider = By.xpath("//*[@id=\"is-extra-service\"]/div/div/div[1]/div/label/span[1]");
+	public static By tollExtraServiceAmountLable = By.xpath("//*[@id=\"extra-service\"]/div/label");
+	public static By tollExtraServiceAmount = By.xpath("//*[@id=\"extra-service-amount\"]");
 	
-
+	
 	
 	public static void SelectTollCarrierItem(int i) {
 		PageBase.MinimumWaitForElementEnabled();

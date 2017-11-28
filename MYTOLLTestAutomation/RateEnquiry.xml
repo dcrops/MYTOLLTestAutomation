@@ -128,7 +128,7 @@
 
 			
 		    <classes>
-		   <class name="rateEnquiryE2ETests.TollIntermodalTests_NegativeScenario"/>
+		   <class name="rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations"/>
 		   		 <!-- <class name="rateEnquiryE2ETests.TollIntermodalTests"/> 
 		         <class name="rateEnquiryE2ETests.TollPriorityAUSTests"/>
 		     	 <class name="rateEnquiryE2ETests.TollNQXTollExpressTests"/>
