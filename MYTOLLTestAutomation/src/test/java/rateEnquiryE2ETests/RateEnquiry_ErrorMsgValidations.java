@@ -40,9 +40,18 @@ public class RateEnquiry_ErrorMsgValidations {
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.SelectMode(Mode);
+		// TES Check
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.waitForElement(RateEnquiryActions.tollExtraServiceLable, 10);
+		PageBase.verifyTextExist(RateEnquiryActions.tollExtraServiceLable, "Toll Extra Service required");
+		PageBase.isElementPresent(RateEnquiryActions.tollExtraServiceSlider, 5, "TES Slider");
+		PageBase.click(RateEnquiryActions.tollExtraServiceSlider, 5);
+		PageBase.verifyTextExist(RateEnquiryActions.tollExtraServiceAmountLable, "Amount");
+		PageBase.isElementPresent(RateEnquiryActions.tollExtraServiceAmount, 5, "TES Amount Feild");	
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
+		
 		RateEnquiryActions.NumberOfItem("9999");
 		
 		//Check for Price and Continue to Shipment
@@ -76,10 +85,17 @@ public class RateEnquiry_ErrorMsgValidations {
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		
+		// TES Check
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.waitForElement(RateEnquiryActions.tollExtraServiceLable, 10);
+		PageBase.verifyTextExist(RateEnquiryActions.tollExtraServiceLable, "Toll Extra Service required");
+		PageBase.isElementPresent(RateEnquiryActions.tollExtraServiceSlider, 5, "TES Slider");
+		PageBase.click(RateEnquiryActions.tollExtraServiceSlider, 5);
+		PageBase.verifyTextExist(RateEnquiryActions.tollExtraServiceAmountLable, "Amount");
+		PageBase.isElementPresent(RateEnquiryActions.tollExtraServiceAmount, 5, "TES Amount Feild");
+	
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
-		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
-		
 		RateEnquiryActions.NumberOfItem("9999");
 		
 		//Check for Price and Continue to Shipment
@@ -224,10 +240,17 @@ public class RateEnquiry_ErrorMsgValidations {
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.SelectMode(Mode);
+		
+		// TES Check
+		PageBase.waitForElement(RateEnquiryActions.tollExtraServiceLable, 10);
+		PageBase.verifyTextExist(RateEnquiryActions.tollExtraServiceLable, "Toll Extra Service required");
+		PageBase.isElementPresent(RateEnquiryActions.tollExtraServiceSlider, 5, "TES Slider");
+		PageBase.click(RateEnquiryActions.tollExtraServiceSlider, 5);
+		PageBase.verifyTextExist(RateEnquiryActions.tollExtraServiceAmountLable, "Amount");
+		PageBase.isElementPresent(RateEnquiryActions.tollExtraServiceAmount, 5, "TES Amount Feild");
+		
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
-		
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
-		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		RateEnquiryActions.NumberOfItem("9999");
 		
@@ -253,7 +276,7 @@ public class RateEnquiry_ErrorMsgValidations {
 	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 
 	}
 }

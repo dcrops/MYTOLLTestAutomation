@@ -191,6 +191,7 @@ public class PageBase {
 	
 	public static void sendText(By locator, int secsToWait, String keysToSend) {
 		try {
+			PageBase.moveToElement(locator);
 			WebElement element = waitForElement(locator,secsToWait);
 			element.clear();
 			element.sendKeys(keysToSend);
@@ -279,6 +280,21 @@ public class PageBase {
 		catch (Exception ex) {
 			System.out.println(ex);
 		}
+	}
+	
+	public static void isElementPresent (By locator, int seconds, String itemDescription) {
+		boolean isElementPresent = BaseWebdriver.driver.findElement(locator).isDisplayed();
+		
+		if (isElementPresent == true) {
+			Reporter.log("Element : "+itemDescription+ " Exits on Screen");
+			System.out.println("Element : "+itemDescription+ " Exits on Screen");
+		}
+		else {
+			Reporter.log("FAILED: Element : "+itemDescription+ " Exits on Screen");
+			Assert.fail("FAILED: Element : "+itemDescription+ " Exits on Screen");
+		}
+		
+		
 	}
 
 
