@@ -38,7 +38,7 @@
 		<parameter name="ChargeToAccount" value="Sender" />
 		<parameter name="Destination" value="MELALEUCA" />
 		<parameter name="DestinationItem" value="6079, MELALEUCA, WA, AU" />
-		<parameter name="Postcode" value="6065" />
+		<parameter name="Postcode" value="6079" />
 		<parameter name="DestinationNZ" value="Wellington" />
 		<parameter name="DestinationNZItem" value="6011, WELLINGTON, NZ" />
 		<parameter name="DestinationCountry" value="AUSTRALIA" />

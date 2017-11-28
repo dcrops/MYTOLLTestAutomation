@@ -349,7 +349,7 @@ public class CreateShipmentActions {
 
 	public static void SelectShipmentConsolidated() {
 		try {
-			PageBase.MediumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
 			Boolean results = BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).isDisplayed();
 			if (results = true) {
 				BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).click();
@@ -622,8 +622,9 @@ public class CreateShipmentActions {
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String ShipmentRef1,
 			String ShipmentRef2) {
 		// PageBase.Scrollbar(coord1,coord2);
+		PageBase.Scrollbar(200, 500);
 		BaseWebdriver.driver.findElement(addNewLine).click();
-		PageBase.Scrollbar(300, 500);
+		
 		// PageBase.MoveToElement(BookAPickupActions.itemDescriptionTextField,CreateShipmentActions.numberOfItem);
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField).click();
@@ -800,7 +801,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterSenderEmail(String pSenderEmail) {
-		
+		BaseWebdriver.driver.findElement(senderEmail).click();
 		BaseWebdriver.driver.findElement(senderEmail).clear();
 		BaseWebdriver.driver.findElement(senderEmail).sendKeys(pSenderEmail);
 	}
