@@ -177,7 +177,7 @@ public class BookAPickupActions {
 				
 			}
 	public static void EnterTollCarrier(String pTollCarrierName) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']")).click();
 		
@@ -471,6 +471,7 @@ public class BookAPickupActions {
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(destination), 10);
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[text()='"+pDestination+"']")).click();
 		PageBase.retryingFindClick(destinationaddress);
 		
@@ -479,13 +480,14 @@ public class BookAPickupActions {
 	
 	public static void SelectDestination1(String pDestination, String pDestinationValue) {
 
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.retryingFindClick(destination);
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(destination), 10);
+		//PageBase.MaximumWaitForElementEnabled();
+		//PageBase.waitForElement(BaseWebdriver.driver.findElement(destination), 10);
+		BaseWebdriver.driver.findElement(destination).click();
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"destination-address\"]/div/ul/li[text()='"+pDestinationValue+"']/div")).click();
-		PageBase.retryingFindClick(destinationaddress);
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div")).click();
+		
 		
 
 	} 
@@ -670,6 +672,7 @@ public class BookAPickupActions {
 
 
 	public static void selectDangerousGood() {
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dangerousGoodNo).click();
 	}
 
@@ -862,6 +865,7 @@ public class BookAPickupActions {
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BaseWebdriver.driver.findElement(addANewLine).click();
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		PageBase.MaximumWaitForElementEnabled();
 
 		BookAPickupActions.Selectservice(2);
 		BookAPickupActions.EnterQuantity("15");

@@ -28,11 +28,11 @@ public class TollPriorityAusTest {
 
 	@Test
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "locationIndex", "ItemTemplateName", "NumberOfItems",
-		"Length", "Width", "Height", "Weight", "palletSpace","reference", "Destination", "specialIns" })
+		"Length", "Width", "Height", "Weight", "palletSpace","reference", "Destination","DestinationItem", "specialIns" })
 
 	public void BookAPickup_TollPriority_AUS_E2ETest_TID_620_Service_ServiceParcelsOffPeak(String TollCarrier, String ServiceParcelsOffPeak,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-			String Height, String Weight, String palletSpace,String reference, String destination, String specialIns) {
+			String Height, String Weight, String palletSpace,String reference, String destination, String DestinationItem, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -54,11 +54,12 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		
-		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.SelectDestination1(destination,DestinationItem);
 
 		//BookAPickupActions.SelectItemDescriptionTollPriorityAU();
 		jse.executeScript("scroll(1000, 1500)");
 		BookAPickupActions.SelectDangerousGoods(2);
+		BookAPickupActions.SelectItemDescriptionTollPriorityAU();
 
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
@@ -72,8 +73,8 @@ public class TollPriorityAusTest {
 		BookAPickupActions.ClickReviewBook();
 
 		// Confirm Pickup and Verify pickup confirmation details
-		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+		//ReviewYouPickupActions.ClickConfirmPickup();
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@AfterMethod

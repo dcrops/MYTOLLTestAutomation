@@ -43,12 +43,12 @@ public class Toll_IntermodalTest {
 	@Test(priority = 7)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem","specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_Refrigeration(String TollCarrier,
 			String ServiceRefrigeration, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination,String DestinationItem, String specialIns) {
 
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
 		// Select Toll Intermodal
@@ -102,8 +102,11 @@ public class Toll_IntermodalTest {
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
 		String volume = BookAPickupActions.GetVoulme().toString();
 		System.out.println(volume);
-		BookAPickupActions.SelectDestination(destination);
+		//BookAPickupActions.SelectDestination(destination);
 		//BookAPickupActions.EnterDestination(destination);
+
+
+		BookAPickupActions.SelectDestination1(destination,DestinationItem);
 		// BookAPickupActions.SelectMode(); defect
 
 		BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
@@ -177,12 +180,12 @@ public class Toll_IntermodalTest {
 	@Test(priority = 2)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem","specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_Refrigeration_ConfirmedDetails(String TollCarrier,
 			String ServiceRefrigeration, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination,String DestinationItem, String specialIns) {
 
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
 		// Select Toll Intermodal
@@ -215,8 +218,9 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.SelectChargeToAccount2(1);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
 
-		BookAPickupActions.SelectDestination(destination);
+		//BookAPickupActions.SelectDestination(destination);
 
+		BookAPickupActions.SelectDestination1(destination,DestinationItem);
 		// BookAPickupActions.SelectMode(); defect
 
 		BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
@@ -250,13 +254,13 @@ public class Toll_IntermodalTest {
 	@Test(priority = 3)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh", "refrigerationRefNum",
-			"bookInNum", "VendorNum", "palletSpace", "Destination", "lookupName", "lookupItem","PackingGroup", "packageDescription",
+			"bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem","lookupName", "lookupItem","PackingGroup", "packageDescription",
 			"pDgPkgQty", "pDgQtyKg","technicalName", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_DGFreight(String TollCarrier,
 			String ServiceDGFreight, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String lookupName,
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String DestinationItem,String lookupName,
 			Integer lookupItem,Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,String technicalName, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -283,7 +287,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		BookAPickupActions.SelectDestination(destination);
+		//BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.SelectDestination1(destination,DestinationItem);
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
 		String volume = BookAPickupActions.GetVoulme().toString();
@@ -339,12 +344,12 @@ public class Toll_IntermodalTest {
 
 	@Test(priority = 4)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName", "lookupItem","PackingGroup",
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","DestinationItem", "lookupName", "lookupItem","PackingGroup",
 			"packageDescription", "pDgPkgQty", "pDgQtyKg","technicalName", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_DGFreight_ConfirmedDetails(String TollCarrier,
 			String ServiceDGFreight, Integer locationIndex, String ItemTemplateName, String Length,
-			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,String DestinationItem,
 			String lookupName, Integer lookupItem, Integer PackingGroup,String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName,
 			String specialIns) {
 
@@ -365,7 +370,8 @@ public class Toll_IntermodalTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGFreight);
-		BookAPickupActions.SelectDestination(destination);
+		//BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.SelectDestination1(destination,DestinationItem);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.SelectModeItem(2);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
@@ -408,11 +414,11 @@ public class Toll_IntermodalTest {
 
 	@Test(priority = 5)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","DestinationItem", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_Express(String TollCarrier, String ServiceExpress,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-			String Height, String Weight, String palletSpace, String destination, String specialIns) {
+			String Height, String Weight, String palletSpace, String destination,String DestinationItem, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -438,8 +444,8 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.SelectDestination(destination);
-
+		//BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.SelectDestination1(destination,DestinationItem);
 		BookAPickupActions.SelectModeItem(2);
 
 		BookAPickupActions.SelectDangerousGoods(2);
@@ -533,11 +539,11 @@ public class Toll_IntermodalTest {
 
 	@Test(priority = 11)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "locationIndex", "ItemTemplateName","ChargeToAccount", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","Postcode", "VendorNum", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","DestinationItem","Postcode", "VendorNum", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_General_ConfirmedDetails(String TollCarrier, String ServiceGeneral,
 			Integer locationIndex, String ItemTemplateName,String ChargeToAccount, String Length, String NumberOfItems, String Width,
-			String Height, String Weight, String palletSpace, String destination,String Postcode, String vendorNum, String specialIns) {
+			String Height, String Weight, String palletSpace, String destination,String DestinationItem,String Postcode, String vendorNum, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -566,8 +572,9 @@ public class Toll_IntermodalTest {
 		System.out.println(volume);
 		
 		BookAPickupActions.EnterChargeToAccount(ChargeToAccount);
-		BookAPickupActions.SelectDestination(destination);
-	
+		//BookAPickupActions.SelectDestination(destination);
+
+		BookAPickupActions.SelectDestination1(destination,DestinationItem);
 		BookAPickupActions.SelectModeItem(1);
 
 		BookAPickupActions.selectDangerousGood();
@@ -626,11 +633,11 @@ public class Toll_IntermodalTest {
 
 	@Test(priority = 8)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "VendorNum", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","DestinationItem", "VendorNum", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_General(String TollCarrier,
 			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
-			String Width, String Height, String Weight, String palletSpace, String destination, String vendorNum,
+			String Width, String Height, String Weight, String palletSpace, String destination, String DestinationItem, String vendorNum,
 			String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -656,8 +663,9 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 
-		BookAPickupActions.SelectDestination(destination);
+		//BookAPickupActions.SelectDestination(destination);
 
+		BookAPickupActions.SelectDestination1(destination,DestinationItem);
 		BookAPickupActions.SelectModeItem(2);
 
 		BookAPickupActions.selectDangerousGood();

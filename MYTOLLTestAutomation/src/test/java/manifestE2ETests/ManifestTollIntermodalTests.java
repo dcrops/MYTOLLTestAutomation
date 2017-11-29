@@ -10,6 +10,7 @@ import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
+import createShipmentActions.ShipmentReviewActions;
 import myTollHomePageActions.MyTollHomePageActions;
 import manifestActions.ManifestActions;
 
@@ -25,7 +26,7 @@ public class ManifestTollIntermodalTests {
 	}
 
 	
-	@Test(priority = 1)
+	@Test
 	@Parameters({"TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -64,7 +65,7 @@ public class ManifestTollIntermodalTests {
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
-		CreateShipmentActions.ItemType(2);
+		
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
@@ -85,7 +86,7 @@ public class ManifestTollIntermodalTests {
 		
 	}
 	
-	@Test(priority = 1)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -125,7 +126,7 @@ public class ManifestTollIntermodalTests {
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
-		CreateShipmentActions.ItemType(2);
+		
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
@@ -141,30 +142,19 @@ public class ManifestTollIntermodalTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		String RandomManifestName=ManifestActions.RandomManifestName(ManifestName);
+		System.out.println("RandomManifestName=  "+  RandomManifestName);
 		ManifestActions.AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(RandomManifestName);
-		//ShipmentReviewActions.ClickAddToManifestManually();
+		//ManifestActions.ClickAddToManifestManually();
 		String NewManifestName=ManifestActions.RandomManifestName(ManifestName);
+		System.out.println(" NewManifestName=  "+  NewManifestName);
 		ManifestActions.MoveToManifestAndCreateNewManifest(NewManifestName);
+		System.out.println(" NewManifestName passed ");
 		
-		
-		BookAPickupActions.SelectDangerousGoods(DGNo);
-		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
-		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
-		PageBase.MoveToElement(CreateShipmentActions.addPalletYes, CreateShipmentActions.tollExtraSrviceNOBtn);
-		CreateShipmentActions.SelectPalletTransactionsYes();
-		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraServiceAmount);
-		CreateShipmentActions.ClickReviewCreateShipment();
-
-		String RandomManifestName2=ManifestActions.RandomManifestName(ManifestName);
-		ManifestActions.AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(RandomManifestName);
-		//ShipmentReviewActions.ClickAddToManifestManually();
-		String NewManifestName2=ManifestActions.RandomManifestName(ManifestName);
-		ManifestActions.MoveToManifestAndCreateNewManifest(NewManifestName);
 		
 		
 	}
 	
-	@Test(priority = 2)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -204,7 +194,7 @@ public class ManifestTollIntermodalTests {
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
-		CreateShipmentActions.ItemType(2);
+		
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
@@ -223,20 +213,25 @@ public class ManifestTollIntermodalTests {
 		String manifestNameFromAddToManifest=ManifestActions.GetManifestNameFromAddToManifest();
 		System.out.println("Manifest name FromAddToManifest=  "+  manifestNameFromAddToManifest);
 		String RandomManifestName=ManifestActions.RandomManifestName(ManifestName);
+
+		System.out.println("RandomManifestName=  "+  RandomManifestName);
 		ManifestActions.AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(RandomManifestName);
-	
-	
+		System.out.println("passed1 ");
+		
+		String manifestNameFromSaveManifest=ManifestActions.MoveToManifestAndSaveManifest(); //manifestNameFromAddToManifest
+		System.out.println("manifestNameFromSaveManifest =  "+ manifestNameFromSaveManifest);
+		ManifestActions.ClickAddManifest();
 		String manifestName=ManifestActions.GetManifestNameFromManifestReviewPage();
 		System.out.println("Manifest name =  "+ manifestName);
 		String manifestNameHading=ManifestActions.GetManifestNameFromManifestReviewPage().substring(11,34);
-		
-		System.out.println("Manifest name =  "+ manifestNameHading);	
-		manifestNameFromAddToManifest.equalsIgnoreCase( manifestNameHading);
-		assertEquals(manifestNameFromAddToManifest.equalsIgnoreCase( manifestNameHading), true);
+		//System.out.println("Manifest name =  "+ manifestName);
+		System.out.println("manifestNameHading =  "+ manifestNameHading);	
+		manifestNameFromAddToManifest.equalsIgnoreCase(manifestName);
+		assertEquals(manifestNameFromSaveManifest.equalsIgnoreCase(manifestNameHading), true);
 		
 	}
 	
-	@Test(priority = 3)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -276,7 +271,7 @@ public class ManifestTollIntermodalTests {
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
-		CreateShipmentActions.ItemType(2);
+	
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
@@ -294,6 +289,13 @@ public class ManifestTollIntermodalTests {
 		String RandomManifestName=ManifestActions.RandomManifestName(ManifestName);
 		ManifestActions.AcceptAddToManifestCreatingNewManifestSubmittingCreateshipment(RandomManifestName);
 		
+		
+		String RandomManifestName2=ManifestActions.RandomManifestName(ManifestName);
+
+		System.out.println("RandomManifestName=  "+  RandomManifestName2);
+		ManifestActions.AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(RandomManifestName2);
+		System.out.println("passed1 ");
+		ManifestActions.MoveToManifestAndCreateNewManifest(RandomManifestName2);
 		String manifestName=ManifestActions.GetManifestNameFromManifestReviewPage();
 		System.out.println("Manifest name =  "+ manifestName);
 
@@ -301,12 +303,12 @@ public class ManifestTollIntermodalTests {
 		
 		System.out.println("Manifest name =  "+ manifestNameHading);	
 		RandomManifestName.equalsIgnoreCase( manifestNameHading);
-		assertEquals(RandomManifestName.equalsIgnoreCase( manifestNameHading), true);
+		assertEquals(RandomManifestName2.equalsIgnoreCase( manifestNameHading), true);
 		
 		
 	}
 
-	@Test(priority = 4)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -345,10 +347,11 @@ public class ManifestTollIntermodalTests {
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
-		CreateShipmentActions.ItemType(2);
-		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
+		
+		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
+		
 		
 		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.itemDescriptionTextField);
 		
@@ -361,14 +364,24 @@ public class ManifestTollIntermodalTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		String RandomManifestName=ManifestActions.RandomManifestName(ManifestName);
-		ManifestActions.AcceptAddToManifestSystemGeneratedManifestSubmittingCreateshipment(RandomManifestName);
-		ManifestActions.ClickAddNewShipmentBtn();
-		String pageHeading=CreateShipmentActions.GetCreateShipmentHeading();
-		System.out.println("pageHeading =  "+ pageHeading);	
+		PageBase.Scrollbar(0, 250);
+		//PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
+		//ManifestActions.AcceptAddToManifestSystemGeneratedManifestSubmittingCreateshipment(RandomManifestName);
+		String systemGeneratedManifestName=ManifestActions.AddToNewManifestSystemGeneratedManifestSubmittingCreateshipment();
+		System.out.println("systemGeneratedManifestName=  "+  systemGeneratedManifestName);
+		ManifestActions.ClickAddtoExistingManifest();
+		ShipmentReviewActions.ClickContinue() ;	
+			
+		String RandomManifestName2=ManifestActions.RandomManifestName(ManifestName);
+
+		String manifestName=ManifestActions.GetManifestNameFromManifestReviewPage();
+		System.out.println("Manifest name =  "+ manifestName);
+
+		String manifestNameHading=ManifestActions.GetManifestNameFromManifestReviewPage().substring(11,32);
 		
-		assertEquals(pageHeading, "CREATE SHIPMENT");
-		String tollCarrier=BookAPickupActions.GetSelectedTollCarrierName();
-		assertEquals(tollCarrier, TollCarrier);
+		System.out.println("Manifest name =  "+ manifestNameHading);	
+		systemGeneratedManifestName.equalsIgnoreCase( manifestNameHading);
+		assertEquals(systemGeneratedManifestName.equalsIgnoreCase( manifestNameHading), true);
 	}
 
 }

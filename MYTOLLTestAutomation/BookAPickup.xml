@@ -30,7 +30,14 @@
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
 		<parameter name="ServiceDGExpress" value="DG Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
-
+		<parameter name="AccountNumber1" value="123456" />
+		<parameter name="AccountNumberTInter" value="106119" />
+		<parameter name="AccountNumberTNQX" value="614060" />
+		<parameter name="AccountNumberTTas" value="100428" />
+		<parameter name="AccountNumberTIPEC" value="2230899" />
+		<parameter name="AccountNumberTPrioAU" value="401509" />
+		<parameter name="AccountNumberTPrioNZ" value="100181" />
+		<parameter name="AccountAccessTypeFullFinancial" value="Full financial" />
 		<!---Item test data -->
 
 		<parameter name="locationIndex" value="1" />
@@ -83,8 +90,11 @@
 
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="bookAPickupE2ETests.Toll_IntermodalTest"/>
-			<!--Blocked><class name="bookAPickupE2ETests.TollPriorityAusTest" />
+		
+		<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
+		
+			<!--Blocked><class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/>
+			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />

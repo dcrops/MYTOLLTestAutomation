@@ -127,31 +127,14 @@
 
 
 		<classes>
-			<class name="rateEnquiryE2ETests.TollNQXTollExpressTests">
-				<methods>
-					<include
-						name="RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Express"></include>
-				</methods>
-			</class>
-			<class name="rateEnquiryE2ETests.TollPriorityNZTests">
-				<methods>
-					<include
-						name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels"></include>
-				</methods>
-			</class>
-			<!--<class name="rateEnquiryE2ETests.TollIPECTests"> <methods> <include 
-				name=" RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_RoadExpress"></include> 
-				</methods> </class> <class name="rateEnquiryE2ETests.TollIntermodalTests"> 
-				<methods> <include name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_DGFreight"></include> 
-				</methods> </class> 
-				
-				<class name="rateEnquiryE2ETests.TollIntermodalTests_NegativeScenario"/> 
+
+
+			 <class name="rateEnquiryE2ETests.TollIntermodalTests_NegativeScenario"/> 
 				<class name="rateEnquiryE2ETests.TollIntermodalTests"/> <class name="rateEnquiryE2ETests.TollPriorityAUSTests"/> 
 				<class name="rateEnquiryE2ETests.TollNQXTollExpressTests"/> <class name="rateEnquiryE2ETests.TollTasmaniaTests"/> 
-				<class name="rateEnquiryE2ETests.TollIPECTests"/> <class name="rateEnquiryE2ETests.TollPriorityNZTests"/> -->
-
-		</classes>
-
+				<class name="rateEnquiryE2ETests.TollIPECTests"/> <class name="rateEnquiryE2ETests.TollPriorityNZTests"/> 
+				
+				</classes>
 	</test> <!-- Test -->
 
 </suite> <!-- Suite -->
