@@ -22,8 +22,8 @@ public class TollPriorityAusTest {
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
-		MyTollHomePageActions.ClickMenu();
-		MyTollHomePageActions.ClickBookAPIckupMenu();
+		//MyTollHomePageActions.ClickMenu();
+		//MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
 	@Test

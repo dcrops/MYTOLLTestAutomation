@@ -38,7 +38,7 @@ public class CreateShipmentActions {
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]");
 	public static By consolidatedBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[2]");
 	public static By dgContactName = By.id("sh-dg-contact-name");
-	public static By dgContactNumber = By.name("dg-contact-num"); 
+	public static By dgContactNumber = By.name("dg-contact-num");
 	public static By quoteNumber = By.id("quote_num");
 	public static By shipmentReference1 = By.name("reference-1");
 	public static By shipmentReference2 = By.name("reference-2");
@@ -54,9 +54,9 @@ public class CreateShipmentActions {
 	public static By senderReference = By.id("sender-reference");
 	public static By receiverReference = By.id("reciever-reference");
 	public static By numberOfItem = By.id("quantity");
-	public static By itemType = By.xpath("//*[@id=\"outr-pkg-selector\"]/div[1]/a"); 
-	public static By itemTypeTextField = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/input[2]"); 
-	public static By numberOfGarments = By.id("garmentsCount"); 
+	public static By itemType = By.xpath("//*[@id=\"outr-pkg-selector\"]/div[1]/a");
+	public static By itemTypeTextField = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/input[2]");
+	public static By numberOfGarments = By.id("garmentsCount");
 	public static By weight = By.id("weight");
 	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector\"]/label/a/i");
 	public static By UNNumberTextField = By.xpath("//*[@id=\"un-code-selector\"]/div/div/div/input");
@@ -97,10 +97,10 @@ public class CreateShipmentActions {
 	public static By loscamOtherDocket = By.id("loscamOtherCustomer");
 	public static By purchaseorderTextField = By.id("purchase-order");
 	public static By addPurchaseOrderBtn = By.xpath("//*[@id=\"add-po\"]/i");
-	public static By tollExtraSrviceNOBtn = By.id("toll-extra-service-check"); 
-	public static By foodPackagingNOBtn = By.xpath("//*[@id=\"steps-3\"]/div[8]/div[1]/div/label/span[2]"); //.xpath("//*[@id=\"food-items-check\"]/span/span");//*[@id="steps-3"]/div[8]/div[1]/div/label/span[2]
+	public static By tollExtraSrviceNOBtn = By.id("toll-extra-service-check");
+	public static By foodPackagingNOBtn = By.xpath("//*[@id=\"steps-3\"]/div[8]/div[1]/div/label/span[2]"); // .xpath("//*[@id=\"food-items-check\"]/span/span");//*[@id="steps-3"]/div[8]/div[1]/div/label/span[2]
 	public static By authorityToLeaveNoBtn = By.xpath("//*[@id=\"steps-3\"]/div[5]/div/div[2]/label/span[2]");
-	public static By tollExtraSrviceAmount = By.id("toll-extra-service"); 
+	public static By tollExtraSrviceAmount = By.id("toll-extra-service");
 	public static By reviewCreateShipmentBtn = By.id("create-shipment-btn");
 
 	public static By acceptAccountChangeMSG = By.id("confirm-true");
@@ -194,10 +194,12 @@ public class CreateShipmentActions {
 	public static void SelectTempratureType(int i) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(TempretureTypeDropdown).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[2]/ul/li[\" + i + \"]/div")).click();
+		BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[2]/ul/li[\" + i + \"]/div"))
+				.click();
 
 	}
-	
+
 	public static String GetTempratureType() {
 		PageBase.MaximumWaitForElementEnabled();
 		return BaseWebdriver.driver.findElement(TempretureTypeTextField).getAttribute("value");
@@ -248,7 +250,7 @@ public class CreateShipmentActions {
 
 	public static String GetSenderCompanyName() {
 		PageBase.MinimumWaitForElementEnabled();
-		
+
 		String vSender = BaseWebdriver.driver.findElement(senderTextfield).getAttribute("value");
 		return vSender;
 
@@ -301,7 +303,7 @@ public class CreateShipmentActions {
 
 	public static String GetRecieverCompanyName() {
 		PageBase.MinimumWaitForElementEnabled();
-		
+
 		String vSender = BaseWebdriver.driver.findElement(receiverTextfield).getAttribute("value");
 		return vSender;
 
@@ -322,13 +324,10 @@ public class CreateShipmentActions {
 
 	public static void SelectShipmentConsolidatedContinue() {
 		PageBase.MaximumWaitForElementEnabled();
+		//boolean results=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]")).isDisplayed();
+		boolean results=BaseWebdriver.driver.findElement(shipmentConsolidatedMSGHeading).isDisplayed();
+		if (results==true) {
 
-		if (BaseWebdriver.driver
-				.findElement(
-						By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]"))
-				.isDisplayed() == true) {
-
-			BaseWebdriver.driver.findElement(shipmentConsolidatedMSGHeading).isDisplayed();
 			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]"))
 					.click();
 		}
@@ -355,7 +354,7 @@ public class CreateShipmentActions {
 				SelectNotifySenderAndReceiver();
 				PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 						CreateShipmentActions.notifyReceiverCheckBox);
-			
+
 			}
 		}
 
@@ -368,11 +367,24 @@ public class CreateShipmentActions {
 	public static void EnterDGContactDetails(String pDGContactName, String pDGContactNumber) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dgContactName).click();
-		BaseWebdriver.driver.findElement(dgContactName).clear();
-		BaseWebdriver.driver.findElement(dgContactName).sendKeys(pDGContactName);
-		BaseWebdriver.driver.findElement(dgContactNumber).click();
-		BaseWebdriver.driver.findElement(dgContactNumber).clear();
-		BaseWebdriver.driver.findElement(dgContactNumber).sendKeys(pDGContactNumber);
+		String dgContactname = BaseWebdriver.driver.findElement(dgContactName).getAttribute("value");
+		System.out.println("DG contact name" + dgContactname);
+		if (dgContactname.equals(null)
+				&& (BaseWebdriver.driver.findElement(dgContactNumber).getAttribute("value").equals(null))) {
+			System.out.println("DG contact null");
+			BaseWebdriver.driver.findElement(dgContactName).sendKeys(pDGContactName);
+			System.out.println("dgContactName entered");
+			PageBase.MinimumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(dgContactNumber).click();
+			System.out.println("dgContactNumber click");
+			System.out.println("dgContactNumber null");
+			BaseWebdriver.driver.findElement(dgContactNumber).sendKeys(pDGContactNumber);
+			System.out.println("dgContactNumber enter");
+		} else {
+			PageBase.MoveToElement(CreateShipmentActions.SenderAddress_Dropdown,
+					CreateShipmentActions.SenderAddress_Dropdown);
+		}
+
 	}
 
 	public static void EnterQuoteNumber(String pQuoteNumber) {
@@ -387,10 +399,10 @@ public class CreateShipmentActions {
 		PageBase.MinimumWaitForElementEnabled();
 		try {
 			BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
-			
+
 			PageBase.MinimumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(notifyReceiverCheckBox).click();
-			
+
 		} catch (Exception ex) {
 			PageBase.MoveToElement(CreateShipmentActions.quoteNumber, CreateShipmentActions.accountNumber);
 		}
@@ -399,7 +411,7 @@ public class CreateShipmentActions {
 
 	public static void EnterShipmentReferences(String pShipmentRef1, String pShipmentRef2) {
 		PageBase.MinimumWaitForElementEnabled();
-		
+
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 		BaseWebdriver.driver.findElement(shipmentReference1).click();
 		BaseWebdriver.driver.findElement(shipmentReference1).clear();
@@ -413,11 +425,11 @@ public class CreateShipmentActions {
 
 	public static void EnterShipmentReference1(String pShipmentRef1) {
 		PageBase.MinimumWaitForElementEnabled();
-		
+
 		BaseWebdriver.driver.findElement(shipmentReference1).click();
 		BaseWebdriver.driver.findElement(shipmentReference1).clear();
 		BaseWebdriver.driver.findElement(shipmentReference1).sendKeys(pShipmentRef1);
-		
+
 	}
 
 	public static void SelectDropOffDepot(int i) {
@@ -473,7 +485,7 @@ public class CreateShipmentActions {
 		PageBase.MediumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemTypeTextField).click();
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + j + "]/div")) 
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + j + "]/div"))
 				.click();
 
 	}
@@ -484,7 +496,7 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(numberOfGarments).clear();
 		BaseWebdriver.driver.findElement(numberOfGarments).sendKeys(pNumberOfGarments);
 	}
-	
+
 	public static void EnterWeight(String pweight) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(weight).click();
@@ -543,7 +555,7 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 		BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
-		
+
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector\"]/div/ul/li[" + j + "]/div")).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
@@ -554,7 +566,7 @@ public class CreateShipmentActions {
 
 	public static String GetUNNumber() {
 		PageBase.MediumWaitForElementEnabled();
-		
+
 		BaseWebdriver.driver.findElement(dangerousGoodsArrowdown).click();
 		return BaseWebdriver.driver.findElement(UNNumberItem).getAttribute("value").toString();
 
@@ -585,7 +597,6 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectPackgingGroup(Integer packagingGroup) {
-	
 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
@@ -605,7 +616,6 @@ public class CreateShipmentActions {
 						By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li/div[text()='" + packagingGroup + "']"))
 				.click();
 
-		
 	}
 
 	public static void EnterTechnicalName(String pTechnicalName) {
@@ -635,7 +645,7 @@ public class CreateShipmentActions {
 		// PageBase.Scrollbar(coord1,coord2);
 		PageBase.Scrollbar(200, 500);
 		BaseWebdriver.driver.findElement(addNewLine).click();
-		
+
 		// PageBase.MoveToElement(BookAPickupActions.itemDescriptionTextField,CreateShipmentActions.numberOfItem);
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField).click();
@@ -666,14 +676,15 @@ public class CreateShipmentActions {
 
 	}
 
-	public static void AddANewLineTIPEC(String ItemTemplate, String NumberOfItems, String Length, String Width, String Height, String Weight, String Ref1, String Ref2) {
+	public static void AddANewLineTIPEC(String ItemTemplate, String NumberOfItems, String Length, String Width,
+			String Height, String Weight, String Ref1, String Ref2) {
 
 		PageBase.Scrollbar(500, 1200);
 		BaseWebdriver.driver.findElement(addNewLine).click();
 
 		BookAPickupActions.EnterItem(ItemTemplate);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
-		BookAPickupActions.EnterLengthWidthHeight(Length,Width, Height);
+		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
 
 		CreateShipmentActions.EnterSenderReference(Ref1, Ref2);
@@ -726,15 +737,19 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(otherCustomer).click();
 		BaseWebdriver.driver.findElement(otherCustomer).clear();
 		BaseWebdriver.driver.findElement(otherCustomer).sendKeys(pOtherCostomer);
-		BaseWebdriver.driver.findElement(chepOtherExchange).click();
-		BaseWebdriver.driver.findElement(chepOtherExchange).clear();
-		BaseWebdriver.driver.findElement(chepOtherExchange).sendKeys(pChepOtherExchange);
-		BaseWebdriver.driver.findElement(chepOtherTransfer).click();
-		BaseWebdriver.driver.findElement(chepOtherTransfer).clear();
-		BaseWebdriver.driver.findElement(chepOtherTransfer).sendKeys(pChepOtherTransferToToll);
-		BaseWebdriver.driver.findElement(chepOtherCustomer).click();
-		BaseWebdriver.driver.findElement(chepOtherCustomer).clear();
-		BaseWebdriver.driver.findElement(chepOtherCustomer).sendKeys(pchepOtherDocketNo);
+		// BaseWebdriver.driver.findElement(chepOtherExchange).click();
+		// BaseWebdriver.driver.findElement(chepOtherExchange).clear();
+		// BaseWebdriver.driver.findElement(chepOtherExchange).sendKeys(pChepOtherExchange);
+		// BaseWebdriver.driver.findElement(chepOtherTransfer).click();
+		/*
+		 * BaseWebdriver.driver.findElement(chepOtherTransfer).clear();
+		 * BaseWebdriver.driver.findElement(chepOtherTransfer).sendKeys(
+		 * pChepOtherTransferToToll);
+		 * BaseWebdriver.driver.findElement(chepOtherCustomer).click();
+		 * BaseWebdriver.driver.findElement(chepOtherCustomer).clear();
+		 * BaseWebdriver.driver.findElement(chepOtherCustomer).sendKeys(
+		 * pchepOtherDocketNo);
+		 */
 		BaseWebdriver.driver.findElement(loscamOtherExchange).click();
 		BaseWebdriver.driver.findElement(loscamOtherExchange).clear();
 		BaseWebdriver.driver.findElement(loscamOtherExchange).sendKeys(pLoscamOtherExchange);
@@ -791,7 +806,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void ClickReviewCreateShipment() {
-		
+
 		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.specialInstructions);
 		BaseWebdriver.driver.findElement(reviewCreateShipmentBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
@@ -818,7 +833,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterReceiverEmail(String pReceiverEmail) {
-		
+
 		BaseWebdriver.driver.findElement(receiverEmail).clear();
 		BaseWebdriver.driver.findElement(receiverEmail).sendKeys(pReceiverEmail);
 	}

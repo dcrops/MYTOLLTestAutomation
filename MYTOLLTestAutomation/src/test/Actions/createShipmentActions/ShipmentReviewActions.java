@@ -233,9 +233,9 @@ public class ShipmentReviewActions {
 		assertEquals(pLoscamTransfer,  BaseWebdriver.driver.findElement(LoscamTransfer).getText());
 		assertEquals(pLoscamDocketNumber, BaseWebdriver.driver.findElement(LoscamDocketNumber).getText());
 		assertEquals(pOtherCustomerOwn, BaseWebdriver.driver.findElement(OtherCustomerOwn).getText());
-		assertEquals(pChepOtherExchange, BaseWebdriver.driver.findElement(ChepOtherExchange).getText());
-		assertEquals(pChepOtherTransfer, BaseWebdriver.driver.findElement(ChepOtherTransfer).getText());
-		assertEquals(pChepOtherDocketNumber, BaseWebdriver.driver.findElement(ChepOtherDocketNumber).getText());
+		//assertEquals(pChepOtherExchange, BaseWebdriver.driver.findElement(ChepOtherExchange).getText());
+		//assertEquals(pChepOtherTransfer, BaseWebdriver.driver.findElement(ChepOtherTransfer).getText());
+		//assertEquals(pChepOtherDocketNumber, BaseWebdriver.driver.findElement(ChepOtherDocketNumber).getText());
 		assertEquals(pLoscamOtherExchange, BaseWebdriver.driver.findElement(LoscamOtherExchange).getText());
 		assertEquals(pLoscamOtherTransfer, BaseWebdriver.driver.findElement(LoscamOtherTransfer).getText());
 		assertEquals(pLoscamOtherDocketNumber, BaseWebdriver.driver.findElement(LoscamOtherDocketNumber).getText());

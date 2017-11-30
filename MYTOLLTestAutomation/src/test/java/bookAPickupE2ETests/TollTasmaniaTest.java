@@ -25,11 +25,11 @@ public class TollTasmaniaTest {
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
-		MyTollHomePageActions.ClickMenu();
-		MyTollHomePageActions.ClickBookAPIckupMenu();
+		//MyTollHomePageActions.ClickMenu();
+		//MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test(priority = 7)
+	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
@@ -92,9 +92,9 @@ public class TollTasmaniaTest {
 		//BookAPickupActions.EnterDestination(destination);
 		// BookAPickupActions.SelectMode(); defect
 
-		BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
-		BookAPickupActions.EnterVendorDetails(vendorNum);
-		BookAPickupActions.EnterTimeSlot();
+		//BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref, BookNo);
+		//BookAPickupActions.EnterVendorDetails(vendorNum);
+		//BookAPickupActions.EnterTimeSlot();
 		BookAPickupActions.selectDangerousGood();
 	
 		jse.executeScript("scroll(500, 800)");
@@ -144,7 +144,7 @@ public class TollTasmaniaTest {
 		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
 	}
 
-	@Test(priority = 6)
+	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination","DestinationItem", "specialIns" })
@@ -213,7 +213,7 @@ public class TollTasmaniaTest {
 		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
 	}
 
-	@Test(priority = 3)
+	@Test
 
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh", "refrigerationRefNum",
@@ -281,7 +281,7 @@ public class TollTasmaniaTest {
 		PageBase.MaximumWaitForElementEnabled();
 
 		// Verify Review Your Pickup
-		ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
+		/*ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
 		ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
 
@@ -294,16 +294,16 @@ public class TollTasmaniaTest {
 		ReviewYouPickupActions.verifySpecialInstructions(specialIns);
 		ReviewYouPickupActions.verifyItemDescription();
 		ReviewYouPickupActions.verifyNumberofItems(NumberOfItems + " Items");
-		ReviewYouPickupActions.verifyLengthWidthHeight(Length + "X" + Width + "X" + Height + " CM3");
+		ReviewYouPickupActions.verifyLengthWidthHeight(Length + "X" + Width + "X" + Height + " CM3");*/
 		// ReviewYouPickupActions.verifyVolume(volume + " M3");
 		// ReviewYouPickupActions.verifyWeight(Weight + " Kg");
 
 		ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
-	//@Test(priority = 4)
+	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName", "lookupItem","PackingGroup",
 			"packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName","specialIns" })
@@ -372,7 +372,7 @@ public class TollTasmaniaTest {
 		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
 	}
 
-	@Test(priority = 5)
+	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -427,7 +427,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	//@Test(priority = 6)
+	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -485,7 +485,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	@Test(priority = 1)
+	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "locationIndex", "ItemTemplateName", "ChargeToAccount",
 			"NumberOfItems", "Length", "Width", "Height", "Weight","DGGoods","FoodItems", "palletSpace", "Destination", "Postcode",
 			"VendorNum", "specialIns" })
@@ -542,7 +542,7 @@ public class TollTasmaniaTest {
 		
 
 		// Verify Review Your Pickup
-		ReviewYouPickupActions.verifyPickupDetailsHeading();
+		/*ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
 		// ReviewYouPickupActions.VerifyAccountNumber("8723682S");
 		ReviewYouPickupActions.VerifyTollCarrier("Toll Tasmania");
@@ -565,7 +565,7 @@ public class TollTasmaniaTest {
 		ReviewYouPickupActions.VerifyItemDetails(0,ItemTemplateName,destination,Postcode,ServiceGeneral,ChargeToAccount,NumberOfItems,palletSpace
 				,Length,Width, Height,volume, Weight, DGGoods, FoodItems);
 		ReviewYouPickupActions.VerifyNewItemDetails(0,ItemTemplateName,destination,Postcode,ServiceGeneral,ChargeToAccount,NumberOfItems,palletSpace
-				,Length,Width, Height,volume, Weight);
+				,Length,Width, Height,volume, Weight);*/
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
@@ -573,7 +573,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	//@Test(priority = 2)
+	@Test
 
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
@@ -637,7 +637,7 @@ public class TollTasmaniaTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 	}
 
 }

@@ -148,6 +148,7 @@ public class MyTollHomePageActions {
 	
 	public static void ClickBookAPIckupMenu()
 	{
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(BookAPickup).click();
 		
 	}

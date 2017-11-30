@@ -22,12 +22,12 @@ public class TollNQXTollExpressTest {
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
-		MyTollHomePageActions.ClickMenu();
-		MyTollHomePageActions.ClickBookAPIckupMenu();
+		//MyTollHomePageActions.ClickMenu();
+		//MyTollHomePageActions.ClickBookAPIckupMenu();
 
 	}
 
-	@Test(priority = 1)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDangerousGoods", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName","PackingGroup",
 			"packageDescription","pDgPkgQty","pDgQtyKg","technicalName", "specialIns" })
@@ -89,11 +89,11 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
-		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		/*ReviewYouPickupActions.ClickConfirmPickup();
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);*/
 	}
 
-	@Test(priority = 2)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"specialIns" })
@@ -143,12 +143,12 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
-		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		/*ReviewYouPickupActions.ClickConfirmPickup();
+		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);*/
 
 	}
 
-	@Test(priority = 3)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", 
 			"specialIns" })
@@ -201,10 +201,10 @@ public class TollNQXTollExpressTest {
 		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test(priority = 4)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "locationIndex", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", 
 		"specialIns" })
@@ -257,10 +257,10 @@ public class TollNQXTollExpressTest {
 		PageBase.MaximumWaitForElementEnabled();
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
-	@Test(priority = 5)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"specialIns" })
@@ -317,7 +317,7 @@ public class TollNQXTollExpressTest {
 		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
 	}
 
-	@Test(priority = 6)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"packageDescription","pDgPkgQty","pDgQtyKg","technicalName",
@@ -373,10 +373,10 @@ public class TollNQXTollExpressTest {
 	
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test(priority = 7)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGRefrigerated", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName","PackingGroup",
 			"packageDescription","pDgPkgQty","pDgQtyKg", "technicalName",
@@ -438,10 +438,10 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test(priority = 8)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailDangerousGoods", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName","PackingGroup",
 			"packageDescription","pDgPkgQty","pDgQtyKg","technicalName",
@@ -504,10 +504,10 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test(priority = 9)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName","PackingGroup",
 			"packageDescription","pDgPkgQty","pDgQtyKg","technicalName",
@@ -569,13 +569,13 @@ public class TollNQXTollExpressTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYouPickupActions.ClickConfirmPickup();
-		ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+		//ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-		 BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 
 	}
 
