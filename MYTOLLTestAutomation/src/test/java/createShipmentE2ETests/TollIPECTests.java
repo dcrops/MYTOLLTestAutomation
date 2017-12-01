@@ -1,6 +1,7 @@
 package createShipmentE2ETests;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -247,4 +248,9 @@ public class TollIPECTests {
 	
 	}
 
+	@AfterMethod
+	public void RunTearDown() throws Exception {
+		 BaseWebdriver.tearDown();
+
+	}
 }

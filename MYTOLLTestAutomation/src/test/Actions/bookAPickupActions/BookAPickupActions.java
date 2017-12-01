@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 
@@ -121,6 +122,10 @@ public class BookAPickupActions {
 	public static By confirmMsgConfirmBtnReadyTime = By.id("confirm-true");
 	public static By addANewLine = By.id("add-line-item");
 	public static By confirmBtn = By.id("confirm-true");
+	
+	//Error Messages	
+	public static By NOUNAddedMsgTiltle = By.xpath("//*[@id=\"confirm-box-wrapper\"]/div/div[1]/h3/i");
+	public static By NOUNAddedMsgConte = By.xpath("//*[@id=\"confirm-box-wrapper\"]/div/div[1]/h3/i");
 	
 		
 	// Add Address
@@ -910,11 +915,13 @@ public class BookAPickupActions {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);		
 		BookAPickupActions.selectDangerousGoodNewLine();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(addANewLine).click();
 		//BookAPickupActions.selectContainFoodItem(); removed
 		//PageBase.Scrollbar(800, 1200);
+		PageBase.MediumWaitForElementEnabled();
 		
-		PageBase.MoveToElement(BookAPickupActions.length, BookAPickupActions.width);
+		//PageBase.MoveToElement(BookAPickupActions.length, BookAPickupActions.width);
 
 	}
 	public static void SaveAsTemplate() {
@@ -1019,5 +1026,24 @@ public class BookAPickupActions {
 		
 		System.out.println("Book a Pick Up Array : "+BookAPickUpNumbers);
 	}
+	
+	//NOUNAddedMsg
+	
+public static void ErrorMsgValidation()
+{
+	String mainPage = BaseWebdriver.driver.getWindowHandle();
+	 
+	 Alert alt = BaseWebdriver.driver.switchTo().alert(); // to move control to alert popup
+	 assertEquals(" No UN added",BaseWebdriver.driver.findElement(NOUNAddedMsgTiltle).getText());
+	 alt.accept(); // to click on ok.
+	 
+	 alt.dismiss(); // to click on cancel.
+	 
+	 //Then move the control back to main web page-
+	 
+	 BaseWebdriver.driver.switchTo().window(mainPage); 
+	
+	}
+
 	
 }

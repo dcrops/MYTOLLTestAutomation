@@ -271,8 +271,8 @@ public class ManifestActions {
 		BaseWebdriver.driver.findElement(newManifestTextField).click();
 		BaseWebdriver.driver.findElement(newManifestTextField).clear();
 		BaseWebdriver.driver.findElement(newManifestTextField).sendKeys(pManifestName);
-		//ClickAddManifest();
-		ClickAddtoExistingManifest();
+		ClickAddManifest();
+		//ClickAddtoExistingManifest();
 
 	}
 	

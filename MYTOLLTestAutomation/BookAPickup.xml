@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="none">
-<listeners>
-      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
-      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
-  </listeners>
+<suite name="Suite" parallel="tests">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
 	<test name="BookAPickup">
 		<!---Users test data -->
 		<parameter name="email" value="superuser@gmail.com"></parameter>
@@ -94,16 +94,21 @@
 
 		<parameter name="browser" value="chrome" />
 		<classes>
-		<class name="bookAPickupE2ETests.TollIPECTest" />
-		
-			<!--Blocked><class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/>
+
+			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
 			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
 			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-			<class name="bookAPickupE2ETests.TollIPECTest" /></Blocked -->
-		
+			<class name="bookAPickupE2ETests.TollIPECTest" />
+
+			<!--Blocked><class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/> 
+				<class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
+				/> <class name="bookAPickupE2ETests.TollTasmaniaTest" /> <class name="bookAPickupE2ETests.TollNQXTollExpressTest" 
+				/> <class name="bookAPickupE2ETests.Toll_IntermodalTest" /> <class name="bookAPickupE2ETests.TollIPECTest" 
+				/></Blocked -->
+
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

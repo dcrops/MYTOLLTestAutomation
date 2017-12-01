@@ -26,7 +26,8 @@ public class TollNQXTollExpressTest {
 		//MyTollHomePageActions.ClickBookAPIckupMenu();
 
 	}
-
+//                Alert alert = driver.switchTo().alert();
+//	alert.accept();
 	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDangerousGoods", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName","PackingGroup",
@@ -575,7 +576,7 @@ public class TollNQXTollExpressTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 
