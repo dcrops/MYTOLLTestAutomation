@@ -58,11 +58,5 @@
 	<classpathentry kind="lib" path="C:/Source/selenium-java-3.4.0/lib/xml-apis-1.4.01.jar"/>
 	<classpathentry kind="lib" path="C:/Source/selenium-java-3.4.0/client-combined-3.4.0-nodeps.jar"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Source/selenium-java-3.4.0/reportNG jar/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Source/selenium-java-3.4.0/reportNG jar/guice-3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Source/selenium-java-3.4.0/reportNG jar/javax.inject-1.jar"/>
-	<classpathentry kind="lib" path="C:/Source/selenium-java-3.4.0/reportNG jar/reportng-1.1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Source/selenium-java-3.4.0/reportNG jar/velocity-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Source/selenium-java-3.4.0/reportNG jar/velocity-dep-1.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

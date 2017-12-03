@@ -1,5 +1,6 @@
 package createShipmentE2ETests;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -23,7 +24,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(priority = 2)
+	//@Test(priority = 2)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceGeneral", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "dropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -155,7 +157,8 @@ public class TollNQXTollExpressTests {
 
 	}
 
-	@Test(priority = 5)
+	//@Test(priority = 5)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -282,7 +285,8 @@ public class TollNQXTollExpressTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(priority = 3)
+	//@Test(priority = 3)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -409,7 +413,8 @@ public class TollNQXTollExpressTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(priority = 4)
+	//@Test(priority = 4)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRefrigeration", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "dropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -538,7 +543,8 @@ public class TollNQXTollExpressTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(priority = 1)
+	//@Test(priority = 1)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDangerousGoods", "AccountNumberTNQX","WhoPays", "whoPays", "ModeInt",
 			"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 			"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -694,7 +700,8 @@ public class TollNQXTollExpressTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(priority = 4)
+	//@Test(priority = 4)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGExpress", "AccountNumberTNQX", "WhoPays", "whoPays", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -849,7 +856,8 @@ public class TollNQXTollExpressTests {
 
 	}
 
-	@Test(priority = 3)
+	//@Test(priority = 3)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGRefrigerated", "AccountNumberTNQX", "WhoPays", "whoPays", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -999,7 +1007,8 @@ public class TollNQXTollExpressTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(priority = 1)
+	//@Test(priority = 1)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailGeneral", "AccountNumberTNQX","WhoPays", "whoPays",
 		"ModeInt", "Mode", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 		"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -1126,7 +1135,8 @@ public class TollNQXTollExpressTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(priority = 1)
+	//@Test(priority = 1)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailDangerousGoods", "AccountNumberTNQX", "WhoPays", "whoPays","Mode", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -1272,6 +1282,12 @@ public class TollNQXTollExpressTests {
 
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+	}
+	
+	@AfterMethod
+	public void RunTearDown() throws Exception {
+		 BaseWebdriver.tearDown();
+
 	}
 
 }

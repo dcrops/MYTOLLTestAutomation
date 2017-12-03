@@ -39,38 +39,38 @@ public class Toll_MyProfile_Add_Accounts {
 	}
 	
 	
-	@Test(priority = 1)
-	@Parameters({ "TollCarrierTollIntermodal","AccountNumberl", "AccountAccessTypeFullFinancial"})
+	@Test
+	@Parameters({ "TollCarrierTollIntermodal","AccountNumber1", "AccountAccessTypeFullFinancial"})
 	public void addTemplateIntermodal(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
-	@Test(priority = 2)
-	@Parameters({ "TollCarrierTollTasmania","AccountNumberl", "AccountAccessTypeFullFinancial"})
+	@Test
+	@Parameters({ "TollCarrierTollTasmania","AccountNumber1", "AccountAccessTypeFullFinancial"})
 	public void addTemplateTasmania(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
-	@Test(priority = 3)
-	@Parameters({ "TollCarrierTollNQXTollExpress","AccountNumberl", "AccountAccessTypeFullFinancial"})
+	@Test
+	@Parameters({ "TollCarrierTollNQXTollExpress","AccountNumber1", "AccountAccessTypeFullFinancial"})
 	public void addTemplateNQX(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
-	@Test(priority = 4)
-	@Parameters({ "TollCarrierTollIPEC","AccountNumberl", "AccountAccessTypeFullFinancial"})
+	@Test
+	@Parameters({ "TollCarrierTollIPEC","AccountNumber1", "AccountAccessTypeFullFinancial"})
 	public void addTemplateIPEC(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
-	@Test(priority = 5)
-	@Parameters({ "TollCarrierTollPrioAU","AccountNumberl", "AccountAccessTypeFullFinancial"})
+	@Test
+	@Parameters({ "TollCarrierTollPrioAU","AccountNumber1", "AccountAccessTypeFullFinancial"})
 	public void addTemplatePrioAU(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
-	@Test(priority = 6)
-	@Parameters({ "TollCarrierTollPrioNZ","AccountNumberl", "AccountAccessTypeFullFinancial"})
+	@Test
+	@Parameters({ "TollCarrierTollPrioNZ","AccountNumber1", "AccountAccessTypeFullFinancial"})
 	public void addTemplatePrioNZ(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
@@ -91,7 +91,7 @@ public class Toll_MyProfile_Add_Accounts {
 		
 		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
 		MyTollHomePageActions.ClickMenu();
-		PageBase.click(MyTollHomePageActions.myAccountMenu, 10);
+		PageBase.click(MyTollHomePageActions.myAccountMenu, 20);
 		
 		
 		//the below for loop is for adding multiple account numbers for one carrier. Provide account numbers in the format "1111,2222,333,"
@@ -135,7 +135,7 @@ public class Toll_MyProfile_Add_Accounts {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 		// BaseWebdriver.tearDown();
-		BaseWebdriver.driver.quit();
+		//BaseWebdriver.driver.quit();
 
 	}
 

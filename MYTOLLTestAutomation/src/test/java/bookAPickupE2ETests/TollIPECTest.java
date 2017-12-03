@@ -23,8 +23,8 @@ public class TollIPECTest {
 				MyTollHomePageActions.Login(BaseWebdriver.Username , BaseWebdriver.Password);
 				MyTollHomePageActions.ClickMenu();
 				MyTollHomePageActions.ClickBookAPIckupMenu();
-				MyTollHomePageActions.ClickMenu();
-				MyTollHomePageActions.ClickBookAPIckupMenu();
+				//MyTollHomePageActions.ClickMenu();
+				//MyTollHomePageActions.ClickBookAPIckupMenu();
 		
 			}
 	
@@ -53,12 +53,13 @@ public class TollIPECTest {
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterService(ServiceRoadExpress);
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.SelectLargestItem(1);
 		
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 
 		BookAPickupActions.EnterWeight(Weight);
-		BookAPickupActions.SelectDestination(destination);
+		
 		PageBase.MaximumWaitForElementEnabled();
 		//BookAPickupActions.EnterPalletSpace("6");
 		
@@ -88,10 +89,10 @@ public class TollIPECTest {
 		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
 		//Verify Review Your Pickup
 		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
-		ReviewYouPickupActions.verifyPickupDetailsHeading();
+		/*ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
 		//ReviewYouPickupActions.verifyAccountNumber("123456");
-		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
+		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);*/
 	
 		
 		//ReviewYouPickupActions.ClickConfirmPickup();
@@ -123,12 +124,13 @@ public class TollIPECTest {
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterService(ServiceRoadExpress);
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.SelectLargestItem(1);
 		
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 
 		BookAPickupActions.EnterWeight(Weight);
-		BookAPickupActions.SelectDestination(destination);
+		
 		PageBase.MaximumWaitForElementEnabled();
 		//BookAPickupActions.EnterPalletSpace("6");
 		
@@ -158,10 +160,10 @@ public class TollIPECTest {
 		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
 		//Verify Review Your Pickup
 		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
-		ReviewYouPickupActions.verifyPickupDetailsHeading();
+	/*	ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
 		//ReviewYouPickupActions.verifyAccountNumber("123456");
-		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
+		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);*/
 		
 		//Confirmed Pickup		
 		//ReviewYouPickupActions.ClickConfirmPickup();

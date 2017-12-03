@@ -41,11 +41,17 @@ public class GenericTests {
 	
 	
 
-	@Test(priority = 1)
+	@Test
 	@Parameters({ "FirstName", "LastName","NewEmail", "MobileNumber", "Password", "MemorableAnswer"})
 	public void MyProfile_UserRegistration(String FirstName,  String LastName,String NewEmail, String MobileNumber, String Password, String MemorableAnswer) {
 
 		MyTollHomePageActions.NewUserRegistration(FirstName, LastName, NewEmail, MobileNumber, Password, MemorableAnswer);
 		
+	}
+	
+	@AfterMethod
+	public void RunTearDown() throws Exception {
+		 BaseWebdriver.tearDown();
+
 	}
 }

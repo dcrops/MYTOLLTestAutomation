@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+
 <listeners>      
   <listener class-name="org.uncommons.reportng.HTMLReporter"/>
        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 </listeners>
+
   <test name="ManifestTest">
   <parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
 		<parameter name="TollCarrierTollTasmania" value="Toll Tasmania" />
@@ -31,6 +33,7 @@
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 
 		<!---Create shipment Test data -->
+		<parameter name="AccountNumberTINTER" value="106119" />
 		<parameter name="AccountNumberTSPD" value="106119" />
 		<parameter name="AccountNumberTNQX" value="614060" />
 		<parameter name="SenderName" value="COLLINS" />
@@ -123,13 +126,18 @@
 		
 		
 		<classes>
-			
-			<class name="manifestE2ETests.ManualManifestTollIntermodalTests" /> 
+			<class name="manifestE2ETests.ManifestTollIntermodalTests" /> 
 			<class name="manifestE2ETests.ManualManifestTollIPECTest" />
 			<class name="manifestE2ETests.ManualManifestTollNQXTollExpressTests" />
 			<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" /> 
 			<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
 			<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" />
+		<!-- Blocked>	<class name="manifestE2ETests.ManualManifestTollIntermodalTests" /> 
+			<class name="manifestE2ETests.ManualManifestTollIPECTest" />
+			<class name="manifestE2ETests.ManualManifestTollNQXTollExpressTests" />
+			<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" /> 
+			<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
+			<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" /></Blocked -->
 			
 
 		</classes>

@@ -1,189 +1,1853 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="3" failed="0" ignored="0" total="3" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
+    <line>
+      <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Toll Carrier - Toll Intermodal]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Sender]]>
+    </line>
+    <line>
+      <![CDATA[User Enters ManifestName - 'TESTMANIFEST6180']]>
+    </line>
+    <line>
+      <![CDATA[User Saves Manifest and Proceeds]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : MANIFEST - TESTMANIFEST6180 Matched the Text on Screen :MANIFEST - TESTMANIFEST6180]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Add New Shipment]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+    </line>
+    <line>
+      <![CDATA[User Enters Shipment Details]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Shipment]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Continue to Manifest]]>
+    </line>
+    <line>
+      <![CDATA[Manifest ID : MYT1001696]]>
+    </line>
+    <line>
+      <![CDATA[Current Status : In progress]]>
+    </line>
+    <line>
+      <![CDATA[No if Shipments in Manifest = 1]]>
+    </line>
+    <line>
+      <![CDATA[Shipment ID : 4373183407]]>
+    </line>
+    <line>
+      <![CDATA[Shipment Array : [4373183407]]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Print and Close Manifest]]>
+    </line>
+    <line>
+      <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+    </line>
+    <line>
+      <![CDATA[User Closes Popup to verify Manifest Status]]>
+    </line>
+    <line>
+      <![CDATA[Updated Manifest Status : Completed]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[User Searches for the Manifest -TESTMANIFEST6180]]>
+    </line>
+    <line>
+      <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+    </line>
+    <line>
+      <![CDATA[User Sets Ready Time as -09:15]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Book Up]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+    </line>
+    <line>
+      <![CDATA[Reference No: TSPD:106119:1351]]>
+    </line>
+    <line>
+      <![CDATA[---------------END OF TEST---------------]]>
+    </line>
+    <line>
+      <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Toll Carrier - Toll IPEC]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Sender]]>
+    </line>
+    <line>
+      <![CDATA[User Enters ManifestName - 'TESTMANIFEST5575']]>
+    </line>
+    <line>
+      <![CDATA[User Saves Manifest and Proceeds]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : MANIFEST - TESTMANIFEST5575 Matched the Text on Screen :MANIFEST - TESTMANIFEST5575]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Add New Shipment]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll IPEC Matched the Text on Screen :Toll IPEC]]>
+    </line>
+    <line>
+      <![CDATA[User Enters Shipment Details]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Shipment]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Continue to Manifest]]>
+    </line>
+    <line>
+      <![CDATA[Manifest ID : MYT1001697]]>
+    </line>
+    <line>
+      <![CDATA[Current Status : In progress]]>
+    </line>
+    <line>
+      <![CDATA[No if Shipments in Manifest = 1]]>
+    </line>
+    <line>
+      <![CDATA[Shipment ID : 2401000018334]]>
+    </line>
+    <line>
+      <![CDATA[Shipment Array : [4373183407, 2401000018334]]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Print and Close Manifest]]>
+    </line>
+    <line>
+      <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+    </line>
+    <line>
+      <![CDATA[User Closes Popup to verify Manifest Status]]>
+    </line>
+    <line>
+      <![CDATA[Updated Manifest Status : Completed]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[User Searches for the Manifest -TESTMANIFEST5575]]>
+    </line>
+    <line>
+      <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll IPEC Matched the Text on Screen :Toll IPEC]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+    </line>
+    <line>
+      <![CDATA[User Sets Ready Time as -09:15]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Book Up]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+    </line>
+    <line>
+      <![CDATA[Reference No: IPEC:2230899:1352]]>
+    </line>
+    <line>
+      <![CDATA[---------------END OF TEST---------------]]>
+    </line>
+    <line>
+      <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Toll Carrier - Toll NQX | Toll Express]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Sender]]>
+    </line>
+    <line>
+      <![CDATA[User Enters ManifestName - 'TESTMANIFEST6754']]>
+    </line>
+    <line>
+      <![CDATA[User Saves Manifest and Proceeds]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : MANIFEST - TESTMANIFEST6754 Matched the Text on Screen :MANIFEST - TESTMANIFEST6754]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Add New Shipment]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+    </line>
+    <line>
+      <![CDATA[User Enters Shipment Details]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Shipment]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Continue to Manifest]]>
+    </line>
+    <line>
+      <![CDATA[Manifest ID : MYT1001698]]>
+    </line>
+    <line>
+      <![CDATA[Current Status : In progress]]>
+    </line>
+    <line>
+      <![CDATA[No if Shipments in Manifest = 1]]>
+    </line>
+    <line>
+      <![CDATA[Shipment ID : 2856213061]]>
+    </line>
+    <line>
+      <![CDATA[Shipment Array : [4373183407, 2401000018334, 2856213061]]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Print and Close Manifest]]>
+    </line>
+    <line>
+      <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+    </line>
+    <line>
+      <![CDATA[User Closes Popup to verify Manifest Status]]>
+    </line>
+    <line>
+      <![CDATA[Updated Manifest Status : Completed]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[User Searches for the Manifest -TESTMANIFEST6754]]>
+    </line>
+    <line>
+      <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+    </line>
+    <line>
+      <![CDATA[User Sets Ready Time as -09:15]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Book Up]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+    </line>
+    <line>
+      <![CDATA[Reference No: 161117:TW3987]]>
+    </line>
+    <line>
+      <![CDATA[---------------END OF TEST---------------]]>
+    </line>
+    <line>
+      <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Toll Carrier - Toll Tasmania]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Sender]]>
+    </line>
+    <line>
+      <![CDATA[User Enters ManifestName - 'TESTMANIFEST8184']]>
+    </line>
+    <line>
+      <![CDATA[User Saves Manifest and Proceeds]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : MANIFEST - TESTMANIFEST8184 Matched the Text on Screen :MANIFEST - TESTMANIFEST8184]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Add New Shipment]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Tasmania Matched the Text on Screen :Toll Tasmania]]>
+    </line>
+    <line>
+      <![CDATA[User Enters Shipment Details]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Shipment]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Continue to Manifest]]>
+    </line>
+    <line>
+      <![CDATA[Manifest ID : MYT1001699]]>
+    </line>
+    <line>
+      <![CDATA[Current Status : In progress]]>
+    </line>
+    <line>
+      <![CDATA[No if Shipments in Manifest = 1]]>
+    </line>
+    <line>
+      <![CDATA[Shipment ID : 4039863681]]>
+    </line>
+    <line>
+      <![CDATA[Shipment Array : [4373183407, 2401000018334, 2856213061, 4039863681]]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Print and Close Manifest]]>
+    </line>
+    <line>
+      <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+    </line>
+    <line>
+      <![CDATA[User Closes Popup to verify Manifest Status]]>
+    </line>
+    <line>
+      <![CDATA[Updated Manifest Status : Completed]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[User Searches for the Manifest -TESTMANIFEST8184]]>
+    </line>
+    <line>
+      <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Tasmania Matched the Text on Screen :Toll Tasmania]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+    </line>
+    <line>
+      <![CDATA[User Sets Ready Time as -09:15]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Book Up]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+    </line>
+    <line>
+      <![CDATA[Reference No: 161117:TW3995]]>
+    </line>
+    <line>
+      <![CDATA[---------------END OF TEST---------------]]>
+    </line>
+    <line>
+      <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Toll Carrier - Toll Priority (Aus)]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Sender]]>
+    </line>
+    <line>
+      <![CDATA[User Enters ManifestName - 'TESTMANIFEST1536']]>
+    </line>
+    <line>
+      <![CDATA[User Saves Manifest and Proceeds]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : MANIFEST - TESTMANIFEST1536 Matched the Text on Screen :MANIFEST - TESTMANIFEST1536]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Add New Shipment]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Priority (Aus) Matched the Text on Screen :Toll Priority (Aus)]]>
+    </line>
+    <line>
+      <![CDATA[User Enters Shipment Details]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Shipment]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Continue to Manifest]]>
+    </line>
+    <line>
+      <![CDATA[Manifest ID : MYT1001700]]>
+    </line>
+    <line>
+      <![CDATA[Current Status : In progress]]>
+    </line>
+    <line>
+      <![CDATA[No if Shipments in Manifest = 1]]>
+    </line>
+    <line>
+      <![CDATA[Shipment ID : MYTA003213]]>
+    </line>
+    <line>
+      <![CDATA[Shipment Array : [4373183407, 2401000018334, 2856213061, 4039863681, MYTA003213]]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Print and Close Manifest]]>
+    </line>
+    <line>
+      <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+    </line>
+    <line>
+      <![CDATA[User Closes Popup to verify Manifest Status]]>
+    </line>
+    <line>
+      <![CDATA[Updated Manifest Status : Completed]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[User Searches for the Manifest -TESTMANIFEST1536]]>
+    </line>
+    <line>
+      <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Priority (Aus) Matched the Text on Screen :Toll Priority (Aus)]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+    </line>
+    <line>
+      <![CDATA[User Sets Ready Time as -09:15]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Book Up]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+    </line>
+    <line>
+      <![CDATA[Reference No: PRIO:401509:1355]]>
+    </line>
+    <line>
+      <![CDATA[---------------END OF TEST---------------]]>
+    </line>
+    <line>
+      <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Toll Carrier - Toll Priority (NZ)]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Sender]]>
+    </line>
+    <line>
+      <![CDATA[User Enters ManifestName - 'TESTMANIFEST9307']]>
+    </line>
+    <line>
+      <![CDATA[User Saves Manifest and Proceeds]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : MANIFEST - TESTMANIFEST9307 Matched the Text on Screen :MANIFEST - TESTMANIFEST9307]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Add New Shipment]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Priority (NZ) Matched the Text on Screen :Toll Priority (NZ)]]>
+    </line>
+    <line>
+      <![CDATA[User Enters Shipment Details]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Shipment]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Continue to Manifest]]>
+    </line>
+    <line>
+      <![CDATA[Manifest ID : MYT1001701]]>
+    </line>
+    <line>
+      <![CDATA[Current Status : In progress]]>
+    </line>
+    <line>
+      <![CDATA[No if Shipments in Manifest = 1]]>
+    </line>
+    <line>
+      <![CDATA[Shipment ID : MTNZ018050]]>
+    </line>
+    <line>
+      <![CDATA[Shipment Array : [4373183407, 2401000018334, 2856213061, 4039863681, MYTA003213, MTNZ018050]]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Print and Close Manifest]]>
+    </line>
+    <line>
+      <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+    </line>
+    <line>
+      <![CDATA[User Closes Popup to verify Manifest Status]]>
+    </line>
+    <line>
+      <![CDATA[Updated Manifest Status : Completed]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[User Searches for the Manifest -TESTMANIFEST9307]]>
+    </line>
+    <line>
+      <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : Toll Priority (NZ) Matched the Text on Screen :Toll Priority (NZ)]]>
+    </line>
+    <line>
+      <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+    </line>
+    <line>
+      <![CDATA[User Sets Ready Time as -09:15]]>
+    </line>
+    <line>
+      <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Review Book Up]]>
+    </line>
+    <line>
+      <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+    </line>
+    <line>
+      <![CDATA[Reference No: PRINZ:100181:1356]]>
+    </line>
+    <line>
+      <![CDATA[---------------END OF TEST---------------]]>
+    </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="14780" started-at="2017-11-28T00:18:11Z" finished-at="2017-11-28T00:18:25Z">
+  <suite name="Suite" duration-ms="718825" started-at="2017-11-16T04:36:26Z" finished-at="2017-11-16T04:48:25Z">
     <groups>
     </groups>
-    <test name="RateEnquiry" duration-ms="14780" started-at="2017-11-28T00:18:11Z" finished-at="2017-11-28T00:18:25Z">
-      <class name="rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations">
-        <test-method status="FAIL" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations@3ffc5af1]" name="RunSetup" is-config="true" duration-ms="14693" started-at="2017-11-28T11:18:11Z" finished-at="2017-11-28T11:18:25Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at myTollHomePageActions.MyTollHomePageActions.Login(MyTollHomePageActions.java:72)
-	at rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations.RunSetup(RateEnquiry_ErrorMsgValidations.java:24)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1201)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:776)
-	at org.testng.TestRunner.run(TestRunner.java:634)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
-	at org.testng.TestNG.runSuites(TestNG.java:1161)
-	at org.testng.TestNG.run(TestNG.java:1129)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+    <test name="ManifestTest" duration-ms="718825" started-at="2017-11-16T04:36:26Z" finished-at="2017-11-16T04:48:25Z">
+      <class name="manifestE2ETests.ManualManifestTollTasmaniaTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:manifestE2ETests.ManualManifestTollTasmaniaTests@6f7fd0e6]" name="RunSetup" is-config="true" duration-ms="37604" started-at="2017-11-16T15:42:04Z" finished-at="2017-11-16T15:42:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunSetup -->
-        <test-method status="SKIP" signature="RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_ParcelOffPeak(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations@3ffc5af1]" name="RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_ParcelOffPeak" duration-ms="0" started-at="2017-11-28T11:18:25Z" finished-at="2017-11-28T11:18:25Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at myTollHomePageActions.MyTollHomePageActions.Login(MyTollHomePageActions.java:72)
-	at rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations.RunSetup(RateEnquiry_ErrorMsgValidations.java:24)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1201)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:776)
-	at org.testng.TestRunner.run(TestRunner.java:634)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
-	at org.testng.TestNG.runSuites(TestNG.java:1161)
-	at org.testng.TestNG.run(TestNG.java:1129)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method status="PASS" signature="Manifest_TollTasmania_E2ETest_TID_1127_Service_General_AddManifestManual(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:manifestE2ETests.ManualManifestTollTasmaniaTests@6f7fd0e6]" name="Manifest_TollTasmania_E2ETest_TID_1127_Service_General_AddManifestManual" duration-ms="96224" started-at="2017-11-16T15:42:42Z" finished-at="2017-11-16T15:44:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Tasmania]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[General]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[106119]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Toll Group Test]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[ACT TOLLFAST]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ADC Port Adelaide (TMS)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Dadd]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[012345]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[567879]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Automation Template1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[300]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[900]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[General Freight]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Test Special Ins]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[5000]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
+            <line>
+              <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Toll Carrier - Toll Tasmania]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Sender]]>
+            </line>
+            <line>
+              <![CDATA[User Enters ManifestName - 'TESTMANIFEST8184']]>
+            </line>
+            <line>
+              <![CDATA[User Saves Manifest and Proceeds]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : MANIFEST - TESTMANIFEST8184 Matched the Text on Screen :MANIFEST - TESTMANIFEST8184]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Add New Shipment]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Tasmania Matched the Text on Screen :Toll Tasmania]]>
+            </line>
+            <line>
+              <![CDATA[User Enters Shipment Details]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Shipment]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Continue to Manifest]]>
+            </line>
+            <line>
+              <![CDATA[Manifest ID : MYT1001699]]>
+            </line>
+            <line>
+              <![CDATA[Current Status : In progress]]>
+            </line>
+            <line>
+              <![CDATA[No if Shipments in Manifest = 1]]>
+            </line>
+            <line>
+              <![CDATA[Shipment ID : 4039863681]]>
+            </line>
+            <line>
+              <![CDATA[Shipment Array : [4373183407, 2401000018334, 2856213061, 4039863681]]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Print and Close Manifest]]>
+            </line>
+            <line>
+              <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+            </line>
+            <line>
+              <![CDATA[User Closes Popup to verify Manifest Status]]>
+            </line>
+            <line>
+              <![CDATA[Updated Manifest Status : Completed]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[User Searches for the Manifest -TESTMANIFEST8184]]>
+            </line>
+            <line>
+              <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Tasmania Matched the Text on Screen :Toll Tasmania]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+            </line>
+            <line>
+              <![CDATA[User Sets Ready Time as -09:15]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Book Up]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+            </line>
+            <line>
+              <![CDATA[Reference No: 161117:TW3995]]>
+            </line>
+            <line>
+              <![CDATA[---------------END OF TEST---------------]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_ParcelOffPeak -->
-        <test-method status="SKIP" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations@3ffc5af1]" name="RunTearDown" is-config="true" duration-ms="0" started-at="2017-11-28T11:18:25Z" finished-at="2017-11-28T11:18:25Z">
+        </test-method> <!-- Manifest_TollTasmania_E2ETest_TID_1127_Service_General_AddManifestManual -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:manifestE2ETests.ManualManifestTollTasmaniaTests@6f7fd0e6]" name="RunTearDown" is-config="true" duration-ms="1303" started-at="2017-11-16T15:44:18Z" finished-at="2017-11-16T15:44:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunTearDown -->
-        <test-method status="SKIP" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations@3ffc5af1]" name="RunSetup" is-config="true" duration-ms="0" started-at="2017-11-28T11:18:25Z" finished-at="2017-11-28T11:18:25Z">
+      </class> <!-- manifestE2ETests.ManualManifestTollTasmaniaTests -->
+      <class name="manifestE2ETests.ManualManifestTollIPECTest">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:manifestE2ETests.ManualManifestTollIPECTest@59f99ea]" name="RunSetup" is-config="true" duration-ms="16183" started-at="2017-11-16T15:38:26Z" finished-at="2017-11-16T15:38:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunSetup -->
-        <test-method status="SKIP" signature="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations@3ffc5af1]" name="RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels" duration-ms="0" started-at="2017-11-28T11:18:25Z" finished-at="2017-11-28T11:18:25Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at myTollHomePageActions.MyTollHomePageActions.Login(MyTollHomePageActions.java:72)
-	at rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations.RunSetup(RateEnquiry_ErrorMsgValidations.java:24)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1201)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:776)
-	at org.testng.TestRunner.run(TestRunner.java:634)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
-	at org.testng.TestNG.runSuites(TestNG.java:1161)
-	at org.testng.TestNG.run(TestNG.java:1129)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method status="PASS" signature="Manifest_TollIPEC_E2ETest_TID_1127_Service_RoadExpress_AddManifestManual(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:manifestE2ETests.ManualManifestTollIPECTest@59f99ea]" name="Manifest_TollIPEC_E2ETest_TID_1127_Service_RoadExpress_AddManifestManual" duration-ms="83914" started-at="2017-11-16T15:38:42Z" finished-at="2017-11-16T15:40:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll IPEC]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Road Express]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[106119]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Toll Group Test]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[ACT TOLLFAST]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ADC Port Adelaide (TMS)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Dadd]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[012345]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[567879]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Automation Template1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[300]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[900]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[General Freight]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Test Special Ins]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[5000]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
+            <line>
+              <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Toll Carrier - Toll IPEC]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Sender]]>
+            </line>
+            <line>
+              <![CDATA[User Enters ManifestName - 'TESTMANIFEST5575']]>
+            </line>
+            <line>
+              <![CDATA[User Saves Manifest and Proceeds]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : MANIFEST - TESTMANIFEST5575 Matched the Text on Screen :MANIFEST - TESTMANIFEST5575]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Add New Shipment]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll IPEC Matched the Text on Screen :Toll IPEC]]>
+            </line>
+            <line>
+              <![CDATA[User Enters Shipment Details]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Shipment]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Continue to Manifest]]>
+            </line>
+            <line>
+              <![CDATA[Manifest ID : MYT1001697]]>
+            </line>
+            <line>
+              <![CDATA[Current Status : In progress]]>
+            </line>
+            <line>
+              <![CDATA[No if Shipments in Manifest = 1]]>
+            </line>
+            <line>
+              <![CDATA[Shipment ID : 2401000018334]]>
+            </line>
+            <line>
+              <![CDATA[Shipment Array : [4373183407, 2401000018334]]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Print and Close Manifest]]>
+            </line>
+            <line>
+              <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+            </line>
+            <line>
+              <![CDATA[User Closes Popup to verify Manifest Status]]>
+            </line>
+            <line>
+              <![CDATA[Updated Manifest Status : Completed]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[User Searches for the Manifest -TESTMANIFEST5575]]>
+            </line>
+            <line>
+              <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll IPEC Matched the Text on Screen :Toll IPEC]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+            </line>
+            <line>
+              <![CDATA[User Sets Ready Time as -09:15]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Book Up]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+            </line>
+            <line>
+              <![CDATA[Reference No: IPEC:2230899:1352]]>
+            </line>
+            <line>
+              <![CDATA[---------------END OF TEST---------------]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels -->
-        <test-method status="SKIP" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations@3ffc5af1]" name="RunTearDown" is-config="true" duration-ms="0" started-at="2017-11-28T11:18:25Z" finished-at="2017-11-28T11:18:25Z">
+        </test-method> <!-- Manifest_TollIPEC_E2ETest_TID_1127_Service_RoadExpress_AddManifestManual -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:manifestE2ETests.ManualManifestTollIPECTest@59f99ea]" name="RunTearDown" is-config="true" duration-ms="1146" started-at="2017-11-16T15:40:06Z" finished-at="2017-11-16T15:40:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunTearDown -->
-        <test-method status="SKIP" signature="RunSetup()[pri:0, instance:rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations@3ffc5af1]" name="RunSetup" is-config="true" duration-ms="0" started-at="2017-11-28T11:18:25Z" finished-at="2017-11-28T11:18:25Z">
+      </class> <!-- manifestE2ETests.ManualManifestTollIPECTest -->
+      <class name="manifestE2ETests.ManualManifestTollPriorityNZTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:manifestE2ETests.ManualManifestTollPriorityNZTests@3e6fa38a]" name="RunSetup" is-config="true" duration-ms="17620" started-at="2017-11-16T15:46:33Z" finished-at="2017-11-16T15:46:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunSetup -->
-        <test-method status="SKIP" signature="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations@3ffc5af1]" name="RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight" duration-ms="0" started-at="2017-11-28T11:18:25Z" finished-at="2017-11-28T11:18:25Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at myTollHomePageActions.MyTollHomePageActions.Login(MyTollHomePageActions.java:72)
-	at rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations.RunSetup(RateEnquiry_ErrorMsgValidations.java:24)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1201)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:776)
-	at org.testng.TestRunner.run(TestRunner.java:634)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
-	at org.testng.TestNG.runSuites(TestNG.java:1161)
-	at org.testng.TestNG.run(TestNG.java:1129)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method status="PASS" signature="Manifest_TollPriorityNZ_E2ETest_TID_1127_Service_ServiceParcelsOffPeak_AddManifestManual(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:manifestE2ETests.ManualManifestTollPriorityNZTests@3e6fa38a]" name="Manifest_TollPriorityNZ_E2ETest_TID_1127_Service_ServiceParcelsOffPeak_AddManifestManual" duration-ms="93138" started-at="2017-11-16T15:46:50Z" finished-at="2017-11-16T15:48:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Priority (NZ)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Parcels - Off Peak]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[106119]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Toll Group Test]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[ACT TOLLFAST]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ADC Port Adelaide (TMS)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Dadd]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[012345]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[567879]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Automation Template1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[300]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[900]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[General Freight]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Test Special Ins]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[5000]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
+            <line>
+              <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Toll Carrier - Toll Priority (NZ)]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Sender]]>
+            </line>
+            <line>
+              <![CDATA[User Enters ManifestName - 'TESTMANIFEST9307']]>
+            </line>
+            <line>
+              <![CDATA[User Saves Manifest and Proceeds]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : MANIFEST - TESTMANIFEST9307 Matched the Text on Screen :MANIFEST - TESTMANIFEST9307]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Add New Shipment]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Priority (NZ) Matched the Text on Screen :Toll Priority (NZ)]]>
+            </line>
+            <line>
+              <![CDATA[User Enters Shipment Details]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Shipment]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Continue to Manifest]]>
+            </line>
+            <line>
+              <![CDATA[Manifest ID : MYT1001701]]>
+            </line>
+            <line>
+              <![CDATA[Current Status : In progress]]>
+            </line>
+            <line>
+              <![CDATA[No if Shipments in Manifest = 1]]>
+            </line>
+            <line>
+              <![CDATA[Shipment ID : MTNZ018050]]>
+            </line>
+            <line>
+              <![CDATA[Shipment Array : [4373183407, 2401000018334, 2856213061, 4039863681, MYTA003213, MTNZ018050]]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Print and Close Manifest]]>
+            </line>
+            <line>
+              <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+            </line>
+            <line>
+              <![CDATA[User Closes Popup to verify Manifest Status]]>
+            </line>
+            <line>
+              <![CDATA[Updated Manifest Status : Completed]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[User Searches for the Manifest -TESTMANIFEST9307]]>
+            </line>
+            <line>
+              <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Priority (NZ) Matched the Text on Screen :Toll Priority (NZ)]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+            </line>
+            <line>
+              <![CDATA[User Sets Ready Time as -09:15]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Book Up]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+            </line>
+            <line>
+              <![CDATA[Reference No: PRINZ:100181:1356]]>
+            </line>
+            <line>
+              <![CDATA[---------------END OF TEST---------------]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight -->
-        <test-method status="SKIP" signature="RunTearDown()[pri:0, instance:rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations@3ffc5af1]" name="RunTearDown" is-config="true" duration-ms="0" started-at="2017-11-28T11:18:25Z" finished-at="2017-11-28T11:18:25Z">
+        </test-method> <!-- Manifest_TollPriorityNZ_E2ETest_TID_1127_Service_ServiceParcelsOffPeak_AddManifestManual -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:manifestE2ETests.ManualManifestTollPriorityNZTests@3e6fa38a]" name="RunTearDown" is-config="true" duration-ms="1094" started-at="2017-11-16T15:48:24Z" finished-at="2017-11-16T15:48:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RunTearDown -->
-      </class> <!-- rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations -->
-    </test> <!-- RateEnquiry -->
+      </class> <!-- manifestE2ETests.ManualManifestTollPriorityNZTests -->
+      <class name="manifestE2ETests.ManualManifestTollIntermodalTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:manifestE2ETests.ManualManifestTollIntermodalTests@ae45eb6]" name="RunSetup" is-config="true" duration-ms="18674" started-at="2017-11-16T15:36:26Z" finished-at="2017-11-16T15:36:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="Manifest_TollIntermodal_E2ETest_TID_1127_Service_Express_AddManifestManual(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:manifestE2ETests.ManualManifestTollIntermodalTests@ae45eb6]" name="Manifest_TollIntermodal_E2ETest_TID_1127_Service_Express_AddManifestManual" duration-ms="99135" started-at="2017-11-16T15:36:45Z" finished-at="2017-11-16T15:38:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Intermodal]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Express]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[106119]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Toll Group Test]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[ACT TOLLFAST]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ADC Port Adelaide (TMS)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Dadd]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[012345]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[567879]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Automation Template1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[300]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[900]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[General Freight]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Test Special Ins]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[5000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Toll Carrier - Toll Intermodal]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Sender]]>
+            </line>
+            <line>
+              <![CDATA[User Enters ManifestName - 'TESTMANIFEST6180']]>
+            </line>
+            <line>
+              <![CDATA[User Saves Manifest and Proceeds]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : MANIFEST - TESTMANIFEST6180 Matched the Text on Screen :MANIFEST - TESTMANIFEST6180]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Add New Shipment]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+            </line>
+            <line>
+              <![CDATA[User Enters Shipment Details]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Shipment]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Continue to Manifest]]>
+            </line>
+            <line>
+              <![CDATA[Manifest ID : MYT1001696]]>
+            </line>
+            <line>
+              <![CDATA[Current Status : In progress]]>
+            </line>
+            <line>
+              <![CDATA[No if Shipments in Manifest = 1]]>
+            </line>
+            <line>
+              <![CDATA[Shipment ID : 4373183407]]>
+            </line>
+            <line>
+              <![CDATA[Shipment Array : [4373183407]]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Print and Close Manifest]]>
+            </line>
+            <line>
+              <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+            </line>
+            <line>
+              <![CDATA[User Closes Popup to verify Manifest Status]]>
+            </line>
+            <line>
+              <![CDATA[Updated Manifest Status : Completed]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[User Searches for the Manifest -TESTMANIFEST6180]]>
+            </line>
+            <line>
+              <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Intermodal Matched the Text on Screen :Toll Intermodal]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+            </line>
+            <line>
+              <![CDATA[User Sets Ready Time as -09:15]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Book Up]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+            </line>
+            <line>
+              <![CDATA[Reference No: TSPD:106119:1351]]>
+            </line>
+            <line>
+              <![CDATA[---------------END OF TEST---------------]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Manifest_TollIntermodal_E2ETest_TID_1127_Service_Express_AddManifestManual -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:manifestE2ETests.ManualManifestTollIntermodalTests@ae45eb6]" name="RunTearDown" is-config="true" duration-ms="2304" started-at="2017-11-16T15:38:24Z" finished-at="2017-11-16T15:38:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+      </class> <!-- manifestE2ETests.ManualManifestTollIntermodalTests -->
+      <class name="manifestE2ETests.ManualManifestTollPriorityAUSTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:manifestE2ETests.ManualManifestTollPriorityAUSTests@47c62251]" name="RunSetup" is-config="true" duration-ms="38953" started-at="2017-11-16T15:44:19Z" finished-at="2017-11-16T15:44:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="Manifest_TollPriorityAU_E2ETest_TID_1127_Service_ServiceParcelsOffPeak_AddManifestManual(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:manifestE2ETests.ManualManifestTollPriorityAUSTests@47c62251]" name="Manifest_TollPriorityAU_E2ETest_TID_1127_Service_ServiceParcelsOffPeak_AddManifestManual" duration-ms="93399" started-at="2017-11-16T15:44:58Z" finished-at="2017-11-16T15:46:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll Priority (Aus)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Parcels - Off Peak]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[106119]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Toll Group Test]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[ACT TOLLFAST]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ADC Port Adelaide (TMS)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Dadd]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[012345]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[567879]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Automation Template1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[300]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[900]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[General Freight]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Test Special Ins]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[5000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Toll Carrier - Toll Priority (Aus)]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Sender]]>
+            </line>
+            <line>
+              <![CDATA[User Enters ManifestName - 'TESTMANIFEST1536']]>
+            </line>
+            <line>
+              <![CDATA[User Saves Manifest and Proceeds]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : MANIFEST - TESTMANIFEST1536 Matched the Text on Screen :MANIFEST - TESTMANIFEST1536]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Add New Shipment]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Priority (Aus) Matched the Text on Screen :Toll Priority (Aus)]]>
+            </line>
+            <line>
+              <![CDATA[User Enters Shipment Details]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Shipment]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Continue to Manifest]]>
+            </line>
+            <line>
+              <![CDATA[Manifest ID : MYT1001700]]>
+            </line>
+            <line>
+              <![CDATA[Current Status : In progress]]>
+            </line>
+            <line>
+              <![CDATA[No if Shipments in Manifest = 1]]>
+            </line>
+            <line>
+              <![CDATA[Shipment ID : MYTA003213]]>
+            </line>
+            <line>
+              <![CDATA[Shipment Array : [4373183407, 2401000018334, 2856213061, 4039863681, MYTA003213]]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Print and Close Manifest]]>
+            </line>
+            <line>
+              <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+            </line>
+            <line>
+              <![CDATA[User Closes Popup to verify Manifest Status]]>
+            </line>
+            <line>
+              <![CDATA[Updated Manifest Status : Completed]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[User Searches for the Manifest -TESTMANIFEST1536]]>
+            </line>
+            <line>
+              <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll Priority (Aus) Matched the Text on Screen :Toll Priority (Aus)]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+            </line>
+            <line>
+              <![CDATA[User Sets Ready Time as -09:15]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Book Up]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+            </line>
+            <line>
+              <![CDATA[Reference No: PRIO:401509:1355]]>
+            </line>
+            <line>
+              <![CDATA[---------------END OF TEST---------------]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Manifest_TollPriorityAU_E2ETest_TID_1127_Service_ServiceParcelsOffPeak_AddManifestManual -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:manifestE2ETests.ManualManifestTollPriorityAUSTests@47c62251]" name="RunTearDown" is-config="true" duration-ms="1109" started-at="2017-11-16T15:46:32Z" finished-at="2017-11-16T15:46:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+      </class> <!-- manifestE2ETests.ManualManifestTollPriorityAUSTests -->
+      <class name="manifestE2ETests.ManualManifestTollNQXTollExpressTests">
+        <test-method status="PASS" signature="RunSetup()[pri:0, instance:manifestE2ETests.ManualManifestTollNQXTollExpressTests@27efef64]" name="RunSetup" is-config="true" duration-ms="17781" started-at="2017-11-16T15:40:07Z" finished-at="2017-11-16T15:40:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunSetup -->
+        <test-method status="PASS" signature="Manifest_TollNQXTollExpress_E2ETest_TID_1127_Service_Premium_AddManifestManual(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:manifestE2ETests.ManualManifestTollNQXTollExpressTests@27efef64]" name="Manifest_TollNQXTollExpress_E2ETest_TID_1127_Service_Premium_AddManifestManual" duration-ms="98054" started-at="2017-11-16T15:40:25Z" finished-at="2017-11-16T15:42:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toll NQX | Toll Express]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Premium]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[106119]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Toll Group Test]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[ACT TOLLFAST]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ADC Port Adelaide (TMS)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Dadd]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[012345]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[567879]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Automation Template1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[300]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[900]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[General Freight]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Test Special Ins]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[5000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[User Navigates to Manifest Tab and Selects Add Manifest Manually]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Toll Carrier - Toll NQX | Toll Express]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Sender]]>
+            </line>
+            <line>
+              <![CDATA[User Enters ManifestName - 'TESTMANIFEST6754']]>
+            </line>
+            <line>
+              <![CDATA[User Saves Manifest and Proceeds]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : MANIFEST - TESTMANIFEST6754 Matched the Text on Screen :MANIFEST - TESTMANIFEST6754]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Add New Shipment]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+            </line>
+            <line>
+              <![CDATA[User Enters Shipment Details]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Shipment]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Continue to Manifest]]>
+            </line>
+            <line>
+              <![CDATA[Manifest ID : MYT1001698]]>
+            </line>
+            <line>
+              <![CDATA[Current Status : In progress]]>
+            </line>
+            <line>
+              <![CDATA[No if Shipments in Manifest = 1]]>
+            </line>
+            <line>
+              <![CDATA[Shipment ID : 2856213061]]>
+            </line>
+            <line>
+              <![CDATA[Shipment Array : [4373183407, 2401000018334, 2856213061]]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Print and Close Manifest]]>
+            </line>
+            <line>
+              <![CDATA[User Select Download PDF from Shipment/Manifest Tab]]>
+            </line>
+            <line>
+              <![CDATA[User Closes Popup to verify Manifest Status]]>
+            </line>
+            <line>
+              <![CDATA[Updated Manifest Status : Completed]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Go To Dashboard to Book a Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[User Searches for the Manifest -TESTMANIFEST6754]]>
+            </line>
+            <line>
+              <![CDATA[Manifes Status on DashBoard = 'Book a Pickup' - Proceed to Book A Pick Up]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : Toll NQX | Toll Express Matched the Text on Screen :Toll NQX | Toll Express]]>
+            </line>
+            <line>
+              <![CDATA[User Selects Pick Up Date as Tomorrow]]>
+            </line>
+            <line>
+              <![CDATA[User Sets Ready Time as -09:15]]>
+            </line>
+            <line>
+              <![CDATA[Expected Text : 09:15 Matched the Text on Screen :09:15]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Review Book Up]]>
+            </line>
+            <line>
+              <![CDATA[User Clicks Confirm Pick Up and Awaits Reference Number]]>
+            </line>
+            <line>
+              <![CDATA[Reference No: 161117:TW3987]]>
+            </line>
+            <line>
+              <![CDATA[---------------END OF TEST---------------]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Manifest_TollNQXTollExpress_E2ETest_TID_1127_Service_Premium_AddManifestManual -->
+        <test-method status="PASS" signature="RunTearDown()[pri:0, instance:manifestE2ETests.ManualManifestTollNQXTollExpressTests@27efef64]" name="RunTearDown" is-config="true" duration-ms="1135" started-at="2017-11-16T15:42:03Z" finished-at="2017-11-16T15:42:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunTearDown -->
+      </class> <!-- manifestE2ETests.ManualManifestTollNQXTollExpressTests -->
+    </test> <!-- ManifestTest -->
   </suite> <!-- Suite -->
 </testng-results>

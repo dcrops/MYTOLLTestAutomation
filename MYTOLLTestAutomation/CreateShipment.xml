@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
 	<test name="CreateShipment">
 		<!---Toll carriers test data -->
 
@@ -27,11 +31,13 @@
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
 		<parameter name="ServiceDGExpress" value="DG Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
+		<parameter name="ServiceFashion" value="Fashion" />
 
 		<!---Create shipment Test data -->
 		<parameter name="AccountNumberTINTER" value="106119" />
 		<parameter name="AccountNumberTNQX" value="614060" />
 		<parameter name="AccountNumberTTas" value="100428" />
+		<parameter name="AccountNumberTIPEC" value="2230899" />
 		<parameter name="SenderName" value="COLLINS" />
 		<parameter name="SenderItem" value="COLLINS COMPUTERS 8 TO 8" />
 		<!---Item test data -->
@@ -49,6 +55,7 @@
 		<parameter name="DestinationNZItem" value="6011, WELLINGTON, NZ" />
 		<parameter name="DestinationCountry" value="AUSTRALIA" />
 		<parameter name="NumberOfItems" value="15" />
+		<parameter name="NumberOfGarments" value="10" />
 		<parameter name="Length" value="100" />
 		<parameter name="Width" value="200" />
 		<parameter name="Height" value="300" />
@@ -102,11 +109,14 @@
 		<parameter name="CollectionDepot" value="ACT TOLLFAST" />
 		<parameter name="dropOffDepot" value="1" />
 		<parameter name="collectionDepot" value="2" />
-		<parameter name="BillingType" value="General Freight" /> 
+		<parameter name="BillingType" value="General Freight" />
+		<parameter name="BillingTypeAllFreight" value="ALL FREIGHT" />
+		<parameter name="ItemTypeGarments" value="BAG CHARGED BY NUMBER OF GARMENTS (G)" />
 
 		<!---Pallet Information Test data -->
-		
+
 		<parameter name="PalletTransactionsInfo" value="Yes" />
+		<parameter name="PalletTransactionsInfoNo" value="No" />
 		<parameter name="ChepCustomer" value="1234" />
 		<parameter name="ChepExchange" value="4124" />
 		<parameter name="ChepTansferToToll" value="2345" />
@@ -126,9 +136,9 @@
 		<parameter name="specialIns" value="Test Special Ins" />
 		<parameter name="SpeceialIns" value="Test Special Ins" />
 		<parameter name="TollExtraServiceAmount" value="5000" />
-		
+
 		<!--- Shipment View Headings Test data -->
-		
+
 		<parameter name="LineItemName1Heading" value="Line Item 1" />
 		<parameter name="LineItemName2Heading" value="Line Item 2" />
 		<parameter name="ItemDescriptionHeading" value="Item description" />
@@ -140,26 +150,26 @@
 		<parameter name="WeightHeading" value="Weight (kg)" />
 		<parameter name="Reference1Heading" value="Reference1" />
 		<parameter name="Reference2Heading" value="Reference2" />
-		<parameter name="ShipmentContainDangerousGoodsHeading" value="Shipment contain dangerous goods" /> 
-		<parameter name="ShipmentContainDangerousGoodsYes" value="Yes" /> 
-		<parameter name="ShipmentContainDangerousGoodsNo" value="No" /> 
-		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" /> 
+		<parameter name="ShipmentContainDangerousGoodsHeading"
+			value="Shipment contain dangerous goods" />
+		<parameter name="ShipmentContainDangerousGoodsYes" value="Yes" />
+		<parameter name="ShipmentContainDangerousGoodsNo" value="No" />
+		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 		<parameter name="VolumeLineItem1" value="90 m3" />
 		<parameter name="VolumeLineItem2" value="15 m3" />
-		<parameter name="ShipmentContainDangerousGoodsHeading" value="Shipment contain dangerous goods" /> 
-		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" /> 
+		<parameter name="ShipmentContainDangerousGoodsHeading"
+			value="Shipment contain dangerous goods" />
+		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 		<classes>
-			<class name="createShipmentE2ETests.TollTasmaniaTests"> 
-			<!-- Blocked>	<class name="createShipmentE2ETests.TollNQXTollExpressTests" >
-			    <methods><include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailGeneral"></include>
-			    
-			    </methods>    
-			 </class>
-		<class name="createShipmentE2ETests.TollTasmaniaTests"> 
-				<class name="createShipmentE2ETests.TollIntermodalTests"> <class name="createShipmentE2ETests.TollIntermodalTests"> 
-				 <class name="createShipmentE2ETests.TollIPECTests"> <class name="createShipmentE2ETests.TollPriorityAUSTests"> 
-				 <class name="createShipmentE2ETests.TollNQXTollExpressTests">	</Blocked -->
- </class>
+
+			<class name="createShipmentE2ETests.TollIntermodalTests" />
+			<class name="createShipmentE2ETests.TollTasmaniaTests" />
+			<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
+			<class name="createShipmentE2ETests.TollPriorityAUSTests" />
+			<class name="createShipmentE2ETests.TollPriorityNZ" />
+			<class name="createShipmentE2ETests.TollIPECTests" />
+			<!-- Blocked> </Blocked -->
+
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

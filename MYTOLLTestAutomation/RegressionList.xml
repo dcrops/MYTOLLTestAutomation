@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+ <classes>
+     <class name="createShipmentE2ETests.TollNQXTollExpressTests" >
+			    <methods><include name="CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailGeneral"></include>  </methods>   
+			 </class>  
+			 
+			 <class name="createShipmentE2ETests.TollIntermodalTests" >
+			    <methods><include name="CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express_ShipmentReview"></include>  </methods>   
+			 </class>  
+			  <class name="rateEnquiryE2ETests.TollIntermodalTests" >
+			    <methods><include name="RateEnquiry_TollIntermodal_E2ETest_TID_1052_Service_General"></include>  </methods>   
+			 </class>   
+      
+  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

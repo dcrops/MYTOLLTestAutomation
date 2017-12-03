@@ -84,7 +84,7 @@ public class TollIntermodalTest100 {
 	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 		//BaseWebdriver.driver.quit();
 
 	}

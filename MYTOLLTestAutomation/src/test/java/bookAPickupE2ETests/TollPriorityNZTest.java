@@ -22,11 +22,11 @@ public class TollPriorityNZTest {
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
-		MyTollHomePageActions.ClickMenu();
-		MyTollHomePageActions.ClickBookAPIckupMenu();
+		//MyTollHomePageActions.ClickMenu();
+		//MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test(priority = 3)
+	@Test
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference", "DestinationCountry",
 			"specialIns" })
@@ -54,7 +54,7 @@ public class TollPriorityNZTest {
 
 		// Enter data for Quick entry mode, service(=DGRefrigerated),
 
-		BookAPickupActions.SelectDestinationCountry(destination);
+		BookAPickupActions.SelectDestinationCountry(destination, destination);
 
 		BookAPickupActions.SelectItemDescription();
 		// BookAPickupActions.Selectservice(2);
@@ -77,7 +77,7 @@ public class TollPriorityNZTest {
 
 	}
 
-	@Test(priority = 2)
+	@Test
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference", "DestinationCountry",
 			"specialIns" })
@@ -105,7 +105,7 @@ public class TollPriorityNZTest {
 		BookAPickupActions.EnterService(ServiceGlobalExpressDocuments);
 
 		// Enter data for Quick entry mode, service
-		BookAPickupActions.SelectDestinationCountry(destination);
+		BookAPickupActions.SelectDestinationCountry(destination, destination);
 		
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 
@@ -128,7 +128,7 @@ public class TollPriorityNZTest {
 
 	}
 
-	@Test(priority = 1)
+	@Test
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference","DestinationNZ", "DestinationNZItem",
 			"specialIns" })

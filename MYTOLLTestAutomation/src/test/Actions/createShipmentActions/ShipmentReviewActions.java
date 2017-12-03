@@ -149,6 +149,18 @@ public class ShipmentReviewActions {
 		
 	}
 	
+	public static void VerifyAdditionalInformationTollIPEC(String pSpecialInstructions, String pPalletTransactionsInformation, String pValueOfGoods ) {
+		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(specialInstructions).getText());
+		assertEquals(pPalletTransactionsInformation,BaseWebdriver.driver.findElement(palletTransactionsInformation).getText());
+		assertEquals(pValueOfGoods, BaseWebdriver.driver.findElement(valueOfGoods).getText());
+		
+	}
+	
+	public static void VerifyAdditionalInformationTollIPECFashion(String pSpecialInstructions) {
+		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(specialInstructions).getText());
+		
+	}
+	
 	public static void VerifyAdditionalInformationForDangerousGoods(String pSpecialInstructions, String pPalletTransactionsInformation, String pPurchaseOrders ) {
 		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(specialInstructions).getText());
 		assertEquals(pPalletTransactionsInformation,BaseWebdriver.driver.findElement(palletTransactionsInformation).getText());
@@ -194,6 +206,21 @@ public class ShipmentReviewActions {
 		assertEquals(pMode, BaseWebdriver.driver.findElement(mode).getText());
 	}
 	
+	public static void VerifyShipmentOverviewTollIPEC(String pTollCarrier, String pAccountNumber, String pSenderCompanyName,String pSenderLocation,String pReceiverCompanyName, String pReceiverLocation,String pShipmentRef1,
+			String pService,String pWhopays) {
+		 PageBase.MaximumWaitForElementEnabled();
+		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
+		assertEquals(pAccountNumber,BaseWebdriver.driver.findElement(accountNumber).getText());
+		assertEquals(pSenderCompanyName, BaseWebdriver.driver.findElement(senderCompanyName).getText());
+		assertEquals(pSenderLocation, BaseWebdriver.driver.findElement(senderLocation).getText());
+		assertEquals(pReceiverCompanyName,  BaseWebdriver.driver.findElement(receiverCompanyName).getText());
+		assertEquals(pReceiverLocation, BaseWebdriver.driver.findElement(receiverLocation).getText());
+		assertEquals(pShipmentRef1,  BaseWebdriver.driver.findElement(shipmentReference1).getText());
+		assertEquals(pService, BaseWebdriver.driver.findElement(service).getText());
+		assertEquals(pWhopays, BaseWebdriver.driver.findElement(whoPays).getText());
+		
+	}
+	
 	//Pallet information verification
 	public static void VerifyPalletTransactionsInformations(String pChepCustomerOwn, String pChepExchange, String pChepTransfer,String pChepDocketNumber,String pLoscamCustomerOwn, String pLoscamExchange,String pLoscamTransfer, String pLoscamDocketNumber,
 			String pOtherCustomerOwn,String pChepOtherExchange,String pChepOtherTransfer, String pChepOtherDocketNumber,String pLoscamOtherExchange, String pLoscamOtherTransfer , String pLoscamOtherDocketNumber) {
@@ -206,9 +233,9 @@ public class ShipmentReviewActions {
 		assertEquals(pLoscamTransfer,  BaseWebdriver.driver.findElement(LoscamTransfer).getText());
 		assertEquals(pLoscamDocketNumber, BaseWebdriver.driver.findElement(LoscamDocketNumber).getText());
 		assertEquals(pOtherCustomerOwn, BaseWebdriver.driver.findElement(OtherCustomerOwn).getText());
-		assertEquals(pChepOtherExchange, BaseWebdriver.driver.findElement(ChepOtherExchange).getText());
-		assertEquals(pChepOtherTransfer, BaseWebdriver.driver.findElement(ChepOtherTransfer).getText());
-		assertEquals(pChepOtherDocketNumber, BaseWebdriver.driver.findElement(ChepOtherDocketNumber).getText());
+		//assertEquals(pChepOtherExchange, BaseWebdriver.driver.findElement(ChepOtherExchange).getText());
+		//assertEquals(pChepOtherTransfer, BaseWebdriver.driver.findElement(ChepOtherTransfer).getText());
+		//assertEquals(pChepOtherDocketNumber, BaseWebdriver.driver.findElement(ChepOtherDocketNumber).getText());
 		assertEquals(pLoscamOtherExchange, BaseWebdriver.driver.findElement(LoscamOtherExchange).getText());
 		assertEquals(pLoscamOtherTransfer, BaseWebdriver.driver.findElement(LoscamOtherTransfer).getText());
 		assertEquals(pLoscamOtherDocketNumber, BaseWebdriver.driver.findElement(LoscamOtherDocketNumber).getText());

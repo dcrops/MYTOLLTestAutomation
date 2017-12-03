@@ -29,8 +29,9 @@ public class TollPriorityAUSTests {
 			}
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioAU", "ServiceParcelsOffPeak"})
-	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection(String TollCarrier, String ServiceParcelsOffPeak)
+	@Parameters({"TollCarrierTollPrioAU", "ServiceParcelsOffPeak","SenderEmail", "ReceiverEmail","ItemTemplateName","NumberOfItems","Length", "Width", "Height","Weight","ShipmentRef1", "ShipmentRef2","SpeceialIns"})
+	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_OvernightRegionalCollection(String TollCarrier, String ServiceParcelsOffPeak,String SenderEmail, String ReceiverEmail,String ItemTemplateName,
+			String NumberOfItems, String Length, String Width, String Height, String Weight, String ShipmentRef1,String ShipmentRef2,String SpeceialIns)
 	{
 		
 		
@@ -39,15 +40,20 @@ public class TollPriorityAUSTests {
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(2);
 		CreateShipmentActions.SelectSender(1); 
-		//CreateShipmentActions.SelectReceiver(2);
-		CreateShipmentActions.EnterReceiver("Test", "Test174");
+		CreateShipmentActions.SelectReceiver(2);
+		//CreateShipmentActions.EnterReceiver("Test", "Test174");
 		
 		CreateShipmentActions.SelectShipmentConsolidated();
-		CreateShipmentActions.EnterShipmentReferences("1234", "6789");
-		BookAPickupActions.EnterItem("Automation Temp1");
-		CreateShipmentActions.NumberOfItem("15"); 
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		CreateShipmentActions.EnterWeight("20");
+
+		CreateShipmentActions.EnterSenderEmail(SenderEmail);
+		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
+		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
+
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		CreateShipmentActions.NumberOfItem(NumberOfItems);
+
+		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
+		CreateShipmentActions.EnterWeight(Weight);
 		BookAPickupActions.selectDangerousGood();
 		
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
@@ -57,13 +63,14 @@ public class TollPriorityAUSTests {
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.selectDangerousGood();
 		
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 		CreateShipmentActions.ClickReviewCreateShipment();
 	}
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments"})
-	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(String TollCarrier, String ServiceGlobalExpressDocuments)
+	@Parameters({"TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments", "SenderEmail", "ReceiverEmail", "ItemTemplateName","NumberOfItems","Length", "Width", "Height","Weight","ShipmentRef1", "ShipmentRef2","SpeceialIns"})
+	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(String TollCarrier, String ServiceGlobalExpressDocuments,String SenderEmail, String ReceiverEmail,String ItemTemplateName,
+			String NumberOfItems, String Length, String Width, String Height, String Weight, String ShipmentRef1,String ShipmentRef2,String SpeceialIns)
 	{
 		
 		//CreateShipmentActions.SelectTollCarrierItem(TollCarrier);
@@ -75,25 +82,29 @@ public class TollPriorityAUSTests {
 		CreateShipmentActions.SelectReceiver(3);
 		
 		CreateShipmentActions.SelectShipmentConsolidated();
-		CreateShipmentActions.EnterShipmentReferences("1234", "6789");
-		BookAPickupActions.EnterItem("Automation Temp1");
-		CreateShipmentActions.NumberOfItem("15"); 
-		BookAPickupActions.EnterLengthWidthHeight("200","100","50");
-		CreateShipmentActions.EnterWeight("20");
+		CreateShipmentActions.EnterSenderEmail(SenderEmail);
+		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
+		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
+
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		CreateShipmentActions.NumberOfItem(NumberOfItems);
+
+		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
+		CreateShipmentActions.EnterWeight(Weight);
 		PageBase.Scrollbar(500, 800);
 		BookAPickupActions.selectDangerousGood();
 		PageBase.Scrollbar(1200,1500);
 		CreateShipmentActions.AddANewLineNZAUS();
 		BookAPickupActions.selectDangerousGood();
 		PageBase.Scrollbar(800, 1000);
-		BookAPickupActions.EnterSpecialInstructions("special instructions test");
+		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 		CreateShipmentActions.ClickReviewCreateShipment();
 	}
 	
 	@AfterMethod
 	  public void RunTearDown() throws Exception
 		{
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 	
 		}
 

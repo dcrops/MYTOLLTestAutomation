@@ -27,7 +27,7 @@ public class MyTollHomePageActions {
 	public static By BookAPickup=By.id("bookaPickup");
 	public static By getRateEnquiry=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a[1]/p");
 	public static By templateMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My Templates']");
-	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']");
+	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My accounts']");//*[@id="nav-dropdown"]/ul/li[5]/a/span[2] , //*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']
 	
 	//Add Template
 	public static By MyTemplates=By.xpath("//a[@href='/group/guest/my-templates']"); //"/group/guest/my-templates");
@@ -141,12 +141,14 @@ public class MyTollHomePageActions {
 	{
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(HmbugerMenu).click();
 		//BaseWebdriver.driver.findElement(Menulist).click();
 	}
 	
 	public static void ClickBookAPIckupMenu()
 	{
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(BookAPickup).click();
 		
 	}
