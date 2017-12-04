@@ -71,7 +71,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
@@ -217,7 +217,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
@@ -342,7 +342,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
@@ -476,7 +476,7 @@ public class TollTasmaniaTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		
 		CreateShipmentActions.EnterCollectionDepot(CollectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);

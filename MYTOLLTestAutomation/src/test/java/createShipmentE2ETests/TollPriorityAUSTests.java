@@ -43,7 +43,7 @@ public class TollPriorityAUSTests {
 		CreateShipmentActions.SelectReceiver(2);
 		//CreateShipmentActions.EnterReceiver("Test", "Test174");
 		
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
@@ -81,7 +81,7 @@ public class TollPriorityAUSTests {
 		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(3);
 		
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);

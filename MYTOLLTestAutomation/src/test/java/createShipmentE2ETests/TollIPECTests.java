@@ -77,7 +77,7 @@ public class TollIPECTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MaximumWaitForElementEnabled();
 
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
@@ -183,7 +183,7 @@ public class TollIPECTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MaximumWaitForElementEnabled();
 
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);

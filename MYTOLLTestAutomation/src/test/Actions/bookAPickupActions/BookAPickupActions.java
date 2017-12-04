@@ -889,6 +889,7 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 
 		BookAPickupActions.Selectservice(2);
+		BookAPickupActions.SelectModeItem(1);
 		BookAPickupActions.EnterQuantity("15");
 
 		BookAPickupActions.EnterPalletSpace("6");

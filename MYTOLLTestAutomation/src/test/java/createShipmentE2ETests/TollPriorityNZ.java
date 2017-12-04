@@ -38,7 +38,7 @@ public class TollPriorityNZ {
 			CreateShipmentActions.SelectSender(2);
 			CreateShipmentActions.SelectReceiver(3);
 			
-			CreateShipmentActions.SelectShipmentConsolidated();
+			CreateShipmentActions.SelectShipmentConsolidationContinue();
 
 			CreateShipmentActions.EnterSenderEmail(SenderEmail);
 			CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
@@ -73,7 +73,7 @@ public class TollPriorityNZ {
 		CreateShipmentActions.SelectReceiver(3);
 		//CreateShipmentActions.EnterReceiver("Test", "Test174");
 		
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);

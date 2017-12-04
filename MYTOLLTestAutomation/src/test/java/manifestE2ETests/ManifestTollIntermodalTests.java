@@ -52,7 +52,7 @@ public class ManifestTollIntermodalTests {
 		CreateShipmentActions.SelectReceiver(2);
 		String receiver=CreateShipmentActions.GetRecieverCompanyName();
 		
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
@@ -113,7 +113,7 @@ public class ManifestTollIntermodalTests {
 
 		
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
@@ -181,7 +181,7 @@ public class ManifestTollIntermodalTests {
 
 		
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
@@ -258,7 +258,7 @@ public class ManifestTollIntermodalTests {
 
 		
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
@@ -334,7 +334,7 @@ public class ManifestTollIntermodalTests {
 		CreateShipmentActions.SelectReceiver(2);
 
 		
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
