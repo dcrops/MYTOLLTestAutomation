@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
 <suite name="Manifest">
 
 	<test name="ManifestTest">
 		<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
+
 		<parameter name="TollCarrierTollTasmania" value="Toll Tasmania" />
 		<parameter name="TollCarrierTollNQXTollExpress" value="Toll NQX | Toll Express" />
 		<parameter name="TollCarrierTollIPEC" value="Toll IPEC" />
@@ -121,7 +123,6 @@
 
 		<classes>
 
-			<class name="manifestE2ETests.ManifestTollIntermodalTests" />
 			<class name="manifestE2ETests.ManualManifestTollIPECTest" />
 			<class name="manifestE2ETests.ManualManifestTollNQXTollExpressTests" />
 			<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" />
