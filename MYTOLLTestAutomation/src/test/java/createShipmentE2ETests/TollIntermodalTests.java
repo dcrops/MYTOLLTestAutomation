@@ -80,7 +80,7 @@ public class TollIntermodalTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 	
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
@@ -210,7 +210,7 @@ public class TollIntermodalTests {
 		System.out.println(receiver);
 		
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
@@ -301,7 +301,7 @@ public class TollIntermodalTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox,
 				CreateShipmentActions.notifySenderCheckBox);
 
@@ -412,7 +412,7 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectReceiver(2);
 
 		
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
@@ -441,6 +441,7 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectPalletTransactionsYes();
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraServiceAmount);
 		CreateShipmentActions.ClickReviewCreateShipment();
+		CreateShipmentActions.CloseManifestScreenGoToShipmentView();
 
 	}
 
@@ -470,7 +471,7 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectSender(1);
 		CreateShipmentActions.SelectReceiver(2);
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
@@ -549,7 +550,7 @@ public class TollIntermodalTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
@@ -657,7 +658,7 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectSender(1);
 		CreateShipmentActions.SelectReceiver(2);
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
@@ -744,7 +745,7 @@ public class TollIntermodalTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 	
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
@@ -823,7 +824,7 @@ public class TollIntermodalTests {
 	
 
 	//@Test(priority = 4)
-	@Test
+	//@Test(priority = -3)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER","whoPays","Mode", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
@@ -872,7 +873,7 @@ public class TollIntermodalTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);

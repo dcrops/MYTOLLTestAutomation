@@ -4,12 +4,15 @@ import GlobalActions.PageBase;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Date;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
+import manifestActions.ManifestActions;
 
 public class CreateShipmentActions {
 
@@ -30,13 +33,12 @@ public class CreateShipmentActions {
 	public static By receiverTextfield = By.xpath("//*[@id=\"receiver-selector\"]/label/input[2]");
 	public static By shipmentConsolidatedMSGHeading = By
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/header/h2");
-	public static By shipmentConsolidatedRadioBtn = By
-			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[1]/label");
+	public static By shipmentConsolidatedRadioBtn = By.id("shipitemcheck0");
 	public static By shipmentConsolidatedArrowdown = By
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]");
 	public static By shipmentConsolidatedContinue = By
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]");
-	public static By consolidatedBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[2]");
+	public static By shipmentConsolidatedBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//a[text()='Consolidate']"); //*[@id="shipment-cons-popup-wrpr"]/div/div/footer/a[2]
 	public static By dgContactName = By.id("sh-dg-contact-name");
 	public static By dgContactNumber = By.name("dg-contact-num");
 	public static By quoteNumber = By.id("quote_num");
@@ -322,15 +324,27 @@ public class CreateShipmentActions {
 
 	}
 
-	public static void SelectShipmentConsolidatedContinue() {
+	public static void SelectShipmentConsolidationConsolidate() {
 		PageBase.MaximumWaitForElementEnabled();
-		//boolean results=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]")).isDisplayed();
-		boolean results=BaseWebdriver.driver.findElement(shipmentConsolidatedMSGHeading).isDisplayed();
+	try {
+		boolean results=BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).isDisplayed();
 		if (results==true) {
 
-			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]"))
-					.click();
+			BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).click();
+			BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
+			PageBase.MaximumWaitForElementEnabled();
+			SelectNotifySenderAndReceiver();
+			PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
+					CreateShipmentActions.notifyReceiverCheckBox);
+			
 		}
+	}
+	
+	catch(Exception ex)
+	{
+		System.out.println(ex);
+		SelectNotifySenderAndReceiver();
+	}
 
 		/*
 		 * String myWindowHandle = BaseWebdriver.driver.getWindowHandle();
@@ -344,7 +358,7 @@ public class CreateShipmentActions {
 
 	}
 
-	public static void SelectShipmentConsolidated() {
+	public static void SelectShipmentConsolidationContinue() {
 		try {
 			PageBase.MaximumWaitForElementEnabled();
 			Boolean results = BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).isDisplayed();
@@ -814,6 +828,32 @@ public class CreateShipmentActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
+		CloseManifestScreenGoToShipmentView();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		
+	}
+	
+	public static void CloseManifestScreenGoToShipmentView() {
+
+		PageBase.MaximumWaitForElementEnabled();
+	try {
+		boolean results=true;
+		results=BaseWebdriver.driver.findElement(ManifestActions.AddToManifestTtile).isDisplayed();
+		if (results==true)
+		{
+			ManifestActions.AddToExistingManifestSubmittingCreateshipment("newManifest123"+(new Date()).getTime());
+		//ManifestActions.MoveToManifestAndCreateNewManifest("newManifest123");
+			
+		}
+	}
+	
+	catch(Exception ex)
+	{
+		System.out.println(ex);
+	}
+		
 	}
 
 	public static void VerifyDGContactName(String pContactName) {

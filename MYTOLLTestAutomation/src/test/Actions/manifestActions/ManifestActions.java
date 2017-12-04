@@ -71,8 +71,9 @@ public class ManifestActions {
 	// New manifest
 	public static By newRadioBtn = By.id("new-radio");
 	public static By newManifestTextField = By.id("new-manifest-name");
-	public static By AddManifestBtn = By.xpath("//a[@id='add-manifest']");//*[@id="manifest-cons-popup-wrpr"]/div/div/section/div/div[1]/div/div[2]/input  //*[@id="manifest-cons-popup-wrpr"]/div/div/section/div/div[1]/div/div[2]/input
-
+	public static By AddManifestBtn = By.xpath("//a[@id='add-manifest']");
+	public static By CloseBtnManifestScreen = By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/a/i");
+	
 	// Add to manifest
 	public static By AddToManifestTtile = By.xpath("//h2[text()='Add to Manifest']");
 	public static By AddToExistingManifestBtn = By
@@ -221,7 +222,7 @@ public class ManifestActions {
 		System.out.println("ClickAddtoExistingManifest ");
 	}
 
-	public static String AddToNewManifestSystemGeneratedManifestSubmittingCreateshipment() {//*[@id="manifest-cons-popup-wrpr"]/div/div/section/div/div[1]/div/div[1]/ul
+	public static String AddToNewManifestSystemGeneratedManifestSubmittingCreateshipment() {
 		PageBase.Scrollbar(0, 250);
 		System.out.println("scroll successful ");
 		PageBase.MinimumWaitForElementEnabled();
@@ -232,8 +233,6 @@ public class ManifestActions {
 		String manifestnameBySys=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).getText();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).click(); 
 		return manifestnameBySys ;
-		
-		//*[@id="manifest-cons-popup-wrpr"]/div/div/section/div/div[1]/div/div[1]/ul/li[16]/div/label
 		//ManifestActions.ClickAddManifest();
 	}
 
@@ -289,7 +288,7 @@ public class ManifestActions {
 	
 
 	public static void ClickAddManifest() {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(AddManifestBtn).click();
 
 	}
@@ -338,6 +337,13 @@ public class ManifestActions {
 		PageBase.click(MyManifestTab, 2);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.click(AddManifestManuallyButton, 2);	
+	}
+	
+	
+	
+	public static void CloseManifestScreen() {
+		BaseWebdriver.driver.findElement(CloseBtnManifestScreen).click();
+		
 	}
 
 	public static void submitandPrintManifest() {

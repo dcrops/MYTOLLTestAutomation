@@ -40,7 +40,7 @@ public class Toll_IntermodalTest {
 		}
 	}*/
 
-	@Test(priority = 7)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem","specialIns" })
@@ -176,7 +176,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test(priority = 2)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem","specialIns" })
@@ -250,7 +250,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test(priority = 3)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh", "refrigerationRefNum",
 			"bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem","lookupName", "lookupItem","PackingGroup", "packageDescription",
@@ -341,7 +341,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test(priority = 4)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","DestinationItem", "lookupName", "lookupItem","PackingGroup",
 			"packageDescription", "pDgPkgQty", "pDgQtyKg","technicalName", "specialIns" })
@@ -411,7 +411,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test(priority = 5)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","DestinationItem", "specialIns" })
 
@@ -536,7 +536,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test(priority = 11)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "locationIndex", "ItemTemplateName","ChargeToAccount", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","DestinationItem","Postcode", "VendorNum", "specialIns" })
 
@@ -630,7 +630,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test(priority = 8)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","DestinationItem", "VendorNum", "specialIns" })
 

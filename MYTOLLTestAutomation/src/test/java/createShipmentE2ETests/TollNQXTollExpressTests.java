@@ -81,7 +81,7 @@ public class TollNQXTollExpressTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		
 		PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 				CreateShipmentActions.notifyReceiverCheckBox);
@@ -214,7 +214,7 @@ public class TollNQXTollExpressTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
@@ -342,7 +342,7 @@ public class TollNQXTollExpressTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 
 		//CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
@@ -471,7 +471,7 @@ public class TollNQXTollExpressTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		// PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 		// CreateShipmentActions.notifyReceiverCheckBox);
 		//CreateShipmentActions.EnterSenderEmail(SenderEmail);
@@ -605,7 +605,7 @@ public class TollNQXTollExpressTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 
 		PageBase.MinimumWaitForElementEnabled();
 		// PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
@@ -761,7 +761,7 @@ public class TollNQXTollExpressTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MinimumWaitForElementEnabled();
 		// PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 		// CreateShipmentActions.notifyReceiverCheckBox);
@@ -918,7 +918,7 @@ public class TollNQXTollExpressTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MinimumWaitForElementEnabled();
 		// PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 		// CreateShipmentActions.notifyReceiverCheckBox);
@@ -1065,7 +1065,7 @@ public class TollNQXTollExpressTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 
 		PageBase.MediumWaitForElementEnabled();
 
@@ -1196,7 +1196,7 @@ public class TollNQXTollExpressTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidated();
+		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MinimumWaitForElementEnabled();
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 

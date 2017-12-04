@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-	<listeners>
-		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-	</listeners>
+<suite name="CreateShipment">
+
 	<test name="CreateShipment">
 		<!---Toll carriers test data -->
 
@@ -161,15 +158,15 @@
 			value="Shipment contain dangerous goods" />
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 		<classes>
-
+			
 			<class name="createShipmentE2ETests.TollIntermodalTests" />
 			<class name="createShipmentE2ETests.TollTasmaniaTests" />
 			<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
 			<class name="createShipmentE2ETests.TollPriorityAUSTests" />
 			<class name="createShipmentE2ETests.TollPriorityNZ" />
 			<class name="createShipmentE2ETests.TollIPECTests" />
-			<!-- Blocked> </Blocked -->
-
+			<!-- Blocked> 
+				</Blocked -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

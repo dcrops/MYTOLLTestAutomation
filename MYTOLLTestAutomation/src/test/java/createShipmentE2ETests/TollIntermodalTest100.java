@@ -54,7 +54,7 @@ public class TollIntermodalTest100 {
 		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(3);
 		
-		 CreateShipmentActions.SelectShipmentConsolidated();
+		 CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.Scrollbar(500, 800);
 		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
 		CreateShipmentActions.SelectCollectionDepot(collectionDepot);

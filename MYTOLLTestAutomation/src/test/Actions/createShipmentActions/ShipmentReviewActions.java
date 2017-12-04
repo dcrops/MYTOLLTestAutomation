@@ -401,6 +401,7 @@ public class ShipmentReviewActions {
 	public static void ClickContinue() {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(continueBtn).click();
+		PageBase.MaximumWaitForElementEnabled();
 	}
 	
 	public static void ClickAddToManifestManually() {
