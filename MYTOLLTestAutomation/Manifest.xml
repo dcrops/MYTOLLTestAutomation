@@ -128,10 +128,7 @@
 		<classes>
 			
 			<class name="manifestE2ETests.ManualManifestTollIPECTest" />
-			<class name="manifestE2ETests.ManualManifestTollNQXTollExpressTests" />
-			<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" /> 
-			<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
-			<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" />
+			
 		<!-- Blocked>	<class name="manifestE2ETests.ManualManifestTollIntermodalTests" /> 
 			<class name="manifestE2ETests.ManualManifestTollIPECTest" />
 			<class name="manifestE2ETests.ManualManifestTollNQXTollExpressTests" />

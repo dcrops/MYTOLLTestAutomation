@@ -97,7 +97,7 @@ public class PageBase {
 
 	public static void MaximumWaitForElementEnabled() {
 		try {
-			Thread.sleep(500);
+			Thread.sleep(1500);
 
 		}
 
@@ -110,7 +110,7 @@ public class PageBase {
 	public static void MediumWaitForElementEnabled() {
 		try {
 			
-			Thread.sleep(300);
+			Thread.sleep(1000);
 
 		}
 
@@ -122,7 +122,7 @@ public class PageBase {
 
 	public static void MinimumWaitForElementEnabled() {
 		try {
-			Thread.sleep(300);
+			Thread.sleep(500);
 
 		}
 
@@ -166,8 +166,8 @@ public class PageBase {
 			we = (WebElement) (new WebDriverWait(BaseWebdriver.driver, waitSeconds))
 				.until(ExpectedConditions.presenceOfElementLocated(locator));
 		} catch (TimeoutException e) {
-			System.out.println("xpath not found: " + locator +"<br>");
-			Reporter.log("xpath not found: " + locator +"<br>");
+			System.out.println("xpath not found: " + locator);
+			//Reporter.log("xpath not found: " + locator);
 			return null;
 		}
 		return we;

@@ -60,9 +60,9 @@ public class Toll_IntermodalTest_AddAddress {
 
 		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
 		//Select Account
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumber1();
 		PageBase.MaximumWaitForElementEnabled();
-		//bookAPickupActions.BookAPickupActions.addAdderess();
+		BookAPickupActions.addAdderess();
 
 		
 	}
