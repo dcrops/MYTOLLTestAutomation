@@ -173,7 +173,7 @@ public class CreateShipmentActions {
 	 */
 
 	public static void EnterService(String pService) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(servicedropdown).click();
 		BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='" + pService + "']"))
@@ -967,6 +967,17 @@ public class CreateShipmentActions {
 			Reporter.log("FAILED: New Receiver Address DOEN NOT Exists in Location Feild");
 			Assert.fail("FAILED: New Receiver Address DOEN NOT Exists in Location Feild");
 		}
+	}
+	
+	public static void verifyNoOfItemsLengthWidthHeightVolumeWeight(String NumberOfItems, String plength, String pwidth, String pheight,
+			String pweight) {
+		Reporter.log("User Verifies Dimension - NumberOfItems:"+NumberOfItems+", Length:"+plength+", Width:"+pwidth+", Height:"+pheight+", Weight:"+pweight);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExistAttribute(numberOfItem, NumberOfItems);
+		PageBase.verifyTextExistAttribute(BookAPickupActions.length, plength);
+		PageBase.verifyTextExistAttribute(BookAPickupActions.width, pwidth );
+		PageBase.verifyTextExistAttribute(BookAPickupActions.height, pheight);
+		PageBase.verifyTextExistAttribute(weight, pweight);
 	}
 
 }

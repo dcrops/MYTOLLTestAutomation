@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="tests">
-	<listeners>
-		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-	</listeners>
 	<test name="BookAPickup">
 		<!---Users test data -->
 		<parameter name="email" value="superuser@gmail.com"></parameter>
@@ -99,6 +95,12 @@
 		<parameter name="OriginPostCode" value="3000" />
 		<parameter name="DesSuburb" value="SYDNEY" />
 		<parameter name="DesPostCode" value="2000" />
+		<parameter name="TTDesSuburb" value="GLEBE" />
+		<parameter name="TTDesPostCode" value="7000" />
+		<parameter name="TNZOriginSuburb" value="AUCKLAND" />
+		<parameter name="TNZOriginPostCode" value="1001" />
+		<parameter name="TNZDesSuburb" value="BEERESCOURT" />
+		<parameter name="TNZDesPostCode" value="3210" />
 		
 		
 		<classes>
