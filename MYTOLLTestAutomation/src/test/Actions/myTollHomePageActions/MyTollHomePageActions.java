@@ -26,7 +26,7 @@ public class MyTollHomePageActions {
 	public static By Menulist=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a");
 	public static By BookAPickup=By.id("bookaPickup");
 	public static By getRateEnquiry=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a[1]/p");
-	public static By templateMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My Templates']");
+	public static By templateMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My templates']");
 	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My accounts']");//*[@id="nav-dropdown"]/ul/li[5]/a/span[2] , //*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']
 	
 	//Add Template
@@ -133,7 +133,8 @@ public class MyTollHomePageActions {
 	public static void SelectTollCarrier()
 	{
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
+		//BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
+		PageBase.click(TollCarrierDropdown, 5);
 		
 	}
 	
@@ -142,7 +143,8 @@ public class MyTollHomePageActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(HmbugerMenu).click();
+		//BaseWebdriver.driver.findElement(HmbugerMenu).click();
+		PageBase.click(HmbugerMenu, 5);
 		//BaseWebdriver.driver.findElement(Menulist).click();
 	}
 	
@@ -155,8 +157,8 @@ public class MyTollHomePageActions {
 	
 	public static void ClickGetRateEnquiery()
 	{
-		BaseWebdriver.driver.findElement(getRateEnquiry).click();
-		
+		//BaseWebdriver.driver.findElement(getRateEnquiry).click();
+		PageBase.click(getRateEnquiry, 5);
 	}
 
 	

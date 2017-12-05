@@ -129,7 +129,6 @@
 			<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
 			<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" />
 			<class name="manifestE2ETests.ManualManifestTollIntermodalTests" />
-			<!-- Blocked></Blocked -->
 
 
 		</classes>

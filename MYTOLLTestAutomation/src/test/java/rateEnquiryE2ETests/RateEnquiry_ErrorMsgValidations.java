@@ -41,7 +41,7 @@ public class RateEnquiry_ErrorMsgValidations {
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.SelectMode(Mode);
 		// TES Check
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.waitForElement(RateEnquiryActions.tollExtraServiceLable, 10);
 		PageBase.verifyTextExist(RateEnquiryActions.tollExtraServiceLable, "Toll Extra Service required");
 		PageBase.isElementPresent(RateEnquiryActions.tollExtraServiceSlider, 5, "TES Slider");
@@ -62,7 +62,7 @@ public class RateEnquiry_ErrorMsgValidations {
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 250. Please edit your line items and calculate your rate again.");
 		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight("9999", "9999", "9999", "9999");
 		RateEnquiryActions.ClickPriceNow();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgItemDescription, "Please enter item description");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgBillingType, "Please select billing type");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItems, "Input value must not be greater than 250");
@@ -86,7 +86,7 @@ public class RateEnquiry_ErrorMsgValidations {
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		
 		// TES Check
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.waitForElement(RateEnquiryActions.tollExtraServiceLable, 10);
 		PageBase.verifyTextExist(RateEnquiryActions.tollExtraServiceLable, "Toll Extra Service required");
 		PageBase.isElementPresent(RateEnquiryActions.tollExtraServiceSlider, 5, "TES Slider");
@@ -106,7 +106,7 @@ public class RateEnquiry_ErrorMsgValidations {
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 99. Please edit your line items and calculate your rate again.");
 		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight("9999", "9999", "9999", "9999");
 		RateEnquiryActions.ClickPriceNow();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgItemDescription, "Please enter item description");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgBillingType, "Please select item type");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItems, "Input value must not be greater than 99");
@@ -142,7 +142,7 @@ public class RateEnquiry_ErrorMsgValidations {
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 250. Please edit your line items and calculate your rate again.");
 		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight("9999", "9999", "9999", "9999");
 		RateEnquiryActions.ClickPriceNow();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgItemDescription, "Please enter item description");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgBillingType, "Please select billing type");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItems, "Input value must not be greater than 250");
@@ -183,7 +183,7 @@ public class RateEnquiry_ErrorMsgValidations {
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgWeight, "Please enter weight");
 		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight("9999", "9999", "9999", "9999");
 		RateEnquiryActions.ClickPriceNow();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgItemDescription, "Please enter item description");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItems, "Input value must not be greater than 99");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgLength, "Input value must not be greater than 1500");
@@ -221,7 +221,7 @@ public class RateEnquiry_ErrorMsgValidations {
 		
 		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight("9999", "9999", "9999", "9999");
 		RateEnquiryActions.ClickPriceNow();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgItemDescription, "Please enter item description");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItems, "Input value must not be greater than 99");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgLength, "Input value must not be greater than 1500");
@@ -262,7 +262,7 @@ public class RateEnquiry_ErrorMsgValidations {
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 250. Please edit your line items and calculate your rate again.");
 		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight("9999", "9999", "9999", "9999");
 		RateEnquiryActions.ClickPriceNow();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgItemDescription, "Please enter item description");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgBillingType, "Please select billing type");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItems, "Input value must not be greater than 250");

@@ -335,7 +335,7 @@ public class ManifestActions {
 		Reporter.log("User Navigates to Manifest Tab and Selects Add Manifest Manually");
 		PageBase.waitForElement(MyManifestTab, 5);
 		PageBase.click(MyManifestTab, 2);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(AddManifestManuallyButton, 2);	
 	}
 	
@@ -380,8 +380,9 @@ public class ManifestActions {
 		System.out.println("Downloading PDF instead of Printing, Content of PDF not CHECKED");
 		
 		//Shipment & Manifest Tab
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.waitForElement(ShipmentManifestTab, 2);
 		PageBase.moveToElement(ShipmentManifestTab);
 		PageBase.click(ShipmentManifestTab, 2);
@@ -390,11 +391,11 @@ public class ManifestActions {
 		System.out.println("Downloading PDF instead of Printing, Content of PDF not CHECKED");
 		
 		//Close Pop Up
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		Reporter.log("User Closes Popup to verify Manifest Status");
 		PageBase.waitForElement(ShipmentManifestPopupClose, 2);
 		PageBase.click(ShipmentManifestPopupClose, 2);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		
 		//Get Current Status of Manifest
 		String UpdatedStatus = BaseWebdriver.driver.findElement(ShipmentManifestStatus).getText();
@@ -467,7 +468,7 @@ public class ManifestActions {
 	
 	public static void SelectShipmentConsolidated() {
 		try {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		Boolean results=BaseWebdriver.driver.findElement(CreateShipmentActions.shipmentConsolidatedContinue).isDisplayed();
 		if (results=true) {
 			PageBase.click(CreateShipmentActions.shipmentConsolidatedContinue,2);
@@ -481,9 +482,9 @@ public class ManifestActions {
 	
 	public static void SelectBillingType(int i) {
 		try {
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.click(CreateShipmentActions.billingTypedropdown,2);
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.click(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + i + "]/div"),2);
 		}
 		catch(Exception ex){

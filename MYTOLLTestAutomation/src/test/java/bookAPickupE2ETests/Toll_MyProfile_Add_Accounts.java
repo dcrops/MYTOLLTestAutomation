@@ -40,37 +40,37 @@ public class Toll_MyProfile_Add_Accounts {
 	
 	
 	@Test
-	@Parameters({ "TollCarrierTollIntermodal","AccountNumber1", "AccountAccessTypeFullFinancial"})
+	@Parameters({ "TollCarrierTollIntermodal","AccountNumberTInter", "AccountAccessTypeFullFinancial"})
 	public void addTemplateIntermodal(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
 	@Test
-	@Parameters({ "TollCarrierTollTasmania","AccountNumber1", "AccountAccessTypeFullFinancial"})
+	@Parameters({ "TollCarrierTollTasmania","AccountNumberTTas", "AccountAccessTypeFullFinancial"})
 	public void addTemplateTasmania(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress","AccountNumber1", "AccountAccessTypeFullFinancial"})
+	@Parameters({ "TollCarrierTollNQXTollExpress","AccountNumberTNQX", "AccountAccessTypeFullFinancial"})
 	public void addTemplateNQX(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
 	@Test
-	@Parameters({ "TollCarrierTollIPEC","AccountNumber1", "AccountAccessTypeFullFinancial"})
+	@Parameters({ "TollCarrierTollIPEC","AccountNumberTIPEC", "AccountAccessTypeFullFinancial"})
 	public void addTemplateIPEC(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU","AccountNumber1", "AccountAccessTypeFullFinancial"})
+	@Parameters({ "TollCarrierTollPrioAU","AccountNumberTPrioAU", "AccountAccessTypeFullFinancial"})
 	public void addTemplatePrioAU(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioNZ","AccountNumber1", "AccountAccessTypeFullFinancial"})
+	@Parameters({ "TollCarrierTollPrioNZ","AccountNumberTPrioNZ", "AccountAccessTypeFullFinancial"})
 	public void addTemplatePrioNZ(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
@@ -84,47 +84,69 @@ public class Toll_MyProfile_Add_Accounts {
 		String newNumber = String.valueOf(Number);
 		
 		if (NewAccountNumber == "") {
-		NewAccountNumber = "Test"+newNumber;	
+		NewAccountNumber = "Toll"+newNumber;	
 		}
 		String totalAccounts[]= NewAccountNumber.split(",");
 		
 		
 		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
 		MyTollHomePageActions.ClickMenu();
+		Reporter.log("User Navigates to My Accounts Page");
 		PageBase.click(MyTollHomePageActions.myAccountMenu, 20);
 		
 		
 		//the below for loop is for adding multiple account numbers for one carrier. Provide account numbers in the format "1111,2222,333,"
 		for (int i = 0; i<totalAccounts.length; i++ ) {
+			Reporter.log("User Clicks Add Account");
 			PageBase.moveToElement(BookAPickupActions.addAccount);
 			PageBase.click(BookAPickupActions.addAccount, 10);
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled_1();
+			Reporter.log("User Selects Toll Carrier - "+Carrier );
 			PageBase.click(BookAPickupActions.addAccountCarrier, 10);
 			PageBase.click(By.xpath("//*[@id=\"addAccountForm\"]//*//div/ul/li/div[text()='"+Carrier+"']"), 10);
+			Reporter.log("User Enters Account Number -"+totalAccounts[i]);
 			PageBase.sendText(BookAPickupActions.addAccountNumber, 10, totalAccounts[i]);
+			Reporter.log("User Selects Access Type - "+AccessType);
 			PageBase.click(BookAPickupActions.addAccountAccessType, 10);
 			PageBase.click(By.xpath("//*[@id=\"addAccountForm\"]//*//ul/li/div[text()='"+AccessType+"']"), 10);
+			Reporter.log("User Clicks Save");
 			PageBase.click(BookAPickupActions.addAccountSave, 10);
-			PageBase.MaximumWaitForElementEnabled();
-			
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
 			//Verify Template Save Successfully
 			PageBase.verifyTextExist(BookAPickupActions.addAccountSaveMsg, "Account Has Been Successfully Added.");
 			PageBase.click(BookAPickupActions.addAccountSaveMsgClose, 10);
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled_1();
+			
+			//User Filters Carriers
+			PageBase.click(BookAPickupActions.addAccountCarrierSelector, 5);
+			PageBase.click(By.xpath("//*[@id=\"BU-selector\"]//*//div[text()='"+Carrier+"']"),5);
 			
 			//Verify New Account Exists
+			Reporter.log("User Verifies if New Account Exits");
 			try {
 				while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//p[contains(text(),'"+totalAccounts[i]+"')]"), 1) == null) {
 					PageBase.moveToElement(BookAPickupActions.addAccountViewMore);
 					PageBase.click(BookAPickupActions.addAccountViewMore, 5);
 				}
-				Reporter.log("AccountNo : "+totalAccounts[i]+ " Exists");
-				System.out.println("AccountNo : "+totalAccounts[i]+ " Exists");
+				Reporter.log("New AccountNo : "+totalAccounts[i]+ " Exists");
+				System.out.println("New AccountNo : "+totalAccounts[i]+ " Exists");
 			}
 			catch (Exception e) {
-				Reporter.log("FAILED: AccountNo : "+totalAccounts[i]+ " Does Not Exists");
-				Assert.fail("FAILED: AccountNo : "+totalAccounts[i]+ " Does Not Exists");
+				Reporter.log("FAILED: New AccountNo : "+totalAccounts[i]+ " Does Not Exists");
+				Assert.fail("FAILED: New AccountNo : "+totalAccounts[i]+ " Does Not Exists");
 			}
+			
+			//User Deletes New Account Created
+			PageBase.MaximumWaitForElementEnabled_1();
+			Reporter.log("User Deletes New Account Created");
+			PageBase.click(By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//p[contains(text(),'"+totalAccounts[i]+"')]/following::div[@class='account-list-col delete']/a"), 5);
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.verifyTextExist(BookAPickupActions.addAccountDeleteMsg, "YOU HAVE REQUESTED YOUR ACCOUNT TO BE DELETED.");
+			PageBase.click(BookAPickupActions.addAccountDeleteContinue, 5);
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.verifyTextExist(BookAPickupActions.addAccountDeleteSuccessfull, "Account Has Been Successfully Deleted.");
+			PageBase.click(BookAPickupActions.addAccountDeleteClose, 5);
 		
 		}
 		
@@ -134,8 +156,7 @@ public class Toll_MyProfile_Add_Accounts {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
-		//BaseWebdriver.driver.quit();
+		BaseWebdriver.tearDown();
 
 	}
 

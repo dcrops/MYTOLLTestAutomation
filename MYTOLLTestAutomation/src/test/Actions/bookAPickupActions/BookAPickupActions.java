@@ -170,6 +170,12 @@ public class BookAPickupActions {
 			public static final By addAccountSaveMsg= By.xpath("//*[@id=\"response-poup-wrpr\"]//*//h2");
 			public static final By addAccountSaveMsgClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
 			public static final By addAccountViewMore = By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//a[text()='VIEW MORE']");
+			public static final By addAccountDeleteMsg = By.xpath("//*[@id=\"confirm-box-wrapper\"]//*//p");
+			public static final By addAccountDeleteContinue = By.xpath("//*[@id=\"confirm-true\"]");
+			public static final By addAccountDeleteSuccessfull = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//header/h2");
+			public static final By addAccountDeleteClose= By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
+			public static final By addAccountCarrierSelector= By.xpath("//*[@id=\"BU-selector\"]/label/a");
+			public static final By addTemplateCarrierSelector= By.xpath("//*[@id=\"BU-selector-filter\"]/label/a");
 			
 			public static By confirmPickupBtn=By.id("submit-pickup");
 			public static By  pickUpReferenceNumber = By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//*//span[@class=\"reference-no\"]/span");
@@ -312,9 +318,9 @@ public class BookAPickupActions {
 	}
 
 	public static void SelectAccountNumber1() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(AccountNumberDropdown).click();
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(AccountNumberDropdownitem1).click();
 		PageBase.MinimumWaitForElementEnabled();
 	}
@@ -1045,6 +1051,52 @@ public static void ErrorMsgValidation()
 	 BaseWebdriver.driver.switchTo().window(mainPage); 
 	
 	}
+
+
+public static void addAdderess(){
+	//Add Address
+	PageBase.waitForElement(BookAPickup_Location_Dropdown, 10);
+	PageBase.click(BookAPickup_Location_Dropdown, 10);
+	
+	PageBase.waitForElement(BookAPickup_Add_Address, 10);
+	PageBase.click(BookAPickup_Add_Address, 10);
+	
+	int Number = (int) (Math.random()*10000);
+	String newNumber = String.valueOf(Number);
+	String NewCompanyName = NewAddressCompanyName+newNumber;
+	PageBase.sendText(BookAPickup_New_AddressCompanName, 10, NewCompanyName );
+	PageBase.click(BookAPickup_New_AddressSearch, 10);
+	PageBase.sendText(BookAPickup_New_AddressSearch, 10, NewAddressCompanyAdd);
+	PageBase.click(BookAPickup_New_AddressSearch_Select, 10);
+	PageBase.MaximumWaitForElementEnabled_1();
+	PageBase.click(BookAPickup_New_AddressSearch_Contine, 10);
+	PageBase.sendText(BookAPickup_New_Address_Name, 10, NewCompanyName);
+	PageBase.sendText(BookAPickup_New_Address_Number, 10, "0452456876");
+	PageBase.sendText(BookAPickup_New_Address_Email, 10, "Test@test.com");
+	
+	//Verify if DG fields exists
+	Boolean DG = PageBase.isElementPresent(BookAPickup_New_Address_DGName);
+	if (DG == true) {
+		PageBase.sendText(BookAPickup_New_Address_DGName, 10, "Test	");
+		PageBase.sendText(BookAPickup_New_Address_DGNumber, 10, "0452567879");
+	}
+	PageBase.click(BookAPickup_New_Address_Add, 10);
+	PageBase.MaximumWaitForElementEnabled_1();
+	
+	//Verify Address is Selected
+	PageBase.verifyTextExistAttribute(BookAPickup_Location_Selected, NewCompanyName);
+	
+	String Address = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[2]")).getText();
+		if (Address.contains(Address)) {
+			System.out.println("New Address Exists in Location Feild AS EXPECTED");
+		} else {
+			System.out.println("FAILED: New Address DOEN NOT Exists in Location Feild");
+			Reporter.log("FAILED: New Address DOEN NOT Exists in Location Feild");
+			Assert.fail("FAILED: New Address DOEN NOT Exists in Location Feild");
+		}
+	PageBase.verifyTextExistAttribute(BookAPickup_CompanyName, NewCompanyName);
+		
+}
 
 	
 }
