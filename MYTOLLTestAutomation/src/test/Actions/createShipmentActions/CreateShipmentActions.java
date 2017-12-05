@@ -8,6 +8,7 @@ import java.util.Date;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
@@ -32,8 +33,8 @@ public class CreateShipmentActions {
 
 	public static By receiverTextfield = By.xpath("//*[@id=\"receiver-selector\"]/label/input[2]");
 	public static By shipmentConsolidatedMSGHeading = By
-			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/header/h2");
-	public static By shipmentConsolidatedRadioBtn = By.id("shipitemcheck0");
+			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/header/h2"); //By.cssSelector("[name='R001000'][id='R001000.2'][type='radio']");
+	public static By shipmentConsolidatedRadioBtn = By.name("shipmentcon"); //.cssSelector("[name='shipmentcon'][id='shipitemcheck0'][type='radio']"); //.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[1]/label"); //.id("shipitemcheck0");//*[@id="shipitemcheck0"] //.name("shipmentcon"); //*[@id="shipitemcheck0"]// .xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[1]/label"); //.id("shipitemcheck0"); id("shipitemcheck0");
 	public static By shipmentConsolidatedArrowdown = By
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]");
 	public static By shipmentConsolidatedContinue = By
@@ -326,13 +327,22 @@ public class CreateShipmentActions {
 
 	public static void SelectShipmentConsolidationConsolidate() {
 		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 	try {
-		boolean results=BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).isDisplayed();
+		boolean results=BaseWebdriver.driver.findElement(shipmentConsolidatedMSGHeading).isDisplayed();
+		System.out.println("shipmentConsolidatedMSGHeading");
+		BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
+		System.out.println("click shipmentConsolidatedBtn");
 		if (results==true) {
-
-			BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).click();
-			BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
-			PageBase.MaximumWaitForElementEnabled();
+			boolean results2=BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).isDisplayed();
+			System.out.println("results2"+results2);
+			Actions action = new Actions(BaseWebdriver.driver);
+			  action.doubleClick(BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn));
+			  action.perform();
+			  System.out.println("shipmentConsolidatedRadioBtn doubleclicked ");
+			  BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
+			  PageBase.MaximumWaitForElementEnabled();
 			SelectNotifySenderAndReceiver();
 			PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 					CreateShipmentActions.notifyReceiverCheckBox);
