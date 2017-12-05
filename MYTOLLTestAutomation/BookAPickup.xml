@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="BookAPickup" parallel="tests">
+<suite name="Suite" parallel="tests">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
 	<test name="BookAPickup">
 		<!---Users test data -->
 		<parameter name="email" value="superuser@gmail.com"></parameter>
@@ -30,13 +34,13 @@
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
 		<parameter name="ServiceDGExpress" value="DG Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
-		<parameter name="AccountNumber1" value="123456" />
-		<parameter name="AccountNumberTInter" value="106119" />
-		<parameter name="AccountNumberTNQX" value="614060" />
-		<parameter name="AccountNumberTTas" value="100428" />
-		<parameter name="AccountNumberTIPEC" value="2230899" />
-		<parameter name="AccountNumberTPrioAU" value="401509" />
-		<parameter name="AccountNumberTPrioNZ" value="100181" />
+		<parameter name="AccountNumber1" value="" />
+		<parameter name="AccountNumberTInter" value="" />
+		<parameter name="AccountNumberTNQX" value="" />
+		<parameter name="AccountNumberTTas" value="" />
+		<parameter name="AccountNumberTIPEC" value="" />
+		<parameter name="AccountNumberTPrioAU" value="" />
+		<parameter name="AccountNumberTPrioNZ" value="" />
 		<parameter name="AccountAccessTypeFullFinancial" value="Full financial" />
 		<!---Item test data -->
 
@@ -89,17 +93,31 @@
 		<parameter name="specialIns" value="special instructions test" />
 
 		<parameter name="browser" value="chrome" />
-
+		
+		<!---Template Verification -->
+		<parameter name="OriginSuburb" value="MELBOURNE" />
+		<parameter name="OriginPostCode" value="3000" />
+		<parameter name="DesSuburb" value="SYDNEY" />
+		<parameter name="DesPostCode" value="2000" />
+		
+		
 		<classes>
 
 
-			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
+			<class name="bookAPickupE2ETests.Toll_Add_Template"/>
+			<!-- <class name="bookAPickupE2ETests.Toll_IntermodalTest" />
 			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
-			<class name="bookAPickupE2ETests.TollIPECTest" />
-			<!--Blocked> </Blocked -->
+			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
+			<class name="bookAPickupE2ETests.TollIPECTest" /> -->
+
+			<!--Blocked><class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/> 
+				<class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
+				/> <class name="bookAPickupE2ETests.TollTasmaniaTest" /> <class name="bookAPickupE2ETests.TollNQXTollExpressTest" 
+				/> <class name="bookAPickupE2ETests.Toll_IntermodalTest" /> <class name="bookAPickupE2ETests.TollIPECTest" 
+				/></Blocked -->
 
 		</classes>
 	</test> <!-- Test -->
