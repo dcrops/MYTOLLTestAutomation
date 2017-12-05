@@ -49,7 +49,7 @@ public class ManualManifestTollIntermodalTests {
 		String NewManifestName = "TESTMANIFEST"+newNumber;
 	
 		ManifestActions.addManifestManually();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		
 		//Create Manifest Pop Up
 		ManifestActions.createManifestPopUp(TollCarrier, 2, NewManifestName);
@@ -108,7 +108,7 @@ public class ManualManifestTollIntermodalTests {
 		BookAPickupActions.ClickReviewBook();
 		
 		//Submit and Get PickUp Reference Number
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BookAPickupActions.ConfirmPickUpandGetReferenceNo();
 		Reporter.log("---------------END OF TEST---------------");
 	}
@@ -117,7 +117,7 @@ public class ManualManifestTollIntermodalTests {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 	}
 	
 }

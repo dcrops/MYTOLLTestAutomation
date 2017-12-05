@@ -97,7 +97,7 @@ public class PageBase {
 
 	public static void MaximumWaitForElementEnabled() {
 		try {
-			Thread.sleep(1500);
+			Thread.sleep(300);
 
 		}
 
@@ -110,7 +110,7 @@ public class PageBase {
 	public static void MediumWaitForElementEnabled() {
 		try {
 			
-			Thread.sleep(1000);
+			Thread.sleep(300);
 
 		}
 
@@ -122,7 +122,7 @@ public class PageBase {
 
 	public static void MinimumWaitForElementEnabled() {
 		try {
-			Thread.sleep(500);
+			Thread.sleep(300);
 
 		}
 
@@ -295,6 +295,43 @@ public class PageBase {
 		}
 		
 		
+	}
+	
+	public static void MaximumWaitForElementEnabled_1() {
+		try {
+			Thread.sleep(1500);
+
+		}
+
+		catch (Exception ex) {
+			System.out.println(ex);
+
+		}
+	}
+
+	public static void MediumWaitForElementEnabled_1() {
+		try {
+			
+			Thread.sleep(1000);
+
+		}
+
+		catch (Exception ex) {
+			System.out.println(ex);
+
+		}
+	}
+
+	public static void MinimumWaitForElementEnabled_1() {
+		try {
+			Thread.sleep(500);
+
+		}
+
+		catch (Exception ex) {
+			System.out.println(ex);
+
+		}
 	}
 
 

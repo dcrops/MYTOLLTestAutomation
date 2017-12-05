@@ -181,7 +181,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectMode(int i) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(mode).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).click();
 
@@ -221,7 +221,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectWhoPays(int i) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(whoPaysdropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[" + i + "]/div")).click();
 
@@ -280,12 +280,12 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectReceiver(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(receiverdropdown).click();
 		PageBase.Scrollbar(500, 800);
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
 				.click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 
 	}
 
@@ -892,7 +892,7 @@ public class CreateShipmentActions {
 		PageBase.click(New_AddressSearch, 10);
 		PageBase.sendText(New_AddressSearch, 10, SenderAddressCompanyAdd);
 		PageBase.click(New_AddressSearch_Select, 10);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(New_AddressSearch_Contine, 10);
 		PageBase.sendText(New_Address_Name, 10, NewCompanyName);
 		PageBase.sendText(New_Address_Number, 10, "0452456876");
@@ -904,7 +904,7 @@ public class CreateShipmentActions {
 			PageBase.sendText(New_Address_DGNumber, 10, "0452567879");
 		}
 		PageBase.click(New_Address_Add, 10);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		// Verify Address is Selected
 		PageBase.verifyTextExistAttribute(SenderAddress_Location_Selected, NewCompanyName);
 
@@ -932,7 +932,7 @@ public class CreateShipmentActions {
 		PageBase.click(New_AddressSearch, 10);
 		PageBase.sendText(New_AddressSearch, 10, ReceiverAddressCompanyAdd);
 		PageBase.click(New_AddressSearch_Select, 10);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(New_AddressSearch_Contine, 10);
 		PageBase.sendText(New_Address_Name, 10, NewCompanyName);
 		PageBase.sendText(New_Address_Number, 10, "0452456876");
@@ -944,7 +944,7 @@ public class CreateShipmentActions {
 			PageBase.sendText(New_Address_DGNumber, 10, "0452567879");
 		}
 		PageBase.click(New_Address_Add, 10);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		// Verify Address is Selected
 		PageBase.verifyTextExistAttribute(ReceiverAddress_Location_Selected, NewCompanyName);
 

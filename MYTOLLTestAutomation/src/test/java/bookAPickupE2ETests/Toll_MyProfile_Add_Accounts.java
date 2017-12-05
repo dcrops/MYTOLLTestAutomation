@@ -100,7 +100,7 @@ public class Toll_MyProfile_Add_Accounts {
 			Reporter.log("User Clicks Add Account");
 			PageBase.moveToElement(BookAPickupActions.addAccount);
 			PageBase.click(BookAPickupActions.addAccount, 10);
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled_1();
 			Reporter.log("User Selects Toll Carrier - "+Carrier );
 			PageBase.click(BookAPickupActions.addAccountCarrier, 10);
 			PageBase.click(By.xpath("//*[@id=\"addAccountForm\"]//*//div/ul/li/div[text()='"+Carrier+"']"), 10);
@@ -111,12 +111,12 @@ public class Toll_MyProfile_Add_Accounts {
 			PageBase.click(By.xpath("//*[@id=\"addAccountForm\"]//*//ul/li/div[text()='"+AccessType+"']"), 10);
 			Reporter.log("User Clicks Save");
 			PageBase.click(BookAPickupActions.addAccountSave, 10);
-			PageBase.MaximumWaitForElementEnabled();
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
 			//Verify Template Save Successfully
 			PageBase.verifyTextExist(BookAPickupActions.addAccountSaveMsg, "Account Has Been Successfully Added.");
 			PageBase.click(BookAPickupActions.addAccountSaveMsgClose, 10);
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled_1();
 			
 			//User Filters Carriers
 			PageBase.click(BookAPickupActions.addAccountCarrierSelector, 5);
@@ -138,13 +138,13 @@ public class Toll_MyProfile_Add_Accounts {
 			}
 			
 			//User Deletes New Account Created
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled_1();
 			Reporter.log("User Deletes New Account Created");
 			PageBase.click(By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//p[contains(text(),'"+totalAccounts[i]+"')]/following::div[@class='account-list-col delete']/a"), 5);
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.verifyTextExist(BookAPickupActions.addAccountDeleteMsg, "YOU HAVE REQUESTED YOUR ACCOUNT TO BE DELETED.");
 			PageBase.click(BookAPickupActions.addAccountDeleteContinue, 5);
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.verifyTextExist(BookAPickupActions.addAccountDeleteSuccessfull, "Account Has Been Successfully Deleted.");
 			PageBase.click(BookAPickupActions.addAccountDeleteClose, 5);
 		

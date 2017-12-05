@@ -318,9 +318,9 @@ public class BookAPickupActions {
 	}
 
 	public static void SelectAccountNumber1() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(AccountNumberDropdown).click();
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(AccountNumberDropdownitem1).click();
 		PageBase.MinimumWaitForElementEnabled();
 	}
@@ -1068,7 +1068,7 @@ public static void addAdderess(){
 	PageBase.click(BookAPickup_New_AddressSearch, 10);
 	PageBase.sendText(BookAPickup_New_AddressSearch, 10, NewAddressCompanyAdd);
 	PageBase.click(BookAPickup_New_AddressSearch_Select, 10);
-	PageBase.MaximumWaitForElementEnabled();
+	PageBase.MaximumWaitForElementEnabled_1();
 	PageBase.click(BookAPickup_New_AddressSearch_Contine, 10);
 	PageBase.sendText(BookAPickup_New_Address_Name, 10, NewCompanyName);
 	PageBase.sendText(BookAPickup_New_Address_Number, 10, "0452456876");
@@ -1081,7 +1081,7 @@ public static void addAdderess(){
 		PageBase.sendText(BookAPickup_New_Address_DGNumber, 10, "0452567879");
 	}
 	PageBase.click(BookAPickup_New_Address_Add, 10);
-	PageBase.MaximumWaitForElementEnabled();
+	PageBase.MaximumWaitForElementEnabled_1();
 	
 	//Verify Address is Selected
 	PageBase.verifyTextExistAttribute(BookAPickup_Location_Selected, NewCompanyName);

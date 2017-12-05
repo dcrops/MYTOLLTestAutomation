@@ -76,7 +76,7 @@ public class RateEnquiryActions {
 	
 	
 	public static void SelectTollCarrierItem(int i) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/div[1]/a/i")).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/div[2]/ul/li[" + i + "]")).click();
 
@@ -84,32 +84,32 @@ public class RateEnquiryActions {
 	
 	public static void EnterTollCarrier(String pTollCarrierName) {
 		Reporter.log("User Selects Toll Carrier - "+pTollCarrierName);
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		PageBase.click(TollCarrierTextfield, 5);
 		PageBase.click(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']"), 5);
 		
 	}
 
 	public static void VerifyMessage(String msgHeading, String msgContent) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		assertEquals(msgHeading, BaseWebdriver.driver.findElement(messageHeading).getText());
 		assertEquals(msgContent, BaseWebdriver.driver.findElement(message).getText());
 	}
 
 	public static void SelectService(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(servicedropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li[" + i + "]")).click();
 
 	}
 	
 	public static void EnterService(String pService ) {
-		/*PageBase.MaximumWaitForElementEnabled();
+		/*PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(servicedropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='"+pService +"']")).click();
-		PageBase.MinimumWaitForElementEnabled();*/
+		PageBase.MinimumWaitForElementEnabled_1();*/
 		Reporter.log("User Selects Service - "+pService);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.sendText(shipmentService, 10, pService);
 		PageBase.click(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='"+pService +"']"), 5);
 	}
@@ -117,12 +117,12 @@ public class RateEnquiryActions {
 	public static void EnterAccountNumberAndSelect(String account) {
 		Reporter.log("User Enters Account No - "+account);
 		PageBase.sendText(enterAccountNumber, 10, account);
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()='"+account+"']"), 5);
 	}
 
 	public static void SelectModeItem(int j) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(selectMode).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div/ul/li[" + j + "]/div")).click();
 
@@ -135,7 +135,7 @@ public class RateEnquiryActions {
 	}
 
 	public static void SelectOriginSuburbPostcode(int j) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(originSuburbPostCode).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[3]/ul/li[" + j + "]/div[3]"))
 				.click();
@@ -143,11 +143,11 @@ public class RateEnquiryActions {
 	}
 
 	public static void SelectOriginSuburbPostcodeRateEnquiry(String pSuburb, int j) {
-		PageBase.MaximumWaitForElementEnabled(); 
+		PageBase.MaximumWaitForElementEnabled_1(); 
 		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).click();
 		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).clear();
 		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).sendKeys(pSuburb);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"enquiry-step1\"]/div[3]/div[2]/div/div/ul/li["+j+"]/div"))
 				.click();
@@ -156,104 +156,104 @@ public class RateEnquiryActions {
 	
 	public static void SelectOrigin(String Suburb, String PostCode) {
 		Reporter.log("User Selects Orgin - Surburb:"+Suburb+" PostCode:"+PostCode);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.sendText(originSuburbPostCodeTextField, 5, Suburb);
 		PageBase.click(originSuburbPostCodeTextField, 2);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"origin-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
 	}
 	
 	public static void SelecDestination(String Suburb, String PostCode) {
 		Reporter.log("User Selects Destination - Surburb:"+Suburb+" PostCode:"+PostCode);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.sendText(destinationSuburbPostcodeTextField, 5, Suburb);
 		PageBase.click(destinationSuburbPostcodeTextField, 2);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"destination-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
 	}
 	
 	
 	public static void SelectCountry(String Country) {
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MediumWaitForElementEnabled_1();
 		PageBase.sendText(country, 5, Country);
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MediumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"country-selector\"]/div/ul/li/div[text()='"+Country+"']"), 5);
 	}
 	
 	
 	public static void SelectCountryPostCode(String PostCode) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.sendText(countryPostCode, 5, PostCode);
 	}
 	
 
 	public static void SelectOriginSuburbPostcodeRateEnquiryTollNQX(String pSuburb, int j) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).click();
 		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).clear();
 		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).sendKeys(pSuburb);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"enquiry-step1\"]/div[3]/div[2]/div/div/ul/li[" + j + "]/div")).click();
 
 	}
 	
 	public static void EnterOriginSuburbPostcodeRateEnquiryTollPrioAU(String pSuburb,String pSuburbItem ) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).click();
 		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).clear();
 		BaseWebdriver.driver.findElement(originSuburbPostCodeTextField).sendKeys(pSuburb);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"enquiry-step1\"]/div[3]/div[2]/div/div/ul/li/div[text()='"+pSuburbItem+"']")).click();
 
 	}
 
 	public static void SelectDestinationSuburbPostcode(int j) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.retryingFindClick(destinationSuburbPostcode);
 		BaseWebdriver.driver.findElement(destinationSuburbPostcode).click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[3]/ul/li[" + j + "]/div[2]"))
 				.click();
 
 	}
 
 	public static void SelectDestinationSuburbPostcodeRateEnquiry(String pSuburb, int j) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(destinationSuburbPostcodeTextField).click();
 		BaseWebdriver.driver.findElement(destinationSuburbPostcodeTextField).clear();
 		BaseWebdriver.driver.findElement(destinationSuburbPostcodeTextField).sendKeys(pSuburb);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"destination-type-address\"]/div/div/ul/li[" + j + "]/div"))
 				.click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 
 	}
 
 	public static void SelectDestinationCountry(String pCountry, int j) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.retryingFindClick(destinationCountryTextField);
 		BaseWebdriver.driver.findElement(destinationCountryTextField).click();
 		BaseWebdriver.driver.findElement(destinationCountryTextField).clear();
 		// BaseWebdriver.driver.findElement(destinationCountryTextField).sendKeys(pCountry);
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"country-selector\"]/div/ul/li[" + j + "]/div")).click(); 
 	}
 	
 	public static void EnterDestinationCountry(String pCountry,String pCountryItem) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.retryingFindClick(destinationCountryTextField);
 		BaseWebdriver.driver.findElement(destinationCountryTextField).click();
 		BaseWebdriver.driver.findElement(destinationCountryTextField).clear();
 		BaseWebdriver.driver.findElement(destinationCountryTextField).sendKeys(pCountry);
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"country-selector\"]/div/ul/li/div[text()='"+pCountryItem+"']")).click(); 
 	}
 
 
 	public static void EnterDestinationPostcode(String pDestinationPostcode) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(destinationPostCode).click();
 		BaseWebdriver.driver.findElement(destinationPostCode).clear();
 		BaseWebdriver.driver.findElement(destinationPostCode).sendKeys(pDestinationPostcode);
@@ -262,7 +262,7 @@ public class RateEnquiryActions {
 	}
 
 	public static void SelectItemDescription(int j) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		PageBase.Scrollbar(0, 500);
 		
 		BaseWebdriver.driver.findElement(itemDescription).click();
@@ -272,7 +272,7 @@ public class RateEnquiryActions {
 
 	public static void NumberOfItem(String pnumberOfItem) {
 		Reporter.log("User Enters No. of Items - "+pnumberOfItem);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		//BaseWebdriver.driver.findElement(numberOfItem).click();
 		//BaseWebdriver.driver.findElement(numberOfItem).clear();
 		//BaseWebdriver.driver.findElement(numberOfItem).sendKeys(pnumberOfItem);
@@ -280,7 +280,7 @@ public class RateEnquiryActions {
 	}
 
 	public static void QuantityType(int j) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(quantityType).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-type-selector\"]/div[2]/ul/li[" + j + "]/div"))
 				.click();
@@ -296,7 +296,7 @@ public class RateEnquiryActions {
 	
 
 	public static void NumberOfGarments(String pNumberOfGarments) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(numberofGarments).click();
 		BaseWebdriver.driver.findElement(numberofGarments).clear();
 		BaseWebdriver.driver.findElement(numberofGarments).sendKeys(pNumberOfGarments);
@@ -304,7 +304,7 @@ public class RateEnquiryActions {
 	}
 
 	public static void EnterWeight(String pweight) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(weight).click();
 		BaseWebdriver.driver.findElement(weight).clear();
 		BaseWebdriver.driver.findElement(weight).sendKeys(pweight);
@@ -312,23 +312,23 @@ public class RateEnquiryActions {
 	}
 
 	public static void SelectBillingType() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(billingType).click();
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector0\"]/div[2]/ul/li/div")).click();
 	}
 	
 	public static void EnterBillingType(String pBillingType) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(billingTypeTDF).click();
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+pBillingType+"']")).click();
 	}
 
 
 	// Toll Intermodal, Toll NQX
 	public static void SelectBillingTypeItem1TDF(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(billingTypeTDF).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector0\"]/div[2]/ul/li["+i+"]/div"))
 				.click(); 
@@ -337,7 +337,7 @@ public class RateEnquiryActions {
 	// Toll Intermodal, Toll NQX
 	
 	public static void EnterBillingTypeTDF(String pBillingType) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(billingTypeTDF).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+pBillingType+"']")).click();
 	}
@@ -345,23 +345,23 @@ public class RateEnquiryActions {
 	public static void BillingType(String BillingType) {
 		Reporter.log("User Billing Type - "+BillingType);
 		PageBase.sendText(billingTypeTextFeild, 5, BillingType);
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MediumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='"+BillingType+"']"), 5);
 	}
 	
 
 	
 	public static void SelectBillingTypeTDF(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(billingTypeTDF).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + i + "]/div"))
 				.click(); 
 	}
 	
 	public static void SelectBillingTypeAddLineItem(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(billingTypeAddLineItem).click();
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + i + "]/div"))
 				.click();
 	}
@@ -418,7 +418,7 @@ public class RateEnquiryActions {
 
 	public static void ClickPriceNow() {
 		Reporter.log("User Clicks Price Now");
-	/*	PageBase.MinimumWaitForElementEnabled();
+	/*	PageBase.MinimumWaitForElementEnabled_1();
 		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
 		jse.executeScript("scroll(250, 800);");
 		BaseWebdriver.driver.findElement(pricenowBtn).click();
@@ -434,7 +434,7 @@ public class RateEnquiryActions {
 
 	public static void ContinueCreateShipment() {
 		try {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		Boolean results=BaseWebdriver.driver.findElement(createShipmentContinue).isDisplayed();
 		
 		if (results=true && valid) {
@@ -448,7 +448,7 @@ public class RateEnquiryActions {
 		System.out.println("PopUp: Continue to Shipment");
 		Reporter.log("Popup Exits as Price is Unavailable, Moving to Shipment");
 		BaseWebdriver.driver.findElement(createShipmentContinue).click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		}
 		}
 		
@@ -462,7 +462,7 @@ public class RateEnquiryActions {
 		
 	public static void VerifyPriceNowDetails() {
 		try {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		Boolean results=BaseWebdriver.driver.findElement(totalCharge).isDisplayed();
 		if (results=true) {
 		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
@@ -470,7 +470,7 @@ public class RateEnquiryActions {
 			RateEnquiryActions.VerifyTotalCharge("Total Charge:");
 			RateEnquiryActions.VerifyGST("GST:");
 			RateEnquiryActions.VerifyRate("Rate:"); 
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		}
 		}
 		
@@ -480,14 +480,14 @@ public class RateEnquiryActions {
 		}
 		
 	public static void VerifyPricenowMessage(String pPricenowMsg) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		//assertEquals(pPricenowMsg, BaseWebdriver.driver.findElement(pricenowMsg).getText());
 		PageBase.verifyTextExist(pricenowMsg, pPricenowMsg);
 
 	}
 
 	public static void VerifyTotalCharge(String pTotalCharge) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		//assertEquals(pTotalCharge, BaseWebdriver.driver.findElement(totalCharge).getText());
 		String fullCharge = BaseWebdriver.driver.findElement(totalCharge).getText();
 		Reporter.log("Full Charge: "+fullCharge);
@@ -505,7 +505,7 @@ public class RateEnquiryActions {
 	}
 
 	public static void VerifyGST(String pGST) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		//assertEquals(pGST, BaseWebdriver.driver.findElement(gst).getText());
 		String getText = BaseWebdriver.driver.findElement(gst).getText().substring(0, 4);
 	
@@ -520,7 +520,7 @@ public class RateEnquiryActions {
 	}
 
 	public static void VerifyRate(String pRate) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		//assertEquals(pRate, BaseWebdriver.driver.findElement(rate).getText());
 		String getText = BaseWebdriver.driver.findElement(rate).getText().substring(0, 5);
 		if (getText.equals(pRate)){
@@ -551,7 +551,7 @@ public class RateEnquiryActions {
 
 	}
 	public static void ClickCreateShipment() {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled_1();
 		//BaseWebdriver.driver.findElement(createShipmentBtn).click();
 		PageBase.click(createShipmentBtn, 2);
 	}
@@ -574,7 +574,7 @@ public class RateEnquiryActions {
 	public static void verifyLengthWidthHeightVolumeWeight(String plength, String pwidth, String pheight,
 			String pweight) {
 		Reporter.log("User Verifies Dimension - Length:"+plength+", Width:"+pwidth+", Height:"+pheight+", Weight:"+pweight);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExistAttribute(BookAPickupActions.length, plength);
 		PageBase.verifyTextExistAttribute(BookAPickupActions.width, pwidth );
 		PageBase.verifyTextExistAttribute(BookAPickupActions.height, pheight);
