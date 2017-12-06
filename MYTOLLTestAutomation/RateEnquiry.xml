@@ -96,7 +96,7 @@
 		<!---Toll Priority NZ test data -->
 		<parameter name="TNZAccountNo" value="100181" />
 		<parameter name="TNZNumberOfItems" value="3" />
-		<parameter name="TNZOriginSuburb" value="NEWTON" />
+		<parameter name="TNZOriginSuburb" value="NEWTON," />
 		<parameter name="TNZOriginPostCode" value="1001" />
 		<parameter name="TNZDesSuburb" value="BEERESCOURT" />
 		<parameter name="TNZDesPostCode" value="3210" />

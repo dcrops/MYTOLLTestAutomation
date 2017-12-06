@@ -97,7 +97,7 @@ public class PageBase {
 
 	public static void MaximumWaitForElementEnabled() {
 		try {
-			Thread.sleep(300);
+			Thread.sleep(500);
 
 		}
 
@@ -110,7 +110,7 @@ public class PageBase {
 	public static void MediumWaitForElementEnabled() {
 		try {
 			
-			Thread.sleep(300);
+			Thread.sleep(400);
 
 		}
 
@@ -122,7 +122,7 @@ public class PageBase {
 
 	public static void MinimumWaitForElementEnabled() {
 		try {
-			Thread.sleep(300);
+			Thread.sleep(500);
 
 		}
 
