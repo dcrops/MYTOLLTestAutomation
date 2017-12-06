@@ -571,14 +571,15 @@ public class RateEnquiryActions {
 		PageBase.sendText(RateEnquiryActions.weight, 2, pweight);
 	}
 	
-	public static void verifyLengthWidthHeightVolumeWeight(String plength, String pwidth, String pheight,
+	public static void verifyNoOfItemsLengthWidthHeightVolumeWeight(String NumberOfItems, String plength, String pwidth, String pheight,
 			String pweight) {
-		Reporter.log("User Verifies Dimension - Length:"+plength+", Width:"+pwidth+", Height:"+pheight+", Weight:"+pweight);
+		Reporter.log("User Verifies Dimension - NumberOfItems:"+NumberOfItems+", Length:"+plength+", Width:"+pwidth+", Height:"+pheight+", Weight:"+pweight);
 		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExistAttribute(numberOfItem, NumberOfItems);
 		PageBase.verifyTextExistAttribute(BookAPickupActions.length, plength);
 		PageBase.verifyTextExistAttribute(BookAPickupActions.width, pwidth );
 		PageBase.verifyTextExistAttribute(BookAPickupActions.height, pheight);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.weight, pweight);
+		PageBase.verifyTextExistAttribute(weight, pweight);
 	}
 	
 }

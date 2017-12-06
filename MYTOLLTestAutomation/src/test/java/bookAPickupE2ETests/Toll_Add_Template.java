@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 import bookAPickupActions.BookAPickupActions;
+import createShipmentActions.CreateShipmentActions;
+import manifestActions.ManifestActions;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -28,7 +30,7 @@ import reviewYourPickupActions.ReviewYouPickupActions;
 public class Toll_Add_Template {
 
 	public static Integer locationIndex = 4;
-	public static String NewTemplateName ="ipectest124";
+	public static String NewTemplateName;
 	
 	@BeforeMethod
 	public void RunSetup() throws Exception {
@@ -39,38 +41,68 @@ public class Toll_Add_Template {
 	
 	@Test
 	@Parameters({"TollCarrierTollIPEC", "ServiceRoadExpress","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
-	public void addTemplateIPECS(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
-		//this.addTemplate(Carrier);
+	public void addTemplateIPEC(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
 		this.checkRateEnquiry(Carrier, Service, NumberOfItems, Length, Width, Height, Weight, OriginSuburb, OriginPostCode, DesSuburb, DesPostCode);
+		this.checkCreateShipmentPage(Carrier, Service, NumberOfItems, Length, Width, Height, Weight);
+		this.deleteTemplate(Carrier);
 	}
 
-/*	@Test
-	public void addTemplateTSPD() {
-		this.addTemplate("Toll Intermodal");
-	}
-	
-
-	@Test
-	public void addTemplateTTAS() {
-		this.addTemplate("Toll Tasmania");
-	}
-
-	@Test
-	public void addTemplateTNQX() {
-		this.addTemplate("Toll NQX | Toll Express");
-	}
 	
 	@Test
-	public void addTemplatePrioAus() {
-		this.addTemplate("Toll Priority (Aus)");
+	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
+	public void addTemplateTSPD(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
+		this.checkRateEnquiry(Carrier, Service, NumberOfItems, Length, Width, Height, Weight, OriginSuburb, OriginPostCode, DesSuburb, DesPostCode);
+		this.checkCreateShipmentPage(Carrier, Service, NumberOfItems, Length, Width, Height, Weight);
+		this.deleteTemplate(Carrier);
 	}
 	
+	
 	@Test
-	public void addTemplatePrioNZ() {
-		this.addTemplate("Toll Priority (NZ)");
-	}*/
+	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "TTDesSuburb", "TTDesPostCode"})
+	public void addTemplateTTAS(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
+		this.checkRateEnquiry(Carrier, Service, NumberOfItems, Length, Width, Height, Weight, OriginSuburb, OriginPostCode, DesSuburb, DesPostCode);
+		this.checkCreateShipmentPage(Carrier, Service, NumberOfItems, Length, Width, Height, Weight);
+		this.deleteTemplate(Carrier);
+	}
 	
 	
+	@Test
+	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
+	public void addTemplateTNQX(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
+		this.checkRateEnquiry(Carrier, Service, NumberOfItems, Length, Width, Height, Weight, OriginSuburb, OriginPostCode, DesSuburb, DesPostCode);
+		this.checkCreateShipmentPage(Carrier, Service, NumberOfItems, Length, Width, Height, Weight);
+		this.deleteTemplate(Carrier);
+	}
+	
+	
+	@Test
+	@Parameters({"TollCarrierTollPrioAU", "ServiceParcelsOffPeak","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
+	public void addTemplatePrioAus(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
+		this.checkRateEnquiry(Carrier, Service, NumberOfItems, Length, Width, Height, Weight, OriginSuburb, OriginPostCode, DesSuburb, DesPostCode);
+		this.checkCreateShipmentPage(Carrier, Service, NumberOfItems, Length, Width, Height, Weight);
+		this.deleteTemplate(Carrier);
+	}
+	
+	
+	@Test
+	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak","NumberOfItems","Length", "Width", "Height", "Weight", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode"})
+	public void addTemplatePrioNZ(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
+		this.checkRateEnquiry(Carrier, Service, NumberOfItems, Length, Width, Height, Weight, OriginSuburb, OriginPostCode, DesSuburb, DesPostCode);
+		this.checkCreateShipmentPage(Carrier, Service, NumberOfItems, Length, Width, Height, Weight);
+		this.deleteTemplate(Carrier);
+	}
+ 	
+	
+	
+	//.......TEMPLATE METHODS BELOW..................................................................///
+	
+	//Method to Add Template
 	private void addTemplate(String Carrier, String NumberOfItems, String Length, String Width,String Height, String Weight) {
 		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
 		MyTollHomePageActions.ClickMenu();
@@ -78,7 +110,7 @@ public class Toll_Add_Template {
 		PageBase.click(MyTollHomePageActions.templateMenu, 10);
 		Reporter.log("User Clicks Add Template");
 		PageBase.click(BookAPickupActions.addTemplate, 10);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		
 		//Select Carrier
 		Reporter.log("User Selectors Toll Carrier");
@@ -100,13 +132,13 @@ public class Toll_Add_Template {
 		PageBase.sendText(BookAPickupActions.addTemplateHeight, 10, Height);
 		Reporter.log("User Clicks Save");
 		PageBase.click(BookAPickupActions.addTemplateSave, 10);
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		
 		//Verify Template Save Successfully
 		PageBase.verifyTextExist(BookAPickupActions.addTemplateSaveMsg, "TEMPLATE SUCCESSFULLY SAVED");
 		PageBase.click(BookAPickupActions.addTemplateSaveMsgClose, 10);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		
 		//User Filters Carriers
 		PageBase.click(BookAPickupActions.addTemplateCarrierSelector, 5);
@@ -128,45 +160,98 @@ public class Toll_Add_Template {
 			Assert.fail("FAILED: New Template : "+NewTemplateName+ " Does Not Exists");
 		}
 		
-//		//User Deletes New Account Created
-//		PageBase.MaximumWaitForElementEnabled();
-//		Reporter.log("User Deletes New Template Template");
-//		PageBase.click(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//p[text()='"+NewTemplateName+"']/following::div[@class='template-col delete']/a"), 5);
-//		PageBase.MaximumWaitForElementEnabled();
-//		PageBase.verifyTextExist(BookAPickupActions.addAccountDeleteMsg, "Are you sure you want to delete template?");
-//		PageBase.click(BookAPickupActions.addAccountDeleteContinue, 5);
-//		PageBase.MaximumWaitForElementEnabled();
-//		PageBase.verifyTextExist(BookAPickupActions.addAccountDeleteSuccessfull, "Template Successfully Deleted");
-//		PageBase.click(BookAPickupActions.addAccountDeleteClose, 5);
+
 		
 	}
-		
 	
 	
+	//...............................................................................................///	
+	
+	
+	//Method to Verify if Template Exists on Rate Enquiry
 	private void checkRateEnquiry(String Carrier, String Service,String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		MyTollHomePageActions.ClickMenu();
+		Reporter.log("User Navigates to Rate Enquiry Page to Verify Template");
 		MyTollHomePageActions.ClickGetRateEnquiery();
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		//RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
-		
+		BookAPickupActions.SelectAccountNumber1();
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
-		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
+		//User Enters Template Details and verifies line item
 		RateEnquiryActions.EnterItem(NewTemplateName);
-		//*[@id="freight-type-selector"]//*//div[@text='NewTemplateName']
 		PageBase.click(By.xpath("//*[@id=\"freight-type-selector\"]//*//div[text()='"+NewTemplateName+"']"), 5);
+		RateEnquiryActions.verifyNoOfItemsLengthWidthHeightVolumeWeight(NumberOfItems, Length, Width, Height, Weight);
 		
-		RateEnquiryActions.verifyLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+	}
+
+	
+	//...............................................................................................///	
+	
+	
+	//Method to Verify if Template Exists on Create Shipment
+	private void checkCreateShipmentPage (String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight) {	
+		MyTollHomePageActions.ClickMenu();
+		Reporter.log("User Navigates to Create Shipment Page to Verify Template"); 
+		CreateShipmentActions.ClickShipment();
+		BookAPickupActions.EnterTollCarrier(Carrier);
+		CreateShipmentActions.EnterService(Service);
+		CreateShipmentActions.SelectWhoPays(1);
+		BookAPickupActions.SelectAccountNumber1();
+		CreateShipmentActions.SelectSender(2);
+		CreateShipmentActions.SelectReceiver(1);
+		ManifestActions.SelectShipmentConsolidated();
 		
+		//User Enters Template Details and verifies line item
+		RateEnquiryActions.EnterItem(NewTemplateName);
+		PageBase.click(By.xpath("//*[@id=\"freight-type-selector\"]//*//div[text()='"+NewTemplateName+"']"), 5);
+		CreateShipmentActions.verifyNoOfItemsLengthWidthHeightVolumeWeight(NumberOfItems, Length, Width, Height, Weight);
+		
+		
+	}
+
+	
+	//...............................................................................................///	
+	
+	//Method to Delete the new template created
+	private void deleteTemplate(String Carrier) {
+		MyTollHomePageActions.ClickMenu();
+		Reporter.log("User Navigates to My Templates Page back again to Delete the new Template");
+		PageBase.click(MyTollHomePageActions.templateMenu, 10);
+		
+		//User Filters Carriers
+		PageBase.click(BookAPickupActions.addTemplateCarrierSelector, 5);
+		PageBase.click(By.xpath("//*[@id=\"grid-carrier-dropdown\"]//*//div[text()='"+Carrier+"']"),5);
+		
+		try {
+			while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//p[text()='"+NewTemplateName+"']"), 1) == null) {
+				PageBase.moveToElement(BookAPickupActions.addTemplateViewMore);
+				PageBase.click(BookAPickupActions.addTemplateViewMore, 5);
+			}
+		}
+		catch (Exception e) {
+			Reporter.log("FAILED: New Template : "+NewTemplateName+ " Does Not Exists");
+			Assert.fail("FAILED: New Template : "+NewTemplateName+ " Does Not Exists");
+		}
+
+		//User Deletes New Account Created
+		PageBase.MaximumWaitForElementEnabled();
+		Reporter.log("User Deletes New Template Template");
+		PageBase.click(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//p[text()='"+NewTemplateName+"']/following::div[@class='template-col delete']/a"), 5);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExist(BookAPickupActions.addAccountDeleteMsg, "Are you sure you want to delete template?");
+		PageBase.click(BookAPickupActions.addAccountDeleteContinue, 5);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExist(BookAPickupActions.addAccountDeleteSuccessfull, "Template Successfully Deleted");
+		PageBase.click(BookAPickupActions.addAccountDeleteClose, 5);
 	}
 
 	
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 //BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 	}
 
 }
