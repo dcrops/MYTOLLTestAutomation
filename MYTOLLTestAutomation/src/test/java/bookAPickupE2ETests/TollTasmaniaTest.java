@@ -539,8 +539,11 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		BookAPickupActions.ClickReviewBook();
-		
 
+		PageBase.MaximumWaitForElementEnabled();
+
+		// Confirmed Pickup
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		// Verify Review Your Pickup
 		/*ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
@@ -568,7 +571,7 @@ public class TollTasmaniaTest {
 				,Length,Width, Height,volume, Weight);*/
 
 		// Confirm Pickup and Verify pickup confirmation details
-		ReviewYouPickupActions.ClickConfirmPickup();
+		//ReviewYouPickupActions.ClickConfirmPickup();
 		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
 
 	}

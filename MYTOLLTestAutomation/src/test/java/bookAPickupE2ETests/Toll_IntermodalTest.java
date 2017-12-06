@@ -593,14 +593,13 @@ public class Toll_IntermodalTest {
 		
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		//jse.executeScript("scroll(1000, 1500)");
+		
 		BookAPickupActions.ClickReviewBook();
+
 		PageBase.MaximumWaitForElementEnabled();
 
 		// Confirmed Pickup
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-		BookAPickupActions.ClickConfirm();
-		PageBase.MaximumWaitForElementEnabled();
-
 		// Verify Review Your Pickup
 
 		/*
