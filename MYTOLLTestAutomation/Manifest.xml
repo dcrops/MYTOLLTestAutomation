@@ -122,7 +122,8 @@
 		<parameter name="ManifestName" value="Automation" />
 
 		<classes>
-
+	
+			<class name="manifestE2ETests.ManifestTollIntermodalTests" />
 			<class name="manifestE2ETests.ManualManifestTollIPECTest" />
 			<class name="manifestE2ETests.ManualManifestTollNQXTollExpressTests" />
 			<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" />
