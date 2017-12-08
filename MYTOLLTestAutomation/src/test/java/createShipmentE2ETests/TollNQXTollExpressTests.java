@@ -1284,7 +1284,7 @@ public class TollNQXTollExpressTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	
-	@Test
+	@Test(priority=-1)
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",

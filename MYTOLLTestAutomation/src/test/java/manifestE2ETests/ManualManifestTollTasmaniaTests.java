@@ -30,7 +30,7 @@ public class ManualManifestTollTasmaniaTests {
 	}
 
 	
-	@Test(priority = 1)
+	@Test
 	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",

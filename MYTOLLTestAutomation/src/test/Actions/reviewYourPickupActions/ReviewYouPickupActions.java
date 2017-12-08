@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
 
+import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 
@@ -14,16 +15,17 @@ public class ReviewYouPickupActions {
 	public static By reviewYourPickupHeading=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]/div/header/div/h1"); 
 	public static By pickupDetailsHeading=By.cssSelector("h5.review-box-label");
 	public static By pickupDateTimeHeading=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div[2]/div/h5");
-	public static By accountNumber=By.cssSelector("p.pickup-summary__form-control-static");
-	public static By tollCarrier=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div/div/div[2]/div/p");
-	public static By company=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div/div/div[3]/div/p");
-	public static By location=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div/div/div[4]/div/p");
-	public static By userName=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div/div/div[5]/div/p"); 
-	public static By phoneNumber=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div/div/div[6]/div/p");
-	public static By pickupDate=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div[2]/div/div/div/p");
-	public static By readyTime=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div[2]/div/div[2]/div/p");
-	public static By closingTime=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div[2]/div/div[3]/div/p");
-	public static By specialInstructions=By.cssSelector("div.pickup-summary__form-group.clear > div.col-md-6.col-sm-6 > p.pickup-summary__form-control-static");
+	public static By accountNumber=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Account number ']/following::div/p");
+	public static By tollCarrier=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Toll carrier']/following::div/p"); 
+	public static By company=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Company']/following::div/p");
+	public static By location=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location']/following::div/p");
+	public static By bookedBy=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Booked by']/following::div/p"); 
+	public static By phoneNumber=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Phone number']/following::div/p");
+	public static By dispatchDate=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Dispatch date']/following::div/p");
+	public static By readyTime=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Ready time']/following::div/p");
+	public static By closingTime=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location closing time']/following::div/p");
+	public static By specialInstructions=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location closing time']/following::div/p");
+
 	public static By itemDescription1=By.cssSelector("div.item.hide-open");
 	public static By numberofItems=By.cssSelector("div.quantity.hide-open");
 	public static By lengthWidthHeight=By.cssSelector("div.dimensions.hide-open");
@@ -59,6 +61,23 @@ public class ReviewYouPickupActions {
 	
 	public static void ClickItemArrowdown(int itemIineNumber) {
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id='line-item-"+itemIineNumber+"']/div[1]/div[7]/a/i")).click();
+	}
+	
+
+	// Review your overview verification
+	public static void VerifyPickupDetails(String pTollCarrier, String pAccountNumber, String pCompanyName,String pLocation,String pBookedBy,String pPhoneNumber, String pReadyTime, String pClosingTime,
+			String pSpecialInstructions) {
+		 PageBase.MaximumWaitForElementEnabled();
+		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
+		assertEquals(pAccountNumber,BaseWebdriver.driver.findElement(accountNumber).getText());
+		assertEquals(pCompanyName, BaseWebdriver.driver.findElement(company).getText());
+		assertEquals(pLocation, BaseWebdriver.driver.findElement(location).getText());
+		assertEquals(pBookedBy,  BaseWebdriver.driver.findElement(bookedBy).getText());
+		assertEquals(pPhoneNumber, BaseWebdriver.driver.findElement(phoneNumber).getText());
+		assertEquals(pBookedBy,  BaseWebdriver.driver.findElement(readyTime).getText());
+		assertEquals(pClosingTime, BaseWebdriver.driver.findElement(closingTime).getText());
+		assertEquals(pSpecialInstructions, BaseWebdriver.driver.findElement(specialInstructions).getText());
+	
 	}
 	
 	public static String VerifyItemDescription(int lineNumber) {
@@ -127,7 +146,7 @@ public class ReviewYouPickupActions {
 	}
 	
 	public static void VerifyBookedby(String pBookedBy) {
-		assertEquals(pBookedBy,  BaseWebdriver.driver.findElement(userName).getText());
+		assertEquals(pBookedBy,  BaseWebdriver.driver.findElement(bookedBy).getText());
 	}
 	
 	public static void VerifyPhoneNumber(String pPhoneNumber) {

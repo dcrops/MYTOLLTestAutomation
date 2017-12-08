@@ -8,6 +8,7 @@ import reviewYourPickupActions.ReviewYouPickupActions;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
@@ -355,6 +356,21 @@ public class BookAPickupActions {
 	
 	}
 	
+	public static String GetLocationAddressLine2(Integer i) {
+		PageBase.MaximumWaitForElementEnabled();
+		String vLocationAddressLine2=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"location-selector\"]/div["+i+"]/div[3]")).getText();
+		return vLocationAddressLine2;
+	
+	}
+	
+	public static String GetAddressPhoneNumber(Integer i) {
+		PageBase.MaximumWaitForElementEnabled();
+		String vPhoneNumber=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"location-selector\"]/div["+i+"]/div[4]")).getText();
+		return vPhoneNumber;
+	
+	}
+	
+	
 	public static String GetName() {
 		PageBase.MaximumWaitForElementEnabled();
 		String vName=BaseWebdriver.driver.findElement(name).getAttribute("value");
@@ -391,6 +407,11 @@ public class BookAPickupActions {
 		return vClosingTime; 
 	}
 
+	public static String GetSpecialIns() {
+		PageBase.MaximumWaitForElementEnabled(); 
+		String vSpecialInstructions=BaseWebdriver.driver.findElement(specialInstructions).getAttribute("value");
+		return vSpecialInstructions; 
+	}
 
 	public static void EnterPhoneNumber() {
 		PageBase.MaximumWaitForElementEnabled();
@@ -899,12 +920,14 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
 		BookAPickupActions.SelectDestination1(pDestination,pDestinationItem);
-				
-		BookAPickupActions.EnterItem("Automation Temp1");
+		String itemname="Automation"+(new Date()).getTime();	
+		BookAPickupActions.EnterItem(itemname);
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.selectContainFoodItem();
 		
 		BookAPickupActions.selectDangerousGoodNewLine();
+		
+		PageBase.MediumWaitForElementEnabled();
 
 	}
 

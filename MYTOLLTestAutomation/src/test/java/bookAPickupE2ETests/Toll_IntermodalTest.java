@@ -265,17 +265,40 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectAccountNumber1();
+		String accountNo=BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 
+		
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
-
+		String company=BookAPickupActions.GetCompany(1);
+		System.out.println(company);
+		String location=BookAPickupActions.GetLocation(1);
+		System.out.println(location);
 		// Verification and enter data for Quick entry mode, service(=DG Freight),
 		// Mode(=Road)
+		String locationLine2=BookAPickupActions.GetLocationAddressLine2(1);
+		System.out.println(locationLine2);
+		String addressPhoneNumber=BookAPickupActions.GetAddressPhoneNumber(1);
+		System.out.println(addressPhoneNumber);
+		String companyLocation=location+locationLine2;
+		System.out.println(location+" "+locationLine2);
+		String name=BookAPickupActions.GetName();
 
+		System.out.println("name"+name);
+		String phoneNumber=BookAPickupActions.GetPhoneNumber();
+		String phoneNumberModified=phoneNumber.replaceAll("\\s","");
+		System.out.println(phoneNumber);
+
+		String countryCode=BookAPickupActions.GetCountryCode();
+		System.out.println(countryCode);
+		
+		String userPhoneNumber=countryCode+"-"+phoneNumberModified;
+		System.out.println(userPhoneNumber);
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -307,19 +330,27 @@ public class Toll_IntermodalTest {
 		
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
-
+		System.out.println(pickupDate);
+		
 		// BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
+		String readyTime=BookAPickupActions.GetReadyTime();
+		System.out.println(readyTime);
+		String closingTime=BookAPickupActions.GetClosingTime();
+		System.out.println(closingTime);
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		String specialInstruction=BookAPickupActions.GetSpecialIns();
+		System.out.println(specialInstruction);
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
 
+		//ReviewYouPickupActions.VerifyPickupDetails(TollCarrier,accountNo,company,companyLocation, name,phoneNumberModified,readyTime,closingTime, specialInstruction);
+
 		// Confirmed Pickup
-	/*	BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+		//BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		// Verify Review Your Pickup
-		ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
-		ReviewYouPickupActions.verifyPickupDetailsHeading();
+		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
+		/*ReviewYouPickupActions.verifyPickupDetailsHeading();
 		ReviewYouPickupActions.verifyPickupDateTimeHeading();
 
 		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
@@ -536,7 +567,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test
+	@Test(priority=-1)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "locationIndex", "ItemTemplateName","ChargeToAccount", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination","DestinationItem","Postcode", "VendorNum", "specialIns" })
 
@@ -581,9 +612,13 @@ public class Toll_IntermodalTest {
 		PageBase.Scrollbar(250, 500);
 		
 		jse.executeScript("scroll(500, 800)");
-
+		for (int i=0; i<100; i++)
+		{
 		// Add a new item
 		BookAPickupActions.AddANewLine(destination,DestinationItem); // defect
+		System.out.println("NUMBER OF LINE ITEMS ====" + i);
+
+		}
 		
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
@@ -691,7 +726,7 @@ public class Toll_IntermodalTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 
 	}
 

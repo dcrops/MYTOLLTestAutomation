@@ -69,7 +69,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -201,7 +201,7 @@ public class TollIntermodalTests {
 
 		CreateShipmentActions.SelectSender(1);
 		
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		CreateShipmentActions.SelectReceiver(2);
 
@@ -289,7 +289,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -539,7 +539,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -734,7 +734,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -862,7 +862,7 @@ public class TollIntermodalTests {
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);

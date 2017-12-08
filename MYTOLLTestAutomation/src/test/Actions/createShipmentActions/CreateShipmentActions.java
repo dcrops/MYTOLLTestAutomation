@@ -421,7 +421,10 @@ public class CreateShipmentActions {
 
 	public static void SelectNotifySenderAndReceiver() {
 		PageBase.MinimumWaitForElementEnabled();
+			
+		
 		try {
+			
 			BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
 
 			PageBase.MinimumWaitForElementEnabled();
@@ -430,6 +433,7 @@ public class CreateShipmentActions {
 		} catch (Exception ex) {
 			PageBase.MoveToElement(CreateShipmentActions.quoteNumber, CreateShipmentActions.accountNumber);
 		}
+		
 
 	}
 
@@ -877,15 +881,52 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterSenderEmail(String pSenderEmail) {
-		BaseWebdriver.driver.findElement(senderEmail).click();
+		
+		PageBase.MinimumWaitForElementEnabled();
+		boolean resultsNotifySenderCheckBox=BaseWebdriver.driver.findElement(notifySenderCheckBox).isSelected();
+		System.out.println("resultsNotifySenderCheckBox"+ resultsNotifySenderCheckBox);
+		
+		if (resultsNotifySenderCheckBox==false) {
+			PageBase.MinimumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
+			System.out.println("resultsNotifySenderCheckBox clicked");
+			PageBase.MinimumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(senderEmail).click();
+		}
+		else
+		{
+			BaseWebdriver.driver.findElement(senderEmail).click();
+		}
+		
 		BaseWebdriver.driver.findElement(senderEmail).clear();
 		BaseWebdriver.driver.findElement(senderEmail).sendKeys(pSenderEmail);
 	}
 
 	public static void EnterReceiverEmail(String pReceiverEmail) {
 
-		BaseWebdriver.driver.findElement(receiverEmail).clear();
-		BaseWebdriver.driver.findElement(receiverEmail).sendKeys(pReceiverEmail);
+		PageBase.MinimumWaitForElementEnabled();
+		boolean resultsReceiverCheckBox=BaseWebdriver.driver.findElement(notifyReceiverCheckBox).isSelected();
+		System.out.println("resultsReceiverCheckBox"+ resultsReceiverCheckBox);
+		PageBase.MinimumWaitForElementEnabled();
+		if (resultsReceiverCheckBox==true) {
+			PageBase.MinimumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(receiverEmail).click();
+			BaseWebdriver.driver.findElement(receiverEmail).clear();
+			BaseWebdriver.driver.findElement(receiverEmail).sendKeys(pReceiverEmail);
+			PageBase.MinimumWaitForElementEnabled();
+		}
+		else
+		{
+			PageBase.MinimumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(notifyReceiverCheckBox).click();
+			System.out.println("resultsReceiverCheckBox  clicked");
+			PageBase.MinimumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(receiverEmail).click();
+			BaseWebdriver.driver.findElement(receiverEmail).clear();
+			BaseWebdriver.driver.findElement(receiverEmail).sendKeys(pReceiverEmail);
+		}
+		
+	
 	}
 
 	public static void addSenderAdderess() {

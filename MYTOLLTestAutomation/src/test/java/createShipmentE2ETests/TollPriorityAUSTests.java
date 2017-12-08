@@ -38,12 +38,13 @@ public class TollPriorityAUSTests {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceParcelsOffPeak);
 		BookAPickupActions.SelectAccountNumber1();
-		CreateShipmentActions.SelectWhoPays(2);
+		CreateShipmentActions.SelectWhoPays(1);
 		CreateShipmentActions.SelectSender(1); 
 		CreateShipmentActions.SelectReceiver(2);
 		//CreateShipmentActions.EnterReceiver("Test", "Test174");
 		
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.SelectNotifySenderAndReceiver();
 
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
@@ -82,6 +83,8 @@ public class TollPriorityAUSTests {
 		CreateShipmentActions.SelectReceiver(3);
 		
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.SelectNotifySenderAndReceiver();
+
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
