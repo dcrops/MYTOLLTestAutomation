@@ -612,13 +612,13 @@ public class Toll_IntermodalTest {
 		PageBase.Scrollbar(250, 500);
 		
 		jse.executeScript("scroll(500, 800)");
-		for (int i=0; i<100; i++)
-		{
+	/*	for (int i=0; i<100; i++)
+		{*/
 		// Add a new item
 		BookAPickupActions.AddANewLine(destination,DestinationItem); // defect
-		System.out.println("NUMBER OF LINE ITEMS ====" + i);
+		/*System.out.println("NUMBER OF LINE ITEMS ====" + i);
 
-		}
+		}*/
 		
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
