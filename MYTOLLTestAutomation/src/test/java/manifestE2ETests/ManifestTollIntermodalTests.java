@@ -232,7 +232,7 @@ public class ManifestTollIntermodalTests {
 		
 	}
 	
-	@Test
+	@Test(priority=-2)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -309,7 +309,7 @@ public class ManifestTollIntermodalTests {
 		
 	}
 
-	@Test
+	@Test(priority=-1)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -388,7 +388,7 @@ public class ManifestTollIntermodalTests {
 	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 
 	}
 }

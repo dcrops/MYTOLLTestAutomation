@@ -76,8 +76,8 @@ public class ManifestActions {
 	
 	// Add to manifest
 	public static By AddToManifestTtile = By.xpath("//h2[text()='Add to Manifest']");
-	public static By AddToExistingManifestBtn = By
-			.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[2]/input");
+	public static By AddToExistingManifestBtn = By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]//div[@class='manifest-btn-wrap'and value='Add to Manifest']");
+			//.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[2]/input"); 
 	public static By AddToManifestRadioBtn = By
 			.xpath("//*[@id=\\\"manifest-cons-popup-wrpr\\\"]/div/div/section/div/div[1]/div/div[1]/ul/li[2]/div/label");
 	public static By AddToManifestFirstManifestName = By
@@ -154,14 +154,27 @@ public class ManifestActions {
 		String NewManifestName=pManifestName+(new Date()).getTime();
 		return NewManifestName;
 	}
-
+	
 	public static void AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(String pNewManifestName) {
+		PageBase.MinimumWaitForElementEnabled();
+	
+		boolean results = BaseWebdriver.driver.findElement(AddToManifestTtile).isDisplayed();
+		if (results == true) {
+			AddToManifestForExistingAnManiestSubmittingCreateshipment();
+			//MoveToManifestAndCreateNewManifest(pNewManifestName);
+			//ShipmentReviewActions.ClickContinue();
+
+		}
+	
+	}
+
+	/*public static void AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(String pNewManifestName) {
 		PageBase.MinimumWaitForElementEnabled();
 		try {
 		boolean results = BaseWebdriver.driver.findElement(AddToManifestTtile).isDisplayed();
-		if (results = true) {
+		if (results == true) {
 			AddToManifestForExistingAnManiestSubmittingCreateshipment();
-			MoveToManifestAndCreateNewManifest(pNewManifestName);
+			//MoveToManifestAndCreateNewManifest(pNewManifestName);
 			//ShipmentReviewActions.ClickContinue();
 
 
@@ -174,7 +187,7 @@ public class ManifestActions {
 
 			System.out.println("ClickAddToManifestManually");
 		}
-	}
+	}*/
 
 	public static void AcceptAddToManifestSystemGeneratedManifestSubmittingCreateshipment(String pNewManifestName) {
 		PageBase.MinimumWaitForElementEnabled();
@@ -230,9 +243,24 @@ public class ManifestActions {
 		int listSize=eles.size();
 		System.out.println("listSize" +listSize);
 		PageBase.MinimumWaitForElementEnabled();
+		boolean results=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).isDisplayed();
+
+		PageBase.MaximumWaitForElementEnabled();
+		System.out.println("results listelement" +results);
+		
+		//PageBase.MoveToElement(BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")), BaseWebdriver.driver.findElement(SelectManifestTextField));
 		String manifestnameBySys=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).getText();
+		
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).click(); 
 		return manifestnameBySys ;
+		/*if (results==true) {
+		String manifestnameBySys=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).getText();
+		
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).click(); 
+		return manifestnameBySys ;
+		}
+		return null;*/
+		
 		//ManifestActions.ClickAddManifest();
 	}
 

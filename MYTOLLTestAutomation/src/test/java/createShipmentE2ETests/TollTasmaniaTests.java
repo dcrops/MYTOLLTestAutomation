@@ -72,7 +72,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -218,7 +218,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -343,7 +343,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -465,7 +465,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);

@@ -442,7 +442,7 @@ public class TollNQXTollExpressTest {
 		//ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test
+	@Test(priority=-1)
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailDangerousGoods", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName","PackingGroup",
 			"packageDescription","pDgPkgQty","pDgQtyKg","technicalName",

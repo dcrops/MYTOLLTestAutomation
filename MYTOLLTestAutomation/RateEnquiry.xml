@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Rate Enquiry">
-	
+
 	<test name="RateEnquiry">
 		<!---Toll carriers test data -->
 
@@ -128,7 +128,6 @@
 
 
 		<classes>
-			
 			<class name="rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations" />
             <class name="rateEnquiryE2ETests.TollIntermodalTests" />
 			<class name="rateEnquiryE2ETests.TollPriorityAUSTests" />

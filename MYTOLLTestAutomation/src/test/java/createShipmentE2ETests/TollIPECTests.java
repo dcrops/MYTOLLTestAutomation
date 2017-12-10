@@ -66,7 +66,7 @@ public class TollIPECTests {
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -172,7 +172,7 @@ public class TollIPECTests {
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
