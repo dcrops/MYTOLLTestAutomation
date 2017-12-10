@@ -128,16 +128,15 @@
 
 
 		<classes>
-
-
-		
-           <class name="rateEnquiryE2ETests.TollIntermodalTests" />
+			
+			<class name="rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations" />
+            <class name="rateEnquiryE2ETests.TollIntermodalTests" />
 			<class name="rateEnquiryE2ETests.TollPriorityAUSTests" />
 			<class name="rateEnquiryE2ETests.TollNQXTollExpressTests" />
 			<class name="rateEnquiryE2ETests.TollTasmaniaTests" />
 			<class name="rateEnquiryE2ETests.TollIPECTests" />
-			<class name="rateEnquiryE2ETests.TollPriorityNZTests" />
-			 <!-- Blocked>	</Blocked -->
+			<class name="rateEnquiryE2ETests.TollPriorityNZTests" /> 
+				<!-- Blocked></Blocked -->
 
 		</classes>
 	</test> <!-- Test -->

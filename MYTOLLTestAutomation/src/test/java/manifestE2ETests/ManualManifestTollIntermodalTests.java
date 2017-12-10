@@ -94,6 +94,7 @@ public class ManualManifestTollIntermodalTests {
 		//Book a Pick Up Page
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
 		PageBase.verifyTextExistAttribute(BookAPickupActions.TollCarrierTextField, TollCarrier);
+		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "398185656");
 		String pickABookUpAccountNo = BaseWebdriver.driver.findElement(BookAPickupActions.accountNumber).getAttribute("value");
 		if (pickABookUpAccountNo.contains(AccountNo)) {
 			Reporter.log("Expected Text : "+AccountNo+ " Matched the Text on Screen :" +pickABookUpAccountNo);

@@ -84,7 +84,7 @@ public class RateEnquiryActions {
 	
 	public static void EnterTollCarrier(String pTollCarrierName) {
 		Reporter.log("User Selects Toll Carrier - "+pTollCarrierName);
-		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.MediumWaitForElementEnabled_1();
 		PageBase.click(TollCarrierTextfield, 5);
 		PageBase.click(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']"), 5);
 		
