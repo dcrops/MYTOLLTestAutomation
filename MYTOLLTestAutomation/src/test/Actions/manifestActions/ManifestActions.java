@@ -76,7 +76,7 @@ public class ManifestActions {
 	
 	// Add to manifest
 	public static By AddToManifestTtile = By.xpath("//h2[text()='Add to Manifest']");
-	public static By AddToExistingManifestBtn = By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]//div[@class='manifest-btn-wrap'and value='Add to Manifest']");
+	public static By AddToExistingManifestBtn =By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[2]/input"); // By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]//h3[text()='Add to existing manifest']/div[2]/button[value()='Add to Manifest']"); //div[@class='manifest-btn-wrap'and value='Add to Manifest']");
 			//.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[2]/input"); 
 	public static By AddToManifestRadioBtn = By
 			.xpath("//*[@id=\\\"manifest-cons-popup-wrpr\\\"]/div/div/section/div/div[1]/div/div[1]/ul/li[2]/div/label");
@@ -84,7 +84,7 @@ public class ManifestActions {
 			.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li[1]/div/label"); 
 	public static By NewManifestName = By.id("newManifestName");
 	public static By CreateNewManifestBtn = By
-			.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[2]/div/div[2]/input"); //*[@id="manifest-cons-popup-wrpr"]/div/div/section/div/div[1]/div/div[2]/input
+			.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[2]/div/div[2]/input"); 
 	public static By CloseAddToManifest = By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/a/i");
 	public static By SelectManifestTextField = By.id("saved-manifest-name");
 	
@@ -243,15 +243,13 @@ public class ManifestActions {
 		int listSize=eles.size();
 		System.out.println("listSize" +listSize);
 		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MoveToElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label"), ManifestActions.AddToManifestTtile);
 		boolean results=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).isDisplayed();
-
-		PageBase.MaximumWaitForElementEnabled();
 		System.out.println("results listelement" +results);
-		
-		//PageBase.MoveToElement(BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")), BaseWebdriver.driver.findElement(SelectManifestTextField));
+		PageBase.MaximumWaitForElementEnabled();
 		String manifestnameBySys=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).getText();
-		
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).click(); 
+		//PageBase.MaximumWaitForElementEnabled();
+		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).click(); 
 		return manifestnameBySys ;
 		/*if (results==true) {
 		String manifestnameBySys=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).getText();
