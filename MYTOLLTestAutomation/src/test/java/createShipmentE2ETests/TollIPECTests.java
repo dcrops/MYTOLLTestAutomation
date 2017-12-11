@@ -109,7 +109,7 @@ public class TollIPECTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverviewTollIPEC(TollCarrier, AccountNumber, sender, senderLocation,
+		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumber, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ServiceRoadExpress, whoPays);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
@@ -222,7 +222,7 @@ public class TollIPECTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverviewTollIPEC(TollCarrier, AccountNumber, sender, senderLocation,
+		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumber, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ServiceFashion, whoPays);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;

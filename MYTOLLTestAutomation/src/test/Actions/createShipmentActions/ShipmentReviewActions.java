@@ -206,7 +206,7 @@ public class ShipmentReviewActions {
 		assertEquals(pMode, BaseWebdriver.driver.findElement(mode).getText());
 	}
 	
-	public static void VerifyShipmentOverviewTollIPEC(String pTollCarrier, String pAccountNumber, String pSenderCompanyName,String pSenderLocation,String pReceiverCompanyName, String pReceiverLocation,String pShipmentRef1,
+	public static void VerifyShipmentOverviewTGX(String pTollCarrier, String pAccountNumber, String pSenderCompanyName,String pSenderLocation,String pReceiverCompanyName, String pReceiverLocation,String pShipmentRef1,
 			String pService,String pWhopays) {
 		 PageBase.MaximumWaitForElementEnabled();
 		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());

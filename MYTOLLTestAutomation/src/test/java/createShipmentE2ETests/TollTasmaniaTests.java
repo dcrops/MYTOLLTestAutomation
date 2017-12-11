@@ -77,7 +77,7 @@ public class TollTasmaniaTests {
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
 
-		CreateShipmentActions.SelectReceiver(2);
+		//CreateShipmentActions.SelectReceiver(2);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);
 
@@ -223,7 +223,7 @@ public class TollTasmaniaTests {
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
 
-		CreateShipmentActions.SelectReceiver(2);
+		//CreateShipmentActions.SelectReceiver(2);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);
 
@@ -295,7 +295,7 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test
+	@Test(priority=-4)
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -348,7 +348,7 @@ public class TollTasmaniaTests {
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
 
-		CreateShipmentActions.SelectReceiver(2);
+		//CreateShipmentActions.SelectReceiver(2);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);
 
@@ -544,9 +544,109 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	
+	@Test(priority=-1)
+	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
+			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
+			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2", "Width2", "Height2",
+			"Weight2", "DGYes", "PackingGroup", "lookupName", "lookupItem", "packageDescription", "pDgPkgQty",
+			"pDgQtyKg", "technicalName", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
+			"PalletTransactionsInfo", "ChepCustomer", "ChepExchange", "ChepTansferToToll", "ChepDocketNo",
+			"LoscamCustomer", "LoascamExchange", "LoscamTransferToToll", "LoscamDocketNo", "OtherCostomer",
+			"ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo", "LoscamOtherExchange",
+			"LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraServiceAmount",
+			"LineItemName1Heading", "LineItemName2Heading", "ItemDescriptionHeading", "ItemsHeading",
+			"BillingTypeHeading", "DimensionsHeading", "TotalVolumeHeading", "WeightHeading", "Reference1Heading",
+			"Reference2Heading", "ShipmentContainDangerousGoodsHeading", "DangerousGoodsDetailsHeading",
+			"VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
+			"ShipmentContainDangerousGoodsNo" })
+
+	public void CreateShipment_TollTasmania_E2ETest_TID_920_Service_General_ShipmentConsolidation(String TollCarrier, String ServiceGeneral,
+			String AccountNumber, String whoPays, String Mode, Integer Sender, Integer Receiver, String QuoteNumber,
+			String DropOffDepot, String CollectionDepot, String DGContactName, String DGContactNumber,
+			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
+			String ItemTemplateName2, String NumberOfItems, String Length, String Width, String Height, String Weight,
+			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
+			Integer PackingGroup, String lookupName, Integer lookupItem, String packageDescription, String pDgPkgQty,
+			String pDgQtyKg, String technicalName, Integer DGNo, String BillingType, String SpeceialIns, Integer DGItem,
+			String LookupSearch, String PalletTransactionsInfo, String ChepCustomer, String ChepExchange,
+			String ChepTansferToToll, String ChepDocketNo, String LoscamCustomer, String LoascamExchange,
+			String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer, String ChepOtherExchange,
+			String ChepOtherTransferToToll, String chepOtherDocketNo, String LoscamOtherExchange,
+			String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder,
+			String TollExtraSrviceAmount, String LineItemName1Heading, String LineItemName2Heading,
+			String ItemDescriptionHeading, String ItemsHeading, String BillingTypeHeading, String DimensionsHeading,
+			String TotalVolumeHeading, String WeightHeading, String Reference1Heading, String Reference2Heading,
+			String ShipmentContainDangerousGoodsHeading, String DangerousGoodsDetailsHeading, String VolumeLineItem1,
+			String VolumeLineItem2, String ShipmentContainDangerousGoodsYes, String ShipmentContainDangerousGoodsNo) {
+
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		CreateShipmentActions.EnterService(ServiceGeneral);
+		// BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumber);
+		CreateShipmentActions.SelectWhoPays(1);
+		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
+
+		CreateShipmentActions.SelectMode(1);
+		CreateShipmentActions.SelectSender(Sender);
+		CreateShipmentActions.SelectReceiver(Receiver);
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
+		System.out.println(sender);
+		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
+		System.out.println(senderLocation);
+
+		//CreateShipmentActions.SelectReceiver(2);
+		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
+		System.out.println(receiver);
+
+		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
+		System.out.println(receiverLocation);
+		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
+		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
+		CreateShipmentActions.ClickReviewCreateShipment();
+		
+		/*CreateShipmentActions.MessageEnterLineItemShipmentConsolidation(ItemTemplateName,BillingType,NumberOfItems,ShipmentRef1, ShipmentRef2,Length, Width, Height, Weight,ItemTemplateName2, NumberOfItems2,
+				Length2,Width2,Height2,Weight2, DGNo, ChepCustomer, ChepExchange, ChepTansferToToll,
+				ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
+				ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
+				LoscamOtherTransferToToll, LoscamOtherDocketNo,PurchaseOrder,
+				TollExtraSrviceAmount,SpeceialIns);*/
+
+		// Shipment Review
+		ShipmentReviewActions.VerifyShipmentOverviewTollTasmania(TollCarrier, AccountNumber, sender, senderLocation,
+				receiver, receiverLocation, ShipmentRef1, ShipmentRef2, ServiceGeneral, whoPays, CollectionDepot,
+				"ROAD");
+
+		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
+		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
+				tollExtraServiceAmount);
+
+		ShipmentReviewActions.VerifyPalletTransactionsInformations(ChepCustomer, ChepExchange, ChepTansferToToll,
+				ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
+				ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
+				LoscamOtherTransferToToll, LoscamOtherDocketNo);
+		String numberOfItems = ItemsHeading + " " + NumberOfItems;
+		ShipmentReviewActions.VerifyLineItem1Headings(LineItemName1Heading, ItemTemplateName, numberOfItems,
+				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
+				WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
+		String dimensions = Length + "cm x " + Width + "cm x " + Height + "cm";
+		String weight = Weight + "kg";
+		ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName, NumberOfItems, BillingType, dimensions,
+				VolumeLineItem1, weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+
+		ShipmentReviewActions.VerifyLineItem2Headings(LineItemName2Heading, ItemTemplateName2, numberOfItems,
+				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
+				WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
+		String dimensions2 = Length2 + "cm x " + Width2 + "cm x " + Height2 + "cm";
+		String weight2 = Weight2 + "kg";
+
+		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
+				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+	}
+	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 
 	}
 

@@ -25,7 +25,7 @@ public class TollIntermodalTests {
 
 	//@Test(priority = 7)
 	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER", "whoPays", "Mode",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER", "whoPays", "Mode","Sender", "Receiver",
 			"ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot", "dropOffDepot", "collectionDepot",
 			"DGContactName", "DGContactNumber", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2", "Width2", "Height2",
@@ -40,7 +40,7 @@ public class TollIntermodalTests {
 			"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight_ShipmentReview(String TollCarrier,
-			String ServiceDGFreight, String AccountNumber, String whoPays, String Mode, String ReceiverName,
+			String ServiceDGFreight, String AccountNumber, String whoPays, String Mode, Integer Sender, Integer Receiver, String ReceiverName,
 			String ReceiverItem, String DropOffDepot, String CollectionDepot, Integer dropOffDepot,
 			Integer collectionDepot, String DGContactName, String DGContactNumber, String ShipmentRef1,
 			String ShipmentRef2, String ItemTemplateName, String ItemTemplateName2, String NumberOfItems, String Length,
@@ -68,13 +68,13 @@ public class TollIntermodalTests {
 		CreateShipmentActions.SelectMode(1);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
+		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
 	
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(Receiver);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);
 
@@ -173,14 +173,14 @@ public class TollIntermodalTests {
 
 	//@Test(priority = 8)
 	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER", "SenderName", "SenderItem",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER","Sender", "Receiver", "SenderName", "SenderItem",
 			"ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot", "BillingType", "DGContactName",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2", "NumberOfItems", "Length", "Width",
 			"NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "Height", "Weight", "DGYes", "PackingGroup",
 			"DGNo", "DGoodsNo", "lookupName", "lookupItem", "packageDescription", "pDgPkgQty", "pDgQtyKg",
 			"technicalName", "SpeceialIns", "TollExtraServiceAmount" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight(String TollCarrier,
-			String ServiceDGFreight, String AccountNumber, String SenderName, String SenderItem, String ReceiverName,
+			String ServiceDGFreight, String AccountNumber, Integer Sender, Integer Receiver, String SenderName, String SenderItem, String ReceiverName,
 			String ReceiverItem, String dropOffDepot, String collectionDepot, String BillingType, String DGContactName,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String ItemTemplateName2,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String NumberOfItems2,
@@ -199,11 +199,11 @@ public class TollIntermodalTests {
 		
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
+		CreateShipmentActions.SelectSender(Sender);
 		
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(Receiver);
 
 		
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
@@ -251,8 +251,8 @@ public class TollIntermodalTests {
 	}
 
 	//@Test(priority = 1)
-	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER","whoPays","Mode", "ReceiverName", "ReceiverItem",
+	@Test(priority = -4)
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER","whoPays","Mode","Sender", "Receiver", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
 			"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns","PalletTransactionsInfo", "ChepCustomer", "ChepExchange", "ChepTansferToToll", "ChepDocketNo",
@@ -264,7 +264,7 @@ public class TollIntermodalTests {
 			"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo"  })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express_ShipmentReview(String TollCarrier, String ServiceExpress,
-			String AccountNumber, String whoPays,String Mode,String ReceiverName, String ReceiverItem,String DropOffDepot, String CollectionDepot, Integer dropOffDepot, Integer collectionDepot,
+			String AccountNumber, String whoPays,String Mode, Integer Sender, Integer Receiver,String ReceiverName, String ReceiverItem,String DropOffDepot, String CollectionDepot, Integer dropOffDepot, Integer collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String ItemTemplateName2, String NumberOfItems, String Length, String Width, String Height, String Weight,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
@@ -288,13 +288,13 @@ public class TollIntermodalTests {
 		
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
+		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
 		
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(Receiver);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);
 
@@ -386,12 +386,12 @@ public class TollIntermodalTests {
 
 	//@Test(priority = 2)
 	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER","Sender", "Receiver", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
 			"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns", "TollExtraServiceAmount" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Express(String TollCarrier,
-			String ServiceExpress, String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot,
+			String ServiceExpress, String AccountNumber, Integer Sender, Integer Receiver, String ReceiverName, String ReceiverItem, String dropOffDepot,
 			String collectionDepot, String DGContactName, String ShipmentRef1, String ShipmentRef2,
 			String ItemTemplateName, String ItemTemplateName2, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String NumberOfItems2, String Length2, String Width2, String Height2,
@@ -408,8 +408,8 @@ public class TollIntermodalTests {
 		
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectSender(Sender);
+		CreateShipmentActions.SelectReceiver(Receiver);
 
 		
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
@@ -447,16 +447,23 @@ public class TollIntermodalTests {
 
 	//@Test(priority = -4)
 	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER","Sender", "Receiver", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
-			"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns", "TollExtraServiceAmount" })
+			"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "ChepCustomer", "ChepExchange", "ChepTansferToToll", "ChepDocketNo",
+			"LoscamCustomer", "LoascamExchange", "LoscamTransferToToll", "LoscamDocketNo", "OtherCostomer",
+			"ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo", "LoscamOtherExchange",
+			"LoscamOtherTransferToToll", "LoscamOtherDocketNo",  "SpeceialIns", "TollExtraServiceAmount" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_General(String TollCarrier, String ServiceGeneral,
-			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
+			String AccountNumber, Integer Sender, Integer Receiver, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String ItemTemplateName2, String NumberOfItems, String Length, String Width, String Height, String Weight,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
-			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount) {
+			Integer DGNo, String BillingType,String ChepCustomer, String ChepExchange, String ChepTansferToToll,
+			String ChepDocketNo, String LoscamCustomer, String LoascamExchange, String LoscamTransferToToll,
+			String LoscamDocketNo, String OtherCostomer, String ChepOtherExchange, String ChepOtherTransferToToll,
+			String chepOtherDocketNo, String LoscamOtherExchange, String LoscamOtherTransferToToll,
+			String LoscamOtherDocketNo, String SpeceialIns, String TollExtraServiceAmount) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceGeneral);
@@ -468,8 +475,8 @@ public class TollIntermodalTests {
 	
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectSender(Sender);
+		CreateShipmentActions.SelectReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
@@ -491,18 +498,23 @@ public class TollIntermodalTests {
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
 				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
+		CreateShipmentActions.ClickAddANewLine();
 
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 		PageBase.MoveToElement(CreateShipmentActions.addPalletYes, CreateShipmentActions.tollExtraSrviceNOBtn);
-		CreateShipmentActions.SelectPalletTransactionsYes();
+		//CreateShipmentActions.SelectPalletTransactionsYes();
+		CreateShipmentActions.EnterPalletTransActionInformations(ChepCustomer, ChepExchange, ChepTansferToToll,
+				ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
+				ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
+				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraServiceAmount);
 		CreateShipmentActions.ClickReviewCreateShipment();
 	}
 
 	//@Test(priority = 4)
 	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER","whoPays","Mode", "ReceiverName", "ReceiverItem",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER","whoPays","Mode", "Sender", "Receiver","ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
 		"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns","PalletTransactionsInfo", "ChepCustomer", "ChepExchange", "ChepTansferToToll", "ChepDocketNo",
@@ -514,7 +526,7 @@ public class TollIntermodalTests {
 		"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 		"ShipmentContainDangerousGoodsNo"  })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_General_ShipmentReview(String TollCarrier,
-			String ServiceGeneral, String AccountNumber, String whoPays,String Mode,String ReceiverName, String ReceiverItem,String DropOffDepot, String CollectionDepot, Integer dropOffDepot, Integer collectionDepot,
+			String ServiceGeneral, String AccountNumber, String whoPays,String Mode, Integer Sender, Integer Receiver,String ReceiverName, String ReceiverItem,String DropOffDepot, String CollectionDepot, Integer dropOffDepot, Integer collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String ItemTemplateName2, String NumberOfItems, String Length, String Width, String Height, String Weight,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
@@ -538,12 +550,12 @@ public class TollIntermodalTests {
 
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
+		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(Receiver);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);
 
@@ -630,13 +642,13 @@ public class TollIntermodalTests {
 
 	//@Test(priority = 5)
 	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "AccountNumberTINTER", "ReceiverName",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "AccountNumberTINTER","Sender", "Receiver", "ReceiverName",
 			"ReceiverItem", "DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight",
 			"NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 			"TollExtraServiceAmount" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Refrigeration(String TollCarrier,
-			String ServiceRefrigeration, String AccountNumber, String ReceiverName, String ReceiverItem,
+			String ServiceRefrigeration, String AccountNumber, Integer Sender, Integer Receiver, String ReceiverName, String ReceiverItem,
 			String dropOffDepot, String collectionDepot, String DGContactName, String ShipmentRef1, String ShipmentRef2,
 			String ItemTemplateName, String ItemTemplateName2, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String NumberOfItems2, String Length2, String Width2, String Height2,
@@ -655,8 +667,8 @@ public class TollIntermodalTests {
 		PageBase.Scrollbar(250, 500);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectSender(Sender);
+		CreateShipmentActions.SelectReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
@@ -689,7 +701,7 @@ public class TollIntermodalTests {
 
 	//@Test(priority = 6)
 	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "AccountNumberTINTER","whoPays","Mode", "ReceiverName", "ReceiverItem",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "AccountNumberTINTER","whoPays","Mode","Sender", "Receiver", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
 		"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns","PalletTransactionsInfo", "ChepCustomer", "ChepExchange", "ChepTansferToToll", "ChepDocketNo",
@@ -701,7 +713,7 @@ public class TollIntermodalTests {
 		"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 		"ShipmentContainDangerousGoodsNo"   })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Refrigeration_ShipmentReview(String TollCarrier,
-			String ServiceRefrigeration, String AccountNumber, String whoPays,String Mode,String ReceiverName, String ReceiverItem,String DropOffDepot, String CollectionDepot, Integer dropOffDepot, Integer collectionDepot,
+			String ServiceRefrigeration, String AccountNumber, String whoPays,String Mode, Integer Sender, Integer Receiver,String ReceiverName, String ReceiverItem,String DropOffDepot, String CollectionDepot, Integer dropOffDepot, Integer collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String ItemTemplateName2, String NumberOfItems, String Length, String Width, String Height, String Weight,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
@@ -733,12 +745,12 @@ public class TollIntermodalTests {
 
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
+		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(Receiver);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);
 
@@ -824,8 +836,8 @@ public class TollIntermodalTests {
 	
 
 	//@Test(priority = 4)
-	@Test
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER","whoPays","Mode", "ReceiverName", "ReceiverItem",
+	@Test(priority = -8)
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER","whoPays","Mode","Sender", "Receiver", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
 		"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns","PalletTransactionsInfo", "ChepCustomer", "ChepExchange", "ChepTansferToToll", "ChepDocketNo",
@@ -837,7 +849,7 @@ public class TollIntermodalTests {
 		"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 		"ShipmentContainDangerousGoodsNo"  })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_General_ConsolidateShipments(String TollCarrier,
-			String ServiceGeneral, String AccountNumber, String whoPays,String Mode,String ReceiverName, String ReceiverItem,String DropOffDepot, String CollectionDepot, Integer dropOffDepot, Integer collectionDepot,
+			String ServiceGeneral, String AccountNumber, String whoPays,String Mode, Integer Sender, Integer Receiver,String ReceiverName, String ReceiverItem,String DropOffDepot, String CollectionDepot, Integer dropOffDepot, Integer collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String ItemTemplateName2, String NumberOfItems, String Length, String Width, String Height, String Weight,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
@@ -861,12 +873,12 @@ public class TollIntermodalTests {
 
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
+		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(Receiver);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);
 
@@ -874,40 +886,9 @@ public class TollIntermodalTests {
 		System.out.println(receiverLocation);
 
 		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
-		/*PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
-
-		CreateShipmentActions.SelectDropOffDepot(dropOffDepot);
-		CreateShipmentActions.SelectCollectionDepot(collectionDepot);
-		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-
-		BookAPickupActions.EnterItem(ItemTemplateName);
-		CreateShipmentActions.EnterBillingType(BillingType);
-		CreateShipmentActions.NumberOfItem(NumberOfItems);
-		CreateShipmentActions.ItemType(2);
-		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
-		CreateShipmentActions.EnterWeight(Weight);
-		
-		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.itemDescriptionTextField);
-
-		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
-				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);
-		BookAPickupActions.SelectDangerousGoods(DGNo);
-
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
-		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
-
-		CreateShipmentActions.SelectPalletTransactionsYes();
-
-		CreateShipmentActions.EnterPalletTransActionInformations(ChepCustomer, ChepExchange, ChepTansferToToll,
-				ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
-				ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
-				LoscamOtherTransferToToll, LoscamOtherDocketNo);
-
-		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraServiceAmount);
 		CreateShipmentActions.ClickReviewCreateShipment();
-		
+		//CreateShipmentActions.MessageEnterLineItemShipmentConsolidation(ItemTemplateName,);
 		// Shipment Review-VerifyOverview
 		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
 						receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceGeneral, whoPays, CollectionDepot,
@@ -946,14 +927,14 @@ public class TollIntermodalTests {
 
 		// Shipment Review-VerifyLineItem2Values
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
-				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);*/
+				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 		
 
 	}
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 
 	}
 

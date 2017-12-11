@@ -39,7 +39,10 @@ public class CreateShipmentActions {
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]");
 	public static By shipmentConsolidatedContinue = By
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]");
-	public static By shipmentConsolidatedBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//a[text()='Consolidate']"); //*[@id="shipment-cons-popup-wrpr"]/div/div/footer/a[2]
+	public static By shipmentConsolidatedBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//a[text()='Consolidate']"); 
+	public static By MessageShipmentToEnetrLineItem = By.xpath("//*[@id=\"alert-box-wrapper\"]//h3[text()='Shipment']");
+	public static By MessageContentShipmentToEnetrLineItem = By.xpath("//*[@id=\"alert-box-wrapper\"]//h3[text()='Shipment']/div");
+	public static By CloseMessageShipmentToEnetrLineItem = By.id("closeAlert");
 	public static By dgContactName = By.id("sh-dg-contact-name");
 	public static By dgContactNumber = By.name("dg-contact-num");
 	public static By quoteNumber = By.id("quote_num");
@@ -343,9 +346,9 @@ public class CreateShipmentActions {
 			  System.out.println("shipmentConsolidatedRadioBtn doubleclicked ");
 			  BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
 			  PageBase.MaximumWaitForElementEnabled();
-			SelectNotifySenderAndReceiver();
+			/*SelectNotifySenderAndReceiver();
 			PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
-					CreateShipmentActions.notifyReceiverCheckBox);
+					CreateShipmentActions.notifyReceiverCheckBox);*/
 			
 		}
 	}
@@ -372,7 +375,7 @@ public class CreateShipmentActions {
 		try {
 			PageBase.MaximumWaitForElementEnabled();
 			Boolean results = BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).isDisplayed();
-			if (results = true) {
+			if (results == true) {
 				BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).click();
 				PageBase.MaximumWaitForElementEnabled();
 				SelectNotifySenderAndReceiver();
@@ -385,6 +388,63 @@ public class CreateShipmentActions {
 		catch (Exception ex) {
 			System.out.println(ex);
 			SelectNotifySenderAndReceiver();
+		}
+	}
+	
+	public static void MessageEnterLineItemShipmentConsolidation(String pItemTemplateName,String pBillingType,String pNumberOfItems,String pShipmentRef1, String pShipmentRef2,
+			String pLength,String pWidth,String pHeight, String pWeight,String ItemTemplateName2, String pNumberOfItems2,String pLength2,
+			String pWidth2, String pHeight2, String pWeight2, Integer DGNo, String ChepCustomer, String ChepExchange, String ChepTansferToToll, String ChepDocketNo,
+			String LoscamCustomer, String LoascamExchange, String LoscamTransferToToll, String LoscamDocketNo,
+			String OtherCostomer, String ChepOtherExchange, String ChepOtherTransferToToll, String chepOtherDocketNo,
+			String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo, String PurchaseOrder,
+			String TollExtraSrviceAmount, String SpeceialIns) {
+		try {
+			PageBase.MaximumWaitForElementEnabled();
+			Boolean results = BaseWebdriver.driver.findElement(MessageShipmentToEnetrLineItem).isDisplayed();
+			System.out.println("results "+results );
+			if (results == true) {
+
+				String messageHeading = BaseWebdriver.driver.findElement(MessageShipmentToEnetrLineItem).getText().toString();
+				System.out.println("messageHeading "+messageHeading );
+				String messageContent = BaseWebdriver.driver.findElement(MessageContentShipmentToEnetrLineItem).getText().toString();
+				System.out.println("messageContent "+messageContent );
+				assertEquals("Shipment", messageHeading);
+				assertEquals("Select at least one line item", messageContent);
+				BaseWebdriver.driver.findElement(CloseMessageShipmentToEnetrLineItem).click();
+				PageBase.MinimumWaitForElementEnabled();
+				
+				BookAPickupActions.EnterItem(pItemTemplateName);
+				CreateShipmentActions.EnterBillingType(pBillingType);
+				CreateShipmentActions.NumberOfItem(pNumberOfItems);
+				CreateShipmentActions.ItemType(2);
+				CreateShipmentActions.EnterSenderReference(pShipmentRef1, pShipmentRef2);
+				BookAPickupActions.EnterLengthWidthHeight(pLength, pWidth, pHeight);
+				CreateShipmentActions.EnterWeight(pWeight);
+				
+			
+				PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.itemDescriptionTextField);
+
+				CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, pBillingType, pNumberOfItems2, pLength2,
+						pWidth2, pHeight2, pWeight2, pShipmentRef1, pShipmentRef2);
+				BookAPickupActions.SelectDangerousGoods(DGNo);
+				
+				PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
+				CreateShipmentActions.SelectPalletTransactionsYes();
+				CreateShipmentActions.EnterPalletTransActionInformations(ChepCustomer, ChepExchange, ChepTansferToToll,
+						ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
+						ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
+						LoscamOtherTransferToToll, LoscamOtherDocketNo);
+
+				CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
+				
+				CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
+
+				BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
+			}
+		}
+
+		catch (Exception ex) {
+			System.out.println(ex);
 		}
 	}
 
@@ -688,6 +748,11 @@ public class CreateShipmentActions {
 		// is not visible.
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 
+	}
+	
+	public static void ClickAddANewLine()
+	{
+		BaseWebdriver.driver.findElement(addNewLine).click();
 	}
 
 	public static void AddANewLineNZAUS() {
