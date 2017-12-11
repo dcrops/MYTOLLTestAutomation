@@ -835,6 +835,8 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(tollExtraSrviceAmount).sendKeys(pTollExtraSrviceAmount);
 
 	}
+	
+	
 
 	public static void ClickReviewCreateShipment() {
 
@@ -849,6 +851,15 @@ public class CreateShipmentActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
+		
+	}
+	
+	public static void ClickReviewCreateShipmentAndGoToManifestScreen() {
+
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.specialInstructions);
+		BaseWebdriver.driver.findElement(reviewCreateShipmentBtn).click();
+		PageBase.MaximumWaitForElementEnabled();
+		
 		
 	}
 	
@@ -872,6 +883,8 @@ public class CreateShipmentActions {
 	}
 		
 	}
+	
+	
 
 	public static void VerifyDGContactName(String pContactName) {
 		assertEquals(pContactName, BaseWebdriver.driver.findElement(dgContactName).getAttribute("value"));
