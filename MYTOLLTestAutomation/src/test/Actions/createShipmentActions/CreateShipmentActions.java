@@ -14,6 +14,7 @@ import org.testng.Reporter;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import manifestActions.ManifestActions;
+import myTollHomePageActions.MyTollHomePageActions;
 
 public class CreateShipmentActions {
 
@@ -137,6 +138,8 @@ public class CreateShipmentActions {
 	public static final String SenderAddressCompanyAdd = "60 Collins Street, MELBOURNE VIC 3000";
 	public static final String ReceiverAddressCompanyName = "TestReceiver";
 	public static final String ReceiverAddressCompanyAdd = "60 Colliery Street, NEATH  NSW  2326";
+	public static String newSenderCompanyName;
+	public static String newReceiverCompanyName;
 
 	public static void ClickShipment() {
 		BaseWebdriver.driver.findElement(shipments).click();
@@ -1016,14 +1019,15 @@ public class CreateShipmentActions {
 
 		int Number = (int) (Math.random() * 10000);
 		String newNumber = String.valueOf(Number);
-		String NewCompanyName = SenderAddressCompanyName + newNumber;
-		PageBase.sendText(New_AddressCompanName, 10, NewCompanyName);
+		newSenderCompanyName = SenderAddressCompanyName + newNumber;
+		PageBase.sendText(New_AddressCompanName, 10, newSenderCompanyName);
 		PageBase.click(New_AddressSearch, 10);
 		PageBase.sendText(New_AddressSearch, 10, SenderAddressCompanyAdd);
 		PageBase.click(New_AddressSearch_Select, 10);
 		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(New_AddressSearch_Contine, 10);
-		PageBase.sendText(New_Address_Name, 10, NewCompanyName);
+		PageBase.sendText(New_Address_Name, 10, newSenderCompanyName);
 		PageBase.sendText(New_Address_Number, 10, "0452456876");
 		PageBase.sendText(New_Address_Email, 10, "Test@test.com");
 		// Verify if DG fields exists
@@ -1035,7 +1039,7 @@ public class CreateShipmentActions {
 		PageBase.click(New_Address_Add, 10);
 		PageBase.MaximumWaitForElementEnabled_1();
 		// Verify Address is Selected
-		PageBase.verifyTextExistAttribute(SenderAddress_Location_Selected, NewCompanyName);
+		PageBase.verifyTextExistAttribute(SenderAddress_Location_Selected, newSenderCompanyName);
 
 		String Address = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]"))
 				.getText();
@@ -1056,14 +1060,15 @@ public class CreateShipmentActions {
 
 		int Number = (int) (Math.random() * 10000);
 		String newNumber = String.valueOf(Number);
-		String NewCompanyName = ReceiverAddressCompanyName + newNumber;
-		PageBase.sendText(New_AddressCompanName, 10, NewCompanyName);
+		newReceiverCompanyName = ReceiverAddressCompanyName + newNumber;
+		PageBase.sendText(New_AddressCompanName, 10, newReceiverCompanyName);
 		PageBase.click(New_AddressSearch, 10);
 		PageBase.sendText(New_AddressSearch, 10, ReceiverAddressCompanyAdd);
 		PageBase.click(New_AddressSearch_Select, 10);
 		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(New_AddressSearch_Contine, 10);
-		PageBase.sendText(New_Address_Name, 10, NewCompanyName);
+		PageBase.sendText(New_Address_Name, 10, newReceiverCompanyName);
 		PageBase.sendText(New_Address_Number, 10, "0452456876");
 		PageBase.sendText(New_Address_Email, 10, "Test@test.com");
 		// Verify if DG fields exists
@@ -1075,7 +1080,7 @@ public class CreateShipmentActions {
 		PageBase.click(New_Address_Add, 10);
 		PageBase.MaximumWaitForElementEnabled_1();
 		// Verify Address is Selected
-		PageBase.verifyTextExistAttribute(ReceiverAddress_Location_Selected, NewCompanyName);
+		PageBase.verifyTextExistAttribute(ReceiverAddress_Location_Selected, newReceiverCompanyName);
 
 		String Address = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[2]"))
 				.getText();
@@ -1097,6 +1102,74 @@ public class CreateShipmentActions {
 		PageBase.verifyTextExistAttribute(BookAPickupActions.width, pwidth );
 		PageBase.verifyTextExistAttribute(BookAPickupActions.height, pheight);
 		PageBase.verifyTextExistAttribute(weight, pweight);
+	}
+	
+	public static void verifySenderAddress() {
+		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
+		MyTollHomePageActions.ClickMenu();
+		Reporter.log("User Navigates to My Contactcs Page");
+		PageBase.click(MyTollHomePageActions.myContactMenu, 10);
+		Reporter.log("User Searches for New Contact added -"+newSenderCompanyName);
+		PageBase.sendText(BookAPickupActions.SearchContactTxtFeild, 10, newSenderCompanyName);
+		PageBase.click(BookAPickupActions.SearchContactButton, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExist(BookAPickupActions.SearchContactCompanyLocation, newSenderCompanyName);
+		Reporter.log("User Clicks Edit Contact and Edits Contact Details");
+		PageBase.click(BookAPickupActions.SearchContactEdit, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
+		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditCompanyName).click();
+		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditCompanyName).clear();
+		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditName).click();
+		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditName).clear();
+		PageBase.click(BookAPickupActions.SearchContactEditSave, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExist(BookAPickupActions.SearchContactEditCompanyNameErrorMsg, "Enter Company Name");
+		PageBase.verifyTextExist(BookAPickupActions.SearchContactEditNameErrorMsg, "Enter First Name");
+		PageBase.sendText(BookAPickupActions.SearchContactEditCompanyName, 5, newSenderCompanyName);
+		PageBase.sendText(BookAPickupActions.SearchContactEditName, 5, newSenderCompanyName);
+		Reporter.log("User Saves Contact Details");
+		PageBase.click(BookAPickupActions.SearchContactEditSave, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.waitForElement(BookAPickupActions.popUpMsg, 10);
+		PageBase.verifyTextExist(BookAPickupActions.popUpMsg, "Address Successfully Updated To Addressbook");
+		PageBase.click(BookAPickupActions.popUpClose, 5);
+		PageBase.MaximumWaitForElementEnabled_1();
+	}
+	
+	public static void verifyReceiverAddress() {
+		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
+		MyTollHomePageActions.ClickMenu();
+		Reporter.log("User Navigates to My Contactcs Page");
+		PageBase.click(MyTollHomePageActions.myContactMenu, 10);
+		Reporter.log("User Searches for New Contact added -"+newReceiverCompanyName);
+		PageBase.sendText(BookAPickupActions.SearchContactTxtFeild, 10, newReceiverCompanyName);
+		PageBase.click(BookAPickupActions.SearchContactButton, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExist(BookAPickupActions.SearchContactCompanyLocation, newReceiverCompanyName);
+		Reporter.log("User Clicks Edit Contact and Edits Contact Details");
+		PageBase.click(BookAPickupActions.SearchContactEdit, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
+		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditCompanyName).click();
+		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditCompanyName).clear();
+		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditName).click();
+		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditName).clear();
+		PageBase.click(BookAPickupActions.SearchContactEditSave, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExist(BookAPickupActions.SearchContactEditCompanyNameErrorMsg, "Enter Company Name");
+		PageBase.verifyTextExist(BookAPickupActions.SearchContactEditNameErrorMsg, "Enter First Name");
+		PageBase.sendText(BookAPickupActions.SearchContactEditCompanyName, 5, newReceiverCompanyName);
+		PageBase.sendText(BookAPickupActions.SearchContactEditName, 5, newReceiverCompanyName);
+		Reporter.log("User Saves Contact Details");
+		PageBase.click(BookAPickupActions.SearchContactEditSave, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.waitForElement(BookAPickupActions.popUpMsg, 10);
+		PageBase.verifyTextExist(BookAPickupActions.popUpMsg, "Address Successfully Updated To Addressbook");
+		PageBase.click(BookAPickupActions.popUpClose, 5);
+		PageBase.MaximumWaitForElementEnabled_1();
 	}
 
 }

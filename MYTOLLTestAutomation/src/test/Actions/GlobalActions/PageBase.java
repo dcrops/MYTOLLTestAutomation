@@ -163,7 +163,7 @@ public class PageBase {
 	public static WebElement waitForElement(By locator, int waitSeconds) {
 		WebElement we = null;
 		try {
-			we = (WebElement) (new WebDriverWait(BaseWebdriver.driver, waitSeconds))
+			we = (WebElement) (new WebDriverWait(BaseWebdriver.driver, waitSeconds*1000))
 				.until(ExpectedConditions.presenceOfElementLocated(locator));
 		} catch (TimeoutException e) {
 			System.out.println("xpath not found: " + locator);
