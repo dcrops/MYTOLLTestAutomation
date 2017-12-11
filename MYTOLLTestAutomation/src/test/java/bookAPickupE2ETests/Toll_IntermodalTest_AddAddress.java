@@ -63,6 +63,7 @@ public class Toll_IntermodalTest_AddAddress {
 		BookAPickupActions.SelectAccountNumber1();
 		PageBase.MaximumWaitForElementEnabled();
 		BookAPickupActions.addAdderess();
+		BookAPickupActions.verfiyAddress();
 
 		
 	}
@@ -72,7 +73,7 @@ public class Toll_IntermodalTest_AddAddress {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 		// BaseWebdriver.tearDown();
-		BaseWebdriver.driver.quit();
+		//BaseWebdriver.driver.quit();
 
 	}
 
