@@ -93,7 +93,7 @@
 		<parameter name="whoPays" value="Sender" />
 		<parameter name="Mode" value="RAIL" />
 		<parameter name="ModeInt" value="1" />
-		<parameter name="Receiver" value="3" />
+		<parameter name="Receiver" value="1" />
 		<parameter name="Sender" value="1" />
 		<parameter name="ReceiverName" value="Test" />
 		<parameter name="ReceiverItem" value="Toll Group Test" />
@@ -159,14 +159,16 @@
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 		<classes>
 		
-	<class name="createShipmentE2ETests.TollPriorityAUSTests" />
-				<!-- Blocked><class name="createShipmentE2ETests.TollIntermodalTests" />
+	<class name="createShipmentE2ETests.TollPriorityNZ" />
+		
+	<!-- Blocked>
+				<class name="createShipmentE2ETests.TollIntermodalTests" />
 			 <class name="createShipmentE2ETests.TollTasmaniaTests" />
 			<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
 			<class name="createShipmentE2ETests.TollPriorityAUSTests" />
 			<class name="createShipmentE2ETests.TollPriorityNZ" />
 			<class name="createShipmentE2ETests.TollIPECTests" />
-			
+			<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress" />
 			</Blocked -->
 		</classes>
 	</test> <!-- Test -->

@@ -161,6 +161,13 @@ public class ShipmentReviewActions {
 		
 	}
 	
+	public static void VerifyAdditionalInformationTollPrioAU(String pSpecialInstructions, String pPalletTransactionsInformation) {
+		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(specialInstructions).getText());
+		assertEquals(pPalletTransactionsInformation,BaseWebdriver.driver.findElement(palletTransactionsInformation).getText());
+		
+	}
+	
+	
 	public static void VerifyAdditionalInformationForDangerousGoods(String pSpecialInstructions, String pPalletTransactionsInformation, String pPurchaseOrders ) {
 		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(specialInstructions).getText());
 		assertEquals(pPalletTransactionsInformation,BaseWebdriver.driver.findElement(palletTransactionsInformation).getText());
@@ -211,7 +218,7 @@ public class ShipmentReviewActions {
 		 PageBase.MaximumWaitForElementEnabled();
 		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
 		assertEquals(pAccountNumber,BaseWebdriver.driver.findElement(accountNumber).getText());
-		assertEquals(pSenderCompanyName, BaseWebdriver.driver.findElement(senderCompanyName).getText());
+		assertEquals(pSenderCompanyName, BaseWebdriver.driver.findElement(senderCompanyName).getText().replaceAll("\\s", ""));
 		assertEquals(pSenderLocation, BaseWebdriver.driver.findElement(senderLocation).getText());
 		assertEquals(pReceiverCompanyName,  BaseWebdriver.driver.findElement(receiverCompanyName).getText());
 		assertEquals(pReceiverLocation, BaseWebdriver.driver.findElement(receiverLocation).getText());
@@ -220,6 +227,8 @@ public class ShipmentReviewActions {
 		assertEquals(pWhopays, BaseWebdriver.driver.findElement(whoPays).getText());
 		
 	}
+	
+	
 	
 	//Pallet information verification
 	public static void VerifyPalletTransactionsInformations(String pChepCustomerOwn, String pChepExchange, String pChepTransfer,String pChepDocketNumber,String pLoscamCustomerOwn, String pLoscamExchange,String pLoscamTransfer, String pLoscamDocketNumber,

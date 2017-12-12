@@ -5,9 +5,11 @@ import GlobalActions.PageBase;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 
@@ -41,7 +43,7 @@ public class CreateShipmentActions {
 	public static By shipmentConsolidatedContinue = By
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]");
 	public static By shipmentConsolidatedBtn = By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//a[text()='Consolidate']"); 
-	public static By MessageShipmentToEnetrLineItem = By.xpath("//*[@id=\"alert-box-wrapper\"]//h3[text()='Shipment']");
+	public static By MessageShipmentToEnetrLineItem = By.xpath("//*[@id=\"alert-box-wrapper\"]//h3[text()=' Shipment']");
 	public static By MessageContentShipmentToEnetrLineItem = By.xpath("//*[@id=\"alert-box-wrapper\"]//h3[text()='Shipment']/div");
 	public static By CloseMessageShipmentToEnetrLineItem = By.id("closeAlert");
 	public static By dgContactName = By.id("sh-dg-contact-name");
@@ -349,9 +351,6 @@ public class CreateShipmentActions {
 			  System.out.println("shipmentConsolidatedRadioBtn doubleclicked ");
 			  BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
 			  PageBase.MaximumWaitForElementEnabled();
-			/*SelectNotifySenderAndReceiver();
-			PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
-					CreateShipmentActions.notifyReceiverCheckBox);*/
 			
 		}
 	}
@@ -362,16 +361,94 @@ public class CreateShipmentActions {
 		SelectNotifySenderAndReceiver();
 	}
 
-		/*
-		 * String myWindowHandle = BaseWebdriver.driver.getWindowHandle();
-		 * BaseWebdriver.driver.switchTo().window(myWindowHandle); //
-		 * BaseWebdriver.driver.findElement(By.xpath(
-		 * "//*[@id=\"shipment-cons-popup-wrpr\"]/div/div")).click();
-		 * BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).click();
-		 * BaseWebdriver.driver.findElement(consolidatedBtn).click();//*[@id=
-		 * "shipment-cons-popup-wrpr"]/div/div/footer/a[1]
-		 */
+	}
+	
+	public static void SelectShipmentConsolidationConsolidatePrio(String pItemTemplateName,String pBillingType,String pNumberOfItems,String pShipmentRef1, String pShipmentRef2,
+			String pLength,String pWidth,String pHeight, String pWeight,String ItemTemplateName2, String pNumberOfItems2,String pLength2,
+			String pWidth2, String pHeight2, String pWeight2, Integer DGNo, String SpeceialIns) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+	try {
+		boolean results=BaseWebdriver.driver.findElement(shipmentConsolidatedMSGHeading).isDisplayed();
+		System.out.println("shipmentConsolidatedMSGHeading");
+		BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
+		System.out.println("click shipmentConsolidatedBtn");
+		if (results==true) {
+			boolean results2=BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).isDisplayed();
+			System.out.println("results2"+results2);
+			Actions action = new Actions(BaseWebdriver.driver);
+			  action.doubleClick(BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn));
+			  action.perform();
+			  System.out.println("shipmentConsolidatedRadioBtn doubleclicked ");
+			  BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
+			  PageBase.MaximumWaitForElementEnabled();
+			
+		}
+	}
+	
+	catch(Exception ex)
+	{
+		System.out.println(ex);
+		CreateShipmentActions.ClickReviewCreateShipment();
+		MessageEnterLineItemShipmentConsolidationTollPrio(pItemTemplateName,pBillingType, pNumberOfItems, pShipmentRef1,  pShipmentRef2,
+				 pLength, pWidth, pHeight,  pWeight, ItemTemplateName2, pNumberOfItems2, pLength2,
+				 pWidth2,pHeight2, pWeight2,  DGNo, SpeceialIns);
+	}
 
+	}
+	
+	public static void SelectShipmentConsolidationConsolidateAU() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+	try {
+		boolean results=BaseWebdriver.driver.findElement(shipmentConsolidatedMSGHeading).isDisplayed();
+		System.out.println("shipmentConsolidatedMSGHeading");
+		BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
+		System.out.println("click shipmentConsolidatedBtn");
+		if (results==true) {
+			List<WebElement> eles=BaseWebdriver.driver.findElements(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//div[@class='shiment-list-box']"));//ul[@class='shipment-list']
+			int listSize=eles.size();
+			System.out.println("listSize" +listSize);
+			PageBase.MinimumWaitForElementEnabled(); 
+			//PageBase.MoveToElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li["+listSize+"]/div[1]/div[2]/p"), CreateShipmentActions.shipmentConsolidatedMSGHeading);
+			boolean resultsListItem=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li["+listSize+"]/div[1]/div[2]/p")).isDisplayed();
+			System.out.println("results listelement" +resultsListItem);
+			PageBase.MaximumWaitForElementEnabled();
+			boolean results2=BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).isDisplayed();
+			System.out.println("results2"+results2);
+			Actions action = new Actions(BaseWebdriver.driver);
+			  action.doubleClick(BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn));
+			  action.perform();
+			  System.out.println("shipmentConsolidatedRadioBtn doubleclicked ");
+			  BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
+			  PageBase.MaximumWaitForElementEnabled();
+			
+		}
+	}
+	
+	catch(Exception ex)
+	{
+		System.out.println(ex);
+		SelectNotifySenderAndReceiver();
+	}
+
+	}
+	
+	public static void SelectShipmentFromConsolidateShipmentScreen() {
+		PageBase.Scrollbar(0, 250);
+		System.out.println("scroll successful ");
+		PageBase.MinimumWaitForElementEnabled();
+		List<WebElement> eles=BaseWebdriver.driver.findElements(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//ul[@class='shipment-list']"));
+		int listSize=eles.size();
+		System.out.println("listSize" +listSize);
+		PageBase.MinimumWaitForElementEnabled(); 
+		PageBase.MoveToElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li["+listSize+"]/div[1]/div[2]/p"), CreateShipmentActions.shipmentConsolidatedMSGHeading);
+		boolean results=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li["+listSize+"]/div[1]/div[2]/p")).isDisplayed();
+		System.out.println("results listelement" +results);
+		PageBase.MaximumWaitForElementEnabled();
+				
 	}
 
 	public static void SelectShipmentConsolidationContinue() {
@@ -442,6 +519,58 @@ public class CreateShipmentActions {
 				
 				CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
 
+				BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
+			}
+		}
+
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
+	}
+	
+	public static void MessageEnterLineItemShipmentConsolidationTollPrio(String pItemTemplateName,String pBillingType,String pNumberOfItems,String pShipmentRef1, String pShipmentRef2,
+			String pLength,String pWidth,String pHeight, String pWeight,String ItemTemplateName2, String pNumberOfItems2,String pLength2,
+			String pWidth2, String pHeight2, String pWeight2, Integer DGNo, String SpeceialIns) {
+		try {
+			PageBase.MaximumWaitForElementEnabled();
+			Actions action = new Actions(BaseWebdriver.driver);
+			  action.click(BaseWebdriver.driver.findElement(MessageShipmentToEnetrLineItem));
+			  action.perform();
+			Boolean results = BaseWebdriver.driver.findElement(MessageShipmentToEnetrLineItem).isDisplayed();
+			System.out.println("results "+results );
+			if (results == true) {
+				
+				
+				BaseWebdriver.driver.findElement(CloseMessageShipmentToEnetrLineItem).click();
+				/*Actions action = new Actions(BaseWebdriver.driver);
+				  action.click(BaseWebdriver.driver.findElement(CloseMessageShipmentToEnetrLineItem));
+				  action.perform();
+				/*String messageHeading = BaseWebdriver.driver.findElement(MessageShipmentToEnetrLineItem).getText().toString();
+				System.out.println("messageHeading "+messageHeading );
+				String messageContent = BaseWebdriver.driver.findElement(MessageContentShipmentToEnetrLineItem).getText().toString();
+				System.out.println("messageContent "+messageContent );
+				assertEquals("Shipment", messageHeading);
+				assertEquals("Select at least one line item", messageContent);
+				BaseWebdriver.driver.findElement(CloseMessageShipmentToEnetrLineItem).click();*/
+				PageBase.MinimumWaitForElementEnabled();
+				
+				BookAPickupActions.EnterItem(pItemTemplateName);
+				CreateShipmentActions.EnterBillingType(pBillingType);
+				CreateShipmentActions.NumberOfItem(pNumberOfItems);
+			//	CreateShipmentActions.ItemType(2);
+				CreateShipmentActions.EnterSenderReference(pShipmentRef1, pShipmentRef2);
+				BookAPickupActions.EnterLengthWidthHeight(pLength, pWidth, pHeight);
+				CreateShipmentActions.EnterWeight(pWeight);
+				
+			
+				PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.itemDescriptionTextField);
+
+				CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, pBillingType, pNumberOfItems2, pLength2,
+						pWidth2, pHeight2, pWeight2, pShipmentRef1, pShipmentRef2);
+				BookAPickupActions.SelectDangerousGoods(DGNo);
+				
+				PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
+				
 				BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 			}
 		}
@@ -762,13 +891,13 @@ public class CreateShipmentActions {
 		PageBase.Scrollbar(500, 800);
 		BaseWebdriver.driver.findElement(addNewLine).click();
 
-		BookAPickupActions.EnterItem("Automation Temp2");
+		BookAPickupActions.EnterItem("Automation Template2");
 		CreateShipmentActions.NumberOfItem("15");
 		BookAPickupActions.EnterLengthWidthHeight("200", "100", "50");
 		CreateShipmentActions.EnterWeight("20");
 		// CreateShipmentActions.SelectBillingType(1); if there is one billing type , it
 		// is not visible.
-		CreateShipmentActions.EnterSenderReference("1234", "5678");
+		CreateShipmentActions.EnterSenderReference("12345", "567879");
 
 	}
 
@@ -972,15 +1101,27 @@ public class CreateShipmentActions {
 			BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
 			System.out.println("resultsNotifySenderCheckBox clicked");
 			PageBase.MinimumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(senderEmail).click();
+			
 		}
 		else
 		{
-			BaseWebdriver.driver.findElement(senderEmail).click();
+			
+			PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.ReceiverAddress_Dropdown);
+
 		}
-		
+		try {
+		BaseWebdriver.driver.findElement(senderEmail).click();
 		BaseWebdriver.driver.findElement(senderEmail).clear();
 		BaseWebdriver.driver.findElement(senderEmail).sendKeys(pSenderEmail);
+		}
+		catch(Exception ex)
+		{
+			CreateShipmentActions.SelectNotifySenderAndReceiver();
+			CreateShipmentActions.SelectNotifySenderAndReceiver();
+			BaseWebdriver.driver.findElement(senderEmail).click();
+			BaseWebdriver.driver.findElement(senderEmail).clear();
+			BaseWebdriver.driver.findElement(senderEmail).sendKeys(pSenderEmail);
+		}
 	}
 
 	public static void EnterReceiverEmail(String pReceiverEmail) {
