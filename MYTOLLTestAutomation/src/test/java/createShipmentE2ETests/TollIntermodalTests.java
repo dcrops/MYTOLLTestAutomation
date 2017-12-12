@@ -251,7 +251,7 @@ public class TollIntermodalTests {
 	}
 
 	//@Test(priority = 1)
-	@Test(priority = -4)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER","whoPays","Mode","Sender", "Receiver", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
@@ -836,7 +836,7 @@ public class TollIntermodalTests {
 	
 
 	//@Test(priority = 4)
-	@Test(priority = -8)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER","whoPays","Mode","Sender", "Receiver", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
@@ -934,7 +934,7 @@ public class TollIntermodalTests {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 

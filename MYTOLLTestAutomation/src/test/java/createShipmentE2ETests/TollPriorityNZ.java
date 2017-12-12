@@ -291,7 +291,7 @@ public class TollPriorityNZ {
 	}
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 }

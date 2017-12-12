@@ -247,10 +247,97 @@ public class TollIPECTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	
 	}
+	
+	@Test
+	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "AccountNumberTIPEC", "WhoPays", "whoPays", "Sender",
+			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
+			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
+			"Height", "Weight", "ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2",
+			"DGYes", "DGNo", "BillingTypeAllFreight", "PalletTransactionsInfoNo", "PurchaseOrder", "SpeceialIns", "DGItem",
+			"LookupSearch", "PackageDescription", "DgPkgQty", "DgQtyKg", "TollExtraServiceAmount",
+			"LineItemName1Heading", "LineItemName2Heading", "ItemDescriptionHeading", "ItemsHeading",
+			"BillingTypeHeading", "DimensionsHeading", "TotalVolumeHeading", "WeightHeading", "Reference1Heading",
+			"Reference2Heading", "ShipmentContainDangerousGoodsHeading", "DangerousGoodsDetailsHeading",
+			"VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
+			"ShipmentContainDangerousGoodsNo" })
+
+	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress_ConsolidateShipments(String TollCarrier,
+			String ServiceRoadExpress, String AccountNumber, Integer WhoPays, String whoPays, Integer Sender,
+			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
+			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
+			String NumberOfItems, String Length, String Width, String Height, String Weight, String ItemTemplateName2,
+			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
+			Integer DGNo, String BillingType, String PalletTransactionsInfoNo, String PurchaseOrder, String SpeceialIns,
+			Integer DGItem, String LookupSearch, String PackageDescription, String DgPkgQty, String DgQtyKg,
+			String TollExtraSrviceAmount, String LineItemName1Heading, String LineItemName2Heading,
+			String ItemDescriptionHeading, String ItemsHeading, String BillingTypeHeading, String DimensionsHeading,
+			String TotalVolumeHeading, String WeightHeading, String Reference1Heading, String Reference2Heading,
+			String ShipmentContainDangerousGoodsHeading, String DangerousGoodsDetailsHeading, String VolumeLineItem1,
+			String VolumeLineItem2, String ShipmentContainDangerousGoodsYes, String ShipmentContainDangerousGoodsNo) {
+
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		CreateShipmentActions.EnterService(ServiceRoadExpress);
+
+		BookAPickupActions.SelectAccountNumber1();
+		String accountNumber = BookAPickupActions.GetAccountNumber().toString();
+		System.out.println(accountNumber);
+		CreateShipmentActions.SelectWhoPays(WhoPays);
+		CreateShipmentActions.SelectSender(Sender);
+		CreateShipmentActions.SelectReceiver(Receiver);
+
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
+		//String Sender.ccontainText(Sender);
+		System.out.println(sender);
+		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
+		System.out.println(senderLocation);
+
+		// CreateShipmentActions.SelectReceiver(2);
+		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
+		System.out.println(receiver);
+
+		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
+		System.out.println(receiverLocation);
+		CreateShipmentActions.SelectShipmentConsolidationConsolidate();;
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);		
+		CreateShipmentActions.SelectTollExtraYes();
+		CreateShipmentActions.EnterTollExtraSrviceAmount(TollExtraSrviceAmount);
+
+		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
+
+		CreateShipmentActions.ClickReviewCreateShipment();
+
+		// Shipment Review
+		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, accountNumber, sender, senderLocation,
+				receiver, receiverLocation, ShipmentRef1, ServiceRoadExpress, whoPays);
+
+		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
+		ShipmentReviewActions.VerifyAdditionalInformationTollIPEC(SpeceialIns, PalletTransactionsInfoNo,
+				tollExtraServiceAmount);
+
+		String numberOfItems = ItemsHeading + " " + NumberOfItems;
+		ShipmentReviewActions.VerifyLineItem1Headings(LineItemName1Heading, ItemTemplateName, numberOfItems,
+				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
+				WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
+		String dimensions = Length + "cm x " + Width + "cm x " + Height + "cm";
+		String weight = Weight + "kg";
+		ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName, NumberOfItems, BillingType, dimensions,
+				VolumeLineItem1, weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+
+		ShipmentReviewActions.VerifyLineItem2Headings(LineItemName2Heading, ItemTemplateName2, numberOfItems,
+				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
+				WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
+		String dimensions2 = Length2 + "cm x " + Width2 + "cm x " + Height2 + "cm";
+		String weight2 = Weight2 + "kg";
+
+		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
+				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+
+	}
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		 //BaseWebdriver.tearDown();
 
 	}
 }
