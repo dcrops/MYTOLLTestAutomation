@@ -249,18 +249,9 @@ public class ManifestActions {
 		System.out.println("results listelement" +results);
 		PageBase.MaximumWaitForElementEnabled();
 		String manifestnameBySys=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).getText();
-		//PageBase.MaximumWaitForElementEnabled();
-		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).click(); 
-		return manifestnameBySys ;
-		/*if (results==true) {
-		String manifestnameBySys=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).getText();
 		
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).click(); 
 		return manifestnameBySys ;
-		}
-		return null;*/
 		
-		//ManifestActions.ClickAddManifest();
 	}
 
 	public static void AddToExistingManifestSubmittingCreateshipment(String pNewManifestName) {

@@ -70,7 +70,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -203,7 +203,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -331,7 +331,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -460,7 +460,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -594,7 +594,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -750,7 +750,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -907,7 +907,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -1056,7 +1056,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
 		System.out.println(sender);
-		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
+		String senderLocation = CreateShipmentActions.GetSenderLocation().toString().replaceAll("\\s","");
 		System.out.println(senderLocation);
 
 		CreateShipmentActions.SelectReceiver(Receiver);
@@ -1185,7 +1185,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -1284,7 +1284,7 @@ public class TollNQXTollExpressTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	
-	@Test(priority=-1)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -1329,7 +1329,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString();
+		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
@@ -1340,41 +1340,9 @@ public class TollNQXTollExpressTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
-		//CreateShipmentActions.EnterSenderEmail(SenderEmail);
-		/*CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
-		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
-		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
-		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-
-	BookAPickupActions.EnterItem(ItemTemplateName);
-		CreateShipmentActions.EnterBillingType(BillingType);
-		CreateShipmentActions.NumberOfItem(NumberOfItems);
-		CreateShipmentActions.ItemType(2);
-		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
-		CreateShipmentActions.EnterWeight(Weight);
-		BookAPickupActions.SelectDangerousGoods(DGNo);
-		PageBase.MoveToElement(CreateShipmentActions.senderReference, BookAPickupActions.dangerousGoodNo);
-
-		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-
-		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
-				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);
-		CreateShipmentActions.ItemType(2);
-		BookAPickupActions.SelectDangerousGoods(DGNo);
+		CreateShipmentActions.SelectShipmentConsolidationConsolidate(); 
+	
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
-		CreateShipmentActions.SelectPalletTransactionsYes();
-		CreateShipmentActions.EnterPalletTransActionInformations(ChepCustomer, ChepExchange, ChepTansferToToll,
-				ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
-				ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
-				LoscamOtherTransferToToll, LoscamOtherDocketNo);
-
-		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
-		CreateShipmentActions.SelectFoodPackagingYes();
-		CreateShipmentActions.EnterTollExtraServiceAmount(TollExtraSrviceAmount);
-
-		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 
 		CreateShipmentActions.ClickReviewCreateShipment();
 
@@ -1407,7 +1375,7 @@ public class TollNQXTollExpressTests {
 		String weight2 = Weight2 + "kg";
 
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
-				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);*/
+				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
 	

@@ -4,12 +4,13 @@
 	
 	<suite-files>
       
-		<suite-file path="BookAPickup.xml"></suite-file>
 		<suite-file path="CreateShipment.xml"></suite-file>
-		<suite-file path="RateEnquiry.xml"></suite-file>
+		<!-- Blocked>	<suite-file path="RateEnquiry.xml"></suite-file>
 		<suite-file path="Manifest.xml"></suite-file>
 		
-	<!-- Blocked>	<suite-file path="CreateShipment.xml"></suite-file>
+		<suite-file path="BookAPickup.xml"></suite-file>
+		
+	<suite-file path="CreateShipment.xml"></suite-file>
 		<suite-file path="RegressionList.xml"></suite-file> <suite-file 
 			path="RateEnquiry.xml"></suite-file> <suite-file path="BookAPickup.xml"></suite-file> 
 			<suite-file path="CreateShipment.xml"></suite-file> <suite-file path="RateEnquiry.xml"></suite-file> 
