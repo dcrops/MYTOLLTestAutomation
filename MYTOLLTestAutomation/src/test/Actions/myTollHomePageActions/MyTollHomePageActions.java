@@ -42,6 +42,7 @@ public class MyTollHomePageActions {
 	public static By weight = By.xpath("//*[@id=\"newTemplate\"]/div/section/div[3]/div[1]/div[2]/div/input"); //.name("templateTotalWight");
 	public static By SaveTemplate=By.id("templateSave");//*[@id="response-poup-wrpr"]/div[2]/div/a/i
 	public static By CloseNewTemplate=By.xpath("//*[@id=\"response-poup-wrpr\"]/div[2]/div/a/i");
+	//*[@id="_userregistrationportlet_WAR_userprofileportlet_userRegForm"]/div[10]/div/label[1]
 	
 	// User registration  registerlink
 	
@@ -56,6 +57,16 @@ public class MyTollHomePageActions {
 	public static By memerobleAnswer=By.id("_userregistrationportlet_WAR_userprofileportlet_answer");
 	public static By recaptchalable=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_userRegForm\"]/div/div[1]/div[10]/div/label[1]");
 	public static By robotCheckBox=By.xpath("//*[@id=\"recaptcha-anchor\"]/div[5]"); //*[@id="recaptcha-anchor"]/div[5]
+	public static By agreeTerms = By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_userRegForm\"]/div[10]/div/label[1]");
+	
+	public static By firstNameErrorMsg=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_firstName_error\"]");
+	public static By lastNameErrorMsg=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_lastName_error\"]");
+	public static By newEmailAddressErrorMsg=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_emailAddress_error\"]");
+	public static By mobileNumbeErrorMsgr=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_mobileNum_error\"]");
+	public static By newPasswordErrorMsg=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_pwd_error\"]");
+	public static By memerobleQuesDropdownErrorMsg=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_mm-question_error\"]");
+	public static By memerobleAnsweErrorMsgr=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_mm-answer_error\"]");
+
 	
 
 	
