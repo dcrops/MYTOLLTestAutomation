@@ -11,20 +11,20 @@ import bookAPickupActions.BookAPickupActions;
 
 public class ReviewYouPickupActions {
 	
-	
+	//
 	public static By reviewYourPickupHeading=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]/div/header/div/h1"); 
 	public static By pickupDetailsHeading=By.cssSelector("h5.review-box-label");
 	public static By pickupDateTimeHeading=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div[2]/div/h5");
 	public static By accountNumber=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Account number ']/following::div/p");
 	public static By tollCarrier=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Toll carrier']/following::div/p"); 
-	public static By company=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Company']/following::div/p");
-	public static By location=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location']/following::div/p");
-	public static By bookedBy=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Booked by']/following::div/p"); 
-	public static By phoneNumber=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Phone number']/following::div/p");
-	public static By dispatchDate=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Dispatch date']/following::div/p");
-	public static By readyTime=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Ready time']/following::div/p");
-	public static By closingTime=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location closing time']/following::div/p");
-	public static By specialInstructions=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location closing time']/following::div/p");
+	public static By company=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Company ']/following::div/p");
+	public static By location=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location ']/following::div/p");
+	public static By bookedBy=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Booked by ']/following::div/p"); 
+	public static By phoneNumber=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Phone number ']/following::div/p");
+	public static By dispatchDate=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Dispatch date ']/following::div/p");
+	public static By readyTime=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Ready time ']/following::div/p");
+	public static By closingTime=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location closing time ']/following::div/p");
+	public static By specialInstructions=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Special instructions ']/following::div/p");
 
 	public static By itemDescription1=By.cssSelector("div.item.hide-open");
 	public static By numberofItems=By.cssSelector("div.quantity.hide-open");
@@ -32,15 +32,41 @@ public class ReviewYouPickupActions {
 	public static By volume1=By.cssSelector("div.volume.hide-open");
 	public static By weight1=By.cssSelector("div.weight.hide-open");
 	
-	//Item details validation
-	public static By itemArrowDownItem1=By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[7]/a/i"); 
-	public static By destination=By.xpath("//div[@id='line-item-0']/div[2]/div/div/div[2]/div/p");
-	public static By itemDescription=By.xpath("//*[@id=\"line-item-0\"]/div[2]/div/div[1]/div[1]/div/p");
+	//Item1 details validation  
+	public static By itemArrowDownItem1=By.xpath("//*[@id=\"line-item-0\"]//div[@class='edit-wrpr']/a[onclick()='toggleBox('line-item-0');']/i[@class='ico-arrow-down-green']"); //*[@id=\"line-item-0\"]/div[1]/div[7]/a/i"); //*[@id="line-item-0"]/div[1]/div[7]/a
+	public static By itemDetailsHeading=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']/h5");
+	public static By destination=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Destination ']/following::div/p");
+	public static By itemDescription=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Item description ']/following::div/p");
+	public static By serviceType=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Service type ']/following::div/p");
+	public static By mode=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Mode']/following::div/p");
+	public static By chargeTo=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Charge to']/following::div/p");
+	public static By numberOfItems=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Number of items']/following::div/p");
+	public static By palletSpaces=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Pallet spaces']/following::div/p");
+	public static By largestitemDimensions=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Largest item dimensions ']/following::div/p");
+	public static By volume=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Total volume ']/following::div/p");
+	public static By weight=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Total weight ']/following::div/p");
+	public static By dangerousGood=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Dangerous goods ']/following::div/p");
+	public static By foodItems=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Food item ']/following::div/p");
+	
+	//Item2 details validation
+	public static By itemArrowDownItem2=By.xpath("//*[@id=\"line-item-1\"]/div[1]/div[7]/a/i"); 
+	public static By itemDetailsHeading2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']/h5");
+	public static By destination2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Destination ']/following::div/p");
+	public static By itemDescription2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Item description ']/following::div/p");
+	public static By serviceType2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Service type ']/following::div/p");
+	public static By mode2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Mode']/following::div/p");
+	public static By chargeTo2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Charge to']/following::div/p");
+	public static By numberOfItems2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Number of items']/following::div/p");
+	public static By palletSpaces2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Pallet spaces']/following::div/p");
+	public static By largestitemDimensions2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Largest item dimensions ']/following::div/p");
+	public static By volume2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Total volume ']/following::div/p");
+	public static By weight2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Total weight ']/following::div/p");
+	public static By dangerousGood2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Dangerous goods ']/following::div/p");
+	public static By foodItems2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Food item ']/following::div/p");
+	
+	
 	public static By lenghthHeightWeight=By.xpath("//div[@id='line-item-0']/div[2]/div/div[2]/div/div/p");
-	public static By volume=By.xpath("//div[@id='line-item-0']/div[2]/div/div[2]/div[2]/div/p");
-	public static By weight=By.xpath("//div[@id='line-item-0']/div[2]/div/div[2]/div[3]/div/p");
-	public static By dangerousGood=By.xpath("//div[@id='line-item-0']/div[2]/div/div[2]/div[4]/div/p");
-	public static By foodItems=By.xpath("//div[@id='line-item-0']/div[2]/div/div[2]/div[5]/div/p");
+	
 	public static By tempLow=By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div/div/div/p");
 	public static By tempHigh=By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div/div[2]/div/p");
 	public static By refNumber=By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div/div[3]/div/p");
@@ -68,15 +94,15 @@ public class ReviewYouPickupActions {
 	public static void VerifyPickupDetails(String pTollCarrier, String pAccountNumber, String pCompanyName,String pLocation,String pBookedBy,String pPhoneNumber, String pReadyTime, String pClosingTime,
 			String pSpecialInstructions) {
 		 PageBase.MaximumWaitForElementEnabled();
-		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());
-		assertEquals(pAccountNumber,BaseWebdriver.driver.findElement(accountNumber).getText());
-		assertEquals(pCompanyName, BaseWebdriver.driver.findElement(company).getText());
-		assertEquals(pLocation, BaseWebdriver.driver.findElement(location).getText());
-		assertEquals(pBookedBy,  BaseWebdriver.driver.findElement(bookedBy).getText());
-		assertEquals(pPhoneNumber, BaseWebdriver.driver.findElement(phoneNumber).getText());
-		assertEquals(pBookedBy,  BaseWebdriver.driver.findElement(readyTime).getText());
-		assertEquals(pClosingTime, BaseWebdriver.driver.findElement(closingTime).getText());
-		assertEquals(pSpecialInstructions, BaseWebdriver.driver.findElement(specialInstructions).getText());
+		assertEquals(pTollCarrier.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(tollCarrier).getText().replaceAll("\\s", ""));
+		assertEquals(pAccountNumber.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(accountNumber).getText().replaceAll("\\s", ""));
+		assertEquals(pCompanyName.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(company).getText().replaceAll("\\s", ""));
+		assertEquals(pLocation.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(location).getText().replaceAll("\\s", ""));
+		assertEquals(pBookedBy.replaceAll("\\s", ""),  BaseWebdriver.driver.findElement(bookedBy).getText().replaceAll("\\s", ""));
+		assertEquals(pPhoneNumber.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(phoneNumber).getText().replaceAll("\\s", ""));
+		assertEquals(pReadyTime.replaceAll("\\s", ""),  BaseWebdriver.driver.findElement(readyTime).getText().replaceAll("\\s", ""));
+		assertEquals(pClosingTime.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(closingTime).getText().replaceAll("\\s", ""));
+		assertEquals(pSpecialInstructions.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(specialInstructions).getText().replaceAll("\\s", ""));
 	
 	}
 	
@@ -190,20 +216,39 @@ public class ReviewYouPickupActions {
 		assertEquals(pWeight,  BaseWebdriver.driver.findElement(weight1).getText()); 
 	}
 	
-	public static void VerifyItemDetails1(String lineNumber, String pItemName, String pDestination, String pPostCode, String Service, String chargeToAccount,String noOfItems, String palletSpace, 
+	public static void VerifyItemDetails1(String lineNumber,String pPickupHeading, String pItemName, String pDestination, String Service,String mode, String chargeToAccount,String noOfItems, String palletSpace, 
 			String length,  String width,String height, String pVolume, String pWeight, String pDangerousGoods, String pFoodItems ) {
 		BaseWebdriver.driver.findElement(itemArrowDownItem1).click();
+		PageBase.MaximumWaitForElementEnabled();
+		assertEquals(pPickupHeading, BaseWebdriver.driver.findElement(itemDetailsHeading).getText()); 
 		assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription).getText()); 
-	    assertEquals(pDestination+","+ pPostCode, BaseWebdriver.driver.findElement(destination).getText());
-	    assertEquals(Service, VerifyService(0));
-	    assertEquals(chargeToAccount, VerifyChargeToAccount(0,chargeToAccount));
-	    assertEquals(noOfItems, VerifyNumberofItems(0));
-	    assertEquals(palletSpace, VerifyPalletSpace(0));
-	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(lenghthHeightWeight).getText());
+	    assertEquals(pDestination, BaseWebdriver.driver.findElement(destination).getText()); 
+	    assertEquals(Service,BaseWebdriver.driver.findElement(serviceType).getText()); 
+	    assertEquals(chargeToAccount,BaseWebdriver.driver.findElement(chargeTo).getText()); 
+	    assertEquals(noOfItems, BaseWebdriver.driver.findElement(numberOfItems).getText()); 
+	    assertEquals(palletSpace, BaseWebdriver.driver.findElement(palletSpaces).getText()); 
+	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(largestitemDimensions).getText());
 	    assertEquals(pVolume, BaseWebdriver.driver.findElement(volume).getText());
 	    assertEquals(pWeight, BaseWebdriver.driver.findElement(weight).getText());
-	    assertEquals(pDangerousGoods, VerifyDangerousItems(0));
-	    assertEquals(pFoodItems, VerifyFoodItem(0));
+	    assertEquals(pDangerousGoods, BaseWebdriver.driver.findElement(dangerousGood).getText());
+	    assertEquals(pFoodItems, BaseWebdriver.driver.findElement(foodItems).getText());
+	} 
+	
+	public static void VerifyItemDetails2(String lineNumber,String pPickupHeading, String pItemName, String pDestination, String Service,String mode, String chargeToAccount,String noOfItems, String palletSpace, 
+			String length,  String width,String height, String pVolume, String pWeight, String pDangerousGoods, String pFoodItems ) {
+		BaseWebdriver.driver.findElement(itemArrowDownItem2).click();
+		assertEquals(pPickupHeading, BaseWebdriver.driver.findElement(itemDetailsHeading2).getText()); 
+		assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription2).getText()); 
+	    assertEquals(pDestination, BaseWebdriver.driver.findElement(destination2).getText());
+	    assertEquals(Service,BaseWebdriver.driver.findElement(serviceType2).getText()); 
+	    assertEquals(chargeToAccount,BaseWebdriver.driver.findElement(chargeTo2).getText()); 
+	    assertEquals(noOfItems, BaseWebdriver.driver.findElement(numberOfItems2).getText()); 
+	    assertEquals(palletSpace, BaseWebdriver.driver.findElement(palletSpaces2).getText()); 
+	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(largestitemDimensions2).getText());
+	    assertEquals(pVolume, BaseWebdriver.driver.findElement(volume2).getText());
+	    assertEquals(pWeight, BaseWebdriver.driver.findElement(weight2).getText());
+	    assertEquals(pDangerousGoods, BaseWebdriver.driver.findElement(dangerousGood2).getText());
+	    assertEquals(pFoodItems, BaseWebdriver.driver.findElement(foodItems2).getText());
 	} 
 	
 	public static void VerifyItemDetails(int itemLineNumber, String pItemName, String pDestination, String pPostCode, String Service, String chargeToAccount,String noOfItems, String palletSpace, 
