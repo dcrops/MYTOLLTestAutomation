@@ -83,6 +83,11 @@ public class ManualManifestTollNQXTollExpressTests {
 		PageBase.waitForElement(ManifestActions.ContinuetoManifest, 5);
 		PageBase.click(ManifestActions.ContinuetoManifest, 5);
 		ManifestActions.submitandPrintManifest();	
+		
+		//User Reprints Manifest
+		Reporter.log("User Clicks Go To Dashboard to Reprint");
+		PageBase.click(ManifestActions.GoToDashboard, 2);
+		ManifestActions.reprintManifest(NewManifestName);
 
 		//Move from Manifest to Book a PickUp
 		Reporter.log("User Clicks Go To Dashboard to Book a Pick Up");
@@ -109,14 +114,16 @@ public class ManualManifestTollNQXTollExpressTests {
 		//Submit and Get PickUp Reference Number
 		PageBase.MaximumWaitForElementEnabled_1();
 		BookAPickupActions.ConfirmPickUpandGetReferenceNo();
-		Reporter.log("---------------END OF TEST---------------");
+		Reporter.log("---------------END OF TEST---------------");	
+		
+		
 	}
 	
 	
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 	}
 	
 }

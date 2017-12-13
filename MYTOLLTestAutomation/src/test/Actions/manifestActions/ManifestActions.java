@@ -111,8 +111,9 @@ public class ManifestActions {
 	public static By ShipmentManifestTotalNo = By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]/div/div/div/div/div[1]/div[2]/ul/li");
 	public static By ShipmentNo =By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]//*//ul[@class=\"shipments-list\"]/li[2]//*//a");
 	public static By GoToDashboard = By.linkText("GO TO DASHBOARD");	
-		
-	
+	public static By RePrint = By.linkText("REPRINT");
+	public static By RePrintLableCheckBox = By.xpath("//*[@id=\"shipment-check\"]");
+	public static By RePrintShipmentCheckBox = By.xpath("//*[@id=\"cb-header-ship\"]");
 	
 	
 	public static void VerifyManifestDetails(String pStatus, String pSenderLocation, String pTollCarrier,
@@ -450,6 +451,44 @@ public class ManifestActions {
 			Reporter.log("FAILED : Manifest Satus on Dahsboard = '"+Status+ "' Unable to proceed to Book A PickUp");
 			Assert.fail("FAILED : Manifest Satus on Dahsboard = '"+Status+ "' Unable to proceed to Book A PickUp");
 		}
+	}
+	
+	public static void reprintManifest (String ManifestName) {
+		PageBase.waitForElement(MyManifestTab, 5);
+		PageBase.click(MyManifestTab, 2);
+		Reporter.log("User Reprints Manifest -"+ManifestName);
+		
+		while(PageBase.waitForElement(By.xpath("//*[@id=\"manifestDataTbody\"]/tr/td[contains(text(),'"+ManifestName+"')]"), 1) == null) {
+			PageBase.click(ManifestActions.ManifestViewMore, 5);
+		}
+		PageBase.click(By.xpath("//*[@id=\"manifestDataTbody\"]/tr/td[contains(text(),'"+ManifestName+"')]"), 5);
+		
+		PageBase.click(RePrint, 5);
+		
+		//Label Tab
+		PageBase.waitForElement(LabelTab, 2);
+		PageBase.click(LabelTab, 2);
+		PageBase.click(RePrintLableCheckBox, 5);
+		Reporter.log("Reprint: User Select Download PDF from Label Tab");
+		PageBase.click(manifestLabelDownloadPDF, 2);
+		System.out.println("Downloading PDF instead of Printing, Content of PDF not CHECKED");
+		
+		//Shipment & Manifest Tab
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.waitForElement(ShipmentManifestTab, 2);
+		PageBase.moveToElement(ShipmentManifestTab);
+		PageBase.click(ShipmentManifestTab, 2);
+		PageBase.click(RePrintShipmentCheckBox, 5);
+		Reporter.log("User Select Download PDF from Shipment/Manifest Tab");
+		PageBase.click(ShipmentDownloadPDF, 2);
+		System.out.println("Downloading PDF instead of Printing, Content of PDF not CHECKED");
+		
+		//Close Pop Up
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.waitForElement(ShipmentManifestPopupClose, 2);
+		PageBase.click(ShipmentManifestPopupClose, 2);
 	}
 	
 	
