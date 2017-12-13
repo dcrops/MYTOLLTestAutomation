@@ -269,32 +269,35 @@ public class BookAPickupActions {
 	public static void SelectServiceItemByText(String pService) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//a/i")).click();
-		BaseWebdriver.driver.findElement(By.xpath(".//*[@id=\"service-type-selector\"]/div/div/ul/li[text()='"+pService+"']")).click();
+		BaseWebdriver.driver.findElement(By.xpath(".//*[@id=\"service-type-selector\"]/div/div/ul/li[text()="+pService+"]")).click();
 		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//ul/li[" + j + "]/div")).click();
 		PageBase.MinimumWaitForElementEnabled();
 	}
 
-	public static void SelectModeItem(int j) {
+	public static String SelectModeItem(int j) {
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-type-selector\"]/label/a/i")).click();  //*[@id="mode-type-selector"]/label/a/i
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-type-selector\"]/label/a/i")).click(); 
+		String mode=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-type-selector\"]/div/ul/li[" + j + "]")).getText();//*[@id="mode-type-selector"]/label/a/i
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-type-selector\"]/div/ul/li[" + j + "]")).click();
+		return mode;
 
 	}
 
-	public static void SelectChargeToAccount(int j) {
+	public static String SelectChargeToAccount(int j) {//*[@id="charge-to-selector"]/div/ul/li[1]/div
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(chargeToAccount).click();
+		String chargeToAccount=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li[" + j + "]/div")).getText();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li[" + j + "]/div")).click();
-
+		return chargeToAccount;
 	}
 	
 	public static void EnterChargeToAccount(String pChargeToAccount) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(chargeToAccount).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li/div[text()='"+pChargeToAccount+"']")).click();
-
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"charge-to-selector\"]/div/ul//div[text()='"+pChargeToAccount+"']")).click();
+		//*[@id="charge-to-selector"]/div/ul/li[2]/div
 	}
-
+	//*[@id="charge-to-selector"]/div/ul/li[1]/div
 	public static void SelectDangerousGoods(int j) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("(//input[@name='dangerous-radios'])[" + j + "]")).click();
@@ -532,7 +535,7 @@ public class BookAPickupActions {
 
 	} 
 	
-	public static void SelectDestination1(String pDestination, String pDestinationValue) {
+	public static String SelectDestination1(String pDestination, String pDestinationValue) {
 
 		PageBase.MinimumWaitForElementEnabled();
 
@@ -541,8 +544,10 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
-		PageBase.MinimumWaitForElementEnabled();
-
+		String Destination=BaseWebdriver.driver.findElement(destination).getAttribute("value");
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		return Destination;
 	} 
 	
 	public static void SelectDestinationCountry(String pDestination, String pDestinationCountry) {
@@ -619,9 +624,9 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(chargeToAccountItem).click();
 	}
 
-	public static void SelectChargeToAccount2(int j) {
+	public static String SelectChargeToAccount2(int j) {
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(chargeToAccount), 10);
-		SelectChargeToAccount(j);
+		return SelectChargeToAccount(j);
 
 	}
 
@@ -914,35 +919,33 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(increaseTimeMinutes).click();
 	}
 
-	public static void AddANewLine(String pDestination, String pDestinationItem) {
+	public static void AddANewLine(String pDestination, String pDestinationItem, String pService, String pItemTemplateName,String pNumberOfItems,String palletSpace,String pChargeToAccount, String pLength, String pWidth, String pHeight,String pWeight ) {
 
-		//JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
-		//jse.executeScript("scroll(0, 250);");
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BaseWebdriver.driver.findElement(addANewLine).click();
-		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		PageBase.MaximumWaitForElementEnabled();
-
-		BookAPickupActions.Selectservice(2);
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.EnterService(pService);
+		BookAPickupActions.EnterItem(pItemTemplateName);
 		BookAPickupActions.SelectModeItem(1);
-		BookAPickupActions.EnterQuantity("15");
 
-		BookAPickupActions.EnterPalletSpace("6");
+		BookAPickupActions.EnterQuantity(pNumberOfItems);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
 
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight("200", "100", "50", "5");
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(pLength, pWidth, pHeight, pWeight);
+		
 		BookAPickupActions.SelectChargeToAccount2(1);
-		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		
-		BookAPickupActions.SelectDestination1(pDestination,pDestinationItem);
-		String itemname="Automation"+(new Date()).getTime();	
-		BookAPickupActions.EnterItem(itemname);
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
-		BookAPickupActions.selectContainFoodItem();
-		
-		BookAPickupActions.selectDangerousGoodNewLine();
-		
-		PageBase.MediumWaitForElementEnabled();
 
+		BookAPickupActions.SelectDestination1(pDestination, pDestinationItem);
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		
+
+	}
+	
+	public static void ClickAddANewLine()
+	{
+		BaseWebdriver.driver.findElement(addANewLine).click();
 	}
 
 	public static void AddANewLineTollTasmania(String ServiceGeneral) {

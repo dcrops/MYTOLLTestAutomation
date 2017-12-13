@@ -43,9 +43,12 @@
 			<!---Item test data -->
 
 			<parameter name="locationIndex" value="1" />
-			<parameter name="ItemTemplateName" value="Automation Template" />
+			<parameter name="ItemTemplateName" value="Automation Template1" />
+			<parameter name="ItemTemplateName2" value="Automation Template2" />
+			<parameter name="Mode" value="2" />
 			<parameter name="ChargeToAccount" value="Sender" />
 			<parameter name="Destination" value="MELALEUCA" />
+			<parameter name="DestinationPostcode" value="MELALEUCA, 6079" />
 			<parameter name="DestinationItem" value="6079, MELALEUCA, WA, AU" />
 			<parameter name="Postcode" value="6079" />
 			<parameter name="DestinationNZ" value="Wellington" />
@@ -62,6 +65,7 @@
 			<!---Dangerous goods test data -->
 
 			<parameter name="DGGoods" value="No" />
+			<parameter name="DGGoodsYes" value="Yes" />
 			<parameter name="FoodItems" value="No" />
 			<parameter name="lookupName" value="2025" />
 			<parameter name="lookupItem" value="1" />
@@ -106,15 +110,17 @@
 			<parameter name="TNZDesPostCode" value="3210" />
 
 		<classes>
-		<class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress"/> 
-				<!-- Blocked><class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/> 
+		<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
+				<!-- Blocked>
+				
+			<class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress"/> 
+			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/> 
 		 	<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
 			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
 			<class name="bookAPickupE2ETests.TollIPECTest" /> 
-			
 			<class name="bookAPickupE2ETests.Toll_Add_Template"/>	</Blocked -->
 			
 
