@@ -139,7 +139,7 @@ public class TollIPECTests {
 	@Test
 	@Parameters({ "TollCarrierTollIPEC", "ServiceFashion","AccountNumberTIPEC", "WhoPays", "whoPays", "Sender", "Receiver", "QuoteNumber",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1",
-			"ShipmentRef2", "ItemTemplateName", "NumberOfGarments", "Length", "Width", "Height", "Weight", "ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2",
+			"ShipmentRef2", "ItemTemplateName", "NumberOfItems","NumberOfGarments", "Length", "Width", "Height", "Weight", "ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2",
 			"DGYes", "DGNo", "ItemTypeGarments", "PalletTransactionsInfoNo", "PurchaseOrder", "SpeceialIns", "DGItem",
 			"LookupSearch", "PackageDescription", "DgPkgQty", "DgQtyKg", "TollExtraServiceAmount",
 			"LineItemName1Heading", "LineItemName2Heading", "ItemDescriptionHeading", "ItemsHeading",
@@ -151,7 +151,7 @@ public class TollIPECTests {
 	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_Fashion(String TollCarrier,
 			String ServiceFashion,String AccountNumber, Integer WhoPays, String whoPays, Integer Sender, Integer Receiver, String QuoteNumber,
 			String DropOffDepot, String collectionDepot, String DGContactName, String SenderEmail, String ReceiverEmail,
-			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfGarments, String Length,
+			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems,String NumberOfGarments, String Length,
 			String Width, String Height, String Weight, String ItemTemplateName2,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
 			Integer DGNo, String ItemTypeGarments, String PalletTransactionsInfoNo, String PurchaseOrder, String SpeceialIns,
@@ -191,8 +191,10 @@ public class TollIPECTests {
 
 		CreateShipmentActions.EnterShipmentReference1(ShipmentRef1);
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference1);
-		BookAPickupActions.SelectItem(1);
+		//BookAPickupActions.SelectItem(1);
 		//CreateShipmentActions.NumberOfItem(NumberOfItems);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
@@ -248,7 +250,7 @@ public class TollIPECTests {
 	
 	}
 	
-	@Test
+	@Test 
 	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "AccountNumberTIPEC", "WhoPays", "whoPays", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -297,7 +299,7 @@ public class TollIPECTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidationConsolidate();;
+		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);		
 		CreateShipmentActions.SelectTollExtraYes();
@@ -337,7 +339,7 @@ public class TollIPECTests {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 //BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 }

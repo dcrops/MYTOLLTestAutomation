@@ -285,7 +285,7 @@ public class ShipmentReviewActions {
 		
 		public static void VerifyDangerousGoodsDetails(String pDangerousGoodsHeading, String pUNnumber, String pClassDivision,String pPackingGroup, String pSubrisk, String pProperShippingName, 
 				String pDgPackingGroup, String pDgPKG, String pDgQTY, String pTechnicalName ) {
-			assertEquals(pDangerousGoodsHeading,BaseWebdriver.driver.findElement(dangerousGoodsHeading).getText());
+			//assertEquals(pDangerousGoodsHeading,BaseWebdriver.driver.findElement(dangerousGoodsHeading).getText());
 			BaseWebdriver.driver.findElement(dangerousGoodsArrowdown).click();
 			 PageBase.MediumWaitForElementEnabled();
 			assertEquals(pUNnumber, BaseWebdriver.driver.findElement(unNumber).getText());

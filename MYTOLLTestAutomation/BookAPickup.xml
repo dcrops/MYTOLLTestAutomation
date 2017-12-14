@@ -2,128 +2,140 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="BookAPickup" parallel="tests">
-	
-		<test name="BookAPickup">
-			<!---Users test data -->
-			<parameter name="email" value="superuser@gmail.com"></parameter>
 
-			<!---Toll carriers test data -->
+	<test name="BookAPickup">
+		<!---Users test data -->
+		<parameter name="email" value="superuser@gmail.com"></parameter>
 
-			<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
-			<parameter name="TollCarrierTollTasmania" value="Toll Tasmania" />
-			<parameter name="TollCarrierTollNQXTollExpress" value="Toll NQX | Toll Express" />
-			<parameter name="TollCarrierTollIPEC" value="Toll IPEC" />
-			<parameter name="TollCarrierTollPrioAU" value="Toll Priority (Aus)" />
-			<parameter name="TollCarrierTollPrioNZ" value="Toll Priority (NZ)" />
+		<!---Toll carriers test data -->
 
-			<!---Services test data -->
+		<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
+		<parameter name="TollCarrierTollTasmania" value="Toll Tasmania" />
+		<parameter name="TollCarrierTollNQXTollExpress" value="Toll NQX | Toll Express" />
+		<parameter name="TollCarrierTollIPEC" value="Toll IPEC" />
+		<parameter name="TollCarrierTollPrioAU" value="Toll Priority (Aus)" />
+		<parameter name="TollCarrierTollPrioNZ" value="Toll Priority (NZ)" />
 
-			<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
-			<parameter name="ServiceDGFreight" value="DG Freight" />
-			<parameter name="ServiceExpress" value="Express" />
-			<parameter name="ServiceGeneral" value="General" />
-			<parameter name="ServicePremium" value="Premium" />
-			<parameter name="ServiceRailGeneral" value="Rail General" />
-			<parameter name="ServicePremium" value="Premium" />
-			<parameter name="ServiceRefrigeration" value="Refrigeration" />
-			<parameter name="ServiceRoadExpress" value="Road Express" />
-			<parameter name="ServiceDangerousGoods" value="Dangerous Goods" />
-			<parameter name="ServiceDGRefrigerated" value="DG Refrigerated" />
-			<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
-			<parameter name="ServiceDGExpress" value="DG Express" />
-			<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
-			<parameter name="AccountNumber1" value="" />
-			<parameter name="AccountNumberTInter" value="" />
-			<parameter name="AccountNumberTNQX" value="" />
-			<parameter name="AccountNumberTTas" value="" />
-			<parameter name="AccountNumberTIPEC" value="" />
-			<parameter name="AccountNumberTPrioAU" value="" />
-			<parameter name="AccountNumberTPrioNZ" value="" />
-			<parameter name="AccountAccessTypeFullFinancial" value="Full financial" />
-			<!---Item test data -->
+		<!---Services test data -->
 
-			<parameter name="locationIndex" value="1" />
-			<parameter name="ItemTemplateName" value="Automation Template1" />
-			<parameter name="ItemTemplateName2" value="Automation Template2" />
-			<parameter name="Mode" value="2" />
-			<parameter name="ChargeToAccount" value="Sender" />
-			<parameter name="Destination" value="MELALEUCA" />
-			<parameter name="DestinationPostcode" value="MELALEUCA, 6079" />
-			<parameter name="DestinationItem" value="6079, MELALEUCA, WA, AU" />
-			<parameter name="Postcode" value="6079" />
-			<parameter name="DestinationNZ" value="Wellington" />
-			<parameter name="DestinationNZItem" value="6011, WELLINGTON, NZ" />
-			<parameter name="DestinationCountry" value="AUSTRALIA" />
-			<parameter name="NumberOfItems" value="15" />
-			<parameter name="Length" value="100" />
-			<parameter name="Width" value="200" />
-			<parameter name="Height" value="300" />
-			<parameter name="Weight" value="900" />
-			<parameter name="palletSpace" value="5" />
-			<parameter name="reference" value="12345" />
+		<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
+		<parameter name="ServiceDGFreight" value="DG Freight" />
+		<parameter name="ServiceExpress" value="Express" />
+		<parameter name="ServiceGeneral" value="General" />
+		<parameter name="ServicePremium" value="Premium" />
+		<parameter name="ServiceRailGeneral" value="Rail General" />
+		<parameter name="ServicePremium" value="Premium" />
+		<parameter name="ServiceRefrigeration" value="Refrigeration" />
+		<parameter name="ServiceRoadExpress" value="Road Express" />
+		<parameter name="ServiceDangerousGoods" value="Dangerous Goods" />
+		<parameter name="ServiceDGRefrigerated" value="DG Refrigerated" />
+		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
+		<parameter name="ServiceDGExpress" value="DG Express" />
+		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 
-			<!---Dangerous goods test data -->
+		<!---Account numbers Test data -->
+		<parameter name="AccountNumberTINTER" value="106119" />
+		<parameter name="AccountNumberTollNQX" value="614060" />
+		<parameter name="AccountNumberTTas" value="100428" />
+		<parameter name="AccountNumberTIPEC" value="2230899" />
+		<parameter name="AccountNumber1" value="" />
+		<parameter name="AccountNumberTInter" value="" />
+		<parameter name="AccountNumberTNQX" value="" />
+		<parameter name="AccountNumberTTas" value="" />
+		<parameter name="AccountNumberTIPEC" value="" />
+		<parameter name="AccountNumberTPrioAU" value="" />
+		<parameter name="AccountNumberTPrioNZ" value="" />
+		<parameter name="AccountAccessTypeFullFinancial" value="Full financial" />
+		<!---Item test data -->
 
-			<parameter name="DGGoods" value="No" />
-			<parameter name="DGGoodsYes" value="Yes" />
-			<parameter name="FoodItems" value="No" />
-			<parameter name="lookupName" value="2025" />
-			<parameter name="lookupItem" value="1" />
-			<parameter name="packageDescription" value="Testing package Description" />
-			<parameter name="PackageDescription" value="Testing package Description" />
-			<parameter name="pDgPkgQty" value="5" />
-			<parameter name="pDgQtyKg" value="60" />
-			<parameter name="technicalName" value="Test Technical name" />
-			<parameter name="PackingGroup" value="3" />
-			<parameter name="DGItem" value="2" />
-			<parameter name="LookupSearch" value="1234" />
-			<parameter name="DgPkgQty" value="20" />
-			<parameter name="DgQtyKg" value="10" />
-			<parameter name="DGYes" value="1" />
-			<parameter name="DGNo" value="2" />
-			<parameter name="DGGoods" value="No" />
-			<parameter name="FoodItems" value="No" />
+		<parameter name="locationIndex" value="1" />
+		<parameter name="ItemTemplateName" value="Automation Template1" />
+		<parameter name="ItemTemplateName2" value="Automation Template2" />
+		<parameter name="Mode" value="2" />
+		<parameter name="ChargeToAccount" value="Sender" />
+		<parameter name="Destination" value="MELALEUCA" />
+		<parameter name="DestinationPostcode" value="MELALEUCA, 6079" />
+		<parameter name="DestinationItem" value="6079, MELALEUCA, WA, AU" />
+		<parameter name="Postcode" value="6079" />
+		<parameter name="DestinationNZ" value="Wellington" />
+		<parameter name="DestinationNZItem" value="6011, WELLINGTON, NZ" />
+		<parameter name="DestinationCountry" value="AUSTRALIA" />
+		<parameter name="NumberOfItems" value="15" />
+		<parameter name="Length" value="100" />
+		<parameter name="Width" value="200" />
+		<parameter name="Height" value="300" />
+		<parameter name="Weight" value="900" />
+		<parameter name="palletSpace" value="5" />
+		<parameter name="reference" value="12345" />
 
-			<!---Tempreture test data -->
+		<!---Dangerous goods test data -->
 
-			<parameter name="temperatureLow" value="10" />
-			<parameter name="temperatureHigh" value="20" />
-			<parameter name="refrigerationRefNum" value="1234" />
-			<parameter name="bookInNum" value="4567" />
-			<parameter name="VendorNum" value="4567" />
+		<parameter name="DGGoodsNo" value="No" />
+		<parameter name="DGGoodsYes" value="Yes" />
+		<parameter name="FoodItems" value="No" />
+		<parameter name="lookupName" value="2025" />
+		<parameter name="lookupItem" value="1" />
+		<parameter name="packageDescription" value="Testing package Description" />
+		<parameter name="PackageDescription" value="Testing package Description" />
+		<parameter name="pDgPkgQty" value="5" />
+		<parameter name="pDgQtyKg" value="60" />
+		<parameter name="technicalName" value="Test Technical name" />
+		<parameter name="PackingGroup" value="3" />
+		<parameter name="DGItem" value="2" />
+		<parameter name="LookupSearch" value="1234" />
+		<parameter name="DgPkgQty" value="20" />
+		<parameter name="DgQtyKg" value="10" />
+		<parameter name="DGYes" value="1" />
+		<parameter name="DGNo" value="2" />
+		<parameter name="DGGoods" value="No" />
+		<parameter name="FoodItems" value="No" />
+		<parameter name="PackageDescription" value="Testing package Description" />
+		<parameter name="PackingGroup" value="3" />
+		<parameter name="packingGroup" value="II" />
+		<parameter name="pDgPkgQty" value="5" />
+		<parameter name="pDgQtyKg" value="60" />
+		<parameter name="technicalName" value="Test Technical name" />
+		<parameter name="DGItem" value="2" />
+		<parameter name="LookupSearch" value="1234" />
+		<parameter name="DgPkgQty" value="20" />
+		<parameter name="DgQtyKg" value="10" />
+		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 
-			<parameter name="specialIns" value="special instructions test" />
+		<!---Tempreture test data -->
 
-			<parameter name="browser" value="chrome" />
+		<parameter name="temperatureLow" value="10" />
+		<parameter name="temperatureHigh" value="20" />
+		<parameter name="refrigerationRefNum" value="1234" />
+		<parameter name="bookInNum" value="4567" />
+		<parameter name="VendorNum" value="4567" />
 
-			<!---Template Verification -->
-			<parameter name="OriginSuburb" value="MELBOURNE" />
-			<parameter name="OriginPostCode" value="3000" />
-			<parameter name="DesSuburb" value="SYDNEY" />
-			<parameter name="DesPostCode" value="2000" />
+		<parameter name="specialIns" value="special instructions test" />
 
-			<parameter name="TTDesSuburb" value="GLEBE" />
-			<parameter name="TTDesPostCode" value="7000" />
-			<parameter name="TNZOriginSuburb" value="AUCKLAND" />
-			<parameter name="TNZOriginPostCode" value="1001" />
-			<parameter name="TNZDesSuburb" value="BEERESCOURT" />
-			<parameter name="TNZDesPostCode" value="3210" />
+		<parameter name="browser" value="chrome" />
+
+		<!---Template Verification -->
+		<parameter name="OriginSuburb" value="MELBOURNE" />
+		<parameter name="OriginPostCode" value="3000" />
+		<parameter name="DesSuburb" value="SYDNEY" />
+		<parameter name="DesPostCode" value="2000" />
+
+		<parameter name="TTDesSuburb" value="GLEBE" />
+		<parameter name="TTDesPostCode" value="7000" />
+		<parameter name="TNZOriginSuburb" value="AUCKLAND" />
+		<parameter name="TNZOriginPostCode" value="1001" />
+		<parameter name="TNZDesSuburb" value="BEERESCOURT" />
+		<parameter name="TNZDesPostCode" value="3210" />
 
 		<classes>
-		<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-				<!-- Blocked>
-				
-			<class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress"/> 
-			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/> 
-		 	<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
-			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
-			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
-			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
-			<class name="bookAPickupE2ETests.TollIPECTest" /> 
-			<class name="bookAPickupE2ETests.Toll_Add_Template"/>	</Blocked -->
-			
+			<class name="bookAPickupE2ETests.TollNQXTollExpressTest"/>
+			<!-- Blocked> <class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress"/> 
+				<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/> <class name="bookAPickupE2ETests.Toll_IntermodalTest" 
+				/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
+				/> <class name="bookAPickupE2ETests.TollTasmaniaTest" /> <class name="bookAPickupE2ETests.TollNQXTollExpressTest" 
+				/> <class name="bookAPickupE2ETests.TollIPECTest" /> <class name="bookAPickupE2ETests.Toll_Add_Template"/> 
+				</Blocked -->
+
 
 		</classes>
-		</test> <!-- Test -->
-	</suite> <!-- Suite -->
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -33,8 +33,8 @@ public class ReviewYouPickupActions {
 	public static By weight1=By.cssSelector("div.weight.hide-open");
 	
 	//Item1 details validation  
-	public static By itemArrowDownItem1=By.xpath("//*[@id=\"line-item-0\"]//div[@class='edit-wrpr']/a[onclick()='toggleBox('line-item-0');']/i[@class='ico-arrow-down-green']"); //*[@id=\"line-item-0\"]/div[1]/div[7]/a/i"); //*[@id="line-item-0"]/div[1]/div[7]/a
-	public static By itemDetailsHeading=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']/h5");
+	public static By itemArrowDownItem1=By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[7]/a/i"); 
+	public static By itemDetailsHeading=By.xpath("//*[@id=\"line-item-0\"]/div[@class='item-body content-box']/h5"); 
 	public static By destination=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Destination ']/following::div/p");
 	public static By itemDescription=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Item description ']/following::div/p");
 	public static By serviceType=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Service type ']/following::div/p");
@@ -48,9 +48,23 @@ public class ReviewYouPickupActions {
 	public static By dangerousGood=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Dangerous goods ']/following::div/p");
 	public static By foodItems=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Food item ']/following::div/p");
 	
+	
+	//Dangerous Goods Details validation  
+	public static By dangerousGoodsHeading=By.xpath("//*[@id=\"line-item-0\"]//div[@class='clearfix']/h5");
+	public static By dangerousGoodsArrowdown=By.xpath("//*[@id=\"dg-line-00\"]/div[1]/div[7]/a/i");  
+	public static By unNumber=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='Un number']/following::div/p");
+	public static By classDivision=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='Class division']/following::div/p");
+	public static By packingGroup=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='Packaging group']/following::div/p");
+	public static By subrisk=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='Sub risk']/following::div/p");
+	public static By properShippingName=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='Proper shipping name ']/following::div/p");
+	public static By dgPackingDescription=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='DG packaging description']/following::div/p");
+	public static By dgPKG=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='DG pkg (qty)']/following::div/p");
+	public static By dgQTY=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='DG qty (kg or L)']/following::div/p");
+	public static By technicalName=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='Technical name']/following::div/p");
+	
 	//Item2 details validation
 	public static By itemArrowDownItem2=By.xpath("//*[@id=\"line-item-1\"]/div[1]/div[7]/a/i"); 
-	public static By itemDetailsHeading2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']/h5");
+	public static By itemDetailsHeading2=By.xpath("//*[@id=\"line-item-1\"]/div[@class='item-body content-box']/h5");
 	public static By destination2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Destination ']/following::div/p");
 	public static By itemDescription2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Item description ']/following::div/p");
 	public static By serviceType2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Service type ']/following::div/p");
@@ -71,7 +85,6 @@ public class ReviewYouPickupActions {
 	public static By tempHigh=By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div/div[2]/div/p");
 	public static By refNumber=By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div/div[3]/div/p");
 	public static By bookInNumbers=By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div/div[4]/div/p");
-	public static By technicalName=By.xpath("//*[@id=\"dg-line-00\"]/div[2]/div[2]/div[4]/div/p");
 	
 	public static By confirmPickupBtn=By.id("submit-pickup");
 	public static By pickupConfirmed=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]/div[1]/div[1]/div[1]/h1");
@@ -81,6 +94,7 @@ public class ReviewYouPickupActions {
 	public static By intransit=By.xpath("//*[@id=\"pickup-trails\"]/div[3]/span[2]");
 	public static By outForDeliveryLable=By.xpath("//*[@id=\"pickup-trails\"]/div[4]/span[2]");
 	public static By deliveredLable=By.xpath("//*[@id=\"pickup-trails\"]/div[5]/span[2]");
+	public static By reference=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]/div[1]/div[1]/div[1]/div[3]/span/span");
 	public static By emailAddress=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]/div[1]/div[1]/div[2]/h4/a");
 	
 	public static By EditBtn= By.id("edit-pickup");
@@ -218,11 +232,12 @@ public class ReviewYouPickupActions {
 	
 	public static void VerifyItemDetails1(String lineNumber,String pPickupHeading, String pItemName, String pDestination, String Service,String mode, String chargeToAccount,String noOfItems, String palletSpace, 
 			String length,  String width,String height, String pVolume, String pWeight, String pDangerousGoods, String pFoodItems ) {
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemArrowDownItem1).click();
 		PageBase.MaximumWaitForElementEnabled();
-		assertEquals(pPickupHeading, BaseWebdriver.driver.findElement(itemDetailsHeading).getText()); 
+		//assertEquals(pPickupHeading, BaseWebdriver.driver.findElement(itemDetailsHeading).getText()); 
 		assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription).getText()); 
-	    assertEquals(pDestination, BaseWebdriver.driver.findElement(destination).getText()); 
+	   // assertEquals(pDestination, BaseWebdriver.driver.findElement(destination).getText()); 
 	    assertEquals(Service,BaseWebdriver.driver.findElement(serviceType).getText()); 
 	    assertEquals(chargeToAccount,BaseWebdriver.driver.findElement(chargeTo).getText()); 
 	    assertEquals(noOfItems, BaseWebdriver.driver.findElement(numberOfItems).getText()); 
@@ -234,12 +249,53 @@ public class ReviewYouPickupActions {
 	    assertEquals(pFoodItems, BaseWebdriver.driver.findElement(foodItems).getText());
 	} 
 	
+	public static void VerifyItemDetails1TollNQX(String lineNumber,String pPickupHeading, String pItemName, String pDestination, String Service, String chargeToAccount,String noOfItems, String palletSpace, 
+			String length,  String width,String height, String pVolume, String pWeight, String pDangerousGoods, String pFoodItems ) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(itemArrowDownItem1).click();
+		PageBase.MaximumWaitForElementEnabled();
+		//assertEquals(pPickupHeading, BaseWebdriver.driver.findElement(itemDetailsHeading).getText()); 
+		assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription).getText()); 
+	   // assertEquals(pDestination, BaseWebdriver.driver.findElement(destination).getText()); 
+	    assertEquals(Service,BaseWebdriver.driver.findElement(serviceType).getText()); 
+	    assertEquals(chargeToAccount,BaseWebdriver.driver.findElement(chargeTo).getText()); 
+	    assertEquals(noOfItems, BaseWebdriver.driver.findElement(numberOfItems).getText()); 
+	    assertEquals(palletSpace, BaseWebdriver.driver.findElement(palletSpaces).getText()); 
+	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(largestitemDimensions).getText());
+	    assertEquals(pVolume, BaseWebdriver.driver.findElement(volume).getText());
+	    assertEquals(pWeight, BaseWebdriver.driver.findElement(weight).getText());
+	    assertEquals(pDangerousGoods, BaseWebdriver.driver.findElement(dangerousGood).getText());
+	    assertEquals(pFoodItems, BaseWebdriver.driver.findElement(foodItems).getText());
+	}
+	
 	public static void VerifyItemDetails2(String lineNumber,String pPickupHeading, String pItemName, String pDestination, String Service,String mode, String chargeToAccount,String noOfItems, String palletSpace, 
 			String length,  String width,String height, String pVolume, String pWeight, String pDangerousGoods, String pFoodItems ) {
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemArrowDownItem2).click();
-		assertEquals(pPickupHeading, BaseWebdriver.driver.findElement(itemDetailsHeading2).getText()); 
+		PageBase.MaximumWaitForElementEnabled();
+		//assertEquals(pPickupHeading, BaseWebdriver.driver.findElement(itemDetailsHeading2).getText()); 
 		assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription2).getText()); 
-	    assertEquals(pDestination, BaseWebdriver.driver.findElement(destination2).getText());
+	    //assertEquals(pDestination, BaseWebdriver.driver.findElement(destination2).getText());
+	    assertEquals(Service,BaseWebdriver.driver.findElement(serviceType2).getText()); 
+	    assertEquals(chargeToAccount,BaseWebdriver.driver.findElement(chargeTo2).getText()); 
+	    assertEquals(noOfItems, BaseWebdriver.driver.findElement(numberOfItems2).getText()); 
+	    assertEquals(palletSpace, BaseWebdriver.driver.findElement(palletSpaces2).getText()); 
+	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(largestitemDimensions2).getText());
+	    assertEquals(pVolume, BaseWebdriver.driver.findElement(volume2).getText());
+	    assertEquals(pWeight, BaseWebdriver.driver.findElement(weight2).getText());
+	    assertEquals(pDangerousGoods, BaseWebdriver.driver.findElement(dangerousGood2).getText());
+	    assertEquals(pFoodItems, BaseWebdriver.driver.findElement(foodItems2).getText());
+	} 
+	
+	
+	public static void VerifyItemDetails2TollNQX(String lineNumber,String pPickupHeading, String pItemName, String pDestination, String Service, String chargeToAccount,String noOfItems, String palletSpace, 
+			String length,  String width,String height, String pVolume, String pWeight, String pDangerousGoods, String pFoodItems ) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(itemArrowDownItem2).click();
+		PageBase.MaximumWaitForElementEnabled();
+		//assertEquals(pPickupHeading, BaseWebdriver.driver.findElement(itemDetailsHeading2).getText()); 
+		assertEquals(pItemName, BaseWebdriver.driver.findElement(itemDescription2).getText()); 
+	    //assertEquals(pDestination, BaseWebdriver.driver.findElement(destination2).getText());
 	    assertEquals(Service,BaseWebdriver.driver.findElement(serviceType2).getText()); 
 	    assertEquals(chargeToAccount,BaseWebdriver.driver.findElement(chargeTo2).getText()); 
 	    assertEquals(noOfItems, BaseWebdriver.driver.findElement(numberOfItems2).getText()); 
@@ -304,10 +360,21 @@ public class ReviewYouPickupActions {
 	    //assertEquals("16:00", driver.findElement(By.xpath("//div[@id='line-item-1']/div[2]/div[2]/div[2]/div[3]/div/p")).getText());
 	} 
 	
-	public static void VerifyDangerousGoodsDetails(String pTechnicalName ) { 
-		assertEquals(pTechnicalName, BaseWebdriver.driver.findElement(tempLow).getText());
-		  
-		} 
+	public static void VerifyDangerousGoodsDetails(String pDangerousGoodsHeading, String pUNnumber, String pClassDivision,String pPackingGroup, String pSubrisk, String pProperShippingName, 
+			String pDgPackingGroup, String pDgPKG, String pDgQTY, String pTechnicalName ) {
+		assertEquals(pDangerousGoodsHeading,BaseWebdriver.driver.findElement(dangerousGoodsHeading).getText());
+		BaseWebdriver.driver.findElement(dangerousGoodsArrowdown).click();
+		 PageBase.MediumWaitForElementEnabled();
+		assertEquals(pUNnumber, BaseWebdriver.driver.findElement(unNumber).getText());
+		assertEquals(pClassDivision,BaseWebdriver.driver.findElement(classDivision).getText());
+		assertEquals(pPackingGroup, BaseWebdriver.driver.findElement(packingGroup).getText());
+		assertEquals(pSubrisk,BaseWebdriver.driver.findElement(subrisk).getText());
+		assertEquals(pProperShippingName, BaseWebdriver.driver.findElement(properShippingName).getText());
+		assertEquals(pDgPackingGroup, BaseWebdriver.driver.findElement(dgPackingDescription).getText());
+		assertEquals(pDgPKG, BaseWebdriver.driver.findElement(dgPKG).getText());
+		assertEquals(pDgQTY, BaseWebdriver.driver.findElement(dgQTY).getText());
+		assertEquals(pTechnicalName, BaseWebdriver.driver.findElement(technicalName).getText());
+	}
 	
 	public static void ClickConfirmPickup()
 	{
@@ -319,16 +386,17 @@ public class ReviewYouPickupActions {
 		BaseWebdriver.driver.findElement(EditBtn).click();
 	}
 
-	public static void VerifyConfirmPickupDetails(String userName) {
+	public static String VerifyConfirmPickupDetails(String userName) {
 		// assertEquals("PICKUP Submitted", BaseWebdriver.driver.findElement(pickupConfirmed).getText());
 		 assertEquals("Pickup booked", BaseWebdriver.driver.findElement(pickupSubmitted).getText());
 		 assertEquals("Picked up", BaseWebdriver.driver.findElement(pickedupLable).getText());
 		 assertEquals("In transit", BaseWebdriver.driver.findElement(intransit).getText());
 		 assertEquals("Out for delivery", BaseWebdriver.driver.findElement(outForDeliveryLable).getText());
 		 assertEquals("Delivered", BaseWebdriver.driver.findElement(deliveredLable).getText());
-		// assertEquals("We have sent you an email confirming your pickup booking to:superuser@gmail.com" 
-		 //		, BaseWebdriver.driver.findElement(emailLable).getText());
+		 String Emailable="We have sent you an email confirming your pickup booking to:";
+		assertEquals(Emailable.replaceAll("\\s", "")+userName 
+		 	, BaseWebdriver.driver.findElement(emailLable).getText().replaceAll("\\s", ""));
 		 assertEquals(userName, BaseWebdriver.driver.findElement(emailAddress).getText());
-
+		 return BaseWebdriver.driver.findElement(emailAddress).getText();
 	}
 }

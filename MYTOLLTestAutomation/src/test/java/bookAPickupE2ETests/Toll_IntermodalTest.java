@@ -5,6 +5,8 @@ import GlobalActions.GlobalVariables;
 
 import java.util.concurrent.TimeUnit;
 import bookAPickupActions.BookAPickupActions;
+import createShipmentActions.CreateShipmentActions;
+import createShipmentActions.ShipmentReviewActions;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
@@ -251,20 +253,24 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test(priority = -1)
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight","ServiceExpress",  "locationIndex", "ItemTemplateName","ItemTemplateName2", "Mode",
-			"ChargeToAccount", "NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow",
-			"temperatureHigh", "refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination",
-			"DestinationItem", "DestinationPostcode", "lookupName", "lookupItem", "PackingGroup", "packageDescription",
-			"pDgPkgQty", "pDgQtyKg", "technicalName", "DGYes", "DGGoodsYes", "FoodItems", "specialIns" })
+	@Test(priority = -2)
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "ServiceExpress", "AccountNumberTINTER",
+			"locationIndex", "ItemTemplateName", "ItemTemplateName2", "Mode", "ChargeToAccount", "NumberOfItems",
+			"Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh", "refrigerationRefNum",
+			"bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem", "DestinationPostcode",
+			"lookupName", "lookupItem", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
+			"DGYes", "DGGoodsYes", "DGGoodsNo", "DangerousGoodsDetailsHeading",
+			 "FoodItems", "specialIns" })
 
-	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_DGFreight(String TollCarrier,
-			String ServiceDGFreight,String ServiceExpress,  Integer locationIndex, String ItemTemplateName,String ItemTemplateName2, Integer Mode,
-			String ChargeToAccount, String Length, String NumberOfItems, String Width, String Height, String Weight,
-			String tempLow, String tempHigh, String ref, String BookNo, String vendorNum, String palletSpace,
-			String destination, String DestinationItem, String DestinationPostcode, String lookupName,
-			Integer lookupItem, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
-			String technicalName, Integer DGYes, String DGGoodsYes, String FoodItems, String specialIns) {
+	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_DGFreight_ConfirmDetails(String TollCarrier,
+			String ServiceDGFreight, String ServiceExpress, String AccountNumberTINTER, Integer locationIndex,
+			String ItemTemplateName, String ItemTemplateName2, Integer Mode, String ChargeToAccount, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String DestinationItem,
+			String DestinationPostcode, String lookupName, Integer lookupItem, Integer PackingGroup,
+			String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName, Integer DGYes,
+			String DGGoodsYes, String DGGoodsNo, String DangerousGoodsDetailsHeading,
+			  String FoodItems, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -334,6 +340,18 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.Scrollbar(500, 1200);
 
+		
+		String un = BookAPickupActions.GetUNNumber();
+		System.out.println("Un----" + un);
+		String classDivision = BookAPickupActions.GetClassDivision();
+		System.out.println("Class----" + classDivision);
+		String subRisk = BookAPickupActions.GetSubRisk();
+		System.out.println("Subrisk----" + subRisk);
+		String packingGroup1 = BookAPickupActions.GetPackingGroup();
+		System.out.println("packingGroup1" + packingGroup1);
+		String ProperShippingName = BookAPickupActions.GetProperShippingName();
+		System.out.println("ProperShippingName" + ProperShippingName);
+		
 		// Add a new item
 		BookAPickupActions.AddANewLine(destination, DestinationItem, ServiceExpress, ItemTemplateName2, NumberOfItems,
 				palletSpace, ChargeToAccount, Length, Width, Height, Weight);
@@ -366,41 +384,23 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYouPickupActions.VerifyPickupDetails(TollCarrier, accountNo, company, companyLocation, name,
+		ReviewYouPickupActions.VerifyPickupDetails(TollCarrier, AccountNumberTINTER, company, companyLocation, name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYouPickupActions.VerifyItemDetails1("0", "ITEM DETAILS", ItemTemplateName, DestinationPostcode,
 				ServiceDGFreight, mode, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height, Volume,
 				TotalWeight, DGGoodsYes, FoodItems);
-		ReviewYouPickupActions.VerifyItemDetails1("1", "ITEM DETAILS", ItemTemplateName2, DestinationPostcode,
+
+		ReviewYouPickupActions.VerifyDangerousGoodsDetails(DangerousGoodsDetailsHeading, lookupName, classDivision,
+				packingGroup1, subRisk, ProperShippingName, packageDescription, pDgPkgQty, pDgQtyKg, technicalName);
+
+		ReviewYouPickupActions.VerifyItemDetails2("1", "ITEM DETAILS", ItemTemplateName2, DestinationPostcode,
 				ServiceExpress, mode, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height, Volume2,
-				TotalWeight, DGGoodsYes, FoodItems);
-		
-		// Confirmed Pickup
-		// BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-		// Verify Review Your Pickup
-		// ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
-		/*
-		 * ReviewYouPickupActions.verifyPickupDetailsHeading();
-		 * ReviewYouPickupActions.verifyPickupDateTimeHeading();
-		 * 
-		 * ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
-		 * 
-		 * // ReviewYouPickupActions.VerifyPhoneNumber();
-		 * ReviewYouPickupActions.VerifyPickupDate();
-		 * 
-		 * // ReviewYouPickupActions.verifyClosingTime();
-		 * ReviewYouPickupActions.verifySpecialInstructions(specialIns);
-		 * ReviewYouPickupActions.verifyItemDescription();
-		 * ReviewYouPickupActions.verifyNumberofItems(NumberOfItems + " Items");
-		 * ReviewYouPickupActions.verifyLengthWidthHeight(Length + " x " + Width + " x "
-		 * + Height + " CM3"); //ReviewYouPickupActions.verifyVolume(volume + " M3");
-		 * //ReviewYouPickupActions.verifyWeight(Weight + " Kg");
-		 */
+				TotalWeight, DGGoodsNo, FoodItems);
 
-		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-		PageBase.MaximumWaitForElementEnabled();
-		// ReviewYouPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
-
+		 ReviewYouPickupActions.ClickConfirmPickup();
+		 String reference= ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username); 
+		 System.out.println("Book A Pickup reference  " +reference);
+	
 	}
 
 	@Test
@@ -409,7 +409,7 @@ public class Toll_IntermodalTest {
 			"lookupItem", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
 			"specialIns" })
 
-	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_DGFreight_ConfirmedDetails(String TollCarrier,
+	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_DGFreight(String TollCarrier,
 			String ServiceDGFreight, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String DestinationItem, String lookupName, Integer lookupItem, Integer PackingGroup,
@@ -469,6 +469,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
+		ReviewYouPickupActions.ClickConfirmPickup();
 		/* ReviewYouPickupActions.VerifyConfirmPickupDetails(); */
 
 	}
@@ -786,6 +787,88 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
+
+	}
+
+	@Test
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "ServiceExpress", "locationIndex", "ItemTemplateName",
+			"ItemTemplateName2", "ChargeToAccount", "NumberOfItems", "Length", "Width", "Height", "Weight",
+			"palletSpace", "Destination", "DestinationItem", "Postcode", "VendorNum", "specialIns" })
+
+	public void BookAPickup_TollIntermodal_E2ETest_TID_618_Service_General_AddLineItemMaximum99(String TollCarrier,
+			String ServiceGeneral, String ServiceExpress, Integer locationIndex, String ItemTemplateName,
+			String ItemTemplateName2, String ChargeToAccount, String Length, String NumberOfItems, String Width,
+			String Height, String Weight, String palletSpace, String destination, String DestinationItem,
+			String Postcode, String vendorNum, String specialIns) {
+
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
+
+		BookAPickupActions.SelectAccountNumber1();
+
+		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
+		// phoneNumber
+		BookAPickupActions.VerifyBookAPickupScreen();
+		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
+		BookAPickupActions.SelectLocation2(locationIndex);
+
+		// Verification and enter data for Quick entry mode, service(=Express),
+
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterService(ServiceGeneral);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectModeItem(1);
+
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		String volume = BookAPickupActions.GetVoulme().toString();
+		System.out.println(volume);
+
+		BookAPickupActions.EnterChargeToAccount(ChargeToAccount);
+		// BookAPickupActions.SelectDestination(destination);
+
+		BookAPickupActions.SelectDestination1(destination, DestinationItem);
+		BookAPickupActions.SelectModeItem(1);
+
+		BookAPickupActions.selectDangerousGood();
+		BookAPickupActions.selectContainFoodItem();
+		PageBase.Scrollbar(250, 500);
+
+		jse.executeScript("scroll(500, 800)");
+
+		for (int i = 1; i < 99; i++) {
+
+			// Add a new item
+			BookAPickupActions.AddANewLine(destination, DestinationItem, ServiceExpress, ItemTemplateName2,
+					NumberOfItems, palletSpace, ChargeToAccount, Length, Width, Height, Weight);
+
+			BookAPickupActions.selectContainFoodItem();
+
+			BookAPickupActions.selectDangerousGoodNewLine();
+			BookAPickupActions.ClickAddANewLine();
+
+			PageBase.MediumWaitForElementEnabled();
+
+			System.out.println("NUMBER OF LINE ITEMS ====" + i);
+		}
+
+		BookAPickupActions.selectPickupDate();
+		String pickupDate = BookAPickupActions.ReturnPickupDate();
+		System.out.println("pickupDate" + pickupDate);
+
+		BookAPickupActions.selectPickupDate();
+
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
+
+		BookAPickupActions.ClickReviewBook();
+
+		PageBase.MaximumWaitForElementEnabled();
+
+		// Confirmed Pickup
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 
 	}
 
