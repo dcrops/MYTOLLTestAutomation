@@ -28,7 +28,7 @@ public class TollNQXTollExpressTests {
 	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceGeneral", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "dropOffDepot", "DropOffDepot",
-			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
+			"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
 			"NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 			"DGItem", "LookupSearch", "PackageDescription", "DgPkgQty", "DgQtyKg", "ChepCustomer", "ChepExchange",
@@ -44,7 +44,7 @@ public class TollNQXTollExpressTests {
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General(String TollCarrier,
 			String ServiceGeneral, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
-			String DropOffDepot, String CollectionDepot, String DGContactName, String SenderEmail, String ReceiverEmail,
+			String DropOffDepot, String CollectionDepot, String DGContactName,String DGContactNumber, String SenderEmail, String ReceiverEmail,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, String ItemTemplateName2, String NumberOfItems2, String Length2,
 			String Width2, String Height2, String Weight2, Integer DGYes, Integer DGNo, String BillingType,
@@ -90,6 +90,8 @@ public class TollNQXTollExpressTests {
 
 		CreateShipmentActions.EnterDropOffDepot(DropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(CollectionDepot);
+
+		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
@@ -161,7 +163,7 @@ public class TollNQXTollExpressTests {
 	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
-			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
+			"CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
 			"NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 			"DGItem", "LookupSearch", "PackageDescription", "DgPkgQty", "DgQtyKg", "ChepCustomer", "ChepExchange",
@@ -177,7 +179,7 @@ public class TollNQXTollExpressTests {
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Express(String TollCarrier,
 			String ServiceExpress, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
-			String DropOffDepot, String collectionDepot, String DGContactName, String SenderEmail, String ReceiverEmail,
+			String DropOffDepot, String collectionDepot, String DGContactName, String DGContactNumber, String SenderEmail, String ReceiverEmail,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, String ItemTemplateName2, String NumberOfItems2, String Length2,
 			String Width2, String Height2, String Weight2, Integer DGYes, Integer DGNo, String BillingType,
@@ -220,6 +222,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+
+		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
@@ -289,7 +293,7 @@ public class TollNQXTollExpressTests {
 	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
-			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
+			"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
 			"NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 			"DGItem", "LookupSearch", "PackageDescription", "DgPkgQty", "DgQtyKg", "ChepCustomer", "ChepExchange",
@@ -305,7 +309,7 @@ public class TollNQXTollExpressTests {
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Premium(String TollCarrier,
 			String TollNQXServicePremium, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
-			String DropOffDepot, String collectionDepot, String DGContactName, String SenderEmail, String ReceiverEmail,
+			String DropOffDepot, String collectionDepot, String DGContactName,String DGContactNumber, String SenderEmail, String ReceiverEmail,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, String ItemTemplateName2, String NumberOfItems2, String Length2,
 			String Width2, String Height2, String Weight2, Integer DGYes, Integer DGNo, String BillingType,
@@ -348,6 +352,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+
+		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -417,7 +423,7 @@ public class TollNQXTollExpressTests {
 	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRefrigeration", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "dropOffDepot", "DropOffDepot",
-			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
+			"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
 			"NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 			"DGItem", "LookupSearch", "PackageDescription", "DgPkgQty", "DgQtyKg", "ChepCustomer", "ChepExchange",
@@ -433,7 +439,7 @@ public class TollNQXTollExpressTests {
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Refrigeration(String TollCarrier,
 			String ServiceRefrigeration, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
-			String DropOffDepot, String CollectionDepot, String DGContactName, String SenderEmail, String ReceiverEmail,
+			String DropOffDepot, String CollectionDepot, String DGContactName,String DGContactNumber, String SenderEmail, String ReceiverEmail,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, String ItemTemplateName2, String NumberOfItems2, String Length2,
 			String Width2, String Height2, String Weight2, Integer DGYes, Integer DGNo, String BillingType,
@@ -478,6 +484,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		CreateShipmentActions.EnterDropOffDepot(DropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(CollectionDepot);
+
+		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -1011,7 +1019,7 @@ public class TollNQXTollExpressTests {
 	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailGeneral", "AccountNumberTNQX","WhoPays", "whoPays",
 		"ModeInt", "Mode", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
-		"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
+		"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
 		"NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"DGItem", "LookupSearch", "PackageDescription", "DgPkgQty", "DgQtyKg", "ChepCustomer", "ChepExchange",
@@ -1027,7 +1035,7 @@ public class TollNQXTollExpressTests {
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailGeneral(String TollCarrier,
 			String ServiceRailGeneral, String AccountNumber,Integer WhoPays, String whoPays, Integer ModeInt,
 			String Mode, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
-			String DropOffDepot, String CollectionDepot, String DGContactName, String SenderEmail, String ReceiverEmail,
+			String DropOffDepot, String CollectionDepot, String DGContactName, String DGContactNumber,String SenderEmail, String ReceiverEmail,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, String ItemTemplateName2, String NumberOfItems2, String Length2,
 			String Width2, String Height2, String Weight2, Integer DGYes, Integer DGNo, String BillingType,
@@ -1072,6 +1080,8 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		CreateShipmentActions.EnterDropOffDepot(DropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(CollectionDepot);
+
+		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -1287,7 +1297,7 @@ public class TollNQXTollExpressTests {
 	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
-			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
+			"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
 			"NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 			"DGItem", "LookupSearch", "PackageDescription", "DgPkgQty", "DgQtyKg", "ChepCustomer", "ChepExchange",
@@ -1303,7 +1313,7 @@ public class TollNQXTollExpressTests {
 	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Premium_ConsolidateShipments(String TollCarrier,
 			String TollNQXServicePremium, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
-			String DropOffDepot, String collectionDepot, String DGContactName, String SenderEmail, String ReceiverEmail,
+			String DropOffDepot, String collectionDepot, String DGContactName,String DGContactNumber, String SenderEmail, String ReceiverEmail,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems, String Length,
 			String Width, String Height, String Weight, String ItemTemplateName2, String NumberOfItems2, String Length2,
 			String Width2, String Height2, String Weight2, Integer DGYes, Integer DGNo, String BillingType,

@@ -787,7 +787,7 @@ public class CreateShipmentActions {
 	public static String GetUNNumber() {
 		PageBase.MediumWaitForElementEnabled();
 
-		BaseWebdriver.driver.findElement(dangerousGoodsArrowdown).click();
+		//BaseWebdriver.driver.findElement(dangerousGoodsArrowdown).click();
 		return BaseWebdriver.driver.findElement(UNNumberItem).getAttribute("value").toString();
 
 	}
@@ -868,7 +868,7 @@ public class CreateShipmentActions {
 
 		// PageBase.MoveToElement(BookAPickupActions.itemDescriptionTextField,CreateShipmentActions.numberOfItem);
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField).click();
+		//BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField).click();
 		BookAPickupActions.EnterItem(ItemTemplate2);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown, CreateShipmentActions.shipmentReference1);

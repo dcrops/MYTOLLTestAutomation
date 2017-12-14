@@ -74,13 +74,20 @@ public class BookAPickupActions {
 	public static By UNNumberTextField = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/input"); 
 	public static By UNNumberName = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div"); 
 	public static By searchBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/span/i");
-	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div");
+	
+	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div"); //*[@id="un-code-selector-"]/div/ul/li/div
 	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i");
 	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li[1]/div");
 	public static By dgPackagingDescription = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[1]/div/input");
 	public static By dgPkgQty = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[2]/div[1]/div/input");
 	public static By dgQtyKg = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[2]/div[2]/div/input");
 	public static By technicalName = By.id("technical-name-");
+	public static By dangerousGoodsArrowdown = By.xpath("//*[@id=\"un-code-selector-\"]/label/a/i");
+	public static By classDivision = By.id("class-division-");
+	public static By subRisk = By.xpath("//*[@id=\"sub-risk-selector-\"]/label/input[2]");
+	public static By packingGroup = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/input[2]");
+	public static By properShippingName = By.id("shipping-name-");
+	
 	public static By add = By.id("add-dg-item");
 	public static By saveAsTemplateBtn = By.id("save-as-template");
 
@@ -840,7 +847,7 @@ public class BookAPickupActions {
 		catch(Exception ex)
 		{
 			System.out.println(ex);
-			ReviewYouPickupActions.ClickConfirmPickup();
+			//ReviewYouPickupActions.ClickConfirmPickup();
 			//BookAPickupActions.ClickReviewBook();
 
 		}
@@ -942,6 +949,30 @@ public class BookAPickupActions {
 		
 
 	}
+	
+	public static void AddANewLineTollNQX(String pDestination, String pDestinationItem, String pService, String pItemTemplateName,String pNumberOfItems,String palletSpace,String pChargeToAccount, String pLength, String pWidth, String pHeight,String pWeight ) {
+
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		BaseWebdriver.driver.findElement(addANewLine).click();
+		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.EnterService(pService);
+		BookAPickupActions.EnterItem(pItemTemplateName);
+		BookAPickupActions.EnterQuantity(pNumberOfItems);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(pLength, pWidth, pHeight, pWeight);
+		
+		BookAPickupActions.SelectChargeToAccount2(1);
+
+		BookAPickupActions.SelectDestination1(pDestination, pDestinationItem);
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		
+
+	}
+	
+	
 	
 	public static void ClickAddANewLine()
 	{
@@ -1046,7 +1077,38 @@ public class BookAPickupActions {
 		}
 	}
 
+	public static String GetUNNumber() {
+		PageBase.MediumWaitForElementEnabled();
 
+		BaseWebdriver.driver.findElement(dangerousGoodsArrowdown).click();
+		PageBase.MediumWaitForElementEnabled();
+		return BaseWebdriver.driver.findElement(UNNumberItem).getText().toString();
+
+	}
+
+	public static String GetClassDivision() {
+
+		return BaseWebdriver.driver.findElement(classDivision).getAttribute("value").toString();
+
+	}
+
+	public static String GetSubRisk() {
+
+		return BaseWebdriver.driver.findElement(subRisk).getAttribute("value").toString();
+
+	}
+
+	public static String GetPackingGroup() {
+
+		return BaseWebdriver.driver.findElement(packingGroup).getAttribute("value").toString();
+
+	}
+
+	public static String GetProperShippingName() {
+
+		return BaseWebdriver.driver.findElement(properShippingName).getAttribute("value").toString();
+
+	}
 	public static void ClickConfirm() {
 		PageBase.MaximumWaitForElementEnabled();
 		//BaseWebdriver.driver.findElement(confirmBtn).click();
