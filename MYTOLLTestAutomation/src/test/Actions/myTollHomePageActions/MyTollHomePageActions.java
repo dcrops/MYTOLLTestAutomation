@@ -20,6 +20,7 @@ public class MyTollHomePageActions {
 	public static By loginBtn=By.id("login-btn");
 	public static By Name=By.xpath("//*[@id=\"header-right-ctrls\"]/div/ul/li[1]/a[1]");
 	public static By MyProfile=By.xpath("//*[@id=\"header-right-ctrls\"]/div/ul/li[1]/ul/li[1]/a"); //.linkText("/group/guest/ups-home-page");
+	public static By RegistrationErrorMsg = By.cssSelector("div.yui3-widget-bd");
 	
 	
 	public static By HmbugerMenu=By.xpath("//*[@id=\"nav-opner\"]/i"); 
@@ -29,6 +30,7 @@ public class MyTollHomePageActions {
 	public static By templateMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My templates']");
 	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My accounts']");//*[@id="nav-dropdown"]/ul/li[5]/a/span[2] , //*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']
 	public static By myContactMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My contacts']");
+	public static By aboutMeMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='About me']");
 	
 	//Add Template
 	public static By MyTemplates=By.xpath("//a[@href='/group/guest/my-templates']"); //"/group/guest/my-templates");
@@ -67,8 +69,23 @@ public class MyTollHomePageActions {
 	public static By memerobleQuesDropdownErrorMsg=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_mm-question_error\"]");
 	public static By memerobleAnsweErrorMsgr=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_mm-answer_error\"]");
 
+	//Change Memeorable Password
+	public static By changeMemorableQuestionBtn = By.linkText("CHANGE MEMORABLE QUESTION");
+	public static By securityQuestionDropdown = By.xpath("//*[@id=\"security-quest-dropdown\"]/div[1]/a/i");
+	public static By securityQuestionAnswer = By.xpath("//*[@id=\"mm-answer\"]");
+	public static By securityQuestionSave = By.xpath("//*[@id=\"chg-mem-question\"]");
+	public static By securityQuestionSaveMsgPopup = By.xpath("//*[@id=\"alert-box-wrapper\"]//*//div[2]");
+	public static By securityQuestion = By.xpath("//*[@id=\"closeAlert\"]");
 	
-
+	//Track and Trace
+	public static By trackAndTrace = By.id("quickSearch");
+	public static By trackAndTraceSearch = By.id("search-shipment-btn");
+	public static By trackAndTraceClose = By.xpath("//*[@id=\"clear-srch-res\"]/span");
+	public static By shareShipment = By.xpath("//*[@id=\"shareShipment\"]");
+	public static By shareShipmentEmail = By.xpath("//*[@id=\"share-email\"]");
+	public static By shareShipmentEmailErrorMsg = By.xpath("//*[@id=\"to-email-sec\"]/div");
+	public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\"]");
+	
 	
 	public static void LaunchMyToll(String url)
 	{
