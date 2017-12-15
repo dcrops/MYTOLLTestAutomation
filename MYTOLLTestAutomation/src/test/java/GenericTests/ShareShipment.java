@@ -5,6 +5,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -42,12 +45,30 @@ public class ShareShipment {
 		//PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, "s@s.com");
 		
 		//BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentEmail).sendKeys("s@s.com");
-		//BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentEmail).submit();
+		//BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentEmail).submit();;
+		
+		
+//		WebElement element = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"share-submit\"]"));
+//		Actions action = new Actions(BaseWebdriver.driver);
+//		 
+//        action.moveToElement(element);
+//        action.
+        
+		// for (String handle : BaseWebdriver.driver.getWindowHandles()) {
+		
+		BaseWebdriver.driver.switchTo().frame(0);
 		String handle= BaseWebdriver.driver.getWindowHandle();
 		System.out.println(handle);
-		BaseWebdriver.driver.switchTo().window("modal-content-overlay-0");
+		//BaseWebdriver.driver.switchTo().frame(1);
+		BaseWebdriver.driver.switchTo().activeElement();
+		BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentSubmit).click();
 		
 		
+		
+		//WebElement element = BaseWebdriver.driver.findElement(By.xpath("//*[@class=\"modal-content-overlay\"]"));
+		//String handle= BaseWebdriver.driver.getWindowHandle();
+		//System.out.println(handle);
+		//PageBase.sendText(By.xpath("//body//div[@id=\"modal-content-overlay-0\"]/div[1]/div[2]/div[1]/div[2]/div[@id=\"share-form-area\"]/div[5]/button[1]"), 2, "sss@ss.com");
 		
 		PageBase.click(MyTollHomePageActions.shareShipmentSubmit, 2);
 		
