@@ -15,7 +15,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import baseWebdriver.BaseWebdriver;
 import myTollHomePageActions.MyTollHomePageActions;
-import reviewYourPickupActions.ReviewYouPickupActions;
+import reviewYourPickupActions.ReviewYourPickupActions;
 
 public class Toll_IntermodalTest {
 
@@ -384,21 +384,21 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYouPickupActions.VerifyPickupDetails(TollCarrier, AccountNumberTINTER, company, companyLocation, name,
+		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, AccountNumberTINTER, company, companyLocation, name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
-		ReviewYouPickupActions.VerifyItemDetails1("0", "ITEM DETAILS", ItemTemplateName, DestinationPostcode,
+		ReviewYourPickupActions.VerifyItemDetails1("0", "ITEM DETAILS", ItemTemplateName, DestinationPostcode,
 				ServiceDGFreight, mode, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height, Volume,
 				TotalWeight, DGGoodsYes, FoodItems);
 
-		ReviewYouPickupActions.VerifyDangerousGoodsDetails(DangerousGoodsDetailsHeading, lookupName, classDivision,
+		ReviewYourPickupActions.VerifyDangerousGoodsDetails(DangerousGoodsDetailsHeading, lookupName, classDivision,
 				packingGroup1, subRisk, ProperShippingName, packageDescription, pDgPkgQty, pDgQtyKg, technicalName);
 
-		ReviewYouPickupActions.VerifyItemDetails2("1", "ITEM DETAILS", ItemTemplateName2, DestinationPostcode,
+		ReviewYourPickupActions.VerifyItemDetails2("1", "ITEM DETAILS", ItemTemplateName2, DestinationPostcode,
 				ServiceExpress, mode, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height, Volume2,
 				TotalWeight, DGGoodsNo, FoodItems);
 
-		 ReviewYouPickupActions.ClickConfirmPickup();
-		 String reference= ReviewYouPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username); 
+		 ReviewYourPickupActions.ClickConfirmPickup();
+		 String reference= ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username); 
 		 System.out.println("Book A Pickup reference  " +reference);
 	
 	}
@@ -469,7 +469,7 @@ public class Toll_IntermodalTest {
 
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
-		ReviewYouPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.ClickConfirmPickup();
 		/* ReviewYouPickupActions.VerifyConfirmPickupDetails(); */
 
 	}

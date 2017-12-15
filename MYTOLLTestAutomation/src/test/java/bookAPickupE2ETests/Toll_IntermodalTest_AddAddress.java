@@ -22,7 +22,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import baseWebdriver.BaseWebdriver;
 import myTollHomePageActions.MyTollHomePageActions;
-import reviewYourPickupActions.ReviewYouPickupActions;
+import reviewYourPickupActions.ReviewYourPickupActions;
 
 
 public class Toll_IntermodalTest_AddAddress {

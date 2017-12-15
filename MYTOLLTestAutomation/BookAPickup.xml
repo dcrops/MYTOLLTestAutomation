@@ -36,8 +36,10 @@
 		<!---Account numbers Test data -->
 		<parameter name="AccountNumberTINTER" value="106119" />
 		<parameter name="AccountNumberTollNQX" value="614060" />
-		<parameter name="AccountNumberTTas" value="100428" />
+		<parameter name="AccountNumberTollTas" value="100428" />
 		<parameter name="AccountNumberTIPEC" value="2230899" />
+		<parameter name="AccountNumberTollPrioAu" value="987654" />
+		<parameter name="AccountNumberTollPrioNZ" value="566788" />
 		<parameter name="AccountNumber1" value="" />
 		<parameter name="AccountNumberTInter" value="" />
 		<parameter name="AccountNumberTNQX" value="" />
@@ -58,6 +60,7 @@
 		<parameter name="DestinationItem" value="6079, MELALEUCA, WA, AU" />
 		<parameter name="Postcode" value="6079" />
 		<parameter name="DestinationNZ" value="Wellington" />
+		<parameter name="DestinationNZPostcode" value="WELLINGTON, 6011" />
 		<parameter name="DestinationNZItem" value="6011, WELLINGTON, NZ" />
 		<parameter name="DestinationCountry" value="AUSTRALIA" />
 		<parameter name="NumberOfItems" value="15" />
@@ -127,7 +130,7 @@
 		<parameter name="TNZDesPostCode" value="3210" />
 
 		<classes>
-			<class name="bookAPickupE2ETests.TollNQXTollExpressTest"/>
+			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
 			<!-- Blocked> <class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress"/> 
 				<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/> <class name="bookAPickupE2ETests.Toll_IntermodalTest" 
 				/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.TollPriorityNZTest" 

@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import myTollHomePageActions.MyTollHomePageActions;
-import reviewYourPickupActions.ReviewYouPickupActions;
+import reviewYourPickupActions.ReviewYourPickupActions;
 
 public class TollIPECTest {
 	
@@ -85,7 +85,7 @@ public class TollIPECTest {
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		BookAPickupActions.ClickReviewBook();
 		
-		ReviewYouPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.ClickConfirmPickup();
 		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
 		//Verify Review Your Pickup
 		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
@@ -156,7 +156,7 @@ public class TollIPECTest {
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		BookAPickupActions.ClickReviewBook();
 		
-		ReviewYouPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.ClickConfirmPickup();
 		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
 		//Verify Review Your Pickup
 		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();

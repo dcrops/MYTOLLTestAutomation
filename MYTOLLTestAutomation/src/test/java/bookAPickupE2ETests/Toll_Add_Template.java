@@ -25,7 +25,7 @@ import org.testng.annotations.Test;
 import baseWebdriver.BaseWebdriver;
 import myTollHomePageActions.MyTollHomePageActions;
 import rateEnquiryActions.RateEnquiryActions;
-import reviewYourPickupActions.ReviewYouPickupActions;
+import reviewYourPickupActions.ReviewYourPickupActions;
 
 public class Toll_Add_Template {
 

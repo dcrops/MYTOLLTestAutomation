@@ -12,7 +12,7 @@ import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 
 import myTollHomePageActions.MyTollHomePageActions;
-import reviewYourPickupActions.ReviewYouPickupActions;
+import reviewYourPickupActions.ReviewYourPickupActions;
 
 public class GenericTests {
 	
