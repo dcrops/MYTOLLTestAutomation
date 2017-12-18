@@ -963,19 +963,15 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(otherCustomer).click();
 		BaseWebdriver.driver.findElement(otherCustomer).clear();
 		BaseWebdriver.driver.findElement(otherCustomer).sendKeys(pOtherCostomer);
-		// BaseWebdriver.driver.findElement(chepOtherExchange).click();
-		// BaseWebdriver.driver.findElement(chepOtherExchange).clear();
-		// BaseWebdriver.driver.findElement(chepOtherExchange).sendKeys(pChepOtherExchange);
-		// BaseWebdriver.driver.findElement(chepOtherTransfer).click();
-		/*
-		 * BaseWebdriver.driver.findElement(chepOtherTransfer).clear();
-		 * BaseWebdriver.driver.findElement(chepOtherTransfer).sendKeys(
-		 * pChepOtherTransferToToll);
-		 * BaseWebdriver.driver.findElement(chepOtherCustomer).click();
-		 * BaseWebdriver.driver.findElement(chepOtherCustomer).clear();
-		 * BaseWebdriver.driver.findElement(chepOtherCustomer).sendKeys(
-		 * pchepOtherDocketNo);
-		 */
+		BaseWebdriver.driver.findElement(chepOtherExchange).click();
+		BaseWebdriver.driver.findElement(chepOtherExchange).clear();
+		BaseWebdriver.driver.findElement(chepOtherExchange).sendKeys(pChepOtherExchange);
+		BaseWebdriver.driver.findElement(chepOtherTransfer).click();
+	    BaseWebdriver.driver.findElement(chepOtherTransfer).clear();
+		BaseWebdriver.driver.findElement(chepOtherTransfer).sendKeys(pChepOtherTransferToToll);
+		BaseWebdriver.driver.findElement(chepOtherCustomer).click();
+		BaseWebdriver.driver.findElement(chepOtherCustomer).clear();
+		BaseWebdriver.driver.findElement(chepOtherCustomer).sendKeys(pchepOtherDocketNo);
 		BaseWebdriver.driver.findElement(loscamOtherExchange).click();
 		BaseWebdriver.driver.findElement(loscamOtherExchange).clear();
 		BaseWebdriver.driver.findElement(loscamOtherExchange).sendKeys(pLoscamOtherExchange);
@@ -1022,19 +1018,15 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(otherCustomer).click();
 		BaseWebdriver.driver.findElement(otherCustomer).clear();
 		BaseWebdriver.driver.findElement(otherCustomer).sendKeys(pOtherCostomer);
-		// BaseWebdriver.driver.findElement(chepOtherExchange).click();
-		// BaseWebdriver.driver.findElement(chepOtherExchange).clear();
-		// BaseWebdriver.driver.findElement(chepOtherExchange).sendKeys(pChepOtherExchange);
-		// BaseWebdriver.driver.findElement(chepOtherTransfer).click();
-		/*
-		 * BaseWebdriver.driver.findElement(chepOtherTransfer).clear();
-		 * BaseWebdriver.driver.findElement(chepOtherTransfer).sendKeys(
-		 * pChepOtherTransferToToll);
-		 * BaseWebdriver.driver.findElement(chepOtherCustomer).click();
-		 * BaseWebdriver.driver.findElement(chepOtherCustomer).clear();
-		 * BaseWebdriver.driver.findElement(chepOtherCustomer).sendKeys(
-		 * pchepOtherDocketNo);
-		 */
+		BaseWebdriver.driver.findElement(chepOtherExchange).click();
+		BaseWebdriver.driver.findElement(chepOtherExchange).clear();
+		BaseWebdriver.driver.findElement(chepOtherExchange).sendKeys(pChepOtherExchange);
+		BaseWebdriver.driver.findElement(chepOtherTransfer).click();
+	    BaseWebdriver.driver.findElement(chepOtherTransfer).clear();
+		BaseWebdriver.driver.findElement(chepOtherTransfer).sendKeys(pChepOtherTransferToToll);
+		BaseWebdriver.driver.findElement(chepOtherCustomer).click();
+		BaseWebdriver.driver.findElement(chepOtherCustomer).clear();
+		BaseWebdriver.driver.findElement(chepOtherCustomer).sendKeys(pchepOtherDocketNo);
 		BaseWebdriver.driver.findElement(loscamOtherExchange).click();
 		BaseWebdriver.driver.findElement(loscamOtherExchange).clear();
 		BaseWebdriver.driver.findElement(loscamOtherExchange).sendKeys(pLoscamOtherExchange);
@@ -1044,7 +1036,7 @@ public class CreateShipmentActions {
 	
 
 	}
-	//*[@id="po-values"]/li/a
+	
 	public static void EnterPurchaseOrder(String pPurchaseOrder) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(purchaseorderTextField).click();
