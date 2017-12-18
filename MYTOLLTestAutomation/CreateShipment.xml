@@ -159,7 +159,7 @@
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 		<classes>
 
-			<class name="createShipmentE2ETests.TollIPECTests" />
+		<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
 			<!-- Blocked><class name="createShipmentE2ETests.TollIntermodalTests" />
 			<class name="createShipmentE2ETests.TollTasmaniaTests" />
 			<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
