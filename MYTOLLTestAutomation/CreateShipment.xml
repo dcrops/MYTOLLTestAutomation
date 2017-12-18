@@ -52,7 +52,7 @@
 		<parameter name="DestinationNZItem" value="6011, WELLINGTON, NZ" />
 		<parameter name="DestinationCountry" value="AUSTRALIA" />
 		<parameter name="NumberOfItems" value="15" />
-		<parameter name="NumberOfGarments" value="10" />
+		<parameter name="NumberOfGarments" value="20" />
 		<parameter name="Length" value="100" />
 		<parameter name="Width" value="200" />
 		<parameter name="Height" value="300" />
@@ -159,7 +159,7 @@
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 		<classes>
 
-		<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
+<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
 			<!-- Blocked><class name="createShipmentE2ETests.TollIntermodalTests" />
 			<class name="createShipmentE2ETests.TollTasmaniaTests" />
 			<class name="createShipmentE2ETests.TollNQXTollExpressTests" />

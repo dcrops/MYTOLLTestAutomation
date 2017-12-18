@@ -836,7 +836,7 @@ public class TollIntermodalTests {
 	
 
 	//@Test(priority = 4)
-	@Test
+	@Test(priority = -1)
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER","whoPays","Mode","Sender", "Receiver", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
@@ -869,7 +869,7 @@ public class TollIntermodalTests {
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(1);
 
-		CreateShipmentActions.SelectMode(1);
+		String mode=CreateShipmentActions.SelectMode(1);
 
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 
@@ -892,7 +892,7 @@ public class TollIntermodalTests {
 		// Shipment Review-VerifyOverview
 		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
 						receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceGeneral, whoPays, CollectionDepot,
-						Mode);
+						mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraServiceAmount;
 		
@@ -934,7 +934,7 @@ public class TollIntermodalTests {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		 //BaseWebdriver.tearDown();
 
 	}
 

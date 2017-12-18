@@ -91,7 +91,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.EnterDropOffDepot(DropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(CollectionDepot);
 
-		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
+		
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
@@ -223,7 +223,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 
-		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
+		
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
@@ -353,7 +353,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 
-		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
+		
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -485,7 +485,6 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.EnterDropOffDepot(DropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(CollectionDepot);
 
-		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
