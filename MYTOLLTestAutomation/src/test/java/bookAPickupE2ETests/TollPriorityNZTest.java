@@ -130,7 +130,7 @@ public class TollPriorityNZTest {
 
 	}
 
-	@Test(priority=-1)
+	@Test
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTollPrioNZ","locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "DGGoodsNo", "palletSpace", "reference", "DestinationNZ","DestinationNZPostcode",
 			"DestinationNZItem", "specialIns" })
@@ -179,7 +179,7 @@ public class TollPriorityNZTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 
 		BookAPickupActions.EnterService(ServiceParcelsOffPeak);
-		// BookAPickupActions.Selectservice(12);
+		BookAPickupActions.VerifyModeIsNotAvailable();
 
 		BookAPickupActions.SelectItemDescription();
 		BookAPickupActions.EnterDestinationNZ(destination, destinationItem);// ,destination);

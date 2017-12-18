@@ -1,5 +1,6 @@
 package bookAPickupE2ETests;
 
+import GlobalActions.GlobalVariables;
 import GlobalActions.PageBase;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,29 +14,27 @@ import myTollHomePageActions.MyTollHomePageActions;
 import reviewYourPickupActions.ReviewYourPickupActions;
 
 public class TollIPECTest {
-	
-	public static Integer locationIndex=4;
-	
+
+	public static Integer locationIndex = 4;
+
 	@BeforeMethod
-	public void RunSetup() throws Exception
-			{
-				BaseWebdriver.setUp();
-				MyTollHomePageActions.Login(BaseWebdriver.Username , BaseWebdriver.Password);
-				MyTollHomePageActions.ClickMenu();
-				MyTollHomePageActions.ClickBookAPIckupMenu();
-				//MyTollHomePageActions.ClickMenu();
-				//MyTollHomePageActions.ClickBookAPIckupMenu();
-		
-			}
-	
+	public void RunSetup() throws Exception {
+		BaseWebdriver.setUp();
+		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.ClickMenu();
+		MyTollHomePageActions.ClickBookAPIckupMenu();
+		// MyTollHomePageActions.ClickMenu();
+		// MyTollHomePageActions.ClickBookAPIckupMenu();
+
+	}
+
 	@Test
-	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName",
-		"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
-	
-	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress(String TollCarrier,
-			String ServiceRoadExpress, Integer locationIndex, String ItemTemplateName, String Length,
-			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
-		 
+	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+
+	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress(String TollCarrier, String ServiceRoadExpress,
+			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
+			String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -47,35 +46,34 @@ public class TollIPECTest {
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
-			
-		//Verification and enter data for Quick entry mode, service(=Express), Mode(=Road)
-		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
+
+		// Verification and enter data for Quick entry mode, service(=Express),
+		// Mode(=Road)
+
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterService(ServiceRoadExpress);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.SelectLargestItem(1);
-		
+
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 
 		BookAPickupActions.EnterWeight(Weight);
-		
+
 		PageBase.MaximumWaitForElementEnabled();
-		//BookAPickupActions.EnterPalletSpace("6");
-		
-		//BookAPickupActions.SelectMode(); 
-		//BookAPickupActions.SelectChargeToAccount();
-		
-		//BookAPickupActions.ReceiverAccountNumber("1236654");
-			
-		
-		//BookAPickupActions.SelectMode(); 
-			
+		// BookAPickupActions.EnterPalletSpace("6");
+
+		// BookAPickupActions.SelectMode();
+		// BookAPickupActions.SelectChargeToAccount();
+
+		// BookAPickupActions.ReceiverAccountNumber("1236654");
+
+		// BookAPickupActions.SelectMode();
+
 		jse.executeScript("scroll(200, 500)");
 		BookAPickupActions.SelectDangerousGoods(2);
-		//BookAPickupActions.selectContainFoodItem();
-			
-		
+		// BookAPickupActions.selectContainFoodItem();
+
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
@@ -84,29 +82,31 @@ public class TollIPECTest {
 		BookAPickupActions.SelectPickupFrom(1);
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		BookAPickupActions.ClickReviewBook();
-		
+
 		ReviewYourPickupActions.ClickConfirmPickup();
-		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
-		//Verify Review Your Pickup
-		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
-		/*ReviewYouPickupActions.verifyPickupDetailsHeading();
-		ReviewYouPickupActions.verifyPickupDateTimeHeading();
-		//ReviewYouPickupActions.verifyAccountNumber("123456");
-		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);*/
-	
-		
-		//ReviewYouPickupActions.ClickConfirmPickup();
-		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
-		
+		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		// Verify Review Your Pickup
+		// ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
+		/*
+		 * ReviewYouPickupActions.verifyPickupDetailsHeading();
+		 * ReviewYouPickupActions.verifyPickupDateTimeHeading();
+		 * //ReviewYouPickupActions.verifyAccountNumber("123456");
+		 * ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
+		 */
+
+		// ReviewYouPickupActions.ClickConfirmPickup();
+		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
+
 	}
-	
+
 	@Test
-	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName",
-		"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
-	
+	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+
 	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress_ConfirmedDetails(String TollCarrier,
 			String ServiceRoadExpress, Integer locationIndex, String ItemTemplateName, String Length,
-			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
+			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
+			String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -118,35 +118,26 @@ public class TollIPECTest {
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
-			
-		//Verification and enter data for Quick entry mode, service(=Express), Mode(=Road)
-		
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.driver;
+
+		// Verification and enter data for Quick entry mode, service(=Express),
+		// Mode(=Road)
+
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterService(ServiceRoadExpress);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.SelectLargestItem(1);
-		
+
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 
 		BookAPickupActions.EnterWeight(Weight);
-		
+		BookAPickupActions.VerifyModeIsNotAvailable();
 		PageBase.MaximumWaitForElementEnabled();
-		//BookAPickupActions.EnterPalletSpace("6");
-		
-		//BookAPickupActions.SelectMode(); 
-		//BookAPickupActions.SelectChargeToAccount();
-		
-		//BookAPickupActions.ReceiverAccountNumber("1236654");
-			
-		
-		//BookAPickupActions.SelectMode(); 
-			
+
 		jse.executeScript("scroll(200, 500)");
 		BookAPickupActions.SelectDangerousGoods(2);
-		//BookAPickupActions.selectContainFoodItem();
-			
-		
+		// BookAPickupActions.selectContainFoodItem();
+
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectPickupDate();
 		BookAPickupActions.selectReadyTime();
@@ -154,28 +145,20 @@ public class TollIPECTest {
 		BookAPickupActions.EnterReferenceNumber("123456789");
 		BookAPickupActions.SelectPickupFrom(1);
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
+		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-		
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+		PageBase.MaximumWaitForElementEnabled();
+
+		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
-		//Verify Review Your Pickup
-		//ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
-	/*	ReviewYouPickupActions.verifyPickupDetailsHeading();
-		ReviewYouPickupActions.verifyPickupDateTimeHeading();
-		//ReviewYouPickupActions.verifyAccountNumber("123456");
-		ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);*/
-		
-		//Confirmed Pickup		
-		//ReviewYouPickupActions.ClickConfirmPickup();
-		//ReviewYouPickupActions.VerifyConfirmPickupDetails();
-		
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
-	
+
 	@AfterMethod
-	  public void RunTearDown() throws Exception
-		{
-		 BaseWebdriver.tearDown();
-	
-		}
+	public void RunTearDown() throws Exception {
+		BaseWebdriver.tearDown();
+
+	}
 
 }

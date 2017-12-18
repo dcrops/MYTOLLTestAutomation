@@ -105,7 +105,8 @@ public class CreateShipmentActions {
 	public static By loscamOtherTransfer = By.id("loscamOtherTransfer");
 	public static By loscamOtherDocket = By.id("loscamOtherCustomer");
 	public static By purchaseorderTextField = By.id("purchase-order");
-	public static By addPurchaseOrderBtn = By.xpath("//*[@id=\"add-po\"]/i");
+	public static By addPurchaseOrderBtn = By.xpath("//*[@id=\"add-po\"]/i");//*[@id="po-values"]/li/a
+	public static By deletePurchaseOrderBtn = By.xpath("//*[@id=\"po-values\"]/li/a");//*[@id="po-values"]/li/a
 	public static By tollExtraSrviceNOBtn = By.id("toll-extra-service-check");
 	public static By foodPackagingNOBtn = By.xpath("//*[@id=\"steps-3\"]/div[8]/div[1]/div/label/span[2]"); // .xpath("//*[@id=\"food-items-check\"]/span/span");//*[@id="steps-3"]/div[8]/div[1]/div/label/span[2]
 	public static By authorityToLeaveNoBtn = By.xpath("//*[@id=\"steps-3\"]/div[5]/div/div[2]/label/span[2]");
@@ -585,8 +586,8 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(dgContactName).click();
 		String dgContactname = BaseWebdriver.driver.findElement(dgContactName).getAttribute("value");
 		System.out.println("DG contact name" + dgContactname);
-		if (dgContactname.equals(null)
-				&& (BaseWebdriver.driver.findElement(dgContactNumber).getAttribute("value").equals(null))) {
+		if (dgContactname.equals("")
+				&& (BaseWebdriver.driver.findElement(dgContactNumber).getAttribute("value").equals(""))) {
 			System.out.println("DG contact null");
 			BaseWebdriver.driver.findElement(dgContactName).sendKeys(pDGContactName);
 			System.out.println("dgContactName entered");
@@ -986,13 +987,79 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(loscamOtherDocket).sendKeys(pLoscamOtherDocketNo);
 
 	}
+	
+	public static void VerifyDocketNoNotMandatoryInLocamOther(String pChepCustomer, String pChepExchange,
+			String pChepTansferToToll, String pChepDocketNo, String pLoscamCustomer, String pLoascamExchange,
+			String pLoscamTransferToToll, String pLoscamDocketNo, String pOtherCostomer, String pChepOtherExchange,
+			String pChepOtherTransferToToll, String pchepOtherDocketNo, String pLoscamOtherExchange,
+			String pLoscamOtherTransferToToll) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MoveToElement(CreateShipmentActions.chepCustomer, CreateShipmentActions.loscamCustomer);
+		BaseWebdriver.driver.findElement(chepCustomer).click();
+		BaseWebdriver.driver.findElement(chepCustomer).clear();
+		BaseWebdriver.driver.findElement(chepCustomer).sendKeys(pChepCustomer);
+		BaseWebdriver.driver.findElement(chepExchange).click();
+		BaseWebdriver.driver.findElement(chepExchange).clear();
+		BaseWebdriver.driver.findElement(chepExchange).sendKeys(pChepExchange);
+		BaseWebdriver.driver.findElement(chepTransfer).click();
+		BaseWebdriver.driver.findElement(chepTransfer).clear();
+		BaseWebdriver.driver.findElement(chepTransfer).sendKeys(pChepTansferToToll);
+		BaseWebdriver.driver.findElement(chepDocket).click();
+		BaseWebdriver.driver.findElement(chepDocket).clear();
+		BaseWebdriver.driver.findElement(chepDocket).sendKeys(pChepDocketNo);
+		BaseWebdriver.driver.findElement(loscamCustomer).click();
+		BaseWebdriver.driver.findElement(loscamCustomer).clear();
+		BaseWebdriver.driver.findElement(loscamCustomer).sendKeys(pLoscamCustomer);
+		BaseWebdriver.driver.findElement(loscamExchange).click();
+		BaseWebdriver.driver.findElement(loscamExchange).clear();
+		BaseWebdriver.driver.findElement(loscamExchange).sendKeys(pLoascamExchange);
+		BaseWebdriver.driver.findElement(loscamTransfer).click();
+		BaseWebdriver.driver.findElement(loscamTransfer).clear();
+		BaseWebdriver.driver.findElement(loscamTransfer).sendKeys(pLoscamTransferToToll);
+		BaseWebdriver.driver.findElement(loscamDocket).click();
+		BaseWebdriver.driver.findElement(loscamDocket).clear();
+		BaseWebdriver.driver.findElement(loscamDocket).sendKeys(pLoscamDocketNo);
+		BaseWebdriver.driver.findElement(otherCustomer).click();
+		BaseWebdriver.driver.findElement(otherCustomer).clear();
+		BaseWebdriver.driver.findElement(otherCustomer).sendKeys(pOtherCostomer);
+		// BaseWebdriver.driver.findElement(chepOtherExchange).click();
+		// BaseWebdriver.driver.findElement(chepOtherExchange).clear();
+		// BaseWebdriver.driver.findElement(chepOtherExchange).sendKeys(pChepOtherExchange);
+		// BaseWebdriver.driver.findElement(chepOtherTransfer).click();
+		/*
+		 * BaseWebdriver.driver.findElement(chepOtherTransfer).clear();
+		 * BaseWebdriver.driver.findElement(chepOtherTransfer).sendKeys(
+		 * pChepOtherTransferToToll);
+		 * BaseWebdriver.driver.findElement(chepOtherCustomer).click();
+		 * BaseWebdriver.driver.findElement(chepOtherCustomer).clear();
+		 * BaseWebdriver.driver.findElement(chepOtherCustomer).sendKeys(
+		 * pchepOtherDocketNo);
+		 */
+		BaseWebdriver.driver.findElement(loscamOtherExchange).click();
+		BaseWebdriver.driver.findElement(loscamOtherExchange).clear();
+		BaseWebdriver.driver.findElement(loscamOtherExchange).sendKeys(pLoscamOtherExchange);
+		BaseWebdriver.driver.findElement(loscamOtherTransfer).click();
+		BaseWebdriver.driver.findElement(loscamOtherTransfer).clear();
+		BaseWebdriver.driver.findElement(loscamOtherTransfer).sendKeys(pLoscamOtherTransferToToll);
+	
 
+	}
+	//*[@id="po-values"]/li/a
 	public static void EnterPurchaseOrder(String pPurchaseOrder) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(purchaseorderTextField).click();
 		BaseWebdriver.driver.findElement(purchaseorderTextField).clear();
 		BaseWebdriver.driver.findElement(purchaseorderTextField).sendKeys(pPurchaseOrder);
 		BaseWebdriver.driver.findElement(addPurchaseOrderBtn).click();
+	}
+	
+	public static void DeletePurchaseOrder(String pPurchaseOrder) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(purchaseorderTextField).click();
+		BaseWebdriver.driver.findElement(purchaseorderTextField).clear();
+		BaseWebdriver.driver.findElement(purchaseorderTextField).sendKeys(pPurchaseOrder);
+		BaseWebdriver.driver.findElement(addPurchaseOrderBtn).click(); 
+		BaseWebdriver.driver.findElement(deletePurchaseOrderBtn).click();
 	}
 
 	public static void SelectAuthorityToLeaveYes() {

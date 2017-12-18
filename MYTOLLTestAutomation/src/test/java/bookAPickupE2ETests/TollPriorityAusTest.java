@@ -71,7 +71,7 @@ public class TollPriorityAusTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceParcelsOffPeak);
-
+		BookAPickupActions.VerifyModeIsNotAvailable();
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 
 		String TotalWeight = Weight + " kg";

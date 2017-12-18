@@ -48,6 +48,8 @@ public class BookAPickupActions {
 	public static By serviceItem = By.xpath("//*[@id=\"service-type-selector\"]/div[2]/ul/li[3]/div");
 	public static By mode = By
 			.cssSelector("#mode-type-selector > label.label-wrapper > a.toggler > i.ico-arrow-down-green");
+	public static By Mode = By
+			.xpath("//*[@id=\"mode-type-selector\"]/label/a/i");
 	public static By modeItem = By.xpath("//*[@id=\"mode-type-selector\"]/div/ul/li");
 	public static By chargeToAccountItem = By.xpath("//*[@id=\"charge-to-selector\"]/div/ul/li[1]/div");
 	public static By chargeToAccount = By.xpath("//*[@id=\"charge-to-selector\"]/label/a/i");
@@ -311,6 +313,20 @@ public class BookAPickupActions {
 		return mode;
 
 	}
+	
+	public static void VerifyModeIsNotAvailable() {
+		PageBase.MaximumWaitForElementEnabled();
+		try {
+		BaseWebdriver.driver.findElement(Mode).click();
+		} 
+		
+		catch(Exception ex)
+		{
+			System.out.println("Mode is not available for this Toll carrier");
+		}
+		
+
+	}
 
 	public static String SelectChargeToAccount(int j) {// *[@id="charge-to-selector"]/div/ul/li[1]/div
 		PageBase.MaximumWaitForElementEnabled();
@@ -349,34 +365,23 @@ public class BookAPickupActions {
 
 	// *[@id="alert-box-wrapper"]/div/div/div[1]/h3
 
-	public static void VerifyNoUNAddedMsg() {
+	public static void VerifyShipmentMsg() {
 		PageBase.MaximumWaitForElementEnabled();
-
-		BaseWebdriver.driver.findElement(UNNumberDropdown).click();
-	//	BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
-		BaseWebdriver.driver.findElement(searchBtn).click();
-		PageBase.MaximumWaitForElementEnabled();
-	//	BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector\"]//ul/li[" + j + "]/div")).click();
+		assertEquals("Shipment", BaseWebdriver.driver.findElement(NOUNAddedMsgHeading).getText());
+		assertEquals(
+				"Select at least one line item",
+				BaseWebdriver.driver.findElement(NOUNAddedMsgContent).getText()); 
+				BaseWebdriver.driver.findElement(CloseAlert).click(); 
 	}
 
 	public static void NoUNAddedErrorMsgValidation() {
-		//String mainPage = BaseWebdriver.driver.getWindowHandle();
-
-		//Alert alt = BaseWebdriver.driver.switchTo().alert(); // to move control to alert popup
+		
 		assertEquals("No UN added", BaseWebdriver.driver.findElement(NOUNAddedMsgHeading).getText());
 		assertEquals(
 				"You have selected a dangerous goods (DG) freight service but you have entered no items in the freight details that contain DGs. Please specify the DG details or change the service type",
 				BaseWebdriver.driver.findElement(NOUNAddedMsgContent).getText()); 
 				BaseWebdriver.driver.findElement(CloseAlert).click(); 
-		// alt.accept(); // to click on ok.
-
-		// alt.dismiss(); // to click on cancel.
-
-		// Then move the control back to main web page-
-
-		//BaseWebdriver.driver.switchTo().window(mainPage);
-
-	}
+			}
 
 	public static void SelectPackingGroup() {
 		PageBase.MaximumWaitForElementEnabled();

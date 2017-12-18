@@ -471,6 +471,19 @@ public class ReviewYourPickupActions {
 	{
 		BaseWebdriver.driver.findElement(EditBtn).click();
 	}
+	
+	public static void VerifyNoEditBtn()
+	{
+		try {
+		BaseWebdriver.driver.findElement(EditBtn).click();
+		}
+		
+		catch(Exception ex) {
+			System.out.println("Cannot Edit This page");
+		
+		}
+	}
+
 
 	public static String VerifyConfirmPickupDetails(String userName) {
 		// assertEquals("PICKUP Submitted", BaseWebdriver.driver.findElement(pickupConfirmed).getText());

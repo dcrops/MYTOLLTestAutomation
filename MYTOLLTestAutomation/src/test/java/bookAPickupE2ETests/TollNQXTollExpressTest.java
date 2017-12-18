@@ -167,14 +167,14 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "ServiceDangerousGoods", "locationIndex", "ItemTemplateName",
-			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
-			"specialIns" })
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
+			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
+			"lookupName", "specialIns" })
 
 	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Express(String TollCarrier,
-			String ServiceExpress, String ServiceDangerousGoods, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
-			String Width, String Height, String Weight, String palletSpace, String destination, String lookupName,
-			String specialIns) {
+			String ServiceExpress, String ServiceDangerousGoods, Integer locationIndex, String ItemTemplateName,
+			String Length, String NumberOfItems, String Width, String Height, String Weight, String palletSpace,
+			String destination, String lookupName, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -622,16 +622,18 @@ public class TollNQXTollExpressTest {
 		ReviewYourPickupActions.ClickConfirmPickup();
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
-	
-	@Test(priority=-1)
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "ServiceDangerousGoods", "locationIndex", "ItemTemplateName",
-			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
+
+	@Test
+	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
+			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
+			"lookupName", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
 			"specialIns" })
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Express_Edit_ErrorMessagesValidation(String TollCarrier,
-			String ServiceExpress, String ServiceDangerousGoods, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
-			String Width, String Height, String Weight, String palletSpace, String destination, String lookupName,
-			String specialIns) {
+	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Express_Edit_ErrorMessagesValidation(
+			String TollCarrier, String ServiceExpress, String ServiceDangerousGoods, Integer locationIndex,
+			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight,
+			String palletSpace, String destination, String lookupName, Integer PackingGroup, String packageDescription,
+			String pDgPkgQty, String pDgQtyKg, String technicalName, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -646,7 +648,7 @@ public class TollNQXTollExpressTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
-
+		BookAPickupActions.VerifyModeIsNotAvailable();
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
@@ -681,22 +683,46 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
 
+		BookAPickupActions.NoUNAddedErrorMsgValidation();
+		BookAPickupActions.EnterService(ServiceDangerousGoods);
+
+		BookAPickupActions.SelectDangerousGoods(2);
+		// ReSubmit Book a pickup details
+		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
+
 		BookAPickupActions.NoUNAddedErrorMsgValidation();
 
+		BookAPickupActions.SelectDangerousGoods(1);
+
+		// Enter dangerous goods details
+
+		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
+		BookAPickupActions.SelectPackgingGroup(PackingGroup);
+		BookAPickupActions.EnterTechnicalName(technicalName);
+		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectReadyTime();
+		BookAPickupActions.selectClosingTime();
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
+		
+		BookAPickupActions.ClickReviewBook();
+		PageBase.MaximumWaitForElementEnabled();
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyNoEditBtn();
 
 	}
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-		//BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 
 	}
 

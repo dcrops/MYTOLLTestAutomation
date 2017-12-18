@@ -69,8 +69,7 @@ public class TollTasmaniaTest {
 		System.out.println(countryCode);
 
 		// Verification and enter data for Quick entry mode, service(Refrigeration),
-		// Mode(=Road)
-
+		
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -82,18 +81,10 @@ public class TollTasmaniaTest {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.SelectDestination(destination);
-		// BookAPickupActions.ReceiverAccountNumber("1236654");
 		String volume = BookAPickupActions.GetVoulme().toString();
 		System.out.println(volume);
 
 		PageBase.Scrollbar(500, 1000);
-		// BookAPickupActions.EnterDestination(destination);
-		// BookAPickupActions.SelectMode(); defect
-
-		// BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref,
-		// BookNo);
-		// BookAPickupActions.EnterVendorDetails(vendorNum);
-		// BookAPickupActions.EnterTimeSlot();
 		BookAPickupActions.selectDangerousGood();
 
 		jse.executeScript("scroll(500, 800)");
@@ -110,12 +101,14 @@ public class TollTasmaniaTest {
 
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
+		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		// Confirmed Pickup
-
-		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+		// Confirm Pickup and Verify pickup confirmation details
+		ReviewYourPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 
 	}
 
@@ -163,12 +156,6 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
 
 		PageBase.Scrollbar(500, 1000);
-		// BookAPickupActions.SelectMode(); defect
-
-		// BookAPickupActions.EnterTempretureRefBookinNumbers(tempLow, tempHigh, ref,
-		// BookNo);
-		// BookAPickupActions.EnterVendorDetails(vendorNum);
-		// BookAPickupActions.EnterTimeSlot();
 		BookAPickupActions.selectDangerousGood();
 
 		jse.executeScript("scroll(500, 800)");
@@ -179,17 +166,17 @@ public class TollTasmaniaTest {
 
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
+		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		// Confirmed Pickup
-
-		// BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		// Confirm Pickup and Verify pickup confirmation details
+		ReviewYourPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
-	@Test (priority=-1)
+	@Test(priority = -1)
 
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "ServiceExpress", "AccountNumberTollTas",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
@@ -197,12 +184,12 @@ public class TollTasmaniaTest {
 			"DestinationItem", "DestinationPostcode", "lookupName", "PackingGroup", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
-	public void TollTasmania_E2ETest_TID_1033_Service_DGFreight_ConfirmDetails(String TollCarrier, String ServiceDGFreight,
-			String ServiceExpress, String AccountNumberTollTas, String ItemTemplateName2, Integer locationIndex,
-			String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems, String Width,
-			String Height, String Weight, String DGGoodsYes, String DGGoodsNo, String FoodItems, String palletSpace,
-			String destination, String DestinationItem, String DestinationPostcode, String lookupName,
-			Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
+	public void TollTasmania_E2ETest_TID_1033_Service_DGFreight_ConfirmDetails(String TollCarrier,
+			String ServiceDGFreight, String ServiceExpress, String AccountNumberTollTas, String ItemTemplateName2,
+			Integer locationIndex, String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems,
+			String Width, String Height, String Weight, String DGGoodsYes, String DGGoodsNo, String FoodItems,
+			String palletSpace, String destination, String DestinationItem, String DestinationPostcode,
+			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
 		// Select TollTasmania
@@ -306,24 +293,24 @@ public class TollTasmaniaTest {
 		String specialInstruction = BookAPickupActions.GetSpecialIns();
 		System.out.println(specialInstruction);
 		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
-		
+
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier,AccountNumberTollTas, company, companyLocation, name,
+		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, AccountNumberTollTas, company, companyLocation, name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
-		ReviewYourPickupActions.VerifyItemDetails1TollTasmania("0", "ITEM DETAILS", ItemTemplateName, DestinationPostcode,
-				ServiceDGFreight, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height, Volume,
-				TotalWeight, DGGoodsYes);
+		ReviewYourPickupActions.VerifyItemDetails1TollTasmania("0", "ITEM DETAILS", ItemTemplateName,
+				DestinationPostcode, ServiceDGFreight, chargeToAccount, NumberOfItems, palletSpace, Length, Width,
+				Height, Volume, TotalWeight, DGGoodsYes);
 
 		ReviewYourPickupActions.VerifyDangerousGoodsDetails(DangerousGoodsDetailsHeading, lookupName, classDivision,
 				packingGroup1, subRisk, ProperShippingName, packageDescription, pDgPkgQty, pDgQtyKg, technicalName);
 
-		ReviewYourPickupActions.VerifyItemDetails2TollTasmania("1", "ITEM DETAILS", ItemTemplateName2, DestinationPostcode,
-				ServiceExpress, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height, Volume2,
-				TotalWeight, DGGoodsNo);
+		ReviewYourPickupActions.VerifyItemDetails2TollTasmania("1", "ITEM DETAILS", ItemTemplateName2,
+				DestinationPostcode, ServiceExpress, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height,
+				Volume2, TotalWeight, DGGoodsNo);
 
 		ReviewYourPickupActions.ClickConfirmPickup();
 		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
@@ -334,11 +321,11 @@ public class TollTasmaniaTest {
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName", "lookupItem",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
-	public void TollTasmania_E2ETest_TID_1033_Service_DGFreight(String TollCarrier,
-			String ServiceDGFreight, Integer locationIndex, String ItemTemplateName, String Length,
-			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
-			String lookupName, Integer lookupItem, Integer PackingGroup, String packageDescription, String pDgPkgQty,
-			String pDgQtyKg, String technicalName, String specialIns) {
+	public void TollTasmania_E2ETest_TID_1033_Service_DGFreight(String TollCarrier, String ServiceDGFreight,
+			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
+			String Height, String Weight, String palletSpace, String destination, String lookupName, Integer lookupItem,
+			Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName,
+			String specialIns) {
 
 		// Select TollTasmania
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
@@ -362,7 +349,7 @@ public class TollTasmaniaTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGFreight);
-
+		BookAPickupActions.VerifyModeIsNotAvailable();
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
@@ -389,13 +376,14 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
+		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		// Confirmed Pickup
-
-		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		// Confirm Pickup and Verify pickup confirmation details
+		ReviewYourPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 	}
 
 	@Test
@@ -441,14 +429,14 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		// Confirmed Pickup
-
-		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		// Confirm Pickup and Verify pickup confirmation details
+		ReviewYourPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 
 	}
 
@@ -496,16 +484,14 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
-		// Verify Review Your Pickup
+		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-		PageBase.MaximumWaitForElementEnabled();
-
-		// Confirmed Pickup
-
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-
 		PageBase.MaximumWaitForElementEnabled();
-		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
+
+		// Confirm Pickup and Verify pickup confirmation details
+		ReviewYourPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 
 	}
 
@@ -562,44 +548,14 @@ public class TollTasmaniaTest {
 		BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
+		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		// Confirmed Pickup
-		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-		// Verify Review Your Pickup
-		/*
-		 * ReviewYouPickupActions.verifyPickupDetailsHeading();
-		 * ReviewYouPickupActions.verifyPickupDateTimeHeading(); //
-		 * ReviewYouPickupActions.VerifyAccountNumber("8723682S");
-		 * ReviewYouPickupActions.VerifyTollCarrier("Toll Tasmania"); //
-		 * ReviewYouPickupActions.VerifyCompany("19070011 Mine Project Catering"); //
-		 * ReviewYouPickupActions.verifyLocation(); //
-		 * ReviewYouPickupActions.verifyBookedby(); //
-		 * ReviewYouPickupActions.VerifyPhoneNumber();
-		 * ReviewYouPickupActions.VerifyPickupDate();
-		 * ReviewYouPickupActions.verifySpecialInstructions(specialIns);
-		 * ReviewYouPickupActions.verifyItemDescription(); //
-		 * ReviewYouPickupActions.verifyNumberofItems(NumberOfItems+" Items"); //
-		 * ReviewYouPickupActions.verifyLengthWidthHeight(Length+"*"+ Width+"*"+Height+"
-		 * // CM3"); // ReviewYouPickupActions.verifyVolume(); //
-		 * ReviewYouPickupActions.verifyWeight();
-		 * 
-		 * // Verify item details //
-		 * ReviewYouPickupActions.VerifyItemDetails();VerifyItemDetails
-		 * jse.executeScript("scroll(500, 800)");
-		 * ReviewYouPickupActions.VerifyItemDetails(0,ItemTemplateName,destination,
-		 * Postcode,ServiceGeneral,ChargeToAccount,NumberOfItems,palletSpace
-		 * ,Length,Width, Height,volume, Weight, DGGoods, FoodItems);
-		 * ReviewYouPickupActions.VerifyNewItemDetails(0,ItemTemplateName,destination,
-		 * Postcode,ServiceGeneral,ChargeToAccount,NumberOfItems,palletSpace
-		 * ,Length,Width, Height,volume, Weight);
-		 */
-
 		// Confirm Pickup and Verify pickup confirmation details
-		// ReviewYouPickupActions.ClickConfirmPickup();
-		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		ReviewYourPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 
 	}
 
@@ -655,13 +611,14 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
+		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		// Confirmed Pickup
-
-		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
+		// Confirm Pickup and Verify pickup confirmation details
+		ReviewYourPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
 
 	}
 
