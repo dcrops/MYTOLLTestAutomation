@@ -836,7 +836,7 @@ public class TollIntermodalTests {
 	
 
 	//@Test(priority = 4)
-	@Test(priority = -1)
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "AccountNumberTINTER","whoPays","Mode","Sender", "Receiver", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot","dropOffDepot", "collectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",

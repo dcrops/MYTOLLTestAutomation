@@ -42,6 +42,9 @@ public class ShareShipment {
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(MyTollHomePageActions.shareShipment, 2);
 		PageBase.MaximumWaitForElementEnabled_1();
+		
+		//PageBase.sendText(MyTollHomePageActions.shareShipmentSubmit, 5, "s@s.com");
+	
 		//PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, "s@s.com");
 		
 		//BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentEmail).sendKeys("s@s.com");
@@ -49,10 +52,7 @@ public class ShareShipment {
 		
 		
 //		WebElement element = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"share-submit\"]"));
-//		Actions action = new Actions(BaseWebdriver.driver);
-//		 
-//        action.moveToElement(element);
-//        action.
+
         
 		// for (String handle : BaseWebdriver.driver.getWindowHandles()) {
 		

@@ -82,9 +82,9 @@ public class MyTollHomePageActions {
 	public static By trackAndTraceSearch = By.id("search-shipment-btn");
 	public static By trackAndTraceClose = By.xpath("//*[@id=\"clear-srch-res\"]/span");
 	public static By shareShipment = By.xpath("//*[@id=\"shareShipment\"]");
-	public static By shareShipmentEmail = By.xpath("//*[@id=\"share-email\"]");
+	public static By shareShipmentEmail = By.xpath("//*[@id=\"share-email\"]"); 
 	public static By shareShipmentEmailErrorMsg = By.xpath("//*[@id=\"to-email-sec\"]/div");
-	public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\"]");
+	public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\"]"); 
 	
 	
 	public static void LaunchMyToll(String url)
