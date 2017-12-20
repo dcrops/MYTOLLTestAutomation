@@ -174,14 +174,14 @@ public class TollIntermodalTests {
 	//@Test(priority = 8)
 	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "AccountNumberTINTER","Sender", "Receiver", "SenderName", "SenderItem",
-			"ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot", "BillingType", "DGContactName",
+			"ReceiverName", "ReceiverItem", "DropOffDepot", "CollectionDepot", "BillingType", "DGContactName","DGContactNumber",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2", "NumberOfItems", "Length", "Width",
 			"NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "Height", "Weight", "DGYes", "PackingGroup",
 			"DGNo", "DGoodsNo", "lookupName", "lookupItem", "packageDescription", "pDgPkgQty", "pDgQtyKg",
 			"technicalName", "SpeceialIns", "TollExtraServiceAmount" })
 	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_DGFreight(String TollCarrier,
 			String ServiceDGFreight, String AccountNumber, Integer Sender, Integer Receiver, String SenderName, String SenderItem, String ReceiverName,
-			String ReceiverItem, String dropOffDepot, String collectionDepot, String BillingType, String DGContactName,
+			String ReceiverItem, String dropOffDepot, String collectionDepot, String BillingType, String DGContactName,String DGContactNumber,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String ItemTemplateName2,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String NumberOfItems2,
 			String Length2, String Width2, String Height2, String Weight2, Integer DGYes, Integer PackingGroup,
@@ -216,6 +216,7 @@ public class TollIntermodalTests {
 
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -887,6 +888,13 @@ public class TollIntermodalTests {
 
 		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
+		
+		CreateShipmentActions.SelectPalletTransactionsYes();
+
+		CreateShipmentActions.EnterPalletTransActionInformations(ChepCustomer, ChepExchange, ChepTansferToToll,
+				ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
+				ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
+				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 		CreateShipmentActions.ClickReviewCreateShipment();
 		//CreateShipmentActions.MessageEnterLineItemShipmentConsolidation(ItemTemplateName,);
 		// Shipment Review-VerifyOverview
