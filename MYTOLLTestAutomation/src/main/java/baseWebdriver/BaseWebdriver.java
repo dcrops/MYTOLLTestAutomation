@@ -19,7 +19,7 @@ public class BaseWebdriver {
 	public static StringBuffer verificationErrors = new StringBuffer();
 
 	public static String url="https://www-ppd.mytoll.com/";
-	public static String Username="NNAutomationuser1@gmail.com"; 
+	public static String Username="auto_bvt@mailinator.com"; 
 
 	public static String Password="Toll@123"; 
 	

@@ -131,9 +131,7 @@
 
 		<classes>
 					<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-		
-			<!-- Blocked> 
-			<class name="bookAPickupE2ETests.TollNQXTollExpressTest" />
+
 			<class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress" />
 			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" />
 			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
@@ -142,8 +140,6 @@
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollIPECTest" />
 			<class name="bookAPickupE2ETests.Toll_Add_Template" />
-		
-				</Blocked -->
 
 
 		</classes>

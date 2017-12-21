@@ -5,6 +5,8 @@ import GlobalActions.PageBase;
 import java.util.Date;
 
 import org.openqa.selenium.By;
+import org.testng.Reporter;
+
 import baseWebdriver.BaseWebdriver;
 
 
@@ -82,9 +84,16 @@ public class MyTollHomePageActions {
 	public static By trackAndTraceSearch = By.id("search-shipment-btn");
 	public static By trackAndTraceClose = By.xpath("//*[@id=\"clear-srch-res\"]/span");
 	public static By shareShipment = By.xpath("//*[@id=\"shareShipment\"]");
-	public static By shareShipmentEmail = By.xpath("//*[@id=\"share-email\"]"); 
-	public static By shareShipmentEmailErrorMsg = By.xpath("//*[@id=\"to-email-sec\"]/div");
-	public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\"]"); 
+	public static By shareShipmentEmail = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-email\"]");
+	public static By shareShipmentEmailErrorMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"to-email-sec\"]/div");
+	public static By shareShipmentSubmit = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-submit\"]");
+	public static By shareShipmentEmailAdd = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-form-area\"]/div[1]/span/span");
+	public static By shareShipmentEmailMaxMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"max-em-used\"]/div");
+	public static By shareShipmentEmailSuccessMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*/h3");
+	public static By shareShipmentEmailSuccessMsg2 = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*/p");
+	public static By shareShipmentEmailSuccessClose = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"close-0\"]");
+ 
+
 	
 	
 	public static void LaunchMyToll(String url)
@@ -223,10 +232,18 @@ public class MyTollHomePageActions {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(robotCheckBox).click();
 		BaseWebdriver.driver.findElement(recaptchalable).click();
-	
-		
-		
 	}
+	
+	public static void searchShipment(String ShipmentNo) {
+		Reporter.log("User Enters Shipment Number: '" +ShipmentNo+  "' on Trace and Trace");
+		PageBase.sendText(trackAndTrace, 2, ShipmentNo );
+		PageBase.click(trackAndTraceSearch, 2);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.click(By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr/td/div/span[contains(text(),'"+ShipmentNo+"')]"), 5);
+		PageBase.MaximumWaitForElementEnabled_1();
+	}
+	
+	
 
 }
 

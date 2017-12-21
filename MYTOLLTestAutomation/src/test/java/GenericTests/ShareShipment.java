@@ -4,6 +4,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,59 +32,61 @@ public class ShareShipment {
 	
 
 	@Test
-	@Parameters({"ShipmentNo"})
-	public void UserShareShipment(String ShipmentNo) {
-		String handle1= BaseWebdriver.driver.getWindowHandle();
-		System.out.println(handle1);
-		PageBase.sendText(MyTollHomePageActions.trackAndTrace, 2, ShipmentNo );
-		PageBase.click(MyTollHomePageActions.trackAndTraceSearch, 2);
-		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.click(By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr/td/div/span[contains(text(),'"+ShipmentNo+"')]"), 5);
-		PageBase.MaximumWaitForElementEnabled_1();
+	@Parameters({"ShipmentNo","EmailAddress1","EmailAddress2","EmailAddress3","EmailAddress4","EmailAddress5"})
+	public void AuntenticatedUser_ShareShipment_Maximum(String ShipmentNo, String EmailAddress1, String EmailAddress2, String EmailAddress3, String EmailAddress4, String EmailAddress5 ) {
+		MyTollHomePageActions.searchShipment(ShipmentNo);
+		Reporter.log("User Clicks Share Shipment");
 		PageBase.click(MyTollHomePageActions.shareShipment, 2);
 		PageBase.MaximumWaitForElementEnabled_1();
-		
-		//PageBase.sendText(MyTollHomePageActions.shareShipmentSubmit, 5, "s@s.com");
-	
-		//PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, "s@s.com");
-		
-		//BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentEmail).sendKeys("s@s.com");
-		//BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentEmail).submit();;
-		
-		
-//		WebElement element = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"share-submit\"]"));
-
-        
-		// for (String handle : BaseWebdriver.driver.getWindowHandles()) {
-		
-		BaseWebdriver.driver.switchTo().frame(0);
-		String handle= BaseWebdriver.driver.getWindowHandle();
-		System.out.println(handle);
-		//BaseWebdriver.driver.switchTo().frame(1);
-		BaseWebdriver.driver.switchTo().activeElement();
-		BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentSubmit).click();
-		
-		
-		
-		//WebElement element = BaseWebdriver.driver.findElement(By.xpath("//*[@class=\"modal-content-overlay\"]"));
-		//String handle= BaseWebdriver.driver.getWindowHandle();
-		//System.out.println(handle);
-		//PageBase.sendText(By.xpath("//body//div[@id=\"modal-content-overlay-0\"]/div[1]/div[2]/div[1]/div[2]/div[@id=\"share-form-area\"]/div[5]/button[1]"), 2, "sss@ss.com");
+		Reporter.log("User Enters 5 Shipment Numbers");
+		PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, EmailAddress1);
+		PageBase.click(MyTollHomePageActions.shareShipmentEmailAdd, 5);
+		PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, EmailAddress2);
+		PageBase.click(MyTollHomePageActions.shareShipmentEmailAdd, 5);
+		PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, EmailAddress3);
+		PageBase.click(MyTollHomePageActions.shareShipmentEmailAdd, 5);
+		PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, EmailAddress4);
+		PageBase.click(MyTollHomePageActions.shareShipmentEmailAdd, 5);
+		PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, EmailAddress5);
+		PageBase.click(MyTollHomePageActions.shareShipmentEmailAdd, 5);
+		PageBase.verifyTextExist(MyTollHomePageActions.shareShipmentEmailMaxMsg, "You've reached the maximum number of 5 people to share with");
 		
 		PageBase.click(MyTollHomePageActions.shareShipmentSubmit, 2);
-		
-		//*[@id="shareShipment"]/i[1]
-		//String a = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr[3]/td[1]/div/span[2]")).getText();
-		//System.out.println(a);
-		
-		//*[@id="quickSearchTableResult"]/tbody/tr[3]/td[1]/div/span[2]
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExist(MyTollHomePageActions.shareShipmentEmailSuccessMsg, "You have shared this shipment");
+		PageBase.verifyTextExist(MyTollHomePageActions.shareShipmentEmailSuccessMsg2, "We have sent an email with a link to this shipment which will display public information.");
+		PageBase.click(MyTollHomePageActions.shareShipmentEmailSuccessClose, 2);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
-
 	
+	@Test
+	@Parameters({"ShipmentNo","EmailAddress1"})
+	public void AuntenticatedUser_ShareShipment_NegativeSenario(String ShipmentNo, String EmailAddress1) {
+		MyTollHomePageActions.searchShipment(ShipmentNo);
+		Reporter.log("User Clicks Share Shipment");
+		PageBase.click(MyTollHomePageActions.shareShipment, 2);
+		PageBase.MaximumWaitForElementEnabled_1();
+		Reporter.log("User Submits with Blnk Email Address");
+		PageBase.click(MyTollHomePageActions.shareShipmentSubmit, 2);
+		PageBase.verifyTextExist(MyTollHomePageActions.shareShipmentEmailErrorMsg, "Invalid email address");
+		PageBase.MinimumWaitForElementEnabled_1();
+		Reporter.log("User Enters Shipment Numbers");
+		PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, EmailAddress1);
+		PageBase.click(MyTollHomePageActions.shareShipmentEmailAdd, 5);
+		Reporter.log("User Removes Shipment Numbers");
+		PageBase.click(By.xpath("//*[@id=\"to-email-wrapper\"]//*//span[text()='"+EmailAddress1+"']/following-sibling::a/i"), 5);
+		PageBase.MinimumWaitForElementEnabled_1();
+		Reporter.log("User Enters Invalid Email Address");
+		PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, "TEstInvalidEmail@@@@.c.c.c.c");
+		PageBase.click(MyTollHomePageActions.shareShipmentSubmit, 2);
+		PageBase.verifyTextExist(MyTollHomePageActions.shareShipmentEmailErrorMsg, "Invalid email address");
+	}
+	
+
 	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-//		/BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 
 	}
 }
