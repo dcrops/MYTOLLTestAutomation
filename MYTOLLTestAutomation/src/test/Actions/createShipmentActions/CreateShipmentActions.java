@@ -84,10 +84,15 @@ public class CreateShipmentActions {
 	public static By technicalName = By.id("technical-name");
 	public static By lineItem1Arrowdown = By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[8]/a/i");
 	public static By dangerousGoodsArrowdown = By.xpath("//*[@id=\"dg-line--0\"]/div[1]/div[8]/a/i");
-	public static By addNewLine = By.id("add-line-item");;
-	public static By addPalletYes = By.xpath("//*[@id=\"steps-3\"]/div[1]/div/div/div/label/span[2]"); // .xpath("//*label[text()='addPallet')]/span/span[class()='switch-handle']");//("//*[@id=\"addPallet\"]/span/span");//*label[contains(text(),
-																										// Add pallet
-																										// transactions?)]//[@id="addPallet"]/span/span
+	public static By addNewLine = By.id("add-line-item"); 
+	public static By addPalletYes = By.xpath("//*[@id=\"steps-3\"]/div[1]/div/div/div/label/span[2]"); 
+	public static By typeOfExportArrowdown = By.xpath(" //*[@id=\"type-of-export-selector\"]/div[1]/a/i"); 																								
+	public static By declaredValue = By.id("declared-count"); 
+	public static By declaredValueCurrency = By.xpath("//*[@id=\"currency-selector\"]/label/input[2]");
+	public static By whoPaysDutiesTaxesArrowdown = By.xpath("//*[@id=\"duty-payer-selector\"]/div[1]/a/i"); 
+	public static By commodityCode = By.name("commodity-code");
+	
+	
 	public static By addPalletNo = By.id("addPallet");
 	public static By chepCustomer = By.id("chepCustomer");
 	public static By chepExchange = By.id("chepExchange");
@@ -745,7 +750,7 @@ public class CreateShipmentActions {
 					CreateShipmentActions.shipmentReference1);
 			Boolean results = BaseWebdriver.driver.findElement(billingTypedropdown).isDisplayed();
 			System.out.println("Billing type displayed");
-			if (results = true) {
+			if (results == true) {
 				BaseWebdriver.driver.findElement(billingTypedropdown).click();
 				PageBase.MinimumWaitForElementEnabled();
 				BaseWebdriver.driver
@@ -867,19 +872,13 @@ public class CreateShipmentActions {
 		// PageBase.Scrollbar(coord1,coord2);
 		PageBase.Scrollbar(200, 500);
 		BaseWebdriver.driver.findElement(addNewLine).click();
-
-		// PageBase.MoveToElement(BookAPickupActions.itemDescriptionTextField,CreateShipmentActions.numberOfItem);
 		PageBase.MaximumWaitForElementEnabled();
-		//BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField).click();
 		BookAPickupActions.EnterItem(ItemTemplate2);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown, CreateShipmentActions.shipmentReference1);
-		// BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionDropdown).click();
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		// CreateShipmentActions.SelectBillingType(1); if there is one billing type , it
-		// is not visible.
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 
 	}
@@ -1090,8 +1089,44 @@ public class CreateShipmentActions {
 
 	}
 	
-	
+	public static void TypeOfExport(String pTypeOfExport) { 
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(typeOfExportArrowdown).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"type-of-export-selector\"]/div[2]/ul/li/div[text()='" + pTypeOfExport + "']")).click();
+		
 
+	}
+	
+	public static void DeclaredValue(String pDeclaredValue) { 
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(declaredValue).click();
+		BaseWebdriver.driver.findElement(declaredValue).clear();
+		BaseWebdriver.driver.findElement(declaredValue).sendKeys(pDeclaredValue);
+	
+	}
+	
+	public static void DeclaredValueCurrency(String pDeclaredValueCurrency) { 
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(declaredValueCurrency).click();
+		BaseWebdriver.driver.findElement(declaredValueCurrency).clear();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"currency-selector\"]/div/ul/li/div[text()='" + pDeclaredValueCurrency + "']")).click();
+	
+	} 
+	
+	public static void WhoPaysDutiesTaxes(String pWhoPaysDutiesTaxes) { 
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(whoPaysDutiesTaxesArrowdown).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"duty-payer-selector\"]/div[2]/ul/li/div[text()='" + pWhoPaysDutiesTaxes+ "']")).click();
+	
+	} 
+	
+	public static void HarmonisedCommodityCode(String pCommodityCode) { 
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(commodityCode).click();
+		BaseWebdriver.driver.findElement(commodityCode).clear();
+		BaseWebdriver.driver.findElement(commodityCode).sendKeys(pCommodityCode);
+	
+	}
 	public static void ClickReviewCreateShipment() {
 
 		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.specialInstructions);
