@@ -27,11 +27,15 @@
 		
 		<!---Share Shipment-->
 		<parameter name="ShipmentNo" value="ANIB215991" />
+		<parameter name="EmailAddress1" value="Test1@test.com" />
+		<parameter name="EmailAddress2" value="Test2@test.com" />
+		<parameter name="EmailAddress3" value="Test3@test.com" />
+		<parameter name="EmailAddress4" value="Test4@test.com" />
+		<parameter name="EmailAddress5" value="Test5@test.com" />
 		
 		  <classes>
 			<class name="GenericTests.ShareShipment" />
-			
-			</classes>
+		</classes>
 		
 	
   </test> <!-- Test -->
