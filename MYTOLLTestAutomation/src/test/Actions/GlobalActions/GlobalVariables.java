@@ -2,6 +2,6 @@ package GlobalActions;
 
 public class GlobalVariables {
 	
-	public static String Username="ahq_test01@mailinator.com";
+	public static String Username="NNAutomationuser1@gmail.com";
 
 }

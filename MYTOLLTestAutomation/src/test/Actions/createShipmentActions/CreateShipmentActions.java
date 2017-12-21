@@ -190,11 +190,12 @@ public class CreateShipmentActions {
 
 	}
 
-	public static void SelectMode(int i) {
+	public static String SelectMode(int i) {
 		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(mode).click();
+		String mode=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).getText();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).click();
-
+		return mode;
 	}
 
 	public static void ClickContinueAccountChangeMsg() {
