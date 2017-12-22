@@ -26,7 +26,7 @@ public class TollPriorityNZTests {
 			}
 	
 
-/*	@Test
+	@Test
 	@Parameters({"TollCarrierTollPrioNZ", "ServiceGlobalExpressParcels", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","TNZLength", "TNZWidth", "TNZHeight", "TNZWeight","TNZQtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode", "TNZCountry", "CountryPostCode"})
 	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode, String Country, String CountryPostCode) {
@@ -85,7 +85,7 @@ public class TollPriorityNZTests {
 		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 		Reporter.log("---------------END OF TEST---------------");
-	}*/
+	}
 	
 	@Test
 	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsSameDays", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","TNZLength", "TNZWidth", "TNZHeight", "TNZWeight","TNZQtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode", "TNZCountry", "CountryPostCode"})
