@@ -84,7 +84,6 @@ public class ManifestTollIntermodalTests {
 		//ManifestActions.VerifyManifestDetails(StatusInprogress,location,TollCarrier,ChargeToAccount,receiver, ServiceExpress, NumberOfItems, ItemTemplateName, Weight );
 		
 		
-		
 	}
 	
 	@Test
@@ -228,7 +227,7 @@ public class ManifestTollIntermodalTests {
 		ManifestActions.ClickAddManifest();
 		String manifestName=ManifestActions.GetManifestNameFromManifestReviewPage();
 		System.out.println("Manifest name =  "+ manifestName);
-		String manifestNameHading=ManifestActions.GetManifestNameFromManifestReviewPage().substring(11,34);
+		String manifestNameHading=ManifestActions.GetManifestNameFromManifestReviewPage().substring(11,33);
 		//System.out.println("Manifest name =  "+ manifestName);
 		System.out.println("manifestNameHading =  "+ manifestNameHading);	
 		manifestNameFromAddToManifest.equalsIgnoreCase(manifestName);
@@ -392,7 +391,7 @@ public class ManifestTollIntermodalTests {
 	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 
 	}
 }

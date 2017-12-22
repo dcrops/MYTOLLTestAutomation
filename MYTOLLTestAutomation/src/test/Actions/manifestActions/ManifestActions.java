@@ -166,6 +166,15 @@ public class ManifestActions {
 			//ShipmentReviewActions.ClickContinue();
 
 		}
+		
+		else {
+
+			ShipmentReviewActions.ClickAddToManifestManually();
+
+			System.out.println("ClickAddToManifestManually");
+			
+		
+		}
 	
 	}
 

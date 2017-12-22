@@ -29,6 +29,7 @@
 		<parameter name="ServiceDGExpress" value="DG Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 		<parameter name="ServiceFashion" value="Fashion" />
+		<parameter name="ServiceEconomyPacificAirportToAirport" value="Economy Pacific-Airport to Airport" />
 
 		<!---Create shipment Test data -->
 		<parameter name="AccountNumberTINTER" value="106119" />
@@ -57,6 +58,7 @@
 		<parameter name="Width" value="200" />
 		<parameter name="Height" value="300" />
 		<parameter name="Weight" value="900" />
+		<parameter name="WeightPrioNZ" value="90" />
 		<parameter name="NumberOfItems2" value="15" />
 		<parameter name="Length2" value="200" />
 		<parameter name="Width2" value="100" />
@@ -109,7 +111,12 @@
 		<parameter name="BillingType" value="General Freight" />
 		<parameter name="BillingTypeAllFreight" value="ALL FREIGHT" />
 		<parameter name="ItemTypeGarments" value="BAG CHARGED BY NUMBER OF GARMENTS (G)" />
-
+		
+		<parameter name="TypeOfExport" value="Permanent" />
+		<parameter name="DeclaredValue" value="5000" /> 
+		<parameter name="DeclaredValueCurrency" value="New Zealand dollar" />
+		<parameter name="WhoPaysDutiesTaxes" value="Sender " /> 
+		<parameter name="CommodityCode" value="ABC123" /> 
 		<!---Pallet Information Test data -->
 
 		<parameter name="PalletTransactionsInfo" value="Yes" />
@@ -160,7 +167,7 @@
 		<classes>
 		
 		
-			<class name="createShipmentE2ETests.TollIntermodalTests" />
+			<class name="createShipmentE2ETests.TollPriorityNZ" />
 
 <!-- Blocked><class name="createShipmentE2ETests.TollNQXTollExpressTests" />
 			<class name="createShipmentE2ETests.TollIntermodalTests" />
