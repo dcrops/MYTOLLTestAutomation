@@ -88,6 +88,7 @@ public class TollPriorityAusTest {
 		BookAPickupActions.selectPickupDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);
+		BookAPickupActions.selectReadyTime();
 		String readyTime = BookAPickupActions.GetReadyTime();
 		System.out.println(readyTime);
 		String closingTime = BookAPickupActions.GetClosingTime();

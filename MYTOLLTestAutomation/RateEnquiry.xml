@@ -130,9 +130,7 @@
 		<classes>
 			
 		
-			<class name="rateEnquiryE2ETests.TollPriorityNZTests" />
-			
-			
+					
 			
 			<!--<class name="rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations" />
             <class name="rateEnquiryE2ETests.TollIntermodalTests" />

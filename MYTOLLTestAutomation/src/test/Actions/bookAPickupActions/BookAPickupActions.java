@@ -854,11 +854,16 @@ public class BookAPickupActions {
 			BaseWebdriver.driver.findElement(availableTime).click();
 			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
 			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
+
+			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
+			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
 		}
 
 		if (readyTimeInt <= 8) {
 			BaseWebdriver.driver.findElement(availableTime).click();
 			BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
+			BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
+
 			BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
 		}
 		/*

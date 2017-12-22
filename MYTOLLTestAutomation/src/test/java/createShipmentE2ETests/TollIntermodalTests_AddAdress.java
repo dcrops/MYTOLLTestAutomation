@@ -53,7 +53,7 @@ public class TollIntermodalTests_AddAdress {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 		BaseWebdriver.tearDown();
-		//BaseWebdriver.driver.quit();
+		BaseWebdriver.driver.quit();
 	}
 
 }

@@ -38,7 +38,7 @@
 		<parameter name="AccountNumberTollNQX" value="614060" />
 		<parameter name="AccountNumberTollTas" value="100428" />
 		<parameter name="AccountNumberTIPEC" value="2230899" />
-		<parameter name="AccountNumberTollPrioAu" value="987654" />
+		<parameter name="AccountNumberTollPrioAu" value="401509" />
 		<parameter name="AccountNumberTollPrioNZ" value="566788" />
 		<parameter name="AccountNumber1" value="" />
 		<parameter name="AccountNumberTInter" value="" />
@@ -130,7 +130,10 @@
 		<parameter name="TNZDesPostCode" value="3210" />
 
 		<classes>
-					<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
+		
+		
+		
+					 <!-- Blocked>	<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
 
 			<class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress" />
 			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" />
@@ -139,7 +142,7 @@
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollIPECTest" />
-			<class name="bookAPickupE2ETests.Toll_Add_Template" />
+			<class name="bookAPickupE2ETests.Toll_Add_Template" />	</Blocked -->
 
 
 		</classes>

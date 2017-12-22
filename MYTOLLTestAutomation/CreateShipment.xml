@@ -29,7 +29,8 @@
 		<parameter name="ServiceDGExpress" value="DG Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 		<parameter name="ServiceFashion" value="Fashion" />
-		<parameter name="ServiceEconomyPacificAirportToAirport" value="Economy Pacific-Airport to Airport" />
+		<parameter name="ServiceEconomyPacificAirportToAirport"
+			value="Economy Pacific-Airport to Airport" />
 
 		<!---Create shipment Test data -->
 		<parameter name="AccountNumberTINTER" value="106119" />
@@ -111,12 +112,12 @@
 		<parameter name="BillingType" value="General Freight" />
 		<parameter name="BillingTypeAllFreight" value="ALL FREIGHT" />
 		<parameter name="ItemTypeGarments" value="BAG CHARGED BY NUMBER OF GARMENTS (G)" />
-		
+
 		<parameter name="TypeOfExport" value="Permanent" />
-		<parameter name="DeclaredValue" value="5000" /> 
+		<parameter name="DeclaredValue" value="5000" />
 		<parameter name="DeclaredValueCurrency" value="New Zealand dollar" />
-		<parameter name="WhoPaysDutiesTaxes" value="Sender " /> 
-		<parameter name="CommodityCode" value="ABC123" /> 
+		<parameter name="WhoPaysDutiesTaxes" value="Sender " />
+		<parameter name="CommodityCode" value="ABC123" />
 		<!---Pallet Information Test data -->
 
 		<parameter name="PalletTransactionsInfo" value="Yes" />
@@ -165,18 +166,19 @@
 			value="Shipment contain dangerous goods" />
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 		<classes>
-		
-		
-			<class name="createShipmentE2ETests.TollPriorityNZ" />
 
-<!-- Blocked><class name="createShipmentE2ETests.TollNQXTollExpressTests" />
+
+
+
+			<!-- Blocked><class name="createShipmentE2ETests.TollPriorityNZ" />
+			<class name="createShipmentE2ETests.TollNQXTollExpressTests" />
 			<class name="createShipmentE2ETests.TollIntermodalTests" />
 			<class name="createShipmentE2ETests.TollTasmaniaTests" />
 			<class name="createShipmentE2ETests.TollIPECTests" />
 			<class name="createShipmentE2ETests.TollPriorityAUSTests" />
 			<class name="createShipmentE2ETests.TollPriorityNZ" />
-			<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress" 
-				/> </Blocked -->
+			<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress" />
+			</Blocked -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
