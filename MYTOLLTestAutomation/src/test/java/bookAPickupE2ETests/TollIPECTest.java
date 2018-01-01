@@ -84,19 +84,6 @@ public class TollIPECTest {
 		BookAPickupActions.ClickReviewBook();
 
 		ReviewYourPickupActions.ClickConfirmPickup();
-		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
-		// Verify Review Your Pickup
-		// ReviewYouPickupActions.verifyReviewYourPickupScreenHeadings();
-		/*
-		 * ReviewYouPickupActions.verifyPickupDetailsHeading();
-		 * ReviewYouPickupActions.verifyPickupDateTimeHeading();
-		 * //ReviewYouPickupActions.verifyAccountNumber("123456");
-		 * ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
-		 */
-
-		// ReviewYouPickupActions.ClickConfirmPickup();
-		// ReviewYouPickupActions.VerifyConfirmPickupDetails();
-
 	}
 
 	@Test
@@ -152,7 +139,8 @@ public class TollIPECTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(GlobalVariables.Username);
+
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
 	@AfterMethod
