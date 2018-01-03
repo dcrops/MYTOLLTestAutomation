@@ -303,7 +303,7 @@ public class ReviewYourPickupActions {
 	   
 	}
 	
-	public static void VerifyItemDetails1TollPrioAU(String lineNumber,String pPickupHeading, String pItemName, String pDestination, String Service, String noOfItems, String palletSpace, 
+	public static void VerifyItemDetails1TollPrioAU(String lineNumber,String pPickupHeading, String pItemName, String pDestination, String Service, String noOfItems,  
 			String length,  String width,String height, String pWeight, String pDangerousGoods) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemArrowDownItem1TPrioAU).click();
@@ -313,8 +313,7 @@ public class ReviewYourPickupActions {
 	   // assertEquals(pDestination, BaseWebdriver.driver.findElement(destination).getText()); 
 	    assertEquals(Service,BaseWebdriver.driver.findElement(serviceType).getText()); 
 	    assertEquals(noOfItems, BaseWebdriver.driver.findElement(numberOfItems).getText()); 
-	    assertEquals(palletSpace, BaseWebdriver.driver.findElement(palletSpaces).getText()); 
-	    assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(largestitemDimensions).getText());
+	     assertEquals("L: "+length+"cm W: "+width+"cm H: "+height+"cm", BaseWebdriver.driver.findElement(largestitemDimensions).getText());
 	    assertEquals(pWeight, BaseWebdriver.driver.findElement(weight).getText());
 	    assertEquals(pDangerousGoods, BaseWebdriver.driver.findElement(dangerousGood).getText());
 	   

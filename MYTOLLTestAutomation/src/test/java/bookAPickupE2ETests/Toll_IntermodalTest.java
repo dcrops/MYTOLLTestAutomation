@@ -647,8 +647,6 @@ public class Toll_IntermodalTest {
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
 
-		BookAPickupActions.selectPickupDate();
-
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		
 		// Submit Book a pickup details

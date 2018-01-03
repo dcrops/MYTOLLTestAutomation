@@ -46,7 +46,7 @@ public class TollIPECTests {
 			"VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress_ShipmentReview(String TollCarrier,
+	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress_CreateShipmentAndShipmentReview(String TollCarrier,
 			String ServiceRoadExpress, String AccountNumber, Integer WhoPays, String whoPays, Integer Sender,
 			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,

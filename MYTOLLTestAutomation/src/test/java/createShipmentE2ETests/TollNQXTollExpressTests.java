@@ -1080,7 +1080,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.EnterDropOffDepot(DropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(CollectionDepot);
 
-		CreateShipmentActions.EnterDGContactDetails(DGContactName, DGContactNumber);
+		
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);

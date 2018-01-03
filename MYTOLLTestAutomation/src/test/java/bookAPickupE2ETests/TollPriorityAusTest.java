@@ -106,7 +106,7 @@ public class TollPriorityAusTest {
 		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, AccountNumberTollPrioAu, company, companyLocation, name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYourPickupActions.VerifyItemDetails1TollPrioAU("0", "ITEM DETAILS","Box / Carton", DestinationPostcode,
-				ServiceParcelsOffPeak,  NumberOfItems, palletSpace, Length, Width, Height,
+				ServiceParcelsOffPeak,  NumberOfItems,  Length, Width, Height,
 				TotalWeight, DGGoodsNo);
 
 		// Confirm Pickup and Verify pickup confirmation details
