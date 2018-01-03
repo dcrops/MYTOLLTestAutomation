@@ -10,8 +10,8 @@ Feature: MYT-5392 Enter the address for my pick up - Extended Features
     When User selects NO I am located at the pick up location option
     Then User clicks Sender address and Click Add Address
     And User Add the address entering sender details
-      | CompanyName | Name           | PhoneNumber | AddressLine1       | AddressLine2   | 
-      | AceessHQ    | George William | 04987654321 | 60, Collins Street | Melbourne, VIC | 
+      | CompanyName | Name           | PhoneNumber | AddressLine1       | AddressLine2   |
+      | AceessHQ    | George William | 04987654321 | 60, Collins Street | Melbourne, VIC |
     And User be able to add Suburb with string max 40 and Postcode with 4 Strings for Sender Address
       | Suburb                                   | Postcode |
       | H012345678901234567890123456789012345678 |     7001 |
@@ -32,8 +32,8 @@ Feature: MYT-5392 Enter the address for my pick up - Extended Features
     When User selects NO I am located at the pick up location option
     Then User clicks Sender address and Click Add Address
     And User Add the address entering sender details
-      | CompanyName | Name           | PhoneNumber | AddressLine1       | AddressLine2   | 
-      | AceessHQ    | George William | 04987654321 | 60, Collins Street | Melbourne, VIC | 
+      | CompanyName | Name           | PhoneNumber | AddressLine1       | AddressLine2   |
+      | AceessHQ    | George William | 04987654321 | 60, Collins Street | Melbourne, VIC |
     And User be able to add Suburb with string max 40 and Postcode with 4 Strings for Sender Address
       | Suburb                                   | Postcode |
       | M012345678901234567890123456789012345678 |     3000 |
@@ -65,13 +65,12 @@ Feature: MYT-5392 Enter the address for my pick up - Extended Features
     And User be able to add ContactEmail with string max 50 and characters a1@. for Sender Address
       | Email                                               |
       | M0123456789012345678901234567890123456789@gmail.com |
-    When User Press Save
+    And User verify Description of goods
     When User Press Save
     Then Message displays as Address able to saved
       | Message                       |
       | The address saved sucessfully |
     Then User able to see new address in MY Contacts in My Profile with Suburb and Post Code
-    
     
 
   Scenario: User Add Suburb,Postcode, Contact Email, and Description of goods  for Sender Address in Toll Priority (NZ) from 'Book a pickup' page
@@ -81,23 +80,23 @@ Feature: MYT-5392 Enter the address for my pick up - Extended Features
     When User selects NO I am located at the pick up location option
     Then User clicks Sender address and Click Add Address
     And User Add the address entering sender details
-      | CompanyName | Name           | PhoneNumber | AddressLine1          | AddressLine2   |
-      | MainFreight | Philip William | 04987654321 | 1 Wellington Street,  | Hampstead |
+      | CompanyName | Name           | PhoneNumber | AddressLine1         | AddressLine2 |
+      | MainFreight | Philip William | 04987654321 | 1 Wellington Street, | Hampstead    |
     And User be able to add Suburb with string max 40 and Postcode with 4 Strings for Sender Address
-      | Suburb                                   | Postcode |
-      |AM012345678901234567890123456789012345678 |    7700 |
+      | Suburb                                    | Postcode |
+      | AM012345678901234567890123456789012345678 |     7700 |
     And User be able to add Suburb and Postcode for Sender Address
       | Suburb    | Postcode |
       | Ashburton |     3000 |
     And User be able to add ContactEmail with string max 50 and characters a1@. for Sender Address
       | Email                                               |
       | M0123456789012345678901234567890123456789@gmail.com |
+    And User verify Description of goods
     When User Press Save
     Then Message displays as Address able to saved
       | Message                       |
       | The address saved sucessfully |
     Then User able to see new address in MY Contacts in My Profile with Suburb and Post Code
-    
     
 
   Scenario: User Add Suburb,Postcode,Contact Email, and Description of goods for Sender Address in Toll IPEC from 'Book a pickup' page
@@ -107,14 +106,14 @@ Feature: MYT-5392 Enter the address for my pick up - Extended Features
     When User selects NO I am located at the pick up location option
     Then User clicks Sender address and Click Add Address
     And User Add the address entering sender details
-      | CompanyName | Name         | PhoneNumber | AddressLine1        | AddressLine2   |
-      | DHL Express | Carl William | 04987654321 | Mulgrave, 102  |Four Post Lane  |
+      | CompanyName | Name         | PhoneNumber | AddressLine1  | AddressLine2   |
+      | DHL Express | Carl William | 04987654321 | Mulgrave, 102 | Four Post Lane |
     And User be able to add Suburb with string max 40 and Postcode with 4 Strings for Sender Address
-      | Suburb                                   | Postcode |
-      |AM012345678901234567890123456789012345678 |    2710 |
+      | Suburb                                    | Postcode |
+      | AM012345678901234567890123456789012345678 |     2710 |
     And User be able to add Suburb and Postcode for Sender Address
-      | Suburb    | Postcode |
-      | DENILIQUIN |    2710 |
+      | Suburb     | Postcode |
+      | DENILIQUIN |     2710 |
     And User be able to add ContactEmail with string max 50 and characters a1@. for Sender Address
       | Email                                               |
       | M0123456789012345678901234567890123456789@gmail.com |
