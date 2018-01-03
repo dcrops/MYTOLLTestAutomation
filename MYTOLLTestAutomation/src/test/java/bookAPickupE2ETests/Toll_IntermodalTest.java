@@ -252,8 +252,7 @@ public class Toll_IntermodalTest {
 		// ReviewYouPickupActions.VerifyRefrigerationDetails();
 
 	}
-
-	@Test(priority = -2)
+@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "ServiceExpress", "AccountNumberTINTER",
 			"locationIndex", "ItemTemplateName", "ItemTemplateName2", "Mode", "ChargeToAccount", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh", "refrigerationRefNum",
@@ -580,8 +579,7 @@ public class Toll_IntermodalTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 
 	}
-
-	@Test(priority = -1)
+@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"ItemTemplateName2", "ChargeToAccount", "NumberOfItems", "Length", "Width", "Height", "Weight",
 			"palletSpace", "Destination", "DestinationItem", "Postcode", "VendorNum", "specialIns" })

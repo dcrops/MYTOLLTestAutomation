@@ -131,18 +131,16 @@
 
 		<classes>
 		
-		
-		
-					 <!-- Blocked>	<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-
-			<class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress" />
-			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" />
+			
 			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
 			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
-			<class name="bookAPickupE2ETests.TollIPECTest" />
-			<class name="bookAPickupE2ETests.Toll_Add_Template" />	</Blocked -->
+			<class name="bookAPickupE2ETests.TollIPECTest" />	 <!-- Blocked>
+			
+			<class name="bookAPickupE2ETests.Toll_Add_Template" />	
+			<class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress" />
+			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" /></Blocked -->
 
 
 		</classes>
