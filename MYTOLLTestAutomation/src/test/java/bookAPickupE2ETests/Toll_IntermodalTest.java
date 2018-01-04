@@ -28,18 +28,18 @@ public class Toll_IntermodalTest {
 
 	}
 
-	/*
-	 * @Test(priority = 1)
-	 * 
-	 * @Parameters({ "TollCarrierTollPrioNZ", "ItemTemplateName","NumberOfItems",
-	 * "Length", "Width", "Height", "Weight" }) public void AddTemplates(String
-	 * TollCarrier,String ItemTemplateName, String NumberOfItems, String
-	 * Weight,String Length, String Width, String Height) {
-	 * 
-	 * for (int i=1; i<=1000; i++) {
-	 * //MyTollHomePageActions.AddTemplates(TollCarrier,ItemTemplateName,
-	 * NumberOfItems,Weight,Length,Width,Height); } }
-	 */
+	
+	 @Test(priority = 1)
+	  
+	 @Parameters({ "TollCarrierTollPrioNZ", "ItemTemplateName","NumberOfItems",
+	 "Length", "Width", "Height", "Weight" }) public void AddTemplates(String
+	 TollCarrier,String ItemTemplateName, String NumberOfItems, String
+	 Weight,String Length, String Width, String Height) {
+	  
+	  for (int i=1; i<=1000; i++) {
+	 MyTollHomePageActions.AddTemplates(TollCarrier,ItemTemplateName,
+	  NumberOfItems,Weight,Length,Width,Height); } }
+	 
 
 	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
@@ -136,7 +136,7 @@ public class Toll_IntermodalTest {
 		// Confirmed Pickup
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 
-		/*
+		
 		 * ReviewYouPickupActions.VerifyAccountNumber(accno);
 		 * ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
 		 * ReviewYouPickupActions.VerifyCompany(company); //
@@ -151,10 +151,10 @@ public class Toll_IntermodalTest {
 		 * ReviewYouPickupActions.verifyLengthWidthHeight(Length + "x " + Width + "x " +
 		 * Height + " CM3"); ReviewYouPickupActions.verifyVolume(volume + " M3");
 		 * ReviewYouPickupActions.verifyWeight(Weight + " Kg");
-		 */
+		 
 
 		// Verify Review Your Pickup
-		/*
+		
 		 * ReviewYouPickupActions.verifyNumberofItems(NumberOfItems+" Items");
 		 * 
 		 * ReviewYouPickupActions.verifyPickupDetailsHeading();
@@ -171,9 +171,9 @@ public class Toll_IntermodalTest {
 		 * ReviewYouPickupActions.verifyNumberofItems();
 		 * ReviewYouPickupActions.verifyLengthWidthHeight();
 		 * ReviewYouPickupActions.verifyVolume(); ReviewYouPickupActions.verifyWeight();
-		 */
+		 
 
-		/* ReviewYouPickupActions.VerifyConfirmPickupDetails(); */
+		 ReviewYouPickupActions.VerifyConfirmPickupDetails(); 
 
 	}
 
@@ -248,7 +248,7 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		// ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
-		/* ReviewYouPickupActions.VerifyConfirmPickupDetails(); */
+		 ReviewYouPickupActions.VerifyConfirmPickupDetails(); 
 		// ReviewYouPickupActions.VerifyRefrigerationDetails();
 
 	}
