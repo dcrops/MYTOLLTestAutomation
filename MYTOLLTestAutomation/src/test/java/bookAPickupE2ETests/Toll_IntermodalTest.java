@@ -29,17 +29,6 @@ public class Toll_IntermodalTest {
 	}
 
 	
-	 @Test(priority = 1)
-	  
-	 @Parameters({ "TollCarrierTollPrioNZ", "ItemTemplateName","NumberOfItems",
-	 "Length", "Width", "Height", "Weight" }) public void AddTemplates(String
-	 TollCarrier,String ItemTemplateName, String NumberOfItems, String
-	 Weight,String Length, String Width, String Height) {
-	  
-	  for (int i=1; i<=1000; i++) {
-	 MyTollHomePageActions.AddTemplates(TollCarrier,ItemTemplateName,
-	  NumberOfItems,Weight,Length,Width,Height); } }
-	 
 
 	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
@@ -137,47 +126,10 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 
 		
-		 * ReviewYouPickupActions.VerifyAccountNumber(accno);
-		 * ReviewYouPickupActions.VerifyTollCarrier(TollCarrier);
-		 * ReviewYouPickupActions.VerifyCompany(company); //
-		 * ReviewYouPickupActions.VerifyLocation(location); //
-		 * ReviewYouPickupActions.VerifyBookedby(name); defect //
-		 * ReviewYouPickupActions.VerifyPhoneNumber(phoneNumber); defect
-		 * 
-		 * ReviewYouPickupActions.verifyReadyTime(pickupTime);
-		 * ReviewYouPickupActions.verifyClosingTime(closingTime);
-		 * ReviewYouPickupActions.verifySpecialInstructions(specialIns);
-		 * 
-		 * ReviewYouPickupActions.verifyLengthWidthHeight(Length + "x " + Width + "x " +
-		 * Height + " CM3"); ReviewYouPickupActions.verifyVolume(volume + " M3");
-		 * ReviewYouPickupActions.verifyWeight(Weight + " Kg");
-		 
-
-		// Verify Review Your Pickup
-		
-		 * ReviewYouPickupActions.verifyNumberofItems(NumberOfItems+" Items");
-		 * 
-		 * ReviewYouPickupActions.verifyPickupDetailsHeading();
-		 * ReviewYouPickupActions.verifyPickupDateTimeHeading();
-		 * 
-		 * ReviewYouPickupActions.verifyTollCarrier("Toll Intermodal");
-		 * 
-		 * ReviewYouPickupActions.verifyPhoneNumber();
-		 * ReviewYouPickupActions.verifyPickupDate(); //
-		 * ReviewYouPickupActions.verifyReadyTime(); //
-		 * ReviewYouPickupActions.verifyClosingTime();
-		 * ReviewYouPickupActions.verifySpecialInstructions();
-		 * ReviewYouPickupActions.verifyItemDescription();
-		 * ReviewYouPickupActions.verifyNumberofItems();
-		 * ReviewYouPickupActions.verifyLengthWidthHeight();
-		 * ReviewYouPickupActions.verifyVolume(); ReviewYouPickupActions.verifyWeight();
-		 
-
-		 ReviewYouPickupActions.VerifyConfirmPickupDetails(); 
 
 	}
 
-	@Test
+	//@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem",
@@ -248,11 +200,11 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		// ReviewYouPickupActions.ClickConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
-		 ReviewYouPickupActions.VerifyConfirmPickupDetails(); 
+		/* ReviewYouPickupActions.VerifyConfirmPickupDetails(); */
 		// ReviewYouPickupActions.VerifyRefrigerationDetails();
 
 	}
-@Test
+//@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "ServiceExpress", "AccountNumberTINTER",
 			"locationIndex", "ItemTemplateName", "ItemTemplateName2", "Mode", "ChargeToAccount", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh", "refrigerationRefNum",
@@ -400,7 +352,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test
+	//@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "DestinationItem", "lookupName",
 			"lookupItem", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
@@ -467,7 +419,7 @@ public class Toll_IntermodalTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test
+	//@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "DestinationItem", "specialIns" })
 
@@ -523,7 +475,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test
+	//@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "DestinationItem", "specialIns" })
 
@@ -579,7 +531,7 @@ public class Toll_IntermodalTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 
 	}
-@Test
+//@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"ItemTemplateName2", "ChargeToAccount", "NumberOfItems", "Length", "Width", "Height", "Weight",
 			"palletSpace", "Destination", "DestinationItem", "Postcode", "VendorNum", "specialIns" })
@@ -658,7 +610,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	@Test
+	//@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "ServiceExpress", "ItemTemplateName2", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "ChargeToAccount", "Length", "Width", "Height", "Weight",
 			"palletSpace", "Destination", "DestinationItem", "VendorNum", "specialIns" })
@@ -728,7 +680,7 @@ public class Toll_IntermodalTest {
 				ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test
+	//@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"ItemTemplateName2", "ChargeToAccount", "NumberOfItems", "Length", "Width", "Height", "Weight",
 			"palletSpace", "Destination", "DestinationItem", "Postcode", "VendorNum", "specialIns" })
