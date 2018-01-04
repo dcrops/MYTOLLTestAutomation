@@ -8,11 +8,11 @@ import cucumber.api.testng.*;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/bookAPickupFeatures/"}
-		, glue= {""}
-		, plugin= {"html:C:\\Source2\\Source21122017\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
+        ,features = { "src/test/Resources/bookAPickupFeatures/BookAPIckup_TollTasmania_Service_Express.feature"}
+		, glue= {"bookAPickupStepDefinitions"}
+		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 
-                "json:C:\\Source2\\Source21122017\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
+                "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
 				
 }
 				
