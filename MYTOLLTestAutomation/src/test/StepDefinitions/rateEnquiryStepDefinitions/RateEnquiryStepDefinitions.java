@@ -114,4 +114,21 @@ public class RateEnquiryStepDefinitions {
 	}
 
 
+	@Then("^UTESser Verifies Details on Shipment Page$")
+	public void userVerifieTESTsDetailsOnShipmentPage(DataTable rateEquiryTestData) throws Throwable {
+		
+		for (Map<String, String> rateEnquiry : rateEquiryTestData.asMaps(String.class,String.class))
+			   {   
+				PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
+				PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, rateEnquiry.get("TollCarrier"));
+				PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, rateEnquiry.get("Service"));
+				PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, rateEnquiry.get("Account"));
+				PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, rateEnquiry.get("Length")+"cm x "+rateEnquiry.get("Width")+" cm x "+rateEnquiry.get("Height")+"cm" );
+				PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
+				Reporter.log("---------------END OF TEST---------------");
+			}
+	}
+
+	
+
 }
