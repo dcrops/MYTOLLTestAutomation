@@ -465,7 +465,7 @@ public class RateEnquiryActions {
 		PageBase.MaximumWaitForElementEnabled_1();
 		Boolean results=BaseWebdriver.driver.findElement(totalCharge).isDisplayed();
 		if (results=true) {
-		RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
+		//RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
 			
 			RateEnquiryActions.VerifyTotalCharge("Total Charge:");
 			RateEnquiryActions.VerifyGST("GST:");

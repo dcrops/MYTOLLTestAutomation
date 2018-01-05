@@ -8,8 +8,8 @@ import cucumber.api.testng.*;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/bookAPickupFeatures/BookAPIckup_TollTasmania_Service_Express.feature"}
-		, glue= {"bookAPickupStepDefinitions"}
+        ,features = { "src/test/Resources/rateEnquiryFeatures/rateEnquiryTest.feature"}
+		, glue= {"rateEnquiryStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 
                 "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
@@ -17,6 +17,8 @@ import cucumber.api.testng.*;
 }
 				
 )
+
+
 
 public class TestRunner extends AbstractTestNGCucumberTests    {
 

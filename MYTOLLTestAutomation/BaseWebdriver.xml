@@ -3,9 +3,8 @@
 <suite name="Suite" parallel="none">
 	<test name="CucumberTest">
 		<classes>
-			<class name="baseWebdriver.TestRunner">
-
-			</class>
+			<class name="baseWebdriver.TestRunner"></class>
+			
 		</classes>
 	</test> <!-- Test -->
 	<!-- Test -->
