@@ -13,3 +13,5 @@ Feature: Review & Book A Pickup in MyToll
       When User enter following input data to Add Item
       | ItemDescription      | NoOfItems | PalletSpace | Length | Width | Height | Weight |
       | Automation Template1 |        10 |           6 |    100 |   100 |    100 |    900 |
+
+      

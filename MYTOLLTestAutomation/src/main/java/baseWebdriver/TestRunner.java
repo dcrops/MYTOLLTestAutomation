@@ -1,6 +1,5 @@
 package baseWebdriver;
 
-import java.io.File;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.*;
@@ -8,8 +7,8 @@ import cucumber.api.testng.*;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/rateEnquiryFeatures/rateEnquiryTest.feature"}
-		, glue= {"rateEnquiryStepDefinitions"}
+        ,features = { "src/test/Resources/bookAPickupFeatures/BookAPIckup_TollTasmania_Service_Express.feature"}
+		, glue= {"bookAPickupStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 
                 "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
@@ -17,10 +16,6 @@ import cucumber.api.testng.*;
 }
 				
 )
-
-
-//Test
-
 
 public class TestRunner extends AbstractTestNGCucumberTests    {
 
