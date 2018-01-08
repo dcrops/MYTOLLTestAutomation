@@ -27,3 +27,4 @@ Feature: Test Rate Enquiry
       Then User Verifies Details on Shipment Page
       | TollCarrier  |Service     |Account| Length | Width | Height |
       | Toll IPEC    |Road Express|2230899| 10     |   10  |   10   |
+      
