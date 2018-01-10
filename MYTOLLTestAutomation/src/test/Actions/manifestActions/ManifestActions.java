@@ -410,6 +410,8 @@ public class ManifestActions {
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.waitForElement(ShipmentManifestTab, 2);
 		PageBase.moveToElement(ShipmentManifestTab);
 		PageBase.click(ShipmentManifestTab, 2);
