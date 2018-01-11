@@ -3,7 +3,7 @@
 <suite name="Automation Regression Tests">
 	
 	<suite-files>
-	
+
 	<suite-file path="BookAPickup.xml"></suite-file>
 	  <suite-file path="CreateShipment.xml"></suite-file>
 	  <suite-file path="RateEnquiry.xml"></suite-file> 
@@ -11,6 +11,7 @@
 	  
 	<!-- Blocked>	
 	 		<suite-file path="BaseWebdriver.xml"></suite-file> 
+
 		<suite-file path="GenericTests.xml"> </Blocked -->
 	</suite-files>
 

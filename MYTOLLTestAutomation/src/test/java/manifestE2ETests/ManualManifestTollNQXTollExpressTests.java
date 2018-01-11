@@ -123,7 +123,7 @@ public class ManualManifestTollNQXTollExpressTests {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 	}
 	
 }

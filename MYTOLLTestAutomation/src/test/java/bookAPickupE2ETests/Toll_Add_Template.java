@@ -1,3 +1,4 @@
+
 package bookAPickupE2ETests;
 
 import GlobalActions.PageBase;
@@ -255,3 +256,4 @@ public class Toll_Add_Template {
 	}
 
 }
+

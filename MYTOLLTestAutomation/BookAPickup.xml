@@ -132,7 +132,9 @@
 
 
 		<classes>
+
 			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
+
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
 
 

@@ -35,6 +35,7 @@
 		
 		  <classes>
 			<class name="GenericTests.ShareShipment" />
+			<class name="GenericTests.RegistrationPage_UserProfileStore" />
 		</classes>
 		
 	
