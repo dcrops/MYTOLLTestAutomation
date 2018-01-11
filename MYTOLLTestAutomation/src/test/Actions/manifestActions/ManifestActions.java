@@ -158,23 +158,32 @@ public class ManifestActions {
 	
 	public static void AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(String pNewManifestName) {
 		PageBase.MinimumWaitForElementEnabled();
-	
+	try {
 		boolean results = BaseWebdriver.driver.findElement(AddToManifestTtile).isDisplayed();
-		if (results == true) {
+		System.out.println("AddToManifestTtile results" + results);
+		if (results = true) {
 			AddToManifestForExistingAnManiestSubmittingCreateshipment();
-			//MoveToManifestAndCreateNewManifest(pNewManifestName);
-			//ShipmentReviewActions.ClickContinue();
 
+			ShipmentReviewActions.ClickAddToManifestManually();
+			//ShipmentReviewActions.ClickContinue();
+			ManifestActions.MoveToManifestAndCreateNewManifest(pNewManifestName);
+			System.out.println(" NewManifestName passed ");
 		}
-		
-		else {
+	}
+	catch(Exception ex)
+	{
+	
 
 			ShipmentReviewActions.ClickAddToManifestManually();
 
 			System.out.println("ClickAddToManifestManually");
-			
+			ManifestActions.MoveToManifestAndCreateNewManifest(pNewManifestName);
+			System.out.println(" NewManifestName passed ");
 		
-		}
+		
+	}
+		
+		
 	
 	}
 

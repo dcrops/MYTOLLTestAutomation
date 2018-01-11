@@ -16,7 +16,7 @@ import rateEnquiryActions.RateEnquiryActions;
 public class TollNQXTollExpressTests {
 	
 		
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception
 			{
 				BaseWebdriver.setUp();
@@ -67,7 +67,7 @@ public class TollNQXTollExpressTests {
 	}
 	
 	
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceExpress","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollNQXTollExpress_E2ETest_TID_1052_Service_Express(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -77,7 +77,6 @@ public class TollNQXTollExpressTests {
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.SelectMode(Mode);
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
-		
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);

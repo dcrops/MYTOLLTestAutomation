@@ -14,7 +14,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 public class TollNQXTollExpressTests {
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		PageBase.MediumWaitForElementEnabled();
@@ -290,7 +290,7 @@ public class TollNQXTollExpressTests {
 	}
 
 	//@Test(priority = 3)
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",

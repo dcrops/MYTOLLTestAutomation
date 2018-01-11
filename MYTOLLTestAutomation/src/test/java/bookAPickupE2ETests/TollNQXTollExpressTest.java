@@ -166,15 +166,17 @@ public class TollNQXTollExpressTest {
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
-	@Test
+	@Test (priority=-1)
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
-			"lookupName", "specialIns" })
+			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
+			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
 	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Express(String TollCarrier,
 			String ServiceExpress, String ServiceDangerousGoods, Integer locationIndex, String ItemTemplateName,
 			String Length, String NumberOfItems, String Width, String Height, String Weight, String palletSpace,
-			String destination, String lookupName, String specialIns) {
+			String destination, String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
+			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -213,6 +215,12 @@ public class TollNQXTollExpressTest {
 
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDangerousGoods);
+		
+		// Enter dangerous goods details
+				BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
+				BookAPickupActions.SelectPackgingGroup(PackingGroup);
+				BookAPickupActions.EnterTechnicalName(technicalName);
+				PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);

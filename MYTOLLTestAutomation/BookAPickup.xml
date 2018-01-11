@@ -129,18 +129,22 @@
 		<parameter name="TNZDesSuburb" value="BEERESCOURT" />
 		<parameter name="TNZDesPostCode" value="3210" />
 
+
+
 		<classes>
-		
-			
-			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
-			<!-- Blocked> <class name="bookAPickupE2ETests.TollPriorityAusTest" />
-			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
+			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
-			<class name="bookAPickupE2ETests.TollIPECTest" />	 
-			
-			<class name="bookAPickupE2ETests.Toll_Add_Template" />	
-			<class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress" />
-			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" /></Blocked -->
+
+
+			<!-- Blocked> <class name="bookAPickupE2ETests.TollNQXTollExpressTest"/> 
+			<class name="bookAPickupE2ETests.Toll_IntermodalTest" />
+			 <class name="bookAPickupE2ETests.TollPriorityAusTest"/> 
+			 <class name="bookAPickupE2ETests.TollPriorityNZTest" /> 
+				<class name="bookAPickupE2ETests.TollTasmaniaTest"/> 
+				<class name="bookAPickupE2ETests.TollIPECTest" /> 
+				<class name="bookAPickupE2ETests.Toll_Add_Template"/> 
+				<class name="bookAPickupE2ETests.Toll_IntermodalTest_AddAddress" /> 
+				<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" /> </Blocked -->
 
 
 		</classes>

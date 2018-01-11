@@ -15,9 +15,9 @@ import reviewYourPickupActions.ReviewYourPickupActions;
 
 public class TollPriorityAusTest {
 
-	public static Integer locationIndex = 4;
+	
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
@@ -25,7 +25,7 @@ public class TollPriorityAusTest {
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 			"Destination", "DestinationItem","DestinationPostcode", "specialIns" })
@@ -38,7 +38,8 @@ public class TollPriorityAusTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		String accountNumber= BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNumber);
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
@@ -103,7 +104,7 @@ public class TollPriorityAusTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, AccountNumberTollPrioAu, company, companyLocation, name,
+		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNumber, company, companyLocation, name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYourPickupActions.VerifyItemDetails1TollPrioAU("0", "ITEM DETAILS","Box / Carton", DestinationPostcode,
 				ServiceParcelsOffPeak,  NumberOfItems,  Length, Width, Height,

@@ -129,7 +129,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	//@Test
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem",
@@ -204,7 +204,7 @@ public class Toll_IntermodalTest {
 		// ReviewYouPickupActions.VerifyRefrigerationDetails();
 
 	}
-//@Test
+@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "ServiceExpress", "AccountNumberTINTER",
 			"locationIndex", "ItemTemplateName", "ItemTemplateName2", "Mode", "ChargeToAccount", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh", "refrigerationRefNum",
@@ -352,7 +352,9 @@ public class Toll_IntermodalTest {
 
 	}
 
-	//@Test
+	
+	
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "DestinationItem", "lookupName",
 			"lookupItem", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
@@ -419,7 +421,7 @@ public class Toll_IntermodalTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	//@Test
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "DestinationItem", "specialIns" })
 
@@ -475,7 +477,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	//@Test
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "DestinationItem", "specialIns" })
 
@@ -531,7 +533,7 @@ public class Toll_IntermodalTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 
 	}
-//@Test
+ @Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"ItemTemplateName2", "ChargeToAccount", "NumberOfItems", "Length", "Width", "Height", "Weight",
 			"palletSpace", "Destination", "DestinationItem", "Postcode", "VendorNum", "specialIns" })
@@ -589,7 +591,7 @@ public class Toll_IntermodalTest {
 		BookAPickupActions.selectContainFoodItem();
 
 		BookAPickupActions.selectDangerousGoodNewLine();
-		BookAPickupActions.ClickAddANewLine();
+		//BookAPickupActions.ClickAddANewLine();
 
 		PageBase.MediumWaitForElementEnabled();
 		
@@ -610,7 +612,7 @@ public class Toll_IntermodalTest {
 
 	}
 
-	//@Test
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "ServiceExpress", "ItemTemplateName2", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "ChargeToAccount", "Length", "Width", "Height", "Weight",
 			"palletSpace", "Destination", "DestinationItem", "VendorNum", "specialIns" })
@@ -680,7 +682,7 @@ public class Toll_IntermodalTest {
 				ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	//@Test
+	@Test
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceGeneral", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"ItemTemplateName2", "ChargeToAccount", "NumberOfItems", "Length", "Width", "Height", "Weight",
 			"palletSpace", "Destination", "DestinationItem", "Postcode", "VendorNum", "specialIns" })
@@ -732,6 +734,7 @@ public class Toll_IntermodalTest {
 		for (int i = 1; i < 99; i++) {
 
 			// Add a new item
+			PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.AddANewLine(destination, DestinationItem, ServiceExpress, ItemTemplateName2,
 					NumberOfItems, palletSpace, ChargeToAccount, Length, Width, Height, Weight);
 
@@ -764,7 +767,7 @@ public class Toll_IntermodalTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 
 	}
 
