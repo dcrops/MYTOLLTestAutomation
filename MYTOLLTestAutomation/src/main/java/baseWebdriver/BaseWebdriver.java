@@ -8,7 +8,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.*;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import myTollHomePageActions.MyTollHomePageActions;
@@ -74,12 +76,6 @@ public class BaseWebdriver {
 		//DesiredCapabilities capabilities = new DesiredCapabilities();
 		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
-
-		//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
-		//BaseWebdriver.driver = new InternetExplorerDriver();
-		
-	   // Point point=new Point(0,1920);
-	  //  driver.manage().window().setPosition(point);
 
 		MyTollHomePageActions.LaunchMyToll(url);
 		BaseWebdriver.driver.manage().window().maximize();

@@ -25,7 +25,7 @@ public class TollIPECTests {
 	 * MyTollHomePageActions.ClickMenu(); CreateShipmentActions.ClickShipment(); }
 	 */
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
@@ -33,7 +33,7 @@ public class TollIPECTests {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "AccountNumberTIPEC", "WhoPays", "whoPays", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -263,7 +263,7 @@ public class TollIPECTests {
 			"VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress_ConsolidateShipments(String TollCarrier,
+	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress_Z_ConsolidateShipments(String TollCarrier,
 			String ServiceRoadExpress, String AccountNumber, Integer WhoPays, String whoPays, Integer Sender,
 			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,

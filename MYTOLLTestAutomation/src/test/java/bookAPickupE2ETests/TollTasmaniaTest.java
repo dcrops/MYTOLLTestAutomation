@@ -19,7 +19,7 @@ public class TollTasmaniaTest {
 
 	public static Integer locationIndex = 4;
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
@@ -112,7 +112,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem",

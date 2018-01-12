@@ -16,7 +16,7 @@ public class TollPriorityNZTests {
 
 	
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception
 			{
 				BaseWebdriver.setUp();
@@ -26,7 +26,7 @@ public class TollPriorityNZTests {
 			}
 	
 
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({"TollCarrierTollPrioNZ", "ServiceGlobalExpressParcels", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","TNZLength", "TNZWidth", "TNZHeight", "TNZWeight","TNZQtyType", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode", "TNZCountry", "CountryPostCode"})
 	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode, String Country, String CountryPostCode) {

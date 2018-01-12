@@ -38,12 +38,10 @@ public class Toll_IntermodalTest_AddAddress {
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
-		//MyTollHomePageActions.ClickMenu();
-		//MyTollHomePageActions.ClickBookAPIckupMenu();
 
 	}
 
-	@Test(priority = 1)
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })

@@ -24,7 +24,7 @@ import rateEnquiryActions.RateEnquiryActions;
 public class TollIPECTests {
 		
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception
 			{
 				BaseWebdriver.setUp();
@@ -33,7 +33,7 @@ public class TollIPECTests {
 				MyTollHomePageActions.ClickGetRateEnquiery();
 			}
 	
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({"TollCarrierTollIPEC", "ServiceRoadExpress", "TIPAccountNo","ItemTemplateName","TIPBillingType","TIPMode", "TIPNumberOfItems","TIPLength", "TIPWidth", "TIPHeight", "TIPWeight","TIPQtyType", "TIPOriginSuburb","TIPOriginPostCode", "TIPDesSuburb", "TIPDesPostCode"})
 	public void RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_RoadExpress(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode)
@@ -42,7 +42,6 @@ public class TollIPECTests {
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
-		
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);

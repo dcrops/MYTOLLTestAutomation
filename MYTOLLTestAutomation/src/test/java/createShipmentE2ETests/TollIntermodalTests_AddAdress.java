@@ -16,7 +16,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 public class TollIntermodalTests_AddAdress {
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
@@ -24,7 +24,7 @@ public class TollIntermodalTests_AddAdress {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
