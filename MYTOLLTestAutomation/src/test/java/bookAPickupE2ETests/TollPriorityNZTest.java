@@ -143,7 +143,8 @@ public class TollPriorityNZTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -211,7 +212,7 @@ public class TollPriorityNZTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYourPickupActions.VerifyPickupDetailsTollPrioNZ(TollCarrier, AccountNumberTollPrioNZ, company, companyLocation, name,
+		ReviewYourPickupActions.VerifyPickupDetailsTollPrioNZ(TollCarrier, accountNo, company, companyLocation, name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYourPickupActions.VerifyItemDetails1TollPrioNZ("0", "ITEM DETAILS", "Skid", DestinationNZPostcode,
 				ServiceParcelsOffPeak, NumberOfItems, Length, Width, Height, TotalWeight, DGGoodsNo);

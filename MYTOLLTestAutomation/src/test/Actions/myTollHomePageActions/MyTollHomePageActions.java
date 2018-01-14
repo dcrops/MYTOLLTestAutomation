@@ -5,6 +5,7 @@ import GlobalActions.PageBase;
 import java.util.Date;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
@@ -104,13 +105,31 @@ public class MyTollHomePageActions {
 	}
 	
 	
-	public static void Login(String userName, String pPassword)
+	public static void Login(String userName, String pPassword) throws Exception
 	{
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(login).click();
+		BaseWebdriver.driver.navigate().refresh();
+		PageBase.retryingFindClick(login);
+		try {
+			Boolean results=BaseWebdriver.driver.findElement(emailAddress).isDisplayed();
+			if(results=true)
+			{
 		BaseWebdriver.driver.findElement(emailAddress).sendKeys(userName);
 		BaseWebdriver.driver.findElement(password).sendKeys(pPassword);
-		BaseWebdriver.driver.findElement(loginBtn).click();
+		BaseWebdriver.driver.findElement(loginBtn).sendKeys(Keys.ENTER);
+		}
+		}
+		
+		catch(Exception ex)
+		{
+			BaseWebdriver.tearDown();
+			BaseWebdriver.setUp();
+			BaseWebdriver.driver.navigate().refresh();
+			PageBase.retryingFindClick(login);
+			BaseWebdriver.driver.findElement(emailAddress).sendKeys(userName);
+			BaseWebdriver.driver.findElement(password).sendKeys(pPassword);
+			BaseWebdriver.driver.findElement(loginBtn).sendKeys(Keys.ENTER);
+		}
 	}
 
 	public static void ClickName()
@@ -188,9 +207,17 @@ public class MyTollHomePageActions {
 	
 	public static void ClickBookAPIckupMenu()
 	{
+		try {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(BookAPickup).click();
 		
+		}
+		catch(Exception ex)
+		{
+			BaseWebdriver.driver.navigate().refresh();
+			PageBase.retryingFindClick(BookAPickup);
+		}
+			
 	}
 	
 	public static void ClickGetRateEnquiery()

@@ -200,7 +200,8 @@ public class TollTasmaniaTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -299,7 +300,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, AccountNumberTollTas, company, companyLocation, name,
+		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNo, company, companyLocation, name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYourPickupActions.VerifyItemDetails1TollTasmania("0", "ITEM DETAILS", ItemTemplateName,
 				DestinationPostcode, ServiceDGFreight, chargeToAccount, NumberOfItems, palletSpace, Length, Width,
@@ -610,7 +611,7 @@ public class TollTasmaniaTest {
 		// BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions,BookAPickupActions.specialInstructions);
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();

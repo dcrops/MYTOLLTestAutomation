@@ -148,7 +148,7 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, AccountNumberTollNQX, company, companyLocation, name,
+		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNo, company, companyLocation, name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYourPickupActions.VerifyItemDetails1TollNQX("0", "ITEM DETAILS", ItemTemplateName, DestinationPostcode,
 				ServiceDangerousGoods, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height, Volume,
@@ -166,7 +166,7 @@ public class TollNQXTollExpressTest {
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
-	@Test (priority=-1)
+	@Test
 	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
@@ -181,7 +181,8 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
@@ -191,13 +192,13 @@ public class TollNQXTollExpressTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
-
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-		BookAPickupActions.SelectDestination(destination);
+		
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
 
@@ -215,7 +216,7 @@ public class TollNQXTollExpressTest {
 
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDangerousGoods);
-		
+		BookAPickupActions.SelectDangerousGoods(1);
 		// Enter dangerous goods details
 				BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
 				BookAPickupActions.SelectPackgingGroup(PackingGroup);
@@ -252,6 +253,8 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
@@ -299,7 +302,8 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -354,7 +358,8 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
@@ -407,7 +412,8 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
@@ -460,7 +466,8 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
@@ -521,7 +528,8 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
@@ -578,7 +586,8 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -644,7 +653,8 @@ public class TollNQXTollExpressTest {
 			String pDgPkgQty, String pDgQtyKg, String technicalName, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -730,7 +740,7 @@ public class TollNQXTollExpressTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-		 BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 
 	}
 

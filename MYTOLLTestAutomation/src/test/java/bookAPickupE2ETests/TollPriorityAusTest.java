@@ -35,15 +35,17 @@ public class TollPriorityAusTest {
 			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 			String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		//BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.EnterTollCarrierUsingKeyboard(TollCarrier);
+		//bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.SelectAccountNumberUsingKeyboard();
 		String accountNumber= BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNumber);
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		BookAPickupActions.SelectLocation2(locationIndex);
+		//BookAPickupActions.SelectLocation2(locationIndex);
+		BookAPickupActions.SelectLocationUsingKeyboard(locationIndex);
 
 		String company = BookAPickupActions.GetCompany(1);
 		System.out.println(company);

@@ -68,7 +68,7 @@ public class RegistrationPage_UserProfileStore {
 	
 
 	@Test
-	public void ChangeSecurityQuestion() {
+	public void ChangeSecurityQuestion() throws Exception {
 		//User Changes Memorable Question
 		Reporter.log("User Changes Memorable Question");
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);

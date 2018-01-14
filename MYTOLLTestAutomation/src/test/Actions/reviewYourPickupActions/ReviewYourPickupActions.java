@@ -463,7 +463,22 @@ public class ReviewYourPickupActions {
 	
 	public static void ClickConfirmPickup()
 	{
+	try {
 		BaseWebdriver.driver.findElement(confirmPickupBtn).click();
+	}
+	catch(Exception ex) {
+		
+		BaseWebdriver.driver.findElement(destination).click();
+		BaseWebdriver.driver.findElement(destination).clear();
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
+		PageBase.MinimumWaitForElementEnabled();
+		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+		PageBase.MaximumWaitForElementEnabled();
+	}
+		
+		
 	}
 
 	public static void ClickEdit()
