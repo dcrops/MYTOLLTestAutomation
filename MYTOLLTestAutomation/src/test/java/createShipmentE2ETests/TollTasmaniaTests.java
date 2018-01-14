@@ -295,7 +295,7 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(priority=-4)
+	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -544,7 +544,7 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	
-	@Test(priority=-1)
+	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -561,7 +561,7 @@ public class TollTasmaniaTests {
 			"VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollTasmania_E2ETest_TID_920_Service_General_ShipmentConsolidation(String TollCarrier, String ServiceGeneral,
+	public void CreateShipment_TollTasmania_E2ETest_TID_920_Service_Z_General_ShipmentConsolidation(String TollCarrier, String ServiceGeneral,
 			String AccountNumber, String whoPays, String Mode, Integer Sender, Integer Receiver, String QuoteNumber,
 			String DropOffDepot, String CollectionDepot, String DGContactName, String DGContactNumber,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,

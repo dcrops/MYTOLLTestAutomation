@@ -196,7 +196,7 @@ public class CreateShipmentActions {
 	}
 
 	public static String SelectMode(int i) {
-		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(mode).click();
 		String mode=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).getText();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).click();
@@ -237,7 +237,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectWhoPays(int i) {
-		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(whoPaysdropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[" + i + "]/div")).click();
 
@@ -296,7 +296,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectReceiver(int i) {
-		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(receiverdropdown).click();
 		PageBase.Scrollbar(500, 800);
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
@@ -619,7 +619,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectNotifySenderAndReceiver() {
-		PageBase.MinimumWaitForElementEnabled();
+		//PageBase.MinimumWaitForElementEnabled();
 			
 		
 		try {
@@ -637,7 +637,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterShipmentReferences(String pShipmentRef1, String pShipmentRef2) {
-		PageBase.MinimumWaitForElementEnabled();
+		//PageBase.MinimumWaitForElementEnabled();
 
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 		BaseWebdriver.driver.findElement(shipmentReference1).click();
@@ -663,7 +663,7 @@ public class CreateShipmentActions {
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.MoveToElement(CreateShipmentActions.dropoffDepotdropdown, CreateShipmentActions.notifySenderCheckBox);
 		BaseWebdriver.driver.findElement(dropoffDepotdropdown).click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"drop-off-depot-selector\"]/div[2]/ul/li[" + i + "]/div"))
 				.click();
 		PageBase.MinimumWaitForElementEnabled();
@@ -709,9 +709,9 @@ public class CreateShipmentActions {
 	}
 
 	public static void ItemType(int j) {
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemTypeTextField).click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + j + "]/div"))
 				.click();
 
@@ -752,7 +752,7 @@ public class CreateShipmentActions {
 			System.out.println("Billing type displayed");
 			if (results == true) {
 				BaseWebdriver.driver.findElement(billingTypedropdown).click();
-				PageBase.MinimumWaitForElementEnabled();
+				//PageBase.MinimumWaitForElementEnabled();
 				BaseWebdriver.driver
 						.findElement(By.xpath(
 								"//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='" + pBillingType + "']"))
@@ -766,9 +766,9 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectBillingType(int i) {
-		PageBase.MaximumWaitForElementEnabled();
+		//PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(billingTypedropdown).click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + i + "]/div"))
 				.click();
 
@@ -872,7 +872,7 @@ public class CreateShipmentActions {
 		// PageBase.Scrollbar(coord1,coord2);
 		PageBase.Scrollbar(200, 500);
 		BaseWebdriver.driver.findElement(addNewLine).click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MediumWaitForElementEnabled();
 		BookAPickupActions.EnterItem(ItemTemplate2);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown, CreateShipmentActions.shipmentReference1);

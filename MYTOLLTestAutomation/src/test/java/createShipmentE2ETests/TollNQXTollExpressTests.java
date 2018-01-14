@@ -1309,7 +1309,7 @@ public class TollNQXTollExpressTests {
 			"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Premium_ConsolidateShipments(String TollCarrier,
+	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Z_Premium_ConsolidateShipments(String TollCarrier,
 			String TollNQXServicePremium, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
 			String DropOffDepot, String collectionDepot, String DGContactName, String SenderEmail, String ReceiverEmail,

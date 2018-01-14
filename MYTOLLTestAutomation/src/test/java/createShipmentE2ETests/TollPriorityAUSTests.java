@@ -228,7 +228,7 @@ public class TollPriorityAUSTests {
 		"Reference2Heading", "ShipmentContainDangerousGoodsHeading", "DangerousGoodsDetailsHeading",
 		"VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 		"ShipmentContainDangerousGoodsNo"  })
-	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocumentsShipmentConsolidation(
+	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_Z_GlobalExpressDocumentsShipmentConsolidation(
 			String TollCarrier, String ServiceGlobalExpressDocuments, Integer WhoPays, String whoPays, Integer Sender,
 			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,

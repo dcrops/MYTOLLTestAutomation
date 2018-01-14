@@ -222,7 +222,7 @@ public class TollPriorityNZ {
 			"Reference2Heading", "ShipmentContainDangerousGoodsHeading", "DangerousGoodsDetailsHeading",
 			"VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
-	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_GlobalExpressDocumentsShipmentConsolidation(
+	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_Z_GlobalExpressDocumentsShipmentConsolidation(
 			String TollCarrier, String ServiceGlobalExpressDocuments, Integer WhoPays, String whoPays, Integer Sender,
 			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
