@@ -849,7 +849,7 @@ public class TollIntermodalTests {
 		"WeightHeading", "Reference1Heading", "Reference2Heading", "ShipmentContainDangerousGoodsHeading",
 		"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 		"ShipmentContainDangerousGoodsNo"  })
-	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_General_ConsolidateShipments(String TollCarrier,
+	public void CreateShipment_TollIntermodal_E2ETest_TID_920_Service_Z_General_ConsolidateShipments(String TollCarrier,
 			String ServiceGeneral, String AccountNumber, String whoPays,String Mode, Integer Sender, Integer Receiver,String ReceiverName, String ReceiverItem,String DropOffDepot, String CollectionDepot, Integer dropOffDepot, Integer collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String ItemTemplateName2, String NumberOfItems, String Length, String Width, String Height, String Weight,

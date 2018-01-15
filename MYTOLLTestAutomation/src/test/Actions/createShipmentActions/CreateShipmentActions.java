@@ -718,7 +718,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void NumberOfGarments(String pNumberOfGarments) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MediumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(numberOfGarments).click();
 		BaseWebdriver.driver.findElement(numberOfGarments).clear();
 		BaseWebdriver.driver.findElement(numberOfGarments).sendKeys(pNumberOfGarments);
