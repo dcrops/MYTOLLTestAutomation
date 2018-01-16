@@ -16,6 +16,7 @@ Feature: MYT_2699 Select my Carrier and Account
     Then The screen needs to display the name of the Carrier and the Account Number.
       | TollCarrier              | AccountNumber |
       | Intermodal & Specialised |               |
+      
 
   @tag2
   Scenario: User wants to select my BU and my account
