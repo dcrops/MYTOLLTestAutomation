@@ -10,7 +10,7 @@ Feature: MYT_2799 View and access my Account Summary
       | TollCarrier              | AccountNumber |
       | Intermodal & Specialised |               |
     When User selects Financials or Accounts summary
-    Then User be able to see below details
+    Then User be able to view below details
       | TollCarrier              | AccountNumber | Total Due | 30Days  | 60Days  | 90Days  | 120Days  |
       | Intermodal & Specialised |               | CURRENT   | 30 DAYS | 60 DAYS | 90 DAYS | 120 DAYS |
 
@@ -26,7 +26,7 @@ Feature: MYT_2799 View and access my Account Summary
       | Search Invoice number | Date range from | Date range to |
       | abc                   | 01 Jan 2018     | 30 Jan 2018   |
     And User clicks on Search
-    Then User be able to see Recent Invoices and Invoice Download
+    Then User be able to view Recent Invoices and Invoice Download
 
   @tag1
   Scenario: User wants to view and access Account Summary in Toll IPEC
@@ -37,7 +37,7 @@ Feature: MYT_2799 View and access my Account Summary
       | Invoice Number | DateOfInvoice |
       | abc123         | 2 Jan 2018    |
     And User clicks on Download Results
-    Then User be able to see Download results as follow
+    Then User be able to view Download results as follow
       | File | Status | Size | Created |
       |      | Ready  |      |         |
     And User clicks on Delete
