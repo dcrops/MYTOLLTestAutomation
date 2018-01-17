@@ -60,6 +60,7 @@ public class BaseWebdriver {
 			PageBase.MaximumWaitForElementEnabled();
 		}
 
+		
 		BaseWebdriver.driver.manage().window().maximize();
 
 		/*  DesiredCapabilities capabilities = new DesiredCapabilities();
