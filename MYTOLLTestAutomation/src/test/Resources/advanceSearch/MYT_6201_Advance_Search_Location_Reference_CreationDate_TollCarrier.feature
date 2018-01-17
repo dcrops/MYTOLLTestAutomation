@@ -1,4 +1,4 @@
-Feature: MYT-3482 Advance Search Using Receiver Location, Reference Number, Shipment Creation Date & Toll Carrier
+Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Shipment Creation Date & Toll Carrier
 
   Background: 
     Given User is on the Advance Search Page
