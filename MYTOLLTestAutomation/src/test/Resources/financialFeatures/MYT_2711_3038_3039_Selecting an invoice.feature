@@ -1,5 +1,5 @@
 @tag
-Feature: MYT_2711 Selecting an invoice
+Feature: MYT_2711_3038_3039 Selecting, search and view an invoice
 
   Background: 
     Given User is Registered in MyToll

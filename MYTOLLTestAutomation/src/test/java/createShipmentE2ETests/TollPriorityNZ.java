@@ -67,6 +67,7 @@ public class TollPriorityNZ {
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
 
+		
 		// CreateShipmentActions.SelectReceiver(2);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);

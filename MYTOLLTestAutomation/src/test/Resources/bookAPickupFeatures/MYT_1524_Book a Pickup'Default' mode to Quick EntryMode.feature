@@ -5,7 +5,7 @@ Feature: MYT_1524 Book a Pickup: 'Default' mode to ' Quick Entry ' mode
 
   @tag1
   Scenario: User wants to switch from 'Default' view to 'Quick mode' view in TollTasmania
-    When User selects Toll Carrier as TollTasmania and select Account Number
+     When User selects Toll Carrier and Account Number
       | TollCarrier   | AccountNumber |
       | Toll Tasmania |        100428 |
     And User slects a existing Sender address from the Sender field
@@ -48,7 +48,7 @@ Feature: MYT_1524 Book a Pickup: 'Default' mode to ' Quick Entry ' mode
 
   @tag2
   Scenario: User wants to switch from 'Default' view to 'Quick mode' view in TollNQX|Toll Express
-    When User selects Toll Carrier as TollNQX|Toll Express and select Account Number
+    When User selects Toll Carrier and Account Number
       | TollCarrier | AccountNumber |        |
       | TollNQX     | Toll Express  | 614060 |
     And User slects a existing Sender address from the Sender field
@@ -95,7 +95,7 @@ Feature: MYT_1524 Book a Pickup: 'Default' mode to ' Quick Entry ' mode
 
   @tag3
   Scenario: User wants to navigate across any data elements without using a mouse
-    When User selects Toll Carrier as TollTasmania and select Account Number
+    When User selects Toll Carrier and Account Number
       | TollCarrier   | AccountNumber |
       | Toll Tasmania |        100428 |
     And User slects a existing Sender address from the Sender field

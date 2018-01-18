@@ -212,6 +212,7 @@ public class TollIPECTests {
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
 		//jse.executeScript("scroll(0, 250)");
+		
 
 		CreateShipmentActions.AddANewLineTIPEC(ItemTemplateName2,NumberOfItems2,Length2,Width2,Height2,Weight2,ShipmentRef1,ShipmentRef2);
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
