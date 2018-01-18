@@ -4,6 +4,7 @@ Feature: MYT-3022 Payment Search
   Background: 
     Given User is Registered in MyToll
 
+@tag1
   Scenario: User search Payments for my Account in TDF
     When User selects following fields for search invoices in my account
       | TollCarrier              | AccountBillingNumber | Type    | NoReference |
@@ -17,6 +18,7 @@ Feature: MYT-3022 Payment Search
     Then User be able to see following details in search results
       | InvoiceDate | InvoiceNumber | DueDate | ChargeAmount | AmountDue | PaidAmount | NumberOfInvoices |
 
+@tag2
   Scenario: User search Payments for my Account in TDF
     When User selects following fields for search invoices in my account
       | TollCarrier              | AccountBillingNumber | Type    | NoReference |
@@ -28,6 +30,7 @@ Feature: MYT-3022 Payment Search
     Then User be able to see following details in search results
       | InvoiceDate | InvoiceNumber | DueDate | ChargeAmount | AmountDue | PaidAmount | NumberOfInvoices |
 
+@tag3
   Scenario: User search Payments for my Account in TDF
     When User selects following fields for search invoices in my account
       | TollCarrier              | AccountBillingNumber | Type    |

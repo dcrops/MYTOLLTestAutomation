@@ -4,6 +4,7 @@ Feature: MYT-2775 Invoice Search
   Background: 
     Given User is Registered in MyToll
 
+@tag1
   Scenario: User search Invoices for my Account in TDF
     When User selects following fields for search invoices in my account
       | TollCarrier              | AccountDetail | Type    | Status      |
@@ -16,6 +17,7 @@ Feature: MYT-2775 Invoice Search
     Then User can see following details in search results
       | InvoiceDate | InvoiceNumber | DueDate | ChargeAmount | AmountDue | PaidAmount | NumberOfInvoices |
 
+@tag1
   Scenario: User search Invoices for my Account in TDF
     When User selects following fields for search invoices in my account
       | TollCarrier              | AccountDetail | Type    | InvoiceNumber |
@@ -28,6 +30,7 @@ Feature: MYT-2775 Invoice Search
     Then User can see following details in search results
       | InvoiceDate | InvoiceNumber | DueDate | ChargeAmount | AmountDue | PaidAmount | NumberOfInvoices |
 
+@tag1
   Scenario: User search Invoices for my Account in TDF
     When User selects following fields for search invoices in my account
       | TollCarrier              | AccountDetail | Type       |

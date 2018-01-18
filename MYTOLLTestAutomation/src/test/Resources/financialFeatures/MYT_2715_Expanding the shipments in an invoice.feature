@@ -3,7 +3,8 @@ Feature: MYT-2715 Expanding the shipments in an invoice
 
   Background: 
     Given User is Registered in MyToll
-
+    
+@tag1
   Scenario: User wants to expand the invoice to view and access my connotes for the invoice in TDF
     Given User is in My Invoices screen selecting below Toll carrier and the account
       | TollCarrier              | AccountNumber |

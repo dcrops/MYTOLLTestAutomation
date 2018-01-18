@@ -4,6 +4,7 @@ Feature: MYT-3041 Transaction Search
   Background: 
     Given User is Registered in MyToll
 
+@tag1
   Scenario: User search Transactions for my Account in TDF
     When User selects following fields for search invoices in my account
       | TollCarrier              | AccountBillingNumber | Type        | TransactionNumber |
@@ -18,6 +19,7 @@ Feature: MYT-3041 Transaction Search
       | InvoiceDate | InvoiceNumber | DueDate | ChargeAmount | AmountDue | PaidAmount | NumberOfInvoices |
     Then User be able to view "Shipments", "Miscellaneous Invoices", "Debit / Credit Notes", "Other" Transactions
 
+@tag2
   Scenario: User search Transactions for my Account in TDF
     When User selects following fields for search invoices in my account
       | TollCarrier              | AccountBillingNumber | Type        | TransactionNumber |
@@ -30,6 +32,7 @@ Feature: MYT-3041 Transaction Search
       | InvoiceDate | InvoiceNumber | DueDate | ChargeAmount | AmountDue | PaidAmount | NumberOfInvoices |
     Then User be able to view "Shipments", "Miscellaneous Invoices", "Debit / Credit Notes", "Other" Transactions
 
+@tag3
   Scenario: User search Transactions for my Account in TDF
     When User selects following fields for search invoices in my account
       | TollCarrier              | AccountBillingNumber | Type        |

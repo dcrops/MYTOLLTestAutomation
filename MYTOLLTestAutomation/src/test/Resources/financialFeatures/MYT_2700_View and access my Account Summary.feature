@@ -14,7 +14,7 @@ Feature: MYT_2799 View and access my Account Summary
       | TollCarrier              | AccountNumber | Total Due | 30Days  | 60Days  | 90Days  | 120Days  |
       | Intermodal & Specialised |               | CURRENT   | 30 DAYS | 60 DAYS | 90 DAYS | 120 DAYS |
 
-  @tag1
+  @tag2
   Scenario: User wants to view and access Account Summary in PRIO
     Given User selects below Toll carrier and the account that has full financial access
       | TollCarrier         | AccountNumber |
@@ -28,7 +28,7 @@ Feature: MYT_2799 View and access my Account Summary
     And User clicks on Search
     Then User be able to view Recent Invoices and Invoice Download
 
-  @tag1
+  @tag3
   Scenario: User wants to view and access Account Summary in Toll IPEC
     Given User selects below Toll carrier and the account that has full financial access
       | TollCarrier         | AccountNumber |

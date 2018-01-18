@@ -17,7 +17,7 @@ Feature: MYT-2717 Select Invoice/Document Download
     Then User must see the following selections
       | Invoice Imaged | Consignment Note | Finance Connote | POD | Simple Spreadsheet | Detailed Spreadsheet |
 
-  @tag1
+  @tag2
   Scenario: User wants to select Invoice/Document Download in Prio
     Given User is in My Invoices screen selecting below Toll carrier and the account
       | TollCarrier         | AccountNumber |
@@ -30,7 +30,7 @@ Feature: MYT-2717 Select Invoice/Document Download
     Then User must see the following selections
       | Invoice Imaged | Consignment Note | Finance Connote | POD | Simple Spreadsheet | Detailed Spreadsheet |
 
-  @tag1
+  @tag3
   Scenario: User wants to select Invoice/Document Download in IPEC
     Given User is in My Invoices screen selecting below Toll carrier and the account
       | TollCarrier | AccountNumber |

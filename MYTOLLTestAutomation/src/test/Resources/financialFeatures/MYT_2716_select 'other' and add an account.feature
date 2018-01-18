@@ -4,6 +4,7 @@ Feature: MYT-2715 Expanding the shipments in an invoice
   Background: 
     Given User is Registered in MyToll
     
+    @tag1
     Scenario: User with BU ADMIN access selects 'other' and add an own account in TDF
     When User is in My Invoices screen selecting below Toll carrier and the account
       | TollCarrier              | AccountDetail |
