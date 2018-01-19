@@ -6,6 +6,7 @@ Feature: MYT-6292 Manifest : Save Shipment as a Draft from open Manifests
     @tag1
     Scenario: User Saves Shipment In Progress from the Manifest Tab as a Draft - TDF
     When User Click My Manifest tab on My Dahsboad
+    And User Selects a TDF Shipment
     And User has the option to Save the Shipment as a Draft
     And User selects a shipment to save as a draft
     |Toll Carrier|
@@ -18,6 +19,7 @@ Feature: MYT-6292 Manifest : Save Shipment as a Draft from open Manifests
     @tag2
     Scenario: User Saves Shipment In Progress from the Manifest Tab as a Draft - TGX
     When User Click My Manifest tab on My Dahsboad
+    And User Selects a TGX Shipment
     And User has the option to Save the Shipment as a Draft
     And User selects a shipment to save as a draft
     |Toll Carrier|
@@ -28,6 +30,36 @@ Feature: MYT-6292 Manifest : Save Shipment as a Draft from open Manifests
     |100XXXXXXX|
     
     
+    @tag3
+    Scenario: User is able to Save Shipment as a Draft throught the Create Shipment Page - TDF
+    When User is on the Create Shipment Page
+    And User Completes Module 1 in the Create Shipment Page
+      |TollCarrier   |Service |Who Pays |AccountNumber |
+      |Toll Tasmania |General |Sender   |100428 |
+    And User Enters Line Items for Shipment in Module 2
+      | ItemTemplateName     | NumberOfItems | Length | Width | Height | Weight |
+      | Automation Template1 |        10     |    10  |   10  |   10   |   10   |
+    And User Clicks Save Draft Option
+    And There is a UI prompt displaying Toll Shipment Number and Shipment Saved Message
+    And UI prompt is availble with Go Back to 'Create Shipment' page and Clicks it
+    Then User gets navigated back to 'Create Shipment' Page
     
-
+    
+    @tag4
+    Scenario: User is able to Save Shipment as a Draft throught the Create Shipment Page - TGX
+    When User is on the Create Shipment Page
+    And User Completes Module 1 in the Create Shipment Page
+      |TollCarrier            |Service                         |Who Pays |AccountNumber |
+      |Toll Priority (Aus)    |Auswide 3kg Satchel - Overnight |Sender   |401509 |
+     And User Enters Line Items for Shipment in Module 2
+      | ItemTemplateName     | NumberOfItems | Length | Width | Height | Weight |
+      | Automation Template1 |        10     |    10  |   10  |   10   |   10   |
+    And User Clicks Save Draft Option
+    And There is a UI prompt displaying Toll Shipment Number and Shipment Saved Message
+    And UI prompt is availble with Go Back to 'My Dashboard' and Clicks it
+    Then User gets navigated back to 'My Dashboard' 
+    
+    @tag5
+    Scenario: "Recheck User Story when application is available"
+    When Check
     
