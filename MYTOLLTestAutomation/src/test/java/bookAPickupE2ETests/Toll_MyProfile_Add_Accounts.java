@@ -41,37 +41,37 @@ public class Toll_MyProfile_Add_Accounts {
 	
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollIntermodal","AccountNumberTInter", "AccountAccessTypeFullFinancial"})
-	public void addTemplateIntermodal(String TollCarrier, String AccountNo, String AccessType ) {
+	public void addAccountsIntermodal(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollTasmania","AccountNumberTTas", "AccountAccessTypeFullFinancial"})
-	public void addTemplateTasmania(String TollCarrier, String AccountNo, String AccessType ) {
+	public void addAccountsTasmania(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollNQXTollExpress","AccountNumberTNQX", "AccountAccessTypeFullFinancial"})
-	public void addTemplateNQX(String TollCarrier, String AccountNo, String AccessType ) {
+	public void addAccountsNQX(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollIPEC","AccountNumberTIPEC", "AccountAccessTypeFullFinancial"})
-	public void addTemplateIPEC(String TollCarrier, String AccountNo, String AccessType ) {
+	public void addAccountsIPEC(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioAU","AccountNumberTPrioAU", "AccountAccessTypeFullFinancial"})
-	public void addTemplatePrioAU(String TollCarrier, String AccountNo, String AccessType ) {
+	public void addAccountsPrioAU(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioNZ","AccountNumberTPrioNZ", "AccountAccessTypeFullFinancial"})
-	public void addTemplatePrioNZ(String TollCarrier, String AccountNo, String AccessType ) {
+	public void addAccountsPrioNZ(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 

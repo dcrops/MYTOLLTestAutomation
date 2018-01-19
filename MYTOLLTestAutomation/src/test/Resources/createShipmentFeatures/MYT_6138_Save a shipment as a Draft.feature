@@ -54,6 +54,7 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
     When User clicks on 'Add New Shipment' from an 'In Progress' Manifest
     Then User MUST have an option to SAVE the Shipment as a Draft Shipment
 
+
   @tag1
   Scenario: User wants to Save a Shipment as a 'Draft'in TGX
     When User selects 'Dispatch date' in to create a shipment
