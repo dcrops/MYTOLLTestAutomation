@@ -3,7 +3,7 @@
 <suite name="Automation Regression Tests">
 	
 	<suite-files>
-   <suite-file path="Manifest.xml"></suite-file> 
+  <suite-file path="BookAPickup.xml"></suite-file>
  
 	<!-- Blocked>	
 	
