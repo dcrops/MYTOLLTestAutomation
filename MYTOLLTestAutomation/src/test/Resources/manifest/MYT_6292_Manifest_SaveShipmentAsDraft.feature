@@ -15,6 +15,8 @@ Feature: MYT-6292 Manifest : Save Shipment as a Draft from open Manifests
     Then user navigated to My Draft Shipments tab and verifies if the shipment exists
     |ShipmentNo|
     |100XXXXXXX|
+    When User selects a Draft Shipment
+    Then User can see all data in the draft shipment transferred to the 'Create Shipment' page
     
     @tag2
     Scenario: User Saves Shipment In Progress from the Manifest Tab as a Draft - TGX
@@ -28,6 +30,8 @@ Feature: MYT-6292 Manifest : Save Shipment as a Draft from open Manifests
     Then user navigated to My Draft Shipments tab and verifies if the shipment exists
     |ShipmentNo|
     |100XXXXXXX|
+    When User selects a Draft Shipment
+    Then User can see all data in the draft shipment transferred to the 'Create Shipment' page
     
     
     @tag3
@@ -58,6 +62,10 @@ Feature: MYT-6292 Manifest : Save Shipment as a Draft from open Manifests
     And There is a UI prompt displaying Toll Shipment Number and Shipment Saved Message
     And UI prompt is availble with Go Back to 'My Dashboard' and Clicks it
     Then User gets navigated back to 'My Dashboard' 
+    Then User can see pre-filled data available in 'Draft Shipments'
+    Then Draft Shipment MUST be saved under 'Draft Shipments' tab in 'My Dashboard'
+    When User selects a Draft Shipment
+    Then User can see all data in the draft shipment transferred to the 'Create Shipment' page
     
     @tag5
     Scenario: "Recheck User Story when application is available"
