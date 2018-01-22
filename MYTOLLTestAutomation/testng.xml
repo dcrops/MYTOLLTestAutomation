@@ -3,8 +3,8 @@
 <suite name="Automation Regression Tests">
 	
 	<suite-files>
-  <suite-file path="CreateShipment.xml"></suite-file>
-
+   <suite-file path="Manifest.xml"></suite-file> 
+ 
 	<!-- Blocked>	
 	
 	  <suite-file path="CreateShipment.xml"></suite-file>

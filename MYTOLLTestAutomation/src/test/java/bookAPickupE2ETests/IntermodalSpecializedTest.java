@@ -321,7 +321,7 @@ public class IntermodalSpecializedTest {
 	}
 
 	//@Test(priority=-1)
-	//@Test
+	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
@@ -513,6 +513,7 @@ public class IntermodalSpecializedTest {
 	}
 
 //	@Test(priority=-1)
+	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServicePremium", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -620,6 +621,7 @@ public class IntermodalSpecializedTest {
 	}
 
 	//@Test(priority=-1)
+	@Test
 	@Parameters({ "IntermodalSpecialized", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })

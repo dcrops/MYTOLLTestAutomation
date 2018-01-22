@@ -321,7 +321,7 @@ public class ManifestIntermodalSpecializedTests {
 		
 		
 	}
-
+	
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
@@ -403,7 +403,7 @@ public class ManifestIntermodalSpecializedTests {
 	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 }
