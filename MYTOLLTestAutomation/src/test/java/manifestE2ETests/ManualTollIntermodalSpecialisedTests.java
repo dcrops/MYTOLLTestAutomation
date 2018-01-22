@@ -20,7 +20,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 import manifestActions.ManifestActions;
 
 
-public class ManualManifestTollNQXTollExpressTests {
+public class ManualTollIntermodalSpecialisedTests {
 	
 	@BeforeMethod
 	public void RunSetup() throws Exception {
@@ -31,11 +31,11 @@ public class ManualManifestTollNQXTollExpressTests {
 
 	
 	@Test
-	@Parameters({"TollCarrierTollNQXTollExpress", "ServicePremium", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
+	@Parameters({"TollIntermodalSpecialised", "ServicePremium", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount"}) 
-	public void Manifest_TollNQXTollExpress_E2ETest_TID_1127_Service_Premium_AddManifestManual(String TollCarrier, String TollNQXServicePremium,
+	public void Manifest_TollIntermodalSpecialised_E2ETest_TID_1127_Service_Premium_AddManifestManual(String TollCarrier, String ServicePremium,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
@@ -56,9 +56,9 @@ public class ManualManifestTollNQXTollExpressTests {
 		PageBase.verifyTextExist(ManifestActions.manifestHeading, "MANIFEST - "+NewManifestName);
 		Reporter.log("User Clicks Add New Shipment");
 		PageBase.click(ManifestActions.AddNewShipment, 5);
-		PageBase.verifyTextExistAttribute(ManifestActions.TollCarier, TollCarrier);
+		PageBase.verifyTextExistAttributeContains(ManifestActions.TollCarier, TollCarrier);
 		Reporter.log("User Enters Shipment Details");
-		CreateShipmentActions.EnterService(TollNQXServicePremium);
+		CreateShipmentActions.EnterService(ServicePremium);
 		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.SelectAccountNumber1();
@@ -96,7 +96,7 @@ public class ManualManifestTollNQXTollExpressTests {
 		
 		//Book a Pick Up Page
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
-		PageBase.verifyTextExistAttribute(BookAPickupActions.TollCarrierTextField, TollCarrier);
+		PageBase.verifyTextExistAttributeContains(BookAPickupActions.TollCarrierTextField, TollCarrier);
 		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "398185656");
 		String pickABookUpAccountNo = BaseWebdriver.driver.findElement(BookAPickupActions.accountNumber).getAttribute("value");
 		if (pickABookUpAccountNo.contains(AccountNo)) {

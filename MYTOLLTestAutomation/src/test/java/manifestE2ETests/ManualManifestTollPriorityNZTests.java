@@ -89,6 +89,7 @@ public class ManualManifestTollPriorityNZTests {
 		//Book a Pick Up Page
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
 		PageBase.verifyTextExistAttribute(BookAPickupActions.TollCarrierTextField, TollCarrier);
+		
 		String pickABookUpAccountNo = BaseWebdriver.driver.findElement(BookAPickupActions.accountNumber).getAttribute("value");
 		if (pickABookUpAccountNo.contains(AccountNo)) {
 			Reporter.log("Expected Text : "+AccountNo+ " Matched the Text on Screen :" +pickABookUpAccountNo);

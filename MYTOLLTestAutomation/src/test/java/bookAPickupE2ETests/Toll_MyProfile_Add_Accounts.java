@@ -39,12 +39,6 @@ public class Toll_MyProfile_Add_Accounts {
 	}
 	
 	
-	/*@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollIntermodal","AccountNumberTInter", "AccountAccessTypeFullFinancial"})
-	public void addAccountsIntermodal(String TollCarrier, String AccountNo, String AccessType ) {
-		this.addAccount(TollCarrier, AccountNo,  AccessType);
-	}*/
-	
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollTasmania","AccountNumberTTas", "AccountAccessTypeFullFinancial"})
 	public void addAccountsTasmania(String TollCarrier, String AccountNo, String AccessType ) {
@@ -52,7 +46,7 @@ public class Toll_MyProfile_Add_Accounts {
 	}
 	
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollNQXTollExpress","AccountNumberTNQX", "AccountAccessTypeFullFinancial"})
+	@Parameters({ "TollIntermodalSpecialised","AccountNumberTNQX", "AccountAccessTypeFullFinancial"})
 	public void addAccountsNQX(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
@@ -103,7 +97,7 @@ public class Toll_MyProfile_Add_Accounts {
 			PageBase.MaximumWaitForElementEnabled_1();
 			Reporter.log("User Selects Toll Carrier - "+Carrier );
 			PageBase.click(BookAPickupActions.addAccountCarrier, 10);
-			PageBase.click(By.xpath("//*[@id=\"addAccountForm\"]//*//div/ul/li/div[text()='"+Carrier+"']"), 10);
+			PageBase.click(By.xpath("//*[@id=\"addAccountForm\"]//*//div/ul/li/div[contains(text(),'"+Carrier+"')]"), 10);
 			Reporter.log("User Enters Account Number -"+totalAccounts[i]);
 			PageBase.sendText(BookAPickupActions.addAccountNumber, 10, totalAccounts[i]);
 			Reporter.log("User Selects Access Type - "+AccessType);
@@ -120,7 +114,7 @@ public class Toll_MyProfile_Add_Accounts {
 			
 			//User Filters Carriers
 			PageBase.click(BookAPickupActions.addAccountCarrierSelector, 5);
-			PageBase.click(By.xpath("//*[@id=\"BU-selector\"]//*//div[text()='"+Carrier+"']"),5);
+			PageBase.click(By.xpath("//*[@id=\"BU-selector\"]//*//div[contains(text(),'"+Carrier+"')]"),5);
 			
 			//Verify New Account Exists
 			Reporter.log("User Verifies if New Account Exits");

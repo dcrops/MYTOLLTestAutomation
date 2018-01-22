@@ -214,6 +214,19 @@ public class PageBase {
 		
 	}
 	
+	public static void verifyTextExistAttributeContains(By locator, String expectedText){
+		String getText = BaseWebdriver.driver.findElement(locator).getAttribute("value");
+		
+		if (getText.contains(expectedText)){
+			Reporter.log("Expected Text : "+expectedText+ " Contains within the Text on Screen :" +getText);
+			System.out.println("Expected Text : "+expectedText+ " Contains within the Text on Screen :" +getText);
+		}else{
+			Reporter.log("FAILED: Expected Text : "+expectedText+ " DOES NOT Contains within the Text on Screen :" +getText);
+			Assert.fail("FAILED: Expected Text : "+expectedText+ " DOES NOT Contains within the Text on Screen :" +getText);
+		}
+		
+	}
+	
 	public static void moveToElement(By locator){
 		try {
 			WebElement element = BaseWebdriver.driver.findElement(locator);

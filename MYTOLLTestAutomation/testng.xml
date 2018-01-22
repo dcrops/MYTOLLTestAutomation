@@ -3,8 +3,13 @@
 <suite name="Automation Regression Tests">
 	
 	<suite-files>
+
   <suite-file path="BookAPickup.xml"></suite-file>
  
+
+  <suite-file path="CreateShipment.xml"></suite-file>
+ 
+
 	<!-- Blocked>	
 	
 	  <suite-file path="CreateShipment.xml"></suite-file>
