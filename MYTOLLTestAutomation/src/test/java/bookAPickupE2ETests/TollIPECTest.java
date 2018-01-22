@@ -84,6 +84,7 @@ public class TollIPECTest {
 		BookAPickupActions.ClickReviewBook();
 
 		ReviewYourPickupActions.ClickConfirmPickup();
+		//BookAPickupActions.GetReferenceNumber();
 	}
 
 	@Test
@@ -141,11 +142,12 @@ public class TollIPECTest {
 		ReviewYourPickupActions.ClickConfirmPickup();
 
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		//BookAPickupActions.GetReferenceNumber();
 	}
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 
 	}
 

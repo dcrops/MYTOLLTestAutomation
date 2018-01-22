@@ -109,7 +109,7 @@ public class ReviewYourPickupActions {
 	public static void VerifyPickupDetails(String pTollCarrier, String pAccountNumber, String pCompanyName,String pLocation,String pBookedBy,String pPhoneNumber, String pReadyTime, String pClosingTime,
 			String pSpecialInstructions) {
 		 PageBase.MaximumWaitForElementEnabled();
-		assertEquals(pTollCarrier.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(tollCarrier).getText().replaceAll("\\s", ""));
+		//assertEquals(pTollCarrier.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(tollCarrier).getText().replaceAll("\\s", ""));
 		assertEquals(pAccountNumber.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(accountNumber).getText().replaceAll("\\s", ""));
 		assertEquals(pCompanyName.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(company).getText().replaceAll("\\s", ""));
 		assertEquals(pLocation.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(location).getText().replaceAll("\\s", ""));
@@ -124,7 +124,7 @@ public class ReviewYourPickupActions {
 	public static void VerifyPickupDetailsTollPrioNZ(String pTollCarrier, String pAccountNumber, String pCompanyName,String pLocation,String pBookedBy,String pPhoneNumber, String pReadyTime, String pClosingTime,
 			String pSpecialInstructions) {
 		 PageBase.MaximumWaitForElementEnabled();
-		assertEquals(pTollCarrier.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(tollCarrier).getText().replaceAll("\\s", ""));
+		//assertEquals(pTollCarrier.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(tollCarrier).getText().replaceAll("\\s", ""));
 		assertEquals(pAccountNumber.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(accountNumber).getText().replaceAll("\\s", ""));
 		assertEquals(pCompanyName.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(company).getText().replaceAll("\\s", ""));
 		assertEquals(pLocation.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(location).getText().replaceAll("\\s", ""));
@@ -506,6 +506,7 @@ public class ReviewYourPickupActions {
 		 assertEquals("In transit", BaseWebdriver.driver.findElement(intransit).getText());
 		 assertEquals("Out for delivery", BaseWebdriver.driver.findElement(outForDeliveryLable).getText());
 		 assertEquals("Delivered", BaseWebdriver.driver.findElement(deliveredLable).getText());
+		// BookAPickupActions.GetReferenceNumber() ;
 		 String Emailable="We have sent you an email confirming your pickup booking to:";
 		assertEquals(Emailable.replaceAll("\\s", "")+userName 
 		 	, BaseWebdriver.driver.findElement(emailLable).getText().replaceAll("\\s", ""));

@@ -39,11 +39,11 @@ public class Toll_MyProfile_Add_Accounts {
 	}
 	
 	
-	@Test(groups = { "Shakeout Testing" })
+	/*@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollIntermodal","AccountNumberTInter", "AccountAccessTypeFullFinancial"})
 	public void addAccountsIntermodal(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
-	}
+	}*/
 	
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollTasmania","AccountNumberTTas", "AccountAccessTypeFullFinancial"})

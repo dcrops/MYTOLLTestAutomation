@@ -42,12 +42,12 @@ public class Toll_IntermodalTest_AddAddress {
 	}
 
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
 
 	public void BookAPickup_TollIntermodal_AddAddress(String TollCarrier,
-			String ServiceRefrigeration, Integer locationIndex, String ItemTemplateName, String Length,
+			String ServiceExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
 
@@ -56,7 +56,7 @@ public class Toll_IntermodalTest_AddAddress {
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
-		BookAPickupActions.EnterTollCarrierItem(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
 		BookAPickupActions.SelectAccountNumber1();
 		PageBase.MaximumWaitForElementEnabled();

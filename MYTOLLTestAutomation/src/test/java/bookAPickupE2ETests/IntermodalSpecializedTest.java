@@ -16,7 +16,7 @@ import baseWebdriver.BaseWebdriver;
 import myTollHomePageActions.MyTollHomePageActions;
 import reviewYourPickupActions.ReviewYourPickupActions;
 
-public class TollNQXTollExpressTest {
+public class IntermodalSpecializedTest {
 	public static Integer locationIndex = 4;
 
 	@BeforeMethod
@@ -29,13 +29,13 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDangerousGoods", "ServiceExpress", "AccountNumberTollNQX",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDangerousGoods", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
 			"DestinationItem", "DestinationPostcode", "lookupName", "PackingGroup", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DangerousGoods(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DangerousGoods(String TollCarrier,
 			String ServiceDangerousGoods, String ServiceExpress, String AccountNumberTollNQX, String ItemTemplateName2,
 			Integer locationIndex, String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String DGGoodsYes, String DGGoodsNo, String FoodItems,
@@ -43,13 +43,14 @@ public class TollNQXTollExpressTest {
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 		String company = BookAPickupActions.GetCompany(1);
@@ -148,7 +149,7 @@ public class TollNQXTollExpressTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNo, company, companyLocation, name,
+		ReviewYourPickupActions.VerifyPickupDetails(tollCarrier, accountNo, company, companyLocation, name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYourPickupActions.VerifyItemDetails1TollNQX("0", "ITEM DETAILS", ItemTemplateName, DestinationPostcode,
 				ServiceDangerousGoods, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height, Volume,
@@ -167,24 +168,24 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Express(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Express(String TollCarrier,
 			String ServiceExpress, String ServiceDangerousGoods, Integer locationIndex, String ItemTemplateName,
 			String Length, String NumberOfItems, String Width, String Height, String Weight, String palletSpace,
 			String destination, String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 
@@ -241,22 +242,242 @@ public class TollNQXTollExpressTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 
 	}
+	
+	//@Test (priority=-1)
+	@Test 
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "ServiceDangerousGoods", "locationIndex",
+			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
+			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
+			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
-	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceGeneral", "locationIndex", "ItemTemplateName",
-			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_FCL(String TollCarrier,
+			String ServiceFCL, String ServiceDangerousGoods, Integer locationIndex, String ItemTemplateName,
+			String Length, String NumberOfItems, String Width, String Height, String Weight, String palletSpace,
+			String destination, String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
+			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_General(String TollCarrier,
-			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
-			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
-
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
+		BookAPickupActions.SelectLocation2(locationIndex);
+
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceFCL);
+		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		BookAPickupActions.SelectChargeToAccount2(1);
+		
+		BookAPickupActions.SelectDangerousGoods(2);
+		BookAPickupActions.selectContainFoodItem();
+
+		// Enter Pickup details
+		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectReadyTime();
+		BookAPickupActions.selectClosingTime();
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+
+		// Submit Book a pickup details
+		BookAPickupActions.ClickReviewBook();
+		PageBase.MaximumWaitForElementEnabled();
+		ReviewYourPickupActions.ClickEdit();
+
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceDangerousGoods);
+		BookAPickupActions.SelectDangerousGoods(1);
+		// Enter dangerous goods details
+				BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
+				BookAPickupActions.SelectPackgingGroup(PackingGroup);
+				BookAPickupActions.EnterTechnicalName(technicalName);
+				PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
+
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		BookAPickupActions.SelectChargeToAccount2(1);
+
+		// ReSubmit Book a pickup details
+		BookAPickupActions.ClickReviewBook();
+		PageBase.MaximumWaitForElementEnabled();
+
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+		PageBase.MaximumWaitForElementEnabled();
+
+		// Confirm Pickup and Verify pickup confirmation details
+		ReviewYourPickupActions.ClickConfirmPickup();
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+
+	}
+
+	//@Test(priority=-1)
+	//@Test
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
+			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
+			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
+			"DestinationItem", "DestinationPostcode", "lookupName", "PackingGroup", "packageDescription", "pDgPkgQty",
+			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
+
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DGFCL(String TollCarrier,
+			String ServiceDGFCL, String ServiceExpress, String AccountNumberTollNQX, String ItemTemplateName2,
+			Integer locationIndex, String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems,
+			String Width, String Height, String Weight, String DGGoodsYes, String DGGoodsNo, String FoodItems,
+			String palletSpace, String destination, String DestinationItem, String DestinationPostcode,
+			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
+			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
+
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
+		BookAPickupActions.VerifyBookAPickupScreen();
+		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
+		BookAPickupActions.SelectLocation2(locationIndex);
+		String company = BookAPickupActions.GetCompany(1);
+		System.out.println(company);
+		String location = BookAPickupActions.GetLocation(1);
+		System.out.println(location);
+		String locationLine2 = BookAPickupActions.GetLocationAddressLine2(1);
+		System.out.println(locationLine2);
+		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber(1);
+		System.out.println(addressPhoneNumber);
+		String companyLocation = location + locationLine2;
+		System.out.println(location + " " + locationLine2);
+		String name = BookAPickupActions.GetName();
+
+		System.out.println("name" + name);
+		String phoneNumber = BookAPickupActions.GetPhoneNumber();
+		String phoneNumberModified = phoneNumber.replaceAll("\\s", "");
+		System.out.println(phoneNumber);
+
+		String countryCode = BookAPickupActions.GetCountryCode();
+		System.out.println(countryCode);
+
+		String userPhoneNumber = countryCode + "-" + phoneNumberModified;
+		System.out.println(userPhoneNumber);
+
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterService(ServiceDGFCL);
+		BookAPickupActions.SelectDestination(destination);
+
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		BookAPickupActions.SelectChargeToAccount2(1);
+		String TotalWeight = Weight + " kg";
+		String chargeToAccount = BookAPickupActions.SelectChargeToAccount2(1);
+		String Destination = BookAPickupActions.SelectDestination1(destination, DestinationItem);
+		System.out.println(Destination);
+
+		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		// BookAPickupActions.ReceiverAccountNumber("1236654");
+		String volume = BookAPickupActions.GetVoulme().toString();
+		System.out.println(volume);
+		String Volume = volume + " m3";
+		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.weight);
+		// Shipment contain Dangerous goods=yes and no food items
+		BookAPickupActions.SelectDangerousGoods(1);
+		BookAPickupActions.selectContainFoodItem();
+
+		// Enter dangerous goods details
+		BookAPickupActions.SelectDangerousGoodsDetails(lookupName, packageDescription, pDgPkgQty, pDgQtyKg);
+		BookAPickupActions.SelectPackgingGroup(PackingGroup);
+		BookAPickupActions.EnterTechnicalName(technicalName);
+		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
+
+		String un = BookAPickupActions.GetUNNumber();
+		System.out.println("Un----" + un);
+		String classDivision = BookAPickupActions.GetClassDivision();
+		System.out.println("Class----" + classDivision);
+		String subRisk = BookAPickupActions.GetSubRisk();
+		System.out.println("Subrisk----" + subRisk);
+		String packingGroup1 = BookAPickupActions.GetPackingGroup();
+		System.out.println("packingGroup1" + packingGroup1);
+		String ProperShippingName = BookAPickupActions.GetProperShippingName();
+		System.out.println("ProperShippingName" + ProperShippingName);
+
+		// Add a new item
+		BookAPickupActions.AddANewLineTollNQX(destination, DestinationItem, ServiceExpress, ItemTemplateName2,
+				NumberOfItems, palletSpace, ChargeToAccount, Length, Width, Height, Weight);
+
+		String volume2 = BookAPickupActions.GetVoulme().toString();
+		System.out.println(volume2);
+		String Volume2 = volume2 + " m3";
+
+		BookAPickupActions.selectContainFoodItem();
+
+		BookAPickupActions.selectDangerousGoodNewLine();
+		BookAPickupActions.ClickAddANewLine();
+
+		PageBase.MediumWaitForElementEnabled();
+		BookAPickupActions.selectPickupDate();
+		String pickupDate = BookAPickupActions.ReturnPickupDate();
+		System.out.println(pickupDate);
+		//BookAPickupActions.selectReadyTime();
+		String readyTime = BookAPickupActions.GetReadyTime();
+		System.out.println(readyTime);
+		String closingTime = BookAPickupActions.GetClosingTime();
+		System.out.println(closingTime);
+		BookAPickupActions.EnterSpecialInstructions(specialIns);
+		String specialInstruction = BookAPickupActions.GetSpecialIns();
+		System.out.println(specialInstruction);
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+
+		// Submit Book a pickup details
+		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+		PageBase.MaximumWaitForElementEnabled();
+
+		ReviewYourPickupActions.VerifyPickupDetails(tollCarrier, accountNo, company, companyLocation, name,
+				userPhoneNumber, readyTime, closingTime, specialInstruction);
+		ReviewYourPickupActions.VerifyItemDetails1TollNQX("0", "ITEM DETAILS", ItemTemplateName, DestinationPostcode,
+				ServiceDGFCL, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height, Volume,
+				TotalWeight, DGGoodsYes, FoodItems);
+
+		ReviewYourPickupActions.VerifyDangerousGoodsDetails(DangerousGoodsDetailsHeading, lookupName, classDivision,
+				packingGroup1, subRisk, ProperShippingName, packageDescription, pDgPkgQty, pDgQtyKg, technicalName);
+
+		ReviewYourPickupActions.VerifyItemDetails2TollNQX("1", "ITEM DETAILS", ItemTemplateName2, DestinationPostcode,
+				ServiceExpress, chargeToAccount, NumberOfItems, palletSpace, Length, Width, Height, Volume2,
+				TotalWeight, DGGoodsNo, FoodItems);
+
+		ReviewYourPickupActions.ClickConfirmPickup();
+		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		System.out.println("Book A Pickup reference  " + reference);
+	}
+
+
+
+	@Test
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceGeneral", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_General(String TollCarrier,
+			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
+			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
+
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
+		BookAPickupActions.VerifyBookAPickupScreen();
+		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
@@ -291,15 +512,15 @@ public class TollNQXTollExpressTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "locationIndex", "ItemTemplateName",
+//	@Test(priority=-1)
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServicePremium", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Premium(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Premium(String TollCarrier,
 			String ServicePremium, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
@@ -307,7 +528,7 @@ public class TollNQXTollExpressTest {
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 
@@ -346,22 +567,22 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailGeneral", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRailGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"specialIns" })
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_RailGeneral(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_RailGeneral(String TollCarrier,
 			String ServiceRailGeneral, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 
@@ -398,24 +619,24 @@ public class TollNQXTollExpressTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
+	//@Test(priority=-1)
+	@Parameters({ "IntermodalSpecialized", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Refrigeration(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Refrigeration(String TollCarrier,
 			String ServiceRefrigeration, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName,
 			String specialIns) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 
@@ -452,18 +673,18 @@ public class TollNQXTollExpressTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGRefrigerated", "locationIndex", "ItemTemplateName",
+//	@Test(priority=-1)
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGRefrigerated", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DGRefrigerated(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DGRefrigerated(String TollCarrier,
 			String ServiceDGRefrigerated, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
 			String technicalName, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
@@ -515,23 +736,23 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailDangerousGoods", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRailDangerousGoods", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_RailDangerousGoods(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_RailDangerousGoods(String TollCarrier,
 			String ServiceRailDangerousGoods, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
 			String technicalName, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+	//	BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 
@@ -573,17 +794,17 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_DGExpress(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DGExpress(String TollCarrier,
 			String ServiceDGExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
 			String technicalName, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
@@ -591,7 +812,7 @@ public class TollNQXTollExpressTest {
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 
@@ -641,24 +862,24 @@ public class TollNQXTollExpressTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
+	@Parameters({ "IntermodalSpecialized", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
 			"specialIns" })
 
-	public void BookAPickup_TollNQXTollExpress_E2ETest_TID_295_Service_Express_Edit_ErrorMessagesValidation(
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Express_Edit_ErrorMessagesValidation(
 			String TollCarrier, String ServiceExpress, String ServiceDangerousGoods, Integer locationIndex,
 			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight,
 			String palletSpace, String destination, String lookupName, Integer PackingGroup, String packageDescription,
 			String pDgPkgQty, String pDgQtyKg, String technicalName, String specialIns) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+	//	BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 
@@ -740,7 +961,7 @@ public class TollNQXTollExpressTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-		// BaseWebdriver.tearDown();
+	 BaseWebdriver.tearDown();
 
 	}
 

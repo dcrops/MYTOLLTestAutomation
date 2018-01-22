@@ -40,14 +40,14 @@ public class Toll_Add_Template {
 		
 	}
 	
-	@Test(groups = { "Shakeout Testing" })
+	/*@Test(groups = { "Shakeout Testing" })
 	@Parameters({"TollCarrierTollIPEC", "ServiceRoadExpress","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
 	public void addTemplateIPEC(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
 		this.checkRateEnquiry(Carrier, Service, NumberOfItems, Length, Width, Height, Weight, OriginSuburb, OriginPostCode, DesSuburb, DesPostCode);
 		this.checkCreateShipmentPage(Carrier, Service, NumberOfItems, Length, Width, Height, Weight);
 		this.deleteTemplate(Carrier);
-	}
+	}*/
 
 	
 	@Test(groups = { "Shakeout Testing" })
