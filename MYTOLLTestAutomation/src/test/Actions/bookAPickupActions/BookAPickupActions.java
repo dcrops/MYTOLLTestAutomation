@@ -27,6 +27,7 @@ public class BookAPickupActions {
 
 	public static By TollCarrierDropdown = By.xpath("//*[@id=\"BU-selector\"]/label/a/i");
 	public static By TollCarrierTextField = By.name("placeholder-bu");
+	public static By TollCarrierIntermodalSpecialized = By.xpath("//*[@id=\"BU-selector\"]/div/ul/li[2]/div");
 	public static By AccountNumberDropdown = By.xpath("//*[@id=\"account-selector\"]/label/a/i");
 	public static By AccountNumberDropdownitem1 = By.xpath("//*[@id=\"account-selector\"]/div/ul/li[1]/div[1]");
 	public static By ServiceDropdown = By.xpath("//*[@id=\"service-type-selector\"]//a/i");
@@ -250,27 +251,42 @@ public class BookAPickupActions {
 		}
 
 	}
-
-	public static void EnterTollCarrierUsingKeyboard(String pTollCarrierName) {
+	
+	public static void SelectIntermodalSpecializedCarrier(String pTollCarrierName) {
 				 
 		try {
 			PageBase.MaximumWaitForElementEnabled();
-			action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();//BaseWebdriver.driver.findElement(TollCarrierDropdown).click();	
+			//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();//BaseWebdriver.driver.findElement(TollCarrierDropdown).click();	
+			PageBase.retryingFindClick(TollCarrierDropdown);
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
-			BaseWebdriver.driver.findElement(TollCarrierTextField).click();	
-			action.sendKeys(pressARROW_DOWN).perform();
+			BaseWebdriver.driver.findElement(TollCarrierTextField).click();
+			PageBase.MaximumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(TollCarrierIntermodalSpecialized).click();//.sendKeys(Keys.ARROW_DOWN);
+			//action.sendKeys(pressARROW_DOWN).perform();
+			//action.sendKeys(pressARROW_DOWN).perform();
+			//PageBase.MaximumWaitForElementEnabled();
 			action.sendKeys(pressEnter).perform();
+			PageBase.MaximumWaitForElementEnabled();
+		
+			
 			
 		}
 
 		catch (Exception ex) {
 			BaseWebdriver.driver.navigate().refresh();
+			action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();
 			PageBase.retryingFindClick(TollCarrierDropdown);
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
 			BaseWebdriver.driver.findElement(TollCarrierTextField).click();
+			PageBase.MaximumWaitForElementEnabled();
 			action.sendKeys(pressARROW_DOWN).perform();
+			action.sendKeys(pressARROW_DOWN).perform();
+			PageBase.MaximumWaitForElementEnabled();
 			action.sendKeys(pressEnter).perform();
+			PageBase.MaximumWaitForElementEnabled();
+			
+			
 		}
 
 	}
@@ -287,6 +303,14 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/label/a/i")).click();
 		BaseWebdriver.driver.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li[" + i + "]/div")).click();
+
+	}
+	
+	public static String GetTollCarrier() {
+		PageBase.MaximumWaitForElementEnabled();
+		String TollCarrier=BaseWebdriver.driver.findElement(TollCarrierTextField).getAttribute("value").replaceAll("\\s", "");
+		
+		return TollCarrier;
 
 	}
 
@@ -530,7 +554,9 @@ public class BookAPickupActions {
 	}
 
 	public static String GetReadyTime() {
+		//BookAPickupActions.selectReadyTime();
 		PageBase.MaximumWaitForElementEnabled();
+		
 		String vAvailableTime = BaseWebdriver.driver.findElement(availableTime).getAttribute("value");
 		return vAvailableTime;
 	}
@@ -1232,6 +1258,15 @@ public class BookAPickupActions {
 	public static String GetProperShippingName() {
 
 		return BaseWebdriver.driver.findElement(properShippingName).getAttribute("value").toString();
+
+	}
+	
+	public static String GetReferenceNumber() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		String referenceNumber=BaseWebdriver.driver.findElement(pickUpReferenceNumber).getAttribute("value").toString();
+		System.out.println("Reference Number ");
+		return referenceNumber;
 
 	}
 

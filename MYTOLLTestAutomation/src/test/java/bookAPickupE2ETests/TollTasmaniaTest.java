@@ -27,7 +27,7 @@ public class TollTasmaniaTest {
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test
+	@Test(priority=-1)
 	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })

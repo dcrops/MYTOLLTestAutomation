@@ -76,7 +76,8 @@ public class TollPriorityNZTest {
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
-
+		 ReviewYourPickupActions.ClickConfirmPickup();
+			//BookAPickupActions.GetReferenceNumber() ;
 	}
 
 	@Test
@@ -127,6 +128,8 @@ public class TollPriorityNZTest {
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
+		 ReviewYourPickupActions.ClickConfirmPickup();
+			//BookAPickupActions.GetReferenceNumber() ;
 
 	}
 
@@ -220,11 +223,12 @@ public class TollPriorityNZTest {
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		//BookAPickupActions.GetReferenceNumber();
 
 	}
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 	}
 }

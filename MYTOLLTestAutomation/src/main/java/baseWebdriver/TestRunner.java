@@ -7,7 +7,7 @@ import cucumber.api.testng.*;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/bookAPickupFeatures/BookAPIckup_TollTasmania_Service_Express.feature"}
+        ,features = { "src/test/Resources/bookAPickupFeatures/BookAPIckup_TollTasmania_Service_Express.feature", "src/test/Resources/createShipmentFeatures/CreateShipment.feature"}
 		, glue= {"bookAPickupStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 
@@ -18,6 +18,6 @@ import cucumber.api.testng.*;
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests    {
-
+//BookAPIckup_TollTasmania_Service_Express.feature
 	
 }

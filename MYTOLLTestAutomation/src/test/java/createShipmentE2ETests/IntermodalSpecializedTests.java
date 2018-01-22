@@ -12,7 +12,7 @@ import createShipmentActions.CreateShipmentActions;
 import createShipmentActions.ShipmentReviewActions;
 import myTollHomePageActions.MyTollHomePageActions;
 
-public class TollNQXTollExpressTests {
+public class IntermodalSpecializedTests {
 
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
@@ -26,7 +26,7 @@ public class TollNQXTollExpressTests {
 
 	//@Test(priority = 2)
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceGeneral", "AccountNumberTNQX", "WhoPays", "whoPays",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceGeneral", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "dropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
@@ -41,7 +41,7 @@ public class TollNQXTollExpressTests {
 			"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_General(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_Service_General(String TollCarrier,
 			String ServiceGeneral, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
 			String DropOffDepot, String CollectionDepot, String DGContactName,String DGContactNumber, String SenderEmail, String ReceiverEmail,
@@ -60,8 +60,8 @@ public class TollNQXTollExpressTests {
 			String ShipmentContainDangerousGoodsHeading, String DangerousGoodsDetailsHeading, String VolumeLineItem1,
 			String VolumeLineItem2, String ShipmentContainDangerousGoodsYes, String ShipmentContainDangerousGoodsNo) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		CreateShipmentActions.EnterService(ServiceGeneral);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -127,7 +127,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceGeneral, whoPays, CollectionDepot,
 				ModeRoad);
 
@@ -161,7 +161,7 @@ public class TollNQXTollExpressTests {
 
 	//@Test(priority = 5)
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceExpress", "AccountNumberTNQX", "WhoPays", "whoPays",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
@@ -176,7 +176,7 @@ public class TollNQXTollExpressTests {
 			"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Express(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_Service_Express(String TollCarrier,
 			String ServiceExpress, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
 			String DropOffDepot, String collectionDepot, String DGContactName, String DGContactNumber, String SenderEmail, String ReceiverEmail,
@@ -195,8 +195,8 @@ public class TollNQXTollExpressTests {
 			String ShipmentContainDangerousGoodsHeading, String DangerousGoodsDetailsHeading, String VolumeLineItem1,
 			String VolumeLineItem2, String ShipmentContainDangerousGoodsYes, String ShipmentContainDangerousGoodsNo) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		CreateShipmentActions.EnterService(ServiceExpress);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -258,7 +258,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceExpress, whoPays, collectionDepot,
 				ModeRoad);
 
@@ -291,7 +291,7 @@ public class TollNQXTollExpressTests {
 
 	//@Test(priority = 3)
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
@@ -306,7 +306,7 @@ public class TollNQXTollExpressTests {
 			"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Premium(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_Service_Premium(String TollCarrier,
 			String TollNQXServicePremium, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
 			String DropOffDepot, String collectionDepot, String DGContactName,String DGContactNumber, String SenderEmail, String ReceiverEmail,
@@ -325,7 +325,8 @@ public class TollNQXTollExpressTests {
 			String ShipmentContainDangerousGoodsHeading, String DangerousGoodsDetailsHeading, String VolumeLineItem1,
 			String VolumeLineItem2, String ShipmentContainDangerousGoodsYes, String ShipmentContainDangerousGoodsNo) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		CreateShipmentActions.EnterService(TollNQXServicePremium);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -388,7 +389,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, TollNQXServicePremium, whoPays,
 				collectionDepot, ModeRoad);
 
@@ -421,7 +422,7 @@ public class TollNQXTollExpressTests {
 
 	//@Test(priority = 4)
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRefrigeration", "AccountNumberTNQX", "WhoPays", "whoPays",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRefrigeration", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "dropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
@@ -436,7 +437,7 @@ public class TollNQXTollExpressTests {
 			"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Refrigeration(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_Service_Refrigeration(String TollCarrier,
 			String ServiceRefrigeration, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
 			String DropOffDepot, String CollectionDepot, String DGContactName,String DGContactNumber, String SenderEmail, String ReceiverEmail,
@@ -455,7 +456,8 @@ public class TollNQXTollExpressTests {
 			String ShipmentContainDangerousGoodsHeading, String DangerousGoodsDetailsHeading, String VolumeLineItem1,
 			String VolumeLineItem2, String ShipmentContainDangerousGoodsYes, String ShipmentContainDangerousGoodsNo) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
 
 		CreateShipmentActions.EnterService(ServiceRefrigeration);
 
@@ -519,7 +521,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceRefrigeration, whoPays,
 				CollectionDepot, ModeRoad);
 
@@ -552,7 +554,7 @@ public class TollNQXTollExpressTests {
 
 	//@Test(priority = 1)
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDangerousGoods", "AccountNumberTNQX","WhoPays", "whoPays", "ModeInt",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDangerousGoods", "AccountNumberTNQX","WhoPays", "whoPays", "ModeInt",
 			"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 			"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2", "NumberOfItems",
@@ -568,7 +570,7 @@ public class TollNQXTollExpressTests {
 			"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DangerousGoods(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_Service_DangerousGoods(String TollCarrier,
 			String ServiceDangerousGoods, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, String ReceiverName, String ReceiverItem, Integer Sender, Integer Receiver,
 			String QuoteNumber, String DropOffDepot, String CollectionDepot, String dropOffDepot,
@@ -589,8 +591,8 @@ public class TollNQXTollExpressTests {
 			String VolumeLineItem1, String VolumeLineItem2, String ShipmentContainDangerousGoodsYes,
 			String ShipmentContainDangerousGoodsNo) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		CreateShipmentActions.EnterService(ServiceDangerousGoods);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -674,7 +676,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceDangerousGoods, whoPays,
 				CollectionDepot, ModeRoad);
 
@@ -709,7 +711,7 @@ public class TollNQXTollExpressTests {
 
 	//@Test(priority = 4)
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGExpress", "AccountNumberTNQX", "WhoPays", "whoPays", "ModeInt",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGExpress", "AccountNumberTNQX", "WhoPays", "whoPays", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2", "NumberOfItems",
@@ -725,7 +727,7 @@ public class TollNQXTollExpressTests {
 		"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 		"ShipmentContainDangerousGoodsNo"})
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DGExpress(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_Service_DGExpress(String TollCarrier,
 			String ServiceDGExpress, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, String ReceiverName, String ReceiverItem, Integer Sender, Integer Receiver,
 			String QuoteNumber, String DropOffDepot, String CollectionDepot, String dropOffDepot,
@@ -746,8 +748,8 @@ public class TollNQXTollExpressTests {
 			String VolumeLineItem1, String VolumeLineItem2, String ShipmentContainDangerousGoodsYes,
 			String ShipmentContainDangerousGoodsNo) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		CreateShipmentActions.EnterService(ServiceDGExpress);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -828,7 +830,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceDGExpress, whoPays,
 				CollectionDepot, ModeRoad);
 
@@ -865,7 +867,7 @@ public class TollNQXTollExpressTests {
 
 	//@Test(priority = 3)
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGRefrigerated", "AccountNumberTNQX", "WhoPays", "whoPays", "ModeInt",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGRefrigerated", "AccountNumberTNQX", "WhoPays", "whoPays", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2", "NumberOfItems",
@@ -881,7 +883,7 @@ public class TollNQXTollExpressTests {
 		"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 		"ShipmentContainDangerousGoodsNo"})
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_DGRefrigerated(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_Service_DGRefrigerated(String TollCarrier,
 			String ServiceDGRefrigerated, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, String ReceiverName, String ReceiverItem, Integer Sender, Integer Receiver,
 			String QuoteNumber, String DropOffDepot, String CollectionDepot, String dropOffDepot,
@@ -902,8 +904,8 @@ public class TollNQXTollExpressTests {
 			String VolumeLineItem1, String VolumeLineItem2, String ShipmentContainDangerousGoodsYes,
 			String ShipmentContainDangerousGoodsNo) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		CreateShipmentActions.EnterService(ServiceDGRefrigerated);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -981,7 +983,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceDGRefrigerated, whoPays,
 				CollectionDepot, ModeRoad);
 
@@ -1016,7 +1018,7 @@ public class TollNQXTollExpressTests {
 
 	//@Test(priority = 1)
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailGeneral", "AccountNumberTNQX","WhoPays", "whoPays",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRailGeneral", "AccountNumberTNQX","WhoPays", "whoPays",
 		"ModeInt", "Mode", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 		"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
@@ -1031,7 +1033,7 @@ public class TollNQXTollExpressTests {
 		"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 		"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailGeneral(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_Service_RailGeneral(String TollCarrier,
 			String ServiceRailGeneral, String AccountNumber,Integer WhoPays, String whoPays, Integer ModeInt,
 			String Mode, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
 			String DropOffDepot, String CollectionDepot, String DGContactName, String DGContactNumber,String SenderEmail, String ReceiverEmail,
@@ -1050,8 +1052,8 @@ public class TollNQXTollExpressTests {
 			String ShipmentContainDangerousGoodsHeading, String DangerousGoodsDetailsHeading, String VolumeLineItem1,
 			String VolumeLineItem2, String ShipmentContainDangerousGoodsYes, String ShipmentContainDangerousGoodsNo) {
 		
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		CreateShipmentActions.EnterService(ServiceRailGeneral);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -1114,7 +1116,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceRailGeneral, whoPays,
 				CollectionDepot, Mode);
 
@@ -1146,7 +1148,7 @@ public class TollNQXTollExpressTests {
 
 	//@Test(priority = 1)
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceRailDangerousGoods", "AccountNumberTNQX", "WhoPays", "whoPays","Mode", "ModeInt",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRailDangerousGoods", "AccountNumberTNQX", "WhoPays", "whoPays","Mode", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2", "NumberOfItems",
@@ -1162,7 +1164,7 @@ public class TollNQXTollExpressTests {
 		"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 		"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_RailDangerousGoods(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_Service_RailDangerousGoods(String TollCarrier,
 			String ServiceRailDangerousGoods, String AccountNumber,  Integer WhoPays, String whoPays, String Mode,Integer ModeInt,
 			String ModeRoad, String ReceiverName, String ReceiverItem, Integer Sender, Integer Receiver,
 			String QuoteNumber, String DropOffDepot, String CollectionDepot, String dropOffDepot,
@@ -1183,8 +1185,8 @@ public class TollNQXTollExpressTests {
 			String VolumeLineItem1, String VolumeLineItem2, String ShipmentContainDangerousGoodsYes,
 			String ShipmentContainDangerousGoodsNo) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		CreateShipmentActions.EnterService(ServiceRailDangerousGoods);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -1260,7 +1262,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceRailDangerousGoods, whoPays,
 				CollectionDepot, Mode);
 
@@ -1294,7 +1296,7 @@ public class TollNQXTollExpressTests {
 	}
 	
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
@@ -1309,7 +1311,7 @@ public class TollNQXTollExpressTests {
 			"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_Service_Z_Premium_ConsolidateShipments(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_Service_Z_Premium_ConsolidateShipments(String TollCarrier,
 			String TollNQXServicePremium, String AccountNumber, Integer WhoPays, String whoPays, Integer ModeInt,
 			String ModeRoad, Integer Sender, Integer Receiver, String QuoteNumber, String dropOffDepot,
 			String DropOffDepot, String collectionDepot, String DGContactName, String SenderEmail, String ReceiverEmail,
@@ -1328,7 +1330,8 @@ public class TollNQXTollExpressTests {
 			String ShipmentContainDangerousGoodsHeading, String DangerousGoodsDetailsHeading, String VolumeLineItem1,
 			String VolumeLineItem2, String ShipmentContainDangerousGoodsYes, String ShipmentContainDangerousGoodsNo) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		CreateShipmentActions.EnterService(TollNQXServicePremium);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -1356,7 +1359,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, TollNQXServicePremium, whoPays,
 				collectionDepot, ModeRoad);
 
@@ -1388,7 +1391,7 @@ public class TollNQXTollExpressTests {
 	}
 	
 	@Test
-	@Parameters({ "TollCarrierTollNQXTollExpress", "ServiceDGExpress", "AccountNumberTNQX", "WhoPays", "whoPays","Mode", "ModeInt",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGExpress", "AccountNumberTNQX", "WhoPays", "whoPays","Mode", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2", "NumberOfItems",
@@ -1404,7 +1407,7 @@ public class TollNQXTollExpressTests {
 		"DangerousGoodsDetailsHeading", "VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 		"ShipmentContainDangerousGoodsNo" })
 
-	public void CreateShipment_TollNQXTollEXpress_E2ETest_TID_920_ErrorMessagesValidation(String TollCarrier,
+	public void CreateShipment_IntermodalSpecialized_E2ETest_TID_920_ErrorMessagesValidation(String TollCarrier,
 			String ServiceDGExpress, String AccountNumber,  Integer WhoPays, String whoPays, String Mode,Integer ModeInt,
 			String ModeRoad, String ReceiverName, String ReceiverItem, Integer Sender, Integer Receiver,
 			String QuoteNumber, String DropOffDepot, String CollectionDepot, String dropOffDepot,
@@ -1425,8 +1428,9 @@ public class TollNQXTollExpressTests {
 			String VolumeLineItem1, String VolumeLineItem2, String ShipmentContainDangerousGoodsYes,
 			String ShipmentContainDangerousGoodsNo) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		CreateShipmentActions.EnterService(ServiceDGExpress);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -1513,7 +1517,7 @@ public class TollNQXTollExpressTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverview(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceDGExpress, whoPays,
 				CollectionDepot, Mode);
 
@@ -1543,7 +1547,7 @@ public class TollNQXTollExpressTests {
 		String weight2 = Weight2 + "kg";
 
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
-				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo); 
 	}
 	
 	

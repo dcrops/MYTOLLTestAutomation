@@ -36,7 +36,7 @@ public class TollPriorityAusTest {
 			String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns) {
 
 		//BookAPickupActions.EnterTollCarrier(TollCarrier);
-		BookAPickupActions.EnterTollCarrierUsingKeyboard(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		BookAPickupActions.SelectAccountNumberUsingKeyboard();
 		String accountNumber= BookAPickupActions.GetAccountNumber();
@@ -115,6 +115,7 @@ public class TollPriorityAusTest {
 		// Confirm Pickup and Verify pickup confirmation details
 		 ReviewYourPickupActions.ClickConfirmPickup();
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		
 	}
 
 	@AfterMethod

@@ -18,7 +18,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 import manifestActions.ManifestActions;
 
 
-public class ManifestTollIntermodalTests {
+public class ManifestIntermodalSpecializedTests {
 	
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
@@ -30,17 +30,19 @@ public class ManifestTollIntermodalTests {
 
 	
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({"TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
+	@Parameters({"TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount"}) 
-	public void Manifest_TollIntermodal_E2ETest_TID_1121_Service_Express_VerifyManifestDetailsAddingManifestManually(String TollCarrier, String ServiceExpress,
+	public void Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_VerifyManifestDetailsAddingManifestManually(String TollCarrier, String ServiceExpress,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
 			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -89,17 +91,19 @@ public class ManifestTollIntermodalTests {
 	}
 	
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount","ManifestName" }) 
-	public void Manifest_TollIntermodal_E2ETest_TID_1121_Service_Express_AddManifestManually(String TollCarrier, String ServiceExpress,
+	public void Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddManifestManually(String TollCarrier, String ServiceExpress,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
 			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount, String ManifestName) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -159,17 +163,19 @@ public class ManifestTollIntermodalTests {
 	}
 	
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount","ManifestName" }) 
-	public void Manifest_TollIntermodal_E2ETest_TID_1121_Service_Express_AddToManifestForAnExistingManifestSubmittingCreateShipmentAndContinue(String TollCarrier, String ServiceExpress,
+	public void Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddToManifestForAnExistingManifestSubmittingCreateShipmentAndContinue(String TollCarrier, String ServiceExpress,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
 			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount, String ManifestName) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -238,17 +244,19 @@ public class ManifestTollIntermodalTests {
 	}
 	
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount","ManifestName" }) 
-	public void Manifest_TollIntermodal_E2ETest_TID_1121_Service_Express_AddToManifestCreateNewManifestSubmittingCreateShipmentAndContinue(String TollCarrier, String ServiceExpress,
+	public void Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddToManifestCreateNewManifestSubmittingCreateShipmentAndContinue(String TollCarrier, String ServiceExpress,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
 			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount, String ManifestName) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
@@ -315,17 +323,19 @@ public class ManifestTollIntermodalTests {
 	}
 
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount","ManifestName" }) 
-	public void Manifest_TollIntermodal_E2ETest_TID_1121_Service_Express_AddToManifestBySystemGeneratedManifestSubmittingCreateShipmentAndContinue(String TollCarrier, String ServiceExpress,
+	public void Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddToManifestBySystemGeneratedManifestSubmittingCreateShipmentAndContinue(String TollCarrier, String ServiceExpress,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
 			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount, String ManifestName) {
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
