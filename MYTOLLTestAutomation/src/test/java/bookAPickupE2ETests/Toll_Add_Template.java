@@ -51,16 +51,6 @@ public class Toll_Add_Template {
 
 	
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({"TollCarrierTollIntermodal", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
-	public void addTemplateTSPD(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
-		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
-		this.checkRateEnquiry(Carrier, Service, NumberOfItems, Length, Width, Height, Weight, OriginSuburb, OriginPostCode, DesSuburb, DesPostCode);
-		this.checkCreateShipmentPage(Carrier, Service, NumberOfItems, Length, Width, Height, Weight);
-		this.deleteTemplate(Carrier);
-	}
-	
-	
-	@Test(groups = { "Shakeout Testing" })
 	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void addTemplateTTAS(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
@@ -71,8 +61,8 @@ public class Toll_Add_Template {
 	
 	
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({"TollCarrierTollNQXTollExpress", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
-	public void addTemplateTNQX(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
+	@Parameters({"TollIntermodalSpecialised", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
+	public void addTemplateTollIntermodalSpecialised(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
 		this.checkRateEnquiry(Carrier, Service, NumberOfItems, Length, Width, Height, Weight, OriginSuburb, OriginPostCode, DesSuburb, DesPostCode);
 		this.checkCreateShipmentPage(Carrier, Service, NumberOfItems, Length, Width, Height, Weight);
@@ -116,7 +106,7 @@ public class Toll_Add_Template {
 		//Select Carrier
 		Reporter.log("User Selectors Toll Carrier");
 		PageBase.click(BookAPickupActions.addTemplateCarrier, 10);
-		PageBase.click(By.xpath("//*[@id=\"bu-dropdown-new\"]/div/ul/li/div[text()='"+Carrier+"']"), 10);
+		PageBase.click(By.xpath("//*[@id=\"bu-dropdown-new\"]/div/ul/li/div[contains(text(),'"+Carrier+"')]"), 10);
 		
 		//Random Template name
 		int Number = (int) (Math.random()*10000);
@@ -143,7 +133,7 @@ public class Toll_Add_Template {
 		
 		//User Filters Carriers
 		PageBase.click(BookAPickupActions.addTemplateCarrierSelector, 5);
-		PageBase.click(By.xpath("//*[@id=\"grid-carrier-dropdown\"]//*//div[text()='"+Carrier+"']"),5);
+		PageBase.click(By.xpath("//*[@id=\"grid-carrier-dropdown\"]//*//div[contains(text(),'"+Carrier+"')]"),5);
 		
 		//Verify Template Exists
 		Reporter.log("User Verifies if New Template Exits");
@@ -196,7 +186,8 @@ public class Toll_Add_Template {
 		MyTollHomePageActions.ClickMenu();
 		Reporter.log("User Navigates to Create Shipment Page to Verify Template"); 
 		CreateShipmentActions.ClickShipment();
-		BookAPickupActions.EnterTollCarrier(Carrier);
+		//BookAPickupActions.EnterTollCarrier(Carrier);
+		RateEnquiryActions.EnterTollCarrier(Carrier);
 		CreateShipmentActions.EnterService(Service);
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.SelectAccountNumber1();
@@ -223,7 +214,7 @@ public class Toll_Add_Template {
 		
 		//User Filters Carriers
 		PageBase.click(BookAPickupActions.addTemplateCarrierSelector, 5);
-		PageBase.click(By.xpath("//*[@id=\"grid-carrier-dropdown\"]//*//div[text()='"+Carrier+"']"),5);
+		PageBase.click(By.xpath("//*[@id=\"grid-carrier-dropdown\"]//*//div[contains(text(),'"+Carrier+"')]"),5);
 		
 		try {
 			while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//p[text()='"+NewTemplateName+"']"), 1) == null) {

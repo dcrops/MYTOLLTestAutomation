@@ -86,7 +86,8 @@ public class RateEnquiryActions {
 		Reporter.log("User Selects Toll Carrier - "+pTollCarrierName);
 		PageBase.MediumWaitForElementEnabled_1();
 		PageBase.click(TollCarrierTextfield, 5);
-		PageBase.click(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']"), 5);
+		//PageBase.click(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='"+pTollCarrierName+"']"), 5);
+		PageBase.click(By.xpath("//div[@id='BU-selector']/div/ul/li/div[contains(text(),'"+pTollCarrierName+"')]"), 5);
 		
 	}
 
@@ -466,8 +467,7 @@ public class RateEnquiryActions {
 		Boolean results=BaseWebdriver.driver.findElement(totalCharge).isDisplayed();
 		if (results=true) {
 		//RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-
-			RateEnquiryActions.VerifyPricenowMessage("Note:The rate displayed is an estimate only. The rate may change if there are any variations to the actual weight, dimensions or location entered above and are based on Mon - Fri business hours. Extra service and other surcharges may apply. For further enquiries please call our Sales Dept on 1300 865 547 (Option 3)");	
+		//RateEnquiryActions.VerifyPricenowMessage("Note:The rate displayed is an estimate only. The rate may change if there are any variations to the actual weight, dimensions or location entered above and are based on Mon - Fri business hours. Extra service and other surcharges may apply. For further enquiries please call our Sales Dept on 1300 865 547 (Option 3)");	
 
 			RateEnquiryActions.VerifyTotalCharge("Total Charge:");
 			RateEnquiryActions.VerifyGST("GST:");

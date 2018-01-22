@@ -47,8 +47,8 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
       |TollCarrier            |Service                         |Who Pays |AccountNumber |
       |Toll Priority (Aus)    |Auswide 3kg Satchel - Overnight |Sender   |401509 |
      And User Enters Line Items for Shipment in Module 2
-      | ItemTemplateName     | NumberOfItems | Length | Width | Height | Weight |
-      | Automation Template1 |        10     |    10  |   10  |   10   |   10   |
+      | ItemTemplateName     |
+      | Automation Template1 |
      Then User Gets a prompt to get a Rate and the User Clicks it
      And Rate is Displayed with no breakdown and with a disclaimer
      And Transit time is not displayed
