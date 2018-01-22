@@ -4,7 +4,8 @@
 	
 	<suite-files>
   <suite-file path="CreateShipment.xml"></suite-file>
-
+  <suite-file path="CreateShipment.xml"></suite-file>
+  <suite-file path="CreateShipment.xml"></suite-file>
 	<!-- Blocked>	
 	
 	  <suite-file path="CreateShipment.xml"></suite-file>
