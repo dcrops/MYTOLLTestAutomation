@@ -261,7 +261,7 @@ public class TollIntermodalSpecialisedTests {
 	}
 	
 	
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceFCL","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_FCL(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -299,7 +299,7 @@ public class TollIntermodalSpecialisedTests {
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceDGFCL","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_DGFCL(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
