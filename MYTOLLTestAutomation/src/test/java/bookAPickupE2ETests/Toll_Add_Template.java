@@ -191,7 +191,7 @@ public class Toll_Add_Template {
 		CreateShipmentActions.EnterService(Service);
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.SelectAccountNumber1();
-		CreateShipmentActions.SelectSender(2);
+		CreateShipmentActions.SelectSender(1);
 		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		

@@ -569,7 +569,7 @@ public class TollTasmaniaTests {
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
 			Integer PackingGroup, String lookupName, Integer lookupItem, String packageDescription, String pDgPkgQty,
 			String pDgQtyKg, String technicalName, Integer DGNo, String BillingType, String SpeceialIns, Integer DGItem,
-			String LookupSearch, String PalletTransactionsInfo, String ChepCustomer, String ChepExchange,
+			String LookupSearch, String PalletTransactionsInfoNo, String ChepCustomer, String ChepExchange,
 			String ChepTansferToToll, String ChepDocketNo, String LoscamCustomer, String LoascamExchange,
 			String LoscamTransferToToll, String LoscamDocketNo, String OtherCostomer, String ChepOtherExchange,
 			String ChepOtherTransferToToll, String chepOtherDocketNo, String LoscamOtherExchange,
@@ -618,7 +618,7 @@ public class TollTasmaniaTests {
 				"ROAD");
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
-		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
+		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfoNo, PurchaseOrder,
 				tollExtraServiceAmount);
 
 		ShipmentReviewActions.VerifyPalletTransactionsInformations(ChepCustomer, ChepExchange, ChepTansferToToll,

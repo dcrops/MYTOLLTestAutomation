@@ -1323,7 +1323,7 @@ public class IntermodalSpecializedTests {
 			String LoscamCustomer, String LoascamExchange, String LoscamTransferToToll, String LoscamDocketNo,
 			String OtherCostomer, String ChepOtherExchange, String ChepOtherTransferToToll, String chepOtherDocketNo,
 			String LoscamOtherExchange, String LoscamOtherTransferToToll, String LoscamOtherDocketNo,
-			String PalletTransactionsInfo, String PurchaseOrder, String TollExtraSrviceAmount,
+			String PalletTransactionsInfoNo, String PurchaseOrder, String TollExtraSrviceAmount,
 			String LineItemName1Heading, String LineItemName2Heading, String ItemDescriptionHeading,
 			String ItemsHeading, String BillingTypeHeading, String DimensionsHeading, String TotalVolumeHeading,
 			String WeightHeading, String Reference1Heading, String Reference2Heading,
@@ -1364,7 +1364,7 @@ public class IntermodalSpecializedTests {
 				collectionDepot, ModeRoad);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
-		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
+		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfoNo, PurchaseOrder,
 				tollExtraServiceAmount);
 
 		ShipmentReviewActions.VerifyPalletTransactionsInformations(ChepCustomer, ChepExchange, ChepTansferToToll,

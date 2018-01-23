@@ -27,7 +27,7 @@ public class TollPriorityNZTest {
 		// MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test
+	@Test(priority=-1)
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference", "DestinationCountry",
 			"specialIns" })
@@ -212,7 +212,7 @@ public class TollPriorityNZTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+	/*	BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
 		ReviewYourPickupActions.VerifyPickupDetailsTollPrioNZ(TollCarrier, accountNo, company, companyLocation, name,
@@ -222,7 +222,7 @@ public class TollPriorityNZTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);*/
 		//BookAPickupActions.GetReferenceNumber();
 
 	}

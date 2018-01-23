@@ -27,7 +27,7 @@ public class BookAPickupActions {
 
 	public static By TollCarrierDropdown = By.xpath("//*[@id=\"BU-selector\"]/label/a/i");
 	public static By TollCarrierTextField = By.name("placeholder-bu");
-	public static By TollCarrierIntermodalSpecialized = By.xpath("//*[@id=\"BU-selector\"]/div/ul/li[2]/div");
+	public static By TollCarrierIntermodalSpecialized = By.xpath("//*[@id=\"BU-selector\"]/div/ul/li[4]/div");
 	public static By AccountNumberDropdown = By.xpath("//*[@id=\"account-selector\"]/label/a/i");
 	public static By AccountNumberDropdownitem1 = By.xpath("//*[@id=\"account-selector\"]/div/ul/li[1]/div[1]");
 	public static By ServiceDropdown = By.xpath("//*[@id=\"service-type-selector\"]//a/i");
@@ -260,12 +260,10 @@ public class BookAPickupActions {
 			PageBase.retryingFindClick(TollCarrierDropdown);
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
+			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierTextField).click();
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(TollCarrierIntermodalSpecialized).click();//.sendKeys(Keys.ARROW_DOWN);
-			//action.sendKeys(pressARROW_DOWN).perform();
-			//action.sendKeys(pressARROW_DOWN).perform();
-			//PageBase.MaximumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='Intermodal & Specialised']")).click();//.sendKeys(Keys.ARROW_DOWN);
 			action.sendKeys(pressEnter).perform();
 			PageBase.MaximumWaitForElementEnabled();
 		
@@ -275,15 +273,15 @@ public class BookAPickupActions {
 
 		catch (Exception ex) {
 			BaseWebdriver.driver.navigate().refresh();
-			action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();
+			//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();
 			PageBase.retryingFindClick(TollCarrierDropdown);
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
-			BaseWebdriver.driver.findElement(TollCarrierTextField).click();
 			PageBase.MaximumWaitForElementEnabled();
-			action.sendKeys(pressARROW_DOWN).perform();
-			action.sendKeys(pressARROW_DOWN).perform();
+			//BaseWebdriver.driver.findElement(TollCarrierTextField).click();
 			PageBase.MaximumWaitForElementEnabled();
+			BaseWebdriver.driver.findElement(TollCarrierIntermodalSpecialized).click();//.sendKeys(Keys.ARROW_DOWN);
 			action.sendKeys(pressEnter).perform();
+			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
 			
 			

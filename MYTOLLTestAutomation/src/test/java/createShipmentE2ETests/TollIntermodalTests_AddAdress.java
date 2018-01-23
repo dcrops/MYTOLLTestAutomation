@@ -25,7 +25,7 @@ public class TollIntermodalTests_AddAdress {
 	}
 
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollIntermodal", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
 			"Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns", "TollExtraServiceAmount" })
@@ -38,7 +38,7 @@ public class TollIntermodalTests_AddAdress {
 			String TollExtraServiceAmount) {
 
 
-		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);

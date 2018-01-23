@@ -25,7 +25,8 @@ public class TollPriorityAusTest {
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test(groups = { "Shakeout Testing" })
+	@Test(priority=-1)
+	//@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 			"Destination", "DestinationItem","DestinationPostcode", "specialIns" })
@@ -35,17 +36,17 @@ public class TollPriorityAusTest {
 			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 			String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns) {
 
-		//BookAPickupActions.EnterTollCarrier(TollCarrier);
-		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
-		//bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-		BookAPickupActions.SelectAccountNumberUsingKeyboard();
+		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		
+		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		
 		String accountNumber= BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNumber);
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		//BookAPickupActions.SelectLocation2(locationIndex);
-		BookAPickupActions.SelectLocationUsingKeyboard(locationIndex);
+		BookAPickupActions.SelectLocation2(locationIndex);
+		
 
 		String company = BookAPickupActions.GetCompany(1);
 		System.out.println(company);
@@ -103,7 +104,7 @@ public class TollPriorityAusTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+		/*BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
 		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNumber, company, companyLocation, name,
@@ -114,7 +115,7 @@ public class TollPriorityAusTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		 ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username); */
 		
 	}
 

@@ -14,6 +14,7 @@ import GlobalActions.GlobalVariables;
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import myTollHomePageActions.MyTollHomePageActions;
+import rateEnquiryActions.RateEnquiryActions;
 import reviewYourPickupActions.ReviewYourPickupActions;
 
 public class IntermodalSpecializedTest {
@@ -180,7 +181,8 @@ public class IntermodalSpecializedTest {
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
-
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
@@ -257,7 +259,8 @@ public class IntermodalSpecializedTest {
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
-
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
@@ -472,7 +475,8 @@ public class IntermodalSpecializedTest {
 			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
-
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
@@ -522,7 +526,8 @@ public class IntermodalSpecializedTest {
 			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
-
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
@@ -578,7 +583,8 @@ public class IntermodalSpecializedTest {
 			String lookupName, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
-
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
@@ -633,7 +639,8 @@ public class IntermodalSpecializedTest {
 			String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
-
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
@@ -675,7 +682,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-//	@Test(priority=-1)
+	@Test(priority=-1)
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGRefrigerated", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
@@ -687,12 +694,13 @@ public class IntermodalSpecializedTest {
 			String technicalName, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
-
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
-		BookAPickupActions.VerifyTollCarrier(TollCarrier);
+		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 
@@ -749,7 +757,8 @@ public class IntermodalSpecializedTest {
 			String technicalName, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
-
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
@@ -807,7 +816,8 @@ public class IntermodalSpecializedTest {
 			String technicalName, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
-
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
@@ -864,7 +874,7 @@ public class IntermodalSpecializedTest {
 	}
 
 	@Test
-	@Parameters({ "IntermodalSpecialized", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
 			"specialIns" })
@@ -876,6 +886,8 @@ public class IntermodalSpecializedTest {
 			String pDgPkgQty, String pDgQtyKg, String technicalName, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
@@ -963,7 +975,7 @@ public class IntermodalSpecializedTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-	 BaseWebdriver.tearDown();
+	// BaseWebdriver.tearDown();
 
 	}
 
