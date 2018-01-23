@@ -19,7 +19,9 @@
 		<parameter name="ServiceDGFreight" value="DG Freight" />
 		<parameter name="ServiceExpress" value="Express" />
 		<parameter name="ServiceGeneral" value="General" />
+		<parameter name="ServiceFCL" value="FCL" />
 		<parameter name="ServicePremium" value="Premium" />
+		<parameter name="ServiceDGFCL" value="DG FCL" />
 		<parameter name="ServiceRailGeneral" value="Rail General" />
 		<parameter name="ServicePremium" value="Premium" />
 		<parameter name="ServiceRefrigeration" value="Refrigeration" />
@@ -127,9 +129,10 @@
 		<parameter name="TTQtyType" value="Items" />
 		<parameter name="TTMode" value="ROAD" />
 
-		<classes>	
-			<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />
+		<classes>
+			
 			<class name="rateEnquiryE2ETests.TollPriorityNZTests" />
+			<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	
 			<class name="rateEnquiryE2ETests.TollPriorityAUSTests" />
 			<class name="rateEnquiryE2ETests.TollTasmaniaTests" />
 			<class name="rateEnquiryE2ETests.TollIPECTests" />

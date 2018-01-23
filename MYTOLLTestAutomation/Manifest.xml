@@ -125,9 +125,10 @@
 		<classes>
 
 
+
 		<class name="manifestE2ETests.ManifestIntermodalSpecializedTests" />
 	
-	
+
 
 
 			<!-- Blocked>
