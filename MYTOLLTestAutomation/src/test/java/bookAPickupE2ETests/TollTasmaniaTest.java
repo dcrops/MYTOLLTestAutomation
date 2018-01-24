@@ -198,7 +198,8 @@ public class TollTasmaniaTest {
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
+		String tollCarrier=BookAPickupActions.GetTollCarrier();
+		System.out.println(tollCarrier);
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
@@ -300,7 +301,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNo, company, companyLocation, name,
+		ReviewYourPickupActions.VerifyPickupDetails(tollCarrier, accountNo, company, companyLocation, name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYourPickupActions.VerifyItemDetails1TollTasmania("0", "ITEM DETAILS", ItemTemplateName,
 				DestinationPostcode, ServiceDGFreight, chargeToAccount, NumberOfItems, palletSpace, Length, Width,
@@ -589,6 +590,7 @@ public class TollTasmaniaTest {
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceGeneral);
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
@@ -625,7 +627,7 @@ public class TollTasmaniaTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 	}
 
 }

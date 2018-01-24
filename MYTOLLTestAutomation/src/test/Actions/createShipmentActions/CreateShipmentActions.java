@@ -718,7 +718,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void NumberOfGarments(String pNumberOfGarments) {
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(numberOfGarments).click();
 		BaseWebdriver.driver.findElement(numberOfGarments).clear();
 		BaseWebdriver.driver.findElement(numberOfGarments).sendKeys(pNumberOfGarments);
@@ -744,8 +744,13 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterBillingType(String pBillingType) {
-
-		try {
+		BaseWebdriver.driver.findElement(billingTypedropdown).click();
+		//PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver
+				.findElement(By.xpath(
+						"//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='" + pBillingType + "']"))
+				.click();
+		/*try {
 			PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,
 					CreateShipmentActions.shipmentReference1);
 			Boolean results = BaseWebdriver.driver.findElement(billingTypedropdown).isDisplayed();
@@ -761,7 +766,7 @@ public class CreateShipmentActions {
 		} catch (Exception ex) {
 			PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,
 					CreateShipmentActions.shipmentReference1);
-		}
+		}*/
 
 	}
 
