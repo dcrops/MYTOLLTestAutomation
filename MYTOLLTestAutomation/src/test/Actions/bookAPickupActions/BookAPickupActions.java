@@ -256,33 +256,29 @@ public class BookAPickupActions {
 				 
 		try {
 			PageBase.MaximumWaitForElementEnabled();
-			//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();//BaseWebdriver.driver.findElement(TollCarrierDropdown).click();	
+			//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();
 			PageBase.retryingFindClick(TollCarrierDropdown);
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
+			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='Intermodal & Specialised']")).click();
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(TollCarrierTextField).click();
-			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='Intermodal & Specialised']")).click();//.sendKeys(Keys.ARROW_DOWN);
-			action.sendKeys(pressEnter).perform();
-			PageBase.MaximumWaitForElementEnabled();
-		
-			
 			
 		}
 
 		catch (Exception ex) {
 			BaseWebdriver.driver.navigate().refresh();
-			//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();
+			PageBase.MaximumWaitForElementEnabled();
+			//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();//BaseWebdriver.driver.findElement(TollCarrierDropdown).click();	
 			PageBase.retryingFindClick(TollCarrierDropdown);
+			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
+			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='Intermodal & Specialised']")).click();
 			PageBase.MaximumWaitForElementEnabled();
-			//BaseWebdriver.driver.findElement(TollCarrierTextField).click();
+			/*BaseWebdriver.driver.findElement(TollCarrierTextField).click();
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(TollCarrierIntermodalSpecialized).click();//.sendKeys(Keys.ARROW_DOWN);
+			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='Intermodal & Specialised']")).click();
 			action.sendKeys(pressEnter).perform();
-			PageBase.MaximumWaitForElementEnabled();
-			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();*/
 			
 			
 		}
@@ -678,9 +674,9 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).click();
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		/*
 		 * PageBase.MaximumWaitForElementEnabled();
 		 * PageBase.retryingFindClick(destination);
@@ -702,7 +698,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).click();
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
 		String Destination = BaseWebdriver.driver.findElement(destination).getAttribute("value");
 		PageBase.MaximumWaitForElementEnabled();

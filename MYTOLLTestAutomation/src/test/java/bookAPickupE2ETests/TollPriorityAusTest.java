@@ -25,8 +25,8 @@ public class TollPriorityAusTest {
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test(priority=-1)
-	//@Test(groups = { "Shakeout Testing" })
+	//@Test(priority=-1)
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 			"Destination", "DestinationItem","DestinationPostcode", "specialIns" })

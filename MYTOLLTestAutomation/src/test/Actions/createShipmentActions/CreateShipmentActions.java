@@ -245,11 +245,20 @@ public class CreateShipmentActions {
 
 	public static void SelectSender(int i) {
 		PageBase.MediumWaitForElementEnabled();
+		String results=BaseWebdriver.driver.findElement(senderTextfield).getAttribute("value");
+		System.out.println(results);
+		if(results!="Sender")
+		{
 		BaseWebdriver.driver.findElement(senderdropdown).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
 				.click();
 		PageBase.MaximumWaitForElementEnabled();
+		}
+		
+		else {
+			PageBase.MinimumWaitForElementEnabled();
+		}
 
 	}
 
@@ -879,7 +888,7 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(addNewLine).click();
 		PageBase.MediumWaitForElementEnabled();
 		BookAPickupActions.EnterItem(ItemTemplate2);
-		CreateShipmentActions.EnterBillingType(BillingType);
+		//CreateShipmentActions.EnterBillingType(BillingType);
 		PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown, CreateShipmentActions.shipmentReference1);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);

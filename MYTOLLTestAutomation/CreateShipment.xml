@@ -166,9 +166,11 @@
 			value="Shipment contain dangerous goods" />
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 		
-		<classes>
-			<class name="createShipmentE2ETests.TollPriorityNZ" />
-			<!-- Blocked><class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+				
+	<classes>
+	<class name="createShipmentE2ETests.TollPriorityNZ" />
+		<!-- Blocked>			
+		<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
 		
 		<class name="createShipmentE2ETests.TollIPECTests" />
 			
