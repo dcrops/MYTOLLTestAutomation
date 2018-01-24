@@ -420,7 +420,7 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration", "AccountNumberTTas", "WhoPays", "whoPays",
 		"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "dropOffDepot", "DropOffDepot",
 		"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",

@@ -20,7 +20,7 @@ import reviewYourPickupActions.ReviewYourPickupActions;
 public class IntermodalSpecializedTest {
 	public static Integer locationIndex = 4;
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
@@ -246,7 +246,7 @@ public class IntermodalSpecializedTest {
 	}
 	
 	//@Test (priority=-1)
-	@Test 
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
@@ -324,7 +324,7 @@ public class IntermodalSpecializedTest {
 	}
 
 	//@Test(priority=-1)
-	@Test
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
@@ -545,6 +545,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServicePremium);
 		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
@@ -628,7 +629,7 @@ public class IntermodalSpecializedTest {
 
 	//@Test(priority=-1)
 	@Test
-	@Parameters({ "IntermodalSpecialized", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
 
@@ -838,6 +839,7 @@ public class IntermodalSpecializedTest {
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
@@ -975,7 +977,7 @@ public class IntermodalSpecializedTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-	// BaseWebdriver.tearDown();
+	BaseWebdriver.tearDown();
 
 	}
 
