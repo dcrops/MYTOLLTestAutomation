@@ -128,9 +128,43 @@
 		<parameter name="TTWeight" value="3" />
 		<parameter name="TTQtyType" value="Items" />
 		<parameter name="TTMode" value="ROAD" />
+		
+		<!---TSPD FCL test data -->
+		<parameter name="FCLAccountNo" value="5502" />
+		<parameter name="ItemTemplateName" value="Automation Template" />
+		<parameter name="FCLMode" value="RAIL" />
+		<parameter name="FCLBillingType" value="CONT 12.2 - ALL GOODS" />
+		<parameter name="FCLNumberOfItems" value="1" />
+		<parameter name="FCLLength" value="1000" />
+		<parameter name="FCLWidth" value="240" />
+		<parameter name="FCLHeight" value="240" />
+		<parameter name="FCLWeight" value="12000" />
+		<parameter name="FCLQtyType" value="Misc units" />
+		<parameter name="FCLOriginSuburb" value="ADELAIDE" />
+		<parameter name="FCLOriginPostCode" value="5000" />
+		<parameter name="FCLDesSuburb" value="PERTH" />
+		<parameter name="FCLDesPostCode" value="6000" />
 
+
+		<!---TSPD DGFCL test data -->
+		<parameter name="DGFCLAccountNo" value="101718" />
+		<parameter name="ItemTemplateName" value="Automation Template" />
+		<parameter name="DGFCLMode" value="RAIL" />
+		<parameter name="DGFCLBillingType" value="CONT 6.1 - SIDEDOOR" />
+		<parameter name="DGFCLNumberOfItems" value="34" />
+		<parameter name="DGFCLLength" value="1000" />
+		<parameter name="DGFCLWidth" value="240" />
+		<parameter name="DGFCLHeight" value="240" />
+		<parameter name="DGFCLWeight" value="10000" />
+		<parameter name="DGFCLQtyType" value="Items" />
+		<parameter name="DGFCLOriginSuburb" value="MELBOURNE" />
+		<parameter name="DGFCLOriginPostCode" value="3000" />
+		<parameter name="DGFCLDesSuburb" value="PERTH" />
+		<parameter name="DGFCLDesPostCode" value="6000" />
 
 			    <classes>	
+			<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	
+			
 			
 		<!-- Blocked>	<class name="rateEnquiryE2ETests.TollPriorityNZTests" />
 			<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	

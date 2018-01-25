@@ -262,11 +262,11 @@ public class TollIntermodalSpecialisedTests {
 	
 	
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({"TollIntermodalSpecialised", "ServiceFCL","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	@Parameters({"TollIntermodalSpecialised", "ServiceFCL","FCLAccountNo","ItemTemplateName","FCLBillingType","FCLMode", "FCLNumberOfItems","FCLLength", "FCLWidth", "FCLHeight", "FCLWeight","FCLQtyType", "FCLOriginSuburb","FCLOriginPostCode", "FCLDesSuburb", "FCLDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_FCL(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
-		RateEnquiryActions.valid = false;
+		RateEnquiryActions.valid = true;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.SelectMode(Mode);
@@ -300,11 +300,11 @@ public class TollIntermodalSpecialisedTests {
 	}
 	
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({"TollIntermodalSpecialised", "ServiceDGFCL","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
+	@Parameters({"TollIntermodalSpecialised", "ServiceDGFCL","DGFCLAccountNo","ItemTemplateName","DGFCLBillingType","DGFCLMode", "DGFCLNumberOfItems","DGFCLLength", "DGFCLWidth", "DGFCLHeight", "DGFCLWeight","DGFCLQtyType", "DGFCLOriginSuburb","DGFCLOriginPostCode", "DGFCLDesSuburb", "DGFCLDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_DGFCL(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		
-		RateEnquiryActions.valid = false;
+		RateEnquiryActions.valid = true;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		RateEnquiryActions.SelectMode(Mode);
