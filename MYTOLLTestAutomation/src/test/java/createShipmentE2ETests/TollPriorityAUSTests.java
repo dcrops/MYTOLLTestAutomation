@@ -265,9 +265,9 @@ public class TollPriorityAUSTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
-		CreateShipmentActions.SelectShipmentConsolidationConsolidatePrio(ItemTemplateName,BillingType,NumberOfItems,ShipmentRef1, ShipmentRef2,
+		/*CreateShipmentActions.SelectShipmentConsolidationConsolidatePrio(ItemTemplateName,BillingType,NumberOfItems,ShipmentRef1, ShipmentRef2,
 				Length,Width,Height, Weight,ItemTemplateName2, NumberOfItems2,Length2,
-				Width2, Height2, Weight2, DGNo,  SpeceialIns);
+				Width2, Height2, Weight2, DGNo,  SpeceialIns);*/
 		//PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
 		CreateShipmentActions.ClickReviewCreateShipment();
 		

@@ -17,7 +17,7 @@ public class TollPriorityNZTest {
 
 	public static Integer locationIndex = 1;
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
@@ -27,7 +27,7 @@ public class TollPriorityNZTest {
 		// MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test(priority=-1)
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference", "DestinationCountry",
 			"specialIns" })

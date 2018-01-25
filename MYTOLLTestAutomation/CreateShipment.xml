@@ -168,9 +168,11 @@
 		
 				
 	<classes>
-	<class name="createShipmentE2ETests.TollPriorityNZ" />
-		<!-- Blocked>			
+	
 		<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+				
+	<!-- Blocked>	<class name="createShipmentE2ETests.TollPriorityNZ" />
+	<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
 		
 		<class name="createShipmentE2ETests.TollIPECTests" />
 			
@@ -179,7 +181,7 @@
 			<class name="createShipmentE2ETests.TollTasmaniaTests" />
 
 			<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress" />
-			<class name="createShipmentE2ETests.TollIntermodalTests" /></Blocked -->
+			</Blocked -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
