@@ -76,6 +76,7 @@ public class ShipmentReviewActions {
 	public static By itemDescription1Value=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col item-desc']//p");
 	public static By itemsValue=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col total-items']//p");
 	public static By billingTypeValue=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col billing-type']//p");
+	public static By numberOfGarments=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col number-of-garments']//p");
 	public static By dimensionsValue=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col dimensions']//p");
 	public static By totalVolumeValue=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col total-vol']//p");
 	public static By weightValue=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col weight']//p");
@@ -117,6 +118,7 @@ public class ShipmentReviewActions {
 	public static By itemDescriptionValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col item-desc']//p");
 	public static By itemsValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col total-items']//p");
 	public static By billingTypeValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col billing-type']//p");
+	public static By numberOfGarments2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col number-of-garments']//p");
 	public static By dimensionsValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col dimensions']//p");
 	public static By totalVolumeValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col total-vol']//p");
 	public static By weightValue2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-inner']//div[@class='item-inner-col weight']//p");
@@ -282,6 +284,10 @@ public class ShipmentReviewActions {
 			assertEquals(pReference2Value, BaseWebdriver.driver.findElement(reference2Value).getText());
 			assertEquals(pShipmentContainDangerousGoodsValue, BaseWebdriver.driver.findElement(shipmentContainDangerousGoodsValue).getText());
 		}
+		public static void VerifyNumberofGarmentsLineItem1(String pNumberofGarments) {
+			
+			assertEquals(pNumberofGarments, BaseWebdriver.driver.findElement(numberOfGarments).getText());
+		}
 		
 		public static void VerifyDangerousGoodsDetails(String pDangerousGoodsHeading, String pUNnumber, String pClassDivision,String pPackingGroup, String pSubrisk, String pProperShippingName, 
 				String pDgPackingGroup, String pDgPKG, String pDgQTY, String pTechnicalName ) {
@@ -332,6 +338,12 @@ public class ShipmentReviewActions {
 			assertEquals(pReference2Value, BaseWebdriver.driver.findElement(reference2Value2).getText());
 			assertEquals(pShipmentContainDangerousGoodsValue, BaseWebdriver.driver.findElement(shipmentContainDangerousGoodsValue2).getText());
 				}
+		
+		public static void VerifyNumberofGarmentsLineItem2(String pNumberofGarments) {
+			
+			assertEquals(pNumberofGarments, BaseWebdriver.driver.findElement(numberOfGarments2).getText());
+		}
+		
 				
 	public static void VerifyTollCarrier(String pTollCarrier) {
 		assertEquals(pTollCarrier,BaseWebdriver.driver.findElement(tollCarrier).getText());

@@ -17,7 +17,7 @@ public class TollPriorityNZTest {
 
 	public static Integer locationIndex = 1;
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
@@ -27,7 +27,7 @@ public class TollPriorityNZTest {
 		// MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test(priority=-1)
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference", "DestinationCountry",
 			"specialIns" })
@@ -68,7 +68,7 @@ public class TollPriorityNZTest {
 
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber(reference);
@@ -120,7 +120,7 @@ public class TollPriorityNZTest {
 
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber(reference);
@@ -198,7 +198,7 @@ public class TollPriorityNZTest {
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
 		PageBase.MediumWaitForElementEnabled();
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);
 		String readyTime = BookAPickupActions.GetReadyTime();

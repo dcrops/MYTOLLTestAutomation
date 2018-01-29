@@ -133,7 +133,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.ClickAddANewLine();
 
 		PageBase.MediumWaitForElementEnabled();
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);
 		String readyTime = BookAPickupActions.GetReadyTime();
@@ -206,7 +206,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter Pickup details
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -231,7 +231,7 @@ public class IntermodalSpecializedTest {
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
-
+		BookAPickupActions.selectDispatchDate();
 		// ReSubmit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
@@ -284,7 +284,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter Pickup details
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -428,7 +428,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.ClickAddANewLine();
 
 		PageBase.MediumWaitForElementEnabled();
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);
 		//BookAPickupActions.selectReadyTime();
@@ -500,7 +500,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter Pickup details
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -557,7 +557,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter Pickup details
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -610,7 +610,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
 		// Enter Pickup details
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -667,7 +667,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
 		// Enter Pickup details
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -730,7 +730,7 @@ public class IntermodalSpecializedTest {
 
 		// Enter Pickup details
 
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -789,7 +789,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
 
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -859,7 +859,7 @@ public class IntermodalSpecializedTest {
 		// BookAPickupActions.SelectPackingGroup();
 		// Enter Pickup details
 		// jse.executeScript("scroll(1500, 1700)");
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -914,7 +914,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectContainFoodItem();
 
 		// Enter Pickup details
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -957,7 +957,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
 		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -977,7 +977,7 @@ public class IntermodalSpecializedTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-	BaseWebdriver.tearDown();
+	//BaseWebdriver.tearDown();
 
 	}
 

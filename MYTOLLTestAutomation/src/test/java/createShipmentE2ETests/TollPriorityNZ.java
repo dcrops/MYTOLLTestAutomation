@@ -52,7 +52,7 @@ public class TollPriorityNZ {
 		// CreateShipmentActions.SelectTollCarrierItem(TollCarrier);
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceGlobalExpressDocuments);
-
+		BookAPickupActions.SelectAccountNumber1();
 		String AccountNumber = BookAPickupActions.GetAccountNumber().toString();
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
@@ -323,7 +323,7 @@ public class TollPriorityNZ {
 	
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceEconomyPacificAirportToAirport);
-
+		BookAPickupActions.SelectAccountNumber1();
 		String AccountNumber = BookAPickupActions.GetAccountNumber().toString();
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);

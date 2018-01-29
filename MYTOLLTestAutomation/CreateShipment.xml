@@ -20,6 +20,8 @@
 		<parameter name="ServiceGeneral" value="General" />
 		<parameter name="ServicePremium" value="Premium" />
 		<parameter name="ServiceRailGeneral" value="Rail General" />
+		<parameter name="ServiceDGFCL" value="DGFCL" />
+		<parameter name="ServiceFCL" value="FCL" />
 		<parameter name="ServicePremium" value="Premium" />
 		<parameter name="ServiceRefrigeration" value="Refrigeration" />
 		<parameter name="ServiceRoadExpress" value="Road Express" />
@@ -168,9 +170,10 @@
 		
 				
 	<classes>
-	<class name="createShipmentE2ETests.TollPriorityNZ" />
-		<!-- Blocked>			
+	
 		<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+				
+		<class name="createShipmentE2ETests.TollPriorityNZ" />
 		
 		<class name="createShipmentE2ETests.TollIPECTests" />
 			
@@ -179,7 +182,7 @@
 			<class name="createShipmentE2ETests.TollTasmaniaTests" />
 
 			<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress" />
-			<class name="createShipmentE2ETests.TollIntermodalTests" /></Blocked -->
+			<!-- Blocked></Blocked -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

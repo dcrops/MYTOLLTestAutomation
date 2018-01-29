@@ -89,7 +89,7 @@ public class TollPriorityAusTest {
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
 		PageBase.MediumWaitForElementEnabled();
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);
 		BookAPickupActions.selectReadyTime();
@@ -121,7 +121,7 @@ public class TollPriorityAusTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 	}
 
 }

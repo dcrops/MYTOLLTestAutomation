@@ -217,6 +217,7 @@ public class TollIPECTests {
 		CreateShipmentActions.AddANewLineTIPEC(ItemTemplateName2,NumberOfItems2,Length2,Width2,Height2,Weight2,ShipmentRef1,ShipmentRef2);
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
 		CreateShipmentActions.ItemType(1);
+		CreateShipmentActions.NumberOfGarments(NumberOfGarments);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 		CreateShipmentActions.SelectAuthorityToLeaveYes();
 		
@@ -231,15 +232,15 @@ public class TollIPECTests {
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformationTollIPECFashion(SpeceialIns);
 
-		String numberOfItems = ItemsHeading + " " +NumberOfGarments;
+		String numberOfItems = ItemsHeading + " " +NumberOfItems;
 		ShipmentReviewActions.VerifyLineItem1Headings(LineItemName1Heading, ItemTemplateName, numberOfItems,
 				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
 				WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
 		String dimensions = Length + "cm x " + Width + "cm x " + Height + "cm";
 		String weight = Weight + "kg";
-		ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName, NumberOfGarments, ItemTypeGarments, dimensions,
+		ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName, NumberOfItems, ItemTypeGarments, dimensions,
 				VolumeLineItem1, weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
-
+		ShipmentReviewActions.VerifyNumberofGarmentsLineItem1(NumberOfGarments);
 		ShipmentReviewActions.VerifyLineItem2Headings(LineItemName2Heading, ItemTemplateName2, numberOfItems,
 				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
 				WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
@@ -248,6 +249,7 @@ public class TollIPECTests {
 
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, ItemTypeGarments, dimensions2,
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+		ShipmentReviewActions.VerifyNumberofGarmentsLineItem1(NumberOfGarments);
 	
 	}
 	

@@ -185,7 +185,7 @@ public class TollTasmaniaTests {
 	@AfterMethod
 	  public void RunTearDown() throws Exception
 		{
-			BaseWebdriver.tearDown();
+			//BaseWebdriver.tearDown();
 	
 		}
 
