@@ -68,7 +68,7 @@ public class TollPriorityNZTest {
 
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber(reference);
@@ -120,7 +120,7 @@ public class TollPriorityNZTest {
 
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber(reference);
@@ -198,7 +198,7 @@ public class TollPriorityNZTest {
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
 		PageBase.MediumWaitForElementEnabled();
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);
 		String readyTime = BookAPickupActions.GetReadyTime();

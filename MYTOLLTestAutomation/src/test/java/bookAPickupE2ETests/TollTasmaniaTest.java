@@ -88,7 +88,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.selectDangerousGood();
 
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		// BookAPickupActions.selectReadyTime();
 
 		String pickupTime = BookAPickupActions.GetReadyTime().toString();
@@ -159,7 +159,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.selectDangerousGood();
 
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
 		// BookAPickupActions.selectReadyTime();
@@ -284,7 +284,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.ClickAddANewLine();
 
 		PageBase.MediumWaitForElementEnabled();
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);
 		String readyTime = BookAPickupActions.GetReadyTime();
@@ -371,7 +371,7 @@ public class TollTasmaniaTest {
 
 		// Pickup details
 		PageBase.Scrollbar(800, 1000);
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		// String pickupDate = BookAPickupActions.ReturnPickupDate();
 
 		// BookAPickupActions.selectReadyTime();
@@ -427,7 +427,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.SelectDangerousGoods(2);
 		PageBase.Scrollbar(500, 1000);
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		// BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -481,7 +481,7 @@ public class TollTasmaniaTest {
 		PageBase.Scrollbar(500, 1000);
 		BookAPickupActions.SelectDangerousGoods(2);
 
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		// BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -544,7 +544,7 @@ public class TollTasmaniaTest {
 		// Add a new item
 		BookAPickupActions.AddANewLineTollTasmania(ServiceGeneral);
 
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
 		BookAPickupActions.selectReadyTime();
@@ -607,7 +607,7 @@ public class TollTasmaniaTest {
 		// Add a new item
 		BookAPickupActions.AddANewLineTollTasmania(ServiceGeneral);
 
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
 		// BookAPickupActions.selectReadyTime();

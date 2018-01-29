@@ -110,7 +110,7 @@ public class TollPriorityAUSTests2 {
 	@AfterMethod
 	  public void RunTearDown() throws Exception
 		{
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 	
 		}
 

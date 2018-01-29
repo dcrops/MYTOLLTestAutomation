@@ -274,11 +274,7 @@ public class BookAPickupActions {
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
 			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='Intermodal & Specialised']")).click();
 			PageBase.MaximumWaitForElementEnabled();
-			/*BaseWebdriver.driver.findElement(TollCarrierTextField).click();
-			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='Intermodal & Specialised']")).click();
-			action.sendKeys(pressEnter).perform();
-			PageBase.MaximumWaitForElementEnabled();*/
+			
 			
 			
 		}
@@ -460,7 +456,7 @@ public class BookAPickupActions {
 	}
 
 	public static void SelectAccountNumber1() {
-		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(AccountNumberDropdown).click();
 		PageBase.MinimumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(AccountNumberDropdownitem1).click();
@@ -468,7 +464,7 @@ public class BookAPickupActions {
 	}
 	
 	public static void SelectAccountNumberUsingKeyboard() {
-		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled();
 		action.sendKeys(BaseWebdriver.driver.findElement(AccountNumberDropdown),pressTab).perform();
 		action.sendKeys(pressARROW_DOWN).perform();
 		action.sendKeys(pressEnter).perform();
@@ -914,7 +910,8 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(containFoodItem).click();
 	}
 
-	public static void selectPickupDate() {
+
+	public static void selectDispatchDate() {
 		BaseWebdriver.driver.findElement(pickupDate).click();
 		BaseWebdriver.driver.findElement(pickupDateTomorrow).click();
 

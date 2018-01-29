@@ -187,7 +187,7 @@ public class CreateShipmentActions {
 	 */
 
 	public static void EnterService(String pService) {
-		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(servicedropdown).click();
 		BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='" + pService + "']"))
@@ -301,7 +301,7 @@ public class CreateShipmentActions {
 		PageBase.Scrollbar(500, 800);
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
 				.click();
-		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled();
 
 	}
 
@@ -343,7 +343,7 @@ public class CreateShipmentActions {
 	public static void SelectShipmentConsolidationConsolidate() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		//PageBase.MaximumWaitForElementEnabled();
 	try {
 		boolean results=BaseWebdriver.driver.findElement(shipmentConsolidatedMSGHeading).isDisplayed();
 		System.out.println("shipmentConsolidatedMSGHeading");

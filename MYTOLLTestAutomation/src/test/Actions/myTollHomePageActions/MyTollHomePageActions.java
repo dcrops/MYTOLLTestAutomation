@@ -122,7 +122,8 @@ public class MyTollHomePageActions {
 		
 		catch(Exception ex)
 		{
-			BaseWebdriver.tearDown();
+			BaseWebdriver.driver.navigate().refresh();
+			//BaseWebdriver.tearDown();
 			BaseWebdriver.setUp();
 			BaseWebdriver.driver.navigate().refresh();
 			PageBase.retryingFindClick(login);

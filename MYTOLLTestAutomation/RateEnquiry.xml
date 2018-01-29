@@ -129,7 +129,7 @@
 		<parameter name="TTQtyType" value="Items" />
 		<parameter name="TTMode" value="ROAD" />
 		
-		<!---TSPD FCL test data -->
+		<!---IntermodalSpecialized FCL test data -->
 		<parameter name="FCLAccountNo" value="5502" />
 		<parameter name="ItemTemplateName" value="Automation Template" />
 		<parameter name="FCLMode" value="RAIL" />
@@ -146,7 +146,7 @@
 		<parameter name="FCLDesPostCode" value="6000" />
 
 
-		<!---TSPD DGFCL test data -->
+		<!---IntermodalSpecialized DGFCL test data -->
 		<parameter name="DGFCLAccountNo" value="101718" />
 		<parameter name="ItemTemplateName" value="Automation Template" />
 		<parameter name="DGFCLMode" value="RAIL" />
@@ -163,7 +163,7 @@
 		<parameter name="DGFCLDesPostCode" value="6000" />
 
 			    <classes>	
-			<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	
+				<class name="rateEnquiryE2ETests.TollTasmaniaTests" />
 			
 			
 		<!-- Blocked>	<class name="rateEnquiryE2ETests.TollPriorityNZTests" />

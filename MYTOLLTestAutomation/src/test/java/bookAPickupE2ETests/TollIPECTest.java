@@ -75,7 +75,7 @@ public class TollIPECTest {
 		// BookAPickupActions.selectContainFoodItem();
 
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber("123456789");
@@ -127,7 +127,7 @@ public class TollIPECTest {
 		// BookAPickupActions.selectContainFoodItem();
 
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectPickupDate();
+		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber("123456789");
