@@ -20,6 +20,8 @@
 		<parameter name="ServiceGeneral" value="General" />
 		<parameter name="ServicePremium" value="Premium" />
 		<parameter name="ServiceRailGeneral" value="Rail General" />
+		<parameter name="ServiceDGFCL" value="DGFCL" />
+		<parameter name="ServiceFCL" value="FCL" />
 		<parameter name="ServicePremium" value="Premium" />
 		<parameter name="ServiceRefrigeration" value="Refrigeration" />
 		<parameter name="ServiceRoadExpress" value="Road Express" />
