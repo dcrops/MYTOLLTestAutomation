@@ -810,7 +810,7 @@ public class BookAPickupActions {
 	}
 
 	public static void EnterItem(String itemName) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).click();
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).clear();
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).sendKeys(itemName);
@@ -825,7 +825,7 @@ public class BookAPickupActions {
 	}
 
 	public static void EnterQuantity(String quntity) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(enterQuantity).click();
 		BaseWebdriver.driver.findElement(enterQuantity).clear();
 		BaseWebdriver.driver.findElement(enterQuantity).sendKeys(quntity);
@@ -885,7 +885,7 @@ public class BookAPickupActions {
 	}
 
 	public static void selectDangerousGood() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dangerousGoodNo).click();
 	}
 
@@ -894,19 +894,19 @@ public class BookAPickupActions {
 	}
 
 	public static void EnterTechnicalName(String pTechnicalName) {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(technicalName).click();
 		BaseWebdriver.driver.findElement(technicalName).clear();
 		BaseWebdriver.driver.findElement(technicalName).sendKeys(pTechnicalName);
 	}
 
 	public static void ClickAdd() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(add).click();
 	}
 
 	public static void selectContainFoodItem() {
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(containFoodItem).click();
 	}
 
@@ -1075,9 +1075,8 @@ public class BookAPickupActions {
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BaseWebdriver.driver.findElement(addANewLine).click();
-		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		//BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		PageBase.MinimumWaitForElementEnabled();
 		BookAPickupActions.EnterService(pService);
 		BookAPickupActions.EnterItem(pItemTemplateName);
 		BookAPickupActions.SelectModeItem(1);
@@ -1100,9 +1099,8 @@ public class BookAPickupActions {
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BaseWebdriver.driver.findElement(addANewLine).click();
-		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		//BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		PageBase.MinimumWaitForElementEnabled();
 		BookAPickupActions.EnterService(pService);
 		BookAPickupActions.EnterItem(pItemTemplateName);
 		BookAPickupActions.EnterQuantity(pNumberOfItems);

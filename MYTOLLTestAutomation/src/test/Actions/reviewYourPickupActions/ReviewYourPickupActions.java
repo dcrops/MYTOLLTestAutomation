@@ -475,7 +475,7 @@ public class ReviewYourPickupActions {
 		PageBase.MinimumWaitForElementEnabled();
 		BookAPickupActions.ClickReviewBook();
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 	}
 		
 		
