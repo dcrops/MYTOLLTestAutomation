@@ -234,10 +234,10 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectDispatchDate();
 		// ReSubmit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
@@ -977,7 +977,7 @@ public class IntermodalSpecializedTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-	//BaseWebdriver.tearDown();
+	BaseWebdriver.tearDown();
 
 	}
 

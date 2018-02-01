@@ -889,7 +889,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
 		CreateShipmentActions.SelectMode(ModeInt);
-		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
+		PageBase.MoveToElement(CreateShipmentActions.quoteNumber,CreateShipmentActions.accountNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
@@ -1671,7 +1671,7 @@ public class IntermodalSpecializedTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	
-	@Test
+	//@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGExpress", "AccountNumberTNQX", "WhoPays", "whoPays","Mode", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -1719,7 +1719,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
 		CreateShipmentActions.SelectMode(ModeInt);
-		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
+		PageBase.MoveToElement(CreateShipmentActions.quoteNumber,CreateShipmentActions.accountNumber );
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
@@ -1836,7 +1836,7 @@ public class IntermodalSpecializedTests {
 	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		 //BaseWebdriver.tearDown();
 
 	}
 
