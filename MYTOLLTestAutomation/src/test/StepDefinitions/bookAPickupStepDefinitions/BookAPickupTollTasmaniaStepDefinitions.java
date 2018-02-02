@@ -14,6 +14,8 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 public class BookAPickupTollTasmaniaStepDefinitions {
 
+	
+
 	@Given("^User is Registered in MyToll and is on Book a pickup page$")
 	public void user_is_Registered_in_MyToll_and_is_on_Book_a_pickup_page() throws Throwable {
 		BaseWebdriver.setUp();
