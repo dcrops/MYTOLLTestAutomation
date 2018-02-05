@@ -531,6 +531,7 @@ public class ManifestActions {
 	}
 	
 	public static void createManifestPopUp (String TollCarrier, int senderInder, String ManifestName) {
+		PageBase.MaximumWaitForElementEnabled_1();
 		RateEnquiryActions.EnterTollCarrier(TollCarrier);
 		Reporter.log("User Selects Sender");
 		CreateShipmentActions.SelectSender(senderInder);
