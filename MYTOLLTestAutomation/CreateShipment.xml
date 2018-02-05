@@ -171,7 +171,7 @@
 				
 	<classes>
 	
-		<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+	<class name="createShipmentE2ETests.TollPriorityAUSTests" />
 				
 	<!-- Blocked>	<class name="createShipmentE2ETests.TollPriorityNZ" />
 		
