@@ -552,7 +552,7 @@ public class IntermodalSpecializedTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	
-	@Test
+	@Test(priority=-1)
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "dropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -649,7 +649,7 @@ public class IntermodalSpecializedTests {
 
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 
-		CreateShipmentActions.ClickReviewCreateShipment();
+	/*	CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
@@ -680,7 +680,7 @@ public class IntermodalSpecializedTests {
 		String weight2 = Weight2 + "kg";
 
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
-				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);*/
 	}
 
 

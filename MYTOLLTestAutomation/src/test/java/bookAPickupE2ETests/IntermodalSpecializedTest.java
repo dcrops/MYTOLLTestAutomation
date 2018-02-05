@@ -147,6 +147,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -214,6 +215,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		PageBase.MaximumWaitForElementEnabled();
 		ReviewYourPickupActions.ClickEdit();
 
@@ -234,6 +236,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectDispatchDate();
 		// ReSubmit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		PageBase.MinimumWaitForElementEnabled();
 
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
@@ -312,6 +315,7 @@ public class IntermodalSpecializedTest {
 
 		// ReSubmit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		PageBase.MaximumWaitForElementEnabled();
 
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
@@ -443,6 +447,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -508,6 +513,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -565,6 +571,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -618,6 +625,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -675,6 +683,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -710,7 +719,6 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGRefrigerated);
 		BookAPickupActions.SelectDestination(destination);
-		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
@@ -738,6 +746,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -797,6 +806,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -867,6 +877,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -963,6 +974,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		
 		BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		PageBase.MaximumWaitForElementEnabled();
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
@@ -977,7 +989,7 @@ public class IntermodalSpecializedTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-	BaseWebdriver.tearDown();
+	//BaseWebdriver.tearDown();
 
 	}
 

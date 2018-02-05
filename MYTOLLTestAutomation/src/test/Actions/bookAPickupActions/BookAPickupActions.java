@@ -45,6 +45,7 @@ public class BookAPickupActions {
 	public static By destinationDropdown = By.xpath("//*[@id=\"destination-country-selector\"]/label/a/i");
 
 	public static By destination = By.id("destination-address");
+	public static By destinationErrorMsg = By.id("error-destination");
 	public static By destinationCountry = By.xpath("//*[@id=\"destination-country-selector\"]/label/input[2]");
 	public static By destinationaddress = By.cssSelector("ul.option-list > li > div");
 	public static By destinationCountryItem = By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li[11]/div");
@@ -256,7 +257,7 @@ public class BookAPickupActions {
 				 
 		try {
 			PageBase.MaximumWaitForElementEnabled();
-			//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();
+			action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();
 			PageBase.retryingFindClick(TollCarrierDropdown);
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
@@ -671,8 +672,15 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
 		PageBase.MaximumWaitForElementEnabled();
+		try {
 		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
 		PageBase.MaximumWaitForElementEnabled();
+		}
+		
+		catch(Exception ex)
+		{
+			//SelectDestinationOnReviewBookAPickup(pDestination+" ");
+		}
 		/*
 		 * PageBase.MaximumWaitForElementEnabled();
 		 * PageBase.retryingFindClick(destination);
@@ -685,6 +693,20 @@ public class BookAPickupActions {
 		 * pDestination+"']")).click(); PageBase.retryingFindClick(destinationaddress);
 		 */
 
+	}
+	
+	public static void SelectDestinationOnReviewBookAPickup(String destination) {
+		
+	boolean results = true;
+		try {
+			if (BaseWebdriver.driver.findElement(destinationErrorMsg).isDisplayed() == results) {
+				BookAPickupActions.SelectDestination(destination);
+			}
+		} catch (Exception ex) {
+			System.out.println(ex);
+			
+
+		} 
 	}
 
 	public static String SelectDestination1(String pDestination, String pDestinationValue) {
@@ -979,7 +1001,7 @@ public class BookAPickupActions {
 
 	public static void ClickReviewBook() {
 		BaseWebdriver.driver.findElement(reviewBookBtn).click();
-		// PageBase.click(reviewBookBtn, 2);
+	
 	}
 
 	public static void ConfirmReadyTimeAndConfirmPickup() {
