@@ -20,15 +20,15 @@ public class BaseWebdriver {
 	public static WebDriver driver;
 	public static StringBuffer verificationErrors = new StringBuffer();
 
-	public static String url="https://mytoll-per.tollgroup.com";
+	/*public static String url="https://mytoll-per.tollgroup.com";
 	public static String Username="perftest@toll.com";  //"auto_bvt@mailinator.com"; 
 
 	public static String Password="Victoria@123"; 
-	
-	/*public static String url="https://www-ppd.mytoll.com/";
-	public static String Username="NNAutomationuser1@gmail.com";  //"auto_bvt@mailinator.com"; 
+	 */
+	public static String url="https://www-ppd.mytoll.com/";
+	public static String Username="auto_bvt@mailinator.com";  //"auto_bvt@mailinator.com"; 
 
-	public static String Password="Toll@123"; */
+	public static String Password="Toll@123";
 	
 	//Createshipment users
 	public static String CreateshipmentTollTasUsername="NNAutomationuser1@gmail.com"; 

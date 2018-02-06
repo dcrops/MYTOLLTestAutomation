@@ -223,6 +223,7 @@ public class BookAPickupActions {
 	public static String pressTab = Keys.chord(Keys.TAB);
 	public static Actions action = new Actions(BaseWebdriver.driver);
 	public static ArrayList BookAPickUpNumbers = new ArrayList();
+	public static final By cutOfftimePopup= By.xpath("//*[@id=\"confirm-box-wrapper\"]//*//p");
 
 	
 	public static void EnterTollCarrierItem(String pTollCarrierName) {
@@ -1323,7 +1324,7 @@ public class BookAPickupActions {
 
 	}
 
-	public static void addAdderess() {
+	public static void addAdderess(String NewAddress) {
 		// Add Address
 		PageBase.waitForElement(BookAPickup_Location_Dropdown, 10);
 		PageBase.click(BookAPickup_Location_Dropdown, 10);
@@ -1336,7 +1337,7 @@ public class BookAPickupActions {
 		NewCompanyName = NewAddressCompanyName + newNumber;
 		PageBase.sendText(BookAPickup_New_AddressCompanName, 10, NewCompanyName);
 		PageBase.click(BookAPickup_New_AddressSearch, 10);
-		PageBase.sendText(BookAPickup_New_AddressSearch, 10, NewAddressCompanyAdd);
+		PageBase.sendText(BookAPickup_New_AddressSearch, 10, NewAddress);
 		PageBase.click(BookAPickup_New_AddressSearch_Select, 10);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
