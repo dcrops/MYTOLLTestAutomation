@@ -57,7 +57,7 @@ public class TollCarrierIntermodalSpecialized_AddAddress {
 		PageBase.MaximumWaitForElementEnabled();
 		
 		//Add Address
-		BookAPickupActions.addAdderess();
+		BookAPickupActions.addAdderess("60 Collins Street, MELBOURNE VIC 3000");
 		BookAPickupActions.verfiyAddress();
 
 		
