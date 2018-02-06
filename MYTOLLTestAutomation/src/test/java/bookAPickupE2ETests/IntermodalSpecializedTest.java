@@ -886,7 +886,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
 	}
 
-	@Test
+	@Test(priority=-3)
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
@@ -908,8 +908,8 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.VerifyBookAPickupScreen();
 	//	BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		BookAPickupActions.SelectLocation2(locationIndex);
-
+		//BookAPickupActions.SelectLocation2(locationIndex);
+		BookAPickupActions.EnterLocation("CPA Aus");
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);

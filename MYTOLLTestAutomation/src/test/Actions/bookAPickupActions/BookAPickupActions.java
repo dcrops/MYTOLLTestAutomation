@@ -221,6 +221,7 @@ public class BookAPickupActions {
 	public static String pressARROW_DOWN = Keys.chord(Keys.ARROW_DOWN); 
 	public static String pressEnter = Keys.chord(Keys.ENTER);
 	public static String pressTab = Keys.chord(Keys.TAB);
+	public static String pressSpace = Keys.chord(Keys.BACK_SPACE);
 	public static Actions action = new Actions(BaseWebdriver.driver);
 	public static ArrayList BookAPickUpNumbers = new ArrayList();
 
@@ -611,7 +612,18 @@ public class BookAPickupActions {
 		// Select(BaseWebdriver.driver.findElement(locationDropdown).click());
 		// selectByValue.selectByValue(location);
 	}
-
+	
+	public static void EnterLocation(String plocation) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(location).click();
+		BaseWebdriver.driver.findElement(location).clear();
+		BaseWebdriver.driver.findElement(location).sendKeys(plocation);
+		PageBase.MaximumWaitForElementEnabled();
+		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"location-selector\"]/div[2]/ul//div[text()='\" + pChargeToAccount + "']")).click();  
+		// BaseWebdriver.MaximumWaitForElementEnabled();
+		//*[@id="location-selector"]/div[2]/ul/li[2]/div[1]
+	}
+		
 	// Verification of Book A Pickup screen, Toll Carrier and Account number
 	public static void VerifyBookAPickupScreen() {
 		assertEquals("BOOK A PICKUP", BaseWebdriver.driver.findElement(BookaPickupScreenHeading).getText());
@@ -671,6 +683,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).click();
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
+		action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
 		PageBase.MaximumWaitForElementEnabled();
 		try {
 		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
@@ -701,6 +714,9 @@ public class BookAPickupActions {
 		try {
 			if (BaseWebdriver.driver.findElement(destinationErrorMsg).isDisplayed() == results) {
 				BookAPickupActions.SelectDestination(destination);
+				PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.technicalName);
+				PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.technicalName);
+
 			}
 		} catch (Exception ex) {
 			System.out.println(ex);
@@ -716,6 +732,8 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).click();
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
+
+		action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
 		String Destination = BaseWebdriver.driver.findElement(destination).getAttribute("value");
@@ -732,6 +750,8 @@ public class BookAPickupActions {
 		PageBase.waitForElement(BaseWebdriver.driver.findElement(destinationCountry), 10);
 		BaseWebdriver.driver.findElement(destinationCountry).clear();
 		BaseWebdriver.driver.findElement(destinationCountry).sendKeys(pDestination);
+
+		action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li[11]/div"));
 		// *[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[2]/div

@@ -12,7 +12,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import myTollHomePageActions.MyTollHomePageActions;
 
-public class BookAPickupTollTasmaniaStepDefinitions {
+public class BookAPickupTollTasmaniaStepDefinitions extends BaseWebdriver {
 
 	
 
@@ -32,7 +32,7 @@ public class BookAPickupTollTasmaniaStepDefinitions {
 
 			BookAPickupActions.EnterTollCarrier(bookAPickup.get("TollCarrier"));
 
-			bookAPickupActions.BookAPickupActions.SelectAccountNumberUsingKeyboard();
+			//bookAPickupActions.BookAPickupActions.SelectAccountNumberUsingKeyboard();
 		}
 
 	}
@@ -77,6 +77,11 @@ public class BookAPickupTollTasmaniaStepDefinitions {
 					bookAPickup.get("Height"), bookAPickup.get("Weight"));
 		}
 
+	}
+	
+	@When("^User is logout$")
+	public void user_is_logout() throws Throwable {
+		BaseWebdriver.tearDown();
 	}
 
 }
