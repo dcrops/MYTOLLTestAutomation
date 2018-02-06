@@ -908,8 +908,8 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.VerifyBookAPickupScreen();
 	//	BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		//BookAPickupActions.SelectLocation2(locationIndex);
-		BookAPickupActions.EnterLocation("CPA Aus");
+		BookAPickupActions.SelectLocation2(locationIndex);
+		//BookAPickupActions.EnterLocation("CPA Aus");
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -989,7 +989,7 @@ public class IntermodalSpecializedTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-	//BaseWebdriver.tearDown();
+	BaseWebdriver.tearDown();
 
 	}
 
