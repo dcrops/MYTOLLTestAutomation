@@ -16,6 +16,8 @@ Feature: Review & Book A Pickup in MyToll
     When User enter following input data to Add Item
       | ItemDescription      | NoOfItems | PalletSpace | Length | Width | Height | Weight |
       | Automation Template1 |        10 |           6 |    100 |   100 |    100 |    900 |
+      
+     When User is logout
 
   Scenario: Review & Book A Pickup TollTasmania carrier when Service as DGFreight
     When User selects Toll Carrier as TollTasmania and select Account Number
@@ -23,7 +25,11 @@ Feature: Review & Book A Pickup in MyToll
       | Toll Tasmania |        100428 |
     And User select Service as Express
       | Service   |
-      | DGFreight |
+      | DG Freight |
     When User enter following input data to Add Item
       | ItemDescription      | NoOfItems | PalletSpace | Length | Width | Height | Weight |
       | Automation Template1 |        10 |           6 |    100 |   100 |    100 |    900 |
+      
+       When User is logout
+
+     
