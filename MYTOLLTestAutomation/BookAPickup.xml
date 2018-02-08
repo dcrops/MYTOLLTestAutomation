@@ -58,7 +58,7 @@
 		<parameter name="ItemTemplateName2" value="Automation Template2" />
 		<parameter name="Mode" value="2" />
 		<parameter name="ChargeToAccount" value="Sender" />
-		<parameter name="Destination" value="MELALEUCA," />
+		<parameter name="Destination" value="MELALEUCA" />
 		<parameter name="DestinationPostcode" value="MELALEUCA, 6079" />
 		<parameter name="DestinationItem" value="6079, MELALEUCA, WA, AU" />
 		<parameter name="Postcode" value="6079" />
@@ -137,10 +137,12 @@
 		<parameter name="VICAddress2" value="TestAddress, VIC,3428" />
 
 		<classes>
+
 		<class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<!-- Blocked> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
 				<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime" />
 			<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress" />
+
 
 			<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime" />
 		    <class name="bookAPickupE2ETests.IntermodalSpecializedTest" />

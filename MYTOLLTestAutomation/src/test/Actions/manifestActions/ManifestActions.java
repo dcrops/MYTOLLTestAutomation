@@ -530,6 +530,17 @@ public class ManifestActions {
 		PageBase.verifyTextExistAttribute(BookAPickupActions.availableTime, time);	
 	}
 	
+	public static void selectClosingTimeJS(String time) {
+		Reporter.log("User Sets Ready Time as -"+time);
+		((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('location-closing-time').removeAttribute('readonly',0);");
+        ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('location-closing-time').setAttribute('data-timepicki-time','"+time+"');");
+		WebElement fromDateBox= BaseWebdriver.driver.findElement(BookAPickupActions.closingTime);
+		fromDateBox.clear();
+		PageBase.click(BookAPickupActions.decreaseClosingTimeHours, 1);
+		PageBase.click(BookAPickupActions.increaseClosingTimeHours, 1);
+		PageBase.verifyTextExistAttribute(BookAPickupActions.closingTime, time);	
+	}
+	
 	public static void createManifestPopUp (String TollCarrier, int senderInder, String ManifestName) {
 		PageBase.MaximumWaitForElementEnabled_1();
 		RateEnquiryActions.EnterTollCarrier(TollCarrier);

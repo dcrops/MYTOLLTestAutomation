@@ -107,6 +107,8 @@ public class BookAPickupActions {
 	public static By closingTime = By.id("location-closing-time");
 	public static By increaseClosingTimeHours = By
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[1]/div[1]/i");
+	public static By decreaseClosingTimeHours = By
+			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[1]/div[3]/i");                           
 	public static By confirmReadyTime = By.id("confirm-true");
 	public static By increaseClosingTimeMinutes = By
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[3]/div[1]/i");
@@ -697,7 +699,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).click();
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
-		action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
+//		action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
 		PageBase.MaximumWaitForElementEnabled();
 		try {
 		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
