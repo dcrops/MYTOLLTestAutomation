@@ -310,6 +310,21 @@ public class PageBase {
 		
 	}
 	
+	public static void isElementNotPresent (By locator, int seconds, String itemDescription) {
+		try {
+		boolean isElementPresent = BaseWebdriver.driver.findElement(locator).isDisplayed();
+		
+		if (isElementPresent == true) {
+			Reporter.log("FAILED: Element : "+itemDescription+ " Exits on Screen");
+			Assert.fail("FAILED: Element : "+itemDescription+ " Exits on Screen");	
+			}
+		}
+		catch(Exception e) {
+				Reporter.log("Element : "+itemDescription+ " DOES NOT Exits on Screen");
+				System.out.println("Element : "+itemDescription+ " DOES NOT Exits on Screen");
+		}	
+	}
+	
 	public static void MaximumWaitForElementEnabled_1() {
 		try {
 			Thread.sleep(1500);
