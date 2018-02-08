@@ -42,7 +42,7 @@ public class Toll_IntermodalTest {
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String DestinationItem,
 			String specialIns) {
 
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		// Select Toll Intermodal
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -141,7 +141,7 @@ public class Toll_IntermodalTest {
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String DestinationItem,
 			String specialIns) {
 
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		// Select Toll Intermodal
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 

@@ -38,7 +38,7 @@ public class TollTasmaniaTest {
 			String palletSpace, String destination, String specialIns) {
 
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -125,7 +125,7 @@ public class TollTasmaniaTest {
 			String specialIns) {
 
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -193,7 +193,7 @@ public class TollTasmaniaTest {
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
@@ -330,7 +330,7 @@ public class TollTasmaniaTest {
 			String specialIns) {
 
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
@@ -396,7 +396,7 @@ public class TollTasmaniaTest {
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace, String destination, String specialIns) {
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
@@ -451,7 +451,7 @@ public class TollTasmaniaTest {
 			String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
@@ -507,7 +507,7 @@ public class TollTasmaniaTest {
 			String Width, String Height, String Weight, String DGGoods, String FoodItems, String palletSpace,
 			String destination, String Postcode, String vendorNum, String specialIns) {
 
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 
 		// Select TollTasmania
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -570,7 +570,7 @@ public class TollTasmaniaTest {
 			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 
 		// Select TollTasmania
 		BookAPickupActions.EnterTollCarrier(TollCarrier);

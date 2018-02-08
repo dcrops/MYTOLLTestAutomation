@@ -21,18 +21,18 @@ public class BaseWebdriver {
 	public static StringBuffer verificationErrors = new StringBuffer();
 
 
-	public static String url="https://www-ppd.mytoll.com/";  //"https://mytoll-per.tollgroup.com";  //"https://www-ppd.mytoll.com/"; 
-	public static String Username="NNAutomationuser1@gmail.com"; //"perftest@toll.com"; // // "auto_bvt@mailinator.com"; 
+	public static String url="https://www-ppd.mytoll.com/"; //"https://mytoll-per.tollgroup.com";  
+	public static String Username="NNAutomationuser1@gmail.com"; //"perftest@toll.com";   // "auto_bvt@mailinator.com"; 
 
-	public static String Password= "Toll@123"; //"Victoria@123"; // 
+	public static String Password="Toll@123"; // "Victoria@123";  
 
 	
 	//Createshipment users
 	public static String CreateshipmentTollTasUsername="NNAutomationuser1@gmail.com"; 
 	public static String CreateshipmentTollTasPassword="tolTOL123!@#";
 	
-	//*[@id="service-type-selector"]/label/a/i
-	
+
+		
 	@BeforeMethod
 	public static void RunSetup(String browser) throws Exception {
 
