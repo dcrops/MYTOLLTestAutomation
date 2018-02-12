@@ -22,7 +22,7 @@ public class TollTasmaniaTest {
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
@@ -108,7 +108,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -173,7 +173,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	@Test
@@ -315,7 +315,7 @@ public class TollTasmaniaTest {
 				Volume2, TotalWeight, DGGoodsNo);
 
 		ReviewYourPickupActions.ClickConfirmPickup();
-		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
@@ -385,7 +385,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	@Test
@@ -438,7 +438,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -493,7 +493,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -557,7 +557,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -621,7 +621,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 

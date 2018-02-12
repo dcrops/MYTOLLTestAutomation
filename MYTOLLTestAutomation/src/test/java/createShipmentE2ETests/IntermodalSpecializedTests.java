@@ -18,7 +18,7 @@ public class IntermodalSpecializedTests {
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		PageBase.MediumWaitForElementEnabled();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		PageBase.MediumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();

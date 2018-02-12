@@ -20,7 +20,7 @@ public class TollIPECTest {
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 		// MyTollHomePageActions.ClickMenu();
@@ -141,7 +141,7 @@ public class TollIPECTest {
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
 
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 		//BookAPickupActions.GetReferenceNumber();
 	}
 

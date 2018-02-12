@@ -22,7 +22,7 @@ public class RateEnquiryStepDefinitions {
 	@Given("^User is Registered in MyToll and is on Rate Enquiry Page$")
 	public void user_is_Registered_in_MyToll_and_is_on_Book_a_pickup_page() throws Throwable {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickGetRateEnquiery();
 	}

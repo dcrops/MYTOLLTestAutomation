@@ -19,7 +19,7 @@ public class TollPriorityAUSTests2 {
 	public void RunSetup() throws Exception
 			{
 				BaseWebdriver.setUp();
-				MyTollHomePageActions.Login(BaseWebdriver.Username , BaseWebdriver.Password);
+				MyTollHomePageActions.Login(BaseWebdriver.Username2 , BaseWebdriver.Password);
 				MyTollHomePageActions.ClickMenu();
 				MyTollHomePageActions.ClickGetRateEnquiery();
 			}

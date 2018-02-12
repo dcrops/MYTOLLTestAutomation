@@ -22,7 +22,7 @@ public class TollPriorityAusTest {
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
@@ -106,7 +106,7 @@ public class TollPriorityAusTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-		/*BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
 		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNumber, company, companyLocation, name,
@@ -117,7 +117,7 @@ public class TollPriorityAusTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		 ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username); */
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1); 
 		
 	}
 	
@@ -798,7 +798,7 @@ public class TollPriorityAusTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 	}
 
 }

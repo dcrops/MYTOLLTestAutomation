@@ -19,7 +19,7 @@ public class BookAPickupTollTasmaniaStepDefinitions extends BaseWebdriver {
 	@Given("^User is Registered in MyToll and is on Book a pickup page$")
 	public void user_is_Registered_in_MyToll_and_is_on_Book_a_pickup_page() throws Throwable {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}

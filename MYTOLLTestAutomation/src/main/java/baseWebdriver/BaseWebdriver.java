@@ -22,9 +22,9 @@ public class BaseWebdriver {
 
 
 	public static String url="https://www-ppd.mytoll.com/"; //"https://mytoll-per.tollgroup.com";  
-	public static String Username="NNAutomationuser1@gmail.com"; //"perftest@toll.com";   // "auto_bvt@mailinator.com"; 
-
-
+	
+	public static String Username1="NNAutomationuser1@gmail.com";//"perftest@toll.com";
+	public static String Username2= "auto_bvt@mailinator.com"; 
 	public static String Password="Toll@123"; // "Victoria@123";  
 
 	

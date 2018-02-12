@@ -23,13 +23,13 @@ public class IntermodalSpecializedTest {
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 
 	}
 
-	@Test (priority=-3)
+	@Test 
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDangerousGoods", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
@@ -165,7 +165,7 @@ public class IntermodalSpecializedTest {
 				TotalWeight, DGGoodsNo, FoodItems);
 
 		ReviewYourPickupActions.ClickConfirmPickup();
-		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
@@ -244,7 +244,7 @@ public class IntermodalSpecializedTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 	
@@ -323,7 +323,7 @@ public class IntermodalSpecializedTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -420,7 +420,7 @@ public class IntermodalSpecializedTest {
 
 		// Add a new item
 		BookAPickupActions.AddANewLineTollNQX(destination, DestinationItem, ServiceExpress, ItemTemplateName2,
-				NumberOfItems, palletSpace, ChargeToAccount, Length, Width, Height, Weight);
+				NumberOfItems, palletSpace, chargeToAccount, Length, Width, Height, Weight);
 
 		String volume2 = BookAPickupActions.GetVoulme().toString();
 		System.out.println(volume2);
@@ -465,13 +465,13 @@ public class IntermodalSpecializedTest {
 				TotalWeight, DGGoodsNo, FoodItems);
 
 		ReviewYourPickupActions.ClickConfirmPickup();
-		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
 
 
-	@Test(priority=-2)
+	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -512,14 +512,14 @@ public class IntermodalSpecializedTest {
 		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
 
 		// Submit Book a pickup details
-	/*	BookAPickupActions.ClickReviewBook();
+		BookAPickupActions.ClickReviewBook();
 		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);*/
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 //	@Test(priority=-1)
@@ -577,7 +577,7 @@ public class IntermodalSpecializedTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	@Test
@@ -632,7 +632,7 @@ public class IntermodalSpecializedTest {
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
 
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	//@Test(priority=-1)
@@ -689,10 +689,10 @@ public class IntermodalSpecializedTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
-	@Test(priority=-1)
+	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGRefrigerated", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
@@ -752,7 +752,7 @@ public class IntermodalSpecializedTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	@Test
@@ -812,7 +812,7 @@ public class IntermodalSpecializedTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	@Test
@@ -883,7 +883,7 @@ public class IntermodalSpecializedTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	@Test
@@ -981,7 +981,7 @@ public class IntermodalSpecializedTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 		ReviewYourPickupActions.VerifyNoEditBtn();
 
 	}
@@ -989,7 +989,7 @@ public class IntermodalSpecializedTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-	//BaseWebdriver.tearDown();
+	BaseWebdriver.tearDown();
 
 	}
 

@@ -1174,8 +1174,8 @@ public class BookAPickupActions {
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(pLength, pWidth, pHeight, pWeight);
 
-		//BookAPickupActions.SelectChargeToAccount2(1);
-		SelectChargeToAccountReceiver(2);
+		BookAPickupActions.SelectChargeToAccount2(1);
+		//SelectChargeToAccountReceiver(2);
 		BookAPickupActions.SelectDestination1(pDestination, pDestinationItem);
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 
