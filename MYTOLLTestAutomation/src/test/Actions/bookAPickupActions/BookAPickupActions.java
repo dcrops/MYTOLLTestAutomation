@@ -57,6 +57,7 @@ public class BookAPickupActions {
 	public static By modeItem = By.xpath("//*[@id=\"mode-type-selector\"]/div/ul/li");
 	public static By chargeToAccountItem = By.xpath("//*[@id=\"charge-to-selector\"]/div/ul/li[1]/div");
 	public static By chargeToAccount = By.xpath("//*[@id=\"charge-to-selector\"]/label/a/i");
+	public static By ReceiverAccount = By.id("reciever-account");
 	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
 	public static By itemDescriptionDropdown = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
 	public static By itemDescriptionTextField = By.id("item-description");
@@ -839,6 +840,13 @@ public class BookAPickupActions {
 		return SelectChargeToAccount(j);
 
 	}
+	
+	public static String SelectChargeToAccountReceiver(int j) {
+		PageBase.WaitForElement(chargeToAccount, 10);
+		PageBase.sendKeysToElement(ReceiverAccount, 10, "123456");
+		return SelectChargeToAccountReceiver(j);
+
+	}
 
 	public static void SelectItemDescription() {
 		PageBase.MaximumWaitForElementEnabled();
@@ -1166,8 +1174,8 @@ public class BookAPickupActions {
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(pLength, pWidth, pHeight, pWeight);
 
-		BookAPickupActions.SelectChargeToAccount2(1);
-
+		//BookAPickupActions.SelectChargeToAccount2(1);
+		SelectChargeToAccountReceiver(2);
 		BookAPickupActions.SelectDestination1(pDestination, pDestinationItem);
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 

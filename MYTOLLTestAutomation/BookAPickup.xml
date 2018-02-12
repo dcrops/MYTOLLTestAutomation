@@ -137,9 +137,9 @@
 		<parameter name="VICAddress2" value="TestAddress, VIC,3428" />
 
 		<classes>
-
 		<class name="bookAPickupE2ETests.TollPriorityAusTest" />
-			<!-- Blocked> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
+		<!-- Blocked><class name="bookAPickupE2ETests.TollPriorityAusTest" />
+			 <class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
 				<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime" />
 			<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress" />
 

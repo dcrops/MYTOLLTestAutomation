@@ -58,6 +58,8 @@ public class TollPriorityNZTest {
 
 		BookAPickupActions.SelectDestinationCountry(destination, destination);
 
+		PageBase.MaximumWaitForElementEnabled();
+
 		BookAPickupActions.SelectItemDescription();
 		// BookAPickupActions.Selectservice(2);
 		BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -229,6 +231,6 @@ public class TollPriorityNZTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 	}
 }

@@ -147,7 +147,7 @@ public class TollIPECTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 
 	}
 

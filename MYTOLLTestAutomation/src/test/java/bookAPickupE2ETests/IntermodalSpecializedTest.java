@@ -29,7 +29,7 @@ public class IntermodalSpecializedTest {
 
 	}
 
-	@Test
+	@Test (priority=-3)
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDangerousGoods", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
@@ -471,7 +471,7 @@ public class IntermodalSpecializedTest {
 
 
 
-	@Test
+	@Test(priority=-2)
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -512,14 +512,14 @@ public class IntermodalSpecializedTest {
 		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
 
 		// Submit Book a pickup details
-		BookAPickupActions.ClickReviewBook();
+	/*	BookAPickupActions.ClickReviewBook();
 		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);*/
 	}
 
 //	@Test(priority=-1)
@@ -989,7 +989,7 @@ public class IntermodalSpecializedTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-	BaseWebdriver.tearDown();
+	//BaseWebdriver.tearDown();
 
 	}
 
