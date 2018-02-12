@@ -227,6 +227,8 @@ public class BookAPickupActions {
 	public static Actions action = new Actions(BaseWebdriver.driver);
 	public static ArrayList BookAPickUpNumbers = new ArrayList();
 	public static final By cutOfftimePopup= By.xpath("//*[@id=\"confirm-box-wrapper\"]//*//p");
+	public static final By cutOfftimeErrorMsg= By.xpath("//*[@id=\"error-ready-time\"]");
+	
 
 	
 	public static void EnterTollCarrierItem(String pTollCarrierName) {
