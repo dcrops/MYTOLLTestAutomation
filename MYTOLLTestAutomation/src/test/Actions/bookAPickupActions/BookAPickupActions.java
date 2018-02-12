@@ -57,6 +57,7 @@ public class BookAPickupActions {
 	public static By modeItem = By.xpath("//*[@id=\"mode-type-selector\"]/div/ul/li");
 	public static By chargeToAccountItem = By.xpath("//*[@id=\"charge-to-selector\"]/div/ul/li[1]/div");
 	public static By chargeToAccount = By.xpath("//*[@id=\"charge-to-selector\"]/label/a/i");
+	public static By ReceiverAccount = By.id("reciever-account");
 	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
 	public static By itemDescriptionDropdown = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
 	public static By itemDescriptionTextField = By.id("item-description");
@@ -80,7 +81,7 @@ public class BookAPickupActions {
 	public static By UNNumberName = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div");
 	public static By searchBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/span/i");
 
-	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div"); // *[@id="un-code-selector-"]/div/ul/li/div
+	public static By UNNumberItem = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div"); 
 	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i");
 	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li[1]/div");
 	public static By dgPackagingDescription = By.xpath("//*[@id=\"dg-form\"]/div/div[3]/div[1]/div/input");
@@ -165,7 +166,15 @@ public class BookAPickupActions {
 
 	public static final String NewAddressCompanyName = "Test";
 	public static final String NewAddressCompanyAdd = "60 Collins Street, MELBOURNE VIC 3000";
-	public static String NewCompanyName = "Test5213";
+	public static String NewCompanyName = "Test5213"; 
+	public static By AddAdressManually = By.id("add-address-manually-link"); 
+	public static By AddAdressCompanyName = By.id("add-addr-company"); 
+	public static By AddAdressAddressLine1 = By.name("add-adr-line1"); 
+	public static By AddAdressAddressLine2 = By.name("add-adr-line2"); 
+	public static By AddAdressAddressSuburb = By.id("add-addr-suburb");
+	public static By AddAdressAddressState = By.id("add-addr-state-label"); 
+	public static By AddAdressAddressPostcode = By.id("add-addr-postcode"); 
+	public static By AddAdressAddressContinue =By.xpath("//*[@id=\"addr-continue-manual\"]"); // By.id("addr-continue-manual"); 
 	public static final By SearchContactTxtFeild = By.id("sContact");
 	public static final By SearchContactButton = By.id("search-field");
 	public static final By SearchContactCompanyLocation = By.xpath(
@@ -228,7 +237,9 @@ public class BookAPickupActions {
 	public static ArrayList BookAPickUpNumbers = new ArrayList();
 	public static final By cutOfftimePopup= By.xpath("//*[@id=\"confirm-box-wrapper\"]//*//p");
 	public static final By cutOfftimeErrorMsg= By.xpath("//*[@id=\"error-ready-time\"]");
-	
+
+	public static By beforeTimeErrorMsg= By.id("error-ready-time");
+
 
 	
 	public static void EnterTollCarrierItem(String pTollCarrierName) {
@@ -244,17 +255,21 @@ public class BookAPickupActions {
 		try {
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
-			BaseWebdriver.driver
-					.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"))
-					.click();
+			PageBase.ClickElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"), 5);
+			PageBase.MaximumWaitForElementEnabled();
+			//BaseWebdriver.driver
+			//		.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"))
+			//		.click();
 		}
 
 		catch (Exception ex) {
 			BaseWebdriver.driver.navigate().refresh();
 			PageBase.retryingFindClick(TollCarrierDropdown);
-			BaseWebdriver.driver
-					.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"))
-					.click();
+			PageBase.ClickElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"), 5);
+			PageBase.MaximumWaitForElementEnabled();
+			//BaseWebdriver.driver
+			//		.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"))
+			//		.click();
 		}
 
 	}
@@ -738,7 +753,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
 
-		action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
+		//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
 		String Destination = BaseWebdriver.driver.findElement(destination).getAttribute("value");
@@ -752,7 +767,7 @@ public class BookAPickupActions {
 
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.retryingFindClick(destinationCountry);
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(destinationCountry), 10);
+		PageBase.WaitForElement(destinationCountry, 10);
 		BaseWebdriver.driver.findElement(destinationCountry).clear();
 		BaseWebdriver.driver.findElement(destinationCountry).sendKeys(pDestination);
 
@@ -767,7 +782,7 @@ public class BookAPickupActions {
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(destination);
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(destination), 10);
+		PageBase.WaitForElement(destination, 10);
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
 		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[text()='"+pDestination+"']")).click();
@@ -780,7 +795,7 @@ public class BookAPickupActions {
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(destination);
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(destination), 10);
+		PageBase.waitForElement(destination, 10);
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
 		PageBase.MinimumWaitForElementEnabled();
@@ -797,7 +812,7 @@ public class BookAPickupActions {
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(destinationDropdown);
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(destinationDropdown), 10);
+		PageBase.WaitForElement(destinationDropdown, 10);
 		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li["+j+"]/div")).click();
 		PageBase.retryingFindClick(By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li[" + j + "]/div"));
 
@@ -805,9 +820,9 @@ public class BookAPickupActions {
 
 	public static void SelectMode() {
 		// BookAPickupObjects.SelectModeItem(j);
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(mode), 10);
+		PageBase.WaitForElement(mode, 10);
 		BaseWebdriver.driver.findElement(mode).click();
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(mode), 10);
+		PageBase.WaitForElement(mode, 10);
 		BaseWebdriver.driver.findElement(modeItem).click();
 
 	}
@@ -824,8 +839,15 @@ public class BookAPickupActions {
 	}
 
 	public static String SelectChargeToAccount2(int j) {
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(chargeToAccount), 10);
+		PageBase.WaitForElement(chargeToAccount, 10);
 		return SelectChargeToAccount(j);
+
+	}
+	
+	public static String SelectChargeToAccountReceiver(int j) {
+		PageBase.WaitForElement(chargeToAccount, 10);
+		PageBase.sendKeysToElement(ReceiverAccount, 10, "123456");
+		return SelectChargeToAccountReceiver(j);
 
 	}
 
@@ -911,7 +933,7 @@ public class BookAPickupActions {
 	}
 
 	public static void EnterLengthWidthHeight(String plength, String pwidth, String pheight) {
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(length), 10);
+		PageBase.WaitForElement(length, 10);
 		BaseWebdriver.driver.findElement(length).click();
 		BaseWebdriver.driver.findElement(length).clear();
 		BaseWebdriver.driver.findElement(length).sendKeys(plength);
@@ -1156,7 +1178,7 @@ public class BookAPickupActions {
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(pLength, pWidth, pHeight, pWeight);
 
 		BookAPickupActions.SelectChargeToAccount2(1);
-
+		//SelectChargeToAccountReceiver(2);
 		BookAPickupActions.SelectDestination1(pDestination, pDestinationItem);
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 
@@ -1393,6 +1415,40 @@ public class BookAPickupActions {
 		}
 		PageBase.verifyTextExistAttribute(BookAPickup_CompanyName, NewCompanyName);
 
+	}  
+	
+	public static void AddAddressManually(String pCompanyName,String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb,String pAddAdressAddressSuburbItem, String pAddAdressAddressState, String pAddAdressAddressPostcode) {
+		// Add Address
+		PageBase.waitForElement(BookAPickup_Location_Dropdown, 10);
+		PageBase.ClickElement(BookAPickup_Location_Dropdown, 5);
+		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
+		PageBase.click(BookAPickup_Add_Address, 5);
+		PageBase.ClickElement(AddAdressManually, 5);
+		PageBase.sendKeysToElement(AddAdressCompanyName, 5, pCompanyName);
+		PageBase.sendKeysToElement(AddAdressAddressLine1, 5, pAddAdressAddressLine1);
+		PageBase.sendKeysToElement(AddAdressAddressLine2, 5, pAddAdressAddressLine2);
+		PageBase.sendKeysToElement(AddAdressAddressState, 5, pAddAdressAddressState); 
+		PageBase.MediumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"add-addr-state-selector\"]/div/ul/li[text()='"+pAddAdressAddressState+"']")).click();
+		PageBase.sendKeysToElement(AddAdressAddressPostcode, 5, pAddAdressAddressPostcode);
+		PageBase.sendKeysToElement(AddAdressAddressSuburb, 5, pAddAdressAddressSuburb); 
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"add-addr-suburb-wrpr\"]/div/ul/li/div[text()='"+pAddAdressAddressSuburbItem+"']")).click(); 
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.retryingFindClick(AddAdressAddressContinue);
+		PageBase.MaximumWaitForElementEnabled();
+		Boolean results=BaseWebdriver.driver.findElement(AddAdressAddressContinue).isDisplayed(); 
+		System.out.println("AddAdressAddressContinue" + results);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.sendKeysToElement(BookAPickup_New_Address_Name, 10, NewCompanyName);
+		PageBase.sendKeysToElement(BookAPickup_New_Address_Number, 10, "0452456876");
+		PageBase.sendKeysToElement(BookAPickup_New_Address_Email, 10, "Test@test.com");
+		PageBase.ClickElement(BookAPickup_New_Address_Add, 10);
+		PageBase.MaximumWaitForElementEnabled();
+			
 	}
 
 	public static void verfiyAddress() {

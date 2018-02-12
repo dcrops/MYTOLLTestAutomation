@@ -71,7 +71,7 @@ public class RegistrationPage_UserProfileStore {
 	public void ChangeSecurityQuestion() throws Exception {
 		//User Changes Memorable Question
 		Reporter.log("User Changes Memorable Question");
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
 		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
 		MyTollHomePageActions.ClickMenu();
 		Reporter.log("User Navigates to About Me Page");

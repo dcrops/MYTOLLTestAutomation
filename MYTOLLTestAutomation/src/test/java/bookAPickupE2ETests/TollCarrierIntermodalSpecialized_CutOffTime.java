@@ -48,7 +48,7 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@BeforeMethod
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 
@@ -611,6 +611,7 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 		BaseWebdriver.tearDown();
+
 	}
 
 }

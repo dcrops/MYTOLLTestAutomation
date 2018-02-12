@@ -33,13 +33,16 @@ public class PageBase {
 		return result;
 	}
 
-	public static WebElement waitForElement(WebElement element, int secsToWait) {
+	public static WebElement WaitForElement(By ObjectLocater, int secsToWait) {
+		WebElement element=BaseWebdriver.driver.findElement(ObjectLocater);
 		return (new WebDriverWait(BaseWebdriver.driver, secsToWait)).until(ExpectedConditions.visibilityOf(element));
 	}
 
-	public static boolean sendKeysToElement(WebElement elementToWaitFor, int secsToWait, String keysToSend) {
+	public static boolean sendKeysToElement(By ObjectLocater, int secsToWait, String keysToSend) {
 		try {
-			WebElement element = waitForElement(elementToWaitFor, secsToWait);
+			WebElement element = WaitForElement(ObjectLocater, secsToWait);
+			element.click();
+			element.clear();
 			element.sendKeys(keysToSend);
 		} catch (TimeoutException ex) {
 			logElementNotFound(ex);
@@ -49,16 +52,28 @@ public class PageBase {
 		return true;
 	}
 
+	public static boolean ClickElement(By ObjectLocater, int secsToWait) {
+		try {
+			WebElement element = WaitForElement(ObjectLocater, secsToWait);
+			element.click();
+		} catch (TimeoutException ex) {
+			logElementNotFound(ex);
+			return false;
+		}
+
+		return true;
+	}
+	
 	// When an element is not found sets two levels of logging and sets found =
 	// false
 	private static void logElementNotFound(TimeoutException ex) {
-		System.out.print("Element was not returned in a timely manner");
+		System.out.print("TimeoutException ex"+ ex);
 
 	}
 
-	public static boolean findElement(WebElement element, int secsToWait) {
+	public static boolean findElement(By ObjectLocater, int secsToWait) {
 		try {
-			waitForElement(element, secsToWait);
+			WaitForElement(ObjectLocater, secsToWait);
 		} catch (TimeoutException ex) {
 			logElementNotFound(ex);
 			return false;

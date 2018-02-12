@@ -22,7 +22,7 @@ public class Toll_IntermodalTest {
 	@BeforeMethod
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 
@@ -42,7 +42,7 @@ public class Toll_IntermodalTest {
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String DestinationItem,
 			String specialIns) {
 
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		// Select Toll Intermodal
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -141,7 +141,7 @@ public class Toll_IntermodalTest {
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String DestinationItem,
 			String specialIns) {
 
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		// Select Toll Intermodal
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 
@@ -347,7 +347,7 @@ public class Toll_IntermodalTest {
 				TotalWeight, DGGoodsNo, FoodItems);
 
 		ReviewYourPickupActions.ClickConfirmPickup();
-		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 		System.out.println("Book A Pickup reference  " + reference);
 
 	}
@@ -418,7 +418,7 @@ public class Toll_IntermodalTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	@Test
@@ -473,7 +473,7 @@ public class Toll_IntermodalTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -530,7 +530,7 @@ public class Toll_IntermodalTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
  @Test
@@ -608,7 +608,7 @@ public class Toll_IntermodalTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -679,7 +679,7 @@ public class Toll_IntermodalTest {
 
 				// Confirm Pickup and Verify pickup confirmation details
 				ReviewYourPickupActions.ClickConfirmPickup();
-				ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+				ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	@Test

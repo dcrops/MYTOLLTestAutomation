@@ -22,7 +22,7 @@ public class TollTasmaniaTest {
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
@@ -38,7 +38,7 @@ public class TollTasmaniaTest {
 			String palletSpace, String destination, String specialIns) {
 
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -108,7 +108,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -125,7 +125,7 @@ public class TollTasmaniaTest {
 			String specialIns) {
 
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -173,7 +173,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	@Test
@@ -193,7 +193,7 @@ public class TollTasmaniaTest {
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
@@ -315,7 +315,7 @@ public class TollTasmaniaTest {
 				Volume2, TotalWeight, DGGoodsNo);
 
 		ReviewYourPickupActions.ClickConfirmPickup();
-		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
@@ -330,7 +330,7 @@ public class TollTasmaniaTest {
 			String specialIns) {
 
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
@@ -385,7 +385,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
 	@Test
@@ -396,7 +396,7 @@ public class TollTasmaniaTest {
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace, String destination, String specialIns) {
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
@@ -438,7 +438,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -451,7 +451,7 @@ public class TollTasmaniaTest {
 			String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
 		// Select TollTasmania
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
@@ -493,7 +493,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -507,7 +507,7 @@ public class TollTasmaniaTest {
 			String Width, String Height, String Weight, String DGGoods, String FoodItems, String palletSpace,
 			String destination, String Postcode, String vendorNum, String specialIns) {
 
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 
 		// Select TollTasmania
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -557,7 +557,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
@@ -570,7 +570,7 @@ public class TollTasmaniaTest {
 			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
-		PageBase.waitForElement(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown), 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 
 		// Select TollTasmania
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -621,7 +621,7 @@ public class TollTasmaniaTest {
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
-		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username);
+		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 
 	}
 
