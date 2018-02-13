@@ -39,6 +39,8 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	public static String VICAddress1 = "South Wharf Office Tower, 30 Convention Centre Place, SOUTH WHARF  VIC  3006";
 	public static String VICAddress2 = "6 Wheeler Street, BERWICK  VIC  3806";
 	public static String VICAddress3 = "60 Collins Street, MELBOURNE  VIC  3000";
+	public static String WAAddress1 = "97 William Street, PERTH  WA  6000";
+	public static String WAAddress2 = "1347 Chester Pass Road, NAPIER  WA  6330";
 	
 	
 	
@@ -394,13 +396,12 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 
 	
 	//VIC ZONE CUT OFF TIME CHECK
-	
-	
+
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
-	public void TNQX_CutOffTime_vic_01(String TollCarrier,
+	public void TNQX_CutOffTime_VIC_01(String TollCarrier,
 			String ServiceRefrigeration, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
@@ -428,13 +429,179 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 		// Enter Pickup details
 		BookAPickupActions.selectDispatchDate();
 		//User Enters time after Cut off	
-		ManifestActions.selectReadyTimeJS("15:15");
+		ManifestActions.selectReadyTimeJS("14:15");
 		Reporter.log("User Clicks Review Book Up");
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(BookAPickupActions.cutOfftimePopup, "Ready time entered by you is outside of business hours of selected carrier. Do you want to continue with same ready time ?");
 		}
 	
+	@Test
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+	public void TNQX_CutOffTime_VIC_02(String TollCarrier,
+			String ServiceExpress, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		//Select Account
+		BookAPickupActions.SelectAccountNumber1();
+		PageBase.MaximumWaitForElementEnabled();
+		
+		//Add Address
+		BookAPickupActions.addAdderess(VICAddress2);
+		
+		BookAPickupActions.EnterService(ServiceExpress);
+		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		BookAPickupActions.SelectChargeToAccount2(1);
+
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		BookAPickupActions.SelectDangerousGoods(2);
+		BookAPickupActions.selectContainFoodItem();
+
+		// Enter Pickup details
+		BookAPickupActions.selectDispatchDate();
+		//User Enters time after Cut off	
+		ManifestActions.selectReadyTimeJS("14:45");
+		Reporter.log("User Clicks Review Book Up");
+		BookAPickupActions.ClickReviewBook();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExist(BookAPickupActions.cutOfftimePopup, "Ready time entered by you is outside of business hours of selected carrier. Do you want to continue with same ready time ?");
+		}
+	
+	
+	@Test
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+	public void TNQX_CutOffTime_VIC_03(String TollCarrier,
+			String ServiceFCL, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		//Select Account
+		BookAPickupActions.SelectAccountNumber1();
+		PageBase.MaximumWaitForElementEnabled();
+		
+		//Add Address
+		BookAPickupActions.addAdderess(VICAddress3);
+		
+		BookAPickupActions.EnterService(ServiceFCL);
+		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		BookAPickupActions.SelectChargeToAccount2(1);
+
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		BookAPickupActions.SelectDangerousGoods(2);
+		BookAPickupActions.selectContainFoodItem();
+
+		// Enter Pickup details
+		BookAPickupActions.selectDispatchDate();
+		//User Enters time after Cut off	
+		ManifestActions.selectReadyTimeJS("23:00");
+		ManifestActions.selectClosingTimeJS("23:45");
+		Reporter.log("User Clicks Review Book Up");
+		BookAPickupActions.ClickReviewBook();
+		PageBase.MaximumWaitForElementEnabled_1();
+		//PageBase.verifyTextExist(BookAPickupActions.cutOfftimePopup, "Ready time entered by you is outside of business hours of selected carrier. Do you want to continue with same ready time ?");
+		PageBase.isElementNotPresent(BookAPickupActions.cutOfftimePopup, 3 , "Cut Off Time Error Msg");
+		}
+	
+	
+
+	//WA ZONE CUT OFF TIME CHECK
+	
+
+	@Test
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+	public void TNQX_CutOffTime_WA_01(String TollCarrier,
+			String ServiceExpress, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		//Select Account
+		BookAPickupActions.SelectAccountNumber1();
+		PageBase.MaximumWaitForElementEnabled();
+		
+		//Add Address
+		BookAPickupActions.addAdderess(WAAddress1);
+		
+		BookAPickupActions.EnterService(ServiceExpress);
+		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		BookAPickupActions.SelectChargeToAccount2(1);
+
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		BookAPickupActions.SelectDangerousGoods(2);
+		BookAPickupActions.selectContainFoodItem();
+
+		// Enter Pickup details
+		BookAPickupActions.selectDispatchDate();
+		//User Enters time after Cut off	
+		ManifestActions.selectReadyTimeJS("10:15");
+		Reporter.log("User Clicks Review Book Up");
+		BookAPickupActions.ClickReviewBook();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExist(BookAPickupActions.cutOfftimePopup, "Ready time entered by you is outside of business hours of selected carrier. Do you want to continue with same ready time ?");
+		}
+	
+	
+	@Test
+	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "locationIndex", "ItemTemplateName",
+			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+	public void TNQX_CutOffTime_WA_02(String TollCarrier,
+			String ServiceFCL, Integer locationIndex, String ItemTemplateName, String Length,
+			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		//Select Account
+		BookAPickupActions.SelectAccountNumber1();
+		PageBase.MaximumWaitForElementEnabled();
+		
+		//Add Address
+		BookAPickupActions.addAdderess(WAAddress2);
+		
+		BookAPickupActions.EnterService(ServiceFCL);
+		BookAPickupActions.SelectDestination(destination);
+		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		BookAPickupActions.EnterQuantity(NumberOfItems);
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		BookAPickupActions.SelectChargeToAccount2(1);
+
+		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		BookAPickupActions.SelectDangerousGoods(2);
+		BookAPickupActions.selectContainFoodItem();
+
+		// Enter Pickup details
+		BookAPickupActions.selectDispatchDate();
+		//User Enters time after Cut off	
+		ManifestActions.selectReadyTimeJS("23:00");
+		ManifestActions.selectClosingTimeJS("23:45");
+		Reporter.log("User Clicks Review Book Up");
+		BookAPickupActions.ClickReviewBook();
+		PageBase.MaximumWaitForElementEnabled_1();
+		//PageBase.verifyTextExist(BookAPickupActions.cutOfftimePopup, "Ready time entered by you is outside of business hours of selected carrier. Do you want to continue with same ready time ?");
+		PageBase.isElementNotPresent(BookAPickupActions.cutOfftimePopup, 3 , "Cut Off Time Error Msg");
+		}
 	
 	
 	
@@ -444,7 +611,6 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 		BaseWebdriver.tearDown();
-		//BaseWebdriver.driver.quit();
 
 	}
 

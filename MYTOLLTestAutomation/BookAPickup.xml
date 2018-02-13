@@ -35,6 +35,7 @@
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
 		<parameter name="ServiceDGExpress" value="DG Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
+		<parameter name="ServicePriority" value="Priority" />
 
 		<!---Account numbers Test data -->
 		<parameter name="AccountNumberTINTER" value="106119" />
@@ -137,6 +138,14 @@
 		<parameter name="VICAddress2" value="TestAddress, VIC,3428" />
 
 		<classes>
+
+
+			<class name="bookAPickupE2ETests.TollIPEC_CutOffTime" />
+				<!-- Blocked> <class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress" />
+
+			<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime" />
+		    <class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
+=======
 <class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
 <class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<!-- Blocked> 
@@ -144,6 +153,7 @@
 				name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime" />
 			<class
 				name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress" />
+
 
 			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
 			<class name="bookAPickupE2ETests.TollPriorityNZTest" />
