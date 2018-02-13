@@ -67,7 +67,7 @@ public class IntermodalSpecializedTests {
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
-		CreateShipmentActions.SelectMode(ModeInt);
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -129,7 +129,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceGeneral, whoPays, CollectionDepot,
-				ModeRoad);
+				mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
@@ -202,7 +202,7 @@ public class IntermodalSpecializedTests {
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
-		CreateShipmentActions.SelectMode(ModeInt);
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -260,7 +260,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceExpress, whoPays, collectionDepot,
-				ModeRoad);
+				mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
@@ -333,7 +333,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
-		CreateShipmentActions.SelectMode(ModeInt);
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -391,7 +391,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, TollNQXServicePremium, whoPays,
-				collectionDepot, ModeRoad);
+				collectionDepot, mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
@@ -465,7 +465,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.SelectTempratureType(1);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
-		CreateShipmentActions.SelectMode(ModeInt);
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -523,7 +523,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceRefrigeration, whoPays,
-				CollectionDepot, ModeRoad);
+				CollectionDepot, mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
@@ -593,10 +593,10 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.EnterService(ServiceFCL);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
-		CreateShipmentActions.SelectTempratureType(1);
+		
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
-		CreateShipmentActions.SelectMode(ModeInt);
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -649,12 +649,12 @@ public class IntermodalSpecializedTests {
 
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 
-	/*	CreateShipmentActions.ClickReviewCreateShipment();
+		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceFCL, whoPays,
-				CollectionDepot, ModeRoad);
+				CollectionDepot, mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
@@ -680,7 +680,7 @@ public class IntermodalSpecializedTests {
 		String weight2 = Weight2 + "kg";
 
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
-				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);*/
+				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
 
@@ -732,7 +732,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
-		CreateShipmentActions.SelectMode(ModeInt);
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -810,7 +810,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceDangerousGoods, whoPays,
-				CollectionDepot, ModeRoad);
+				CollectionDepot, mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraServiceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformationForDangerousGoods(SpeceialIns, PalletTransactionsInfo, PurchaseOrder);
@@ -888,7 +888,8 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
-		CreateShipmentActions.SelectMode(ModeInt);
+
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.quoteNumber,CreateShipmentActions.accountNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -964,7 +965,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceDGExpress, whoPays,
-				CollectionDepot, ModeRoad);
+				CollectionDepot, mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraServiceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformationForDangerousGoods(SpeceialIns, PalletTransactionsInfo, PurchaseOrder);
@@ -1045,7 +1046,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
-		CreateShipmentActions.SelectMode(ModeInt);
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -1117,7 +1118,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceDGRefrigerated, whoPays,
-				CollectionDepot, ModeRoad);
+				CollectionDepot, mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraServiceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformationForDangerousGoods(SpeceialIns, PalletTransactionsInfo, PurchaseOrder);
@@ -1325,7 +1326,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
-		CreateShipmentActions.SelectMode(ModeInt);
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -1396,7 +1397,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceRailDangerousGoods, whoPays,
-				CollectionDepot, Mode);
+				CollectionDepot, mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraServiceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformationForDangerousGoods(SpeceialIns, PalletTransactionsInfo, PurchaseOrder);
@@ -1473,7 +1474,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
-		CreateShipmentActions.SelectMode(ModeInt);
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -1544,7 +1545,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceDGFCL, whoPays,
-				CollectionDepot, Mode);
+				CollectionDepot, mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraServiceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformationForDangerousGoods(SpeceialIns, PalletTransactionsInfo, PurchaseOrder);
@@ -1619,7 +1620,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
-		CreateShipmentActions.SelectMode(ModeInt);
+		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -1642,7 +1643,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, TollNQXServicePremium, whoPays,
-				collectionDepot, ModeRoad);
+				collectionDepot, mode);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfoNo, PurchaseOrder,
