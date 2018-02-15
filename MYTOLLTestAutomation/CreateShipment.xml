@@ -33,6 +33,7 @@
 		<parameter name="ServiceFashion" value="Fashion" />
 		<parameter name="ServiceEconomyPacificAirportToAirport"
 			value="Economy Pacific-Airport to Airport" />
+		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
 
 		<!---Create shipment Test data -->
 		<parameter name="AccountNumberTINTER" value="106119" />

@@ -114,6 +114,18 @@ public class ManifestActions {
 	public static By RePrint = By.linkText("REPRINT");
 	public static By RePrintLableCheckBox = By.xpath("//*[@id=\"shipment-check\"]");
 	public static By RePrintShipmentCheckBox = By.xpath("//*[@id=\"cb-header-ship\"]");
+	public static By PrintCloseShipment = By.linkText("PRINT & CLOSE SHIPMENT");
+	public static By commericalInvoiceErrorMsg= By.xpath("//*[@id=\"label-comercial-message\"]//*//p");
+	public static By labelDownloadPDF = By.xpath("//*[@id=\"print-mani-popup\"]//*//footer[1]/a[3]");
+	public static By createCommericalInvoice= By.xpath("//*[@id=\"commercial-invoice\"]");
+	public static By commericalInvoiceSenderCompanyName= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[2]/div/form/div[2]/div/p");
+	public static By commericalInvoiceSenderAddress= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[2]/div/form/div[3]/div/p");
+	public static By commericalInvoiceCountryofExport= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[2]/div/form/div[5]/div/p");
+	public static By commericalInvoiceReceiverCompanyName= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div[2]/div/p");
+	public static By commericalInvoiceReceiverAddress= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div[3]/div/p");
+	public static By commericalInvoiceCountryofUltimateDestination= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div[5]/div/p");
+
+	
 	
 	
 	public static void VerifyManifestDetails(String pStatus, String pSenderLocation, String pTollCarrier,
@@ -580,5 +592,46 @@ public class ManifestActions {
 		}
 
 	}
+	
+	public static void printLabelsandEnableComercialInvoice(){
+		PageBase.click(ManifestActions.PrintCloseShipment, 10);
+		//PageBase.verifyTextExist(ManifestActions.commericalInvoiceErrorMsg, "Please note that it is compulsory to have a Commercial invoice. You may create one after printing the label.");
+		PageBase.click(ManifestActions.labelDownloadPDF, 10);
+
+		//Close Pop Up
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.waitForElement(ManifestActions.ShipmentManifestPopupClose, 2);
+		PageBase.click(ManifestActions.ShipmentManifestPopupClose, 2);
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.MinimumWaitForElementEnabled_1();
+	}
+	
+	public static void verifyCommercialInvoicePageItems() {
+		
+		PageBase.click(ManifestActions.createCommericalInvoice, 10);
+		
+		//Shipment Details Page Item Verifications
+		String[] shipmentDetails = {"Airway Bill (Shipment Number):", "Date of Export:","No. of Pieces:","Total Weight (kgs):","Declared Value:"};
+		for (int i =1; i<=shipmentDetails.length; i++) {
+			PageBase.verifyTextSubString(By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[1]/div/form/div["+i+"]/label"), shipmentDetails[i-1]);
+		}
+		
+		//Sender Details Page Item Verifications
+		String[] senderDetails = {"Contact Name:", "Company Name:","Address:","Phone Number:","Country of Export:","ABN Number:"};
+		for (int i =1; i<=senderDetails.length; i++) {
+			PageBase.verifyTextSubString(By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[2]/div/form/div["+i+"]/label"), senderDetails[i-1]);
+		}		
+		
+		//Receiver Details Page Item Verifications
+		String[] receiverDetails = {"Contact Name:", "Company Name:","Address:","Phone Number:","Country of Ultimate Destination:","Reference Number:"};
+		for (int i =1; i<=receiverDetails.length; i++) {
+			PageBase.verifyTextSubString(By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div["+i+"]/label"), receiverDetails[i-1]);
+		}	
+		
+		
+	}
+	
+	
 	
 }

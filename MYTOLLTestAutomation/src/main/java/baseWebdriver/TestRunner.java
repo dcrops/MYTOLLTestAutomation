@@ -7,8 +7,8 @@ import cucumber.api.testng.*;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/bookAPickupFeatures/BookAPIckup_TollTasmania_Service_Express.feature"}
-		, glue= {"bookAPickupStepDefinitions"}
+        ,features = { "src/test/Resources/manifest/MYT_1795_Create_Commercial_Invoice.feature"}
+		, glue= {"manifestStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 
                 "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
