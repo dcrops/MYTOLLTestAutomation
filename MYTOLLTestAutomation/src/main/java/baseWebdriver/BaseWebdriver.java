@@ -12,6 +12,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import myTollHomePageActions.MyTollHomePageActions;
 
@@ -21,45 +22,44 @@ public class BaseWebdriver {
 	public static StringBuffer verificationErrors = new StringBuffer();
 
 
-	public static String url="https://www-ppd.mytoll.com/"; //"https://mytoll-per.tollgroup.com";  
+	public static String PreprodUrl="https://www-ppd.mytoll.com/";  
+	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   ////*[@id="main-message"]/h1
+	public static String SitUrl="https://ps.mytoll.com/"; 
 	
-	public static String Username1="NNAutomationuser1@gmail.com";//"perftest@toll.com";
+	public static String Username1="NNAutomationuser1@gmail.com";
 	public static String Username2= "auto_bvt@mailinator.com"; 
-	public static String Password="Toll@123"; // "Victoria@123";  
-
-	
-	//Createshipment users
-	public static String CreateshipmentTollTasUsername="NNAutomationuser1@gmail.com"; 
-	public static String CreateshipmentTollTasPassword="tolTOL123!@#";
-	
+	public static String SitUsername1="SitAutomationuser@yahoo.com";
+	public static String PerformenceUsername1="perftest@toll.com";
+	public static String Password="Toll@123";  
+	public static String PerformancePassword="Victoria@123"; 
 
 		
 	@BeforeMethod
 	public static void RunSetup(String browser) throws Exception {
 
 		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
 			BaseWebdriver.driver = new ChromeDriver();
-			MyTollHomePageActions.LaunchMyToll(url);
-			MyTollHomePageActions.Login(BaseWebdriver.CreateshipmentTollTasUsername, BaseWebdriver.CreateshipmentTollTasPassword);
+			MyTollHomePageActions.LaunchMyToll(PreprodUrl);
+			MyTollHomePageActions.Login(Username1, Password);
 		}
 
 		else if (browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "C:\\Source\\geckodriver-v0.18.0-win32\\geckodriver.exe");
 			BaseWebdriver.driver = new FirefoxDriver();
 			PageBase.MaximumWaitForElementEnabled();
-			MyTollHomePageActions.LaunchMyToll(url);
+			MyTollHomePageActions.LaunchMyToll(PreprodUrl);
 			PageBase.MaximumWaitForElementEnabled();
-			MyTollHomePageActions.Login(BaseWebdriver.CreateshipmentTollTasUsername, BaseWebdriver.CreateshipmentTollTasPassword);
+			MyTollHomePageActions.Login(Username1, Password);
 		}
 
 		else if (browser.equalsIgnoreCase("ie")) {
 			System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 			BaseWebdriver.driver = new InternetExplorerDriver();
 			PageBase.MaximumWaitForElementEnabled();
-			MyTollHomePageActions.LaunchMyToll(url);
+			MyTollHomePageActions.LaunchMyToll(PreprodUrl);
 			PageBase.MaximumWaitForElementEnabled();
-			MyTollHomePageActions.Login(BaseWebdriver.CreateshipmentTollTasUsername, BaseWebdriver.CreateshipmentTollTasPassword);
+			MyTollHomePageActions.Login(Username1, Password);
 			PageBase.MaximumWaitForElementEnabled();
 		}
 
@@ -81,7 +81,9 @@ public class BaseWebdriver {
 		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
 
-		MyTollHomePageActions.LaunchMyToll(url);
+		MyTollHomePageActions.LaunchMyToll(PreprodUrl);
+
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.manage().window().maximize();
 		System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

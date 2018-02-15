@@ -237,7 +237,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectWhoPays(int i) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(whoPaysdropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[" + i + "]/div")).click();
 
