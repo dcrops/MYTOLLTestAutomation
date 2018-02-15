@@ -173,7 +173,7 @@ public class ShipmentReviewActions {
 	public static void VerifyAdditionalInformationForDangerousGoods(String pSpecialInstructions, String pPalletTransactionsInformation, String pPurchaseOrders ) {
 		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(specialInstructions).getText());
 		assertEquals(pPalletTransactionsInformation,BaseWebdriver.driver.findElement(palletTransactionsInformation).getText());
-		assertEquals(pPurchaseOrders, BaseWebdriver.driver.findElement(purchaseOrders).getText());
+		assertEquals(pPurchaseOrders.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(purchaseOrders).getText().replaceAll(",", ""));
 	
 		
 	}

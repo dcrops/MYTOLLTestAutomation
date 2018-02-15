@@ -237,7 +237,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectWhoPays(int i) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(whoPaysdropdown).click();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]/div/ul/li[" + i + "]/div")).click();
 
@@ -877,9 +877,9 @@ public class CreateShipmentActions {
 		// PageBase.Scrollbar(coord1,coord2);
 		PageBase.Scrollbar(200, 500);
 		BaseWebdriver.driver.findElement(addNewLine).click();
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BookAPickupActions.EnterItem(ItemTemplate2);
-		//CreateShipmentActions.EnterBillingType(BillingType);
+		CreateShipmentActions.EnterBillingType(BillingType);
 		PageBase.MoveToElement( CreateShipmentActions.shipmentReference1,BookAPickupActions.itemDescriptionDropdown);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
