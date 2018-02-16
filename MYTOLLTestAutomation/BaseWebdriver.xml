@@ -23,7 +23,7 @@
   </test> <!-- Test -->
 	<test name="CucumberTest">
 		<classes>
-		<class name="baseWebdriver.BookAPickupTestRunner"/> 
+						<class name="baseWebdriver.BookAPickupTestRunner"/> 
 			<!-- Blocked>	<class name="baseWebdriver.CreateShipmentTestRunner"/>  
 			<class name="baseWebdriver.ManifestTestRunner"/>
 			<class name="baseWebdriver.AdvancedSearchTestRunner"/> 
@@ -34,6 +34,7 @@
 			<class name="baseWebdriver.StationeryTestRunner"/> 
 			<class name="baseWebdriver.TollFAST_TAndTTestRunner"/> 
 				<class name="baseWebdriver.TrackAndTraceTestRunner"/> 
+
 			</Blocked -->
 		</classes>
 	</test> <!-- Test -->

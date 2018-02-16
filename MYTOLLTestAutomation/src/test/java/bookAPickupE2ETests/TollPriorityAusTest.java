@@ -39,15 +39,18 @@ public class TollPriorityAusTest {
 			String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
-		
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollPrioAu);
 		
 		String accountNumber= BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNumber);
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		BookAPickupActions.SelectLocation2(locationIndex);
+		//Add Address
+		BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
+
+		//BookAPickupActions.SelectLocation2(locationIndex);
 		
 
 		String company = BookAPickupActions.GetCompany(1);

@@ -22,7 +22,7 @@ import manifestActions.ManifestActions;
 
 public class ManualManifestTollIPECTest {
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
@@ -30,12 +30,12 @@ public class ManualManifestTollIPECTest {
 	}
 
 	
-	@Test
-	@Parameters({"TollCarrierTollIPEC", "ServiceRoadExpress", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
+	@Test(groups = { "Shakeout Testing" })
+	@Parameters({"TollCarrierTollIPEC","AccountNumberTIPEC", "ServiceRoadExpress", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount"}) 
-	public void Manifest_TollIPEC_E2ETest_TID_1127_Service_RoadExpress_AddManifestManual(String TollCarrier, String ServiceRoadExpress,
+	public void Manifest_TollIPEC_E2ETest_TID_1127_Service_RoadExpress_AddManifestManual(String TollCarrier, String AccountNumberTIPEC,String ServiceRoadExpress,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
@@ -60,7 +60,7 @@ public class ManualManifestTollIPECTest {
 		Reporter.log("User Enters Shipment Details");
 		CreateShipmentActions.EnterService(ServiceRoadExpress);
 		CreateShipmentActions.SelectWhoPays(1);
-		BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTIPEC);
 		CreateShipmentActions.SelectReceiver(2);
 		ManifestActions.SelectShipmentConsolidated();
 		

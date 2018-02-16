@@ -7,7 +7,7 @@ Feature: MYT_1524 Book a Pickup: 'Default' mode to ' Quick Entry ' mode
   Scenario: User wants to switch from 'Default' view to 'Quick mode' view in TollTasmania
      When User selects Toll Carrier and Account Number
       | TollCarrier   | AccountNumber |
-      | Toll Tasmania |        100428 |
+      | Intermodal|        614060 |
     And User slects a existing Sender address from the Sender field
       | locationIndex |
       |             1 |

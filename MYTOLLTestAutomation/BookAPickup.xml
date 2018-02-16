@@ -38,12 +38,12 @@
 		<parameter name="ServicePriority" value="Priority" />
 
 		<!---Account numbers Test data -->
-		<parameter name="AccountNumberTINTER" value="106119" />
-		<parameter name="AccountNumberTollNQX" value="614060" />
+		<parameter name="AccountNumberTINTER" value="12641" />
+		<parameter name="AccountNumberTollNQX" value="12641" />
 		<parameter name="AccountNumberTollTas" value="100428" />
-		<parameter name="AccountNumberTIPEC" value="2230899" />
-		<parameter name="AccountNumberTollPrioAu" value="401509" />
-		<parameter name="AccountNumberTollPrioNZ" value="566788" />
+		<parameter name="AccountNumberTIPEC" value="FC3333" />
+		<parameter name="AccountNumberTollPrioAu" value="200BHY" />
+		<parameter name="AccountNumberTollPrioNZ" value="100181" />
 		<parameter name="AccountNumber1" value="" />
 		<parameter name="AccountNumberTInter" value="" />
 		<parameter name="AccountNumberTNQX" value="" />
@@ -137,13 +137,11 @@
 		<parameter name="VICAddress1" value="TestAddress, VIC,3428" />
 		<parameter name="VICAddress2" value="TestAddress, VIC,3428" />
 
-		<classes>
-
-
+		
 		
 
-			<class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
-				<!-- Blocked><class name="bookAPickupE2ETests.TollTasmaniaTest" />
+			<!-- Blocked>	<class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
+			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
 			<class name="bookAPickupE2ETests.TollIPEC_CutOffTime" />
 			 <class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime" 
 				/> <class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress" 
@@ -152,7 +150,5 @@
 				/> <class name="bookAPickupE2ETests.Toll_Add_Template" /> </Blocked -->
 
 
-
-		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

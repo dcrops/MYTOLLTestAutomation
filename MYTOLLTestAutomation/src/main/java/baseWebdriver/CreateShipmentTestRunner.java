@@ -8,7 +8,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/createShipmentFeatures/"}
+        ,features = { "src/test/Resources/createShipmentFeatures/create.feature"}
 		,glue= {"commonStepsDefinitions", "createShipmentStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 

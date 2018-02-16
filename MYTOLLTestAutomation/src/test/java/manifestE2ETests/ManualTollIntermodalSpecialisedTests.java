@@ -22,7 +22,7 @@ import manifestActions.ManifestActions;
 
 public class ManualTollIntermodalSpecialisedTests {
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
@@ -30,12 +30,12 @@ public class ManualTollIntermodalSpecialisedTests {
 	}
 
 	
-	@Test
-	@Parameters({"TollIntermodalSpecialised", "ServicePremium", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
+	@Test(groups = { "Shakeout Testing" })
+	@Parameters({"TollIntermodalSpecialised","AccountNumberTINTER", "ServicePremium", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount"}) 
-	public void Manifest_TollIntermodalSpecialised_E2ETest_TID_1127_Service_Premium_AddManifestManual(String TollCarrier, String ServicePremium,
+	public void Manifest_TollIntermodalSpecialised_E2ETest_TID_1127_Service_Premium_AddManifestManual(String TollCarrier,String AccountNumberTINTER, String ServicePremium,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
@@ -61,7 +61,7 @@ public class ManualTollIntermodalSpecialisedTests {
 		CreateShipmentActions.EnterService(ServicePremium);
 		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectWhoPays(1);
-		BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		CreateShipmentActions.SelectReceiver(2);
 		ManifestActions.SelectShipmentConsolidated();
 		

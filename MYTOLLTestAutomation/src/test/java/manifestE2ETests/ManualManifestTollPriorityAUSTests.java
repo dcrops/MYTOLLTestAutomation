@@ -22,7 +22,7 @@ import manifestActions.ManifestActions;
 
 public class ManualManifestTollPriorityAUSTests {
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
@@ -30,12 +30,12 @@ public class ManualManifestTollPriorityAUSTests {
 	}
 
 	
-	@Test
-	@Parameters({"TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
+	@Test(groups = { "Shakeout Testing" })
+	@Parameters({"TollCarrierTollPrioAU","AccountNumberTollPrioAu", "ServiceParcelsOffPeak", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount"}) 
-	public void Manifest_TollPriorityAU_E2ETest_TID_1127_Service_ServiceParcelsOffPeak_AddManifestManual(String TollCarrier, String ServiceParcelsOffPeak,
+	public void Manifest_TollPriorityAU_E2ETest_TID_1127_Service_ServiceParcelsOffPeak_AddManifestManual(String TollCarrier, String AccountNumberTollPrioAu,String ServiceParcelsOffPeak,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
@@ -61,7 +61,7 @@ public class ManualManifestTollPriorityAUSTests {
 		CreateShipmentActions.EnterService(ServiceParcelsOffPeak);
 		
 		CreateShipmentActions.SelectWhoPays(1);
-		BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollPrioAu);
 		CreateShipmentActions.SelectReceiver(2);
 		ManifestActions.SelectShipmentConsolidated();
 		

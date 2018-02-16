@@ -6,7 +6,6 @@ import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
-import createShipments.createShipmentCommonStepsDefinitions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;

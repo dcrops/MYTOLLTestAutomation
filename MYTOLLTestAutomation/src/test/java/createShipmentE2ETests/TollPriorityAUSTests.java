@@ -17,7 +17,7 @@ import createShipmentActions.ShipmentReviewActions;
 
 public class TollPriorityAUSTests {
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
@@ -25,7 +25,8 @@ public class TollPriorityAUSTests {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test
+
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak","WhoPays", "whoPays", "Sender",
 		"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -121,7 +122,8 @@ public class TollPriorityAUSTests {
 						VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test
+
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments","WhoPays", "whoPays", "Sender",
 		"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
