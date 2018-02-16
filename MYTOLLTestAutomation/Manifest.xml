@@ -29,6 +29,7 @@
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
 		<parameter name="ServiceDGExpress" value="DG Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
+		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
 
 		<!---Create shipment Test data -->
 		<parameter name="AccountNumberTINTER" value="614060" />
@@ -55,6 +56,12 @@
 		<parameter name="palletSpace" value="5" />
 		<parameter name="reference" value="12345" />
 
+		<parameter name="TypeOfExport" value="Permanent" />
+		<parameter name="DeclaredValue" value="5000" />
+		<parameter name="DeclaredValueCurrency" value="New Zealand dollar" />
+		<parameter name="WhoPaysDutiesTaxes" value="Sender " />
+		<parameter name="CommodityCode" value="ABC123" />
+		
 		<!---Dangerous goods test data -->
 
 		<parameter name="DGGoods" value="No" />
@@ -117,26 +124,29 @@
 		<parameter name="specialIns" value="Test Special Ins" />
 		<parameter name="SpeceialIns" value="Test Special Ins" />
 		<parameter name="TollExtraServiceAmount" value="5000" />
-
+		
+		<parameter name="CountryOfExportAU" value="AUSTRALIA" />
+		<parameter name="CountryOfExportNZ" value="NEW ZEALAND" />
+		<parameter name="DestinationAU" value="AUSTRALIA" />
+		<parameter name="DestinationNZ" value="NEW ZEALAND" />
+		
 		<!---Manifest test data -->
 
 		<parameter name="ManifestName" value="Automation" />
 
-			
 		
 	<!-- Blocked>	<classes>
 
 		 <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" /> 
 		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
-
+		<class name = "manifestE2ETests.TollPriorityAUCommercialInvoice" />
+	    <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />
+		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
 		<class name="manifestE2ETests.ManualManifestTollIPECTest" />
 		<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" />
 		<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
 		<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" />
 			
-
-
-
 			      </classes></Blocked -->
 
     
