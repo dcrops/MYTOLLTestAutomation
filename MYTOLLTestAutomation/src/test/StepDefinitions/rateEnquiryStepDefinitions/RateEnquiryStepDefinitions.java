@@ -120,6 +120,15 @@ public class RateEnquiryStepDefinitions {
 			   }
 	}
 	
+	@And("^User Selects Quantity type$")
+	public void userSelectsQuantityType(DataTable rateEquiryTestData) throws Throwable {
+		
+		for (Map<String, String> rateEnquiry : rateEquiryTestData.asMaps(String.class,String.class))
+			   {   
+				RateEnquiryActions.QuantityTypeSelect(rateEnquiry.get("QtyType"));	
+			   }
+	}
+	
 	
 	@When("^User Clicks Price Now$")
 	public void userClicksPriceNow() throws Throwable {
@@ -168,10 +177,10 @@ public class RateEnquiryStepDefinitions {
 	
 	@Then("^User Verifies if Receiver is pre selected from addressbook$")
 	public void UserVerifiesIfReceiverIsPreSelectedFromAddressbook() throws Throwable {
-		ReceiverShipmentPage = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
+		ReceiverShipmentPage = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(ReceiverShipmentPage);
 		
-		ReceiverLocShipmentPage = CreateShipmentActions.GetSenderLocation().toString();
+		ReceiverLocShipmentPage = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(ReceiverLocShipmentPage);
 		
 		if (ReceiverRateEnquiry.contentEquals(ReceiverShipmentPage) & ReceiverLocRateEnquiry.contentEquals(ReceiverLocShipmentPage)) {
@@ -247,7 +256,7 @@ public class RateEnquiryStepDefinitions {
 		CreateShipmentActions.SelectReceiver(1);
 		ReceiverRateEnquiry = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(ReceiverRateEnquiry);
-		String ReceiverLocRateEnquiry = CreateShipmentActions.GetReceiverLocation().toString();
+	    ReceiverLocRateEnquiry = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(ReceiverLocRateEnquiry);
 	}
 	 

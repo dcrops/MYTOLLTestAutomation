@@ -54,12 +54,15 @@ Feature: MYT-5499 Rate Enquiry - Adress Book record retrieval
       | Automation Template1 |        10     |    10  |   10  |   10   |   10   |
       And User Selects Item type
       |BillingType|
-      |ALL FREIGHT|
+      |General Freight|
+       And User Selects Quantity type
+      |QtyType|
+      |Items|
       When User Clicks Price Now
       Then User Verifies Price and Continues to Shipment
       Then User Verifies Details on Shipment Page
       | TollCarrier  |Service     |Account| Length | Width | Height |
-      | Intermodal   |Genral      |614060 | 10     |   10  |   10   |
+      | Intermodal   |General     |614060 | 10     |   10  |   10   |
      Then User Verifies if Receiver is pre selected from addressbook
 
       
