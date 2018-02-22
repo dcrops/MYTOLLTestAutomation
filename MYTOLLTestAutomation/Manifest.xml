@@ -57,10 +57,15 @@
 		<parameter name="reference" value="12345" />
 
 		<parameter name="TypeOfExport" value="Permanent" />
-		<parameter name="DeclaredValue" value="5000" />
+		<parameter name="DeclaredValue" value="1500" />
 		<parameter name="DeclaredValueCurrency" value="New Zealand dollar" />
 		<parameter name="WhoPaysDutiesTaxes" value="Sender " />
 		<parameter name="CommodityCode" value="ABC123" />
+		<parameter name="CommercialInvoiceDes" value="TestAuto" />
+		<parameter name="PartNo" value="01" />
+		<parameter name="ACHECC" value="Test12" />
+		<parameter name="UnitValue" value="100" />
+		<parameter name="TermsofTrade" value="1" />
 		
 		<!---Dangerous goods test data -->
 
@@ -135,13 +140,13 @@
 		<parameter name="ManifestName" value="Automation" />
 
 		<classes>
-		<class name = "manifestE2ETests.TollPriorityAUCommercialInvoice" />
-		<!-- <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />
+			<!--<class name = "manifestE2ETests.TollPriorityAUCommercialInvoice" /> 
+		 <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />--> 
 		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
 		<class name="manifestE2ETests.ManualManifestTollIPECTest" />
 		<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" />
 		<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
-		<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" /> --> 
+		<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" />
 
 
 

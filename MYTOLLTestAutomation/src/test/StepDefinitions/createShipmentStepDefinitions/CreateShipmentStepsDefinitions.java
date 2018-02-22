@@ -6,7 +6,6 @@ import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
-import createShipments.createShipmentCommonStepsDefinitions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -66,4 +65,23 @@ public class CreateShipmentStepsDefinitions  {
 		CreateShipmentActions.ClickReviewCreateShipment();
 	}
 
+	@When("^User enters following input data for the line item - Prio$")
+	public void user_enters_following_input_data_for_the_line_item_Prio(DataTable shipmentTestData) throws Throwable {
+
+		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
+
+			BookAPickupActions.EnterItem(shipment.get("Item description"));
+			CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));
+			//CreateShipmentActions.ItemType(2);
+			BookAPickupActions.EnterLengthWidthHeight(shipment.get("Length"), shipment.get("Width"),
+					shipment.get("Height"));
+			CreateShipmentActions.EnterWeight(shipment.get("Weight"));
+			PageBase.MoveToElement(CreateShipmentActions.senderReference, BookAPickupActions.dangerousGoodNo);
+
+			CreateShipmentActions.EnterSenderReference(shipment.get("SenderReference"),
+					shipment.get("ReceiverReference"));
+
+		}
+
+	}
 }

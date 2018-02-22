@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -210,6 +211,19 @@ public class PageBase {
 			WebElement element = waitForElement(locator,secsToWait);
 			element.clear();
 			element.sendKeys(keysToSend);
+		} catch (Exception e) {
+			Reporter.log("element with: " + locator.toString() + " not found" +"<br>");
+			Assert.fail("element with: " + locator.toString() + " not found" +"<br>");
+		}
+	}
+	
+	public static void sendTextandSubmit(By locator, int secsToWait, String keysToSend) {
+		try {
+			PageBase.moveToElement(locator);
+			WebElement element = waitForElement(locator,secsToWait);
+			element.clear();
+			element.sendKeys(keysToSend);
+			element.sendKeys(Keys.RETURN);
 		} catch (Exception e) {
 			Reporter.log("element with: " + locator.toString() + " not found" +"<br>");
 			Assert.fail("element with: " + locator.toString() + " not found" +"<br>");

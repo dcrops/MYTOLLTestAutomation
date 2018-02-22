@@ -2,14 +2,19 @@ package commonStepsDefinitions;
 
 import java.util.Map;
 
+import org.junit.Assert;
+import org.testng.Reporter;
+
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import myTollHomePageActions.MyTollHomePageActions;
+import rateEnquiryActions.RateEnquiryActions;
 
 public class CreateShipmentCommonStepsDefinitions {
 	
@@ -28,8 +33,12 @@ public class CreateShipmentCommonStepsDefinitions {
 	public void user_selects_Toll_Carrier_and_select_Service(DataTable shipmentTestData) throws Throwable {
 
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
-
-			BookAPickupActions.SelectIntermodalSpecializedCarrier(shipment.get("TollCarrier"));
+			if(shipment.get("TollCarrier").contains("Intermodal")) {
+				BookAPickupActions.SelectIntermodalSpecializedCarrier(shipment.get("TollCarrier"));
+			}
+			else {
+				BookAPickupActions.EnterTollCarrier(shipment.get("TollCarrier"));
+			}
 			CreateShipmentActions.EnterService(shipment.get("Service"));
 
 		}
@@ -68,6 +77,21 @@ public class CreateShipmentCommonStepsDefinitions {
 
 			PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 			CreateShipmentActions.EnterShipmentReferences(shipment.get("ShipmentRef1"), shipment.get("ShipmentRef2"));
+		}
+	}
+	
+	@And("^User cannot edit any Shipment feilds$")
+	public void UserCannotEditAnyShipmentFeilds() throws Throwable {
+	
+		try {		
+			PageBase.click(CreateShipmentActions.addNewLine, 5);
+			Reporter.log("Able to Modify Shipment Details - NOT AS EXPECTED");
+			System.out.println("Able to Modify Shipment Details - NOT AS EXPECTED");
+			Assert.fail("Able to Modify Shipment Details - NOT AS EXPECTED");
+		}
+		catch (Exception ex) {
+			Reporter.log("Unable to Modify Shipment Details as expected");
+			System.out.println("Unable to Modify Shipment Details as expected");
 		}
 	}
 
