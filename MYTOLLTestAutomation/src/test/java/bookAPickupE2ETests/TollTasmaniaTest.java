@@ -28,11 +28,11 @@ public class TollTasmaniaTest {
 	}
 
 	@Test(priority=-1)
-	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierTollTasmania","AccountNumberTollTas", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
 
-	public void TollTasmania_E2ETest_TID_1033_Service_Refrigeration(String TollCarrier, String ServiceRefrigeration,
+	public void TollTasmania_E2ETest_TID_1033_Service_Refrigeration(String TollCarrier, String AccountNumberTollTas,String ServiceRefrigeration,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String tempLow, String tempHigh, String ref, String BookNo, String vendorNum,
 			String palletSpace, String destination, String specialIns) {
@@ -43,7 +43,7 @@ public class TollTasmaniaTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -113,12 +113,12 @@ public class TollTasmaniaTest {
 	}
 
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierTollTasmania", "AccountNumberTollTas","ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem",
 			"specialIns" })
 
-	public void TollTasmania_E2ETest_TID_1033_Service_Refrigeration_ConfirmDetails(String TollCarrier,
+	public void TollTasmania_E2ETest_TID_1033_Service_Refrigeration_ConfirmDetails(String TollCarrier, String AccountNumberTollTas,
 			String ServiceRefrigeration, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String DestinationItem,
@@ -129,8 +129,8 @@ public class TollTasmaniaTest {
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
-
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
+		//bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -200,7 +200,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
@@ -320,10 +320,10 @@ public class TollTasmaniaTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
+	@Parameters({ "TollCarrierTollTasmania", "AccountNumberTollTas", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName", "lookupItem",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
-	public void TollTasmania_E2ETest_TID_1033_Service_DGFreight(String TollCarrier, String ServiceDGFreight,
+	public void TollTasmania_E2ETest_TID_1033_Service_DGFreight(String TollCarrier, String AccountNumberTollTas, String ServiceDGFreight,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace, String destination, String lookupName, Integer lookupItem,
 			Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName,
@@ -336,8 +336,7 @@ public class TollTasmaniaTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -389,17 +388,17 @@ public class TollTasmaniaTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollTasmania", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
+	@Parameters({ "TollCarrierTollTasmania", "AccountNumberTollTas","ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
-	public void TollTasmania_E2ETest_TID_1033_Service_Express(String TollCarrier, String ServiceExpress,
+	public void TollTasmania_E2ETest_TID_1033_Service_Express(String TollCarrier, String AccountNumberTollTas,String ServiceExpress,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace, String destination, String specialIns) {
 		// Select TollTasmania
 		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -443,10 +442,10 @@ public class TollTasmaniaTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollTasmania", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
+	@Parameters({ "TollCarrierTollTasmania","AccountNumberTollTas", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
-	public void TollTasmania_E2ETest_TID_1033_Service_Express_ConfirmDetails(String TollCarrier, String ServiceExpress,
+	public void TollTasmania_E2ETest_TID_1033_Service_Express_ConfirmDetails(String TollCarrier,String AccountNumberTollTas, String ServiceExpress,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
@@ -454,8 +453,7 @@ public class TollTasmaniaTest {
 		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -498,11 +496,11 @@ public class TollTasmaniaTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "locationIndex", "ItemTemplateName", "ChargeToAccount",
+	@Parameters({ "TollCarrierTollTasmania", "AccountNumberTollTas","ServiceGeneral", "locationIndex", "ItemTemplateName", "ChargeToAccount",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "DGGoods", "FoodItems", "palletSpace",
 			"Destination", "Postcode", "VendorNum", "specialIns" })
 
-	public void BookAPickup_TollTasmania_E2ETest_TID_1033_Service_General(String TollCarrier, String ServiceGeneral,
+	public void BookAPickup_TollTasmania_E2ETest_TID_1033_Service_General(String TollCarrier,String AccountNumberTollTas, String ServiceGeneral,
 			Integer locationIndex, String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String DGGoods, String FoodItems, String palletSpace,
 			String destination, String Postcode, String vendorNum, String specialIns) {
@@ -512,7 +510,7 @@ public class TollTasmaniaTest {
 		// Select TollTasmania
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -563,10 +561,10 @@ public class TollTasmaniaTest {
 
 	@Test
 
-	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems",
+	@Parameters({ "TollCarrierTollTasmania", "AccountNumberTollTas","ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
-	public void BookAPickup_TollTasmania_E2ETest_TID_1033_Service_General_ConfirmDetails(String TollCarrier,
+	public void BookAPickup_TollTasmania_E2ETest_TID_1033_Service_General_ConfirmDetails(String TollCarrier, String AccountNumberTollTas,
 			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
@@ -575,7 +573,7 @@ public class TollTasmaniaTest {
 		// Select TollTasmania
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 

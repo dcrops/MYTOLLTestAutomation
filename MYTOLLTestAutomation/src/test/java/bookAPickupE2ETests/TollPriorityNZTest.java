@@ -28,18 +28,18 @@ public class TollPriorityNZTest {
 	}
 
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierTollPrioNZ","AccountNumberTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference", "DestinationCountry",
 			"specialIns" })
 
-	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_GlobalExpressDocuments(String TollCarrier,
+	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_GlobalExpressDocuments(String TollCarrier, String AccountNumberTollPrioNZ,
 			String ServiceGlobalExpressDocuments, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String reference,
 			String destination, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollPrioNZ);
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -83,18 +83,18 @@ public class TollPriorityNZTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierTollPrioNZ","AccountNumberTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference", "DestinationCountry",
 			"specialIns" })
 
-	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_VerifyDetails(String TollCarrier,
+	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_VerifyDetails(String TollCarrier, String AccountNumberTollPrioNZ,
 			String ServiceGlobalExpressDocuments, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String reference,
 			String destination, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollPrioNZ);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -147,7 +147,8 @@ public class TollPriorityNZTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollPrioNZ);
+
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,

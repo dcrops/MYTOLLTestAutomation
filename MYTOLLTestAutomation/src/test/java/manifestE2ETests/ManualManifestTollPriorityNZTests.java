@@ -31,11 +31,11 @@ public class ManualManifestTollPriorityNZTests {
 
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
+	@Parameters({"TollCarrierTollPrioNZ","AccountNumberTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount"}) 
-	public void Manifest_TollPriorityNZ_E2ETest_TID_1127_Service_ServiceParcelsOffPeak_AddManifestManual(String TollCarrier, String ServiceParcelsOffPeak,
+	public void Manifest_TollPriorityNZ_E2ETest_TID_1127_Service_ServiceParcelsOffPeak_AddManifestManual(String TollCarrier, String AccountNumberTollPrioNZ, String ServiceParcelsOffPeak,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
@@ -60,7 +60,7 @@ public class ManualManifestTollPriorityNZTests {
 		Reporter.log("User Enters Shipment Details");
 		CreateShipmentActions.EnterService(ServiceParcelsOffPeak);
 		CreateShipmentActions.SelectWhoPays(1);
-		BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollPrioNZ);
 		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
@@ -114,7 +114,7 @@ public class ManualManifestTollPriorityNZTests {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 	}
 	
 }

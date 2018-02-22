@@ -107,6 +107,7 @@ public class ManifestIntermodalSpecializedTests {
 		CreateShipmentActions.EnterService(ServiceExpress);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumber);
+		
 		CreateShipmentActions.SelectWhoPays(1);
 
 		CreateShipmentActions.SelectMode(1);

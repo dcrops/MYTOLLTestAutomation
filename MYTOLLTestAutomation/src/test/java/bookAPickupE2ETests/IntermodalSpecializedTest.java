@@ -30,13 +30,13 @@ public class IntermodalSpecializedTest {
 	}
 
 	@Test 
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDangerousGoods", "ServiceExpress", "AccountNumberTollNQX",
+	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceDangerousGoods", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
 			"DestinationItem", "DestinationPostcode", "lookupName", "PackingGroup", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DangerousGoods(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DangerousGoods(String TollCarrier, String AccountNumberTINTER,
 			String ServiceDangerousGoods, String ServiceExpress, String AccountNumberTollNQX, String ItemTemplateName2,
 			Integer locationIndex, String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String DGGoodsYes, String DGGoodsNo, String FoodItems,
@@ -47,7 +47,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -169,13 +169,13 @@ public class IntermodalSpecializedTest {
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
-	@Test
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
+	@Test(groups = { "Shakeout Testing" })
+	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Express(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Express(String TollCarrier, String AccountNumberTINTER,
 			String ServiceExpress, String ServiceDangerousGoods, Integer locationIndex, String ItemTemplateName,
 			String Length, String NumberOfItems, String Width, String Height, String Weight, String palletSpace,
 			String destination, String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
@@ -184,7 +184,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -250,12 +250,12 @@ public class IntermodalSpecializedTest {
 	
 	//@Test (priority=-1)
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "ServiceDangerousGoods", "locationIndex",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER","ServiceFCL", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_FCL(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_FCL(String TollCarrier, String AccountNumberTINTER,
 			String ServiceFCL, String ServiceDangerousGoods, Integer locationIndex, String ItemTemplateName,
 			String Length, String NumberOfItems, String Width, String Height, String Weight, String palletSpace,
 			String destination, String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
@@ -264,7 +264,8 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
+
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -329,13 +330,13 @@ public class IntermodalSpecializedTest {
 
 	//@Test(priority=-1)
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
 			"DestinationItem", "DestinationPostcode", "lookupName", "PackingGroup", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DGFCL(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DGFCL(String TollCarrier,String AccountNumberTINTER,
 			String ServiceDGFCL, String ServiceExpress, String AccountNumberTollNQX, String ItemTemplateName2,
 			Integer locationIndex, String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String DGGoodsYes, String DGGoodsNo, String FoodItems,
@@ -346,7 +347,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -472,17 +473,17 @@ public class IntermodalSpecializedTest {
 
 
 	@Test
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceGeneral", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER","ServiceGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_General(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_General(String TollCarrier, String AccountNumberTINTER,
 			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -524,17 +525,17 @@ public class IntermodalSpecializedTest {
 
 //	@Test(priority=-1)
 	@Test
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServicePremium", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER","ServicePremium", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Premium(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Premium(String TollCarrier,String AccountNumberTINTER,
 			String ServicePremium, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
@@ -581,11 +582,11 @@ public class IntermodalSpecializedTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRailGeneral", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceRailGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_RailGeneral(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_RailGeneral(String TollCarrier, String AccountNumberTINTER,
 			String ServiceRailGeneral, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, String specialIns) {
@@ -593,7 +594,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -637,11 +638,11 @@ public class IntermodalSpecializedTest {
 
 	//@Test(priority=-1)
 	@Test
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Refrigeration(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Refrigeration(String TollCarrier, String AccountNumberTINTER,
 			String ServiceRefrigeration, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, String packageDescription, String pDgPkgQty, String pDgQtyKg, String technicalName,
@@ -650,7 +651,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -693,11 +694,11 @@ public class IntermodalSpecializedTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGRefrigerated", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceDGRefrigerated", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DGRefrigerated(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DGRefrigerated(String TollCarrier, String AccountNumberTINTER,
 			String ServiceDGRefrigerated, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
@@ -706,7 +707,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -756,11 +757,11 @@ public class IntermodalSpecializedTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRailDangerousGoods", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceRailDangerousGoods", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_RailDangerousGoods(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_RailDangerousGoods(String TollCarrier, String AccountNumberTINTER,
 			String ServiceRailDangerousGoods, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
@@ -769,7 +770,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
@@ -816,11 +817,11 @@ public class IntermodalSpecializedTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
+	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DGExpress(String TollCarrier,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DGExpress(String TollCarrier, String AccountNumberTINTER,
 			String ServiceDGExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
@@ -829,7 +830,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
@@ -887,13 +888,13 @@ public class IntermodalSpecializedTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
+	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
 			"specialIns" })
 
 	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_Express_Edit_ErrorMessagesValidation(
-			String TollCarrier, String ServiceExpress, String ServiceDangerousGoods, Integer locationIndex,
+			String TollCarrier,String AccountNumberTINTER, String ServiceExpress, String ServiceDangerousGoods, Integer locationIndex,
 			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight,
 			String palletSpace, String destination, String lookupName, Integer PackingGroup, String packageDescription,
 			String pDgPkgQty, String pDgQtyKg, String technicalName, String specialIns) {
@@ -901,10 +902,10 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
+
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
-
 		BookAPickupActions.VerifyBookAPickupScreen();
 	//	BookAPickupActions.VerifyTollCarrier(TollCarrier);
 

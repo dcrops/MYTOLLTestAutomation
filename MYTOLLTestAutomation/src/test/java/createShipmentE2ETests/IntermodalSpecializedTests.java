@@ -289,8 +289,8 @@ public class IntermodalSpecializedTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	//@Test(priority = 3)
-	@Test(groups = { "Shakeout Testing" })
+	@Test(priority = 3)
+	//@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName","DGContactNumber", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -685,7 +685,8 @@ public class IntermodalSpecializedTests {
 
 
 	//@Test(priority = 1)
-	@Test
+
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDangerousGoods", "AccountNumberTNQX","WhoPays", "whoPays", "ModeInt",
 			"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 			"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -842,7 +843,8 @@ public class IntermodalSpecializedTests {
 	}
 
 	//@Test(priority = 4)
-	@Test
+
+	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGExpress", "AccountNumberTNQX", "WhoPays", "whoPays", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",

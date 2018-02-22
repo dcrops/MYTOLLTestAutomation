@@ -32,7 +32,7 @@ Feature: Review & Book A Pickup in MyToll
       
      
     Scenario: CreateShipment Review & Book A Pickup TollTasmania carrier when Service as Express
-    Given User is Registered in MyToll and is on Shipment page
+    
     When User selects Toll Carrier and select Service
       | TollCarrier | Service |
       | Intermodal  | Express |

@@ -23,7 +23,7 @@ public class BaseWebdriver {
 
 
 	public static String PreprodUrl="https://www-ppd.mytoll.com/";  
-	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   ////*[@id="main-message"]/h1
+	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
 	public static String SitUrl="https://ps.mytoll.com/"; 
 	
 	public static String Username1="NNAutomationuser1@gmail.com";

@@ -29,16 +29,17 @@ public class TollIPECTest {
 	}
 
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
+	@Parameters({ "TollCarrierTollIPEC","AccountNumberTIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
-	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress(String TollCarrier, String ServiceRoadExpress,
+	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress(String TollCarrier, String AccountNumberTIPEC, String ServiceRoadExpress,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
 			String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+
+		BookAPickupActions.EnterAccountNumber(AccountNumberTIPEC);
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
@@ -88,17 +89,17 @@ public class TollIPECTest {
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
+	@Parameters({ "TollCarrierTollIPEC", "AccountNumberTIPEC","ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
-	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress_ConfirmedDetails(String TollCarrier,
+	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress_ConfirmedDetails(String TollCarrier, String AccountNumberTIPEC,
 			String ServiceRoadExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTIPEC);
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber

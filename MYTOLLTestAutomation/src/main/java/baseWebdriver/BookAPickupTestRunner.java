@@ -9,7 +9,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/bookAPickupFeatures/BookAPIckup_TollTasmania_Service_Express.feature", "src/test/Resources/bookAPickupFeatures/ABC.feature"}
+        ,features = { "src/test/Resources/bookAPickupFeatures/Create.feature"}
 		,glue= {"commonStepsDefinitions","bookAPickupStepDefinitions","createShipmentStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 

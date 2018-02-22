@@ -141,7 +141,13 @@ public class CreateShipmentActions {
 			.xpath("//*[@id=\"receiver-selector\"]/label/input[@name=\"placeholder-location\"]");
 	public static final By ReceiverAddress_Add_Address = By
 			.xpath("//*[@id=\"receiver-selector\"]//*//div[@class=\"add-new-elem\"]");
-
+	
+	//Quick Entry Mode Yes   
+	
+		public static By billingTypeQME= By.id("gv-billing-type"); 
+		public static By enterVolumeCheckBoxQME= By.id("gv-volume-only-chkbox"); 
+		
+		
 	public static final String SenderAddressCompanyName = "TestSender";
 	public static final String SenderAddressCompanyAdd = "60 Collins Street, MELBOURNE VIC 3000";
 	public static final String ReceiverAddressCompanyName = "TestReceiver";

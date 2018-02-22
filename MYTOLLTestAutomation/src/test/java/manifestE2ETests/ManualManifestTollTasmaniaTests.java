@@ -31,11 +31,11 @@ public class ManualManifestTollTasmaniaTests {
 
 	
 	@Test
-	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
+	@Parameters({"TollCarrierTollTasmania","AccountNumberTollTas", "ServiceGeneral", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount"}) 
-	public void Manifest_TollTasmania_E2ETest_TID_1127_Service_General_AddManifestManual(String TollCarrier, String ServiceGeneral,
+	public void Manifest_TollTasmania_E2ETest_TID_1127_Service_General_AddManifestManual(String TollCarrier, String AccountNumberTollTas, String ServiceGeneral,
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
@@ -61,7 +61,7 @@ public class ManualManifestTollTasmaniaTests {
 		CreateShipmentActions.EnterService(ServiceGeneral);
 		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectWhoPays(1);
-		BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
 		CreateShipmentActions.SelectReceiver(2);
 		ManifestActions.SelectShipmentConsolidated();
 		
@@ -116,7 +116,7 @@ public class ManualManifestTollTasmaniaTests {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 	}
 	
 }

@@ -39,7 +39,7 @@ public class PageBase {
 		return (new WebDriverWait(BaseWebdriver.driver, secsToWait)).until(ExpectedConditions.visibilityOf(element));
 	}
 
-	public static boolean sendKeysToElement(By ObjectLocater, int secsToWait, String keysToSend) {
+	public static boolean SendKeysTo(By ObjectLocater, String keysToSend,int secsToWait) {
 		try {
 			WebElement element = WaitForElement(ObjectLocater, secsToWait);
 			element.click();
@@ -53,7 +53,21 @@ public class PageBase {
 		return true;
 	}
 
-	public static boolean ClickElement(By ObjectLocater, int secsToWait) {
+	public static boolean SelectFrom(By ObjectLocater,By drodownListItem,int secsToWait) {
+		
+		try {
+			WebElement element = WaitForElement(drodownListItem, secsToWait);
+			element.click();
+			
+		} catch (TimeoutException ex) {
+			logElementNotFound(ex);
+			return false;
+		}
+
+		return true;
+	}
+	
+	public static boolean ClickOn(By ObjectLocater, int secsToWait) {
 		try {
 			WebElement element = WaitForElement(ObjectLocater, secsToWait);
 			element.click();
