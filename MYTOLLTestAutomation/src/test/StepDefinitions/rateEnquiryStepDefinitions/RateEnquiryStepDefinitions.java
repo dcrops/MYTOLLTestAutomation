@@ -25,6 +25,8 @@ public class RateEnquiryStepDefinitions {
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickGetRateEnquiery();
+		
+		//Test
 	}
 
 	@When("^User selects Toll Carrier$")

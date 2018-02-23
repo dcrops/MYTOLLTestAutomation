@@ -30,9 +30,27 @@ Feature: MYT-5499 Rate Enquiry - Adress Book record retrieval
       And User Enters and selects Account
       |Account|
       |614060|
-      Then User Click Retrieve from address book under Destination
-      And User is able to select address from address book
-      |Recheck when application is available|
-      
+
+      Then User Enters Orgin
+      |OriginSuburb|OriginPostCode|
+      |MELBOURNE   |3000 		|
+     Then User Click Retrieve from address book checkbox under Destination
+     And User is able to select receiver address from address book
+      And User Enters Line Items for Rate Enquiry
+      | ItemTemplateName     | NumberOfItems | Length | Width | Height | Weight |
+      | Automation Template1 |        10     |    10  |   10  |   10   |   10   |
+      And User Selects Item type
+      |BillingType|
+      |General Freight|
+       And User Selects Quantity type
+      |QtyType|
+      |Items|
+      When User Clicks Price Now
+      Then User Verifies Price and Continues to Shipment
+      Then User Verifies Details on Shipment Page
+      | TollCarrier  |Service     |Account| Length | Width | Height |
+      | Intermodal   |General     |614060 | 10     |   10  |   10   |
+     Then User Verifies if Receiver is pre selected from addressbook
+
       
       
