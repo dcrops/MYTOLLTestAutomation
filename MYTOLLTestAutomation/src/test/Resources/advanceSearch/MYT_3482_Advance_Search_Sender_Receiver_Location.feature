@@ -13,7 +13,7 @@ Feature: MYT-3482 Advance Search Using Sender (Company / Name), Receiver (Compan
      And User Adds new Tags in Sender feild
      |SenderTag1 |SenderTag2 |SenderTag3|
      |Test123    |Auto       |Tag123  |
-#    Then Sender Tag is Visible in search feild
+#    Then Sender Tag is Visible in search feild - Test
 #    |SenderTag|
 #    |TagName  |
 #    And User Deletes Tags in Sender (Company/Name) feild
