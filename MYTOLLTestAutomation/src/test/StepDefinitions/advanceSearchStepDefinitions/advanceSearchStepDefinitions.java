@@ -47,6 +47,8 @@ public class advanceSearchStepDefinitions {
 		        PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchSender, 10, (String) pair.getValue());
 		    }
 		    
+		    
+		    //Test
 	/*	    Iterator deletetags = advSearch.entrySet().iterator();
 		    while (deletetags.hasNext()) {
 		        Map.Entry pair = (Map.Entry)deletetags.next();

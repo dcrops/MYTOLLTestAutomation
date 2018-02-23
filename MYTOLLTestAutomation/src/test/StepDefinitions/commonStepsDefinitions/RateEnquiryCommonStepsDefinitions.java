@@ -23,6 +23,7 @@ public class RateEnquiryCommonStepsDefinitions {
 		PageBase.MediumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();
+		//Test
 	}
 	
 	

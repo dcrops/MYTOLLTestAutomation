@@ -65,5 +65,6 @@ Feature: MYT-5499 Rate Enquiry - Adress Book record retrieval
       | Intermodal   |General     |614060 | 10     |   10  |   10   |
      Then User Verifies if Receiver is pre selected from addressbook
 #test
+#123
       
       

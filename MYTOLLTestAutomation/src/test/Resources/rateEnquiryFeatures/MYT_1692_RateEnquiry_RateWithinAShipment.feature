@@ -70,7 +70,7 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
 #     And User Does not Save the Shipment
 #     Then Rate is not stored for future reference in dashboard   
 #  
-#  
+#  Test
 #  @tag3
 #  Scenario: User Gets a Rate Estimate from within a Shipment - TGX
 #    When User Completes Module 1 in the Create Shipment Page
