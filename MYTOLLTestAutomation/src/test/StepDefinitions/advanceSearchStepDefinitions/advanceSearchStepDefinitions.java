@@ -24,14 +24,14 @@ public class advanceSearchStepDefinitions {
 	public void UserInputsSearchCriteriaforSender(DataTable advanceSearchTestData) throws Throwable {
 
 		for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
-			//PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchSender, 10, advSearch.get("Sender"));
+			PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchSender, 10, advSearch.get("Sender"));
 		}
 	}
 	
 	@Then("^User Clicks Search and results are displayed$")
 	public void UserCliksSearchAndVerifiesResults() throws Throwable {
 
-		//PageBase.click(MyTollHomePageActions.advanceSearchSubmit, 10);
+		PageBase.click(MyTollHomePageActions.advanceSearchSubmit, 10);
 		//Verify details later when system functionality works
 		
 		//*[@id="sender-name-list"]/li/span//preceding-sibling::span['Test']
@@ -44,7 +44,7 @@ public class advanceSearchStepDefinitions {
 			Iterator tags = advSearch.entrySet().iterator();
 		    while (tags.hasNext()) {
 		        Map.Entry pair = (Map.Entry)tags.next();
-		       // PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchSender, 10, (String) pair.getValue());
+		        PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchSender, 10, (String) pair.getValue());
 		    }
 		    
 		    

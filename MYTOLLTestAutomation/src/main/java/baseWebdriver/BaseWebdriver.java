@@ -27,7 +27,7 @@ public class BaseWebdriver {
 	public static String SitUrl="https://ps.mytoll.com/"; 
 	
 	public static String Username1="NNAutomationuser1@gmail.com"; 
-	public static String Username2= "auto_bvt@mailinator.com"; 
+	public static String Username2= "auto_bvt_ps@mailinator.com"; 
 	public static String SitUsername1="SitAutomationuser@yahoo.com"; //
 	public static String PerformenceUsername1="perftest@toll.com";
 	public static String Password="Toll@123";  
