@@ -53,7 +53,7 @@ public class ManifestIntermodalSpecializedTests {
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 		String receiver=CreateShipmentActions.GetRecieverCompanyName();
 		
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
@@ -96,7 +96,7 @@ public class ManifestIntermodalSpecializedTests {
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount","ManifestName" }) 
 	public void Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddManifestManually(String TollCarrier, String ServiceExpress,
-			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
+			String AccountNumberTINTER, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
 			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount, String ManifestName) {
@@ -106,7 +106,7 @@ public class ManifestIntermodalSpecializedTests {
 		System.out.println(tollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 
-		BookAPickupActions.EnterAccountNumber(AccountNumber);
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		
 		CreateShipmentActions.SelectWhoPays(1);
 
@@ -115,7 +115,7 @@ public class ManifestIntermodalSpecializedTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		
 
@@ -126,8 +126,8 @@ public class ManifestIntermodalSpecializedTests {
 
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
-		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
-		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
+		//CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -169,7 +169,7 @@ public class ManifestIntermodalSpecializedTests {
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount","ManifestName" }) 
 	public void Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddToManifestForAnExistingManifestSubmittingCreateShipmentAndContinue(String TollCarrier, String ServiceExpress,
-			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
+			String AccountNumberTINTER, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
 			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount, String ManifestName) {
@@ -179,7 +179,7 @@ public class ManifestIntermodalSpecializedTests {
 		System.out.println(tollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 
-		BookAPickupActions.EnterAccountNumber(AccountNumber);
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		CreateShipmentActions.SelectWhoPays(1);
 
 		CreateShipmentActions.SelectMode(1);
@@ -187,7 +187,7 @@ public class ManifestIntermodalSpecializedTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		
 
@@ -198,8 +198,8 @@ public class ManifestIntermodalSpecializedTests {
 
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
-		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
-		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
+		//CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -250,7 +250,7 @@ public class ManifestIntermodalSpecializedTests {
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount","ManifestName" }) 
 	public void Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddToManifestCreateNewManifestSubmittingCreateShipmentAndContinue(String TollCarrier, String ServiceExpress,
-			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
+			String AccountNumberTINTER, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
 			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount, String ManifestName) {
@@ -260,7 +260,7 @@ public class ManifestIntermodalSpecializedTests {
 		System.out.println(tollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 
-		BookAPickupActions.EnterAccountNumber(AccountNumber);
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		CreateShipmentActions.SelectWhoPays(1);
 
 		CreateShipmentActions.SelectMode(1);
@@ -268,7 +268,7 @@ public class ManifestIntermodalSpecializedTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		
 
@@ -279,8 +279,8 @@ public class ManifestIntermodalSpecializedTests {
 
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
-		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
-		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
+		//CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -329,7 +329,7 @@ public class ManifestIntermodalSpecializedTests {
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount","ManifestName" }) 
 	public void Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddToManifestBySystemGeneratedManifestSubmittingCreateShipmentAndContinue(String TollCarrier, String ServiceExpress,
-			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
+			String AccountNumberTINTER, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
 			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount, String ManifestName) {
@@ -339,7 +339,7 @@ public class ManifestIntermodalSpecializedTests {
 		System.out.println(tollCarrier);
 		CreateShipmentActions.EnterService(ServiceExpress);
 
-		BookAPickupActions.EnterAccountNumber(AccountNumber);
+		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		CreateShipmentActions.SelectWhoPays(1);
 
 		CreateShipmentActions.SelectMode(1);
@@ -347,7 +347,7 @@ public class ManifestIntermodalSpecializedTests {
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 
 		
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
@@ -357,8 +357,8 @@ public class ManifestIntermodalSpecializedTests {
 
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
 
-		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
-		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
+		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
+		//CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);

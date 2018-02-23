@@ -12,7 +12,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import myTollHomePageActions.MyTollHomePageActions;
 
-public class BookAPickupTollTasmaniaStepDefinitions{
+public class BookAPickupStepDefinitions{
 
 
 	@When("^User selects Sender$")
@@ -48,7 +48,10 @@ public class BookAPickupTollTasmaniaStepDefinitions{
 	public void user_enter_following_input_data_to_Add_Item(DataTable bookAPickupTestData) throws Throwable {
 
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
+			BookAPickupActions.EnterService(bookAPickup.get("Service"));
+			BookAPickupActions.SelectDestination(bookAPickup.get("Destination"));
 			BookAPickupActions.EnterItem(bookAPickup.get("ItemDescription"));
+			
 			BookAPickupActions.EnterQuantity(bookAPickup.get("NoOfItems"));
 			BookAPickupActions.EnterPalletSpace(bookAPickup.get("PalletSpace"));
 			BookAPickupActions.EnterLengthWidthHeightVolumeWeight(bookAPickup.get("Length"), bookAPickup.get("Width"),

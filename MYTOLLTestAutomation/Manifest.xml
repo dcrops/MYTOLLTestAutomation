@@ -32,9 +32,13 @@
 		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
 
 		<!---Create shipment Test data -->
-		<parameter name="AccountNumberTINTER" value="614060" />
-		<parameter name="AccountNumberTSPD" value="106119" />
-		<parameter name="AccountNumberTNQX" value="614060" />
+		<parameter name="AccountNumberTINTER" value="371065" />
+		<parameter name="AccountNumberTNQX" value="371065" />
+		<parameter name="AccountNumberTTas" value="100428" />
+		<parameter name="AccountNumberTIPEC" value="FC3333" />
+		
+		<parameter name="AccountNumberTollPrioAu" value="200BHY" />
+		<parameter name="AccountNumberTollPrioNZ" value="100181" />
 		<parameter name="SenderName" value="COLLINS" />
 		<parameter name="SenderItem" value="COLLINS COMPUTERS 8 TO 8" />
 		<!---Item test data -->
@@ -57,15 +61,10 @@
 		<parameter name="reference" value="12345" />
 
 		<parameter name="TypeOfExport" value="Permanent" />
-		<parameter name="DeclaredValue" value="1500" />
+		<parameter name="DeclaredValue" value="5000" />
 		<parameter name="DeclaredValueCurrency" value="New Zealand dollar" />
 		<parameter name="WhoPaysDutiesTaxes" value="Sender " />
 		<parameter name="CommodityCode" value="ABC123" />
-		<parameter name="CommercialInvoiceDes" value="TestAuto" />
-		<parameter name="PartNo" value="01" />
-		<parameter name="ACHECC" value="Test12" />
-		<parameter name="UnitValue" value="100" />
-		<parameter name="TermsofTrade" value="1" />
 		
 		<!---Dangerous goods test data -->
 
@@ -139,18 +138,34 @@
 
 		<parameter name="ManifestName" value="Automation" />
 
-		<classes>
-			<!--<class name = "manifestE2ETests.TollPriorityAUCommercialInvoice" /> 
-		 <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />--> 
+		<groups>
+         <run>
+            <include name = "Shakeout Testing" />
+         </run>
+      </groups>
+
+      <classes>
+         
+       <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />
+       <class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
+       <class name="manifestE2ETests.ManualManifestTollIPECTest" />
+       	<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
+
+      </classes>
+		
+	<!-- Blocked>	<classes>
+
+		 <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" /> 
+		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
+		<class name = "manifestE2ETests.TollPriorityAUCommercialInvoice" />
+	    <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />
 		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
 		<class name="manifestE2ETests.ManualManifestTollIPECTest" />
 		<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" />
 		<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
 		<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" />
-
-
-
-			      </classes>
+			
+			      </classes></Blocked -->
 
     
 	</test> <!-- Test -->

@@ -38,8 +38,8 @@
 		<parameter name="ServicePriority" value="Priority" />
 
 		<!---Account numbers Test data -->
-		<parameter name="AccountNumberTINTER" value="12641" />
-		<parameter name="AccountNumberTollNQX" value="12641" />
+		<parameter name="AccountNumberTINTER" value="371065" />
+		<parameter name="AccountNumberTollNQX" value="371065" />
 		<parameter name="AccountNumberTollTas" value="100428" />
 		<parameter name="AccountNumberTIPEC" value="FC3333" />
 		<parameter name="AccountNumberTollPrioAu" value="200BHY" />
@@ -138,6 +138,21 @@
 		<parameter name="VICAddress2" value="TestAddress, VIC,3428" />
 
 		
+		<groups>
+			<run>
+				<include name="Shakeout Testing" />
+			</run>
+		</groups>
+
+		<classes>
+		
+			<class name="bookAPickupE2ETests.TollTasmaniaTest" />
+			<class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
+			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
+			<class name="bookAPickupE2ETests.Toll_Add_Template" />
+			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/>
+			<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress"/>
+      </classes>
 		
 
 			<!-- Blocked>	<class name="bookAPickupE2ETests.IntermodalSpecializedTest" />

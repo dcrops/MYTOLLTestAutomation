@@ -73,19 +73,6 @@ public class RateEnquiryActions {
 	public static By tollExtraServiceAmountLable = By.xpath("//*[@id=\"extra-service\"]/div/label");
 	public static By tollExtraServiceAmount = By.xpath("//*[@id=\"extra-service-amount\"]");
 	
-	//Rate Within a Shipment
-	public static By priceNowCurtainBtn = By.xpath("//*[@id=\"get-shipment-rate-header\"]");
-	public static By priceNowCurtainClose = By.xpath("//*[@id=\"get-shipment-rate-container\"]/div[1]/i");
-	public static By priceNowCurtainMsg = By.xpath("//*[@id=\"rate-value-template-container\"]/div[2]");
-	public static By priceNowCurtainTotalCharge = By.xpath("//*[@id=\"rate-value-template-container\"]/div[1]/p[@class=\"total-charge\"]");
-	public static By priceNowCurtainRate = By.xpath("//*[@id=\"rate-value-template-container\"]/div[1]/p[1]");
-	public static By priceNowCurtainGST = By.xpath("//*[@id=\"rate-value-template-container\"]/div[1]/p[2]");
-	
-	//Retrieve from AddressBook
-	public static By orginAddressBookCheckbox = By.xpath("//*[@id=\"from-address-book-chkbox\"]");
-	public static By destinationAddressBookCheckbox = By.xpath("//*[@id=\"to-address-book-chkbox\"]");
-	public static By orginAddressBookDropdown = By.xpath("//*[@id=\"sender-selector\"]/label/a/i");
-	public static By destinationAddressBookDropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i");
 	
 	
 	public static void SelectTollCarrierItem(int i) {
@@ -483,7 +470,7 @@ public class RateEnquiryActions {
 		//RateEnquiryActions.VerifyPricenowMessage("Note:The rate displayed is an estimate only. The rate may change if there are any variations to the actual weight, dimensions or location entered above and are based on Mon - Fri business hours. Extra service and other surcharges may apply. For further enquiries please call our Sales Dept on 1300 865 547 (Option 3)");	
 
 			RateEnquiryActions.VerifyTotalCharge("Total Charge:");
-			//RateEnquiryActions.VerifyGST("GST:");
+			RateEnquiryActions.VerifyGST("GST:");
 			RateEnquiryActions.VerifyRate("Rate:"); 
 		PageBase.MinimumWaitForElementEnabled_1();
 		}
@@ -595,62 +582,6 @@ public class RateEnquiryActions {
 		PageBase.verifyTextExistAttribute(BookAPickupActions.width, pwidth );
 		PageBase.verifyTextExistAttribute(BookAPickupActions.height, pheight);
 		PageBase.verifyTextExistAttribute(weight, pweight);
-	}
-	
-	
-		
-	public static void priceCurtainVerifyPricenowMessage(String pPricenowMsg) {
-		PageBase.MinimumWaitForElementEnabled_1();
-		//assertEquals(pPricenowMsg, BaseWebdriver.driver.findElement(pricenowMsg).getText());
-		PageBase.verifyTextExist(priceNowCurtainMsg, pPricenowMsg);
-
-	}
-
-	public static void priceCurtainVerifyTotalCharge(String pTotalCharge) {
-		PageBase.MinimumWaitForElementEnabled_1();
-		//assertEquals(pTotalCharge, BaseWebdriver.driver.findElement(totalCharge).getText());
-		String fullCharge = BaseWebdriver.driver.findElement(priceNowCurtainTotalCharge).getText();
-		Reporter.log("Full Charge: "+fullCharge);
-		System.out.println("Full Charge: "+fullCharge);
-		String getText = BaseWebdriver.driver.findElement(priceNowCurtainTotalCharge).getText().substring(0, 14);
-		
-		if (getText.equals(pTotalCharge)){
-			Reporter.log("Expected Text : "+pTotalCharge+ " Matched the Text on Screen :" +getText);
-			System.out.println("Expected Text : "+pTotalCharge+ " Matched the Text on Screen :" +getText);
-		}else{
-			Reporter.log("FAILED: Expected Text : "+pTotalCharge+ " DOES NOT Match the Text on Screen :" +getText);
-			Assert.fail("FAILED: Expected Text : "+pTotalCharge+ " DOES NOT Match the Text on Screen :" +getText);
-		}
-
-	}
-
-	public static void priceCurtainVerifyGST(String pGST) {
-		PageBase.MinimumWaitForElementEnabled_1();
-		//assertEquals(pGST, BaseWebdriver.driver.findElement(gst).getText());
-		String getText = BaseWebdriver.driver.findElement(priceNowCurtainGST).getText().substring(0, 5);
-	
-		if (getText.equals(pGST)){
-			Reporter.log("Expected Text : "+pGST+ " Matched the Text on Screen :" +getText);
-			System.out.println("Expected Text : "+pGST+ " Matched the Text on Screen :" +getText);
-		}else{
-			Reporter.log("FAILED: Expected Text : "+pGST+ " DOES NOT Match the Text on Screen :" +getText);
-			Assert.fail("FAILED: Expected Text : "+pGST+ " DOES NOT Match the Text on Screen :" +getText);
-		}
-
-	}
-
-	public static void priceCurtainVerifyRate(String pRate) {
-		PageBase.MinimumWaitForElementEnabled_1();
-		//assertEquals(pRate, BaseWebdriver.driver.findElement(rate).getText());
-		String getText = BaseWebdriver.driver.findElement(priceNowCurtainRate).getText().substring(0, 6);
-		if (getText.equals(pRate)){
-			Reporter.log("Expected Text : "+pRate+ " Matched the Text on Screen :" +getText);
-			System.out.println("Expected Text : "+pRate+ " Matched the Text on Screen :" +getText);
-		}else{
-			Reporter.log("FAILED: Expected Text : "+pRate+ " DOES NOT Match the Text on Screen :" +getText);
-			Assert.fail("FAILED: Expected Text : "+pRate+ " DOES NOT Match the Text on Screen :" +getText);
-		}
-
 	}
 	
 }

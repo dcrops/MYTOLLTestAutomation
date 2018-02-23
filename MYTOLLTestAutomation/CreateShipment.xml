@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="CreateShipment">
@@ -36,10 +35,13 @@
 			value="Economy Pacific-Airport to Airport" />
 
 		<!---Create shipment Test data -->
-		<parameter name="AccountNumberTINTER" value="106119" />
-		<parameter name="AccountNumberTNQX" value="614060" />
+		<parameter name="AccountNumberTINTER" value="371065" />
+		<parameter name="AccountNumberTNQX" value="371065" />
 		<parameter name="AccountNumberTTas" value="100428" />
-		<parameter name="AccountNumberTIPEC" value="2230899" />
+		<parameter name="AccountNumberTIPEC" value="FC3333" />
+		
+		<parameter name="AccountNumberTollPrioAu" value="200BHY" />
+		<parameter name="AccountNumberTollPrioNZ" value="100181" />
 		<parameter name="SenderName" value="COLLINS" />
 		<parameter name="SenderItem" value="COLLINS COMPUTERS 8 TO 8" />
 		<!---Item test data -->
@@ -168,7 +170,6 @@
 		<parameter name="ShipmentContainDangerousGoodsHeading"
 			value="Shipment contain dangerous goods" />
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
-		
 		<!---Toll carriers test data -->
 
 		<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
@@ -202,10 +203,12 @@
 		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
 
 		<!---Create shipment Test data -->
-		<parameter name="AccountNumberTINTER" value="106119" />
-		<parameter name="AccountNumberTNQX" value="614060" />
-		<parameter name="AccountNumberTTas" value="100428" />
-		<parameter name="AccountNumberTIPEC" value="2230899" />
+		<parameter name="AccountNumberTINTER" value="371065" />
+		<parameter name="AccountNumberTollNQX" value="371065" />
+		<parameter name="AccountNumberTollTas" value="100428" />
+		<parameter name="AccountNumberTIPEC" value="FC3333" />
+		<parameter name="AccountNumberTollPrioAu" value="200BHY" />
+		<parameter name="AccountNumberTollPrioNZ" value="100181" />
 		<parameter name="SenderName" value="COLLINS" />
 		<parameter name="SenderItem" value="COLLINS COMPUTERS 8 TO 8" />
 		<!---Item test data -->
@@ -334,25 +337,25 @@
 		<parameter name="ShipmentContainDangerousGoodsHeading"
 			value="Shipment contain dangerous goods" />
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
-		
-	
-	<classes>
-	<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
-	
-	<class name="createShipmentE2ETests.TollPriorityAUSTests" />
-				
-	<class name="createShipmentE2ETests.TollPriorityNZ" />
-		
-		<class name="createShipmentE2ETests.TollIPECTests" />
-			
+
+
+		<groups>
+			<run>
+				<include name="Shakeout Testing" />
+			</run>
+		</groups>
+
+		<classes>
+			<class name="createShipmentE2ETests.TollIPECTests" />
 			<class name="createShipmentE2ETests.TollPriorityAUSTests" />
-		
-			<class name="createShipmentE2ETests.TollTasmaniaTests" />
-
-			<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress" />
-
-			<!-- Blocked>	</Blocked -->
+			<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
 		</classes>
-	
-  </test> <!-- Test -->
+		<!-- Blocked><classes> <class name="createShipmentE2ETests.IntermodalSpecializedTests" 
+			/> <class name="createShipmentE2ETests.TollPriorityAUSTests" /> <class name="createShipmentE2ETests.TollPriorityNZ" 
+			/> <class name="createShipmentE2ETests.TollIPECTests" /> <class name="createShipmentE2ETests.TollPriorityAUSTests" 
+			/> <class name="createShipmentE2ETests.TollTasmaniaTests" /> <class name="createShipmentE2ETests.TollIntermodalTests_AddAdress" 
+			/>
+	</classes> </Blocked -->
+
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

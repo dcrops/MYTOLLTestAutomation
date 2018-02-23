@@ -93,45 +93,8 @@ public class MyTollHomePageActions {
 	public static By shareShipmentEmailSuccessMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*/h3");
 	public static By shareShipmentEmailSuccessMsg2 = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*/p");
 	public static By shareShipmentEmailSuccessClose = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"close-0\"]");
+ 
 
-	//AdvanceSearch
-	public static By advanceSearchTab = By.xpath("//*[@id=\"advancesearchTabAnchor\"]");
-	public static By advanceSearchSRefNo = By.xpath("//*[@id=\"reference-number\"]");
-	public static By advanceSearchSender = By.xpath("//*[@id=\"sender-name\"]");
-	public static By advanceSearchSenderExclude= By.xpath("//*[@id=\"include-exclude-sender\"]");
-	public static By advanceSearchReceiver= By.xpath("//*[@id=\"receiver-name\"]");
-	public static By advanceSearchReceiverExclude = By.xpath("//*[@id=\"include-exclude-receiver\"]");
-	public static By advanceSearchDatePeriod = By.xpath("//*[@id=\"adl_datePeriod\"]");
-	public static By advanceSearchDateDropDown= By.xpath("//*[@id=\"period-selector\"]/div[1]/a/i");
-	public static By advanceSearchDateRange = By.xpath("//*[@id=\"adl_dateRange\"]");
-	public static By advanceSearchDateFrom = By.xpath("//*[@id=\"advsrchFromDate\"]");
-	public static By advanceSearchDateTo = By.xpath("//*[@id=\"advsrchToDate\"]");
-	public static By advanceSearchSenderLoc= By.xpath("//*[@id=\"sender-location-value\"]");
-	public static By advanceSearchSenderLocExclude= By.xpath("//*[@id=\"include-exclude-senderLocation\"]");
-	public static By advanceSearchSenderSuburb = By.xpath("//*[@id=\\\"suburb\\\"]");
-	public static By advanceSearchSenderState = By.xpath("//*[@id=\"state\"]");
-	public static By advanceSearchSenderPostcode = By.xpath("//*[@id=\"postCode\"]");
-	public static By advanceSearchSenderCountry = By.xpath("//*[@id=\"country\"]");
-	public static By advanceSearchReceiverLoc= By.xpath("//*[@id=\"receiver-location-value\"]");
-	public static By advanceSearchReceiverLocExclude= By.xpath("//*[@id=\"include-exclude-receiverLocation\"]");
-	public static By advanceSearchReceiverSuburb = By.xpath("//*[@id=\\\"suburb\\\"]");
-	public static By advanceSearchReceiverState = By.xpath("//*[@id=\"state\"]");
-	public static By advanceSearchReceiverPostcode = By.xpath("//*[@id=\"postCode\"]");
-	public static By advanceSearchReceiverCounty = By.xpath("//*[@id=\"country\"]");
-	public static By advanceSearchTollCarrier = By.xpath("//*[@id=\"current-ms-carrier\"]");
-	public static By advanceSearchTollCarrierExclude = By.xpath("//*[@id=\"include-exclude-toll-carrier\"]");
-	public static By advanceSearchServiceType = By.xpath("//*[@id=\"current-ms-service\"]");
-	public static By advanceSearchServiceTypeExclude = By.xpath("//*[@id=\"include-exclude-server-type\"]");
-	public static By advanceSearchMilestone = By.xpath("//*[@id=\"current-ms-milestone\"]");
-	public static By advanceSearchMilestoneExclude = By.xpath("//*[@id=\"include-exclude-milestone\"]");
-	public static By advanceSearchSubmit = By.xpath("//*[@id=\"get-advance-search\"]");
-
-	
-	
-	
-	
-	
-	//.................................................//
 	
 	
 	public static void LaunchMyToll(String url)
@@ -307,13 +270,6 @@ public class MyTollHomePageActions {
 		PageBase.click(By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr/td/div/span[contains(text(),'"+ShipmentNo+"')]"), 5);
 		PageBase.MaximumWaitForElementEnabled_1();
 	}
-	
-	public static void ClickAdvanceSearchTab() {
-		PageBase.click(advanceSearchTab, 5);
-
-	}
-	
-
 	
 	
 

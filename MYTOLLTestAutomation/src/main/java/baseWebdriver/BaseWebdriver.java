@@ -26,9 +26,9 @@ public class BaseWebdriver {
 	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
 	public static String SitUrl="https://ps.mytoll.com/"; 
 	
-	public static String Username1="NNAutomationuser1@gmail.com";
-	public static String Username2= "auto_bvt_ps@mailinator.com"; 
-	public static String SitUsername1="SitAutomationuser@yahoo.com";
+	public static String Username1="NNAutomationuser1@gmail.com"; 
+	public static String Username2= "auto_bvt@mailinator.com"; 
+	public static String SitUsername1="SitAutomationuser@yahoo.com"; //
 	public static String PerformenceUsername1="perftest@toll.com";
 	public static String Password="Toll@123";  
 	public static String PerformancePassword="Victoria@123"; 
@@ -40,8 +40,8 @@ public class BaseWebdriver {
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
 			BaseWebdriver.driver = new ChromeDriver();
-			MyTollHomePageActions.LaunchMyToll(SitUrl);
-			MyTollHomePageActions.Login(Username2, Password);
+			MyTollHomePageActions.LaunchMyToll(PreprodUrl);
+			MyTollHomePageActions.Login(Username1, Password);
 		}
 
 		else if (browser.equalsIgnoreCase("firefox")) {

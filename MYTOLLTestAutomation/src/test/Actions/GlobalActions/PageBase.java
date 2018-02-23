@@ -5,7 +5,6 @@ import java.sql.Timestamp;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -36,7 +35,7 @@ public class PageBase {
 
 	public static WebElement WaitForElement(By ObjectLocater, int secsToWait) {
 		WebElement element=BaseWebdriver.driver.findElement(ObjectLocater);
-		return (new WebDriverWait(BaseWebdriver.driver, secsToWait)).until(ExpectedConditions.visibilityOf(element));
+		return (new WebDriverWait(BaseWebdriver.driver, secsToWait)).until(ExpectedConditions.presenceOfElementLocated(ObjectLocater));//.visibilityOf());
 	}
 
 	public static boolean SendKeysTo(By ObjectLocater, String keysToSend,int secsToWait) {
@@ -52,8 +51,22 @@ public class PageBase {
 
 		return true;
 	}
+	
+	public static boolean SendKeysToNonEditableField(By ObjectLocater, String keysToSend,int secsToWait) {
+		try {
+			WebElement element = WaitForElement(ObjectLocater, secsToWait);
+			element.click();
+			element.clear();
+			element.sendKeys(keysToSend);
+		} catch (TimeoutException ex) {
+			logElementNotFound(ex);
+			return false;
+		}
 
-	public static boolean SelectFrom(By ObjectLocater,By drodownListItem,int secsToWait) {
+		return true;
+	}
+
+	public static boolean SelectFrom(By drodownListItem,int secsToWait) {
 		
 		try {
 			WebElement element = WaitForElement(drodownListItem, secsToWait);
@@ -79,6 +92,19 @@ public class PageBase {
 		return true;
 	}
 	
+	public static String GetText(By ObjectLocater, int secsToWait) {
+		
+		WebElement element = WaitForElement(ObjectLocater, secsToWait);
+		
+		return element.getText();
+		}
+	
+	public static String GetAttributeValue(By ObjectLocater, int secsToWait) {
+		
+		WebElement element = WaitForElement(ObjectLocater, secsToWait);
+		
+		return element.getAttribute("value");
+		}
 	// When an element is not found sets two levels of logging and sets found =
 	// false
 	private static void logElementNotFound(TimeoutException ex) {
@@ -225,19 +251,6 @@ public class PageBase {
 			WebElement element = waitForElement(locator,secsToWait);
 			element.clear();
 			element.sendKeys(keysToSend);
-		} catch (Exception e) {
-			Reporter.log("element with: " + locator.toString() + " not found" +"<br>");
-			Assert.fail("element with: " + locator.toString() + " not found" +"<br>");
-		}
-	}
-	
-	public static void sendTextandSubmit(By locator, int secsToWait, String keysToSend) {
-		try {
-			PageBase.moveToElement(locator);
-			WebElement element = waitForElement(locator,secsToWait);
-			element.clear();
-			element.sendKeys(keysToSend);
-			element.sendKeys(Keys.RETURN);
 		} catch (Exception e) {
 			Reporter.log("element with: " + locator.toString() + " not found" +"<br>");
 			Assert.fail("element with: " + locator.toString() + " not found" +"<br>");

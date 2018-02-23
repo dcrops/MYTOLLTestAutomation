@@ -5,12 +5,12 @@ Feature: MYT_6226 Toll Energy Book A Pickup
 
   @tag1
   Scenario: User wants to be able to book a pickup for two lines items with Dangerous goods using Toll Energy
-    When User selects Toll Carrier and Account Number
-      | TollCarrier | AccountNumber |
-      | Toll Energy |               |
-    And User slects an existing Sender address from the Sender field
-      | locationIndex |
-      |             1 |
+     When User selects Toll Carrier and Account Number
+      | TollCarrier   | AccountNumber |
+      | Toll Energy |       |
+    And User selects a existing Sender address from the Sender field
+      | Sender   |
+      | AccessHQ |
     When User selects the Service as below
       | Service    |
       | DG Freight |

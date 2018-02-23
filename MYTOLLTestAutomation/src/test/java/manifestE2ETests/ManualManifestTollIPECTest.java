@@ -50,7 +50,7 @@ public class ManualManifestTollIPECTest {
 		PageBase.MaximumWaitForElementEnabled_1();
 		
 		//Create Manifest Pop Up
-		ManifestActions.createManifestPopUp(TollCarrier, 1, NewManifestName);
+		ManifestActions.createManifestPopUp(TollCarrier, 2, NewManifestName);
 		
 		//Verify Manifest and proceed to shipment
 		PageBase.verifyTextExist(ManifestActions.manifestHeading, "MANIFEST - "+NewManifestName);

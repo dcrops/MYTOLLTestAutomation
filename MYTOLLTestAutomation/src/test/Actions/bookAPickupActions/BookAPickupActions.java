@@ -30,7 +30,8 @@ public class BookAPickupActions {
 	public static By TollCarrierIntermodalSpecialized = By.xpath("//*[@id=\"BU-selector\"]/div/ul/li[4]/div"); 
 	public static By AccountNumberTextField = By.name("placeholder-account");
 	public static By AccountNumberDropdown = By.xpath("//*[@id=\"account-selector\"]/label/a/i");
-	public static By AccountNumberDropdownitem1 = By.xpath("//*[@id=\"account-selector\"]/div/ul/li[1]/div[1]");
+	public static By AccountNumberDropdownitem1 = By.xpath("//*[@id=\"account-selector\"]/div/ul/li[1]/div[1]"); 
+	public static By pickupLocation = By.xpath("//*[@id=\"pickup-location\"]/div[1]/div[3]/div/label/span[2]");
 	public static By ServiceDropdown = By.xpath("//*[@id=\"service-type-selector\"]//a/i");
 	public static By BookaPickupScreenHeading = By.cssSelector("h1");
 	public static By tollCarrier = By.name("placeholder-bu");
@@ -158,7 +159,8 @@ public class BookAPickupActions {
 			.xpath("//*[@id=\"address-srch-wrpr\"]/div/ul/li[1]/div");
 	public static final By BookAPickup_New_AddressSearch_Contine = By.id("addr-continue-autmatic");
 	public static final By BookAPickup_New_Address_Name = By.id("add-addr-name");
-	public static final By BookAPickup_New_Address_Number = By.id("add-addr-phone");
+	public static final By BookAPickup_New_Address_Number = By.id("add-addr-phone"); 
+	public static By AddAddressCountryCode = By.xpath("//*[@id=\"add-add-form\"]/div[1]/div[4]/div/div/div/div/div[3]");  
 	public static final By BookAPickup_New_Address_Email = By.id("add-addr-email");
 	public static final By BookAPickup_New_Address_DGName = By.id("add-addr-dg-contact-name");
 	public static final By BookAPickup_New_Address_DGNumber = By.id("add-addr-dg-contact-phone");
@@ -175,11 +177,29 @@ public class BookAPickupActions {
 	public static By AddAdressAddressSuburb = By.id("add-addr-suburb");
 	public static By AddAdressAddressState = By.id("add-addr-state-label"); 
 	public static By AddAdressAddressPostcode = By.id("add-addr-postcode"); 
-	public static By AddAdressAddressContinue =By.xpath("//*[@id=\"addr-continue-manual\"]"); // By.id("addr-continue-manual"); 
+	public static By AddAdressCountryTGXTextField =By.xpath("//*[@id=\"add-addr-country-selector\"]/label/input[2]");
+	public static By AddAdressEmailTGXTextField =By.id("add-addr-email");
+	public static By AddAdressAddressContinue =By.xpath("//*[@id=\"addr-continue-manual\"]");
+	public static By CloseAddAddressScreen =By.xpath("//*[@id=\"close-add-manually-adr-popup\"]/i");
+	public static By CloseEditAddressScreen =By.xpath("//*[@id=\"close-edit-adr-popup\"]/i");
+	public static By AddAdressDGContactName = By.id("add-addr-dg-contact-name"); 
+	public static By AddAdressDGContactNumber = By.id("add-addr-dg-contact-phone");
 	public static final By SearchContactTxtFeild = By.id("sContact");
 	public static final By SearchContactButton = By.id("search-field");
 	public static final By SearchContactCompanyLocation = By.xpath(
 			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contact-col company-name\"]/p");
+	public static By CompanyName = By.xpath(
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col company-name\"]/p"); 
+	public static By address = By.xpath(
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col company-address\"]/p");
+	public static By ContactName = By.xpath(
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col contact-name\"]/p");
+	public static By PhoneNumber = By.xpath(
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col phone-numbers\"]/p");
+	public static By Email = By.xpath(
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col email-address\"]/p");
+	public static By deleteButton = By.xpath(
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//a/i");
 	public static final By SearchContactEdit = By.xpath(
 			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contact-col edit\"]/input");
 	public static final By SearchContactEditCompanyName = By.xpath("//*[@id=\"CompanyName\"]");
@@ -191,7 +211,23 @@ public class BookAPickupActions {
 	public static final By SearchContactEditSave = By.cssSelector("input.save-btn");
 	public static final By popUpMsg = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//h2");
 	public static final By popUpClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*/a/i");
+	
+	// Edit Address  
 
+	public static By EditAddressIcon =By.xpath("//*[@id=\"location-selector\"]/div[1]/div[1]/a/i"); 
+	public static By EditAddressScreenHeading =By.xpath("//*[@id=\"edit-addr\"]/header/h2");
+	public static By EditAddressPleaseClickHereText =By.xpath("//*[@id=\"edit-addr\"]/header/label");
+	public static By EditAddressCompanyName = By.id("edit-addr-company"); 
+	public static By EditAddressName = By.id("edit-addr-name");
+	public static By EditAddressEmail = By.id("edit-addr-email"); 
+	public static By EditAddressPhoneNumber = By.id("edit-addr-phone"); 
+	public static By EditAddressAddressLine1 = By.id("edit-adr-line1");
+	public static By EditAddressAddressLine2 = By.id("edit-adr-line2"); 
+	public static By EditAddressSaveButton = By.xpath("//*[@id=\"edit-address-btn-final\"]");
+	public static By EditAddressSavedSuccessfullyMessage = By.xpath("//*[@id=\"alert-box-wrapper\"]/div/div/div[2]");
+	public static By EditAddressCloseSaveMsg = By.xpath("//*[@id=\"closeAlert\"]");
+	public static By EditAddressCountryCode = By.xpath("//*[@id=\"edit-add-form\"]/div[2]/div[2]/div/div/div/div/div[3]");
+	
 	// Add Template
 	public static final By addTemplate = By.linkText("ADD TEMPLATE");
 	public static final By addTemplateCarrier = By.xpath("//*[@id=\"bu-dropdown-new\"]/label/a/i");
@@ -223,7 +259,7 @@ public class BookAPickupActions {
 	public static final By addAccountDeleteMsg = By.xpath("//*[@id=\"confirm-box-wrapper\"]//*//p");
 	public static final By addAccountDeleteContinue = By.xpath("//*[@id=\"confirm-true\"]");
 	public static final By addAccountDeleteSuccessfull = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//header/h2");
-	public static final By addAccountDeleteClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
+	public static final By addAccountDeleteClose = By.xpath("//*[@id=\"response-poup-wrpr\"]/div[2]/div/a/i"); 
 	public static final By addAccountCarrierSelector = By.xpath("//*[@id=\"BU-selector\"]/label/a");
 	public static final By addTemplateCarrierSelector = By.xpath("//*[@id=\"BU-selector-filter\"]/label/a");
 
@@ -261,7 +297,23 @@ public class BookAPickupActions {
 	public static By containsDangerousGoodsNoQME= By.xpath("//*[@id=\"gv-dg-radios\"]/label[2]/input"); 
 	public static By containsDangerousGoodsYesQME= By.xpath("//*[@id=\"gv-dg-radios\"]/label[1]/input"); 
 	public static By saveAsTemplateQME= By.xpath("//*[@id=\"gv-grid-line-item\"]/td[13]/a[1]/i"); 
-	public static By plusQME= By.xpath("//*[@id=\"gv-grid-line-item\"]/td[13]/a[2]/i"); 
+	public static By addNewLineQME= By.xpath("//*[@id=\"gv-grid-line-item\"]/td[13]/a[4]"); 
+	public static By UNNumberTextFieldQME = By.id("gv-unlookup");  
+	public static By packingGroupDropdownQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/label/a/i");
+	public static By packingGroupItemQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/div/ul/li[2]/div");
+	public static By packingGroupQME = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/input[2]"); 
+	public static By packingGroupTextFieldQME = By.id("gv-packaging-grp"); 
+	public static By dgPackagingDescriptionQME = By.id("gv-dg-pckg-description");
+	public static By dgPkgQtyQME = By.id("gv-dgPkgQty");
+	public static By dgQtyKgQME = By.id("gv-dgPkgWgt");
+	public static By technicalNameQME = By.id("gv-technical-name");
+	public static By classDivisionQME = By.id("gv-class-division");
+	public static By subRiskQME = By.name("sub-risk");
+	public static By properShippingNameQME = By.id("gv-shipping-name");
+	public static By addButtonDGScreenQME = By.id("gv-add-dg-item");
+	public static By closeButtonDGScreenQME = By.xpath("//*[@id=\"dg-popup-inner-wrpr\"]/a[2]/i"); 
+	public static By messageSaveAsTemplateQME = By.xpath("//*[@id=\"alert-box-wrapper\"]/div/div/div[2]"); 
+	public static By saveCloseButtonDGScreenQME = By.id("gv-cancel-dg-item");
 	
 	
 
@@ -281,9 +333,7 @@ public class BookAPickupActions {
 			BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
 			PageBase.ClickOn(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"), 5);
 			PageBase.MaximumWaitForElementEnabled();
-			//BaseWebdriver.driver
-			//		.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"))
-			//		.click();
+			
 		}
 
 		catch (Exception ex) {
@@ -291,9 +341,7 @@ public class BookAPickupActions {
 			PageBase.retryingFindClick(TollCarrierDropdown);
 			PageBase.ClickOn(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"), 5);
 			PageBase.MaximumWaitForElementEnabled();
-			//BaseWebdriver.driver
-			//		.findElement(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"))
-			//		.click();
+			
 		}
 
 	}
@@ -360,11 +408,18 @@ public class BookAPickupActions {
 
 	public static void EnterAccountNumber(String pAccountNumber) {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.SendKeysTo(AccountNumberTextField, pAccountNumber, 5);
-		PageBase.SelectFrom(AccountNumberTextField, By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()=" + pAccountNumber + "]"), 5);
+		PageBase.SendKeysToNonEditableField(AccountNumberTextField, pAccountNumber, 15);
+		PageBase.SelectFrom( By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()='" + pAccountNumber + "']"), 15);
 	
-	}
+	}  
+	
+	public static void SelectPickupLocation() {
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.ClickOn(pickupLocation, 5);
+		
 
+	}
+	
 	public static void SelectServiceItemItem(int j) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-type-selector\"]//a/i")).click();
@@ -425,7 +480,7 @@ public class BookAPickupActions {
 
 	}
 
-	public static String SelectChargeToAccount(int j) {// *[@id="charge-to-selector"]/div/ul/li[1]/div
+	public static String SelectChargeToAccount(int j) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(chargeToAccount).click();
 		String chargeToAccount = BaseWebdriver.driver
@@ -433,6 +488,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li[" + j + "]/div")).click();
 		return chargeToAccount;
 	}
+	
 
 	public static void EnterChargeToAccount(String pChargeToAccount) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -440,10 +496,9 @@ public class BookAPickupActions {
 		BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"charge-to-selector\"]/div/ul//div[text()='" + pChargeToAccount + "']"))
 				.click();
-		// *[@id="charge-to-selector"]/div/ul/li[2]/div
+		
 	}
-
-	// *[@id="charge-to-selector"]/div/ul/li[1]/div
+	
 	public static void SelectDangerousGoods(int j) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("(//input[@name='dangerous-radios'])[" + j + "]")).click();
@@ -664,13 +719,15 @@ public class BookAPickupActions {
 	
 	public static void EnterLocation(String plocation) {
 		PageBase.MaximumWaitForElementEnabled();
+		
 		BaseWebdriver.driver.findElement(location).click();
 		BaseWebdriver.driver.findElement(location).clear();
 		BaseWebdriver.driver.findElement(location).sendKeys(plocation);
 		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SelectFrom( By.xpath("//*[@id=\"location-selector\"]/div[2]/ul/li/div[text()='" + plocation + "']"),5);
 		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"location-selector\"]/div[2]/ul//div[text()='\" + pChargeToAccount + "']")).click();  
 		// BaseWebdriver.MaximumWaitForElementEnabled();
-		//*[@id="location-selector"]/div[2]/ul/li[2]/div[1]
+		//*[@id="location-selector"]/div[2]/ul/li[2]/div[1]     
 	}
 		
 	// Verification of Book A Pickup screen, Toll Carrier and Account number
@@ -1446,37 +1503,134 @@ public class BookAPickupActions {
 
 	}  
 	
-	public static void AddAddressManually(String pCompanyName,String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb,String pAddAdressAddressSuburbItem, String pAddAdressAddressState, String pAddAdressAddressPostcode) {
+	public static void AddAddressManuallyTDF(String pCompanyName,String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb,String pAddAdressAddressSuburbItem, String pAddAdressAddressState, String pAddAdressAddressPostcode) {
 		// Add Address
-		PageBase.waitForElement(BookAPickup_Location_Dropdown, 10);
-		PageBase.ClickOn(BookAPickup_Location_Dropdown, 5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.waitForElement(location, 10);
+		PageBase.ClickOn(location, 15);
 		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
-		PageBase.click(BookAPickup_Add_Address, 5);
-		PageBase.ClickOn(AddAdressManually, 5);
+		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.ClickOn(AddAdressManually, 10);
 		PageBase.SendKeysTo(AddAdressCompanyName,  pCompanyName,5);
 		PageBase.SendKeysTo(AddAdressAddressLine1, pAddAdressAddressLine1,5);
 		PageBase.SendKeysTo(AddAdressAddressLine2, pAddAdressAddressLine2, 5);
 		PageBase.SendKeysTo(AddAdressAddressState, pAddAdressAddressState, 5); 
 		PageBase.MediumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"add-addr-state-selector\"]/div/ul/li[text()='"+pAddAdressAddressState+"']")).click();
+		PageBase.SelectFrom(By.xpath("//*[@id=\"add-addr-state-selector\"]/div/ul/li[text()='"+pAddAdressAddressState+"']"),5);
 		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 5);
-		PageBase.SendKeysTo(AddAdressAddressSuburb, pAddAdressAddressSuburb, 5); 
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"add-addr-suburb-wrpr\"]/div/ul/li/div[text()='"+pAddAdressAddressSuburbItem+"']")).click(); 
+		PageBase.SendKeysTo(AddAdressAddressSuburb, pAddAdressAddressSuburb, 5);
+		PageBase.SelectFrom(By.xpath("//*[@id=\"add-addr-suburb-wrpr\"]/div/ul/li/div[text()='"+pAddAdressAddressSuburbItem+"']"), 5); 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(AddAdressAddressContinue);
-		PageBase.MaximumWaitForElementEnabled();
-		Boolean results=BaseWebdriver.driver.findElement(AddAdressAddressContinue).isDisplayed(); 
-		System.out.println("AddAdressAddressContinue" + results);
-		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(BookAPickup_New_Address_Name, NewCompanyName, 10);
 		PageBase.SendKeysTo(BookAPickup_New_Address_Number,  "0452456876",10);
-		PageBase.SendKeysTo(BookAPickup_New_Address_Email,  "Test@test.com",10);
+		PageBase.SendKeysTo(BookAPickup_New_Address_Email,  "NNAutomationuser1@gmail.com",10);
+		PageBase.SendKeysTo(AddAdressDGContactName,  "George William",10);
+		PageBase.SendKeysTo(AddAdressDGContactNumber,  "610452456876",10);
+		
+	}
+	
+	public static void UpdateSuburbPostcodeAddAddress(String pCompanyName,String pAddAdressAddressSuburb,String pAddAdressAddressPostcode) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.waitForElement(location, 10);
+		PageBase.ClickOn(location, 15);
+		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.ClickOn(AddAdressManually, 10);
+		PageBase.SendKeysTo(AddAdressCompanyName,  pCompanyName,5);
+		PageBase.SendKeysTo(AddAdressAddressSuburb, pAddAdressAddressSuburb,30); 
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+			
+	
+	}
+	
+	public static void EnterPostcodeAddAddress(String pAddAdressAddressPostcode) {
+		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 5);
+		PageBase.MaximumWaitForElementEnabled();
+			
+	
+	}
+	
+	public static void ClickAddAddress() {
 		PageBase.ClickOn(BookAPickup_New_Address_Add, 10);
 		PageBase.MaximumWaitForElementEnabled();
+			
+	
+	}
+	
+	public static void CloseAddAddressScreen() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(CloseAddAddressScreen, 10); 
+			
+	}
+	
+	public static void CloseEditAddressScreen() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(CloseEditAddressScreen, 10); 
+			
+	}
+	
+	public static void AddAddressManuallyPrioAUS(String pCompanyName,String pAddAdressCountry,String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb, String pAddAdressAddressPostcode, String pEmail,String pPhoneNumber, String pSelectCountry) {
+		// Add Address
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.waitForElement(location, 10);
+		PageBase.ClickOn(location, 15);
+		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.ClickOn(AddAdressManually, 10);
+		PageBase.SendKeysTo(AddAdressCompanyName,  pCompanyName,5);
+		PageBase.SendKeysTo(AddAdressCountryTGXTextField , pAddAdressCountry, 5); 
+		PageBase.MediumWaitForElementEnabled();
+		PageBase.SelectFrom(By.xpath("//*[@id=\"add-addr-country-selector\"]/div/ul/li[text()='"+pAddAdressCountry+"']"),5); 
+		PageBase.SendKeysTo(AddAdressAddressLine1, pAddAdressAddressLine1,5);
+		PageBase.SendKeysTo(AddAdressAddressLine2, pAddAdressAddressLine2, 5);
+		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 5);
+		PageBase.SendKeysTo(AddAdressAddressSuburb, pAddAdressAddressSuburb, 5); 
+		PageBase.SendKeysTo(AddAdressEmailTGXTextField, pEmail, 5); 
+		PageBase.retryingFindClick(AddAdressAddressContinue);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(BookAPickup_New_Address_Name, NewCompanyName, 10);
+		PageBase.SendKeysTo(BookAPickup_New_Address_Number,  pPhoneNumber,10);
+		PageBase.ClickOn(AddAddressCountryCode, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(By.xpath("//*[@id=\"add-add-form\"]/div[1]/div[4]/div/div/div/ul/li[2]/span[text()='"+pSelectCountry+"']"), 10); 
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(BookAPickup_New_Address_Email,  "NNAutomationuser2@gmail.com",10);
+		PageBase.ClickOn(BookAPickup_New_Address_Add, 10);
+		PageBase.MaximumWaitForElementEnabled();
+			
+	}
+	
+	public static void UpdateAddAddressManuallyPrioEmail(String pCompanyName,String pAddAdressCountry,String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb, String pAddAdressAddressPostcode, String pEmail) {
+		// Add Address
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.waitForElement(location, 10);
+		PageBase.ClickOn(location, 15);
+		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.ClickOn(AddAdressManually, 10);
+		PageBase.SendKeysTo(AddAdressCompanyName,  pCompanyName,5);
+		PageBase.SendKeysTo(AddAdressCountryTGXTextField , pAddAdressCountry, 5); 
+		PageBase.MediumWaitForElementEnabled();
+		PageBase.SelectFrom(By.xpath("//*[@id=\"add-addr-country-selector\"]/div/ul/li[text()='"+pAddAdressCountry+"']"),5); 
+		PageBase.SendKeysTo(AddAdressAddressLine1, pAddAdressAddressLine1,5);
+		PageBase.SendKeysTo(AddAdressAddressLine2, pAddAdressAddressLine2, 5);
+		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 5);
+		PageBase.SendKeysTo(AddAdressAddressSuburb, pAddAdressAddressSuburb, 5); 
+		PageBase.SendKeysTo(AddAdressEmailTGXTextField, pEmail, 5); 
+		
 			
 	}
 
@@ -1515,6 +1669,78 @@ public class BookAPickupActions {
 
 	}
 	
+	public static void verfiyEditAddress(String pCompanyName, String pAddress, String pContactName,String pCountryCode, String pPhoneNumber,String pEmail){
+		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
+		MyTollHomePageActions.ClickMenu();
+		PageBase.click(MyTollHomePageActions.myContactMenu, 10);
+		PageBase.sendText(SearchContactTxtFeild, 10, pCompanyName);
+		PageBase.ClickOn(SearchContactButton, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		assertEquals(pCompanyName,PageBase.GetText(CompanyName, 5));
+		assertEquals(pAddress,PageBase.GetText(address, 5));
+		assertEquals(pContactName,PageBase.GetText(ContactName, 5));
+		assertEquals(pCountryCode+pPhoneNumber,PageBase.GetText(PhoneNumber, 5));
+		assertEquals(pEmail,PageBase.GetText(Email, 5));
+		
+			
+	}
+	
+	public static void DeleteBtnMyContactAddress() {
+		
+		PageBase.ClickOn(deleteButton, 5);
+		PageBase.ClickOn(addAccountDeleteContinue, 5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(addAccountDeleteClose , 5);
+		
+	}
+
+   public static void ClickEditSenderAddress() {
+		
+		PageBase.ClickOn(EditAddressIcon, 5);
+		
+	}
+	public static void EditSenderAddressIcon(String pCompanyName,String pName, String pEmail, String pPhoneNumber,String pAddressLine1, String pAddressLine2) {
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.SendKeysTo(EditAddressCompanyName,pCompanyName , 5);
+		PageBase.SendKeysTo(EditAddressName,pName , 5);
+		PageBase.SendKeysTo(EditAddressEmail,pEmail , 5);
+		PageBase.SendKeysTo(EditAddressPhoneNumber,pPhoneNumber , 5);
+		PageBase.SendKeysTo(EditAddressAddressLine1,pAddressLine1 , 5);
+		PageBase.SendKeysTo(EditAddressAddressLine2,pAddressLine2 , 5);
+	}
+	
+	public static void SaveEditSenderAddress() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(EditAddressSaveButton, 5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		
+	}
+	
+	public static void CloseSaveMsgEditSenderAddress() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(EditAddressCloseSaveMsg, 5);
+		
+		PageBase.MaximumWaitForElementEnabled();
+		
+	}
+	
+	public static String GetEditAddressScreenHeading() {
+		return PageBase.GetText(EditAddressScreenHeading, 5);
+	}
+	
+	public static String GetEditAddressFullAddressText() {
+		return PageBase.GetText( EditAddressPleaseClickHereText, 5);
+	}
+	
+	public static String GetEditAddressSavedMessageText() {
+		PageBase.MaximumWaitForElementEnabled();
+		return PageBase.GetText( EditAddressSavedSuccessfullyMessage, 5);
+	}
+	
 	public static void SelectQuickEntryMode() {
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.ClickOn(QuickEntryMode, 5);
@@ -1524,24 +1750,32 @@ public class BookAPickupActions {
 	public static void EnterServiceQME(String pService) {
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.SendKeysTo(serviceQME, pService, 5);
-		PageBase.SelectFrom(serviceQME,By.xpath("//*[@id=\"gv-service-type-selector\"]/div/ul/li/div[text()=" + pService + "]"), 5);
+		PageBase.SelectFrom(By.xpath("//*[@id=\"gv-service-type-selector\"]/div/ul/li/div[text()='" + pService + "']"), 5);
 		
 	}
 	
-	public static void EnterDestinationQME(String pDestination) {
+	public static void EnterDestinationQME(String pDestination, String pDestinationItem) {
 		PageBase.MinimumWaitForElementEnabled();
 
-		PageBase.SendKeysTo(destinationQME, pDestination, 5);
-		PageBase.SelectFrom(destinationQME, By.xpath("//*[@id=\"gv-grid-line-item\"]/td[2]/div/div/ul/li/div[text()=" + pDestination + "]"), 5);  
-		
+		PageBase.SendKeysTo(destinationQME, pDestination, 10);
+		PageBase.retryingFindClick( By.xpath("//*[@id=\"gv-grid-line-item\"]/td[2]/div/div/ul/li/div[text()='" + pDestinationItem + "']"));  
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 	}
 	
 	public static void SelectChargeToQME(String pChargeTo) {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.SelectFrom(cahrgeToQME, By.xpath("//*[@id=\"gv-charge-to-selector\"]/div/ul/li/div[text()=" + pChargeTo + "]"), 5);  
+		PageBase.ClickOn(cahrgeToQME, 5);
+		PageBase.retryingFindClick(By.xpath("//*[@id=\"gv-charge-to-selector\"]/div/ul/li/div[text()='" + pChargeTo + "']"));  
 		
 	}
 	
+	public static String GetChargeToAccountQME() {
+		PageBase.MaximumWaitForElementEnabled();
+		String chargeToAccount = BaseWebdriver.driver.findElement(cahrgeToQME).getText();
+		return chargeToAccount;
+	}
+
 	public static void EnterAccountNumberChargeToQME(String pAccountNumber) {
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.SendKeysTo(receiverAccountQME, pAccountNumber, 5);  
@@ -1556,7 +1790,7 @@ public class BookAPickupActions {
 	
 	public static void EnterNoOfItemsQME(String pNoOfItems) {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.SendKeysTo(noOfItemsQME, pNoOfItems, 5);  
+		PageBase.SendKeysTo(noOfItemsQME, pNoOfItems,10);  
 		
 	}
 	
@@ -1573,6 +1807,7 @@ public class BookAPickupActions {
 		PageBase.SendKeysTo(widthQME, pWidth, 5); 
 		PageBase.SendKeysTo(heightQME, pHeight, 5); 
 		PageBase.SendKeysTo(weightQME, pWeight, 5); 
+		
 	}
 	
 	public static void SelectContainsFoodNoQME() {
@@ -1605,10 +1840,108 @@ public class BookAPickupActions {
 		
 	}
 	
-	public static void addANewLineItemQME() {
+	public static void addQMELineItemQME() {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(plusQME, 5); 
+		PageBase.ClickOn(addNewLineQME, 10); 
 		
 	}
+	
+	public static void SelectDangerousGoodsDetailsQME(String lookupItem, String packageDescription, String pDgPkgQty,
+			String pDgQtyKg) {
 
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(UNNumberTextFieldQME, lookupItem, 5);
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.SelectFrom(By.xpath("//*[@id=\"dg-popup-form\"]/div[1]/div[1]/div[1]/div[1]/div/div[1]/ul/li/div"), 5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(dgPackagingDescriptionQME, packageDescription,5);
+		PageBase.SendKeysTo(dgPkgQtyQME, pDgPkgQty, 5);
+		PageBase.SendKeysTo(dgQtyKgQME, pDgQtyKg, 5);
+
+	}
+	
+	public static void SelectPackgingGroupQME(String packagingGroup) {
+		
+			PageBase.MaximumWaitForElementEnabled();  
+			PageBase.ClickOn(packingGroupDropdownQME,5);
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.SelectFrom(By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/div/ul/li/div[text()='" + packagingGroup + "']"),10);
+			PageBase.MaximumWaitForElementEnabled();	
+		}
+	
+	public static void SelectPackgingGroupQMEInt(Integer packagingGroup) {
+		
+		PageBase.MaximumWaitForElementEnabled();  
+		PageBase.ClickOn(packingGroupDropdownQME,5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SelectFrom(By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/div/ul/li[text()='" + packagingGroup + "']"),10);
+		PageBase.MaximumWaitForElementEnabled();	
+	}
+	
+	public static void EnterTechnicalNameQME(String pTechnicalName) {
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(technicalNameQME).click();
+		BaseWebdriver.driver.findElement(technicalNameQME).clear();
+		BaseWebdriver.driver.findElement(technicalNameQME).sendKeys(pTechnicalName);
+	}
+	
+	public static void addDGItemQME() {
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.ClickOn(addButtonDGScreenQME, 5); 
+				
+	}
+	
+	public static void CloseDGScreenQME() {
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.ClickOn(closeButtonDGScreenQME, 5); 
+				
+	}
+	
+	public static void SaveCloseDGScreenQME() {
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.ClickOn(saveCloseButtonDGScreenQME, 5);
+				
+	}
+	
+	public static String GetUNNumberQME() {
+		PageBase.MediumWaitForElementEnabled();
+		return PageBase.GetAttributeValue(UNNumberTextFieldQME, 5);
+
+	}
+	
+	public static String GetClassDivisionQME() {
+
+		return PageBase.GetAttributeValue(classDivisionQME,5);
+
+	}
+
+	public static String GetSubRiskQME() {
+
+		return PageBase.GetAttributeValue(subRiskQME,5);
+
+	}
+	
+	public static String GetPackingGroupQME() {
+
+		return PageBase.GetAttributeValue(packingGroupTextFieldQME, 5);
+
+	}
+
+	public static String GetProperShippingNameQME() {
+
+		return PageBase.GetAttributeValue(properShippingNameQME,5);
+
+	}
+	
+	public static String GetSavedTemplateMessage()
+	{
+		return PageBase.GetText(messageSaveAsTemplateQME, 5);
+		
+	}
+	
+	public static String RandomItemDescription(String pItemDescription) {
+
+		String NewItemDescription=pItemDescription+(new Date()).getTime();
+		return NewItemDescription;
+	}
 }

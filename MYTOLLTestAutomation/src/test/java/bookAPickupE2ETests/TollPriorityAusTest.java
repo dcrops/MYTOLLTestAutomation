@@ -48,8 +48,8 @@ public class TollPriorityAusTest {
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		//Add Address
-		BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
-
+		BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
+		BookAPickupActions.ClickAddAddress();
 		//BookAPickupActions.SelectLocation2(locationIndex);
 		
 
@@ -139,8 +139,8 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
+	BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -185,8 +185,8 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE", "BULLA","3428, BULLA, VIC, AU", "VIC", "3428");
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "BULLA","3428, BULLA, VIC, AU", "VIC", "3428");
+	BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -231,8 +231,8 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","BARTON", "2600, BARTON, ACT, AU", "ACT", "2600");
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BARTON", "2600, BARTON, ACT, AU", "ACT", "2600");
+	BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -279,8 +279,8 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","DARWIN", "0800, DARWIN, NT, AU", "NT", "0800");
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","DARWIN", "0800, DARWIN, NT, AU", "NT", "0800");
+	BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -328,8 +328,8 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","HOTHAM", "0822, HOTHAM, NT, AU", "NT", "0822"); 
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","HOTHAM", "0822, HOTHAM, NT, AU", "NT", "0822"); 
+	BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -376,8 +376,8 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","BUNDEMAR", "2823, BUNDEMAR, NSW, AU", "NSW", "2823"); 
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BUNDEMAR", "2823, BUNDEMAR, NSW, AU", "NSW", "2823"); 
+	BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -425,8 +425,8 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","BRISBANE CITY", "4000, BRISBANE CITY, QLD, AU", "QLD", "4000"); 
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BRISBANE CITY", "4000, BRISBANE CITY, QLD, AU", "QLD", "4000"); 
+	BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -474,8 +474,8 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","SOUTH BRISBANE", "4101, SOUTH BRISBANE, QLD, AU", "QLD", "4101"); 
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","SOUTH BRISBANE", "4101, SOUTH BRISBANE, QLD, AU", "QLD", "4101"); 
+	BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -523,8 +523,8 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","FOUNTAIN VALLEY", "5159, FOUNTAIN VALLEY, SA, AU", "SA", "5159"); 
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","FOUNTAIN VALLEY", "5159, FOUNTAIN VALLEY, SA, AU", "SA", "5159"); 
+	BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -571,8 +571,9 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","CLARENDON", "5157, CLARENDON, SA, AU", "SA", "5157"); 
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","CLARENDON", "5157, CLARENDON, SA, AU", "SA", "5157"); 
+	BookAPickupActions.ClickAddAddress();
+	
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -619,8 +620,9 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","TAROONA", "7053, TAROONA, TAS, AU", "TAS", "7053"); 
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","TAROONA", "7053, TAROONA, TAS, AU", "TAS", "7053"); 
+	BookAPickupActions.ClickAddAddress();
+	
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -669,8 +671,9 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","BAKERS BEACH", "7307, BAKERS BEACH, TAS, AU", "TAS", "7307"); 
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BAKERS BEACH", "7307, BAKERS BEACH, TAS, AU", "TAS", "7307"); 
+	BookAPickupActions.ClickAddAddress();
+	
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -718,8 +721,9 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","PERTH", "6000, PERTH, WA, AU", "WA", "6000"); 
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","PERTH", "6000, PERTH, WA, AU", "WA", "6000"); 
+	BookAPickupActions.ClickAddAddress();
+	
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -766,8 +770,9 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManually("AccessHQ","ABC","CDE","MARMION", "6020, MARMION, WA, AU", "WA", "6020"); 
-
+	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","MARMION", "6020, MARMION, WA, AU", "WA", "6020"); 
+	BookAPickupActions.ClickAddAddress();
+	
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);

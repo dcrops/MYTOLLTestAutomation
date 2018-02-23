@@ -4,8 +4,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions( strict=true
-,features = { "src/test/Resources/advanceSearch/MYT_3482_Advance_Search_Sender_Receiver_Location.feature"}
-,glue= {"commonStepsDefinitions","advanceSearchStepDefinitions"}
+,features = { "src/test/Resources/advancedSearch/ABC.feature"}
+,glue= {"commonStepsDefinitions","advancedSearchStepsDefinitions"}
 , plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 
         "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",

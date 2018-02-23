@@ -9,9 +9,9 @@ Feature: MYT_6242 Toll Mining Services Book A Pickup
     When User selects Toll Carrier and Account Number
       | TollCarrier | AccountNumber |
       | Toll Mining Services |               |
-    And User slects an existing Sender address from the Sender field
-      | locationIndex |
-      |             1 |
+     And User selects a existing Sender address from the Sender field
+      | Sender   |
+      | AccessHQ |
     When User selects the Service as below
       | Service    |
       | DG Freight |

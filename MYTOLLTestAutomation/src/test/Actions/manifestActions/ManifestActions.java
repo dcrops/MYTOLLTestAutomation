@@ -97,8 +97,8 @@ public class ManifestActions {
 	public static By AddNewShipment = By.linkText("ADD NEW SHIPMENT");
 	public static By TollCarier = By.xpath("//*[@id=\"carrier-name\"]");
 	
-	public static final By ContinuetoManifest = By.linkText("CONTINUE");
-	//*[@id=\"shipment-placeholder\"]//*//a[text()=\"continue\"]"
+	public static final By ContinuetoManifest = By.xpath("//*[@id=\"shipment-placeholder\"]//*//a[text()=\"continue\"]");
+	
 	public static ArrayList shipmentNumbers = new ArrayList();
 	public static By PrintCloseManifest = By.linkText("PRINT & CLOSE MANIFEST");
 	public static By ShipmentManifestTab = By.xpath("//*[@id=\"print-mani-popup\"]//*//section/ul/li/a[@title=\"Shipment\"]");
@@ -114,10 +114,8 @@ public class ManifestActions {
 	public static By RePrint = By.linkText("REPRINT");
 	public static By RePrintLableCheckBox = By.xpath("//*[@id=\"shipment-check\"]");
 	public static By RePrintShipmentCheckBox = By.xpath("//*[@id=\"cb-header-ship\"]");
-	//Commercial Invoice
 	public static By PrintCloseShipment = By.linkText("PRINT & CLOSE SHIPMENT");
 	public static By commericalInvoiceErrorMsg= By.xpath("//*[@id=\"label-comercial-message\"]//*//p");
-	public static By commericalInvoiceErrorMsg2= By.xpath("//*[@id=\"comercial-print-message\"]//*//p");
 	public static By labelDownloadPDF = By.xpath("//*[@id=\"print-mani-popup\"]//*//footer[1]/a[3]");
 	public static By createCommericalInvoice= By.xpath("//*[@id=\"commercial-invoice\"]");
 	public static By commericalInvoiceSenderCompanyName= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[2]/div/form/div[2]/div/p");
@@ -126,27 +124,10 @@ public class ManifestActions {
 	public static By commericalInvoiceReceiverCompanyName= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div[2]/div/p");
 	public static By commericalInvoiceReceiverAddress= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div[3]/div/p");
 	public static By commericalInvoiceCountryofUltimateDestination= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div[5]/div/p");
-	//Commercial Invoice - Item Details
-	public static By commericalInvoiceDescription= By.xpath("//*[@id=\"full-desc0\"]");
-	public static By commericalInvoicePartNo= By.xpath("//*[@id=\"part-no0\"]");
-	public static By commericalInvoiceAHECCCode= By.xpath("//*[@id=\"AHECC-code0\"]");
-	public static By commericalInvoiceQty= By.xpath("//*[@id=\"qty0\"]");
-	public static By commericalInvoiceWeigth= By.xpath("//*[@id=\"weight0\"]");
-	public static By commericalInvoiceUnitValue= By.xpath("//*[@id=\"unit-val0\"]");
-	public static By commericalInvoiceTotalQuantity= By.xpath("//*[@id=\"total_qty\"]");
-	public static By commericalInvoiceTotalWeight= By.xpath("//*[@id=\"total_weight\"]");
-	public static By commericalInvoiceTotalInvoiceValue= By.xpath("//*[@id=\"total_val\"]");
-	public static By commericalInvoiceNumber= By.xpath("//*[@id=\"invoice-no\"]");
-	public static By commericalInvoiceTypeofExport= By.xpath("//*[@id=\"type-of-export\"]");
-	public static By commericalInvoiceTermsofTrade= By.xpath("//*[@id=\"TT-selector\"]/label/a/i");
-	public static By commericalInvoiceSave= By.xpath("//*[@id=\"submitCMForm\"]");
-	public static By commericalInvoiceTotalValue= By.xpath("//*[@id=\"c-total-val0\"]");
-	public static By printCommericalInvoice= By.xpath("//*[@id=\"print-commercial\"]");
-	public static By finalPrintCommericalInvoice= By.xpath("//*[@id=\"commercial-print\"]");
-	//*[@id="total_qty"]
-	public static String NewInvoiceNumber;
-	
 
+	
+	
+	
 	public static void VerifyManifestDetails(String pStatus, String pSenderLocation, String pTollCarrier,
 			String pReceiver, String pReceiverLocation, String pService, String pNoOfItems, String pWeight,
 			String pOpenArrowdown, String pItemTemplate, String pNoOfItemsLine1, String pTotalWeight, String pMisc,
@@ -614,86 +595,42 @@ public class ManifestActions {
 	
 	public static void printLabelsandEnableComercialInvoice(){
 		PageBase.click(ManifestActions.PrintCloseShipment, 10);
-		PageBase.verifyTextExist(ManifestActions.commericalInvoiceErrorMsg, "Please note that it is compulsory to have a Commercial invoice. You may create one after printing the label.");
+		//PageBase.verifyTextExist(ManifestActions.commericalInvoiceErrorMsg, "Please note that it is compulsory to have a Commercial invoice. You may create one after printing the label.");
 		PageBase.click(ManifestActions.labelDownloadPDF, 10);
 
 		//Close Pop Up
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.waitForElement(ManifestActions.ShipmentManifestPopupClose, 10);
-		PageBase.click(ManifestActions.ShipmentManifestPopupClose, 10);
+		PageBase.waitForElement(ManifestActions.ShipmentManifestPopupClose, 2);
+		PageBase.click(ManifestActions.ShipmentManifestPopupClose, 2);
 		PageBase.MinimumWaitForElementEnabled_1();
 		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	public static void verifyCommercialInvoicePageItems() {
+		
+		PageBase.click(ManifestActions.createCommericalInvoice, 10);
+		
 		//Shipment Details Page Item Verifications
-		String[] shipmentDetails = {"Airway Bill (Shipment Number)", "Date of Export","No. of Pieces","Total Weight (kgs)","Declared value"};
+		String[] shipmentDetails = {"Airway Bill (Shipment Number):", "Date of Export:","No. of Pieces:","Total Weight (kgs):","Declared Value:"};
 		for (int i =1; i<=shipmentDetails.length; i++) {
 			PageBase.verifyTextSubString(By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[1]/div/form/div["+i+"]/label"), shipmentDetails[i-1]);
 		}
 		
 		//Sender Details Page Item Verifications
-		String[] senderDetails = {"Contact Name", "Company Name","Address","Phone Number","Country of Export","ABN Number"};
+		String[] senderDetails = {"Contact Name:", "Company Name:","Address:","Phone Number:","Country of Export:","ABN Number:"};
 		for (int i =1; i<=senderDetails.length; i++) {
 			PageBase.verifyTextSubString(By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[2]/div/form/div["+i+"]/label"), senderDetails[i-1]);
 		}		
 		
 		//Receiver Details Page Item Verifications
-		String[] receiverDetails = {"Contact Name", "Company Name","Address","Phone Number","Country of Ultimate Destination","Reference Number"};
+		String[] receiverDetails = {"Contact Name:", "Company Name:","Address:","Phone Number:","Country of Ultimate Destination:","Reference Number:"};
 		for (int i =1; i<=receiverDetails.length; i++) {
 			PageBase.verifyTextSubString(By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div["+i+"]/label"), receiverDetails[i-1]);
 		}	
 		
-			
-	}
-	
-	public static void commercialInvoiceItemDetails(String Description, String PartNo, String AHECCCode, String Qty, String Weight, String UnitValue, String InvoiceValue) {
-		
-		PageBase.sendText(commericalInvoiceDescription, 5, Description);
-		PageBase.sendText(commericalInvoicePartNo, 5, PartNo);
-		PageBase.sendText(commericalInvoiceAHECCCode, 5, AHECCCode);
-		PageBase.sendText(commericalInvoiceQty, 5, Qty);
-		PageBase.sendText(commericalInvoiceWeigth, 5, Weight);
-		PageBase.sendText(commericalInvoiceUnitValue, 5, UnitValue);
-		PageBase.MediumWaitForElementEnabled_1();
-		PageBase.MediumWaitForElementEnabled_1();
-		PageBase.MediumWaitForElementEnabled_1();
-		PageBase.verifyTextExistAttribute(commericalInvoiceTotalQuantity, Qty);
-		PageBase.verifyTextExistAttribute(commericalInvoiceTotalWeight, Weight+".00");
-		//PageBase.verifyTextExistAttribute(commericalInvoiceTotalInvoiceValue, InvoiceValue+".00");
-	}
-	
-
-	public static void commercailInvoiceOtherDetails (String TypeOfExport, int i) {
-		//Random Invoice Name
-		int Number = (int) (Math.random()*10000);
-		String newNumber = String.valueOf(Number);
-		NewInvoiceNumber = "IN"+newNumber;
-		
-		PageBase.sendText(commericalInvoiceNumber, 5, NewInvoiceNumber);
-		PageBase.verifyTextExistAttribute(commericalInvoiceTypeofExport, TypeOfExport);
-		PageBase.click(commericalInvoiceTermsofTrade, 5);
-		PageBase.click(By.xpath("//*[@id=\"TT-selector\"]/div/ul/li["+i+"]/div"), 5);
 		
 	}
-	
-	public static void verifyCommercialInvoicePage(String Description, String PartNo, String AHECCCode, String Qty, String Weight, String UnitValue, String InvoiceValue) {
-		PageBase.verifyTextExistAttribute(commericalInvoiceDescription, Description);
-		PageBase.verifyTextExistAttribute(commericalInvoicePartNo, PartNo);
-		PageBase.verifyTextExistAttribute(commericalInvoiceAHECCCode, AHECCCode);
-		PageBase.verifyTextExistAttribute(commericalInvoiceQty, Qty);
-		PageBase.verifyTextExistAttribute(commericalInvoiceWeigth, Weight);
-		PageBase.verifyTextExistAttribute(commericalInvoiceUnitValue, UnitValue);
-		PageBase.verifyTextExistAttribute(commericalInvoiceTotalValue, InvoiceValue);
-		PageBase.verifyTextExistAttribute(commericalInvoiceTotalQuantity, Qty);
-		PageBase.verifyTextExistAttribute(commericalInvoiceTotalWeight, Weight+".00");
-		PageBase.verifyTextExistAttribute(commericalInvoiceTotalInvoiceValue, InvoiceValue+".00");
-		PageBase.verifyTextExistAttribute(commericalInvoiceNumber, NewInvoiceNumber);
-	}
-
-	
 	
 	
 	
