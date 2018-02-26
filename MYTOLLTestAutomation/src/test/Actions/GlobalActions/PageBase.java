@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -257,6 +258,19 @@ public class PageBase {
 		}
 	}
 	
+	public static void sendTextandSubmit(By locator, int secsToWait, String keysToSend) {
+		try {
+			PageBase.moveToElement(locator);
+			WebElement element = waitForElement(locator,secsToWait);
+			element.clear();
+			element.sendKeys(keysToSend);
+			element.sendKeys(Keys.RETURN);
+		} catch (Exception e) {
+			Reporter.log("element with: " + locator.toString() + " not found" +"<br>");
+			Assert.fail("element with: " + locator.toString() + " not found" +"<br>");
+		}
+	}
+	
 	public static void verifyTextExistAttribute(By locator, String expectedText){
 		String getText = BaseWebdriver.driver.findElement(locator).getAttribute("value");
 		
@@ -374,6 +388,7 @@ public class PageBase {
 	
 	public static void isElementPresent (By locator, int seconds, String itemDescription) {
 		boolean isElementPresent = BaseWebdriver.driver.findElement(locator).isDisplayed();
+		PageBase.moveToElement(locator);
 		
 		if (isElementPresent == true) {
 			Reporter.log("Element : "+itemDescription+ " Exits on Screen");
@@ -399,7 +414,7 @@ public class PageBase {
 		catch(Exception e) {
 				Reporter.log("Element : "+itemDescription+ " DOES NOT Exits on Screen");
 				System.out.println("Element : "+itemDescription+ " DOES NOT Exits on Screen");
-		}	
+		}		
 	}
 	
 	public static void MaximumWaitForElementEnabled_1() {
@@ -437,6 +452,22 @@ public class PageBase {
 			System.out.println(ex);
 
 		}
+	}
+	
+	public static WebElement isElementUnavailable(By locator, int waitSeconds, String itemDescription) {
+		try{
+			WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, waitSeconds);
+			WebElement we = (WebElement) wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			we.click();
+			Reporter.log("FAILED: Element : "+itemDescription+ " Exits on Screen");
+			Assert.fail("FAILED: Element : "+itemDescription+ " Exits on Screen");	
+		}
+		catch (Exception ex) {
+			Reporter.log("Element : "+itemDescription+ " DOES NOT Exits on Screen");
+			System.out.println("Element : "+itemDescription+ " DOES NOT Exits on Screen");
+
+		}
+		return null;
 	}
 
 
