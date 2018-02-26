@@ -21,7 +21,8 @@ public class advancedSearchCommonStepsDefinitions {
 		PageBase.MediumWaitForElementEnabled();
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
 		PageBase.MediumWaitForElementEnabled();
-		//MyTollHomePageActions.ClickAdvanceSearchTab();
+		MyTollHomePageActions.ClickAdvanceSearchTab();
+		PageBase.MinimumWaitForElementEnabled_1();
 		//Test
 	}
 	

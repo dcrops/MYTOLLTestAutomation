@@ -388,6 +388,7 @@ public class PageBase {
 	
 	public static void isElementPresent (By locator, int seconds, String itemDescription) {
 		boolean isElementPresent = BaseWebdriver.driver.findElement(locator).isDisplayed();
+		PageBase.moveToElement(locator);
 		
 		if (isElementPresent == true) {
 			Reporter.log("Element : "+itemDescription+ " Exits on Screen");
@@ -413,7 +414,7 @@ public class PageBase {
 		catch(Exception e) {
 				Reporter.log("Element : "+itemDescription+ " DOES NOT Exits on Screen");
 				System.out.println("Element : "+itemDescription+ " DOES NOT Exits on Screen");
-		}	
+		}		
 	}
 	
 	public static void MaximumWaitForElementEnabled_1() {
@@ -451,6 +452,22 @@ public class PageBase {
 			System.out.println(ex);
 
 		}
+	}
+	
+	public static WebElement isElementUnavailable(By locator, int waitSeconds, String itemDescription) {
+		try{
+			WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, waitSeconds);
+			WebElement we = (WebElement) wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			we.click();
+			Reporter.log("FAILED: Element : "+itemDescription+ " Exits on Screen");
+			Assert.fail("FAILED: Element : "+itemDescription+ " Exits on Screen");	
+		}
+		catch (Exception ex) {
+			Reporter.log("Element : "+itemDescription+ " DOES NOT Exits on Screen");
+			System.out.println("Element : "+itemDescription+ " DOES NOT Exits on Screen");
+
+		}
+		return null;
 	}
 
 

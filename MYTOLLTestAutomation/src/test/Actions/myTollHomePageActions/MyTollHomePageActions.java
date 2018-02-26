@@ -97,7 +97,8 @@ public class MyTollHomePageActions {
 
 	//AdvanceSearch
 	public static By advanceSearchTab = By.xpath("//*[@id=\"advancesearchTabAnchor\"]");
-	public static By advanceSearchSRefNo = By.xpath("//*[@id=\"reference-number\"]");
+	public static By advanceSearchRefNo = By.xpath("//*[@id=\"reference-number\"]");
+	public static By advanceSearchRefNoExclude = By.xpath("//*[@id=\"reference-nuxxxxmber\"]");
 	public static By advanceSearchSender = By.xpath("//*[@id=\"sender-name\"]");
 	public static By advanceSearchSenderExclude= By.xpath("//*[@id=\"include-exclude-sender\"]");
 	public static By advanceSearchReceiver= By.xpath("//*[@id=\"receiver-name\"]");
@@ -109,16 +110,16 @@ public class MyTollHomePageActions {
 	public static By advanceSearchDateTo = By.xpath("//*[@id=\"advsrchToDate\"]");
 	public static By advanceSearchSenderLoc= By.xpath("//*[@id=\"sender-location-value\"]");
 	public static By advanceSearchSenderLocExclude= By.xpath("//*[@id=\"include-exclude-senderLocation\"]");
-	public static By advanceSearchSenderSuburb = By.xpath("//*[@id=\\\"suburb\\\"]");
+	public static By advanceSearchSenderSuburb = By.xpath("//*[@id=\"suburb\"]");
 	public static By advanceSearchSenderState = By.xpath("//*[@id=\"state\"]");
 	public static By advanceSearchSenderPostcode = By.xpath("//*[@id=\"postCode\"]");
 	public static By advanceSearchSenderCountry = By.xpath("//*[@id=\"country\"]");
 	public static By advanceSearchReceiverLoc= By.xpath("//*[@id=\"receiver-location-value\"]");
 	public static By advanceSearchReceiverLocExclude= By.xpath("//*[@id=\"include-exclude-receiverLocation\"]");
-	public static By advanceSearchReceiverSuburb = By.xpath("//*[@id=\\\"suburb\\\"]");
+	public static By advanceSearchReceiverSuburb = By.xpath("//*[@id=\"suburb\"]");
 	public static By advanceSearchReceiverState = By.xpath("//*[@id=\"state\"]");
 	public static By advanceSearchReceiverPostcode = By.xpath("//*[@id=\"postCode\"]");
-	public static By advanceSearchReceiverCounty = By.xpath("//*[@id=\"country\"]");
+	public static By advanceSearchReceiverCountry = By.xpath("//*[@id=\"country\"]");
 	public static By advanceSearchTollCarrier = By.xpath("//*[@id=\"current-ms-carrier\"]");
 	public static By advanceSearchTollCarrierExclude = By.xpath("//*[@id=\"include-exclude-toll-carrier\"]");
 	public static By advanceSearchServiceType = By.xpath("//*[@id=\"current-ms-service\"]");
@@ -302,6 +303,10 @@ public class MyTollHomePageActions {
 		PageBase.MaximumWaitForElementEnabled_1();
 	}
 	
+	public static void ClickAdvanceSearchTab() {
+		PageBase.click(advanceSearchTab, 5);
+
+	}
 	
 
 }
