@@ -20,6 +20,7 @@ import reviewYourPickupActions.ReviewYourPickupActions;
 public class IntermodalSpecializedTest {
 	public static Integer locationIndex = 4;
 
+	
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
@@ -30,7 +31,7 @@ public class IntermodalSpecializedTest {
 	}
 
 	@Test 
-	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceDangerousGoods", "ServiceExpress", "AccountNumberTollNQX",
+	@Parameters({"TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceDangerousGoods", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
 			"DestinationItem", "DestinationPostcode", "lookupName", "PackingGroup", "packageDescription", "pDgPkgQty",
@@ -42,8 +43,8 @@ public class IntermodalSpecializedTest {
 			String Width, String Height, String Weight, String DGGoodsYes, String DGGoodsNo, String FoodItems,
 			String palletSpace, String destination, String DestinationItem, String DestinationPostcode,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
-			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
-
+			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) throws Exception {
+		
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
@@ -985,7 +986,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 		ReviewYourPickupActions.VerifyNoEditBtn();
 
-	}
+	} 
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {

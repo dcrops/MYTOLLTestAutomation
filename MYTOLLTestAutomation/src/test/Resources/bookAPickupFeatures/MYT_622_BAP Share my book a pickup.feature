@@ -5,58 +5,97 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
 
   @tag1
   Scenario: User wants to Print and/or Share my pick up booking in TDF
-    When User Creates a Book A Pickup entering following details
-      | TollCarrier   | AccountNumber | locationIndex | Service    | Destination    | ItemDescription      | NoOfItems | Item Type | Length | Width | Height | TotalWeight | ChargeToAccount | SenderReference | ReceiverReference | PalletSpaces |
-      | Toll Tasmania |        100428 |             1 | DG Freight | MELBOURNE,3000 | Automation Template1 |        10 | Misc      |    100 |   100 |    100 |         900 |               1 | Ref123          | Ref456            |            6 |
-    When User selects Contains food or food packaging as NO
-    When User select Dangerous Goods as Yes
-    And User enter following dangerous goods details
-      | UnNumber | ProperShippingName  | PackingGroup | DGPackageType | DGAggregateQty |
-      |     1234 | Test Technical name |            3 |            20 |             10 |
-    Then User able to see following fields are autopopulated.
-      | Class/Div | SubRisk | PackingGroup |
-      |         3 | NA      | II           |
-    When User clicks on ADD NEW LINES
-    When User select the Service as below
-      | Service       |
-      | Refrigeration |
-    And User enter following input data
-      | Destination    | ItemDescription      | NoOfItems | Item Type | Length | Width | Height | TotalWeight | ChargeToAccount | SenderReference | ReceiverReference | PalletSpaces |
-      | MELBOURNE,3000 | Automation Template1 |        10 | Misc      |    100 |   100 |    100 |         900 |               1 | Ref123          | Ref456            |            6 |
-    And User selects Dangerous Goods as NO
-    And User enter Tempreture details as below
-      | Temp [Lo] | Temp [High] |
-      |         5 |          10 |
-    When User clicks on 'Review & BookAPickup'
-    Then User navigates to Review Pickup screen
-    When User clicks on Confirm Pickup
-    Then User navigates to Pickup confirmation page and see Print and Share options
-    When User selects on share option
-    Then User can send email to 5 users with the booking content
-      | User1                       | User2                       | User3                   | User4                       | User5                      |
-      | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | auto_bvt@mailinator.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
 
- 
+  #When User selects Toll Carrier and Account Number
+  #| TollCarrier              | AccountNumber |
+  #| Intermodal & Specialised |        371065 |
+  #
+  #And User selects a existing Sender address from the Sender field
+  #| Sender   |
+  #| AccessHQ |
+  #When User enter following input data to Add Item
+  #| Service | Destination | ItemDescription      | NoOfItems | PalletSpace |
+  #| Express | MELALEUCA   | Automation Template1 |        10 |           6 |
+  #And User Selects Charge to Account as below
+  #| ChargeToAccount | AccountNumber |
+  #|             1 |         12345 |
+  #When User enter following details
+  #|Length | Width | Height | Weight |
+  #|    100 |   100 |    100 |    900 |
+  #And User selects Contains Food or food packaging
+  #| FoodPackaging |
+  #|             2 |
+  #When User selects Dangerous Goods as below
+  #| DgGoods |
+  #|       2 |
+  #When User selects Dispatch date as Tommorow
+  #When User selects Ready Time
+  #| ReadyTime |
+  #| 11:30     |
+  #When User enters Special Instructions as below
+  #| Special Instructions      |
+  #| Special Instructions Test |
+  #When User clicks on Review & Book
+  #Then User navigates to Bookings details Review Page
+  #When User clicks on Confirm Book
+  #Then User navigates to Pickup confirmed page
+  #Then User navigates to Pickup confirmation page and see Print and Share options
+  #When User selects on share option
+  # Then User can send email to 5 users with the booking content
+  #  |Message|MessagetoSend| User1                       | User2                       | User3                   | User4                       | User5                      |
+  # |You can enter upto 5 email addresses |Test share message| NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com |SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
+  
   @tag1
-  Scenario: User wants to Print and/or Share my pick up booking in IPEC
-    When User Creates a Book A Pickup entering following details
-      | TollCarrier | AccountNumber | locationIndex | Service              | Destination    | ItemDescription      | NoOfItems | Item Type | Length | Width | Height | TotalWeight | ChargeToAccount | SenderReference | ReceiverReference | PalletSpaces |
-      | Toll IPEC   |        100428 |             1 | Service Road Express | MELBOURNE,3000 | Automation Template1 |        10 | Misc      |    100 |   100 |    100 |         900 |               1 | Ref123          | Ref456            |            6 |
-    When User selects Contains food or food packaging as NO
-    When User select Dangerous Goods as No
-    When User clicks on ADD NEW LINES
-    When User select the Service as below
-      | Service |
-      | Fashion |
-    And User enter following input data
-      | Destination    | ItemDescription      | NoOfItems | Item Type | Length | Width | Height | TotalWeight | ChargeToAccount | SenderReference | ReceiverReference | PalletSpaces |
-      | MELBOURNE,3000 | Automation Template1 |        10 | Misc      |    100 |   100 |    100 |         900 |               1 | Ref123          | Ref456            |            6 |
-    And User selects Dangerous Goods as NO
-    When User clicks on 'Review & BookAPickup'
-    Then User navigates to Review Pickup screen
-    When User clicks on Confirm Pickup
+  Scenario: User wants to Print and/or Share my pick up booking in Intermodal & Specialised
+    When User selects Toll Carrier and Account Number
+      | TollCarrier              | AccountNumber |
+      | Intermodal & Specialised |        371065 |
+    And User selects a existing Sender address from the Sender field
+      | Sender   |
+      | AccessHQ |
+    When User enter following input data to Add Item
+      | Service | Destination | ItemDescription      | NoOfItems | PalletSpace |
+      | DG Express | MELALEUCA   | Automation Template1 |        10 |           6 |
+    And User Selects Charge to Account as below
+      | ChargeToAccount | AccountNumber |
+      |               1 |         12345 |
+    When User enter following details
+      | Length | Width | Height | Weight |
+      |    100 |   100 |    100 |    900 |
+    And User selects Contains Food or food packaging
+      | FoodPackaging |
+      |             2 |
+    When User selects Dangerous Goods as below
+      | DgGoods |
+      |       1 |
+    And User enter dangerous goods details as below
+       | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |
+      |     2025 | II          |            20 |             10 | Test Package Description | Test Technical Name |
+    Then User able to see following fields autopopulated.
+      | Class/Div | SubRisk | PackingGroup |Proper Shoping Name            |
+      |         6.1 | NA      | II         |MERCURY COMPOUND, SOLID, N.O.S |
+    When User clicks on ADD NEW LINES to add more items
+    And  User enter following input data to Add Item
+      | Service | Destination | ItemDescription      | NoOfItems | PalletSpace |
+      | Express | MELALEUCA   | Automation Template2 |        10 |           6 |
+    And User Selects Charge to Account as below
+      | ChargeToAccount | AccountNumber |
+      |               1 |         12345 |
+    When User enter following details
+      | Length | Width | Height | Weight |
+      |    100 |   100 |    100 |    900 |
+    And User selects Contains Food or food packaging
+      | FoodPackaging |
+      |             2 |
+    When User selects Dangerous Goods as below
+      | DgGoods |
+      |       2 |
+    When User clicks on Review & Book
+    Then User navigates to Bookings details Review Page
+    When User clicks on Confirm Book
+    Then User navigates to Pickup confirmed page
     Then User navigates to Pickup confirmation page and see Print and Share options
     When User selects on share option
     Then User can send email to 5 users with the booking content
-      | User1                       | User2                       | User3                   | User4                       | User5                      |
-      | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | auto_bvt@mailinator.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
+      | Message                              | MessagetoSend      | User1                       | User2                       | User3                       | User4                       | User5                      |
+      | You can enter upto 5 email addresses | Test share message | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |

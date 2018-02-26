@@ -138,21 +138,8 @@
 
 		<parameter name="ManifestName" value="Automation" />
 
-		<groups>
-         <run>
-            <include name = "Shakeout Testing" />
-         </run>
-      </groups>
-
-      <classes>
-         
-       <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />
-       <class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
-       <class name="manifestE2ETests.ManualManifestTollIPECTest" />
-       	<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
-
-      </classes>
-		
+	
+	
 	<!-- Blocked>	<classes>
 
 		 <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" /> 
