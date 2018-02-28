@@ -6,63 +6,63 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
    	|DateFrom|
    	|01-07-2017|
     
-#    @tag1
-#    Scenario: User perfroms advance search using Service Type feild
-#     When User inputs search criteria in the Toll Carrier feild
-#   	 |TollCarrier|
-#   	 |Intermodal & Specialised|
-#   	 When User inputs search criteria in the Service Type feild
-#   	 |ServiceType|
-#   	 |Intermodal & Specialised_General|
-#     Then User Clicks Search and results are displayed
-##     |Verify Search Results are reflected according to tags|
-#
-#     And User Adds Multiple Tags in Service Type feild
-#     |ServiceType1  				         | ServiceType2   				   |ServiceType3   				     |
-#     |Intermodal & Specialised_Refrigeration |Intermodal & Specialised_Express |Intermodal & Specialised_Premium |
-#     Then Service Type Tag is Visible in search feild
-#     |ServiceType1  				         | ServiceType2   				   |ServiceType3   				     |
-#     |Intermodal & Specialised_Refrigeration |Intermodal & Specialised_Express |Intermodal & Specialised_Premium |
-#     
-#     Then User Clicks Search and results are displayed
-##     |Verify Search Results are reflected according to tags|
-#
-#     And User Deletes Tags in Service Type feild and Verify if the Tags are Deleted
-#	 |ServiceType1  				         | ServiceType2   				   |ServiceType3   				     |
-#     |Intermodal & Specialised_Refrigeration |Intermodal & Specialised_Express |Intermodal & Specialised_Premium |
-#     And User Exlcudes search Tags in Service Type feild
-#	 Then User Clicks Search and results are displayed
-##    |Verify Search Results are reflected according to tags|
-#    
-#
-#
-#  
-#    @tag2
-#    Scenario: User perfroms advance search using Milestone feild
-#     When User inputs search criteria in the Milestone feild
-#   	 |Milestone|
-#   	 |Shipment created|
-#     Then User Clicks Search and results are displayed
-##     |Verify Search Results are reflected according to tags|
-#
-#     And User Adds Multiple Tags in Milestone feild
-#     |Milestone1  |Milestone2   |Milestone3   	  |
-#     |Delivered   |In transit   |Out for delivery |
-#     Then Milestone Tag is Visible in search feild
-#     |Milestone1  |Milestone2   |Milestone3   	  |
-#     |Delivered   |In transit   |Out for delivery |
-#     
-#     Then User Clicks Search and results are displayed
-##     |Verify Search Results are reflected according to tags|
-#
-#     And User Deletes Tags in Milestone feild and Verify if the Tags are Deleted
-#	 |Milestone1  |Milestone2   |Milestone3   	  |
-#     |Delivered   |In transit  |Out for delivery |
-#     And User Exlcudes search Tags in Milestone feild
-#	 Then User Clicks Search and results are displayed
-##    |Verify Search Results are reflected according to tags|
-#    
-#       
+    @tag1
+    Scenario: User perfroms advance search using Service Type feild
+     When User inputs search criteria in the Toll Carrier feild
+   	 |TollCarrier|
+   	 |Intermodal & Specialised|
+   	 When User inputs search criteria in the Service Type feild
+   	 |ServiceType|
+   	 |Intermodal & Specialised_General|
+     Then User Clicks Search and results are displayed
+#     |Verify Search Results are reflected according to tags|
+
+     And User Adds Multiple Tags in Service Type feild
+     |ServiceType1  				         | ServiceType2   				   |ServiceType3   				     |
+     |Intermodal & Specialised_Refrigeration |Intermodal & Specialised_Express |Intermodal & Specialised_Premium |
+     Then Service Type Tag is Visible in search feild
+     |ServiceType1  				         | ServiceType2   				   |ServiceType3   				     |
+     |Intermodal & Specialised_Refrigeration |Intermodal & Specialised_Express |Intermodal & Specialised_Premium |
+     
+     Then User Clicks Search and results are displayed
+#     |Verify Search Results are reflected according to tags|
+
+     And User Deletes Tags in Service Type feild and Verify if the Tags are Deleted
+	 |ServiceType1  				         | ServiceType2   				   |ServiceType3   				     |
+     |Intermodal & Specialised_Refrigeration |Intermodal & Specialised_Express |Intermodal & Specialised_Premium |
+     And User Exlcudes search Tags in Service Type feild
+	 Then User Clicks Search and results are displayed
+#    |Verify Search Results are reflected according to tags|
+    
+
+
+  
+    @tag2
+    Scenario: User perfroms advance search using Milestone feild
+     When User inputs search criteria in the Milestone feild
+   	 |Milestone|
+   	 |Shipment created|
+     Then User Clicks Search and results are displayed
+#     |Verify Search Results are reflected according to tags|
+
+     And User Adds Multiple Tags in Milestone feild
+     |Milestone1  |Milestone2   |Milestone3   	  |
+     |Delivered   |In transit   |Out for delivery |
+     Then Milestone Tag is Visible in search feild
+     |Milestone1  |Milestone2   |Milestone3   	  |
+     |Delivered   |In transit   |Out for delivery |
+     
+     Then User Clicks Search and results are displayed
+#     |Verify Search Results are reflected according to tags|
+
+     And User Deletes Tags in Milestone feild and Verify if the Tags are Deleted
+	 |Milestone1  |Milestone2   |Milestone3   	  |
+     |Delivered   |In transit  |Out for delivery |
+     And User Exlcudes search Tags in Milestone feild
+	 Then User Clicks Search and results are displayed
+#    |Verify Search Results are reflected according to tags|
+    
+       
         
    	@tag3
     Scenario: User Perfroms advance with Multi Tagging accross all feilds
