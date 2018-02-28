@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -20,10 +21,12 @@ import reviewYourPickupActions.ReviewYourPickupActions;
 public class IntermodalSpecializedTest {
 	public static Integer locationIndex = 4;
 
-	
-	@BeforeMethod(alwaysRun = true)
-	public void RunSetup() throws Exception {
-		BaseWebdriver.setUp();
+	@Parameters("browser")
+	//@BeforeMethod(alwaysRun = true)
+	@BeforeMethod
+	public void RunSetup(String browser) throws Exception {
+		//BaseWebdriver.setUp();
+		BaseWebdriver.SetUp(browser);
 		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
@@ -37,17 +40,21 @@ public class IntermodalSpecializedTest {
 			"DestinationItem", "DestinationPostcode", "lookupName", "PackingGroup", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
-	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DangerousGoods(String TollCarrier, String AccountNumberTINTER,
+	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DangerousGoods(String TollCarrierIntermodalSpecialized, String AccountNumberTINTER,
 			String ServiceDangerousGoods, String ServiceExpress, String AccountNumberTollNQX, String ItemTemplateName2,
 			Integer locationIndex, String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String DGGoodsYes, String DGGoodsNo, String FoodItems,
 			String palletSpace, String destination, String DestinationItem, String DestinationPostcode,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) throws Exception {
-		
-		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		/*BaseWebdriver.SetUp(browser);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
+		MyTollHomePageActions.ClickMenu();
+		MyTollHomePageActions.ClickBookAPIckupMenu();*/
+		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrierIntermodalSpecialized);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
+	
 		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
@@ -170,7 +177,7 @@ public class IntermodalSpecializedTest {
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
-	@Test(groups = { "Shakeout Testing" })
+  /*	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
@@ -986,7 +993,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 		ReviewYourPickupActions.VerifyNoEditBtn();
 
-	} 
+	} */
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {

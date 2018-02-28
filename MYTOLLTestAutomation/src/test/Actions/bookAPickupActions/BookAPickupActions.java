@@ -33,7 +33,7 @@ public class BookAPickupActions {
 	public static By AccountNumberDropdownitem1 = By.xpath("//*[@id=\"account-selector\"]/div/ul/li[1]/div[1]");
 	public static By pickupLocation = By.xpath("//*[@id=\"pickup-location\"]/div[1]/div[3]/div/label/span[2]");
 	public static By ServiceDropdown = By.xpath("//*[@id=\"service-type-selector\"]//a/i");
-	public static By BookaPickupScreenHeading = By.cssSelector("h1");
+	public static By BookaPickupScreenHeading = By.cssSelector("h1");   
 	public static By tollCarrier = By.name("placeholder-bu");
 	public static By accountNumber = By.name("placeholder-account");
 	public static By locationDropdown = By.xpath("//*[@id=\"location-selector\"]/label/a/i");
@@ -63,6 +63,7 @@ public class BookAPickupActions {
 	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
 	public static By itemDescriptionDropdown = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
 	public static By itemDescriptionTextField = By.id("item-description");
+	public static By DescriptionOfGoodsTextField = By.id("detailed-description");
 	public static By selectItemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[3]/div");
 	public static By selectItemDescriptionTollPrioAU = By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li/div");
 	public static By enterQuantity = By.id("quantity");
@@ -981,8 +982,10 @@ public class BookAPickupActions {
 	public static void SelectItemDescriptionTollPriorityAU() {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemDescription).click();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[2]/div")).click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[2]/div")).click();  //*[@id="freight-type-selector"]/div/ul/li[2]/div
 	}
+	
+	
 
 	public static void EnterItem(String itemName) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -992,6 +995,13 @@ public class BookAPickupActions {
 
 	}
 
+	public static void DescriptionOfGoods(String pDescriptionOfGoods) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(DescriptionOfGoodsTextField, pDescriptionOfGoods, 10);
+
+	}
+	
+	
 	public static void SelectLargestItem(int j) {
 
 		PageBase.click(selectLargestItem, 2);
