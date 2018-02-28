@@ -2,28 +2,31 @@ Feature: MYT-3482 Advance Search Using Sender (Company / Name), Receiver (Compan
 
   Background: 
     Given User is on the Advance Search Page
-
+    And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|01-07-2017|
+   	
     @tag1
     Scenario: User perfroms advance search using Sender (Company/Name) feild
     When User inputs search criteria in the Sender feild
    	 |Sender|
-   	 |Test|
+   	 |Automation|
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
      And User Adds Multiple Tags in Sender feild
-     |SenderTag1 |SenderTag2 |SenderTag3|
-     |Test123    |Auto       |Tag123  |
+     |SenderTag1                    |SenderTag2  |SenderTag3                   |
+     |BRIDGESTONE AUST LTD (TYRES)  |AVN PVT LTD |DULUX AUSTRALIA - WELSHPOOL  |
      Then Sender Tag is Visible in search feild
-     |SenderTag1 |SenderTag2 |SenderTag3|
-     |Test123    |Auto       |Tag123  |
+     |SenderTag1                    |SenderTag2  |SenderTag3                   |
+     |BRIDGESTONE AUST LTD (TYRES)  |AVN PVT LTD |DULUX AUSTRALIA - WELSHPOOL  |
      
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
      And User Deletes Tags in Sender feild and Verify if the Tags are Deleted
-	 |SenderTag1 |SenderTag2 |SenderTag3|
-     |Test123    |Auto       |Tag123  |
+     |SenderTag1                    |SenderTag2  |SenderTag3                   |
+     |BRIDGESTONE AUST LTD (TYRES)  |AVN PVT LTD |DULUX AUSTRALIA - WELSHPOOL  |
      And User Exlcudes search Tags in Sender feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
@@ -34,23 +37,22 @@ Feature: MYT-3482 Advance Search Using Sender (Company / Name), Receiver (Compan
     Scenario: User perfroms advance search using Receiver (Company/Name) feild
     When User inputs search criteria in the Receiver feild
    	 |Receiver|
-   	 |Test|
+   	 |abccompany|
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
      And User Adds Multiple Tags in Receiver feild
-     |ReceiverTag1 |ReceiverTag2 |ReceiverTag3|
-     |Test123    |Auto       |Tag123  |
+     |ReceiverTag1 |ReceiverTag2  |ReceiverTag3|
+     |NZ Address   |ATOM SUPPLIES |3D INSPIRATIONS  |
      Then Receiver Tag is Visible in search feild
-     |ReceiverTag1 |ReceiverTag2 |ReceiverTag3|
-     |Test123    |Auto       |Tag123  |
-     
+     |ReceiverTag1 |ReceiverTag2  |ReceiverTag3|
+     |NZ Address   |ATOM SUPPLIES |3D INSPIRATIONS  |
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
      And User Deletes Tags in Receiver feild and Verify if the Tags are Deleted
-	 |ReceiverTag1 |ReceiverTag2 |ReceiverTag3|
-     |Test123    |Auto       |Tag123  |
+     |ReceiverTag1 |ReceiverTag2  |ReceiverTag3|
+     |NZ Address   |ATOM SUPPLIES |3D INSPIRATIONS  |
      And User Exlcudes search Tags in Receiver feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
@@ -61,71 +63,63 @@ Feature: MYT-3482 Advance Search Using Sender (Company / Name), Receiver (Compan
   Scenario: User perfroms advance search using Sender Location feild
   When User inputs search criteria in the Sender Location feilds
      |Suburb    | State| Postcode| Country   |
-     |Melbourne | VIC  | 3000    | Australia|
+     |Melbourne | VIC  | 3000    | AU|
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
-     
-     And User Adds Multiple Tags in Sender Surburb Location feilds
-     |Suburb1   | Suburb2| Suburb3|
-     |MULGRAVE  | Sydney | NEWTON |
-     Then Sender Surburb Location Tag is Visible in search feild
-     |Suburb1   | Suburb2| Suburb3|
-     |MULGRAVE  | Sydney | NEWTON |
-     Then User Clicks Search and results are displayed
-#    |Verify Search Results are reflected according to tags| 
 
-     And User Deletes Tags in Sender Surburb Location and Verify if the Tags are Deleted
-  	  |Suburb1   | Suburb2| Suburb3|
-     |MULGRAVE  | Sydney | NEWTON |
-     Then User Clicks Search and results are displayed
-#    |Verify Search Results are reflected according to tags|
-    
+     And User Adds Multiple Tags in Sender Surburb Location feilds
+     |Suburb1    | Suburb2          | Suburb3|
+     |WELSHPOOL  | Burleigh Waters  | Belmore |
+     Then Sender Surburb Location Tag is Visible in search feild
+     |Suburb1    | Suburb2          | Suburb3|
+     |WELSHPOOL  | Burleigh Waters  | Belmore |
      And User Adds Multiple Tags in Sender State Location feilds
      |State1   | State2| State3|
-     |NSW      | ATC   | SA    |
+     |WA       | QLD   | NSW   |
      Then Sender State Location Tag is Visible in search feild
      |State1   | State2| State3|
-     |NSW      | ATC   | SA    |
-   	 Then User Clicks Search and results are displayed
-#    |Verify Search Results are reflected according to tags| 
-
-     And User Deletes Tags in Sender State Location and Verify if the Tags are Deleted
-  	 |State1   | State2| State3|
-     |NSW      | ATC   | SA    |
-     Then User Clicks Search and results are displayed
-#    |Verify Search Results are reflected according to tags|
-     
+     |WA       | QLD   | NSW   |
      And User Adds Multiple Tags in Sender Postcode Location feilds
      |Postcode1   | Postcode2| Postcode3|
-     |3170        | 7000     | 2000     |
+     |6106        | 4220     | 2192     |
      Then Sender Postcode Location Tag is Visible in search feild
      |Postcode1   | Postcode2| Postcode3|
-     |3170        | 7000     | 2000     |
-   	 Then User Clicks Search and results are displayed
+     |6106        | 4220     | 2192     |
+     Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags| 
-
+     And User Deletes Tags in Sender Surburb Location and Verify if the Tags are Deleted
+	 |Suburb1    | Suburb2          | Suburb3|
+     |WELSHPOOL  | Burleigh Waters  | Belmore |
+     And User Deletes Tags in Sender State Location and Verify if the Tags are Deleted
+     |State1   | State2| State3|
+     |WA       | QLD   | NSW   |
      And User Deletes Tags in Sender Postcode Location and Verify if the Tags are Deleted
-  	 |Postcode1   | Postcode2| Postcode3|
-     |3170        | 7000     | 2000     |
+     |Postcode1   | Postcode2| Postcode3|
+     |6106        | 4220     | 2192     |
      Then User Clicks Search and results are displayed
-#    |Verify Search Results are reflected according to tags|
-
-     And User Adds Multiple Tags in Sender Country Location feilds
-     |Country1   | Country2      | Country3  |
-     |New Zealand| Hong Kong     | Japan     |
-     Then Sender Country Location Tag is Visible in search feild
-     |Country1   | Country2      | Country3  |
-     |New Zealand| Hong Kong     | Japan     |
-   	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags| 
-
-     And User Deletes Tags in Sender Country Location and Verify if the Tags are Deleted
-  	 |Country1   | Country2      | Country3  |
-     |New Zealand| Hong Kong     | Japan     |
-     Then User Clicks Search and results are displayed
-#    |Verify Search Results are reflected according to tags|
-
      And User Exlcudes search Tags in Sender Location Feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
+
+
+ 
+     
+# The below code works but the test data isnt enough in the system to test countires
+
+#     And User Adds Multiple Tags in Sender Country Location feilds
+#     |Country1   | Country2      | Country3  |
+#     |New Zealand| Hong Kong     | Japan     |
+#     Then Sender Country Location Tag is Visible in search feild
+#     |Country1   | Country2      | Country3  |
+#     |New Zealand| Hong Kong     | Japan     |
+#   	 Then User Clicks Search and results are displayed
+##    |Verify Search Results are reflected according to tags| 
+#
+#     And User Deletes Tags in Sender Country Location and Verify if the Tags are Deleted
+#  	 |Country1   | Country2      | Country3  |
+#     |New Zealand| Hong Kong     | Japan     |
+#     Then User Clicks Search and results are displayed
+##    |Verify Search Results are reflected according to tags|
+
      

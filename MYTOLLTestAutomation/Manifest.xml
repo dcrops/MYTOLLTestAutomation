@@ -146,10 +146,9 @@
 
       <classes>
          
-       <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />
+
        <class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
-       <class name="manifestE2ETests.ManualManifestTollIPECTest" />
-       	<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
+
 
       </classes>
 		

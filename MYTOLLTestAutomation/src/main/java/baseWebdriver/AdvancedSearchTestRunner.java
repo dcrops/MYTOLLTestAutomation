@@ -4,7 +4,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions( strict=true
-,features = { "src/test/Resources/advanceSearch/MYT_6201_Advance_Search_Location_Reference_CreationDate_TollCarrier.feature"}
+,features = { "src/test/Resources/advanceSearch/MYT_6231_Advance_Search_ServiceType_Milestone_Conditions.feature"}
 ,glue= {"commonStepsDefinitions","advanceSearchStepDefinitions"}
 , plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 

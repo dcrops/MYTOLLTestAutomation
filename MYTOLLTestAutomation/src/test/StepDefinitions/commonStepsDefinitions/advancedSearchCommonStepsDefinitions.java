@@ -11,6 +11,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import myTollHomePageActions.MyTollHomePageActions;
 import rateEnquiryActions.RateEnquiryActions;
+import advanceSearchStepDefinitions.advanceSearchStepDefinitions;
 
 public class advancedSearchCommonStepsDefinitions {
 
