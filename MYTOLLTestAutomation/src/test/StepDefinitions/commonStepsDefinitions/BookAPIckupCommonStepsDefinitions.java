@@ -1,12 +1,16 @@
 package commonStepsDefinitions;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.Map;
 
+import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import myTollHomePageActions.MyTollHomePageActions;
 
@@ -147,5 +151,110 @@ public class BookAPIckupCommonStepsDefinitions {
 			BookAPickupActions.CloseEditAddressScreen();
 		}
 	}
+	
+	
+	@When("^User enter following dangerous goods details as below$")
+	public void user_enter_following_dangerous_goods_details_as_below(DataTable bookAPickupTestData) throws Throwable {
+	   
+		
+		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
+			 PageBase.MaximumWaitForElementEnabled();
+			 PageBase.MaximumWaitForElementEnabled();
+
+			
+			BookAPickupActions.SelectDangerousGoods(Integer.parseInt(bookAPickup.get("DgGoods")));
+		
+		}
+	}
+
+	@Then("^User able to see following fields autopopulated\\.$")
+	public void user_able_to_see_following_fields_autopopulated(DataTable bookAPickupTestData) throws Throwable {
+	   
+		
+		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
+
+			String un = BookAPickupActions.GetUNNumber();
+			System.out.println("Un----" + un);
+			String classDivision = BookAPickupActions.GetClassDivision();
+			System.out.println("Class----" + classDivision);
+			String subRisk = BookAPickupActions.GetSubRisk();
+			System.out.println("Subrisk----" + subRisk);
+			String packingGroup = BookAPickupActions.GetPackingGroup();
+			System.out.println("packingGroup1" + packingGroup);
+			String ProperShippingName = BookAPickupActions.GetProperShippingName();
+			System.out.println("ProperShippingName" + ProperShippingName);
+			
+			assertEquals(classDivision,bookAPickup.get("Class/Div"));
+			assertEquals(subRisk,bookAPickup.get("SubRisk"));
+			assertEquals(packingGroup,bookAPickup.get("PackingGroup"));
+			assertEquals(ProperShippingName,bookAPickup.get("Proper Shoping Name"));
+						
+		}
+	}
+
+	@When("^User clicks on ADD NEW LINES to add more items$")
+	public void user_clicks_on_ADD_NEW_LINES_to_add_more_items() throws Throwable {
+		
+		BookAPickupActions.ClickAddANewLine();
+		
+	}
+	
+	@When("^User enter dangerous goods details as below$")
+	public void user_enter_dangerous_goods_details_as_below(DataTable bookAPickupTestData) throws Throwable {
+		
+		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
+          
+			 PageBase.MaximumWaitForElementEnabled();
+			
+			BookAPickupActions.SelectDangerousGoodsDetails(bookAPickup.get("UnNumber"), bookAPickup.get("PackageDescription"),bookAPickup.get("DGPackageType"), bookAPickup.get("DGAggregateQty"));
+			String s = bookAPickup.get("PackingGroup");
+			System.out.println("s----" + s);
+			//BookAPickupActions.SelectPackgingGroupQMEInt(Integer.parseInt(s));
+			BookAPickupActions.SelectPackgingGroupString(bookAPickup.get("PackingGroup"));
+			BookAPickupActions.EnterTechnicalName(bookAPickup.get("Technical Name"));
+			PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
+		}
+		
+	
+	}
+
+	@When("^User enter following input data to Add Item for Prio Aus$")
+	public void user_enter_following_input_data_to_Add_Item_for_Prio_Aus(DataTable bookAPickupTestData) throws Throwable {
+	    
+		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
+              
+			 PageBase.MaximumWaitForElementEnabled();
+			
+				BookAPickupActions.EnterService(bookAPickup.get("Service"));
+				BookAPickupActions.SelectDestination(bookAPickup.get("Destination"));
+				BookAPickupActions.DescriptionOfGoods(bookAPickup.get("DescriptionOfGoods"));
+		}
+	}
+	
+	@When("^User selects Item Description for Prio Aus$")
+	public void user_selects_Item_Description_for_Prio_Aus(DataTable bookAPickupTestData) throws Throwable {
+	 
+		
+		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
+              
+			 PageBase.MaximumWaitForElementEnabled();
+			
+				BookAPickupActions.SelectItemDescriptionTollPriorityAU(bookAPickup.get("Item Description"));
+		
+		}
+	}
+
+	@When("^User enter No of Items$")
+	public void user_enter_No_of_Items(DataTable bookAPickupTestData) throws Throwable {
+		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
+              
+			 PageBase.MaximumWaitForElementEnabled();
+			
+			BookAPickupActions.EnterQuantity(bookAPickup.get("NoOfItems"));
+		
+		}
+		
+	}
+	
 
 }

@@ -339,23 +339,18 @@
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 
 
-		<groups>
-			<run>
-				<include name="Shakeout Testing" />
-			</run>
-		</groups>
+	
 
 		<classes>
-			<class name="createShipmentE2ETests.TollIPECTests" />
-			<class name="createShipmentE2ETests.TollPriorityAUSTests" />
-			<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
-		</classes>
-		<!-- Blocked><classes> <class name="createShipmentE2ETests.IntermodalSpecializedTests" 
-			/> <class name="createShipmentE2ETests.TollPriorityAUSTests" /> <class name="createShipmentE2ETests.TollPriorityNZ" 
-			/> <class name="createShipmentE2ETests.TollIPECTests" /> <class name="createShipmentE2ETests.TollPriorityAUSTests" 
+		
+		
+		<!-- Blocked><classes> <class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+		 <class name="createShipmentE2ETests.TollPriorityAUSTests" />
+		  <class name="createShipmentE2ETests.TollPriorityNZ" />
+			 <class name="createShipmentE2ETests.TollIPECTests" /> <class name="createShipmentE2ETests.TollPriorityAUSTests" 
 			/> <class name="createShipmentE2ETests.TollTasmaniaTests" /> <class name="createShipmentE2ETests.TollIntermodalTests_AddAdress" 
-			/>
-	</classes> </Blocked -->
+			/> </Blocked -->
+	</classes> 
 
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

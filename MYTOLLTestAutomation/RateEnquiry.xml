@@ -162,19 +162,7 @@
 		<parameter name="DGFCLDesSuburb" value="PERTH" />
 		<parameter name="DGFCLDesPostCode" value="6000" />
 
-	    <groups>
-			<run>
-				<include name="Shakeout Testing" />
-			</run>
-		</groups>
-
-		<classes>
-			<class name="rateEnquiryE2ETests.TollIPECTests" />
-			<class name="rateEnquiryE2ETests.TollPriorityNZTests"/>
-			<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />
-
-				</classes>
-	    
+	        
 	  	    
 	    
 	 	<!-- Blocked>	   <classes>	

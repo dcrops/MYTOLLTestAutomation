@@ -12,6 +12,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import myTollHomePageActions.MyTollHomePageActions;
@@ -33,38 +34,38 @@ public class BaseWebdriver {
 	public static String Password="Toll@123";  
 	public static String PerformancePassword="Victoria@123"; 
 
-		
+	
 	@BeforeMethod
 	public static void RunSetup(String browser) throws Exception {
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
 			BaseWebdriver.driver = new ChromeDriver();
-			MyTollHomePageActions.LaunchMyToll(PreprodUrl);
-			MyTollHomePageActions.Login(Username1, Password);
+		//	MyTollHomePageActions.LaunchMyToll(PreprodUrl);
+			//MyTollHomePageActions.Login(Username1, Password);
 		}
 
-		else if (browser.equalsIgnoreCase("firefox")) {
+		else  if (browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "C:\\Source\\geckodriver-v0.18.0-win32\\geckodriver.exe");
 			BaseWebdriver.driver = new FirefoxDriver();
 			PageBase.MaximumWaitForElementEnabled();
-			MyTollHomePageActions.LaunchMyToll(PreprodUrl);
+			//MyTollHomePageActions.LaunchMyToll(PreprodUrl);
 			PageBase.MaximumWaitForElementEnabled();
-			MyTollHomePageActions.Login(Username1, Password);
+			//MyTollHomePageActions.Login(Username1, Password);
 		}
 
 		else if (browser.equalsIgnoreCase("ie")) {
 			System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 			BaseWebdriver.driver = new InternetExplorerDriver();
 			PageBase.MaximumWaitForElementEnabled();
-			MyTollHomePageActions.LaunchMyToll(PreprodUrl);
+			//MyTollHomePageActions.LaunchMyToll(PreprodUrl);
 			PageBase.MaximumWaitForElementEnabled();
-			MyTollHomePageActions.Login(Username1, Password);
+			//MyTollHomePageActions.Login(Username1, Password);
 			PageBase.MaximumWaitForElementEnabled();
 		}
 
 		
-		BaseWebdriver.driver.manage().window().maximize();
+		//BaseWebdriver.driver.manage().window().maximize();
 
 		/*  DesiredCapabilities capabilities = new DesiredCapabilities();
 		 capabilities.setCapability(CapabilityType.BROWSER_NAME, browser); 
@@ -74,6 +75,17 @@ public class BaseWebdriver {
 		 
 	}
 
+	@BeforeMethod
+	public static void SetUp(String browser) throws Exception {
+		RunSetup(browser);
+		MyTollHomePageActions.LaunchMyToll(PreprodUrl);
+
+		PageBase.MaximumWaitForElementEnabled();
+		//BaseWebdriver.driver.manage().window().maximize();
+		System.out.println(driver.manage().window().getSize());
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+	}
 
 	@BeforeMethod
 	public static void setUp() throws Exception {

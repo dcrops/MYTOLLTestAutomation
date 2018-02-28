@@ -76,12 +76,12 @@ public class CreateShipmentActions {
 	public static By packingGroup = By.xpath("//*[@id=\"packaging-grp-selector-0\"]/label/input[2]");
 	public static By subRisk = By.xpath("//*[@id=\"sub-risk-selector-0\"]/label/input[2]");
 	public static By properShippingName = By.id("shipping-name-0");
-	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector\"]/label/a/i");
-	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li[1]/div");
-	public static By dgPackagingDescription = By.id("packing-description");
-	public static By dgPkgQty = By.id("dg-pkg-qty");
-	public static By dgQtyKg = By.id("dg-qty");
-	public static By technicalName = By.id("technical-name");
+	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i"); //*[@id="packaging-grp-selector-"]/label/a/i
+	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li[2]/div");  //*[@id="packaging-grp-selector-"]/div/ul/li[2]/div
+	public static By dgPackagingDescription = By.id("dg-pckg-description-");
+	public static By dgPkgQty = By.id("dgPkgQty-");
+	public static By dgQtyKg = By.id("dgPkgWgt-");
+	public static By technicalName = By.id("technical-name-");
 	public static By lineItem1Arrowdown = By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[8]/a/i");
 	public static By dangerousGoodsArrowdown = By.xpath("//*[@id=\"dg-line--0\"]/div[1]/div[8]/a/i");
 	public static By addNewLine = By.id("add-line-item"); 
@@ -839,9 +839,25 @@ public class CreateShipmentActions {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
 		BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li[" + packagingGroup + "]/div"))
+				.findElement(By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li['" + packagingGroup + "']/div"))
 				.click();
 
+	}
+
+	public static void SelectPackgingGroupString(String packagingGroup) {
+
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li/div[text()='" + packagingGroup + "']")).click(); 
+				
+		//*[@id="packaging-grp-selector-"]/div/ul/li[3]/div
+		//*[@id="packaging-grp-selector-"]/div/ul/li[2]
+		//*[@id="packaging-grp-selector-"]/div/ul/li[2]/div
+		
+		//*[@id="packaging-grp-selector-"]/div/ul/li[2]/div
 	}
 
 	public static void EnterPackgingGroup(Integer packagingGroup) {
@@ -851,7 +867,7 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(packingGroupDropdown).click();
 		BaseWebdriver.driver
 				.findElement(
-						By.xpath("//*[@id=\"packaging-grp-selector\"]/div/ul/li/div[text()='" + packagingGroup + "']"))
+						By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li/div[text()='" + packagingGroup + "']"))
 				.click();
 
 	}

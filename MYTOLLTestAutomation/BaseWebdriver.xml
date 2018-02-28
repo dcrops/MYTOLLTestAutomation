@@ -3,40 +3,40 @@
 <suite name="Suite" parallel="none">
 
 
-  <test name="firefoxTest">
-  <parameter name="browser" value="firefox" />
-    <classes>
-      <class name="baseWebdriver.BaseWebdriver"/>
-    </classes>
-  </test> <!-- Test -->
-   <test name="chromeTest">
-  <parameter name="browser" value="chrome" />
-    <classes>
-      <class name="baseWebdriver.BaseWebdriver"/>
-    </classes>
-  </test> <!-- Test -->
-  <test name="IETest">
-  <parameter name="browser" value="ie" />
-    <classes>
-      <class name="baseWebdriver.BaseWebdriver"/>
-    </classes>
-  </test> <!-- Test -->
-	<test name="CucumberTest">
+	<test name="chromeTest">
+		<parameter name="browser" value="chrome" />
 		<classes>
-						<class name="baseWebdriver.AdvancedSearchTestRunner"/>
-			<!-- Blocked>	<class name="baseWebdriver.CreateShipmentTestRunner"/>  
-			<class name="baseWebdriver.ManifestTestRunner"/>
-			<class name="baseWebdriver.AdvancedSearchTestRunner"/> 
-			<class name="baseWebdriver.RateEnquiryTestRunner"/> 
-			<class name="baseWebdriver.FinancialTestRunner"/> 
-			<class name="baseWebdriver.DashboardTestRunner"/> 
-			<class name="baseWebdriver.ReturnsTestRunner"/> 
-			<class name="baseWebdriver.StationeryTestRunner"/> 
-			<class name="baseWebdriver.TollFAST_TAndTTestRunner"/> 
-				<class name="baseWebdriver.TrackAndTraceTestRunner"/> 
-
-			</Blocked -->
+			<class name="baseWebdriver.BaseWebdriver" />
 		</classes>
 	</test> <!-- Test -->
+
+	<test name="firefoxTest">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="baseWebdriver.BaseWebdriver" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="IETest">
+		<parameter name="browser" value="ie" />
+		<classes>
+			<class name="baseWebdriver.BaseWebdriver" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="CucumberTest">
+		<classes>
+
+
+			<class name="baseWebdriver.BookAPickupTestRunner" />
+			<!-- Blocked> <class name="baseWebdriver.CreateShipmentTestRunner"/> <class 
+				name="baseWebdriver.ManifestTestRunner"/> <class name="baseWebdriver.AdvancedSearchTestRunner"/> 
+				<class name="baseWebdriver.RateEnquiryTestRunner"/> <class name="baseWebdriver.FinancialTestRunner"/> 
+				<class name="baseWebdriver.DashboardTestRunner"/> <class name="baseWebdriver.ReturnsTestRunner"/> 
+				<class name="baseWebdriver.StationeryTestRunner"/> <class name="baseWebdriver.TollFAST_TAndTTestRunner"/> 
+				<class name="baseWebdriver.TrackAndTraceTestRunner"/> </Blocked -->
+		</classes>
+	</test> <!-- Test -->
+
 	<!-- Test -->
 </suite> <!-- Suite -->
