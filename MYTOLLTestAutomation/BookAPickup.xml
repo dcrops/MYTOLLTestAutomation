@@ -139,17 +139,8 @@
 
 	<test name="BookAPickup"> 
 
-
-<groups>
-			<run>
-				<include name="Shakeout Testing" />
-			</run>
-		</groups>
-
 		<classes>
 		
-						<class name="bookAPickupE2ETests.Toll_Add_Template" />
-   
 
 			<!-- Blocked><class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
 				/> <class name="bookAPickupE2ETests.TollTasmaniaTest" /> <class name="bookAPickupE2ETests.TollIPEC_CutOffTime" 
