@@ -28,7 +28,7 @@ public class advanceSearchStepDefinitions {
 		PageBase.click(MyTollHomePageActions.advanceSearchSubmit, 10);
 		PageBase.MediumWaitForElementEnabled_1();
 		PageBase.MediumWaitForElementEnabled_1();
-		
+		MyTollHomePageActions.VerifyAdvanceSearchResultsDisplayed();
 		//Verify details later when system functionality works
 		
 		
@@ -174,7 +174,7 @@ public class advanceSearchStepDefinitions {
 			PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchSenderSuburb, 10, advSearch.get("Suburb"));
 			PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchSenderState, 10, advSearch.get("State"));
 			PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchSenderPostcode, 10, advSearch.get("Postcode"));
-			PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchSenderCountry, 10, advSearch.get("Country"));
+			//PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchSenderCountry, 10, advSearch.get("Country"));
 		}
 	}
 
@@ -206,6 +206,9 @@ public class advanceSearchStepDefinitions {
 		        PageBase.isElementPresent(By.xpath("//*[@id=\"suburb-list\"]/li/span[text()='"+(String) pair.getValue()+"']"), 2, (String) pair.getValue());
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchSenderLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Deletes Tags in Sender Surburb Location and Verify if the Tags are Deleted$")
@@ -223,6 +226,9 @@ public class advanceSearchStepDefinitions {
 		        //PageBase.isElementNotPresent(By.xpath("//*[@id=\"suburb-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchSenderLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Adds Multiple Tags in Sender State Location feilds$")
@@ -253,6 +259,9 @@ public class advanceSearchStepDefinitions {
 		        PageBase.isElementPresent(By.xpath("//*[@id=\"state-list\"]/li/span[text()='"+(String) pair.getValue()+"']"), 2, (String) pair.getValue());
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchSenderLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Deletes Tags in Sender State Location and Verify if the Tags are Deleted$")
@@ -270,6 +279,9 @@ public class advanceSearchStepDefinitions {
 		        //PageBase.isElementNotPresent(By.xpath("//*[@id=\"state-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchSenderLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	
@@ -301,6 +313,9 @@ public class advanceSearchStepDefinitions {
 		        PageBase.isElementPresent(By.xpath("//*[@id=\"postCode-list\"]/li/span[text()='"+(String) pair.getValue()+"']"), 2, (String) pair.getValue());
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchSenderLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Deletes Tags in Sender Postcode Location and Verify if the Tags are Deleted$")
@@ -318,6 +333,9 @@ public class advanceSearchStepDefinitions {
 		       // PageBase.isElementNotPresent(By.xpath("//*[@id=\"postCode-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchSenderLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Adds Multiple Tags in Sender Country Location feilds$")
@@ -365,6 +383,9 @@ public class advanceSearchStepDefinitions {
 		        //PageBase.isElementNotPresent(By.xpath("//*[@id=\"country-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchSenderLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Exlcudes search Tags in Sender Location Feild$")
@@ -389,8 +410,11 @@ public class advanceSearchStepDefinitions {
 			PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchReceiverSuburb, 10, advSearch.get("Suburb"));
 			PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchReceiverState, 10, advSearch.get("State"));
 			PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchReceiverPostcode, 10, advSearch.get("Postcode"));
-			PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchReceiverCountry, 10, advSearch.get("Country"));
+			//PageBase.sendTextandSubmit(MyTollHomePageActions.advanceSearchReceiverCountry, 10, advSearch.get("Country"));
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchReceiverLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 
 	@And("^User Adds Multiple Tags in Receiver Surburb Location feilds$")
@@ -421,6 +445,9 @@ public class advanceSearchStepDefinitions {
 		        PageBase.isElementPresent(By.xpath("//*[@id=\"suburb-list\"]/li/span[text()='"+(String) pair.getValue()+"']"), 2, (String) pair.getValue());
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchReceiverLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Deletes Tags in Receiver Surburb Location and Verify if the Tags are Deleted$")
@@ -438,6 +465,9 @@ public class advanceSearchStepDefinitions {
 		        //PageBase.isElementNotPresent(By.xpath("//*[@id=\"suburb-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchReceiverLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Adds Multiple Tags in Receiver State Location feilds$")
@@ -468,6 +498,9 @@ public class advanceSearchStepDefinitions {
 		        PageBase.isElementPresent(By.xpath("//*[@id=\"state-list\"]/li/span[text()='"+(String) pair.getValue()+"']"), 2, (String) pair.getValue());
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchReceiverLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Deletes Tags in Receiver State Location and Verify if the Tags are Deleted$")
@@ -485,6 +518,9 @@ public class advanceSearchStepDefinitions {
 		        //PageBase.isElementNotPresent(By.xpath("//*[@id=\"state-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchReceiverLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	
@@ -516,6 +552,9 @@ public class advanceSearchStepDefinitions {
 		        PageBase.isElementPresent(By.xpath("//*[@id=\"postCode-list\"]/li/span[text()='"+(String) pair.getValue()+"']"), 2, (String) pair.getValue());
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchReceiverLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Deletes Tags in Receiver Postcode Location and Verify if the Tags are Deleted$")
@@ -533,6 +572,9 @@ public class advanceSearchStepDefinitions {
 		       // PageBase.isElementNotPresent(By.xpath("//*[@id=\"postCode-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchReceiverLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Adds Multiple Tags in Receiver Country Location feilds$")
@@ -563,6 +605,9 @@ public class advanceSearchStepDefinitions {
 		        PageBase.isElementPresent(By.xpath("//*[@id=\"country-list\"]/li/span[text()='"+(String) pair.getValue()+"']"), 2, (String) pair.getValue());
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchReceiverLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Deletes Tags in Receiver Country Location and Verify if the Tags are Deleted$")
@@ -580,6 +625,9 @@ public class advanceSearchStepDefinitions {
 		        //PageBase.isElementNotPresent(By.xpath("//*[@id=\"country-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
 		    }
 		}
+		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.advanceSearchReceiverLoc, 10);
+		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	@And("^User Exlcudes search Tags in Receiver Location Feild$")
@@ -649,5 +697,253 @@ public class advanceSearchStepDefinitions {
 			}
 		}
 	
+		//====================================================================================================================================================================
+		//Toll Carrier Field 
+		
+		@When("^User inputs search criteria in the Toll Carrier feild$")
+		public void UserInputsSearchCriteriaforTollCarrier(DataTable advanceSearchTestData) throws Throwable {
 
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				PageBase.sendText(MyTollHomePageActions.advanceSearchTollCarrier, 10, advSearch.get("TollCarrier"));
+				PageBase.click(By.xpath("//*[@id=\"ms-carrier-ddl\"]/li[text()='"+advSearch.get("TollCarrier")+"']"), 5);
+			}
+		}
+		
+		@And("^User Adds Multiple Tags in Toll Carrier feild$")
+		public void UserAddsNewTagsInTollCarrierfeild(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				Iterator tags = advSearch.entrySet().iterator();
+			    while (tags.hasNext()) {
+			        Map.Entry pair = (Map.Entry)tags.next();
+			        Reporter.log("User Adds Tag - "+(String) pair.getValue());
+					System.out.println("User Adds Tag - "+(String) pair.getValue());
+			        PageBase.sendText(MyTollHomePageActions.advanceSearchTollCarrier, 10, (String) pair.getValue());
+			        PageBase.click(By.xpath("//*[@id=\"ms-carrier-ddl\"]/li[text()='"+(String) pair.getValue()+"']"), 5);
+			    }
+			}
+		}
+		
+		@And("^Toll Carrier Tag is Visible in search feild$")
+		public void TollCarrierTagIsVisibleInSearchFeild(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				Iterator tags = advSearch.entrySet().iterator();
+			    while (tags.hasNext()) {
+			        Map.Entry pair = (Map.Entry)tags.next();
+			        Reporter.log("User Verifies if Tag Exits - "+(String) pair.getValue());
+					System.out.println("User Verifies if Tag Exits "+(String) pair.getValue());
+			        PageBase.isElementPresent(By.xpath("//*[@id=\"carrier-list\"]/li/span[text()='"+(String) pair.getValue()+"']"), 2, (String) pair.getValue());
+			    }
+			}
+		}
+		
+		
+		@And("^User Deletes Tags in Toll Carrier feild and Verify if the Tags are Deleted$")
+		public void UserDeletesTagsInTollCarrierFeildAndVerifyIfTheTagsAreDeleted(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				Iterator tags = advSearch.entrySet().iterator();
+			    while (tags.hasNext()) {
+			        Map.Entry pair = (Map.Entry)tags.next();
+			        PageBase.click(By.xpath("//*[@id=\"carrier-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1);
+			        Reporter.log("User Deletes Tag - "+(String) pair.getValue());
+					System.out.println("User Deletes Tag - "+(String) pair.getValue());
+			        //PageBase.isElementNotPresent(By.xpath("//*[@id=\"carrier-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
+			    }
+			}
+		}
+		
+		@And("^User Exlcudes search Tags in Toll Carrier feild$")
+		public void UserExlcudesSearchTagsinTollCarrierFeild() throws Throwable {
+			PageBase.MinimumWaitForElementEnabled_1();
+			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+			WebElement element = BaseWebdriver.driver.findElement(MyTollHomePageActions.advanceSearchTollCarrierExclude);
+			jse.executeScript("arguments[0].click();", element);
+			//PageBase.click(MyTollHomePageActions.advanceSearchTollCarrierExclude, 10);
+		}
+		
+
+		//====================================================================================================================================================================
+		//Shipment created Date Field 
+		
+		@When("^User Searches Using Shipment Created date - Date Period$")
+		public void UserSearchesUsingShipmentCreatedDate_DatePeriod(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				PageBase.click(MyTollHomePageActions.advanceSearchDatePeriod, 10);
+				PageBase.click(MyTollHomePageActions.advanceSearchDateDropDown, 10);
+				PageBase.MediumWaitForElementEnabled_1();
+				PageBase.click(By.xpath("//*[@id=\"period-selector\"]//*//li[text()='"+advSearch.get("DatePeriod")+"']"), 5);
+			}
+		}
+		
+		@And("^User Searches Using Shipment Created date - Date From$")
+		public void UserSearchesUsingShipmentCreatedDate_DateRange(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				PageBase.click(MyTollHomePageActions.advanceSearchDateRange, 10);
+				PageBase.MediumWaitForElementEnabled_1();
+				((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('advsrchFromDate').removeAttribute('readonly',0);");
+		        ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('advsrchFromDate').setAttribute('placeholder','"+advSearch.get("DateFrom")+"');");
+		        
+				WebElement fromDateBox= BaseWebdriver.driver.findElement(MyTollHomePageActions.advanceSearchDateFrom);
+				fromDateBox.clear();
+				fromDateBox.sendKeys(advSearch.get("DateFrom"));
+				
+			}
+		}
+		
+		@And("^User Searches Using Shipment Created date - Date To$")
+		public void UserSearchesUsingShipmentCreatedDate_DateTo(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				PageBase.click(MyTollHomePageActions.advanceSearchDateRange, 10);
+				PageBase.MediumWaitForElementEnabled_1();
+				((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('advsrchToDate').removeAttribute('readonly',0);");
+		        ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('advsrchToDate').setAttribute('placeholder','"+advSearch.get("DateTo")+"');");
+		        
+				WebElement fromDateBox= BaseWebdriver.driver.findElement(MyTollHomePageActions.advanceSearchDateTo);
+				fromDateBox.clear();
+				fromDateBox.sendKeys(advSearch.get("DateTo"));
+				
+			}
+		}
+		
+		//====================================================================================================================================================================
+		//Service Type Field 
+				
+		@When("^User inputs search criteria in the Service Type feild$")
+		public void UserInputsSearchCriteriaforServiceType(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				PageBase.sendText(MyTollHomePageActions.advanceSearchServiceType, 10, advSearch.get("ServiceType"));
+				PageBase.click(By.xpath("//*[@id=\"ms-service-ddl\"]/li[text()='"+advSearch.get("ServiceType")+"']"), 5);
+			}
+		}
+		
+		@And("^User Adds Multiple Tags in Service Type feild$")
+		public void UserAddsNewTagsInServiceTypefeild(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				Iterator tags = advSearch.entrySet().iterator();
+			    while (tags.hasNext()) {
+			        Map.Entry pair = (Map.Entry)tags.next();
+			        Reporter.log("User Adds Tag - "+(String) pair.getValue());
+					System.out.println("User Adds Tag - "+(String) pair.getValue());
+			        PageBase.sendText(MyTollHomePageActions.advanceSearchServiceType, 10, (String) pair.getValue());
+			        PageBase.click(By.xpath("//*[@id=\"ms-service-ddl\"]/li[text()='"+(String) pair.getValue()+"']"), 5);
+			    }
+			}
+		}
+		
+		@And("^Service Type Tag is Visible in search feild$")
+		public void ServiceTypeTagIsVisibleInSearchFeild(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				Iterator tags = advSearch.entrySet().iterator();
+			    while (tags.hasNext()) {
+			        Map.Entry pair = (Map.Entry)tags.next();
+			        Reporter.log("User Verifies if Tag Exits - "+(String) pair.getValue());
+					System.out.println("User Verifies if Tag Exits "+(String) pair.getValue());
+			        PageBase.isElementPresent(By.xpath("//*[@id=\"service-list\"]/li/span[text()='"+(String) pair.getValue()+"']"), 2, (String) pair.getValue());
+			    }
+			}
+		}
+		
+		
+		@And("^User Deletes Tags in Service Type feild and Verify if the Tags are Deleted$")
+		public void UserDeletesTagsInServiceTypeFeildAndVerifyIfTheTagsAreDeleted(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				Iterator tags = advSearch.entrySet().iterator();
+			    while (tags.hasNext()) {
+			        Map.Entry pair = (Map.Entry)tags.next();
+			        PageBase.click(By.xpath("//*[@id=\"service-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1);
+			        Reporter.log("User Deletes Tag - "+(String) pair.getValue());
+					System.out.println("User Deletes Tag - "+(String) pair.getValue());
+			        //PageBase.isElementNotPresent(By.xpath("//*[@id=\"service-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
+			    }
+			}
+		}
+		
+		@And("^User Exlcudes search Tags in Service Type feild$")
+		public void UserExlcudesSearchTagsinServiceTypeFeild() throws Throwable {
+			PageBase.MinimumWaitForElementEnabled_1();
+			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+			WebElement element = BaseWebdriver.driver.findElement(MyTollHomePageActions.advanceSearchServiceTypeExclude);
+			jse.executeScript("arguments[0].click();", element);
+			//PageBase.click(MyTollHomePageActions.advanceSearchServiceTypeExclude, 10);
+		}
+			
+		
+		
+		//====================================================================================================================================================================
+		// Milestone Field 
+				
+		@When("^User inputs search criteria in the Milestone feild$")
+		public void UserInputsSearchCriteriaforMilestone(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				PageBase.sendText(MyTollHomePageActions.advanceSearchMilestone, 10, advSearch.get("Milestone"));
+				PageBase.click(By.xpath("//*[@id=\"ms-milestone-ddl\"]/li[text()='"+advSearch.get("Milestone")+"']"), 5);
+			}
+		}
+		
+		@And("^User Adds Multiple Tags in Milestone feild$")
+		public void UserAddsNewTagsInMilestonefeild(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				Iterator tags = advSearch.entrySet().iterator();
+			    while (tags.hasNext()) {
+			        Map.Entry pair = (Map.Entry)tags.next();
+			        Reporter.log("User Adds Tag - "+(String) pair.getValue());
+					System.out.println("User Adds Tag - "+(String) pair.getValue());
+			        PageBase.sendText(MyTollHomePageActions.advanceSearchMilestone, 10, (String) pair.getValue());
+			        PageBase.click(By.xpath("//*[@id=\"ms-milestone-ddl\"]/li[text()='"+(String) pair.getValue()+"']"), 5);
+			    }
+			}
+		}
+		
+		@And("^Milestone Tag is Visible in search feild$")
+		public void MilestoneTagIsVisibleInSearchFeild(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				Iterator tags = advSearch.entrySet().iterator();
+			    while (tags.hasNext()) {
+			        Map.Entry pair = (Map.Entry)tags.next();
+			        Reporter.log("User Verifies if Tag Exits - "+(String) pair.getValue());
+					System.out.println("User Verifies if Tag Exits "+(String) pair.getValue());
+			        PageBase.isElementPresent(By.xpath("//*[@id=\"milestone-list\"]/li/span[text()='"+(String) pair.getValue()+"']"), 2, (String) pair.getValue());
+			    }
+			}
+		}
+		
+		
+		@And("^User Deletes Tags in Milestone feild and Verify if the Tags are Deleted$")
+		public void UserDeletesTagsInMilestoneFeildAndVerifyIfTheTagsAreDeleted(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				Iterator tags = advSearch.entrySet().iterator();
+			    while (tags.hasNext()) {
+			        Map.Entry pair = (Map.Entry)tags.next();
+			        PageBase.click(By.xpath("//*[@id=\"milestone-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1);
+			        Reporter.log("User Deletes Tag - "+(String) pair.getValue());
+					System.out.println("User Deletes Tag - "+(String) pair.getValue());
+			        //PageBase.isElementNotPresent(By.xpath("//*[@id=\"milestone-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
+			    }
+			}
+		}
+		
+		@And("^User Exlcudes search Tags in Milestone feild$")
+		public void UserExlcudesSearchTagsinMilestoneFeild() throws Throwable {
+			PageBase.MinimumWaitForElementEnabled_1();
+			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+			WebElement element = BaseWebdriver.driver.findElement(MyTollHomePageActions.advanceSearchMilestoneExclude);
+			jse.executeScript("arguments[0].click();", element);
+			//PageBase.click(MyTollHomePageActions.advanceSearchMilestoneExclude, 10);
+		}
+
+		
+		
 }

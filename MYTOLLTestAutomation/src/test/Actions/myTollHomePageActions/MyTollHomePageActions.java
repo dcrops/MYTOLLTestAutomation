@@ -4,6 +4,7 @@ import GlobalActions.PageBase;
 
 import java.util.Date;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.Reporter;
@@ -307,6 +308,30 @@ public class MyTollHomePageActions {
 		PageBase.click(advanceSearchTab, 5);
 
 	}
+	
+	public static void VerifyAdvanceSearchResultsDisplayed() {
+		
+		
+		String noResults = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"advScrhNoDataDivCon\"]")).getText();
+		System.out.println(noResults);
+		if ("No result found.".equals(noResults)){
+			Reporter.log("FAILED: No Results Error Msg Available - NOT AS EXPECTED");
+			Assert.fail("FAILED: No Results Error Msg Available - NOT AS EXPECTED");
+			
+		}else{
+			Reporter.log("No Results Error Msg Unavailable - AS EXPECTED");
+			System.out.println("No Results Error Msg Unavailable - AS EXPECTED");
+		}
+		
+		
+		String totalResults = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"advscrhTabContentdiv\"]//*//span[@class=\"total-counter advscrhTotalCounter\"]")).getText();
+		System.out.println("Total Search Results =" +totalResults);
+		
+		PageBase.isElementPresent(By.xpath("//*[@id=\"tblAdvSerhResult\"]/tr[1]"), 5, "Search Result 1st Line");
+		
+		
+	}
+		
 	
 
 }
