@@ -54,12 +54,13 @@ public class BookAPickupStepDefinitions{
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.EnterService(bookAPickup.get("Service"));
+			BookAPickupActions.EnterQuantity(bookAPickup.get("NoOfItems"));
+
+			BookAPickupActions.EnterPalletSpace(bookAPickup.get("PalletSpace"));
 			BookAPickupActions.SelectDestination(bookAPickup.get("Destination"));
 			BookAPickupActions.EnterItem(bookAPickup.get("ItemDescription"));
 			
-			BookAPickupActions.EnterQuantity(bookAPickup.get("NoOfItems"));
-			BookAPickupActions.EnterPalletSpace(bookAPickup.get("PalletSpace"));
-			
+					
 		}
 
 	}

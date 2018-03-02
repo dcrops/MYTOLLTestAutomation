@@ -22,8 +22,8 @@ public class IntermodalSpecializedTest {
 	public static Integer locationIndex = 4;
 
 	@Parameters("browser")
-	//@BeforeMethod(alwaysRun = true)
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
+	//@BeforeMethod
 	public void RunSetup(String browser) throws Exception {
 		//BaseWebdriver.setUp();
 		BaseWebdriver.SetUp(browser);
@@ -177,7 +177,7 @@ public class IntermodalSpecializedTest {
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
-  /*	@Test(groups = { "Shakeout Testing" })
+  	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
@@ -993,7 +993,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 		ReviewYourPickupActions.VerifyNoEditBtn();
 
-	} */
+	} 
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {

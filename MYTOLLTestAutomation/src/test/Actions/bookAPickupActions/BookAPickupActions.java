@@ -281,7 +281,7 @@ public class BookAPickupActions {
 
 	// Quick Entry Mode Yes
 
-	public static By QuickEntryMode = By.xpath("//*[@id=\"grid-view-selector-wrpr\"]/div[2]/label/span[1]");
+	public static By QuickEntryMode = By.xpath("//*[@id=\"grid-view-selector-wrpr\"]/div[2]/label/span[1]"); 
 	public static By serviceQME = By.id("gv-service-type-label");
 	public static By destinationQME = By.id("gv-destination-address");
 	public static By cahrgeToQME = By.xpath("//*[@id=\"gv-charge-to-selector\"]/label/input[2]");
@@ -424,7 +424,9 @@ public class BookAPickupActions {
 
 	public static void EnterAccountNumber(String pAccountNumber) {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.SendKeysToNonEditableField(AccountNumberTextField, pAccountNumber, 15);
+		//PageBase.SendKeysToNonEditableField(AccountNumberTextField, pAccountNumber, 15); 
+		PageBase.ClickOn(AccountNumberDropdown, 5);
+
 		PageBase.SelectFrom(By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()='" + pAccountNumber + "']"),
 				15);
 
@@ -1912,7 +1914,7 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(UNNumberTextFieldQME, lookupItem, 5);
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.SelectFrom(By.xpath("//*[@id=\"dg-popup-form\"]/div[1]/div[1]/div[1]/div[1]/div/div[1]/ul/li/div"), 5);
+		PageBase.SelectFrom(By.xpath("//*[@id=\"dg-popup-form\"]/div[1]/div[1]/div[1]/div[1]/div/div[1]/ul/li/div"), 5); //*[@id="dg-popup-form"]/td[1]/div/div[1]/ul/li/div
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(dgPackagingDescriptionQME, packageDescription, 5);
 		PageBase.SendKeysTo(dgPkgQtyQME, pDgPkgQty, 5);
@@ -2062,5 +2064,7 @@ public class BookAPickupActions {
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.ClickOn(MyPickupsInShareScreen, 5);
 	}
+	
+	
 	
 }

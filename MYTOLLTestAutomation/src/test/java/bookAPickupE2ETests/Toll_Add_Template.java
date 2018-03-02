@@ -136,11 +136,15 @@ public class Toll_Add_Template {
 		PageBase.click(By.xpath("//*[@id=\"grid-carrier-dropdown\"]//*//div[contains(text(),'"+Carrier+"')]"),5);
 		
 		//Verify Template Exists
-		Reporter.log("User Verifies if New Template Exits");
+		Reporter.log("User Verifies if New Template Exits");  
 		try {
+			PageBase.MaximumWaitForElementEnabled(); 
 			while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//p[text()='"+NewTemplateName+"']"), 1) == null) {
+						
 				PageBase.moveToElement(BookAPickupActions.addTemplateViewMore);
+				
 				PageBase.click(BookAPickupActions.addTemplateViewMore, 5);
+				
 			}
 			PageBase.verifyTextExist(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//p[text()='"+NewTemplateName+"']"), NewTemplateName);
 			Reporter.log("New Template : "+NewTemplateName+ " Exists");

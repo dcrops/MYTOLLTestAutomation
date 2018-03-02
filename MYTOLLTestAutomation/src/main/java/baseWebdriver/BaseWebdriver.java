@@ -27,7 +27,7 @@ public class BaseWebdriver {
 	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
 	public static String SitUrl="https://ps.mytoll.com/"; 
 	
-	public static String Username1="NNAutomationuser1@gmail.com"; 
+	public static String Username1="SitAutomationuser@yahoo.com"; //"NNAutomationuser1@gmail.com"; 
 	public static String Username2= "auto_bvt_ps@mailinator.com"; 
 	public static String SitUsername1="SitAutomationuser@yahoo.com"; //
 	public static String PerformenceUsername1="perftest@toll.com";
@@ -41,6 +41,7 @@ public class BaseWebdriver {
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
 			BaseWebdriver.driver = new ChromeDriver();
+			BaseWebdriver.driver.manage().window().maximize();
 		//	MyTollHomePageActions.LaunchMyToll(PreprodUrl);
 			//MyTollHomePageActions.Login(Username1, Password);
 		}
@@ -58,6 +59,7 @@ public class BaseWebdriver {
 			System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 			BaseWebdriver.driver = new InternetExplorerDriver();
 			PageBase.MaximumWaitForElementEnabled();
+			BaseWebdriver.driver.manage().window().maximize();
 			//MyTollHomePageActions.LaunchMyToll(PreprodUrl);
 			PageBase.MaximumWaitForElementEnabled();
 			//MyTollHomePageActions.Login(Username1, Password);
@@ -78,7 +80,7 @@ public class BaseWebdriver {
 	@BeforeMethod
 	public static void SetUp(String browser) throws Exception {
 		RunSetup(browser);
-		MyTollHomePageActions.LaunchMyToll(PreprodUrl);
+		MyTollHomePageActions.LaunchMyToll(SitUrl);
 
 		PageBase.MaximumWaitForElementEnabled();
 		//BaseWebdriver.driver.manage().window().maximize();

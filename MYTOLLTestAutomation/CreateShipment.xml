@@ -69,7 +69,7 @@
 		<parameter name="Length2" value="200" />
 		<parameter name="Width2" value="100" />
 		<parameter name="Height2" value="50" />
-		<parameter name="Weight2" value="20" />
+		<parameter name="Weight2" value="300" />
 		<parameter name="palletSpace" value="5" />
 		<parameter name="reference" value="12345" />
 
@@ -101,7 +101,7 @@
 		<parameter name="whoPays" value="Sender" />
 		<parameter name="Mode" value="RAIL" />
 		<parameter name="ModeInt" value="1" />
-		<parameter name="Receiver" value="1" />
+		<parameter name="Receiver" value="2" />
 		<parameter name="Sender" value="1" />
 		<parameter name="ReceiverName" value="Test" />
 		<parameter name="ReceiverItem" value="Toll Group Test" />
@@ -110,8 +110,8 @@
 		<parameter name="ShipmentRef1" value="12345" />
 		<parameter name="ShipmentRef2" value="567879" />
 		<parameter name="QuoteNumber" value="5123355" />
-		<parameter name="DropOffDepot" value="ACACIA RIDGE INTERMODAL" />
-		<parameter name="CollectionDepot" value="ACT TOLLFAST" />
+		<parameter name="DropOffDepot" value="ADELAIDE  TNQX" />
+		<parameter name="CollectionDepot" value="ADELAIDE S-LINE TNQX" />
 		<parameter name="dropOffDepot" value="1" />
 		<parameter name="collectionDepot" value="2" />
 		<parameter name="BillingType" value="General Freight" />
@@ -236,7 +236,7 @@
 		<parameter name="Length2" value="200" />
 		<parameter name="Width2" value="100" />
 		<parameter name="Height2" value="50" />
-		<parameter name="Weight2" value="20" />
+		<parameter name="Weight2" value="300" />
 		<parameter name="palletSpace" value="5" />
 		<parameter name="reference" value="12345" />
 
@@ -277,8 +277,8 @@
 		<parameter name="ShipmentRef1" value="12345" />
 		<parameter name="ShipmentRef2" value="567879" />
 		<parameter name="QuoteNumber" value="5123355" />
-		<parameter name="DropOffDepot" value="ACACIA RIDGE INTERMODAL" />
-		<parameter name="CollectionDepot" value="ACT TOLLFAST" />
+		<parameter name="DropOffDepot" value="ADELAIDE  TNQX" />
+		<parameter name="CollectionDepot" value="ADELAIDE S-LINE TNQX" />
 		<parameter name="dropOffDepot" value="1" />
 		<parameter name="collectionDepot" value="2" />
 		<parameter name="BillingType" value="General Freight" />
@@ -339,18 +339,30 @@
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 
 
-	
+	<groups>
+			<run>
+				<include name="Shakeout Testing" />
+			</run>
+		</groups>
 
 		<classes>
+			<class name="createShipmentE2ETests.TollIPECTests" />
+				<class name="createShipmentE2ETests.TollPriorityAUSTests" />
+<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+      </classes>
+
+	
+
+		<!-- Blocked><classes>
+		<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
 		
-		
-		<!-- Blocked><classes> <class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+		<classes> <class name="createShipmentE2ETests.IntermodalSpecializedTests" />
 		 <class name="createShipmentE2ETests.TollPriorityAUSTests" />
 		  <class name="createShipmentE2ETests.TollPriorityNZ" />
 			 <class name="createShipmentE2ETests.TollIPECTests" /> <class name="createShipmentE2ETests.TollPriorityAUSTests" 
 			/> <class name="createShipmentE2ETests.TollTasmaniaTests" /> <class name="createShipmentE2ETests.TollIntermodalTests_AddAdress" 
-			/> </Blocked -->
-	</classes> 
+			/> 
+	</classes> </Blocked -->
 
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
