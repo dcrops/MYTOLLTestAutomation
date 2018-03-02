@@ -31,7 +31,7 @@ public class RateEnquiry_ErrorMsgValidations {
 	//This Test Case Covers Error Msg Validations in Rate Enquiry for all Toll Carriers
 	
 	@Test
-	@Parameters({"TollIntermodalSpecialised", "ServiceGeneral","TIAccountNo","ItemTemplateName","TIBillingType","TIMode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","TIQtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
+	@Parameters({"TollIntermodalSpecialised", "ServiceGeneral","TNAccountNo","ItemTemplateName","TIBillingType","TIMode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","TIQtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_General(String Carrier, String Service,String AccountNo, String ItemTemplateName,String BillingType, String Mode,String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode ) {
 		
