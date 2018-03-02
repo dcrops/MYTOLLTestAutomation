@@ -14,17 +14,17 @@ public class ReviewYourPickupActions {
 	//
 	public static By reviewYourPickupHeading=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]/div/header/div/h1"); 
 	public static By pickupDetailsHeading=By.cssSelector("h5.review-box-label");
-	public static By pickupDateTimeHeading=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div[2]/div/h5");
-	public static By accountNumber=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Account number ']/following::div/p");
+	public static By pickupDateTimeHeading=By.xpath("//div[@id='book-a-pickup-placeholder']/div/div/div[2]/div/h5");//*[@id="book-a-pickup-placeholder"]/div/div[1]/div[1]/div/div[1]/div/p
+	public static By accountNumber=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Account number']/following::div/p");
 	public static By tollCarrier=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Toll carrier']/following::div/p"); 
-	public static By company=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Company ']/following::div/p");
-	public static By location=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location ']/following::div/p");
-	public static By bookedBy=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Booked by ']/following::div/p"); 
-	public static By phoneNumber=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Phone number ']/following::div/p");
-	public static By dispatchDate=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Dispatch date ']/following::div/p");
-	public static By readyTime=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Ready time ']/following::div/p");
-	public static By closingTime=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location closing time ']/following::div/p");
-	public static By specialInstructions=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Special instructions ']/following::div/p");
+	public static By company=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Company']/following::div/p");
+	public static By location=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location']/following::div/p");
+	public static By bookedBy=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Booked by']/following::div/p"); 
+	public static By phoneNumber=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Phone number']/following::div/p");
+	public static By dispatchDate=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Dispatch date']/following::div/p");
+	public static By readyTime=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Ready time']/following::div/p");
+	public static By closingTime=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Location closing time']/following::div/p");
+	public static By specialInstructions=By.xpath("//*[@id=\"book-a-pickup-placeholder\"]//div[@class='pickup-summary__review-section upper-section clearfix']//label[text()='Special instructions']/following::div/p");
 
 	public static By itemDescription1=By.cssSelector("div.item.hide-open");
 	public static By numberofItems=By.cssSelector("div.quantity.hide-open");
@@ -36,17 +36,17 @@ public class ReviewYourPickupActions {
 	public static By itemArrowDownItem1=By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[7]/a/i");
 	public static By itemArrowDownItem1TPrioAU=By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[6]/a/i");
 	public static By itemDetailsHeading=By.xpath("//*[@id=\"line-item-0\"]/div[@class='item-body content-box']/h5"); 
-	public static By destination=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Destination ']/following::div/p");
-	public static By itemDescription=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Item description ']/following::div/p");
-	public static By serviceType=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Service type ']/following::div/p");
+	public static By destination=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Destination']/following::div/p");
+	public static By itemDescription=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Item description']/following::div/p");
+	public static By serviceType=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Service type']/following::div/p");
 	public static By mode=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Mode']/following::div/p");
 	public static By chargeTo=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Charge to']/following::div/p");
 	public static By numberOfItems=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Number of items']/following::div/p");
-	public static By palletSpaces=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Pallet spaces']/following::div/p");
-	public static By largestitemDimensions=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Largest item dimensions ']/following::div/p");
-	public static By volume=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Total volume ']/following::div/p");
-	public static By weight=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Total weight ']/following::div/p");
-	public static By dangerousGood=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Dangerous goods ']/following::div/p");
+	public static By palletSpaces=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Pallet space']/following::div/p");
+	public static By largestitemDimensions=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Largest item dimensions']/following::div/p");
+	public static By volume=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Total volume']/following::div/p");
+	public static By weight=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Total weight']/following::div/p");
+	public static By dangerousGood=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Dangerous goods']/following::div/p");
 	public static By foodItems=By.xpath("//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Food item ']/following::div/p");
 	
 	
@@ -58,7 +58,7 @@ public class ReviewYourPickupActions {
 	public static By packingGroup=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='Packaging group']/following::div/p");
 	public static By subrisk=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='Sub risk']/following::div/p");
 	public static By properShippingName=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='Proper shipping name ']/following::div/p");
-	public static By dgPackingDescription=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='DG packaging description']/following::div/p");
+	public static By dgPackingDescription=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='DG packaging description (max 150 characters)']/following::div/p");
 	public static By dgPKG=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='DG pkg (qty)']/following::div/p");
 	public static By dgQTY=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='DG qty (kg or L)']/following::div/p");
 	public static By technicalName=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='col-ms-6 col-md-6 col-lg-6']//label[text()='Technical name']/following::div/p");
@@ -66,18 +66,18 @@ public class ReviewYourPickupActions {
 	//Item2 details validation
 	public static By itemArrowDownItem2=By.xpath("//*[@id=\"line-item-1\"]/div[1]/div[7]/a/i"); 
 	public static By itemDetailsHeading2=By.xpath("//*[@id=\"line-item-1\"]/div[@class='item-body content-box']/h5");
-	public static By destination2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Destination ']/following::div/p");
-	public static By itemDescription2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Item description ']/following::div/p");
-	public static By serviceType2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Service type ']/following::div/p");
+	public static By destination2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Destination']/following::div/p");
+	public static By itemDescription2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Item description']/following::div/p");
+	public static By serviceType2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Service type']/following::div/p");
 	public static By mode2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Mode']/following::div/p");
 	public static By chargeTo2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Charge to']/following::div/p");
 	public static By numberOfItems2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Number of items']/following::div/p");
 	public static By palletSpaces2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Pallet spaces']/following::div/p");
-	public static By largestitemDimensions2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Largest item dimensions ']/following::div/p");
-	public static By volume2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Total volume ']/following::div/p");
-	public static By weight2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Total weight ']/following::div/p");
-	public static By dangerousGood2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Dangerous goods ']/following::div/p");
-	public static By foodItems2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Food item ']/following::div/p");
+	public static By largestitemDimensions2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Largest item dimensions']/following::div/p");
+	public static By volume2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Total volume']/following::div/p");
+	public static By weight2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Total weight']/following::div/p");
+	public static By dangerousGood2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Dangerous goods']/following::div/p");
+	public static By foodItems2=By.xpath("//*[@id=\"line-item-1\"]//div[@class='item-body content-box']//label[text()='Food item']/following::div/p");
 	
 	
 	public static By lenghthHeightWeight=By.xpath("//div[@id='line-item-0']/div[2]/div/div[2]/div/div/p");

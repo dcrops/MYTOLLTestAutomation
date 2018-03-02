@@ -50,7 +50,7 @@
 	<parameter name="AccountNumberTIPEC" value="" />
 	<parameter name="AccountNumberTPrioAU" value="" />
 	<parameter name="AccountNumberTPrioNZ" value="" />
-	<parameter name="AccountAccessTypeFullFinancial" value="Full financial" />
+	<parameter name="AccountAccessTypeFullFinancial" value="Full Financial" />
 	<!---Item test data -->
 
 	<parameter name="locationIndex" value="1" />
@@ -135,34 +135,12 @@
 	<!---Prio AU Cutoff time -->
 	<parameter name="VICAddress1" value="TestAddress, VIC,3428" />
 	<parameter name="VICAddress2" value="TestAddress, VIC,3428" />
-	<test name="firefoxTest">
 
-		<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
-		</classes>
-	</test> <!-- Test -->
 
-	<test name="chromeTest">
-
-		<parameter name="browser" value="firefox" />
-		<classes>
-			<class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
-		</classes>
-	</test> <!-- Test -->
-
-	<test name="IETest">
-
-		<parameter name="browser" value="ie" />
-		<classes>
-			<class name="bookAPickupE2ETests.IntermodalSpecializedTest" />
-		</classes>
-	</test> <!-- Test -->
-
-	<test name="BookAPickup">
-
+	<test name="BookAPickup"> 
 
 		<classes>
+		
 
 			<!-- Blocked><class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
 				/> <class name="bookAPickupE2ETests.TollTasmaniaTest" /> <class name="bookAPickupE2ETests.TollIPEC_CutOffTime" 

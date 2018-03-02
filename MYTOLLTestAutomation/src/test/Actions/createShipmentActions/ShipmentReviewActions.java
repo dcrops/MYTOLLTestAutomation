@@ -29,8 +29,8 @@ public class ShipmentReviewActions {
 	
 	//Additional Information
 	
-	public static By specialInstructions=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Special Instructions']/following::div/p");
-	public static By palletTransactionsInformation=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Pallet transactions information']/following::div/p");
+	public static By specialInstructions=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Special instructions']/following::div/p");
+	public static By palletTransactionsInformation=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Pallets']/following::div/p");
 	public static By purchaseOrders=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Purchase orders']/following::div/p");
 	public static By valueOfGoods=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Value of goods (not over $5000)']/following::div/p");
 	

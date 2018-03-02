@@ -4,6 +4,9 @@ Background:
 		Given User is Registered in MyToll and is on Book a pickup page
 
 Scenario: User wants to Print and/or Share my pick up booking in TGX
+    Then User be able to see second item details entered in Review Your Pickup screen
+      | ItemDescription     | Service    | Mode | ChargeTo | NoOfItems | PalletSpaces | Length | Width | Height | TotalWeight | DangerousGoods | FoodItem |
+      | Automation Template | DG Express | Rail | Sender   |        10 |            6 |    100 |   100 |    100 |         900 | Yes            | No       |
     When User selects Toll Carrier and Account Number
       | TollCarrier         | AccountNumber |
       | Toll Priority (Aus) | 200BHY        |

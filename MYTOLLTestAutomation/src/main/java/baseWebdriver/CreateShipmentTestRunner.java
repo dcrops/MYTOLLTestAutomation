@@ -8,8 +8,8 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/createShipmentFeatures/create.feature"}
-		,glue= {"commonStepsDefinitions", "createShipmentStepDefinitions"}
+        ,features = { "src/test/Resources/createShipmentFeatures/MYT_1650_Shipment Default mode to Quick Entry  mode.feature"}
+		,glue= {"commonStepsDefinitions", "createShipmentStepDefinitions", "bookAPickupStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 
                 "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
