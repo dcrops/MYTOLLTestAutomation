@@ -339,17 +339,7 @@
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 
 
-	<groups>
-			<run>
-				<include name="Shakeout Testing" />
-			</run>
-		</groups>
-
-		<classes>
-			<class name="createShipmentE2ETests.TollIPECTests" />
-				<class name="createShipmentE2ETests.TollPriorityAUSTests" />
-<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
-      </classes>
+	
 
 	
 
