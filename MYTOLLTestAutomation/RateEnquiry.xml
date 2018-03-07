@@ -165,14 +165,14 @@
 	        
 	  	    
 	    
-	 	<!-- Blocked>	   <classes>	
+	 	 <classes>	
 			<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	
 			<class name="rateEnquiryE2ETests.TollPriorityNZTests" />
 			<class name="rateEnquiryE2ETests.TollPriorityAUSTests" />
 			<class name="rateEnquiryE2ETests.TollTasmaniaTests" />
 			<class name="rateEnquiryE2ETests.TollIPECTests" />
 			<class name="rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations" /> 	
-	    </classes></Blocked -->
+	    </classes>
 	</test> <!-- Test -->
 
 

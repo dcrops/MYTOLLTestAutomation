@@ -31,7 +31,7 @@ public class ManualManifestTollPriorityAUSTests {
 
 	
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({"TollCarrierTollPrioAU","AccountNumberTollPrioAu", "ServiceParcelsOffPeak", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
+	@Parameters({"TollCarrierTollPrioAU","AccountNumberTollPrioAu", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount"}) 
@@ -50,7 +50,7 @@ public class ManualManifestTollPriorityAUSTests {
 		PageBase.MaximumWaitForElementEnabled_1();
 		
 		//Create Manifest Pop Up
-		ManifestActions.createManifestPopUp(TollCarrier, 2, NewManifestName);
+		ManifestActions.createManifestPopUp(TollCarrier, 1, NewManifestName);
 		
 		//Verify Manifest and proceed to shipment
 		PageBase.verifyTextExist(ManifestActions.manifestHeading, "MANIFEST - "+NewManifestName);

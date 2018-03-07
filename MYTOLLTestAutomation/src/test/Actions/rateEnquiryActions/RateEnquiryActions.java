@@ -24,7 +24,7 @@ public class RateEnquiryActions {
 	public static By originSuburbPostCode = By.xpath("//*[@id=\"sender-selector\"]/div[1]/a/i");
 	public static By originSuburbPostCodeTextField = By.id("originAddress");
 	public static By destinationSuburbPostcode = By.xpath("//*[@id=\"receiver-selector\"]/div[1]/a/i");
-	public static By destinationSuburbPostcodeTextField = By.id("destinationAddress");
+	public static By destinationSuburbPostcodeTextField = By.xpath("//*[@id=\"destinationAddress\"]");
 	public static By destinationCountryTextField = By.name("placeholder-country");
 	public static By destinationPostCode = By.id("destination-postcode");
 	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/div[1]/a/i");
@@ -180,9 +180,11 @@ public class RateEnquiryActions {
 	public static void SelecDestination(String Suburb, String PostCode) {
 		Reporter.log("User Selects Destination - Surburb:"+Suburb+" PostCode:"+PostCode);
 		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.sendText(destinationSuburbPostcodeTextField, 5, Suburb);
 		PageBase.click(destinationSuburbPostcodeTextField, 2);
+		PageBase.sendText(destinationSuburbPostcodeTextField, 5, Suburb);
 		PageBase.MaximumWaitForElementEnabled_1();
+		//PageBase.click(destinationSuburbPostcodeTextField, 2);
+		//PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"destination-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
 	}
 	
@@ -573,6 +575,7 @@ public class RateEnquiryActions {
 	
 	public static void EnterItem(String itemName) {
 		Reporter.log("User Enters Item Description - "+itemName);
+		PageBase.click(RateEnquiryActions.itemDescriptionType, 2);
 		PageBase.sendText(RateEnquiryActions.itemDescriptionType, 2, itemName);
 	
 	}

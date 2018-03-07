@@ -22,6 +22,11 @@ import rateEnquiryActions.RateEnquiryActions;
 
 public class advanceSearchStepDefinitions {
 	
+	public static String SaveSearchName;
+	
+	
+	
+	
 	@Then("^User Clicks Search and results are displayed$")
 	public void UserCliksSearchAndVerifiesResults() throws Throwable {
 
@@ -943,6 +948,49 @@ public class advanceSearchStepDefinitions {
 			jse.executeScript("arguments[0].click();", element);
 			//PageBase.click(MyTollHomePageActions.advanceSearchMilestoneExclude, 10);
 		}
+		
+		
+		//====================================================================================================================================================================
+		//View Advance Search Search
+		
+		@Then("^Search Results are displayed according to Track and Trace$")
+		public void SearchResultsAreDisplayedAccordingToTrackandTrace(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				PageBase.isElementPresent(MyTollHomePageActions.TollShipmentNo , 5, advSearch.get("TollShipmentNo"));
+				PageBase.isElementPresent(MyTollHomePageActions.References, 5, advSearch.get("References"));
+				PageBase.isElementPresent(MyTollHomePageActions.Milestone, 5, advSearch.get("Milestone"));
+				PageBase.isElementPresent(MyTollHomePageActions.SenderLocation, 5, advSearch.get("SenderLocation"));
+				PageBase.isElementPresent(MyTollHomePageActions.DeliveryLocation, 5, advSearch.get("DeliveryLocation"));
+				PageBase.isElementPresent(MyTollHomePageActions.EstimatedDelivery, 5, advSearch.get("EstimatedDelivery"));
+				PageBase.isElementPresent(MyTollHomePageActions.Items, 5, advSearch.get("Items"));
+			}
+		}
+		
+		@And("^Save Search Option is visible$")
+		public void SaveSearchOptionIsVisible() throws Throwable {
+			PageBase.isElementPresent(MyTollHomePageActions.SaveSearch, 5, "SAVE SEARCH");			
+		}
+		
+		@Then("^User Selects Save Search Option$")
+		public void UserSelectsSaveSearchOption() throws Throwable {
+			PageBase.click(MyTollHomePageActions.SaveSearch, 5);
+			PageBase.MediumWaitForElementEnabled_1();
+			int Number = (int) (Math.random()*10000);
+			String newNumber = String.valueOf(Number);
+			SaveSearchName = "TestSave"+newNumber;
+			PageBase.sendText(MyTollHomePageActions.SaveSearchName, 5, SaveSearchName);
+			PageBase.click(MyTollHomePageActions.SaveSearchSubmit, 5);
+		}
+		
+		@Then("^User Verifies if Saved Search is Availble in the Dropdown$")
+		public void UserVerifiesIfSavedSearchIsAvailbleInTheDropdown() throws Throwable {
+			PageBase.sendText(MyTollHomePageActions.LoadSearchDropDown, 5, SaveSearchName);
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.click(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']"), 5);
+		}
+		
+		
 
 		
 		

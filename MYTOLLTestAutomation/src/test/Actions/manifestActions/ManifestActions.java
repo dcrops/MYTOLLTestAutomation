@@ -90,14 +90,14 @@ public class ManifestActions {
 	
 	//add Manifest Manually
 	public static By MyManifestTab = By.id("manifestTabAnchor");
-	public static By AddManifestManuallyButton = By.xpath("//*[@id=\"manifestHasMoreDiv\"]/button[text()='+ MANUAL MANIFEST']");
+	public static By AddManifestManuallyButton = By.xpath("//*[@id=\"manifestHasMoreDiv\"]/button[text()=' MANUAL MANIFEST']");
 	public static By ManifestViewMore = By.xpath("//*[@id=\"manifestHasMoreButton\"]");
 	public static By ManualManifestName = By.id("manifest-name");
 	public static By ManualManifestSave = By.id("save-manifest");
 	public static By AddNewShipment = By.linkText("ADD NEW SHIPMENT");
 	public static By TollCarier = By.xpath("//*[@id=\"carrier-name\"]");
 	
-	public static final By ContinuetoManifest = By.xpath("//*[@id=\"shipment-placeholder\"]//*//a[text()=\"continue\"]");
+	public static final By ContinuetoManifest = By.xpath("//*[@id=\"shipment-placeholder\"]//*//a[text()=\"CONTINUE\"]");
 	
 	public static ArrayList shipmentNumbers = new ArrayList();
 	public static By PrintCloseManifest = By.linkText("PRINT & CLOSE MANIFEST");
@@ -441,6 +441,7 @@ public class ManifestActions {
 		System.out.println("Downloading PDF instead of Printing, Content of PDF not CHECKED");
 		
 		//Close Pop Up
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		Reporter.log("User Closes Popup to verify Manifest Status");
 		PageBase.waitForElement(ShipmentManifestPopupClose, 2);

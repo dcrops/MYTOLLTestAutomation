@@ -50,7 +50,7 @@ public class ManualTollIntermodalSpecialisedTests {
 		PageBase.MaximumWaitForElementEnabled_1();
 		
 		//Create Manifest Pop Up
-		ManifestActions.createManifestPopUp(TollCarrier, 2, NewManifestName);
+		ManifestActions.createManifestPopUp(TollCarrier, 1, NewManifestName);
 		
 		//Verify Manifest and proceed to shipment
 		PageBase.verifyTextExist(ManifestActions.manifestHeading, "MANIFEST - "+NewManifestName);
@@ -87,11 +87,11 @@ public class ManualTollIntermodalSpecialisedTests {
 		//User Reprints Manifest
 		Reporter.log("User Clicks Go To Dashboard to Reprint");
 		PageBase.click(ManifestActions.GoToDashboard, 2);
-		ManifestActions.reprintManifest(NewManifestName);
+		//ManifestActions.reprintManifest(NewManifestName);
 
 		//Move from Manifest to Book a PickUp
-		Reporter.log("User Clicks Go To Dashboard to Book a Pick Up");
-		PageBase.click(ManifestActions.GoToDashboard, 2);
+		//Reporter.log("User Clicks Go To Dashboard to Book a Pick Up");
+		//PageBase.click(ManifestActions.GoToDashboard, 2);
 		ManifestActions.manifestToBookaPickUp(NewManifestName);
 		
 		//Book a Pick Up Page

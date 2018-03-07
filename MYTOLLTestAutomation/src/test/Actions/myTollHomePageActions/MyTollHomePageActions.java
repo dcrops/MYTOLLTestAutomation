@@ -35,6 +35,8 @@ public class MyTollHomePageActions {
 	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My accounts']");//*[@id="nav-dropdown"]/ul/li[5]/a/span[2] , //*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']
 	public static By myContactMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My contacts']");
 	public static By aboutMeMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='About me']");
+	//*[@id="nav-dropdown"]/ul/li[1]/a/span
+	
 	
 	//Add Template
 	public static By MyTemplates=By.xpath("//a[@href='/group/guest/my-templates']"); //"/group/guest/my-templates");
@@ -128,6 +130,24 @@ public class MyTollHomePageActions {
 	public static By advanceSearchMilestone = By.xpath("//*[@id=\"current-ms-milestone\"]");
 	public static By advanceSearchMilestoneExclude = By.xpath("//*[@id=\"include-exclude-milestone\"]");
 	public static By advanceSearchSubmit = By.xpath("//*[@id=\"get-advance-search\"]");	
+	
+	//Advance Search Results
+	public static By TollShipmentNo = By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Toll shipment no.']");	
+	public static By References = By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='References']");	
+	public static By Milestone = By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Milestone']");	
+	public static By SenderLocation = By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Sender location']");	
+	public static By DeliveryLocation =  By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Receiver location']");	
+	public static By EstimatedDelivery = By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Estimated/Actual Delivery']");	
+	public static By Items =  By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Items']");	
+	
+	//SaveSearch
+	public static By SaveSearch = By.xpath("//*[@id=\"adl_advseavedsrchBtn\"]");	
+	public static By SaveSearchName = By.xpath("//*[@id=\"advSaveSearch\"]");	
+	public static By SaveSearchSubmit = By.xpath("//*[@id=\"advSrchSaveBtn\"]");
+	public static By SaveSearchClose = By.xpath("//*[@id=\"dashboard-features-info\"]//*//a[@class=\"tollSaveSearch-close\"]/i");	
+	public static By LoadSearchDropDown = By.xpath("//*[@id=\"current-saved-search\"]");
+	
+	
 	
 	
 	public static void LaunchMyToll(String url)

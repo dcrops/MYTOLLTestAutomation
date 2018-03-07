@@ -31,7 +31,7 @@ public class ManualManifestTollPriorityNZTests {
 
 	
 	@Test
-	@Parameters({"TollCarrierTollPrioNZ","AccountNumberTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTSPD", "ReceiverName", "ReceiverItem",
+	@Parameters({"TollCarrierTollPrioNZ","AccountNumberTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTollPrioNZ", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"TollExtraServiceAmount"}) 
