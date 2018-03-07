@@ -51,7 +51,7 @@ public class CreateShipmentStepsDefinitions  {
 		
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 
-			CreateShipmentActions.EnterPurchaseOrder(shipment.get("PurchaeOrder"));
+			CreateShipmentActions.EnterPurchaseOrder(shipment.get("PurchaseOrder"));
 			CreateShipmentActions.SelectFoodPackagingYes();
 			CreateShipmentActions.EnterTollExtraServiceAmount(shipment.get("TotalExtraAmount"));
 

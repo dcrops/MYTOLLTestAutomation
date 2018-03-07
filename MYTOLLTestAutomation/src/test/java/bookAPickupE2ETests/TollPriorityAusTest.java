@@ -27,7 +27,7 @@ public class TollPriorityAusTest {
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	
+	//@Test(priority=-1)
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
@@ -48,8 +48,9 @@ public class TollPriorityAusTest {
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		//Add Address
-		BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
-		BookAPickupActions.ClickAddAddress();
+		//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
+		BookAPickupActions.AddAddressAustraliaManuallyPrioAUS("AccessHQ","AUSTRALIA","ABC","CDE", "Melbourne","3004, MELBOURNE, VIC, AU", "NNAutomationuser1@gmail.com", "412367897", "Australia");
+		//BookAPickupActions.ClickAddAddress();
 		//BookAPickupActions.SelectLocation2(locationIndex);
 		
 
@@ -170,7 +171,7 @@ public class TollPriorityAusTest {
 	
 }
 	
-	@Test(priority=-1)
+	@Test
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })

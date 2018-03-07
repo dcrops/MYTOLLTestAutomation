@@ -3,9 +3,11 @@ package createShipmentActions;
 import GlobalActions.PageBase;
 
 import static org.junit.Assert.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -22,7 +24,8 @@ public class CreateShipmentActions {
 
 	public static By createShipmentsHeading = By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/header/div/h1");
 	public static By shipments = By.id("createShipment");
-	public static By servicedropdown = By.xpath("//*[@id=\"service-selector\"]/label/a/i");
+	public static By servicedropdown = By.xpath("//*[@id=\"service-selector\"]/label/a/i"); 
+	public static By servicedropdownItemList = By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div"); 
 	public static By mode = By.xpath("//*[@id=\"mode-selector\"]/div[1]/a/i");
 	public static By TempretureTypeDropdown = By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[1]/a/i");
 	public static By TempretureTypeTextField = By.name("placeholder-refrigeration-type");
@@ -204,8 +207,25 @@ public class CreateShipmentActions {
 				.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='" + pService + "']"))
 				.click();
 
+	}//*[@id="service-selector"]/div/ul
+	
+	public static int GetServiceItemListSize() {
+		BaseWebdriver.driver.findElement(servicedropdown).click();
+		 List<WebElement> elements=BaseWebdriver.driver.findElements(servicedropdownItemList);
+		 return elements.size();
 	}
-
+	
+	public static void GetServiceItemList(String serviceItem, int itemIndex) {
+		BaseWebdriver.driver.findElement(servicedropdown).click();
+		String itemList = null;
+		for (int i=1; i<=itemIndex; i++) {
+		itemList=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li["+i+"]/div")).getText(); 
+		System.out.println("from ui"+itemList);
+		assertEquals(serviceItem, itemList);
+		}
+	
+	}
+	
 	public static String SelectMode(int i) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(mode).click();
@@ -777,8 +797,8 @@ public class CreateShipmentActions {
 		 * + "']")) .click();
 		 */
 		try {
-			PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,
-					CreateShipmentActions.shipmentReference1);
+			/*PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,
+					CreateShipmentActions.shipmentReference1);*/
 			Boolean results = BaseWebdriver.driver.findElement(billingTypedropdown).isDisplayed();
 			System.out.println("Billing type displayed");
 			if (results == true) {
@@ -790,8 +810,9 @@ public class CreateShipmentActions {
 						.click();
 			}
 		} catch (Exception ex) {
-			PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,
-					CreateShipmentActions.shipmentReference1);
+			System.out.println("Billing type displayed");
+			/*PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,
+					CreateShipmentActions.shipmentReference1);*/
 		}
 
 	}
@@ -808,14 +829,14 @@ public class CreateShipmentActions {
 	public static void EnterDangerousGoodsDetails(int j, String lookupItem, String packageDescription, String pDgPkgQty,
 			String pDgQtyKg) {
 
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		//BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 		//BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
-
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li[" + j + "]/div")).click(); 
 		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div[text()='2025 | MERCURY COMPOUND, SOLID, N.O.S | 6.1']")).click(); 
+		PageBase.MaximumWaitForElementEnabled(); 
 		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 		BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
 		BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
@@ -1031,7 +1052,80 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(loscamOtherDocket).sendKeys(pLoscamOtherDocketNo);
 
 	}
+	
+	public static void EnterPalletTransActionChepInformations(String pChepCustomer, String pChepExchange,
+			String pChepTansferToToll, String pChepDocketNo) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MoveToElement(CreateShipmentActions.chepCustomer, CreateShipmentActions.loscamCustomer);
+		BaseWebdriver.driver.findElement(chepCustomer).click();
+		BaseWebdriver.driver.findElement(chepCustomer).clear();
+		BaseWebdriver.driver.findElement(chepCustomer).sendKeys(pChepCustomer);
+		BaseWebdriver.driver.findElement(chepExchange).click();
+		BaseWebdriver.driver.findElement(chepExchange).clear();
+		BaseWebdriver.driver.findElement(chepExchange).sendKeys(pChepExchange);
+		BaseWebdriver.driver.findElement(chepTransfer).click();
+		BaseWebdriver.driver.findElement(chepTransfer).clear();
+		BaseWebdriver.driver.findElement(chepTransfer).sendKeys(pChepTansferToToll);
+		BaseWebdriver.driver.findElement(chepDocket).click();
+		BaseWebdriver.driver.findElement(chepDocket).clear();
+		BaseWebdriver.driver.findElement(chepDocket).sendKeys(pChepDocketNo);
+	}
+	
+	public static void EnterPalletTransActionLoscamInformations( String pLoscamCustomer, String pLoascamExchange,
+			String pLoscamTransferToToll, String pLoscamDocketNo) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(loscamCustomer).click();
+		BaseWebdriver.driver.findElement(loscamCustomer).clear();
+		BaseWebdriver.driver.findElement(loscamCustomer).sendKeys(pLoscamCustomer);
+		BaseWebdriver.driver.findElement(loscamExchange).click();
+		BaseWebdriver.driver.findElement(loscamExchange).clear();
+		BaseWebdriver.driver.findElement(loscamExchange).sendKeys(pLoascamExchange);
+		BaseWebdriver.driver.findElement(loscamTransfer).click();
+		BaseWebdriver.driver.findElement(loscamTransfer).clear();
+		BaseWebdriver.driver.findElement(loscamTransfer).sendKeys(pLoscamTransferToToll);
+		BaseWebdriver.driver.findElement(loscamDocket).click();
+		BaseWebdriver.driver.findElement(loscamDocket).clear();
+		BaseWebdriver.driver.findElement(loscamDocket).sendKeys(pLoscamDocketNo);
+	}
+	
+	public static void EnterPalletTransActionOtherCustomerInformations(String pOtherCostomer) {
+		PageBase.MaximumWaitForElementEnabled();
+		
+		BaseWebdriver.driver.findElement(otherCustomer).click();
+		BaseWebdriver.driver.findElement(otherCustomer).clear();
+		BaseWebdriver.driver.findElement(otherCustomer).sendKeys(pOtherCostomer);
+	}
+	
+	public static void EnterPalletTransActionChepOtherInformations(String pChepOtherExchange,
+			String pChepOtherTransferToToll, String pchepOtherDocketNo) {
+		PageBase.MaximumWaitForElementEnabled();
+	
+		BaseWebdriver.driver.findElement(chepOtherExchange).click();
+		BaseWebdriver.driver.findElement(chepOtherExchange).clear();
+		BaseWebdriver.driver.findElement(chepOtherExchange).sendKeys(pChepOtherExchange);
+		BaseWebdriver.driver.findElement(chepOtherTransfer).click();
+		BaseWebdriver.driver.findElement(chepOtherTransfer).clear();
+		BaseWebdriver.driver.findElement(chepOtherTransfer).sendKeys(pChepOtherTransferToToll);
+		BaseWebdriver.driver.findElement(chepOtherCustomer).click();
+		BaseWebdriver.driver.findElement(chepOtherCustomer).clear();
+		BaseWebdriver.driver.findElement(chepOtherCustomer).sendKeys(pchepOtherDocketNo);
+	}
 
+	public static void EnterPalletTransActionLoscamOtherInformations( String pLoscamOtherExchange,
+			String pLoscamOtherTransferToToll, String pLoscamOtherDocketNo) {
+		PageBase.MaximumWaitForElementEnabled();
+	
+		BaseWebdriver.driver.findElement(loscamOtherExchange).click();
+		BaseWebdriver.driver.findElement(loscamOtherExchange).clear();
+		BaseWebdriver.driver.findElement(loscamOtherExchange).sendKeys(pLoscamOtherExchange);
+		BaseWebdriver.driver.findElement(loscamOtherTransfer).click();
+		BaseWebdriver.driver.findElement(loscamOtherTransfer).clear();
+		BaseWebdriver.driver.findElement(loscamOtherTransfer).sendKeys(pLoscamOtherTransferToToll);
+		BaseWebdriver.driver.findElement(loscamOtherDocket).click();
+		BaseWebdriver.driver.findElement(loscamOtherDocket).clear();
+		BaseWebdriver.driver.findElement(loscamOtherDocket).sendKeys(pLoscamOtherDocketNo);
+
+	}
 	public static void VerifyDocketNoNotMandatoryInLocamOther(String pChepCustomer, String pChepExchange,
 			String pChepTansferToToll, String pChepDocketNo, String pLoscamCustomer, String pLoascamExchange,
 			String pLoscamTransferToToll, String pLoscamDocketNo, String pOtherCostomer, String pChepOtherExchange,

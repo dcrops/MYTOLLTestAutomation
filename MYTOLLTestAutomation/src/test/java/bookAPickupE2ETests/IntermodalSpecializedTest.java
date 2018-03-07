@@ -47,10 +47,7 @@ public class IntermodalSpecializedTest {
 			String palletSpace, String destination, String DestinationItem, String DestinationPostcode,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) throws Exception {
-		/*BaseWebdriver.SetUp(browser);
-		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
-		MyTollHomePageActions.ClickMenu();
-		MyTollHomePageActions.ClickBookAPIckupMenu();*/
+		
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrierIntermodalSpecialized);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
@@ -92,9 +89,10 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		String TotalWeight = Weight + " kg";
 		String chargeToAccount = BookAPickupActions.SelectChargeToAccount2(1);
 		String Destination = BookAPickupActions.SelectDestination1(destination, DestinationItem);
@@ -206,10 +204,11 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterService(ServiceExpress);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
@@ -237,10 +236,11 @@ public class IntermodalSpecializedTest {
 				PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		BookAPickupActions.selectDispatchDate();
 		// ReSubmit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
@@ -287,10 +287,11 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterService(ServiceFCL);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
@@ -317,10 +318,11 @@ public class IntermodalSpecializedTest {
 				PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 
 		// ReSubmit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
@@ -392,9 +394,11 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
-		BookAPickupActions.EnterPalletSpace(palletSpace);
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		
 		String TotalWeight = Weight + " kg";
 		String chargeToAccount = BookAPickupActions.SelectChargeToAccount2(1);
 		String Destination = BookAPickupActions.SelectDestination1(destination, DestinationItem);
@@ -504,10 +508,11 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterService(ServiceGeneral);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+	
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
@@ -562,10 +567,11 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
@@ -617,10 +623,11 @@ public class IntermodalSpecializedTest {
 
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+	
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
@@ -674,11 +681,12 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
@@ -729,10 +737,11 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterService(ServiceDGRefrigerated);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+	
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.dangerousGoodNo);
 		BookAPickupActions.SelectDangerousGoods(1);
@@ -792,11 +801,11 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterService(ServiceRailDangerousGoods);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
-
+		
 		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.weight);
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
@@ -857,11 +866,12 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 
 		// jse.executeScript("scroll(1000, 1500)");
 		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.weight);
@@ -925,10 +935,11 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterService(ServiceExpress);
 		BookAPickupActions.VerifyModeIsNotAvailable();
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
@@ -998,7 +1009,7 @@ public class IntermodalSpecializedTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-	BaseWebdriver.tearDown();
+	//BaseWebdriver.tearDown();
 
 	}
 

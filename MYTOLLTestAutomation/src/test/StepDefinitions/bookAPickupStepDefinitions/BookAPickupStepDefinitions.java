@@ -58,6 +58,7 @@ public class BookAPickupStepDefinitions{
 
 			BookAPickupActions.EnterPalletSpace(bookAPickup.get("PalletSpace"));
 			BookAPickupActions.SelectDestination(bookAPickup.get("Destination"));
+			BookAPickupActions.VerifyDestination(bookAPickup.get("destination")); 
 			BookAPickupActions.EnterItem(bookAPickup.get("ItemDescription"));
 			
 					
@@ -128,9 +129,7 @@ public class BookAPickupStepDefinitions{
 			ManifestActions.selectReadyTimeJS(bookAPickup.get("ReadyTime"));
 			 PageBase.MaximumWaitForElementEnabled();
 		}
-		
-		
-		
+	
 	
 	}
 

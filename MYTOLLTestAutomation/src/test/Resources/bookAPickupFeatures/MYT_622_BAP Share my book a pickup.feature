@@ -12,8 +12,8 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
       | Sender   |
       | AccessHQ |
     When User enter following input data to Add Item
-      | Service | Destination | ItemDescription      | NoOfItems | PalletSpace |
-      | Express | MELALEUCA   | Automation Template1 |        10 |           6 |
+      | Service | Destination | ItemDescription      | NoOfItems | PalletSpace | destination     |
+      | Express | MELALEUCA   | Automation Template1 |        10 |           6 | MELALEUCA, 6079 |
     And User Selects Charge to Account as below
       | ChargeToAccount | AccountNumber |
       |               1 |         12345 |
@@ -52,8 +52,8 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
       | Sender   |
       | AccessHQ |
     When User enter following input data to Add Item
-      | Service    | Destination | ItemDescription      | NoOfItems | PalletSpace |
-      | DG Express | MELALEUCA   | Automation Template1 |        10 |           6 |
+      | Service    | Destination | ItemDescription      | NoOfItems | PalletSpace |destination     |
+      | DG Express | MELALEUCA   | Automation Template1 |        10 |           6 | MELALEUCA, 6079 |
     And User Selects Charge to Account as below
       | ChargeToAccount | AccountNumber |
       |               1 |         12345 |

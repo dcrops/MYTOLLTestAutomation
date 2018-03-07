@@ -11,8 +11,8 @@ Feature: MYT_1650 Shipment: 'Default' mode to ' Quick Entry ' mode
     And User selects switch from 'Default' mode to ' Quick Entry ' mode in shipment
     Then User able to see Line item number autopopulated
     When User enters following input data for the line item in Quick Entry Mode
-      | ItemDescription     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalWeight | SenderReference | ReceiverReference |
-      | Automation Template1 | General Freight |          10 | Misc units      |    100 |   100 |    100 |         900 | Ref123          | Ref456            |
+      | ItemDescription      | Billing Type    | No of Items | Item Type  | Length | Width | Height | TotalWeight | SenderReference | ReceiverReference |
+      | Automation Template1 | General Freight |          10 | Misc units |    100 |   100 |    100 |         900 | Ref123          | Ref456            |
     When User selects Dangerous Goods as Yes
       | DgGoods |
       |       1 |
@@ -22,11 +22,15 @@ Feature: MYT_1650 Shipment: 'Default' mode to ' Quick Entry ' mode
     Then User able to see following fields are autopopulated.
       | Class/Div | SubRisk | PackingGroup | Proper Shoping Name            |
       |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
-       When User Clicks on 'Add' to add Dangerous Goods
+    When User Clicks on 'Add' to add Dangerous Goods
     When User clicks on 'Save template'
     Then Message displays as Line item Template is saved
+      | Message                    |
+      | Template is saved successfully |
     When User clicks on 'Create Shipment'
     Then User navigates to Shipment Overview page and see all the data entered.
+ 
+ 
   #@tag1
   #Scenario: User wants to switch from 'Default' view to 'Quick mode' view and add multiple line items in Intermodal & Specialised
     #When User enters shipment overview details as below to create a shipment

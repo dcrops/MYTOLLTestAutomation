@@ -144,14 +144,15 @@ public class TollTasmaniaTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
-		BookAPickupActions.EnterQuantity(NumberOfItems);
+	
 		// Select service
 		BookAPickupActions.EnterService(ServiceRefrigeration);
-
+		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		BookAPickupActions.SelectDestination1(destination, DestinationItem);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
 

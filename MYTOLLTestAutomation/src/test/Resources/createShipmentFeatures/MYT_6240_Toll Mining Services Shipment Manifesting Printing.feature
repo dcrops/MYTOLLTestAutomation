@@ -1,84 +1,108 @@
 Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
 
   Background: 
-    Given User is Registered in MyToll and is on create shipment page
+    Given User is Registered in MyToll and is on Shipment page
 
   @tag1
   Scenario: User wants to be able to create and print Shipments, Manifests and Labels with one line item in Toll Mining Services
-    When user selects Toll Carrier as below
+    When user selects Toll Carrier as below to create shipment
       | TollCarrier          |
       | Toll Mining Services |
-    Then User be able to see following Services
-      | Service1 | Service2 | Service3   | Service4      | Service5 | Service6   |
-      | General  | Express  | DG Freight | Refrigeration | Premium  | DG Premium |
-    When User enters shipment overview details as below to create a shipment
-      | AccountNumber | Service    | Whopays | locationIndex | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot | CollectionDepot |
-      |        100428 | DG Freight | Sender  |             1 | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 |            1 |               1 |
-    Then User be able to see Mode is default to Road
-      | Mode |
-      | Road |
+    When User continue enters shipment overview details as below to create a shipment
+      | Service    | AccountNumber | Mode | Whopays | Sender | Receiver | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot     | CollectionDepot   |
+      | DG Freight | E92416        |    1 |       1 |      1 |        1 | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ANGLO MINE MOURA | ADELAIDE RAILHEAD |
     When User enters following input data for the line item
-      | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | TotalWeight | SenderReference | ReceiverReference |
-      | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |               50 |         900 | Ref123          | Ref456            |
-    When User selects Dangerous Goods as Yes
+      | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | Weight | SenderReference | ReceiverReference |
+      | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |               50 |    900 | Ref123          | Ref456            |
+    When User selects Dangerous Goods
+      | DgGoods |
+      |       1 |
     And User enters following dangerous goods details
-      | UnNumber | ProperShippingName  | PackingGroup | DGPackageType | DGAggregateQty |
-      |     1234 | Test Technical name |            3 |            20 |             10 |
+      | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |
+      |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |
     Then User be able to see following fields are autopopulated.
-      | Class/Div | SubRisk | PackingGroup |
-      |         3 | NA      | II           |
-    When User enters additional information as below
+      | Class/Div | SubRisk | PackingGroup | Proper Shoping Name            |
+      |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
+    When User clicks on 'ADD' to add dangerous goods details
+    When User enters additional information for shipment as below
       | PurchaseOrder | SpecialInstructions       |
       | Abcd1234      | Test Special Instructions |
-    When User clicks on 'Create Shipment'
-    Then User navigates to Shipment Review page and see Overview details as below.
-      | TollCarrier          | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode |
-      | Toll Mining Services |               |        12345 |       234567 | DG Freight | Rail |
-    Then User can see additional information as below in Shipment Review page
-      | PurchaseOrders | SpecialInstructions       | PalletInfo |
-      | Abcd1234       | Test Special Instructions | No         |
+    Then User clicks on 'Create Shipment' and User navigates to Shipment Review page and see Overview details as below.
+      | TollCarrier          | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode | DropOffDepot     | CollectionDepot   | Whopays |
+      | Toll Mining Services | E92416        |        12345 |       234567 | DG Freight | ROAD | ANGLO MINE MOURA | ADELAIDE RAILHEAD | Sender  |
+    Then User can see additional information of Toll Mining Services as below in Shipment Review page
+      | PurchaseOrders | SpecialInstructions       |
+      | Abcd1234       | Test Special Instructions |
+    Then User be able to see line item headings as below
+      | LineItemName1Heading | ItemTemplateName     | NumberOfItems | ItemDescriptionHeading | ItemsHeading | BillingTypeHeading | DimensionsHeading | TotalVolumeHeading | WeightHeading | Reference1Heading | Reference2Heading | ShipmentContainDangerousGoodsHeading |
+      | Line Item 1          | Automation Template1 |            10 | Item description       | Items        | Billing type       | Dimensions        | Total volume (m3)  | Weight (kg)   | Reference1        | Reference2        | Shipment contain dangerous goods     |
     Then User can see Line Item1 details as below
-      | Item description     | Billing Type    | Items | Length | Width | Height | TotalCubicVolume | TotalWeight | Reference1 | Reference2 | ShipmentContainDangerousGoods |
-      | Automation Template1 | General Freight |    10 |    100 |   100 |    100 |               50 |         900 | Ref123     | Ref456     | No                            |
+      | Item description     | Billing Type    | NumberOfItems | Items | Length | Width | Height | TotalCubicVolume | TotalWeight | Reference1 | Reference2 | ShipmentContainDangerousGoods |
+      | Automation Template1 | General Freight |            10 |    10 |    100 |   100 |    100 | 10 m3            |         900 | Ref123     | Ref456     | Yes                           |
+    Then User can see dangerous good details in shipment review page as below
+      | DangerousGoodsDetailsHeading | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      | Class/Div | SubRisk | PackingGroup | Proper Shoping Name            |
+      | DANGEROUS GOODS DETAILS      |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
     When User clicks on 'Add To Manifest Manually'
+      | ManifestName |
+      | Automation   |
     Then User can add shipment to Manifest successfully.
     When User clicks on Print
     Then User can print manifest successfully.
 
   @tag1
   Scenario: User wants to be able to create and print Shipments, Manifests and Labels with two line items in Toll Mining Services
-    When User enters shipment overview details as below to create a shipment
-      | TollCarrier          | AccountNumber | Service    | Whopays | locationIndex | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot | CollectionDepot |
-      | Toll Mining Services |        100428 | DG Freight | Sender  |             1 | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 |            1 |               1 |
+    When user selects Toll Carrier as below to create shipment
+      | TollCarrier          |
+      | Toll Mining Services |
+    When User continue enters shipment overview details as below to create a shipment
+      | Service    | AccountNumber | Mode | Whopays | Sender | Receiver | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot     | CollectionDepot   |
+      | DG Freight | E92416        |    1 |       1 |      1 |        1 | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ANGLO MINE MOURA | ADELAIDE RAILHEAD |
     When User enters following input data for the line item
-      | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | TotalWeight | SenderReference | ReceiverReference |
-      | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |               50 |         900 | Ref123          | Ref456            |
-    When User selects Dangerous Goods as Yes
+      | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | Weight | SenderReference | ReceiverReference |
+      | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |               50 |    900 | Ref123          | Ref456            |
+    When User selects Dangerous Goods
+      | DgGoods |
+      |       1 |
     And User enters following dangerous goods details
-      | UnNumber | ProperShippingName  | PackingGroup | DGPackageType | DGAggregateQty |
-      |     1234 | Test Technical name |            3 |            20 |             10 |
+      | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |
+      |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |
     Then User be able to see following fields are autopopulated.
-      | Class/Div | SubRisk | PackingGroup |
-      |         3 | NA      | II           |
-    When User clicks on ADD NEW LINES
-    When User enters following input data for the line item
-      | Item description     | Billing Type | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | TotalWeight | SenderReference | ReceiverReference |
-      | Automation Template2 | Express      |          20 | Misc      |    200 |   200 |    200 |              150 |         900 | Ref567          | Ref987            |
-    When User selects Dangerous Goods as No
-    When User clicks on 'Create Shipment'
-    Then User navigates to Shipment Review page and see Overview details as below.
-      | TollCarrier          | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode |
-      | Toll Mining Services |               |        12345 |       234567 | DG Freight | Rail |
-    Then User can see additional information as below in Shipment Review page
-      | PurchaseOrders | SpecialInstructions       | PalletInfo |
-      | Abcd1234       | Test Special Instructions | No         |
+      | Class/Div | SubRisk | PackingGroup | Proper Shoping Name            |
+      |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
+    When User clicks on 'ADD' to add dangerous goods details
+    When User clicks on ADD NEW LINES to add an another item and User enters following input data for the line item
+      | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | TotalWeight | SenderReference | ReceiverReference |
+      | Automation Template2 | General Freight |          20 | Misc      |    200 |   200 |    200 |              150 |         900 | Ref567          | Ref987            |
+    When User selects Dangerous Goods
+      | DgGoods |
+      |       2 |
+    When User enters additional information for shipment as below
+      | PurchaseOrder | SpecialInstructions       |
+      | Abcd1234      | Test Special Instructions |
+    Then User clicks on 'Create Shipment' and User navigates to Shipment Review page and see Overview details as below.
+      | TollCarrier          | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode | DropOffDepot     | CollectionDepot   | Whopays |
+      | Toll Mining Services | E92416        |        12345 |       234567 | DG Freight | ROAD | ANGLO MINE MOURA | ADELAIDE RAILHEAD | Sender  |
+    Then User can see additional information of Toll Mining Services as below in Shipment Review page
+      | PurchaseOrders | SpecialInstructions       |
+      | Abcd1234       | Test Special Instructions |
+    Then User be able to see line item headings as below
+      | LineItemName1Heading | ItemTemplateName     | NumberOfItems | ItemDescriptionHeading | ItemsHeading | BillingTypeHeading | DimensionsHeading | TotalVolumeHeading | WeightHeading | Reference1Heading | Reference2Heading | ShipmentContainDangerousGoodsHeading |
+      | Line Item 1          | Automation Template1 |            10 | Item description       | Items        | Billing type       | Dimensions        | Total volume (m3)  | Weight (kg)   | Reference1        | Reference2        | Shipment contain dangerous goods     |
     Then User can see Line Item1 details as below
-      | Item description     | Billing Type    | Items | Length | Width | Height | TotalCubicVolume | TotalWeight | Reference1 | Reference2 | ShipmentContainDangerousGoods |
-      | Automation Template1 | General Freight |    10 |    100 |   100 |    100 |               50 |         900 | Ref123     | Ref456     | No                            |
-    Then User can see Line Item2 details as below
-      | Item description     | Billing Type | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | TotalWeight | SenderReference | ReceiverReference |
-      | Automation Template2 | Express      |          20 | Misc      |    200 |   200 |    200 |              150 |         900 | Ref567          | Ref987            |
+      | Item description     | Billing Type    | NumberOfItems | Items | Length | Width | Height | TotalCubicVolume | TotalWeight | Reference1 | Reference2 | ShipmentContainDangerousGoods |
+      | Automation Template1 | General Freight |            10 |    10 |    100 |   100 |    100 | 10 m3            |         900 | Ref123     | Ref456     | Yes                           |
+    Then User can see dangerous good details in shipment review page as below
+      | DangerousGoodsDetailsHeading | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      | Class/Div | SubRisk | PackingGroup | Proper Shoping Name            |
+      | DANGEROUS GOODS DETAILS      |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
+    Then User be able to see second line item headings as below
+      | LineItemName2Heading | ItemTemplateName     | NumberOfItems | ItemDescriptionHeading | ItemsHeading | BillingTypeHeading | DimensionsHeading | TotalVolumeHeading | WeightHeading | Reference1Heading | Reference2Heading | ShipmentContainDangerousGoodsHeading |
+      | Line Item 2          | Automation Template2 |            20 | Item description       | Items        | Billing type       | Dimensions        | Total volume (m3)  | Weight (kg)   | Reference1        | Reference2        | Shipment contain dangerous goods     |
+    Then User can see second Line Item details as below
+      | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | TotalWeight | SenderReference | ReceiverReference | ShipmentContainDangerousGoods |
+      | Automation Template2 | General Freight |          20 | Misc      |    200 |   200 |    200 |              150 |         900 | Ref567          | Ref987            | No                            |
     When User clicks on 'Add To Manifest Manually'
+      | ManifestName |
+      | Automation   |
     Then User can add shipment to Manifest successfully.
     When User clicks on Print
     Then User can print manifest successfully.
