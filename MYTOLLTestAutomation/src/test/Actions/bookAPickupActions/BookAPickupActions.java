@@ -62,7 +62,7 @@ public class BookAPickupActions {
 	public static By chargeToAccount = By.xpath("//*[@id=\"charge-to-selector\"]/label/a/i");
 	public static By ReceiverAccount = By.id("reciever-account");
 	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
-	public static By itemDescriptionDropdown = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
+	public static By itemDescriptionDropdown = By.xpath("//*[@id=\"freight-type-selector\"]/div[1]/a/i");//*[@id="freight-type-selector"]/div[1]/a/i
 	public static By itemDescriptionTextField = By.id("item-description");
 	public static By DescriptionOfGoodsTextField = By.id("detailed-description");
 	public static By selectItemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[3]/div");
@@ -1011,7 +1011,8 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).click();
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).clear();
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).sendKeys(itemName);
-
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.ClickOn(itemDescriptionDropdown, 2);
 	}
 
 	public static void DescriptionOfGoods(String pDescriptionOfGoods) {

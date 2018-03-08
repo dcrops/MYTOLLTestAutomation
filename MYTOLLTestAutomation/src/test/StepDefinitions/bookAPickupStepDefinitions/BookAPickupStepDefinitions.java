@@ -59,7 +59,7 @@ public class BookAPickupStepDefinitions{
 			BookAPickupActions.EnterPalletSpace(bookAPickup.get("PalletSpace"));
 			BookAPickupActions.SelectDestination(bookAPickup.get("Destination"));
 			BookAPickupActions.VerifyDestination(bookAPickup.get("destination")); 
-			BookAPickupActions.EnterItem(bookAPickup.get("ItemDescription"));
+			//BookAPickupActions.EnterItem(bookAPickup.get("ItemDescription"));
 			
 					
 		}

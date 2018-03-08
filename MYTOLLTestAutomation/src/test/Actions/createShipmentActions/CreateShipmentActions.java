@@ -11,6 +11,7 @@ import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
@@ -23,8 +24,11 @@ import myTollHomePageActions.MyTollHomePageActions;
 public class CreateShipmentActions {
 
 	public static By createShipmentsHeading = By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/header/div/h1");
-	public static By shipments = By.id("createShipment");
+	public static By shipments = By.id("createShipment"); 
+	public static By dispatchDate = By.id("dispatch-date"); 
+	public static By dispatchDateItem = By.xpath("//*[@id=\"create-shipment\"]/div[1]/div/div/div/ul/li[2]"); 
 	public static By servicedropdown = By.xpath("//*[@id=\"service-selector\"]/label/a/i"); 
+	public static By serviceTextfield = By.name("placeholder-service"); //*[@id="service-selector"]/label/input[2]
 	public static By servicedropdownItemList = By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div"); 
 	public static By mode = By.xpath("//*[@id=\"mode-selector\"]/div[1]/a/i");
 	public static By TempretureTypeDropdown = By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[1]/a/i");
@@ -156,6 +160,18 @@ public class CreateShipmentActions {
 	public static By senderReferenceQME = By.id("sender-reference");
 	public static By receiverReferenceQME = By.id("reciever-reference"); 
 	public static By PackingGroupQME=By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/label/input[2]");
+	
+	//Save as a draft  
+	public static By saveDraft = By.id("save-draft-btn"); 
+	public static By saveDraftSuccessfulMessage = By.xpath("//*[@id=\"confirm-box-wrapper\"]/div/div[1]/div[2]/p");
+	public static By goToMyDashboardBtn = By.id("confirm-true"); 
+	public static By goBackBtn = By.id("confirm-false");  
+	public static By draftShipmentTabInMyDashboard = By.xpath("//*[@id=\"draftshipmentAnchor\"]/span");
+	public static By draftShipmentList=By.xpath("//*[@id=\"draftShipList\"]/tr"); //*[@id="draftShipList"]
+	public static By deleteButtonDraftShipmenInMyDashboard = By.xpath("//*[@id=\"draftShipList\"]//td/span[@class='draftshipDel']/i");//*[@id="draft1531"]/td[5]/a
+	public static By continueDeleteButtonDraftShipmenInMyDashboard = By.id("confirm-true");
+	public static By completeShipmentButtonDraftShipmenInMyDashboard = By.xpath("//*[@id=\"draftShipList\"]/td[5]/a");
+	
 	public static final String SenderAddressCompanyName = "TestSender";
 	public static final String SenderAddressCompanyAdd = "60 Collins Street, MELBOURNE VIC 3000";
 	public static final String ReceiverAddressCompanyName = "TestReceiver";
@@ -167,7 +183,14 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(shipments).click();
 
 	}
-
+	
+	public static void SelectDispatchDate() {
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.ClickOn(dispatchDate, 5);
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.ClickOn(dispatchDateItem, 5);
+		
+	}
 	public static void SelectTollCarrierItem(int j) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/label/a/i")).click();
@@ -207,7 +230,14 @@ public class CreateShipmentActions {
 				.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='" + pService + "']"))
 				.click();
 
-	}//*[@id="service-selector"]/div/ul
+	}
+	
+	public static String GetService() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		return PageBase.GetText(serviceTextfield, 5);
+		
+	}
 	
 	public static int GetServiceItemListSize() {
 		BaseWebdriver.driver.findElement(servicedropdown).click();
@@ -1597,6 +1627,86 @@ public class CreateShipmentActions {
 		PageBase.SelectFrom(
 				By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/div/ul/li/div[text()='" + packagingGroup + "']"), 10);   
 		PageBase.MaximumWaitForElementEnabled();
+	}
+	
+	// Draft Shipment
+	public static void ClickSaveDraft() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(saveDraft, 5);
+		
+	}
+	
+	public static String GetSaveDraftButtonName()
+	{
+		return PageBase.GetText(saveDraft, 5);
+		
+	
+	}
+	
+	public static String GetSaveDraftSuccessfulMessage()
+	{
+		PageBase.MaximumWaitForElementEnabled();
+		return PageBase.GetText(saveDraftSuccessfulMessage, 5);
+		
+	
+	}
+	
+	public static void ClickGoToMyDashboardBtn() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(goToMyDashboardBtn, 5);
+		
+	}
+	
+	public static void ClickGoBackBtn() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(goBackBtn, 5);
+		
+	}
+	
+	public static void ClickDraftShipmentTabInMyDashboard() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(draftShipmentTabInMyDashboard, 5);
+		
+	}
+	public static String GetDraftShipmentTabNameInMyDashboard()
+	{
+		PageBase.MaximumWaitForElementEnabled();
+		return PageBase.GetText(draftShipmentTabInMyDashboard, 5);
+		
+	
+	}  
+	
+	public static String GetDraftShipmentTollCarrierInMyDashboard()
+	{
+		PageBase.MaximumWaitForElementEnabled();
+		return PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5); //*[@id="draft1525"]/td[1]/text()
+			
+	}
+	
+	
+	public static void DeleteExistingDraftShipments()
+	{
+		ClickDraftShipmentTabInMyDashboard();
+		PageBase.MaximumWaitForElementEnabled();
+		List<WebElement> list=BaseWebdriver.driver.findElements(draftShipmentList);
+		System.out.println("Number of draft shipments   "+ list.size()  );
+		if (list.size()>0) {
+						
+		for(int i=1; i<=list.size(); i++)
+		{
+		
+			PageBase.ClickOn(deleteButtonDraftShipmenInMyDashboard, 5); 
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.ClickOn(continueDeleteButtonDraftShipmenInMyDashboard, 5);
+			PageBase.MaximumWaitForElementEnabled();
+		}
+		}
+	}
+	
+	public static void ClickOnDraftShipmenInMyDashboard() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5);
+		
 	}
 	
 }

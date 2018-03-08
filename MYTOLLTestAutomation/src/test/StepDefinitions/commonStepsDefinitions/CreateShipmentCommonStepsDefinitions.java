@@ -25,6 +25,15 @@ public class CreateShipmentCommonStepsDefinitions {
 		CreateShipmentActions.ClickShipment();
 	}
 
+	@Given("^User is Registered in MyToll and is on MyDashboard$")
+	public void user_is_Registered_in_MyToll_and_is_on_MyDashboard() throws Throwable {
+	   
+		BaseWebdriver.setUp();
+		PageBase.MediumWaitForElementEnabled();
+		MyTollHomePageActions.Login(BaseWebdriver.SitUsername1, BaseWebdriver.Password);
+		PageBase.MediumWaitForElementEnabled();
+		MyTollHomePageActions.ClickMenu();
+	}
 		
 	@When("^User selects Toll Carrier and select Service$")
 	public void user_selects_Toll_Carrier_and_select_Service(DataTable shipmentTestData) throws Throwable {

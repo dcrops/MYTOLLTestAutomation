@@ -1,8 +1,8 @@
 @tag
-Feature: MYT_2799 View and access my Account Summary
+Feature: MYT_2700 View and access my Account Summary
 
   Background: 
-    Given User is Registered in MyToll
+   Given User is Registered in MyToll and user has full financial access
 
   @tag1
   Scenario: User wants to view and access Account Summary in TDF

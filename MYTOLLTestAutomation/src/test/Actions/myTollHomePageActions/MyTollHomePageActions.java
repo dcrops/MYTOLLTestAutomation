@@ -30,6 +30,7 @@ public class MyTollHomePageActions {
 	public static By HmbugerMenu=By.xpath("//*[@id=\"nav-opner\"]/i"); 
 	public static By Menulist=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a");
 	public static By BookAPickup=By.id("bookaPickup");
+	public static By MyDashboard=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[1]/a/p");
 	public static By getRateEnquiry=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a[1]/p");
 	public static By templateMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My templates']");
 	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My accounts']");//*[@id="nav-dropdown"]/ul/li[5]/a/span[2] , //*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']
@@ -186,7 +187,7 @@ public class MyTollHomePageActions {
 		}
 	}
 
-	public static void ClickName()
+	public static void ClickName()  
 	{
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
@@ -194,6 +195,14 @@ public class MyTollHomePageActions {
 		BaseWebdriver.driver.findElement(MyProfile).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(MyTemplates).click();
+		PageBase.MaximumWaitForElementEnabled();
+			
+	}
+	
+	public static void ClickMyDashboard()  
+	{
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(MyDashboard, 5);
 		PageBase.MaximumWaitForElementEnabled();
 			
 	}

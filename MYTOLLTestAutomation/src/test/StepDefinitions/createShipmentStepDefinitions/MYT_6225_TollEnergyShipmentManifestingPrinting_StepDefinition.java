@@ -292,7 +292,7 @@ public void user_be_able_to_see_second_line_item_headings_as_below(DataTable shi
 
 		PageBase.Scrollbar(500, 1000);
 				
-		String numberOfItems = shipment.get("ItemsHeading") + " " + shipment.get("No of Items");
+		String numberOfItems = shipment.get("ItemsHeading") + " " + shipment.get("NumberOfItems");
 		ShipmentReviewActions.VerifyLineItem2Headings(shipment.get("LineItemName2Heading"),
 				shipment.get("ItemTemplateName"), numberOfItems, shipment.get("ItemDescriptionHeading"),
 				shipment.get("ItemsHeading"), shipment.get("BillingTypeHeading"), shipment.get("DimensionsHeading"),

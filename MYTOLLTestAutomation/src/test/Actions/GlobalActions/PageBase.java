@@ -1,6 +1,7 @@
 package GlobalActions;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -33,7 +34,13 @@ public class PageBase {
 		}
 		return result;
 	}
-
+	
+	public static WebElement FindElement(By ObjectLocater) {
+		return BaseWebdriver.driver.findElement(ObjectLocater);
+		
+	}
+	
+	
 	public static WebElement WaitForElement(By ObjectLocater, int secsToWait) {
 		WebElement element=BaseWebdriver.driver.findElement(ObjectLocater);
 		return (new WebDriverWait(BaseWebdriver.driver, secsToWait)).until(ExpectedConditions.presenceOfElementLocated(ObjectLocater));//.visibilityOf());
