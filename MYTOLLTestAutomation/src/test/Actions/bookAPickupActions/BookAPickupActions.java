@@ -427,11 +427,21 @@ public class BookAPickupActions {
 		PageBase.MinimumWaitForElementEnabled();
 		//PageBase.SendKeysToNonEditableField(AccountNumberTextField, pAccountNumber, 15); 
 		PageBase.ClickOn(AccountNumberDropdown, 5);
-
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SelectFrom(By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()='" + pAccountNumber + "']"),
 				15);
-
-	}
+		//*[@id="account-selector"]/div/ul/li[3]/div[1]
+	} 
+	
+	public static void EnterAccountNumberIPEC(String pAccountNumber) {
+		PageBase.MinimumWaitForElementEnabled();
+		//PageBase.SendKeysToNonEditableField(AccountNumberTextField, pAccountNumber, 15); 
+		PageBase.ClickOn(AccountNumberDropdown, 5);
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.SelectFrom(By.xpath("//*[@id=\"account-selector\"]/div/ul/li[3]/div[text()='" + pAccountNumber + "']"),
+				15);
+		//*[@id="account-selector"]/div/ul/li[3]/div[1]
+	} 
 
 	public static void SelectPickupLocation() {
 		PageBase.MinimumWaitForElementEnabled();
@@ -1012,7 +1022,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).clear();
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).sendKeys(itemName);
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(itemDescriptionDropdown, 2);
+		//PageBase.ClickOn(itemDescriptionDropdown, 2);
 	}
 
 	public static void DescriptionOfGoods(String pDescriptionOfGoods) {

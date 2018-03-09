@@ -74,8 +74,8 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
       |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
     When User clicks on ADD NEW LINES to add more items
     And User enter following input data to Add Item
-      | Service | Destination | ItemDescription      | NoOfItems | PalletSpace |
-      | Express | MELALEUCA   | Automation Template2 |        10 |           6 |
+      | Service | Destination | ItemDescription      | NoOfItems | PalletSpace |destination     |
+      | Express | MELALEUCA   | Automation Template2 |        10 |           6 |MELALEUCA, 6079 |
     And User Selects Charge to Account as below
       | ChargeToAccount | AccountNumber |
       |               1 |         12345 |

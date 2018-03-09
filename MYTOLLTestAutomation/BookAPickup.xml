@@ -40,14 +40,13 @@
 	<parameter name="AccountNumberTINTER" value="371065" />
 	<parameter name="AccountNumberTollNQX" value="371065" />
 	<parameter name="AccountNumberTollTas" value="100428" />
-	<parameter name="AccountNumberTIPEC" value="FC3333" />
+	<parameter name="AccountNumberTIPEC" value="3N7763" />
 	<parameter name="AccountNumberTollPrioAu" value="200BHY" />
 	<parameter name="AccountNumberTollPrioNZ" value="100181" />
 	<parameter name="AccountNumber1" value="" />
 	<parameter name="AccountNumberTInter" value="" />
 	<parameter name="AccountNumberTNQX" value="" />
 	<parameter name="AccountNumberTTas" value="" />
-	<parameter name="AccountNumberTIPEC" value="" />
 	<parameter name="AccountNumberTPrioAU" value="" />
 	<parameter name="AccountNumberTPrioNZ" value="" />
 	<parameter name="AccountAccessTypeFullFinancial" value="Full Financial" />
@@ -145,8 +144,7 @@
 
 		<classes>
 		
-		
-			<class name="bookAPickupE2ETests.TollPriorityAusTest" />
+		<class name="bookAPickupE2ETests.TollIPECTest" />
 		
       </classes>
 

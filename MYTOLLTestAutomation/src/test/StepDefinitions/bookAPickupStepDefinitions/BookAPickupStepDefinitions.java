@@ -55,7 +55,7 @@ public class BookAPickupStepDefinitions{
 			PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.EnterService(bookAPickup.get("Service"));
 			BookAPickupActions.EnterQuantity(bookAPickup.get("NoOfItems"));
-
+			BookAPickupActions.EnterItem(bookAPickup.get("ItemDescription"));
 			BookAPickupActions.EnterPalletSpace(bookAPickup.get("PalletSpace"));
 			BookAPickupActions.SelectDestination(bookAPickup.get("Destination"));
 			BookAPickupActions.VerifyDestination(bookAPickup.get("destination")); 
