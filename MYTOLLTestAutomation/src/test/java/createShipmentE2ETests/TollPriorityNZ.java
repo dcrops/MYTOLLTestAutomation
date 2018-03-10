@@ -24,7 +24,7 @@ public class TollPriorityNZ {
 	}
 
 	 @Test
-	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "WhoPays", "whoPays", "Sender", "Receiver",
+	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "WhoPays", "whoPays", "Sender", "ReceiverTGX",
 			"QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
 			"ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "DGYes", "DGNo",
@@ -36,7 +36,7 @@ public class TollPriorityNZ {
 			"VolumeLineItem1", "VolumeLineItem2", "ShipmentContainDangerousGoodsYes",
 			"ShipmentContainDangerousGoodsNo" })
 	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_GlobalExpressDocuments(String TollCarrier,
-			String ServiceGlobalExpressDocuments, Integer WhoPays, String whoPays, Integer Sender, Integer Receiver,
+			String ServiceGlobalExpressDocuments, Integer WhoPays, String whoPays, Integer Sender, String Receiver,
 			String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName, String SenderEmail,
 			String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String ItemTemplateName2,
@@ -57,7 +57,7 @@ public class TollPriorityNZ {
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.SelectReceiver(Receiver);
+		CreateShipmentActions.EnterReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();

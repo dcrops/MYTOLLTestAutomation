@@ -31,11 +31,12 @@ public class MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition {
 			//PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.mode);
 			String s3 = shipment.get("Sender");
 			System.out.println("S3  " + s3);
-			CreateShipmentActions.SelectSender(Integer.parseInt(s3));
+			//CreateShipmentActions.SelectSender(Integer.parseInt(s3));
+			CreateShipmentActions.EnterSender(shipment.get("Sender"));
 			String s4 = shipment.get("Receiver");
 			System.out.println("S4  " + s4);
-			CreateShipmentActions.SelectReceiver(Integer.parseInt(s4));
-
+			//CreateShipmentActions.SelectReceiver(Integer.parseInt(s4));
+			CreateShipmentActions.EnterReceiver(shipment.get("Receiver"));
 			CreateShipmentActions.SelectShipmentConsolidationContinue();
 
 			/*PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,

@@ -170,7 +170,7 @@ public class CreateShipmentActions {
 	public static By draftShipmentList=By.xpath("//*[@id=\"draftShipList\"]/tr"); //*[@id="draftShipList"]
 	public static By deleteButtonDraftShipmenInMyDashboard = By.xpath("//*[@id=\"draftShipList\"]//td/span[@class='draftshipDel']/i");//*[@id="draft1531"]/td[5]/a
 	public static By continueDeleteButtonDraftShipmenInMyDashboard = By.id("confirm-true");
-	public static By completeShipmentButtonDraftShipmenInMyDashboard = By.xpath("//*[@id=\"draftShipList\"]/td[5]/a");
+	public static By completeShipmentButtonDraftShipmenInMyDashboard = By.xpath("//*[@id=\"draftShipList\"]/td[5]/a"); 
 	
 	public static final String SenderAddressCompanyName = "TestSender";
 	public static final String SenderAddressCompanyAdd = "60 Collins Street, MELBOURNE VIC 3000";
@@ -235,7 +235,7 @@ public class CreateShipmentActions {
 	public static String GetService() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		return PageBase.GetText(serviceTextfield, 5);
+		return PageBase.GetAttributeValue(serviceTextfield, 5);
 		
 	}
 	
@@ -315,15 +315,15 @@ public class CreateShipmentActions {
 
 	}
 
-	public static void EnterSender(String pSender, String pSenderItem) {
+	public static void EnterSender(String pSender) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(senderTextfield).click();
 		BaseWebdriver.driver.findElement(senderTextfield).clear();
 		BaseWebdriver.driver.findElement(senderTextfield).sendKeys(pSender);
 		PageBase.Scrollbar(500, 800);
 		BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()=" + pSenderItem + "]"))
-				.click();
+				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()='" + pSender + "']"))
+				.click(); //*[@id="sender-selector"]/div[2]/ul/li[6]/div[1]
 		PageBase.MaximumWaitForElementEnabled();
 
 	}
@@ -363,18 +363,18 @@ public class CreateShipmentActions {
 		PageBase.Scrollbar(500, 800);
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
 				.click();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();//*[@id="receiver-selector"]/div[2]/ul/li/div[1]
 
 	}
 
-	public static void EnterReceiver(String Receiver, String pReceiver) {
+	public static void EnterReceiver(String Receiver) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(receiverTextfield).click();
 		BaseWebdriver.driver.findElement(receiverTextfield).clear();
 		BaseWebdriver.driver.findElement(receiverTextfield).sendKeys(Receiver);
 		PageBase.Scrollbar(500, 800);
 		BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='" + pReceiver + "']"))
+				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='" + Receiver + "']"))
 				.click();
 
 		PageBase.MaximumWaitForElementEnabled();
@@ -970,6 +970,7 @@ public class CreateShipmentActions {
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String ShipmentRef1,
 			String ShipmentRef2) {
 		// PageBase.Scrollbar(coord1,coord2);
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.Scrollbar(200, 500);
 		BaseWebdriver.driver.findElement(addNewLine).click();
 		PageBase.MaximumWaitForElementEnabled();
@@ -1683,6 +1684,19 @@ public class CreateShipmentActions {
 			
 	}
 	
+	public static String GetDraftShipmentSenderInMyDashboard()
+	{
+		PageBase.MaximumWaitForElementEnabled();
+		return PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[2]"), 5); //*[@id="draft1525"]/td[1]/text()
+			
+	}
+	
+	public static String GetDraftShipmentReceiverInMyDashboard()
+	{
+		PageBase.MaximumWaitForElementEnabled();
+		return PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[3]"), 5); //*[@id="draft1525"]/td[1]/text()
+			
+	}
 	
 	public static void DeleteExistingDraftShipments()
 	{
@@ -1707,6 +1721,21 @@ public class CreateShipmentActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5);
 		
+	}
+	
+	public static void VerifyDraftShipmentHasRemovedFromMyDashboard()
+	{
+		PageBase.MaximumWaitForElementEnabled();
+		try {
+		PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5);
+		assertEquals("123", "1234");
+		}
+		catch (Exception ex)
+		{
+			System.out.println("Draft Shipment has been removed");
+		}
+	
+			
 	}
 	
 }

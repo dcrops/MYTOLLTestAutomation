@@ -53,6 +53,7 @@
 	<!---Item test data -->
 
 	<parameter name="locationIndex" value="1" />
+		<parameter name="location" value="AccessHQ" />
 	<parameter name="ItemTemplateName" value="Automation Template1" />
 	<parameter name="ItemTemplateName2" value="Automation Template2" />
 	<parameter name="Mode" value="2" />
@@ -144,7 +145,7 @@
 
 		<classes>
 		
-		<class name="bookAPickupE2ETests.TollIPECTest" />
+		<class name="bookAPickupE2ETests.TollPriorityAusTest" />
 		
       </classes>
 

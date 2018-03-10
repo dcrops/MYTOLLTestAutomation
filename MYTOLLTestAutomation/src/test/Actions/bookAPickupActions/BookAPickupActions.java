@@ -636,6 +636,7 @@ public class BookAPickupActions {
 		return vLocation;
 
 	}
+	
 
 	public static String GetLocationAddressLine2(Integer i) {
 		PageBase.MaximumWaitForElementEnabled();

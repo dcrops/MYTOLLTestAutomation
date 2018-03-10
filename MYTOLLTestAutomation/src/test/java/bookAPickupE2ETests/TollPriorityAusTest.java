@@ -29,12 +29,12 @@ public class TollPriorityAusTest {
 
 	//@Test(priority=-1)
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 			"Destination", "DestinationItem","DestinationPostcode", "specialIns" })
 
 	public void BookAPickup_TollPriority_AUS_E2ETest_TID_620_Service_ServiceParcelsOffPeak(String TollCarrier,
-			String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+			String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,
 			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 			String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns) {
 
@@ -49,15 +49,15 @@ public class TollPriorityAusTest {
 
 		//Add Address
 		//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
-		BookAPickupActions.AddAddressAustraliaManuallyPrioAUS("AccessHQ","AUSTRALIA","ABC","CDE", "Melbourne","3004, MELBOURNE, VIC, AU", "NNAutomationuser1@gmail.com", "412367897", "Australia");
+		BookAPickupActions.AddAddressAustraliaManuallyPrioAUS(location,"AUSTRALIA","ABC","CDE", "Melbourne","3004, MELBOURNE, VIC, AU", "NNAutomationuser1@gmail.com", "412367897", "Australia");
 		//BookAPickupActions.ClickAddAddress();
 		//BookAPickupActions.SelectLocation2(locationIndex);
 		
 
 		String company = BookAPickupActions.GetCompany(1);
 		System.out.println(company);
-		String location = BookAPickupActions.GetLocation(1);
-		System.out.println(location);
+		//String location = BookAPickupActions.GetLocation(1);
+		//System.out.println(location);
 		String locationLine2 = BookAPickupActions.GetLocationAddressLine2(1);
 		System.out.println(locationLine2);
 		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber(1);
@@ -113,7 +113,7 @@ public class TollPriorityAusTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNumber, company, companyLocation, name,
+		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNumber, location, "ABC CDE MELBOURNE VIC 3004 AU", name,
 				userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYourPickupActions.VerifyItemDetails1TollPrioAU("0", "ITEM DETAILS","Box / Carton", DestinationPostcode,
 				ServiceParcelsOffPeak,  NumberOfItems,  Length, Width, Height,

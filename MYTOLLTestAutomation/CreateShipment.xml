@@ -270,6 +270,7 @@
 		<parameter name="ModeInt" value="1" />
 		<parameter name="Receiver" value="1" />
 		<parameter name="Sender" value="1" />
+		<parameter name="ReceiverTGX" value="NZ Post Ltd" />
 		<parameter name="ReceiverName" value="Test" />
 		<parameter name="ReceiverItem" value="Toll Group Test" />
 		<parameter name="SenderEmail" value="CF@TEST.COM" />
@@ -279,6 +280,7 @@
 		<parameter name="QuoteNumber" value="5123355" />
 		<parameter name="DropOffDepot" value="ADELAIDE  TNQX" />
 		<parameter name="CollectionDepot" value="ADELAIDE S-LINE TNQX" />
+		<parameter name="CollectionDepotTTas" value="ADELAIDE EQUIPMENT DEHIRE" />
 		<parameter name="dropOffDepot" value="1" />
 		<parameter name="collectionDepot" value="2" />
 		<parameter name="BillingType" value="General Freight" />
@@ -340,6 +342,16 @@
 
 
 	
+<groups>
+			<run>
+				<include name="Shakeout Testing" />
+			</run>
+		</groups>
+
+		<classes>
+			
+<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+      </classes>
 
 	
 

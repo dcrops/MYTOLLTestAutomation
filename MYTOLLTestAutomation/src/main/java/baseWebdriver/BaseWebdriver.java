@@ -27,10 +27,21 @@ public class BaseWebdriver {
 	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
 	public static String SitUrl="https://ps.mytoll.com/"; 
 	
-	public static String Username1="SitAutomationuser@yahoo.com"; //"NNAutomationuser1@gmail.com"; 
+
+	// Preprod users
+	public static String Username1="NNAutomationuser1@gmail.com"; 
+	
+	//BU Admin users
 	public static String Username2= "auto_bvt_ps@mailinator.com"; 
-	public static String SitUsername1="SitAutomationuser@yahoo.com"; //
+	public static String SitUsername1="SitAutomationuser@yahoo.com"; 
+	
+	//Platform admin user
+	public static String SitUsername2="SitAutomationuser2@yahoo.com"; 
+	
+	//Performance Test Env user
 	public static String PerformenceUsername1="perftest@toll.com";
+	
+	//Passwords
 	public static String Password="Toll@123";  
 	public static String PerformancePassword="Victoria@123"; 
 
