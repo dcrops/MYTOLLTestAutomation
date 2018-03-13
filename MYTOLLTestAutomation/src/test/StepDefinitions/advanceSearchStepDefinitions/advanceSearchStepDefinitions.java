@@ -985,13 +985,27 @@ public class advanceSearchStepDefinitions {
 		
 		@Then("^User Verifies if Saved Search is Availble in the Dropdown$")
 		public void UserVerifiesIfSavedSearchIsAvailbleInTheDropdown() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			System.out.println("Test" +SaveSearchName );
+			MyTollHomePageActions.ClickMenu();
+			PageBase.click(MyTollHomePageActions.Dashboard, 2);
+			MyTollHomePageActions.ClickAdvanceSearchTab();
+			PageBase.MinimumWaitForElementEnabled_1();
 			PageBase.sendText(MyTollHomePageActions.LoadSearchDropDown, 5, SaveSearchName);
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.click(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']"), 5);
 		}
 		
 		
-
+		@And("^User Verifies if Save Search is existing in Module 3 of Advance Search$")
+		public void UserVerifiesIfSaveSearchIsExistingInModule3OfAdvanceSearch() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			MyTollHomePageActions.ClickMenu();
+			PageBase.click(MyTollHomePageActions.Dashboard, 2);	
+			PageBase.click(MyTollHomePageActions.SavedSearchTab, 2);
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.isElementPresent(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]"), 5, "Saved Search - "+SaveSearchName);	
+		}
 		
 		
 }

@@ -20,13 +20,11 @@ Feature: MYT-3483 Advance Search : View Search Shipment Results
      And Save Search Option is visible
      Then User Selects Save Search Option
      Then User Verifies if Saved Search is Availble in the Dropdown
+     Then User Clicks Search and results are displayed
+#     |Verify Search Results are reflected according to tags|
      
-#     |SaveSearchName| Message|
-#     |SaveSearchName|Successfull Save Message (TO BE CHANGED)|
-#     And User Verifies if Save Search is existing in Module 3 of Advance Search
-#     Then User loads the Saved Search to Advance Search
-#     |SaveSearchName|
-#     |SaveSearchName|
+     And User Verifies if Save Search is existing in Module 3 of Advance Search
+	 Then User loads the Saved Search to Advance Search
 #     And User Downloads the Save Search
 #     Then User must have the option to download as PDF and CSV
 #     And User clicks edit search

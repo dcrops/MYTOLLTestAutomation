@@ -35,6 +35,8 @@ public class MyTollHomePageActions {
 	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My accounts']");//*[@id="nav-dropdown"]/ul/li[5]/a/span[2] , //*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']
 	public static By myContactMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My contacts']");
 	public static By aboutMeMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='About me']");
+	public static By Dashboard = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='Go to my dashboard']");
+	public static By SavedSearchTab = By.xpath("//*[@id=\"savedSearchTabAnchor\"]/span");
 	//*[@id="nav-dropdown"]/ul/li[1]/a/span
 	
 	
