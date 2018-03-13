@@ -19,7 +19,7 @@ public class FinancialCommonStepsDefinitions {
 	@Given("^User is Registered in MyToll and user has full financial access$")
 	public void user_is_Registered_in_MyToll_and_user_has_full_financial_access() throws Throwable {
 		BaseWebdriver.setUp();
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.Login(BaseWebdriver.SitUsername1, BaseWebdriver.Password);
 		PageBase.MediumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();

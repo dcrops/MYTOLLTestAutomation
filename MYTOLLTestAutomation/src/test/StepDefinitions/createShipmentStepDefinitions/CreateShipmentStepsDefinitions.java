@@ -18,7 +18,7 @@ public class CreateShipmentStepsDefinitions  {
 	public void user_enters_following_input_data_for_the_line_item(DataTable shipmentTestData) throws Throwable {
 
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
-
+			PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.EnterItem(shipment.get("Item description"));
 			CreateShipmentActions.EnterBillingType(shipment.get("Billing Type"));
 			CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));

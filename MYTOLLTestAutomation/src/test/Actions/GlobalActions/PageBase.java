@@ -161,7 +161,7 @@ public class PageBase {
 
 	public static void MaximumWaitForElementEnabled() {
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(1500);
 
 		}
 

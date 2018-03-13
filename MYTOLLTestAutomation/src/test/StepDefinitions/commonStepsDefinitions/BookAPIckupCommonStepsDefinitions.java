@@ -21,6 +21,7 @@ public class BookAPIckupCommonStepsDefinitions {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.SitUsername1, BaseWebdriver.Password);
 		MyTollHomePageActions.LaunchMyToll("https://ps.mytoll.com/");
+		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}

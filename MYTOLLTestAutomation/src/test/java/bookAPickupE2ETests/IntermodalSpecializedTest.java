@@ -25,8 +25,8 @@ public class IntermodalSpecializedTest {
 	@BeforeMethod(alwaysRun = true)
 	//@BeforeMethod
 	public void RunSetup(String browser) throws Exception {
-		//BaseWebdriver.setUp();
-		BaseWebdriver.SetUp(browser);
+		BaseWebdriver.setUp();
+		//BaseWebdriver.SetUp(browser);
 		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();

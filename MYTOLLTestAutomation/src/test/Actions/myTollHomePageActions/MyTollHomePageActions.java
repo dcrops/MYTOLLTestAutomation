@@ -18,7 +18,7 @@ public class MyTollHomePageActions {
 	/* Login */
 	
 	public static By login=By.id("lnk-login");
-	public static By emailAddress=By.id("_com_liferay_login_web_portlet_LoginPortlet_login");
+	public static By emailAddress=By.id("_com_liferay_login_web_portlet_LoginPortlet_login"); //"_com_liferay_login_web_portlet_LoginPortlet_login");
 	public static By passwordLable=By.className("_com_liferay_login_web_portlet_LoginPortlet_password");
 	public static By password=By.id("_com_liferay_login_web_portlet_LoginPortlet_password");
 	public static By loginBtn=By.id("login-btn");
@@ -163,7 +163,10 @@ public class MyTollHomePageActions {
 	{
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.navigate().refresh();
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(login);
+		
+		PageBase.MaximumWaitForElementEnabled();
 		try {
 			Boolean results=BaseWebdriver.driver.findElement(emailAddress).isDisplayed();
 			if(results=true)
@@ -181,6 +184,7 @@ public class MyTollHomePageActions {
 			BaseWebdriver.setUp();
 			BaseWebdriver.driver.navigate().refresh();
 			PageBase.retryingFindClick(login);
+			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(emailAddress).sendKeys(userName);
 			BaseWebdriver.driver.findElement(password).sendKeys(pPassword);
 			BaseWebdriver.driver.findElement(loginBtn).sendKeys(Keys.ENTER);
@@ -264,7 +268,7 @@ public class MyTollHomePageActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		//BaseWebdriver.driver.findElement(HmbugerMenu).click();
-		PageBase.click(HmbugerMenu, 5);
+		PageBase.ClickOn(HmbugerMenu, 5);
 		//BaseWebdriver.driver.findElement(Menulist).click();
 	}
 	

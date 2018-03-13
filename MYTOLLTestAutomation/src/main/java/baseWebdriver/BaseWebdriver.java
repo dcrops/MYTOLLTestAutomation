@@ -29,7 +29,7 @@ public class BaseWebdriver {
 	
 
 	// Preprod users
-	public static String Username1="NNAutomationuser1@gmail.com"; 
+	public static String Username1="SitAutomationuser@yahoo.com"; 
 	
 	//BU Admin users
 	public static String Username2= "auto_bvt_ps@mailinator.com"; 
@@ -37,7 +37,10 @@ public class BaseWebdriver {
 	
 	//Platform admin user
 	public static String SitUsername2="SitAutomationuser2@yahoo.com"; 
-	
+
+	//Sit Normal user
+	public static String SitUsername3="SitAutomationuser3@yahoo.com"; 
+		
 	//Performance Test Env user
 	public static String PerformenceUsername1="perftest@toll.com";
 	
@@ -95,7 +98,7 @@ public class BaseWebdriver {
 
 		PageBase.MaximumWaitForElementEnabled();
 		//BaseWebdriver.driver.manage().window().maximize();
-		System.out.println(driver.manage().window().getSize());
+		//System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 	}
@@ -103,9 +106,10 @@ public class BaseWebdriver {
 	@BeforeMethod
 	public static void setUp() throws Exception {
 		//DesiredCapabilities capabilities = new DesiredCapabilities();
-		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
+		//BaseWebdriver.driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (4)\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
-
 		MyTollHomePageActions.LaunchMyToll(SitUrl);
 
 		PageBase.MaximumWaitForElementEnabled();

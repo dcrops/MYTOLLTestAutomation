@@ -18,9 +18,8 @@ public class CreateShipmentCommonStepsDefinitions {
 	public void user_is_Registered_in_MyToll_and_is_on_Shipment_page() throws Throwable {
 
 		BaseWebdriver.setUp();
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.Login(BaseWebdriver.SitUsername1, BaseWebdriver.Password);
-		PageBase.MediumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();
 	}
@@ -29,7 +28,7 @@ public class CreateShipmentCommonStepsDefinitions {
 	public void user_is_Registered_in_MyToll_and_is_on_MyDashboard() throws Throwable {
 	   
 		BaseWebdriver.setUp();
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.Login(BaseWebdriver.SitUsername1, BaseWebdriver.Password);
 		PageBase.MediumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();

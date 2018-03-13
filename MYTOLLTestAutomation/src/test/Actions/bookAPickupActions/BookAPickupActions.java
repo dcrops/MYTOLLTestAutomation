@@ -282,7 +282,7 @@ public class BookAPickupActions {
 
 	// Quick Entry Mode Yes
 
-	public static By QuickEntryMode = By.xpath("//*[@id=\"grid-view-selector-wrpr\"]/div[2]/label/span[2]"); 
+	public static By QuickEntryMode = By.xpath("//*[@id=\"quick-entry-wrapper\"]/div[2]/label/span[1]"); //*[@id="quick-entry-wrapper"]/div[2]/label/span[1]
 	public static By serviceQME = By.id("gv-service-type-label");
 	public static By destinationQME = By.id("gv-destination-address");
 	public static By cahrgeToQME = By.xpath("//*[@id=\"gv-charge-to-selector\"]/label/input[2]");

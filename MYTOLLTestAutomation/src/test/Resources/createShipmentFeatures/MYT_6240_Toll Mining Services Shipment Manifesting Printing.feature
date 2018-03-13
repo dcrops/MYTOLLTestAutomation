@@ -9,8 +9,8 @@ Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
       | TollCarrier          |
       | Toll Mining Services |
     When User continue enters shipment overview details as below to create a shipment
-      | Service    | AccountNumber | Mode | Whopays | Sender | Receiver | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot     | CollectionDepot   |
-      | DG Freight | E92416        |    1 |       1 |      1 |        1 | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ANGLO MINE MOURA | ADELAIDE RAILHEAD |
+      | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot     | CollectionDepot   |
+      | DG Freight | E92416        |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ANGLO MINE MOURA | ADELAIDE RAILHEAD |
     When User enters following input data for the line item
       | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | Weight | SenderReference | ReceiverReference |
       | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |               50 |    900 | Ref123          | Ref456            |
@@ -55,8 +55,8 @@ Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
       | TollCarrier          |
       | Toll Mining Services |
     When User continue enters shipment overview details as below to create a shipment
-      | Service    | AccountNumber | Mode | Whopays | Sender | Receiver | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot     | CollectionDepot   |
-      | DG Freight | E92416        |    1 |       1 |      1 |        1 | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ANGLO MINE MOURA | ADELAIDE RAILHEAD |
+      | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot     | CollectionDepot   |
+      | DG Freight | E92416        |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ANGLO MINE MOURA | ADELAIDE RAILHEAD |
     When User enters following input data for the line item
       | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | Weight | SenderReference | ReceiverReference |
       | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |               50 |    900 | Ref123          | Ref456            |
@@ -72,7 +72,7 @@ Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
     When User clicks on 'ADD' to add dangerous goods details
     When User clicks on ADD NEW LINES to add an another item and User enters following input data for the line item
       | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | TotalWeight | SenderReference | ReceiverReference |
-      | Automation Template2 | General Freight |          20 | Misc      |    200 |   200 |    200 |              160 m3 |         900 | Ref567          | Ref987            |
+      | Automation Template2 | General Freight |          20 | Misc      |    200 |   200 |    200 | 160 m3           |         900 | Ref567          | Ref987            |
     When User selects Dangerous Goods
       | DgGoods |
       |       2 |
@@ -99,7 +99,7 @@ Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
       | Line Item 2          | Automation Template2 |            20 | Item description       | Items        | Billing type       | Dimensions        | Total volume (m3)  | Weight (kg)   | Reference1        | Reference2        | Shipment contain dangerous goods     |
     Then User can see second Line Item details as below
       | Item description     | Billing Type    | NumberOfItems | Item Type | Length | Width | Height | TotalCubicVolume | TotalWeight | SenderReference | ReceiverReference | ShipmentContainDangerousGoods |
-      | Automation Template2 | General Freight |          20 | Misc      |    200 |   200 |    200 |              160 m3 |         900 | Ref567          | Ref987            | No                            |
+      | Automation Template2 | General Freight |            20 | Misc      |    200 |   200 |    200 | 160 m3           |         900 | Ref567          | Ref987            | No                            |
     When User clicks on 'Add To Manifest Manually'
       | ManifestName |
       | Automation   |

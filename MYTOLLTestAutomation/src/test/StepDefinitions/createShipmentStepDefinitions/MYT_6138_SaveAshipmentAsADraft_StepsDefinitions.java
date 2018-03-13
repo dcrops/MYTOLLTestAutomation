@@ -50,12 +50,31 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 		}
 	}
 
+	@When("^User enters following fields to create a shipment$")
+	public void user_enters_following_fields_to_create_a_shipment(DataTable shipmentTestData) throws Throwable {
+
+		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			BookAPickupActions.EnterTollCarrier(shipment.get("TollCarrier"));
+			CreateShipmentActions.EnterService(shipment.get("Service"));
+			BookAPickupActions.EnterAccountNumber(shipment.get("AccountNumber"));
+		}
+	}
+
 	@When("^User Clicks on the Save Draft option$")
 	public void user_Clicks_on_the_Save_Draft_option() throws Throwable {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		CreateShipmentActions.ClickSaveDraft();
 
+	}
+
+	@When("^User Clicks on the Save Draft option next to Review Shipment Button$")
+	public void user_Clicks_on_the_Save_Draft_option_next_to_Review_Shipment_Button() throws Throwable {
+		PageBase.Scrollbar(500, 1000);
+		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.receiverEmail);
+		PageBase.MaximumWaitForElementEnabled();
+		CreateShipmentActions.ClickSaveDraft();
 	}
 
 	@Then("^User be able to see UI prompt displaying the Shipment has been Saved as a Draft$")
@@ -121,14 +140,13 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 
 			PageBase.MaximumWaitForElementEnabled();
 			assertEquals(shipment.get("AccountNumber").replaceAll("\\s", ""), BookAPickupActions.GetAccountNumber());
-			System.out.println(
-					"Account number  " + BookAPickupActions.GetAccountNumber());
+			System.out.println("Account number  " + BookAPickupActions.GetAccountNumber());
 			assertEquals(shipment.get("TollCarrier").replaceAll("\\s", ""), BookAPickupActions.GetTollCarrier());
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
-			assertEquals(shipment.get("Service").replaceAll("\\s", ""), CreateShipmentActions.GetService());
-			System.out.println(
-					"Service  " + CreateShipmentActions.GetService());
+			assertEquals(shipment.get("Service").replaceAll("\\s", ""),
+					CreateShipmentActions.GetService().replaceAll("\\s", ""));
+			System.out.println("Service  " + CreateShipmentActions.GetService());
 
 		}
 
@@ -168,15 +186,64 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 		}
 
 	}
-	
+
 	@When("^User changes either of the fields$")
 	public void user_changes_either_of_the_fields(DataTable arg1) throws Throwable {
-	   
+
 	}
 
 	@Then("^User can see all other fields cleared$")
 	public void user_can_see_all_other_fields_cleared(DataTable arg1) throws Throwable {
-	
+
 	}
 
+	@When("^user moves to shipment reference number$")
+	public void user_moves_to_shipment_reference_number() throws Throwable {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
+	}
+
+	@Then("^User selects the Service and other details as below to complete the shipment as below$")
+	public void user_selects_the_Service_and_other_details_as_below_to_complete_the_shipment_as_below(
+			DataTable shipmentTestData) throws Throwable {
+
+		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
+
+			CreateShipmentActions.EnterService(shipment.get("Service"));
+			String s = shipment.get("Whopays");
+			System.out.println("S  " + s);
+			CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
+			BookAPickupActions.EnterAccountNumber(shipment.get("AccountNumber"));
+
+			CreateShipmentActions.EnterSender(shipment.get("Sender"));
+
+			CreateShipmentActions.EnterReceiver(shipment.get("Receiver") + " ");
+			CreateShipmentActions.SelectShipmentConsolidationContinue();
+			CreateShipmentActions.EnterShipmentReference1(shipment.get("ShipmentRef1"));
+			BookAPickupActions.EnterItem(shipment.get("Item description"));
+			CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));
+			BookAPickupActions.EnterLengthWidthHeight(shipment.get("Length"), shipment.get("Width"),
+					shipment.get("Height"));
+			CreateShipmentActions.EnterWeight(shipment.get("Weight"));
+			PageBase.MoveToElement(CreateShipmentActions.senderReference, BookAPickupActions.dangerousGoodNo);
+
+			CreateShipmentActions.EnterSenderReference(shipment.get("SenderReference"),
+					shipment.get("ReceiverReference"));
+			PageBase.Scrollbar(500, 800);
+			BookAPickupActions.selectDangerousGood();
+			PageBase.Scrollbar(1200, 1500);
+
+		}
+
+	}
+
+	@When("^User enters following input data to complete the shipment as below$")
+	public void user_enters_following_input_data_to_complete_the_shipment_as_below(DataTable arg1) throws Throwable {
+
+	}
+
+	@When("^User Clicks on 'Review & Create Shipment' and see all data$")
+	public void user_Clicks_on_Review_Create_Shipment_and_see_all_data(DataTable arg1) throws Throwable {
+
+	}
 }

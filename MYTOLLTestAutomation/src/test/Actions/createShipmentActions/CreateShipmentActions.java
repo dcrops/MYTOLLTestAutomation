@@ -373,6 +373,7 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(receiverTextfield).clear();
 		BaseWebdriver.driver.findElement(receiverTextfield).sendKeys(Receiver);
 		PageBase.Scrollbar(500, 800);
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='" + Receiver + "']"))
 				.click();
