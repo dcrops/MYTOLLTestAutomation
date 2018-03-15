@@ -933,7 +933,7 @@ public class IntermodalSpecializedTests {
 
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
-		BookAPickupActions.ClickAdd();
+		
 		String un = CreateShipmentActions.GetUNNumber();
 		System.out.println("Un----" + un);
 		String classDivision = CreateShipmentActions.GetClassDivision();
@@ -944,6 +944,8 @@ public class IntermodalSpecializedTests {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = CreateShipmentActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
+		
+		BookAPickupActions.ClickAdd();
 
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
 				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);

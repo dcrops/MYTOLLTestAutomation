@@ -6,7 +6,7 @@ Feature: MYT-5885 User needs to Edit Sender Address from 'Book a pickup' page
   Scenario: User Edit Sender Address in Toll Intermodal Specialised from 'Book a pickup' page
     When User selects Toll Carrier and Account Number
       | TollCarrier   | AccountNumber |
-      | Toll Intermodal Specialised |       371065 |
+      | Intermodal & Specialised |       371065 |
     And User add Address for the sender in TDF
       | CompanyName | AddressLine1       | AddressLine2 | Suburb    | SuburbItem               | Postcode | State |
       | AccessHQ    | 60, Collins Street | CDE          | Melbourne | 3000, MELBOURNE, VIC, AU |     1024 | VIC   |

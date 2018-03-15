@@ -623,6 +623,7 @@ public class ReviewYourPickupActions {
 	public static String VerifyConfirmPickupDetails(String userName) {
 		// assertEquals("PICKUP Submitted",
 		// BaseWebdriver.driver.findElement(pickupConfirmed).getText());
+		PageBase.MaximumWaitForElementEnabled();
 		assertEquals("Pickup booked", BaseWebdriver.driver.findElement(pickupSubmitted).getText());
 		assertEquals("Picked up", BaseWebdriver.driver.findElement(pickedupLable).getText());
 		assertEquals("In transit", BaseWebdriver.driver.findElement(intransit).getText());

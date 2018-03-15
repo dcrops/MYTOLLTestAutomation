@@ -40,7 +40,7 @@ public class BaseWebdriver {
 
 	//Sit Normal user
 	public static String SitUsername3="SitAutomationuser3@yahoo.com"; 
-		
+	public static String SitUsername4="SitAutomationuser4@yahoo.com"; 		
 	//Performance Test Env user
 	public static String PerformenceUsername1="perftest@toll.com";
 	

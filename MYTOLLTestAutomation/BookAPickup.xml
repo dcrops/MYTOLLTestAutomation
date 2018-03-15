@@ -2,6 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="BookAPickup" parallel="none">
+
+<test name="BookAPickup">
 	<parameter name="TollCarrierIntermodalSpecialized" value="Intermodal" />
 	<!---Users test data -->
 	<parameter name="email" value="superuser@gmail.com"></parameter>
@@ -52,8 +54,6 @@
 	<parameter name="AccountAccessTypeFullFinancial" value="Full Financial" />
 	<!---Item test data -->
 
-	<parameter name="locationIndex" value="1" />
-		<parameter name="location" value="AccessHQ" />
 	<parameter name="ItemTemplateName" value="Automation Template1" />
 	<parameter name="ItemTemplateName2" value="Automation Template2" />
 	<parameter name="Mode" value="2" />
@@ -135,37 +135,72 @@
 	<!---Prio AU Cutoff time -->
 	<parameter name="VICAddress1" value="TestAddress, VIC,3428" />
 	<parameter name="VICAddress2" value="TestAddress, VIC,3428" />
-  
-  <test name="BookAPickup"> 
-<groups>
-			<run>
-				<include name="Shakeout Testing" />
-			</run>
-		</groups>
-
-		<classes>
-		
-			<class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
-				/>
-      </classes>
-
-
-	<!-- Blocked>	
-
-		<classes>
-		<class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
-				/>
-				<class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
-				/> 
+	<parameter name="locationIndex" value="1" />
+	<parameter name="location" value="AccessHQ" />
+	<parameter name="Country" value="AUSTRALIA" />
+	<parameter name="AddressLine1" value="ABC" />
+	<parameter name="AddressLine2" value="CDE" />
+	<parameter name="Email" value="NNAutomationuser1@gmail.com" />
+	<parameter name="PostCode1" value="3004" />
+	<parameter name="PhoneNumber" value="412367897" />
+	<parameter name="PhoneCountry1" value="Australia" />
+	<parameter name="PhoneCountry2" value="New Zealand" />
+	<parameter name="Suburb1" value="Melbourne" />
+	<parameter name="Suburb1Option" value="3004, MELBOURNE, VIC, AU" />
+	<parameter name="Postcode1" value="3004" />
+	<parameter name="Suburb2" value="BULLA" />
+	<parameter name="Suburb2Option" value="3428, BULLA, VIC, AU" />
+	<parameter name="Postcode2" value="3428" />
+	<parameter name="Suburb3" value="BARTON" />
+	<parameter name="Suburb3Option" value="2600, BARTON, ACT, AU" />
+	<parameter name="Postcode3" value="2600" />
+	<parameter name="Suburb4" value="DARWIN" />
+	<parameter name="Suburb4Option" value="0800, DARWIN, NT, AU" />
+	<parameter name="Postcode4" value="0800" />
+	<parameter name="Suburb5" value="HOTHAM" />
+	<parameter name="Suburb5Option" value="0822, HOTHAM, NT, AU" />
+	<parameter name="Postcode5" value="0822" />
+	<parameter name="Suburb6" value="BUNDEMAR" />
+	<parameter name="Suburb6Option" value="2823, BUNDEMAR, NSW, AU" />
+	<parameter name="Postcode6" value="2823" />
+	<parameter name="Suburb7" value="BRISBANE CITY" />
+	<parameter name="Suburb7Option" value="4000, BRISBANE CITY, QLD, AU" />
+	<parameter name="Postcode7" value="4000" />
+	<parameter name="Suburb8" value="SOUTH BRISBANE" />
+	<parameter name="Suburb8Option" value="4101, SOUTH BRISBANE, QLD, AU" />
+	<parameter name="Postcode8" value="4101" />
+	<parameter name="Suburb9" value="FOUNTAIN VALLEY" />
+	<parameter name="Suburb9Option" value="5159, FOUNTAIN VALLEY, SA, AU" />
+	<parameter name="Postcode9" value="5159" />
+	<parameter name="Suburb10" value="CLARENDON" />
+	<parameter name="Suburb10Option" value="5157, CLARENDON, SA, AU" />
+	<parameter name="Postcode10" value="5157" />
+	<parameter name="Suburb11" value="TAROONA" />
+	<parameter name="Suburb11Option" value="7053, TAROONA, TAS, AU" />
+	<parameter name="Postcode11" value="7053" />
+	<parameter name="Suburb12" value="BAKERS BEACH" />
+	<parameter name="Suburb12Option" value="7307, BAKERS BEACH, TAS, AU" />
+	<parameter name="Postcode12" value="7307" />
+	<parameter name="Suburb13" value="PERTH" />
+	<parameter name="Suburb13Option" value="6000, PERTH, WA, AU" />
+	<parameter name="Postcode13" value="6000" />
+	<parameter name="Suburb14" value="MARMION" />
+	<parameter name="Suburb14Option" value="6020, MARMION, WA, AU" />
+	<parameter name="Postcode14" value="6020" />
+	
+	<classes>
 <class name="bookAPickupE2ETests.TollPriorityAusTest" />
-		<class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
-				/> <class name="bookAPickupE2ETests.TollTasmaniaTest" /> <class name="bookAPickupE2ETests.TollIPEC_CutOffTime" 
-				/> <class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime" 
-				/> <class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress" 
-				/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
-				/> <class name="bookAPickupE2ETests.TollIPECTest" /> <class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" 
-				/> <class name="bookAPickupE2ETests.Toll_Add_Template" /> </Blocked -->
-		
 
+		<!-- Blocked> <classes> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
+			/>  <class name="bookAPickupE2ETests.TollPriorityNZTest" 
+			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
+			/> <class name="bookAPickupE2ETests.TollTasmaniaTest" /> <class name="bookAPickupE2ETests.TollIPEC_CutOffTime" 
+			/> <class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime" 
+			/> <class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress" 
+			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
+			/> <class name="bookAPickupE2ETests.TollIPECTest" /> <class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" 
+			/> <class name="bookAPickupE2ETests.Toll_Add_Template" /> </Blocked -->
+
+	</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

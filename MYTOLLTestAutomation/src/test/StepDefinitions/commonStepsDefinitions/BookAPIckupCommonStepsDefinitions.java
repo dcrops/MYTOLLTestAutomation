@@ -88,7 +88,7 @@ public class BookAPIckupCommonStepsDefinitions {
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
 			// Add Address Prio Aus
 
-			BookAPickupActions.AddAddressManuallyPrioAUS(bookAPickup.get("CompanyName"), bookAPickup.get("Country"),
+			BookAPickupActions.AddAddressManuallyPrioAUSInternational(bookAPickup.get("CompanyName"), bookAPickup.get("Country"),
 					bookAPickup.get("AddressLine1"), bookAPickup.get("AddressLine2"), bookAPickup.get("Suburb"),
 					bookAPickup.get("Postcode"), bookAPickup.get("Email"), bookAPickup.get("PhoneNumber"),
 					bookAPickup.get("Phone Country"));

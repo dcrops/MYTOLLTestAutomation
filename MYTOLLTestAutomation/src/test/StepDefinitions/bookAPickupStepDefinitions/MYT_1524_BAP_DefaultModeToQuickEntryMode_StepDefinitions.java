@@ -17,7 +17,7 @@ public class MYT_1524_BAP_DefaultModeToQuickEntryMode_StepDefinitions {
 	@When("^User selects switch from 'Default' mode to ' Quick Entry ' mode$")
 	public void user_selects_switch_from_Default_mode_to_Quick_Entry_mode() throws Throwable {
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryMode();
+		BookAPickupActions.SelectQuickEntryModeYes();
 	  
 	}
 

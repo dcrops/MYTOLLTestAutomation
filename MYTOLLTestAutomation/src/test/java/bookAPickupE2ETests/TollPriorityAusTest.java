@@ -27,15 +27,15 @@ public class TollPriorityAusTest {
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	//@Test(priority=-1)
-	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location",
+	@Test(priority=-3)
+	//@Test(groups = { "Shakeout Testing" })
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb1","Suburb1Option","Postcode1","Email", "PhoneNumber","PhoneCountry1",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 			"Destination", "DestinationItem","DestinationPostcode", "specialIns" })
 
 	public void BookAPickup_TollPriority_AUS_E2ETest_TID_620_Service_ServiceParcelsOffPeak(String TollCarrier,
-			String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,
-			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
+			String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String Suburb1Option,String Postcode1, String Email,
+			String PhoneNumber, String PhoneCountry1,String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 			String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -48,11 +48,13 @@ public class TollPriorityAusTest {
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		//Add Address
-		//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
-		BookAPickupActions.AddAddressAustraliaManuallyPrioAUS(location,"AUSTRALIA","ABC","CDE", "Melbourne","3004, MELBOURNE, VIC, AU", "NNAutomationuser1@gmail.com", "412367897", "Australia");
+	//	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
+	//	BookAPickupActions.AddAddressAustraliaManuallyPrioAUS(location,Country,AddressLine1,AddressLine2, "Melbourne","3004, MELBOURNE, VIC, AU", "NNAutomationuser1@gmail.com", "412367897", "Australia");
 		//BookAPickupActions.ClickAddAddress();
 		//BookAPickupActions.SelectLocation2(locationIndex);
-		
+						
+		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+				AddressLine1,AddressLine2, Suburb1,Suburb1Option,Postcode1, Email, PhoneNumber, PhoneCountry1);
 
 		String company = BookAPickupActions.GetCompany(1);
 		System.out.println(company);
@@ -110,7 +112,7 @@ public class TollPriorityAusTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+		//BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
 		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNumber, location, "ABC CDE MELBOURNE VIC 3004 AU", name,
@@ -126,12 +128,13 @@ public class TollPriorityAusTest {
 	}
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb1","Suburb1Option","Postcode1","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_VIC_3000(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String Suburb1Option,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -140,8 +143,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
-	BookAPickupActions.ClickAddAddress();
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "Melbourne","3000, MELBOURNE, VIC, AU", "VIC", "3000");
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, Suburb1,Suburb1Option,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -172,12 +177,13 @@ public class TollPriorityAusTest {
 }
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu","location", "Country","AddressLine1","AddressLine2","Suburb2","Suburb2Option","Postcode2","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_VIC_BULLA_3428(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -186,8 +192,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "BULLA","3428, BULLA, VIC, AU", "VIC", "3428");
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, Suburb1,SuburbOption,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE", "BULLA","3428, BULLA, VIC, AU", "VIC", "3428");
+	//BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -218,12 +226,13 @@ public class TollPriorityAusTest {
 }
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb3","Suburb3Option","Postcode3","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_ACT_2600(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu,String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -232,8 +241,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BARTON", "2600, BARTON, ACT, AU", "ACT", "2600");
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, Suburb1,SuburbOption,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BARTON", "2600, BARTON, ACT, AU", "ACT", "2600");
+	//BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -266,12 +277,13 @@ public class TollPriorityAusTest {
 }
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb4","Suburb4Option","Postcode4","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_NT_0800(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -280,8 +292,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","DARWIN", "0800, DARWIN, NT, AU", "NT", "0800");
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, Suburb1,SuburbOption,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","DARWIN", "0800, DARWIN, NT, AU", "NT", "0800");
+	//BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -315,12 +329,13 @@ public class TollPriorityAusTest {
 
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb5","Suburb5Option","Postcode5","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_NT_HOTHAM_0822(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -329,8 +344,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","HOTHAM", "0822, HOTHAM, NT, AU", "NT", "0822"); 
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, Suburb1,SuburbOption,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","HOTHAM", "0822, HOTHAM, NT, AU", "NT", "0822"); 
+	//BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -363,12 +380,13 @@ public class TollPriorityAusTest {
 }
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu","location", "Country","AddressLine1","AddressLine2","Suburb6","Suburb6Option", "Postcode6","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_NSW_BUNDEMAR_2823(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -377,8 +395,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BUNDEMAR", "2823, BUNDEMAR, NSW, AU", "NSW", "2823"); 
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, Suburb1,SuburbOption,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BUNDEMAR", "2823, BUNDEMAR, NSW, AU", "NSW", "2823"); 
+	//BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -412,12 +432,13 @@ public class TollPriorityAusTest {
 	
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb7","Suburb7Option","Postcode7","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_QLD_BRISBANE_CITY_4000(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -426,8 +447,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BRISBANE CITY", "4000, BRISBANE CITY, QLD, AU", "QLD", "4000"); 
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, Suburb1,SuburbOption,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BRISBANE CITY", "4000, BRISBANE CITY, QLD, AU", "QLD", "4000"); 
+	//BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -461,12 +484,13 @@ public class TollPriorityAusTest {
 }
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb8","Suburb8Option","Postcode8","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_QLD_SOUTH_BRISBANE_4101(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -475,8 +499,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","SOUTH BRISBANE", "4101, SOUTH BRISBANE, QLD, AU", "QLD", "4101"); 
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, SuburbOption,Suburb1,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","SOUTH BRISBANE", "4101, SOUTH BRISBANE, QLD, AU", "QLD", "4101"); 
+	//BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -510,12 +536,13 @@ public class TollPriorityAusTest {
 }
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb9","Suburb9Option","Postcode9","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_SA_FOUNTAIN_VALLEY_5159(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu,String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -524,8 +551,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","FOUNTAIN VALLEY", "5159, FOUNTAIN VALLEY, SA, AU", "SA", "5159"); 
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, SuburbOption,Suburb1,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","FOUNTAIN VALLEY", "5159, FOUNTAIN VALLEY, SA, AU", "SA", "5159"); 
+	//BookAPickupActions.ClickAddAddress();
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
 	BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -558,12 +587,13 @@ public class TollPriorityAusTest {
 }
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb10","Suburb10Option","Postcode10","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_SA_CLARENDON_5157(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -572,8 +602,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","CLARENDON", "5157, CLARENDON, SA, AU", "SA", "5157"); 
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, SuburbOption,Suburb1,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","CLARENDON", "5157, CLARENDON, SA, AU", "SA", "5157"); 
+	//BookAPickupActions.ClickAddAddress();
 	
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
@@ -607,12 +639,13 @@ public class TollPriorityAusTest {
 }
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb11","Suburb11Option","Postcode11","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_TAS_TAROONA_7053(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -621,8 +654,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","TAROONA", "7053, TAROONA, TAS, AU", "TAS", "7053"); 
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, SuburbOption,Suburb1,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","TAROONA", "7053, TAROONA, TAS, AU", "TAS", "7053"); 
+	//BookAPickupActions.ClickAddAddress();
 	
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
@@ -658,12 +693,13 @@ public class TollPriorityAusTest {
 	
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb12","Suburb12Option","Postcode12","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_TAS_BAKERS_BEACH_7307(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -672,8 +708,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BAKERS BEACH", "7307, BAKERS BEACH, TAS, AU", "TAS", "7307"); 
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, SuburbOption,Suburb1,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","BAKERS BEACH", "7307, BAKERS BEACH, TAS, AU", "TAS", "7307"); 
+	//BookAPickupActions.ClickAddAddress();
 	
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
@@ -708,12 +746,13 @@ public class TollPriorityAusTest {
 
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb13","Suburb13Option","Postcode13","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_WA_PERTH_6000(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu,String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -722,8 +761,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","PERTH", "6000, PERTH, WA, AU", "WA", "6000"); 
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, SuburbOption,Suburb1,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","PERTH", "6000, PERTH, WA, AU", "WA", "6000"); 
+	//BookAPickupActions.ClickAddAddress();
 	
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
@@ -757,12 +798,13 @@ public class TollPriorityAusTest {
 }
 	
 	@Test
-	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "locationIndex",
+	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country","AddressLine1","AddressLine2","Suburb14","Suburb14Option","Postcode14","Email", "PhoneNumber","PhoneCountry1",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight","DGGoodsNo", "palletSpace", "reference",
 		"Destination", "DestinationItem","DestinationPostcode", "specialIns", "VICAddress1" })
 
 	public void BookAPickup_TollPriority_AUS_CutoffTime_WA_MARMION_6020(String TollCarrier,
-		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, Integer locationIndex,
+		String ServiceParcelsOffPeak, String AccountNumberTollPrioAu,String location,String Country,String AddressLine1, String AddressLine2, String Suburb1,String SuburbOption,String Postcode1, String Email,
+		String PhoneNumber, String PhoneCountry1,
 		String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo,
 		String palletSpace, String reference, String destination, String DestinationItem,String DestinationPostcode, String specialIns, String VICAddress1) {
 
@@ -771,8 +813,10 @@ public class TollPriorityAusTest {
 	bookAPickupActions.BookAPickupActions.SelectAccountNumber1();
 	
 	//Add Address
-	BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","MARMION", "6020, MARMION, WA, AU", "WA", "6020"); 
-	BookAPickupActions.ClickAddAddress();
+	BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
+			AddressLine1,AddressLine2, SuburbOption,Suburb1,Postcode1, Email, PhoneNumber, PhoneCountry1);
+	//BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE","MARMION", "6020, MARMION, WA, AU", "WA", "6020"); 
+	//BookAPickupActions.ClickAddAddress();
 	
 	JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 	jse.executeScript("scroll(0, 250)");
@@ -807,7 +851,7 @@ public class TollPriorityAusTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 	}
 
 }

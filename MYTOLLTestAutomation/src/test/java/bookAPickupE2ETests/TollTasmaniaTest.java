@@ -285,6 +285,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.ClickAddANewLine();
 
 		PageBase.MediumWaitForElementEnabled();
+		PageBase.MoveToElement(BookAPickupActions.weight,BookAPickupActions.length);
 		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);
@@ -371,6 +372,7 @@ public class TollTasmaniaTest {
 
 		// Pickup details
 		PageBase.Scrollbar(800, 1000);
+		PageBase.MoveToElement(BookAPickupActions.weight,BookAPickupActions.length);
 		BookAPickupActions.selectDispatchDate();
 		// String pickupDate = BookAPickupActions.ReturnPickupDate();
 
@@ -542,7 +544,7 @@ public class TollTasmaniaTest {
 
 		// Add a new item
 		BookAPickupActions.AddANewLineTollTasmania(ServiceGeneral);
-
+		PageBase.MoveToElement(BookAPickupActions.weight,BookAPickupActions.length);
 		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);

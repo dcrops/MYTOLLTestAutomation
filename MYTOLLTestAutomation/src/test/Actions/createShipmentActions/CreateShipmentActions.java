@@ -83,7 +83,7 @@ public class CreateShipmentActions {
 	public static By lookupBtn = By.xpath("//*[@id=\"un-code-selector\"]/div/div/div/a");
 	public static By searchBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/span/i");
 	public static By UNNumberItem = By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div");
-	public static By classDivision = By.id("class-division-0");
+	public static By classDivision = By.id("class-division-");
 	public static By packingGroup = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/input[2]");
 	public static By subRisk = By.xpath("//*[@id=\"sub-risk-selector-\"]/label/input[2]");
 	public static By properShippingName = By.id("shipping-name-");
