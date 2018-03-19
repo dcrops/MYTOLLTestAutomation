@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.util.Map;
 
 import FinanceActions.FinanceActions;
+import GlobalActions.PageBase;
 import bookAPickupActions.BookAPickupActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
@@ -22,6 +23,7 @@ public class MYT_2699_SelectMyCarrierAndAccount_StepDefinitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 				
 			FinanceActions.EnterTollCarrier(finance.get("TollCarrier"));
+			PageBase.MaximumWaitForElementEnabled();
 			FinanceActions.EnterAccountNumber(finance.get("AccountNumber"));
 		}
 		 

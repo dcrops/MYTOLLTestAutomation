@@ -116,7 +116,7 @@ public class BookAPickupStepDefinitions{
 	@When("^User selects Dispatch date as Tommorow$")
 	public void user_selects_Dispatch_date_as_Tommorow() throws Throwable {
 		
-		BookAPickupActions.selectDispatchDate();
+		BookAPickupActions.SelectDispatchDateTomorrow();
 		
 	    
 	}
@@ -154,6 +154,8 @@ public class BookAPickupStepDefinitions{
 	  
 	}
 
+
+	
 	@When("^User clicks on Confirm Book$")
 	public void user_clicks_on_Confirm_Book() throws Throwable {
 	   

@@ -58,6 +58,7 @@
 	<parameter name="ItemTemplateName2" value="Automation Template2" />
 	<parameter name="Mode" value="2" />
 	<parameter name="ChargeToAccount" value="Sender" />
+	<parameter name="destination" value="AUSTRALIA" />
 	<parameter name="Destination" value="MELALEUCA" />
 	<parameter name="DestinationPostcode" value="MELALEUCA, 6079" />
 	<parameter name="DestinationItem" value="6079, MELALEUCA, WA, AU" />
@@ -135,7 +136,7 @@
 	<!---Prio AU Cutoff time -->
 	<parameter name="VICAddress1" value="TestAddress, VIC,3428" />
 	<parameter name="VICAddress2" value="TestAddress, VIC,3428" />
-	<parameter name="locationIndex" value="1" />
+	<parameter name="locationIndex" value="2" />
 	<parameter name="location" value="AccessHQ" />
 	<parameter name="Country" value="AUSTRALIA" />
 	<parameter name="AddressLine1" value="ABC" />
@@ -188,8 +189,8 @@
 	<parameter name="Suburb14Option" value="6020, MARMION, WA, AU" />
 	<parameter name="Postcode14" value="6020" />
 	
-	<classes>
-<class name="bookAPickupE2ETests.TollPriorityAusTest" />
+<classes> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
+			/>
 
 		<!-- Blocked> <classes> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
 			/>  <class name="bookAPickupE2ETests.TollPriorityNZTest" 

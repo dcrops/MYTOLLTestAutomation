@@ -46,8 +46,8 @@ public class TollPriorityNZTest {
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		BookAPickupActions.SelectLocation2(locationIndex);
-
+		//BookAPickupActions.SelectLocation2(locationIndex);
+		BookAPickupActions.EnterLocation("NZ Post Ltd");
 		PageBase.Scrollbar(250, 500);
 		// Enter data for Quick entry mode, service(=GlobalExpress),
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
@@ -101,7 +101,7 @@ public class TollPriorityNZTest {
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		BookAPickupActions.SelectLocation2(locationIndex);
+		BookAPickupActions.EnterLocation("NZ Post Ltd");
 
 		// Enter data for Quick entry mode, service(=GlobalExpress),
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
@@ -156,7 +156,7 @@ public class TollPriorityNZTest {
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		BookAPickupActions.SelectLocation2(locationIndex);
+		BookAPickupActions.EnterLocation("NZ Post Ltd");
 		
 		String company = BookAPickupActions.GetCompany(1);
 		System.out.println(company);
@@ -232,6 +232,6 @@ public class TollPriorityNZTest {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 	}
 }

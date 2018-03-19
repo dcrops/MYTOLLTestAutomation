@@ -40,8 +40,8 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
     Then User navigates to Pickup confirmation page and see Print and Share options
     When User selects on share option
     Then User can send email to 5 users with the booking content
-      | Message                              | MessagetoSend      | User1                       | User2                       | User3                       | User4                       | User5                      |
-      | You can enter upto 5 email addresses | Test share message | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
+      | Message                                                                                                                             | MessagetoSend      | User1                       | User2                       | User3                       | User4                       | User5                      |
+      | Enter your email and the email of up to 5 others to share a link to this pickup. They will see public information about this pickup | Test share message | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
 
   @tag1
   Scenario: User wants to Print and/or Share my pick up booking in Intermodal & Specialised
@@ -52,7 +52,7 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
       | Sender   |
       | AccessHQ |
     When User enter following input data to Add Item
-      | Service    | Destination | ItemDescription      | NoOfItems | PalletSpace |destination     |
+      | Service    | Destination | ItemDescription      | NoOfItems | PalletSpace | destination     |
       | DG Express | MELALEUCA   | Automation Template1 |        10 |           6 | MELALEUCA, 6079 |
     And User Selects Charge to Account as below
       | ChargeToAccount | AccountNumber |
@@ -74,8 +74,8 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
       |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
     When User clicks on ADD NEW LINES to add more items
     And User enter following input data to Add Item
-      | Service | Destination | ItemDescription      | NoOfItems | PalletSpace |destination     |
-      | Express | MELALEUCA   | Automation Template2 |        10 |           6 |MELALEUCA, 6079 |
+      | Service | Destination | ItemDescription      | NoOfItems | PalletSpace | destination     |
+      | Express | MELALEUCA   | Automation Template2 |        10 |           6 | MELALEUCA, 6079 |
     And User Selects Charge to Account as below
       | ChargeToAccount | AccountNumber |
       |               1 |         12345 |
@@ -88,6 +88,10 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
     When User selects Dangerous Goods as below
       | DgGoods |
       |       2 |
+    When User selects Dispatch date as Tommorow
+    When User selects Ready Time
+      | ReadyTime |
+      | 11:30     |
     When User clicks on Review & Book
     Then User navigates to Bookings details Review Page
     When User clicks on Confirm Book
@@ -95,8 +99,8 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
     Then User navigates to Pickup confirmation page and see Print and Share options
     When User selects on share option
     Then User can send email to 5 users with the booking content
-      | Message                              | MessagetoSend      | User1                       | User2                       | User3                       | User4                       | User5                      |
-      | You can enter upto 5 email addresses | Test share message | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
+      | Message                                                                                                                             | MessagetoSend      | User1                       | User2                       | User3                       | User4                       | User5                      |
+      | Enter your email and the email of up to 5 others to share a link to this pickup. They will see public information about this pickup | Test share message | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
 
   Scenario: User wants to Print and/or Share my pick up booking in TGX
     When User selects Toll Carrier and Account Number
@@ -134,5 +138,5 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
     Then User navigates to Pickup confirmation page and see Print and Share options
     When User selects on share option
     Then User can send email to 5 users with the booking content
-      | Message                              | MessagetoSend      | User1                       | User2                       | User3                       | User4                       | User5                      |
-      | You can enter upto 5 email addresses | Test share message | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
+      | Message                                                                                                                             | MessagetoSend      | User1                       | User2                       | User3                       | User4                       | User5                      |
+      | Enter your email and the email of up to 5 others to share a link to this pickup. They will see public information about this pickup | Test share message | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |

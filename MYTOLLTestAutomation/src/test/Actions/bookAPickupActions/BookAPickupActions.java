@@ -81,7 +81,7 @@ public class BookAPickupActions {
 	public static By dangerousItemsNewLine = By.xpath("//*[@id=\"dg-radios\"]/label[2]/input");
 	public static By containFoodItem = By.xpath("//*[@id=\"containsFoodItems-no\"]");
 	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector-\"]/label/a/i"); 
-	public static By UNNumberTextField =By.id("unlookup-"); // By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/input");dg-uncode-
+	public static By UNNumberTextField =By.id("unlookup-"); 
 	public static By UNNumberName = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div");
 	public static By searchBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/span/i");
 
@@ -322,16 +322,16 @@ public class BookAPickupActions {
 	public static By addDgGoodsQME = By.id("gv-add-dg-item");
 	// Share Bookings
 	public static By share = By.id("share-template");
-	public static By emailAddress1 = By.id("email-address-1");
+	public static By emailAddress1 = By.xpath("//*[@id=\"share-email\"]");
 	public static By emailAddress2 = By.id("email-address-2");
 	public static By emailAddress3 = By.id("email-address-3");
 	public static By emailAddress4 = By.id("email-address-4");
 	public static By emailAddress5 = By.id("email-address-5");//*[@id="shareEmail"]/div/div[2]/input
-	public static By addMoreEmailButton = By.cssSelector("#shareEmail > div > div.add-more-email > input[type=\"button\"]"); //("//*[@id=\"shareEmail\"]/div[@class=\"share-popup-form\"]//input[text()=\"Add More Email\"]"); //("//*[@id=\"shareEmail\"]/div/div[2]/input");
-	public static By shareMessageTextbox = By.id("share-message");
+	public static By addMoreEmailButton = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-form-area\"]/div[1]/span"); //("//*[@id=\"shareEmail\"]/div[@class=\"share-popup-form\"]//input[text()=\"Add More Email\"]"); //("//*[@id=\"shareEmail\"]/div/div[2]/input");
+	public static By shareMessageTextbox = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-message\"]");
 	public static By shareButton = By.id("share-emails"); 
-	public static By NumberOfUserMessageInShareScreen = By.xpath("//*[@id=\"share-template-pop\"]/div/section/div/div/label");  
-	public static By MyPickupsInShareScreen = By.xpath("//*[@id=\"share-success-pop-confrm\"]/div/section/div/div[3]/a");
+	public static By NumberOfUserMessageInShareScreen = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-form-body\"]/div[2]/p");  
+	public static By GoT0Dashboard = By.linkText("GO TO DASHBOARD");
 
 	public static void EnterTollCarrierItem(String pTollCarrierName) {
 		PageBase.MinimumWaitForElementEnabled();
@@ -918,10 +918,10 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destinationCountry).clear();
 		BaseWebdriver.driver.findElement(destinationCountry).sendKeys(pDestination);
 
-		action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
+		//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.retryingFindClick(By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li[11]/div"));
-		// *[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[2]/div
+		PageBase.retryingFindClick(By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li/div[text()='" + pDestination + "']"));
+		// *[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[2]/div    //*[@id="destination-country-selector"]/div/ul/li[12]/div
 
 	}
 
@@ -1139,6 +1139,12 @@ public class BookAPickupActions {
 	public static void selectDispatchDate() {
 		BaseWebdriver.driver.findElement(pickupDate).click();
 		BaseWebdriver.driver.findElement(pickupDateToday).click();
+
+	}
+	
+	public static void SelectDispatchDateTomorrow() {
+		BaseWebdriver.driver.findElement(pickupDate).click();
+		BaseWebdriver.driver.findElement(pickupDateTomorrow).click();
 
 	}
 
@@ -1383,10 +1389,9 @@ public class BookAPickupActions {
 			//BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 			BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(searchBtn).click();
+			//BaseWebdriver.driver.findElement(searchBtn).click();
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li[" + j + "]/div"))
-					.click();
+			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div")).click();
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 			BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
@@ -2162,13 +2167,15 @@ public class BookAPickupActions {
 	}
 
 	public static void EnterEmail1(String pEmail1) {
-		PageBase.MinimumWaitForElementEnabled();
-		PageBase.SendKeysTo(emailAddress1, pEmail1, 5);
+		PageBase.MaximumWaitForElementEnabled();
+		 PageBase.MaximumWaitForElementEnabled();
+		action.doubleClick(BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentEmail)).perform();
+		PageBase.SendKeysTo(MyTollHomePageActions.shareShipmentEmail, pEmail1, 5);
 	}
 
 	public static void ClickAddMoreEmailButton() {
 		 PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(addMoreEmailButton, 5);
+		PageBase.ClickOn(MyTollHomePageActions.shareShipmentEmailAdd, 5);
 	}
 
 	public static void EnterEmail2(String pEmail2) {
@@ -2203,12 +2210,12 @@ public class BookAPickupActions {
 	
 	public static void ClickShareInShareScreen() {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(shareButton, 5);
+		PageBase.ClickOn(MyTollHomePageActions.shareShipmentSubmit, 5);
 	}
 	
 	public static void ClickMyPickupsInShareScreen() {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(MyPickupsInShareScreen, 5);
+		PageBase.ClickOn(GoT0Dashboard, 5);
 	}
 	
 	

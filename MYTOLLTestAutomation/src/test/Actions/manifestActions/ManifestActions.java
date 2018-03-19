@@ -449,7 +449,7 @@ public class ManifestActions {
 		
 		//Get Current Status of Manifest
 		String UpdatedStatus = BaseWebdriver.driver.findElement(ShipmentManifestStatus).getText();
-		if ("Completed".equals(UpdatedStatus)) {
+		if ("Closed".equals(UpdatedStatus)) {
 			System.out.println("Updated Manifest Status : "+UpdatedStatus);
 			Reporter.log("Updated Manifest Status : "+UpdatedStatus);
 		}

@@ -213,7 +213,7 @@ public class BookAPIckupCommonStepsDefinitions {
 			//BookAPickupActions.SelectPackgingGroupQMEInt(Integer.parseInt(s));
 			BookAPickupActions.SelectPackgingGroupString(bookAPickup.get("PackingGroup"));
 			BookAPickupActions.EnterTechnicalName(bookAPickup.get("Technical Name"));
-			PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
+		//	PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
 		}
 		
 	

@@ -177,6 +177,7 @@ public class IntermodalSpecializedTest {
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
+//	@Test(priority=-6)
   	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
@@ -344,7 +345,7 @@ public class IntermodalSpecializedTest {
 
 	}
 
-	//@Test(priority=-1)
+	//@Test(priority=-7)
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
@@ -851,7 +852,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.ClickConfirmPickup();
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
-
+	//@Test(priority=-8)
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
