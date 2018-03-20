@@ -67,8 +67,8 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
       | DgGoods |
       |       1 |
     And User enter dangerous goods details as below
-      | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |
-      |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |
+      | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |LookupItem|
+      |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |1|
     Then User able to see following fields autopopulated.
       | Class/Div | SubRisk | PackingGroup | Proper Shoping Name            |
       |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |

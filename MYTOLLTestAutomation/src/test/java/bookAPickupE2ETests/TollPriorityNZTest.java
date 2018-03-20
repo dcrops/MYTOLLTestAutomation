@@ -70,7 +70,7 @@ public class TollPriorityNZTest {
 
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectDispatchDate();
+		BookAPickupActions.SelectDispatchDateTomorrow();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber(reference);
@@ -123,7 +123,7 @@ public class TollPriorityNZTest {
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectDispatchDate();
-		BookAPickupActions.selectReadyTime();
+		BookAPickupActions.SelectDispatchDateTomorrow();
 		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterReferenceNumber(reference);
 		BookAPickupActions.SelectPickupFrom(1);
@@ -143,7 +143,7 @@ public class TollPriorityNZTest {
 	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_ParcelsOffPeak(String TollCarrier,
 			String ServiceParcelsOffPeak,String AccountNumberTollPrioNZ, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight,String DGGoodsNo, String palletSpace, String reference,
-			String destination, String destinationItem,String DestinationNZPostcode, String specialIns) {
+			String destination, String DestinationNZPostcode,String destinationItem, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -201,7 +201,7 @@ public class TollPriorityNZTest {
 		// Enter Pickup details
 		jse.executeScript("scroll(500, 800)");
 		PageBase.MediumWaitForElementEnabled();
-		BookAPickupActions.selectDispatchDate();
+		BookAPickupActions.SelectDispatchDateTomorrow();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);
 		String readyTime = BookAPickupActions.GetReadyTime();

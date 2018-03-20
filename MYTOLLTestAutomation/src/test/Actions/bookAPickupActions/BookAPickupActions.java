@@ -943,15 +943,18 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(destination);
 		PageBase.waitForElement(destination, 10);
-		BaseWebdriver.driver.findElement(destination).clear();
-		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.SendKeysTo(destination, pDestination, 20);
+		//BaseWebdriver.driver.findElement(destination).clear();
+		//BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
+		PageBase.MaximumWaitForElementEnabled();
 		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[1]/div")).click();
-		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[1]/div"));
+		//PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[1]/div"));
 
-		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[text()='"+pDestinationItem+"']/div")).click();
+		PageBase.ClickOn(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li/div[text()='"+pDestinationItem+"']"),10);
 		// PageBase.retryingFindClick(destinationaddress);
 		// *[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[1]/div
+		 
+		//*[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[1]/div
 
 	}
 
@@ -1393,7 +1396,8 @@ public class BookAPickupActions {
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div")).click();
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
+			PageBase.SendKeysTo(dgPackagingDescription, packageDescription, 10);
+			//BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 			BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
 			BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
 
@@ -1414,7 +1418,8 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 	//	BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div")).click();  //*[@id="dg-form"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div   ////*[@id=\"un-code-selector-\"]/div/ul/li/div
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div")).click();  
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 		BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
@@ -2169,7 +2174,7 @@ public class BookAPickupActions {
 	public static void EnterEmail1(String pEmail1) {
 		PageBase.MaximumWaitForElementEnabled();
 		 PageBase.MaximumWaitForElementEnabled();
-		action.doubleClick(BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentEmail)).perform();
+		//action.doubleClick(BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentEmail)).perform();
 		PageBase.SendKeysTo(MyTollHomePageActions.shareShipmentEmail, pEmail1, 5);
 	}
 

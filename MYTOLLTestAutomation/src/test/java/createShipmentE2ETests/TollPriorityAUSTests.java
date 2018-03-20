@@ -59,7 +59,7 @@ public class TollPriorityAUSTests {
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.SelectReceiver(Receiver);
+		CreateShipmentActions.SelectReceiver(1);
 		// CreateShipmentActions.EnterReceiver("Test", "Test174");
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
@@ -69,7 +69,7 @@ public class TollPriorityAUSTests {
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
 
-		CreateShipmentActions.SelectReceiver(Receiver);
+		//CreateShipmentActions.SelectReceiver(Receiver);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
 		System.out.println(receiver);
 

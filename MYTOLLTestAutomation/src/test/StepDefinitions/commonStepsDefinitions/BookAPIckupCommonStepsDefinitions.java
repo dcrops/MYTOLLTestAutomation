@@ -207,7 +207,7 @@ public class BookAPIckupCommonStepsDefinitions {
           
 			 PageBase.MaximumWaitForElementEnabled();
 			
-			BookAPickupActions.SelectDangerousGoodsDetails(bookAPickup.get("UnNumber"), bookAPickup.get("PackageDescription"),bookAPickup.get("DGPackageType"), bookAPickup.get("DGAggregateQty"));
+			BookAPickupActions.EnterDangerousGoodsDetails(Integer.parseInt(bookAPickup.get("LookupItem")),bookAPickup.get("UnNumber"), bookAPickup.get("PackageDescription"),bookAPickup.get("DGPackageType"), bookAPickup.get("DGAggregateQty"));
 			String s = bookAPickup.get("PackingGroup");
 			System.out.println("s----" + s);
 			//BookAPickupActions.SelectPackgingGroupQMEInt(Integer.parseInt(s));

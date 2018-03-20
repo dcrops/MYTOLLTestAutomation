@@ -69,10 +69,10 @@ public class ManualTollIntermodalSpecialisedTests {
 		PageBase.moveToElement(BookAPickupActions.itemDescriptionTextField);
 		PageBase.sendText(BookAPickupActions.itemDescriptionTextField, 2, ItemTemplateName);
 		ManifestActions.SelectBillingType(1);
-		
+		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.NumberOfItem(NumberOfItems);
+		
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
 		//Submit Shipment and Print Manifest

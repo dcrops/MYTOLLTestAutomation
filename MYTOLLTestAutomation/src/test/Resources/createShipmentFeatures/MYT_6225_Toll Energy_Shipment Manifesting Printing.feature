@@ -30,30 +30,14 @@ Feature: MYT_6225 Toll Energy Shipment, Manifesting and Printing
     When User enters additional information for shipment as below
       | PurchaseOrder | SpecialInstructions       |
       | Abcd1234      | Test Special Instructions |
-    And User enters chep pallet information as below
-      | ChepCustomerOwn | ChepExchange | ChepTransfer | ChepDocketNo |
-      |            1111 |         1112 |         1113 |         1114 |
-    And User enters Loscam pallet information as below
-      | LoscamCustomerOwn | LoscamExchange | LoscamTransfer | LoscamDocketNo |
-      |              2111 |           2112 |           2113 |           2114 |
-    And User enters Other pallet information as below
-      | OtherCustomerOwn |
-      |             3111 |
-    And User enters Chep other pallet information as below
-      | ChepOtherExchange | ChepOtherTransfer | ChepOtherDocketNo |
-      |              4112 |              4113 |              4114 |
-    And User enters Loscam other information as below
-      | LoscamOtherExchange | LoscamOtherTransfer | LoscamOtherDocketNo |
-      |                1112 |                1113 |                1114 |
+    
     Then User clicks on 'Create Shipment' and User navigates to Shipment Review page and see Overview details as below.
       | TollCarrier            | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode | DropOffDepot        | CollectionDepot         | Whopays |
       | Toll Energy and Marine | G28668        |        12345 |       234567 | DG Express | ROAD | TOLL ENERGY BALLERA | TOLL ENERGY BARRY BEACH | Sender  |
     Then User can see additional information as below in Shipment Review page
       | PurchaseOrders | SpecialInstructions       | PalletInfo |
-      | Abcd1234       | Test Special Instructions | Yes        |
-    Then User can see pallet information as below in Shipment Review page
-      | ChepCustomerOwn | ChepExchange | ChepTransfer | ChepDocketNo | LoscamCustomerOwn | LoscamExchange | LoscamTransfer | LoscamDocketNo | OtherCustomerOwn | ChepOtherExchange | ChepOtherTransfer | ChepOtherDocketNo | LoscamOtherExchange | LoscamOtherTransfer | LoscamOtherDocketNo |
-      |            1111 |         1112 |         1113 |         1114 |              2111 |           2112 |           2113 |           2114 |             3111 |              4112 |              4113 |              4114 |                1112 |                1113 |                1114 |
+      | Abcd1234       | Test Special Instructions | No        |
+    
     Then User be able to see line item headings as below
       | LineItemName1Heading | ItemTemplateName     | NumberOfItems | ItemDescriptionHeading | ItemsHeading | BillingTypeHeading | DimensionsHeading | TotalVolumeHeading | WeightHeading | Reference1Heading | Reference2Heading | ShipmentContainDangerousGoodsHeading |
       | Line Item 1          | Automation Template1 |            10 | Item description       | Items        | Billing type       | Dimensions        | Total volume (m3)  | Weight (kg)   | Reference1        | Reference2        | Shipment contain dangerous goods     |
@@ -103,30 +87,14 @@ Feature: MYT_6225 Toll Energy Shipment, Manifesting and Printing
     When User enters additional information for shipment as below
       | PurchaseOrder | SpecialInstructions       |
       | Abcd1234      | Test Special Instructions |
-    And User enters chep pallet information as below
-      | ChepCustomerOwn | ChepExchange | ChepTransfer | ChepDocketNo |
-      |            1111 |         1112 |         1113 |         1114 |
-    And User enters Loscam pallet information as below
-      | LoscamCustomerOwn | LoscamExchange | LoscamTransfer | LoscamDocketNo |
-      |              2111 |           2112 |           2113 |           2114 |
-    And User enters Other pallet information as below
-      | OtherCustomerOwn |
-      |             3111 |
-    And User enters Chep other pallet information as below
-      | ChepOtherExchange | ChepOtherTransfer | ChepOtherDocketNo |
-      |              4112 |              4113 |              4114 |
-    And User enters Loscam other information as below
-      | LoscamOtherExchange | LoscamOtherTransfer | LoscamOtherDocketNo |
-      |                1112 |                1113 |                1114 |
+    
     Then User clicks on 'Create Shipment' and User navigates to Shipment Review page and see Overview details as below.
       | TollCarrier            | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode | DropOffDepot        | CollectionDepot         | Whopays |
       | Toll Energy and Marine | G28668        |        12345 |       234567 | DG Express | ROAD | TOLL ENERGY BALLERA | TOLL ENERGY BARRY BEACH | Sender  |
     Then User can see additional information as below in Shipment Review page
       | PurchaseOrders | SpecialInstructions       | PalletInfo |
-      | Abcd1234       | Test Special Instructions | Yes        |
-    Then User can see pallet information as below in Shipment Review page
-      | ChepCustomerOwn | ChepExchange | ChepTransfer | ChepDocketNo | LoscamCustomerOwn | LoscamExchange | LoscamTransfer | LoscamDocketNo | OtherCustomerOwn | ChepOtherExchange | ChepOtherTransfer | ChepOtherDocketNo | LoscamOtherExchange | LoscamOtherTransfer | LoscamOtherDocketNo |
-      |            1111 |         1112 |         1113 |         1114 |              2111 |           2112 |           2113 |           2114 |             3111 |              4112 |              4113 |              4114 |                1112 |                1113 |                1114 |
+      | Abcd1234       | Test Special Instructions | No        |
+   
     Then User be able to see line item headings as below
       | LineItemName1Heading | ItemTemplateName     | NumberOfItems | ItemDescriptionHeading | ItemsHeading | BillingTypeHeading | DimensionsHeading | TotalVolumeHeading | WeightHeading | Reference1Heading | Reference2Heading | ShipmentContainDangerousGoodsHeading |
       | Line Item 1          | Automation Template1 |            10 | Item description       | Items        | Billing type       | Dimensions        | Total volume (m3)  | Weight (kg)   | Reference1        | Reference2        | Shipment contain dangerous goods     |
@@ -148,5 +116,5 @@ Feature: MYT_6225 Toll Energy Shipment, Manifesting and Printing
     Then User can add shipment to Manifest successfully.
     When User clicks on Print
     Then User can print manifest successfully.
-    #
-    #
+    
+    

@@ -57,7 +57,7 @@ public class TollPriorityNZ {
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.EnterReceiver(Receiver);
+		CreateShipmentActions.EnterReceiver("NZ POST Ltd");
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
@@ -149,7 +149,7 @@ public class TollPriorityNZ {
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.SelectReceiver(Receiver);
+		CreateShipmentActions.SelectReceiver(1);
 		// CreateShipmentActions.EnterReceiver("Test", "Test174");
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
@@ -245,7 +245,8 @@ public class TollPriorityNZ {
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.SelectReceiver(Receiver);
+		//CreateShipmentActions.SelectReceiver(Receiver);
+		CreateShipmentActions.EnterReceiver("NZ POST Ltd");
 
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
 		// String Sender.ccontainText(Sender);
@@ -328,7 +329,7 @@ public class TollPriorityNZ {
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.SelectReceiver(Receiver);
+		CreateShipmentActions.SelectReceiver(1);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
@@ -424,7 +425,7 @@ public class TollPriorityNZ {
 			System.out.println(AccountNumber);
 			CreateShipmentActions.SelectWhoPays(WhoPays);
 			CreateShipmentActions.SelectSender(Sender);
-			CreateShipmentActions.SelectReceiver(Receiver);
+			CreateShipmentActions.SelectReceiver(1);
 
 			String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
 			
