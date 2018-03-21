@@ -28,14 +28,14 @@ public class TollPriorityNZTest {
 	}
 
 	@Test(groups = { "Shakeout Testing" })
-	@Parameters({ "TollCarrierTollPrioNZ","AccountNumberTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
-			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference", "DestinationCountry",
-			"specialIns" })
+	@Parameters({ "TollCarrierTollPrioNZ", "AccountNumberTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex","ReceiverTGX",
+			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference",
+			"DestinationCountry", "specialIns" })
 
-	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_GlobalExpressDocuments(String TollCarrier, String AccountNumberTollPrioNZ,
-			String ServiceGlobalExpressDocuments, Integer locationIndex, String ItemTemplateName, String Length,
-			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String reference,
-			String destination, String specialIns) {
+	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_GlobalExpressDocuments(String TollCarrier,
+			String AccountNumberTollPrioNZ, String ServiceGlobalExpressDocuments, Integer locationIndex, String Receiver,
+			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight,
+			String palletSpace, String reference, String destination, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -46,8 +46,8 @@ public class TollPriorityNZTest {
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		//BookAPickupActions.SelectLocation2(locationIndex);
-		BookAPickupActions.EnterLocation("NZ Post Ltd");
+		// BookAPickupActions.SelectLocation2(locationIndex);
+		BookAPickupActions.EnterLocation(Receiver);
 		PageBase.Scrollbar(250, 500);
 		// Enter data for Quick entry mode, service(=GlobalExpress),
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
@@ -78,30 +78,29 @@ public class TollPriorityNZTest {
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
-		 ReviewYourPickupActions.ClickConfirmPickup();
-			//BookAPickupActions.GetReferenceNumber() ;
+		ReviewYourPickupActions.ClickConfirmPickup();
+		// BookAPickupActions.GetReferenceNumber() ;
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollPrioNZ","AccountNumberTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex", "ItemTemplateName",
-			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference", "DestinationCountry",
-			"specialIns" })
+	@Parameters({ "TollCarrierTollPrioNZ", "AccountNumberTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex","ReceiverTGX",
+			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference",
+			"DestinationCountry", "specialIns" })
 
-	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_VerifyDetails(String TollCarrier, String AccountNumberTollPrioNZ,
-			String ServiceGlobalExpressDocuments, Integer locationIndex, String ItemTemplateName, String Length,
-			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String reference,
-			String destination, String specialIns) {
+	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_VerifyDetails(String TollCarrier,
+			String AccountNumberTollPrioNZ, String ServiceGlobalExpressDocuments, Integer locationIndex,String Receiver,
+			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight,
+			String palletSpace, String reference, String destination, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTollPrioNZ);
-
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		BookAPickupActions.EnterLocation("NZ Post Ltd");
+		BookAPickupActions.EnterLocation(Receiver);
 
 		// Enter data for Quick entry mode, service(=GlobalExpress),
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
@@ -130,20 +129,21 @@ public class TollPriorityNZTest {
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
 		BookAPickupActions.ClickReviewBook();
-		 ReviewYourPickupActions.ClickConfirmPickup();
-			//BookAPickupActions.GetReferenceNumber() ;
+		ReviewYourPickupActions.ClickConfirmPickup();
+		// BookAPickupActions.GetReferenceNumber() ;
 
 	}
 
 	@Test
-	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTollPrioNZ","locationIndex", "ItemTemplateName",
-			"NumberOfItems", "Length", "Width", "Height", "Weight", "DGGoodsNo", "palletSpace", "reference", "DestinationNZ","DestinationNZPostcode",
-			"DestinationNZItem", "specialIns" })
+	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTollPrioNZ", "locationIndex","ReceiverTGX",
+			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "DGGoodsNo", "palletSpace",
+			"reference", "DestinationNZ", "DestinationNZPostcode", "DestinationNZItem", "specialIns" })
 
 	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_ParcelsOffPeak(String TollCarrier,
-			String ServiceParcelsOffPeak,String AccountNumberTollPrioNZ, Integer locationIndex, String ItemTemplateName, String Length,
-			String NumberOfItems, String Width, String Height, String Weight,String DGGoodsNo, String palletSpace, String reference,
-			String destination, String DestinationNZPostcode,String destinationItem, String specialIns) {
+			String ServiceParcelsOffPeak, String AccountNumberTollPrioNZ, Integer locationIndex,String Receiver,
+			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight,
+			String DGGoodsNo, String palletSpace, String reference, String destination, String DestinationNZPostcode,
+			String destinationItem, String specialIns) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -156,8 +156,8 @@ public class TollPriorityNZTest {
 		BookAPickupActions.VerifyBookAPickupScreen();
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		BookAPickupActions.EnterLocation("NZ Post Ltd");
-		
+		BookAPickupActions.EnterLocation(Receiver);
+
 		String company = BookAPickupActions.GetCompany(1);
 		System.out.println(company);
 		String location = BookAPickupActions.GetLocation(1);
@@ -178,7 +178,8 @@ public class TollPriorityNZTest {
 		String countryCode = BookAPickupActions.GetCountryCode();
 		System.out.println(countryCode);
 
-		String userPhoneNumber = countryCode.replaceAll("[-+.^:,]","") + phoneNumberModified.replaceAll("[-+.^:,]","");
+		String userPhoneNumber = countryCode.replaceAll("[-+.^:,]", "")
+				+ phoneNumberModified.replaceAll("[-+.^:,]", "");
 		System.out.println(userPhoneNumber);
 
 		PageBase.Scrollbar(250, 500);
@@ -218,20 +219,20 @@ public class TollPriorityNZTest {
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYourPickupActions.VerifyPickupDetailsTollPrioNZ(TollCarrier, accountNo, company, companyLocation, name,
-				userPhoneNumber, readyTime, closingTime, specialInstruction);
+		ReviewYourPickupActions.VerifyPickupDetailsTollPrioNZ(TollCarrier, accountNo, Receiver, companyLocation,
+				name, userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYourPickupActions.VerifyItemDetails1TollPrioNZ("0", "ITEM DETAILS", "Skid", DestinationNZPostcode,
 				ServiceParcelsOffPeak, NumberOfItems, Length, Width, Height, TotalWeight, DGGoodsNo);
 
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
-		//BookAPickupActions.GetReferenceNumber();
+		// BookAPickupActions.GetReferenceNumber();
 
 	}
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		//BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 	}
 }

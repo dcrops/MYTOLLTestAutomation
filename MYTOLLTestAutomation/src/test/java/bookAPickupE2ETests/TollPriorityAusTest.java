@@ -260,7 +260,7 @@ public class TollPriorityAusTest {
 	// Enter Pickup details
 	jse.executeScript("scroll(500, 800)");
 	PageBase.MediumWaitForElementEnabled();
-	BookAPickupActions.selectDispatchDate();
+	BookAPickupActions.SelectDispatchDateTomorrow();
 	ManifestActions.selectReadyTimeJS("07:00");
 	BookAPickupActions.ClickReviewBook();
 	PageBase.MaximumWaitForElementEnabled();
@@ -311,7 +311,7 @@ public class TollPriorityAusTest {
 	// Enter Pickup details
 	jse.executeScript("scroll(500, 800)");
 	PageBase.MediumWaitForElementEnabled();
-	BookAPickupActions.selectDispatchDate();
+	BookAPickupActions.SelectDispatchDateTomorrow();;
 	ManifestActions.selectReadyTimeJS("07:00");
 	BookAPickupActions.ClickReviewBook();
 	PageBase.MaximumWaitForElementEnabled();
@@ -363,7 +363,7 @@ public class TollPriorityAusTest {
 	// Enter Pickup details
 	jse.executeScript("scroll(500, 800)");
 	PageBase.MediumWaitForElementEnabled();
-	BookAPickupActions.selectDispatchDate();
+	BookAPickupActions.SelectDispatchDateTomorrow();
 	ManifestActions.selectReadyTimeJS("07:00");
 	BookAPickupActions.ClickReviewBook();
 	PageBase.MaximumWaitForElementEnabled();
@@ -414,7 +414,7 @@ public class TollPriorityAusTest {
 	// Enter Pickup details
 	jse.executeScript("scroll(500, 800)");
 	PageBase.MediumWaitForElementEnabled();
-	BookAPickupActions.selectDispatchDate();
+	BookAPickupActions.SelectDispatchDateTomorrow();
 	ManifestActions.selectReadyTimeJS("07:00");
 	BookAPickupActions.ClickReviewBook();
 	PageBase.MaximumWaitForElementEnabled();
@@ -466,7 +466,7 @@ public class TollPriorityAusTest {
 	// Enter Pickup details
 	jse.executeScript("scroll(500, 800)");
 	PageBase.MediumWaitForElementEnabled();
-	BookAPickupActions.selectDispatchDate();
+	BookAPickupActions.SelectDispatchDateTomorrow();
 	ManifestActions.selectReadyTimeJS("07:00");
 	BookAPickupActions.ClickReviewBook();
 	PageBase.MaximumWaitForElementEnabled();

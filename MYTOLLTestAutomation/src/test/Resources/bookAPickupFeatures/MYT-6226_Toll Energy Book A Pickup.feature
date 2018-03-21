@@ -27,15 +27,15 @@ Feature: MYT_6226 Toll Energy Book A Pickup
       | DgGoods |
       |       1 |
     And User enter dangerous goods details as below
-      | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |
-      |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |
+      | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      | LookupItem |
+      |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |          1 |
     Then User able to see following fields autopopulated.
       | Class/Div | SubRisk | PackingGroup | Proper Shoping Name            |
       |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
     When User clicks on ADD NEW LINES to add more items
     And User enter following input data to Add Item
       | Service | Destination | ItemDescription     | NoOfItems | PalletSpace | destination     |
-      | Express | MELALEUCA   | Automation Template |        10 |           6 | MELALEUCA, 6079 |
+      | General | MELALEUCA   | Automation Template |        10 |           6 | MELALEUCA, 6079 |
     And User Selects Charge to Account as below
       | ChargeToAccount | AccountNumber |
       |               1 |         12345 |
@@ -66,13 +66,13 @@ Feature: MYT_6226 Toll Energy Book A Pickup
       | DANGEROUS GOODS DETAILS      |     2025 |           6.1 | II             | NA      | MERCURY COMPOUND, SOLID, N.O.S | Test Package Description |    20 |    10 | Test Technical Name |
     Then User be able to see second item details entered in Review Your Pickup screen
       | ItemDescription     | Destination   | Service | Mode | ChargeTo | NoOfItems | PalletSpaces | Length | Width | Height | Volume    | TotalWeight | DangerousGoods | FoodItem |
-      | Automation Template | MELEUCA, 6079 | Express | Rail | Sender   |        10 |            6 |    100 |   100 |    100 | 10.000 m3 | 900 kg      | No             | No       |
+      | Automation Template | MELEUCA, 6079 | General | Rail | Sender   |        10 |            6 |    100 |   100 |    100 | 10.000 m3 | 900 kg      | No             | No       |
     When User presses on Confirm Pickup button
     Then User navigates to "PICKUP CONFIRMED" screen
     Then User can see "Refrence Number" with "TW"
     Then User be able to see a message as an email delivered.
-      | Msg                                                          |
-      |  Wehavesentyouanemailconfirmingyourpickupbookingto:: |
+      | Msg                                                 |
+      | Wehavesentyouanemailconfirmingyourpickupbookingto:: |
     Then User can see email address for an email deliveredpickup confirmation.
 
   @tag1
@@ -85,7 +85,7 @@ Feature: MYT_6226 Toll Energy Book A Pickup
       | AccessHQ |
     When User enter following input data to Add Item
       | Service | Destination | ItemDescription     | NoOfItems | PalletSpace | destination     |
-      | Express | MELALEUCA   | Automation Template |        10 |           6 | MELALEUCA, 6079 |
+      | General | MELALEUCA   | Automation Template |        10 |           6 | MELALEUCA, 6079 |
     And User Selects Charge to Account as below
       | ChargeToAccount | AccountNumber |
       |               1 |         12345 |
@@ -110,14 +110,11 @@ Feature: MYT_6226 Toll Energy Book A Pickup
       | Toll Energy and Marine | G28668        | AccessHQ | 60, Collins Street CDE MELBOURNE VIC 3000 AU | Test5213  |    452456876 | 14:45      | 18:00                 | Special Ins          |
     Then User be able to see first item details entered in Review Your Pickup screen
       | ItemDescription     | Destination   | Mode | Service | ChargeTo | NoOfItems | PalletSpaces | Length | Width | Height | Volume    | TotalWeight | DangerousGoods | FoodItem |
-      | Automation Template | MELEUCA, 6079 | Road | Express | Sender   |        10 |            6 |    100 |   100 |    100 | 10.000 m3 | 900 kg      | No             | No       |
+      | Automation Template | MELEUCA, 6079 | Road | General | Sender   |        10 |            6 |    100 |   100 |    100 | 10.000 m3 | 900 kg      | No             | No       |
     When User presses on Confirm Pickup button
     Then User navigates to "PICKUP CONFIRMED" screen
     Then User can see "Refrence Number" with "TW"
     Then User be able to see a message as an email delivered.
-      | Msg                                                                             |
+      | Msg                                                 |
       | Wehavesentyouanemailconfirmingyourpickupbookingto:: |
     Then User can see email address for an email deliveredpickup confirmation.
-    
-    
-    

@@ -125,7 +125,7 @@ public class TollPriorityAUSTests {
 
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments","WhoPays", "whoPays", "Sender",
-		"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
+		"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 		"Height", "Weight", "ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2",
 		"DGYes", "DGNo", "BillingTypeAllFreight", "PalletTransactionsInfoNo", "PurchaseOrder", "SpeceialIns", "DGItem",
@@ -137,7 +137,7 @@ public class TollPriorityAUSTests {
 		"ShipmentContainDangerousGoodsNo" })
 	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments(String TollCarrier,
 			String ServiceGlobalExpressDocuments,Integer WhoPays, String whoPays, Integer Sender,
-			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
+			String Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String ItemTemplateName2,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
@@ -158,8 +158,8 @@ public class TollPriorityAUSTests {
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.SelectReceiver(Receiver);
-
+		//CreateShipmentActions.SelectReceiver(Receiver);
+		BookAPickupActions.EnterLocation(Receiver);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		
@@ -196,7 +196,7 @@ public class TollPriorityAUSTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 		
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumber, sender, senderLocation, Receiver,
 				receiverLocation, ShipmentRef1, ServiceGlobalExpressDocuments, whoPays);
 		ShipmentReviewActions.VerifyAdditionalInformationTollPrioAU(SpeceialIns, PalletTransactionsInfoNo);
 		String numberOfItems = ItemsHeading + " " + NumberOfItems;
@@ -220,7 +220,7 @@ public class TollPriorityAUSTests {
 
 	@Test
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments","WhoPays", "whoPays", "Sender",
-		"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
+		"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 		"Height", "Weight", "ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2",
 		"DGYes", "DGNo", "BillingTypeAllFreight", "PalletTransactionsInfoNo", "PurchaseOrder", "SpeceialIns", "DGItem",
@@ -232,7 +232,7 @@ public class TollPriorityAUSTests {
 		"ShipmentContainDangerousGoodsNo"  })
 	public void CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_Z_GlobalExpressDocumentsShipmentConsolidation(
 			String TollCarrier, String ServiceGlobalExpressDocuments, Integer WhoPays, String whoPays, Integer Sender,
-			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
+			String Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String ItemTemplateName2,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
@@ -252,8 +252,8 @@ public class TollPriorityAUSTests {
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.SelectReceiver(Receiver);
-
+		//CreateShipmentActions.SelectReceiver(Receiver);
+		BookAPickupActions.EnterLocation(Receiver);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
 		//String Sender.ccontainText(Sender);
 		System.out.println(sender);
@@ -275,7 +275,7 @@ public class TollPriorityAUSTests {
 		
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumber, sender, senderLocation, receiver,
+		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumber, sender, senderLocation, Receiver,
 				receiverLocation, ShipmentRef1, ServiceGlobalExpressDocuments, whoPays);
 		ShipmentReviewActions.VerifyAdditionalInformationTollPrioAU(SpeceialIns, PalletTransactionsInfoNo);
 		String numberOfItems = ItemsHeading + " " + NumberOfItems;

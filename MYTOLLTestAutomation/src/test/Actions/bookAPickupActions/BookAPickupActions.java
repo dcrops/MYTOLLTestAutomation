@@ -1131,7 +1131,7 @@ public class BookAPickupActions {
 
 	public static void ClickAdd() {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(add).click();
+		//BaseWebdriver.driver.findElement(add).click();
 	}
 
 	public static void selectContainFoodItem() {
@@ -1141,7 +1141,8 @@ public class BookAPickupActions {
 
 	public static void selectDispatchDate() {
 		BaseWebdriver.driver.findElement(pickupDate).click();
-		BaseWebdriver.driver.findElement(pickupDateToday).click();
+		//BaseWebdriver.driver.findElement(pickupDateToday).click();
+		BaseWebdriver.driver.findElement(pickupDateTomorrow).click();
 
 	}
 	
@@ -1421,7 +1422,8 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div")).click();  
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
+		PageBase.SendKeysTo(dgPackagingDescription, packageDescription, 10);
+		//BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 		BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
 		BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
 
@@ -1735,9 +1737,10 @@ public class BookAPickupActions {
 				By.xpath("//*[@id=\"add-addr-country-selector\"]/div/ul/li[text()='" + pAddAdressCountry + "']"), 5);
 		PageBase.SendKeysTo(AddAdressAddressLine1, pAddAdressAddressLine1, 5);
 		PageBase.SendKeysTo(AddAdressAddressLine2, pAddAdressAddressLine2, 5);
-		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 15);
 		PageBase.SelectFrom(By.xpath(
-				"//*[@id=\"add-addr-postcode-wrpr\"]/div/ul/li/div[text()='" + pAddAdressAddressSuburbItem + "']"), 5);
+				"//*[@id=\"add-addr-postcode-wrpr\"]/div/ul/li/div[text()='" + pAddAdressAddressSuburbItem + "']"), 15);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(AddAdressEmailTGXTextField, pEmail, 5);
 		PageBase.retryingFindClick(AddAdressAddressContinue);

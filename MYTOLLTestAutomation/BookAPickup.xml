@@ -168,7 +168,7 @@
 	<parameter name="Suburb7Option" value="4000, BRISBANE CITY, QLD, AU" />
 	<parameter name="Postcode7" value="4000" />
 	<parameter name="Suburb8" value="SOUTH BRISBANE" />
-	<parameter name="Suburb8Option" value="4101, SOUTH BRISBANE, QLD, AU" />
+	<parameter name="Suburb8Option" value="4101, SOUTH BRISBANE BC, QLD, AU" />
 	<parameter name="Postcode8" value="4101" />
 	<parameter name="Suburb9" value="FOUNTAIN VALLEY" />
 	<parameter name="Suburb9Option" value="5159, FOUNTAIN VALLEY, SA, AU" />
@@ -189,8 +189,7 @@
 	<parameter name="Suburb14Option" value="6020, MARMION, WA, AU" />
 	<parameter name="Postcode14" value="6020" />
 	
-<classes> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
-			/>
+<classes> <class name="bookAPickupE2ETests.IntermodalSpecializedTest"/> 
 
 		<!-- Blocked> <classes> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
 			/>  <class name="bookAPickupE2ETests.TollPriorityNZTest" 
