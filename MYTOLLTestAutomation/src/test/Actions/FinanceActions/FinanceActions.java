@@ -44,8 +44,10 @@ public class FinanceActions {
 	public static By CalenderBackBtn= By.xpath("//*[@id=\"ui-datepicker-div\"]/div/a[1]/span");
 	public static By DateFrom= By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[4]/td[6]/a");
 	public static By DateTo= By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[3]/td[6]/a");
-	public static By InvoiceNumberTextfield= By.id("search_inv_nbr");			
+	public static By InvoiceNumberTextfield= By.id("search_inv_nbr");	
+	public static By InvoiceNumberIPECTextfield= By.id("search_inv_nbr_ipec");		
 	public static By SearchBtn= By.id("search_button"); 
+	public static By DownloadResultsBtn= By.id("download_results"); 
 	
 	// Invoice Grid results
 	public static By invoiceDate= By.xpath("//*[@id=\"myInvoice_searchResult\"]/div/div/div/table/tbody/tr/td[1]");
@@ -53,7 +55,15 @@ public class FinanceActions {
 	public static By chargeAmount= By.xpath("//*[@id=\"myInvoice_searchResult\"]/div/div/div/table/tbody/tr/td[3]");
 	public static By shipmentDocuments= By.xpath("//*[@id=\"myInvoice_searchResult\"]/div/div/div/table/tbody/tr/td[4]/span/span");
 	public static By downloadBtn= By.id("downloadModal");
+	public static By downloadedFileName= By.xpath("//*[@id=\"fileIdIPEC_NA4271_0594.zip\"]/td[1]");
+	public static By downloadedFileStatus= By.xpath("//*[@id=\"fileIdIPEC_NA4271_0594.zip\"]/td[2]");
+	public static By downloadedFileSize= By.xpath("//*[@id=\"fileIdIPEC_NA4271_0594.zip\"]/td[3]");
+	public static By downloadedFilesDeleteBtn= By.xpath("//*[@id=\"fileIdIPEC_NA4271_0594.zip\"]/td[3]");
+	public static By downloadedSuccessfulMessage= By.xpath("//*[@id=\"alert-box-wrapper\"]/div/div/div[2]"); 
+	public static By ClosedownloadedSuccessfulMessage= By.xpath("//*[@id=\"closeAlert\"]"); 
 	
+	//*[@id="997"]/span/span
+	//*[@id="996"]/span/span
 	
 	public static void ClickFinance() {
 		PageBase.ClickOn(FinanceMegaMenu, 5);
@@ -178,6 +188,12 @@ public class FinanceActions {
 		PageBase.ClickOn(SearchBtn, 5);
 		
 	}
+	
+public static void ClickDownloadResultsBtn() {
+		
+		PageBase.ClickOn(DownloadResultsBtn, 5);
+		
+	}
 
 	public static String GetInvoiceLabel() {
 		return PageBase.GetText(InvoiceLabel, 5);
@@ -193,7 +209,15 @@ public class FinanceActions {
 	public static void EnterInvoiceNumber(String pInvoiceNumber) {
 		PageBase.MaximumWaitForElementEnabled();
 		ClickInvoiceRadioBtn();
-		PageBase.SendKeysTo(InvoiceNumberTextfield, pInvoiceNumber, 10);
+		PageBase.SendKeysTo(InvoiceNumberTextfield, pInvoiceNumber, 10); 
+		PageBase.MaximumWaitForElementEnabled(); 
+		
+	}
+	
+	public static void EnterInvoiceNumberIPEC(String pInvoiceNumber) {
+		PageBase.MaximumWaitForElementEnabled();
+		ClickInvoiceRadioBtn();
+		PageBase.SendKeysTo(InvoiceNumberIPECTextfield, pInvoiceNumber, 10);  
 		PageBase.MaximumWaitForElementEnabled(); 
 		
 	}
@@ -236,6 +260,37 @@ public class FinanceActions {
 	public static String GetDownloadBtn() {
 		return PageBase.GetText(downloadBtn, 5);
 
+	}
+	
+	public static String GetFileName() {
+		return PageBase.GetText(downloadedFileName, 5);
+
+	}
+	
+	public static String GetStatus() {
+		return PageBase.GetText(downloadedFileStatus, 5);
+
+	}
+	
+	public static String GetFileSize() {
+		return PageBase.GetText(downloadedFileSize, 5);
+
+	}
+	
+	public static String GetDownloadSuccessfulMsg() {
+		return PageBase.GetText(downloadedSuccessfulMessage, 5);
+
+	}
+	
+	
+	public static void CloseDownloadSuccessfulMsg() {
+		PageBase.ClickOn(ClosedownloadedSuccessfulMessage, 5);
+
+	}
+	
+	public static void DeleteDownloadFile()
+	{
+		
 	}
 
 }
