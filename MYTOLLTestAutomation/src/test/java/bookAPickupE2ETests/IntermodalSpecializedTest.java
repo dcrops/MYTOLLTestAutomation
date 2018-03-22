@@ -59,13 +59,13 @@ public class IntermodalSpecializedTest {
 		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
-		String company = BookAPickupActions.GetCompany(1);
+		String company = BookAPickupActions.GetCompany();
 		System.out.println(company);
-		String location = BookAPickupActions.GetLocation(1);
+		String location = BookAPickupActions.GetLocation();
 		System.out.println(location);
-		String locationLine2 = BookAPickupActions.GetLocationAddressLine2(1);
+		String locationLine2 = BookAPickupActions.GetLocationAddressLine2();
 		System.out.println(locationLine2);
-		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber(1);
+		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber();
 		System.out.println(addressPhoneNumber);
 		String companyLocation = location + locationLine2;
 		System.out.println(location + " " + locationLine2);
@@ -126,7 +126,8 @@ public class IntermodalSpecializedTest {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = BookAPickupActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
-
+		BookAPickupActions.ClickAdd();
+		
 		// Add a new item
 		BookAPickupActions.AddANewLineTollNQX(destination, DestinationItem, ServiceExpress, ItemTemplateName2,
 				NumberOfItems, palletSpace, ChargeToAccount, Length, Width, Height, Weight);
@@ -239,7 +240,8 @@ public class IntermodalSpecializedTest {
 				BookAPickupActions.SelectPackgingGroup(PackingGroup);
 				BookAPickupActions.EnterTechnicalName(technicalName);
 				PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
-
+				BookAPickupActions.ClickAdd();
+				
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
@@ -323,7 +325,8 @@ public class IntermodalSpecializedTest {
 				BookAPickupActions.SelectPackgingGroup(PackingGroup);
 				BookAPickupActions.EnterTechnicalName(technicalName);
 				PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
-
+				BookAPickupActions.ClickAdd();
+				
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
@@ -371,13 +374,13 @@ public class IntermodalSpecializedTest {
 		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
-		String company = BookAPickupActions.GetCompany(1);
+		String company = BookAPickupActions.GetCompany();
 		System.out.println(company);
-		String location = BookAPickupActions.GetLocation(1);
+		String location = BookAPickupActions.GetLocation();
 		System.out.println(location);
-		String locationLine2 = BookAPickupActions.GetLocationAddressLine2(1);
+		String locationLine2 = BookAPickupActions.GetLocationAddressLine2();
 		System.out.println(locationLine2);
-		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber(1);
+		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber();
 		System.out.println(addressPhoneNumber);
 		String companyLocation = location + locationLine2;
 		System.out.println(location + " " + locationLine2);
@@ -439,7 +442,7 @@ public class IntermodalSpecializedTest {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = BookAPickupActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
-
+		BookAPickupActions.ClickAdd();
 		// Add a new item
 		BookAPickupActions.AddANewLineTollNQX(destination, DestinationItem, ServiceExpress, ItemTemplateName2,
 				NumberOfItems, palletSpace, chargeToAccount, Length, Width, Height, Weight);
@@ -451,10 +454,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectContainFoodItem();
 
 		BookAPickupActions.selectDangerousGoodNewLine();
-		BookAPickupActions.ClickAddANewLine();
-
-		PageBase.MoveToElement(BookAPickupActions.noOfItemsQME, BookAPickupActions.length);
-
+		
 		PageBase.MediumWaitForElementEnabled();
 		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
@@ -771,7 +771,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
-
+		BookAPickupActions.ClickAdd();
 		// Enter Pickup details
 
 		BookAPickupActions.selectDispatchDate();
@@ -835,7 +835,8 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
-
+		BookAPickupActions.ClickAdd();
+		
 		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
@@ -907,6 +908,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
+		BookAPickupActions.ClickAdd();
 		// BookAPickupActions.SelectPackingGroup();
 		// Enter Pickup details
 		// jse.executeScript("scroll(1500, 1700)");

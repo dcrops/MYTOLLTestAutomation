@@ -45,9 +45,11 @@ public class FinanceActions {
 	public static By DateFrom= By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[4]/td[6]/a");
 	public static By DateTo= By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[3]/td[6]/a");
 	public static By InvoiceNumberTextfield= By.id("search_inv_nbr");	
+	public static By InvoiceNumberTOLLEnergyTextfield= By.id("search_str");
 	public static By InvoiceNumberIPECTextfield= By.id("search_inv_nbr_ipec");		
 	public static By SearchBtn= By.id("search_button"); 
 	public static By DownloadResultsBtn= By.id("download_results"); 
+	public static By ViewAccountSummary= By.xpath("//*[@id=\"finance-step1\"]/div[3]/div[1]/div/span");
 	
 	// Invoice Grid results
 	public static By invoiceDate= By.xpath("//*[@id=\"myInvoice_searchResult\"]/div/div/div/table/tbody/tr/td[1]");
@@ -129,6 +131,17 @@ public class FinanceActions {
 		PageBase.ClickOn(
 				By.xpath(
 						"//*[@id=\"account-number-selector\"]/div[2]/ul/li/div[text()='" + pAccountNumber + " " + "']"),
+				10);
+
+	}
+	
+	public static void EnterAccountNumberWithName(String pAccountNumber) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(accountNumberTextField, pAccountNumber, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(
+				By.xpath(
+						"//*[@id=\"account-number-selector\"]/div[2]/ul/li/div[text()='" + pAccountNumber+ "']"),
 				10);
 
 	}
@@ -222,6 +235,14 @@ public static void ClickDownloadResultsBtn() {
 		
 	}
 	
+	public static void EnterInvoiceNumberIE(String pInvoiceNumber) {
+		PageBase.MaximumWaitForElementEnabled();
+		ClickInvoiceRadioBtn();
+		PageBase.SendKeysTo(InvoiceNumberTOLLEnergyTextfield, pInvoiceNumber, 10);
+		PageBase.MaximumWaitForElementEnabled(); 
+		
+	}
+	
 	public static void SearchInvoiceDateRange() {
 		PageBase.MaximumWaitForElementEnabled();
 		ClickDateRangeRadioBtn();
@@ -288,9 +309,10 @@ public static void ClickDownloadResultsBtn() {
 
 	}
 	
-	public static void DeleteDownloadFile()
+	public static void ClickViewAccountSummary()
 	{
-		
+		PageBase.ClickOn(ViewAccountSummary, 5);
+
 	}
 
 }

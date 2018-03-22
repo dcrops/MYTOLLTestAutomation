@@ -43,7 +43,7 @@ public class ReviewYourPickupActions {
 
 	// Item1 details validation
 	public static By itemArrowDownItem1 = By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[7]/a/i");
-	public static By itemArrowDownItem1TPrioAU = By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[6]/a/i");
+	public static By itemArrowDownItem1TPrioAU = By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[7]/a/i");
 	public static By itemDetailsHeading = By.xpath("//*[@id=\"line-item-0\"]/div[@class='item-body content-box']/h5");
 	public static By destination = By.xpath(
 			"//*[@id=\"line-item-0\"]//div[@class='item-body content-box']//label[text()='Destination']/following::div/p");

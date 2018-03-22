@@ -630,10 +630,11 @@ public class BookAPickupActions {
 		return vCompany;
 	
 	}
+
 	
 	public static String GetCompany() {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(locationDropdown).click();
+		//BaseWebdriver.driver.findElement(locationDropdown).click();
 		return  PageBase.GetText(location, 5);
 
 	}
@@ -647,6 +648,14 @@ public class BookAPickupActions {
 
 	}
 	
+	public static String GetLocation() {
+		PageBase.MaximumWaitForElementEnabled();
+		String vLocation = BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[2]")).getText();
+		return vLocation;
+
+	}
+	
 
 	public static String GetLocationAddressLine2(Integer i) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -655,11 +664,28 @@ public class BookAPickupActions {
 		return vLocationAddressLine2;
 
 	}
+	
+	public static String GetLocationAddressLine2() {
+		PageBase.MaximumWaitForElementEnabled();
+		String vLocationAddressLine2 = BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[3]")).getText();
+		return vLocationAddressLine2;
+
+	}
+
 
 	public static String GetAddressPhoneNumber(Integer i) {
 		PageBase.MaximumWaitForElementEnabled();
 		String vPhoneNumber = BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[" + i + "]/div[4]")).getText();
+		return vPhoneNumber;
+
+	}
+	
+	public static String GetAddressPhoneNumber() {
+		PageBase.MaximumWaitForElementEnabled();
+		String vPhoneNumber = BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[4]")).getText();
 		return vPhoneNumber;
 
 	}

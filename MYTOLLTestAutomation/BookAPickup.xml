@@ -34,7 +34,7 @@
 	<parameter name="ServiceDangerousGoods" value="Dangerous Goods" />
 	<parameter name="ServiceDGRefrigerated" value="DG Refrigerated" />
 	<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
-	<parameter name="ServiceDGExpress" value="DG Express" />
+	<parameter name="ServiceDGExpress" value="Dangerous Goods Express" />
 	<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 	<parameter name="ServicePriority" value="Priority" />
 
@@ -74,7 +74,8 @@
 	<parameter name="Weight" value="900" />
 	<parameter name="palletSpace" value="5" />
 	<parameter name="reference" value="12345" />
-
+	<parameter name="ReceiverTGX" value="NZ Post Ltd" />
+	
 	<!---Dangerous goods test data -->
 
 	<parameter name="DGGoodsNo" value="No" />
@@ -189,8 +190,8 @@
 	<parameter name="Suburb14Option" value="6020, MARMION, WA, AU" />
 	<parameter name="Postcode14" value="6020" />
 	
-<classes> <class name="bookAPickupE2ETests.IntermodalSpecializedTest"/> 
-
+<classes> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
+			/>
 		<!-- Blocked> <classes> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
 			/>  <class name="bookAPickupE2ETests.TollPriorityNZTest" 
 			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 

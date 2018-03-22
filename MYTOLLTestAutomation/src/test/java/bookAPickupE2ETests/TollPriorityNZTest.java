@@ -134,7 +134,7 @@ public class TollPriorityNZTest {
 
 	}
 
-	@Test
+	@Test(priority=-2)
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTollPrioNZ", "locationIndex","ReceiverTGX",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "DGGoodsNo", "palletSpace",
 			"reference", "DestinationNZ", "DestinationNZPostcode", "DestinationNZItem", "specialIns" })
@@ -158,13 +158,13 @@ public class TollPriorityNZTest {
 
 		BookAPickupActions.EnterLocation(Receiver);
 
-		String company = BookAPickupActions.GetCompany(1);
+		String company = BookAPickupActions.GetCompany();
 		System.out.println(company);
-		String location = BookAPickupActions.GetLocation(1);
+		String location = BookAPickupActions.GetLocation();
 		System.out.println(location);
-		String locationLine2 = BookAPickupActions.GetLocationAddressLine2(1);
+		String locationLine2 = BookAPickupActions.GetLocationAddressLine2();
 		System.out.println(locationLine2);
-		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber(1);
+		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber();
 		System.out.println(addressPhoneNumber);
 		String companyLocation = location + locationLine2;
 		System.out.println(location + " " + locationLine2);

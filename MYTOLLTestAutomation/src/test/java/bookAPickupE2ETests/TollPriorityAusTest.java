@@ -56,13 +56,13 @@ public class TollPriorityAusTest {
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country,
 				AddressLine1,AddressLine2, Suburb1,Suburb1Option,Postcode1, Email, PhoneNumber, PhoneCountry1);
 
-		String company = BookAPickupActions.GetCompany(1);
+		String company = BookAPickupActions.GetCompany();
 		System.out.println(company);
 		//String location = BookAPickupActions.GetLocation(1);
 		//System.out.println(location);
-		String locationLine2 = BookAPickupActions.GetLocationAddressLine2(1);
+		String locationLine2 = BookAPickupActions.GetLocationAddressLine2();
 		System.out.println(locationLine2);
-		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber(1);
+		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber();
 		System.out.println(addressPhoneNumber);
 		String companyLocation = location + locationLine2;
 		System.out.println(location + " " + locationLine2);
