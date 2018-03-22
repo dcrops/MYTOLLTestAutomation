@@ -25,7 +25,7 @@ public class TollTasmaniaTests {
 
 	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "AccountNumberTTas", "whoPays", "Mode", "Sender",
-			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
+			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2", "Width2", "Height2",
 			"Weight2", "DGYes", "PackingGroup", "lookupName", "lookupItem", "packageDescription", "pDgPkgQty",
@@ -172,7 +172,7 @@ public class TollTasmaniaTests {
 
 	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceExpress", "AccountNumberTTas", "whoPays", "Mode", "Sender",
-			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
+			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2", "Width2", "Height2",
 			"Weight2", "DGYes", "PackingGroup", "lookupName", "lookupItem", "packageDescription", "pDgPkgQty",
@@ -297,7 +297,7 @@ public class TollTasmaniaTests {
 
 	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
-			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
+			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2", "Width2", "Height2",
 			"Weight2", "DGYes", "PackingGroup", "lookupName", "lookupItem", "packageDescription", "pDgPkgQty",
@@ -423,7 +423,7 @@ public class TollTasmaniaTests {
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration", "AccountNumberTTas", "WhoPays", "whoPays",
 		"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "dropOffDepot", "DropOffDepot",
-		"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
+		"CollectionDepotTTas", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
 		"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "ItemTemplateName2",
 		"NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "DGYes", "DGNo", "BillingType", "SpeceialIns",
 		"DGItem", "LookupSearch", "PackageDescription", "DgPkgQty", "DgQtyKg", "ChepCustomer", "ChepExchange",
@@ -546,7 +546,7 @@ public class TollTasmaniaTests {
 	
 	@Test
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
-			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "DGContactNumber",
+			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2", "Width2", "Height2",
 			"Weight2", "DGYes", "PackingGroup", "lookupName", "lookupItem", "packageDescription", "pDgPkgQty",

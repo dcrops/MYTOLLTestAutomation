@@ -8,7 +8,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/createShipmentFeatures/MYT_1650_Shipment Default mode to Quick Entry  mode.feature"}
+        ,features = { "src/test/Resources/createShipmentFeatures/MYT_6240_Toll Mining Services Shipment Manifesting Printing.feature"}
 		,glue= {"commonStepsDefinitions", "createShipmentStepDefinitions", "bookAPickupStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 

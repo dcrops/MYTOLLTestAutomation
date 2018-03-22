@@ -34,19 +34,20 @@ public class MYT_622_BAPShareMyBookAPickup_StepDefinitions {
 			// Add Address
 			 PageBase.MaximumWaitForElementEnabled();
 			 PageBase.MaximumWaitForElementEnabled();
+			
 			BookAPickupActions.EnterEmail1(bookAPickup.get("User1"));
 			 PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.ClickAddMoreEmailButton();
-			BookAPickupActions.EnterEmail2(bookAPickup.get("User2"));
+			BookAPickupActions.EnterEmail1(bookAPickup.get("User2"));
 			 PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.ClickAddMoreEmailButton();
-			BookAPickupActions.EnterEmail3(bookAPickup.get("User3"));
+			BookAPickupActions.EnterEmail1(bookAPickup.get("User3"));
 			 PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.ClickAddMoreEmailButton();
-			BookAPickupActions.EnterEmail4(bookAPickup.get("User4"));
+			BookAPickupActions.EnterEmail1(bookAPickup.get("User4"));
 			 PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.ClickAddMoreEmailButton();
-			BookAPickupActions.EnterEmail5(bookAPickup.get("User5"));
+			BookAPickupActions.EnterEmail1(bookAPickup.get("User5"));
 			 PageBase.MaximumWaitForElementEnabled();
 			assertEquals(BookAPickupActions.GetShareScreenMessage(), bookAPickup.get("Message"));
 			BookAPickupActions.EnterMessage(bookAPickup.get("MessagetoSend"));

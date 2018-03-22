@@ -47,7 +47,7 @@ Feature: MYT_1524 Book a Pickup: 'Default' mode to ' Quick Entry ' mode
     When User clicks on 'Save template'
     Then Message displays as Line item Template is saved
       | Message                    |
-      | Template saved successfuly |
+      | Template is saved successfully |
       
       
       @tag1

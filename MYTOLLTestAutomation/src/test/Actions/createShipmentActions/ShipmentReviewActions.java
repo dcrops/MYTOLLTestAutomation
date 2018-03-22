@@ -89,7 +89,7 @@ public class ShipmentReviewActions {
 	public static By dangerousGoodsArrowdown=By.xpath("//*[@id=\"dg-line-00\"]/div[1]/div[7]/a/i");
 	public static By unNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='UN number']/following::div/p");
 	public static By classDivision=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Class / Division']/following::div/p");
-	public static By packingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Packaging group']/following::div/p");
+	public static By packingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Packing group']/following::div/p");
 	public static By subrisk=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Sub risk']/following::div/p");
 	public static By properShippingName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Proper shipping name ']/following::div/p");
 	public static By dgPackingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='DG packaging description']/following::div/p");
@@ -132,8 +132,8 @@ public class ShipmentReviewActions {
 	public static By reference1=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[7]/p");
 	public static By reference2=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[8]/p");
 	public static By ShipmentContainDGGoods=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li/div[2]/div[2]/div[9]/p");
-	public static By continueBtn=By.xpath("//a[text()='continue']");
-	
+	public static By continueBtn=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[2]/div[1]/span[1]/a"); 
+
 
 	public static By AddToManifestManuallyBtn=By.id("manually-create-manifest");
 
@@ -173,11 +173,18 @@ public class ShipmentReviewActions {
 	public static void VerifyAdditionalInformationForDangerousGoods(String pSpecialInstructions, String pPalletTransactionsInformation, String pPurchaseOrders ) {
 		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(specialInstructions).getText());
 		assertEquals(pPalletTransactionsInformation,BaseWebdriver.driver.findElement(palletTransactionsInformation).getText());
-		assertEquals(pPurchaseOrders.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(purchaseOrders).getText().replaceAll(",", ""));
+		assertEquals(pPurchaseOrders.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(purchaseOrders).getText().replaceAll(" ,", ""));
 	
 		
 	}
 	
+	
+	public static void VerifyAdditionalInformationForTollMining(String pSpecialInstructions, String pPurchaseOrders ) {
+		assertEquals(pSpecialInstructions,BaseWebdriver.driver.findElement(specialInstructions).getText());
+		assertEquals(pPurchaseOrders.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(purchaseOrders).getText().replaceAll(" ,", ""));
+	
+		
+	}
 	
 	// Shipment overview verification
 	public static void VerifyShipmentOverview(String pTollCarrier, String pAccountNumber, String pSenderCompanyName,String pSenderLocation,String pReceiverCompanyName, String pReceiverLocation,String pShipmentRef1, String pShipmentRef2,

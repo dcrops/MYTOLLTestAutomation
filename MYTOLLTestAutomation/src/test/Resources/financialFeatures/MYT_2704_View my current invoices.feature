@@ -2,17 +2,24 @@
 Feature: MYT-2704 View my current invoices
 
   Background: 
-    Given User is Registered in MyToll
+    Given User is Registered in MyToll and user has full financial access
 
- @tag1
+  @tag1
   Scenario: User wants to view my current trial balance in TDF
-    Given User selects below Toll carrier and the account that has full financial access
-      | TollCarrier              | AccountNumber |
-      | Intermodal & Specialised |               |
-    When User selects status as Outstanding
+    Given User selects below Toll carrier and the account number that has full financial access
+      | TollCarrier            | AccountNumber                |
+      | Toll Energy and Marine |706659 |
+    When User selects Search Type as below
+      | SearchType |
+      | Invoice    |
+    When User enters Search Invoice number for TE
+      | Search Invoice number |
+      |                 32167 |
     And User clicks on Search
-    When User clicks on Current invoices to view Current trial balance
+    When User clicks on Account Summary to view trial balance
     Then User be able to see all my invoices display for the current period
+      | InvoiceNumber |
+      |               |
     Then User be able to view following heading details in  Current Trial Balance screen.
       | DateOfInvoice | InvoiceNumber  | ChargeAmount  | PaidAmount | Outstanding |
       | Invoice date  | Invoice number | Charge amount | Paid       | Outstanding |

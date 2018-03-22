@@ -7,6 +7,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 import reviewYourPickupActions.ReviewYourPickupActions;
 
 import static org.junit.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class BookAPickupActions {
 	public static By chargeToAccount = By.xpath("//*[@id=\"charge-to-selector\"]/label/a/i");
 	public static By ReceiverAccount = By.id("reciever-account");
 	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
-	public static By itemDescriptionDropdown = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
+	public static By itemDescriptionDropdown = By.xpath("//*[@id=\"freight-type-selector\"]/div[1]/a/i");//*[@id="freight-type-selector"]/div[1]/a/i
 	public static By itemDescriptionTextField = By.id("item-description");
 	public static By DescriptionOfGoodsTextField = By.id("detailed-description");
 	public static By selectItemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/div/ul/li[3]/div");
@@ -79,8 +80,8 @@ public class BookAPickupActions {
 	public static By dangerousGoodNo = By.xpath("(//input[@name='dangerous-radios'])[2]");
 	public static By dangerousItemsNewLine = By.xpath("//*[@id=\"dg-radios\"]/label[2]/input");
 	public static By containFoodItem = By.xpath("//*[@id=\"containsFoodItems-no\"]");
-	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector-\"]/label/a/i");
-	public static By UNNumberTextField =By.id("unlookup-"); // By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/input");
+	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector-\"]/label/a/i"); 
+	public static By UNNumberTextField =By.id("unlookup-"); 
 	public static By UNNumberName = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div");
 	public static By searchBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/span/i");
 
@@ -101,6 +102,7 @@ public class BookAPickupActions {
 	public static By saveAsTemplateBtn = By.id("save-as-template");
 
 	public static By pickupDate = By.id("pickup-date");
+	public static By pickupDateToday = By.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[1]/div/div/ul/li[1]");
 	public static By pickupDateTomorrow = By.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[1]/div/div/ul/li[2]");
 	public static By pickupFrom = By.xpath("//*[@id=\"other-pick-location-selector\"]/label/a/i");
 	public static By availableTime = By.id("available-time");
@@ -178,7 +180,7 @@ public class BookAPickupActions {
 	public static By AddAdressAddressSuburb = By.id("add-addr-suburb");
 	public static By AddAdressAddressState = By.id("add-addr-state-label");
 	public static By AddAdressAddressPostcode = By.id("add-addr-postcode");
-	public static By AddAdressCountryTGXTextField = By.xpath("//*[@id=\"add-addr-country-selector\"]/label/input[2]");
+	public static By AddAdressCountryTGXTextField = By.xpath("//*[@id=\"add-addr-country-selector\"]/label/input[2]"); 
 	public static By AddAdressEmailTGXTextField = By.id("add-addr-email");
 	public static By AddAdressAddressContinue = By.xpath("//*[@id=\"addr-continue-manual\"]");
 	public static By CloseAddAddressScreen = By.xpath("//*[@id=\"close-add-manually-adr-popup\"]/i");
@@ -188,21 +190,21 @@ public class BookAPickupActions {
 	public static final By SearchContactTxtFeild = By.id("sContact");
 	public static final By SearchContactButton = By.id("search-field");
 	public static final By SearchContactCompanyLocation = By.xpath(
-			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contact-col company-name\"]/p");
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]//*//div[@class=\"contact-col company-name\"]/p");
 	public static By CompanyName = By.xpath(
-			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col company-name\"]/p");
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col company-name\"]/p");
 	public static By address = By.xpath(
-			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col company-address\"]/p");
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col company-address\"]/p");
 	public static By ContactName = By.xpath(
-			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col contact-name\"]/p");
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col contact-name\"]/p");
 	public static By PhoneNumber = By.xpath(
-			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col phone-numbers\"]/p");
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col phone-numbers\"]/p");
 	public static By Email = By.xpath(
-			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col email-address\"]/p");
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]//*//div[@class=\"contacts-list-box\"]//div[@class=\"contact-col email-address\"]/p");
 	public static By deleteButton = By.xpath(
-			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contacts-list-box\"]//a/i");
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]//*//div[@class=\"contacts-list-box\"]//a/i");
 	public static final By SearchContactEdit = By.xpath(
-			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytolladdressbookportlet\"]//*//div[@class=\"contact-col edit\"]/input");
+			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]//*//div[@class=\"contact-col edit\"]/input");
 	public static final By SearchContactEditCompanyName = By.xpath("//*[@id=\"CompanyName\"]");
 	public static final By SearchContactEditName = By.xpath("//*[@id=\"ContactFirstName\"]");
 	public static final By SearchContactEditCompanyNameErrorMsg = By
@@ -267,7 +269,7 @@ public class BookAPickupActions {
 
 	public static By confirmPickupBtn = By.id("submit-pickup");
 	public static By pickUpReferenceNumber = By
-			.xpath("//*[@id=\"book-a-pickup-placeholder\"]//*//span[@class=\"reference-no\"]/span");
+			.xpath("//*[@id=\"book-a-pickup-placeholder\"]//*//span[@class=\"reference-no\"]/span");  
 	public static String pressARROW_DOWN = Keys.chord(Keys.ARROW_DOWN);
 	public static String pressEnter = Keys.chord(Keys.ENTER);
 	public static String pressTab = Keys.chord(Keys.TAB);
@@ -281,7 +283,8 @@ public class BookAPickupActions {
 
 	// Quick Entry Mode Yes
 
-	public static By QuickEntryMode = By.xpath("//*[@id=\"grid-view-selector-wrpr\"]/div[2]/label/span[1]"); 
+	public static By QuickEntryModeNo = By.xpath("//*[@id=\"quick-entry-wrapper\"]/div[2]/label/span[1]"); //*[@id="grid-view-selector-wrpr"]/div[2]/label/span[1]
+	public static By QuickEntryModeYes = By.xpath("//*[@id=\"quick-entry-wrapper\"]/div[2]/label/span[2]"); //*[@id="grid-view-selector-wrpr"]/div[2]/label/span[2]
 	public static By serviceQME = By.id("gv-service-type-label");
 	public static By destinationQME = By.id("gv-destination-address");
 	public static By cahrgeToQME = By.xpath("//*[@id=\"gv-charge-to-selector\"]/label/input[2]");
@@ -298,7 +301,7 @@ public class BookAPickupActions {
 	public static By containsFoodItemsYesQME = By.id("gv-containsFoodItems-yes");
 	public static By containsDangerousGoodsNoQME = By.xpath("//*[@id=\"gv-dg-radios\"]/label[2]/input");
 	public static By containsDangerousGoodsYesQME = By.xpath("//*[@id=\"gv-dg-radios\"]/label[1]/input");
-	public static By saveAsTemplateQME = By.xpath("//*[@id=\"gv-grid-line-item\"]/td[13]/a[1]/i");
+	public static By saveAsTemplateQME = By.id("gv-save-as-template");
 	public static By addNewLineQME = By.xpath("//*[@id=\"gv-grid-line-item\"]/td[13]/a[4]");
 	public static By UNNumberTextFieldQME = By.id("gv-unlookup");
 	public static By packingGroupDropdownQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/label/a/i");
@@ -315,20 +318,20 @@ public class BookAPickupActions {
 	public static By addButtonDGScreenQME = By.id("gv-add-dg-item");
 	public static By closeButtonDGScreenQME = By.xpath("//*[@id=\"dg-popup-inner-wrpr\"]/a[2]/i");
 	public static By messageSaveAsTemplateQME = By.xpath("//*[@id=\"alert-box-wrapper\"]/div/div/div[2]");
-	public static By saveCloseButtonDGScreenQME = By.id("gv-cancel-dg-item");
-
+	public static By saveCloseButtonDGScreenQME = By.id("gv-cancel-dg-item"); 
+	public static By addDgGoodsQME = By.id("gv-add-dg-item");
 	// Share Bookings
 	public static By share = By.id("share-template");
-	public static By emailAddress1 = By.id("email-address-1");
+	public static By emailAddress1 = By.xpath("//*[@id=\"share-email\"]");
 	public static By emailAddress2 = By.id("email-address-2");
 	public static By emailAddress3 = By.id("email-address-3");
 	public static By emailAddress4 = By.id("email-address-4");
 	public static By emailAddress5 = By.id("email-address-5");//*[@id="shareEmail"]/div/div[2]/input
-	public static By addMoreEmailButton = By.cssSelector("#shareEmail > div > div.add-more-email > input[type=\"button\"]"); //("//*[@id=\"shareEmail\"]/div[@class=\"share-popup-form\"]//input[text()=\"Add More Email\"]"); //("//*[@id=\"shareEmail\"]/div/div[2]/input");
-	public static By shareMessageTextbox = By.id("share-message");
+	public static By addMoreEmailButton = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-form-area\"]/div[1]/span"); //("//*[@id=\"shareEmail\"]/div[@class=\"share-popup-form\"]//input[text()=\"Add More Email\"]"); //("//*[@id=\"shareEmail\"]/div/div[2]/input");
+	public static By shareMessageTextbox = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-message\"]");
 	public static By shareButton = By.id("share-emails"); 
-	public static By NumberOfUserMessageInShareScreen = By.xpath("//*[@id=\"share-template-pop\"]/div/section/div/div/label");  
-	public static By MyPickupsInShareScreen = By.xpath("//*[@id=\"share-success-pop-confrm\"]/div/section/div/div[3]/a");
+	public static By NumberOfUserMessageInShareScreen = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-form-body\"]/div[2]/p");  
+	public static By GoT0Dashboard = By.linkText("GO TO DASHBOARD");
 
 	public static void EnterTollCarrierItem(String pTollCarrierName) {
 		PageBase.MinimumWaitForElementEnabled();
@@ -426,11 +429,21 @@ public class BookAPickupActions {
 		PageBase.MinimumWaitForElementEnabled();
 		//PageBase.SendKeysToNonEditableField(AccountNumberTextField, pAccountNumber, 15); 
 		PageBase.ClickOn(AccountNumberDropdown, 5);
-
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SelectFrom(By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()='" + pAccountNumber + "']"),
 				15);
-
-	}
+		//*[@id="account-selector"]/div/ul/li[3]/div[1]
+	} 
+	
+	public static void EnterAccountNumberIPEC(String pAccountNumber) {
+		PageBase.MinimumWaitForElementEnabled();
+		//PageBase.SendKeysToNonEditableField(AccountNumberTextField, pAccountNumber, 15); 
+		PageBase.ClickOn(AccountNumberDropdown, 5);
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.SelectFrom(By.xpath("//*[@id=\"account-selector\"]/div/ul/li[3]/div[text()='" + pAccountNumber + "']"),
+				15);
+		//*[@id="account-selector"]/div/ul/li[3]/div[1]
+	} 
 
 	public static void SelectPickupLocation() {
 		PageBase.MinimumWaitForElementEnabled();
@@ -615,8 +628,17 @@ public class BookAPickupActions {
 		String vCompany = BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[2]/ul/li[" + i + "]/div[1]")).getText();
 		return vCompany;
+	
+	}
+
+	
+	public static String GetCompany() {
+		PageBase.MinimumWaitForElementEnabled();
+		//BaseWebdriver.driver.findElement(locationDropdown).click();
+		return  PageBase.GetText(location, 5);
 
 	}
+
 
 	public static String GetLocation(Integer i) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -625,6 +647,15 @@ public class BookAPickupActions {
 		return vLocation;
 
 	}
+	
+	public static String GetLocation() {
+		PageBase.MaximumWaitForElementEnabled();
+		String vLocation = BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[2]")).getText();
+		return vLocation;
+
+	}
+	
 
 	public static String GetLocationAddressLine2(Integer i) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -633,11 +664,28 @@ public class BookAPickupActions {
 		return vLocationAddressLine2;
 
 	}
+	
+	public static String GetLocationAddressLine2() {
+		PageBase.MaximumWaitForElementEnabled();
+		String vLocationAddressLine2 = BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[3]")).getText();
+		return vLocationAddressLine2;
+
+	}
+
 
 	public static String GetAddressPhoneNumber(Integer i) {
 		PageBase.MaximumWaitForElementEnabled();
 		String vPhoneNumber = BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[" + i + "]/div[4]")).getText();
+		return vPhoneNumber;
+
+	}
+	
+	public static String GetAddressPhoneNumber() {
+		PageBase.MaximumWaitForElementEnabled();
+		String vPhoneNumber = BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[4]")).getText();
 		return vPhoneNumber;
 
 	}
@@ -815,6 +863,8 @@ public class BookAPickupActions {
 		// pressSpace).perform();
 		PageBase.MaximumWaitForElementEnabled();
 		try {
+			
+			
 			PageBase.retryingFindClick(
 					By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
 			PageBase.MaximumWaitForElementEnabled();
@@ -835,6 +885,20 @@ public class BookAPickupActions {
 		 * pDestination+"']")).click(); PageBase.retryingFindClick(destinationaddress);
 		 */
 
+	}
+	
+	public static void VerifyDestination(String pDestination) {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		String Destination=BaseWebdriver.driver.findElement(destination).getAttribute("value");
+		System.out.println("Destinations"+ Destination);
+		if (pDestination.equalsIgnoreCase(Destination)==false) {
+		SelectDestination(pDestination);
+		}
+		
+		else {
+			System.out.println("Destinations are equal");
+		}
 	}
 
 	public static void SelectDestinationOnReviewBookAPickup(String destination) {
@@ -880,10 +944,10 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destinationCountry).clear();
 		BaseWebdriver.driver.findElement(destinationCountry).sendKeys(pDestination);
 
-		action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
+		//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressSpace).perform();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.retryingFindClick(By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li[11]/div"));
-		// *[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[2]/div
+		PageBase.retryingFindClick(By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li/div[text()='" + pDestination + "']"));
+		// *[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[2]/div    //*[@id="destination-country-selector"]/div/ul/li[12]/div
 
 	}
 
@@ -905,15 +969,18 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(destination);
 		PageBase.waitForElement(destination, 10);
-		BaseWebdriver.driver.findElement(destination).clear();
-		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.SendKeysTo(destination, pDestination, 20);
+		//BaseWebdriver.driver.findElement(destination).clear();
+		//BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
+		PageBase.MaximumWaitForElementEnabled();
 		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[1]/div")).click();
-		PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[1]/div"));
+		//PageBase.retryingFindClick(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[1]/div"));
 
-		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[text()='"+pDestinationItem+"']/div")).click();
+		PageBase.ClickOn(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li/div[text()='"+pDestinationItem+"']"),10);
 		// PageBase.retryingFindClick(destinationaddress);
 		// *[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[1]/div
+		 
+		//*[@id="item-details-sub-form"]/div[1]/div[2]/div/div/ul/li[1]/div
 
 	}
 
@@ -994,7 +1061,8 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).click();
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).clear();
 		BaseWebdriver.driver.findElement(itemDescriptionTextField).sendKeys(itemName);
-
+		PageBase.MinimumWaitForElementEnabled();
+		//PageBase.ClickOn(itemDescriptionDropdown, 2);
 	}
 
 	public static void DescriptionOfGoods(String pDescriptionOfGoods) {
@@ -1089,7 +1157,7 @@ public class BookAPickupActions {
 
 	public static void ClickAdd() {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(add).click();
+		//BaseWebdriver.driver.findElement(add).click();
 	}
 
 	public static void selectContainFoodItem() {
@@ -1098,6 +1166,13 @@ public class BookAPickupActions {
 	}
 
 	public static void selectDispatchDate() {
+		BaseWebdriver.driver.findElement(pickupDate).click();
+		//BaseWebdriver.driver.findElement(pickupDateToday).click();
+		BaseWebdriver.driver.findElement(pickupDateTomorrow).click();
+
+	}
+	
+	public static void SelectDispatchDateTomorrow() {
 		BaseWebdriver.driver.findElement(pickupDate).click();
 		BaseWebdriver.driver.findElement(pickupDateTomorrow).click();
 
@@ -1341,15 +1416,15 @@ public class BookAPickupActions {
 			String pDgQtyKg) {
 		try {
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(UNNumberDropdown).click();
+			//BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 			BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(searchBtn).click();
+			//BaseWebdriver.driver.findElement(searchBtn).click();
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li[" + j + "]/div"))
-					.click();
+			BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div")).click();
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
+			PageBase.SendKeysTo(dgPackagingDescription, packageDescription, 10);
+			//BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 			BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
 			BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
 
@@ -1370,9 +1445,11 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
 	//	BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div")).click();  //*[@id="dg-form"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div   ////*[@id=\"un-code-selector-\"]/div/ul/li/div
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div")).click();  
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(dgPackagingDescription, packageDescription, 10);
+		//BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 		BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
 		BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
 
@@ -1458,7 +1535,7 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		String referenceNumber = BaseWebdriver.driver.findElement(pickUpReferenceNumber).getAttribute("value")
 				.toString();
-		System.out.println("Reference Number ");
+		System.out.println("Reference Number "+ referenceNumber);
 		return referenceNumber;
 
 	}
@@ -1630,7 +1707,7 @@ public class BookAPickupActions {
 
 	}
 
-	public static void AddAddressManuallyPrioAUS(String pCompanyName, String pAddAdressCountry,
+	public static void AddAddressManuallyPrioAUSInternational(String pCompanyName, String pAddAdressCountry,
 			String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb,
 			String pAddAdressAddressPostcode, String pEmail, String pPhoneNumber, String pSelectCountry) {
 		// Add Address
@@ -1660,6 +1737,90 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(By.xpath(
 				"//*[@id=\"add-add-form\"]/div[1]/div[4]/div/div/div/ul/li[2]/span[text()='" + pSelectCountry + "']"),
+				10);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(BookAPickup_New_Address_Email, "NNAutomationuser2@gmail.com", 10);
+		PageBase.ClickOn(BookAPickup_New_Address_Add, 10);
+		PageBase.MaximumWaitForElementEnabled();
+
+	}
+	
+	public static void AddAddressManuallyPrioAUSDomestic(String pCompanyName, String pAddAdressCountry,
+			String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb,String pAddAdressAddressSuburbItem,
+			String pAddAdressAddressPostcode, String pEmail, String pPhoneNumber, String pSelectCountry) {
+		// Add Address
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.waitForElement(location, 10);
+		PageBase.ClickOn(location, 15);
+		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.ClickOn(AddAdressManually, 10);
+		PageBase.SendKeysTo(AddAdressCompanyName, pCompanyName, 5);
+		PageBase.SendKeysTo(AddAdressCountryTGXTextField, pAddAdressCountry, 5);
+		PageBase.MediumWaitForElementEnabled();
+		PageBase.SelectFrom(
+				By.xpath("//*[@id=\"add-addr-country-selector\"]/div/ul/li[text()='" + pAddAdressCountry + "']"), 5);
+		PageBase.SendKeysTo(AddAdressAddressLine1, pAddAdressAddressLine1, 5);
+		PageBase.SendKeysTo(AddAdressAddressLine2, pAddAdressAddressLine2, 5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 15);
+		PageBase.SelectFrom(By.xpath(
+				"//*[@id=\"add-addr-postcode-wrpr\"]/div/ul/li/div[text()='" + pAddAdressAddressSuburbItem + "']"), 15);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(AddAdressEmailTGXTextField, pEmail, 5);
+		PageBase.retryingFindClick(AddAdressAddressContinue);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(BookAPickup_New_Address_Name, NewCompanyName, 10);
+		PageBase.SendKeysTo(BookAPickup_New_Address_Number, pPhoneNumber, 10);
+		PageBase.ClickOn(AddAddressCountryCode, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(By.xpath(
+				"//*[@id=\"add-add-form\"]/div[1]/div[4]/div/div/div/ul/li/span[text()='" + pSelectCountry + "']"), 
+				10);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(BookAPickup_New_Address_Email, "NNAutomationuser2@gmail.com", 10);
+		PageBase.ClickOn(BookAPickup_New_Address_Add, 10);
+		PageBase.MaximumWaitForElementEnabled();
+
+	}
+	
+	public static void AddAddressAustraliaManuallyPrioAUS(String pCompanyName, String pAddAdressCountry,
+			String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb,
+			String pSuburb, String pEmail, String pPhoneNumber, String pSelectCountry) {
+		// Add Address
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.waitForElement(location, 10);
+		PageBase.ClickOn(location, 15);
+		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.ClickOn(AddAdressManually, 10);
+		PageBase.SendKeysTo(AddAdressCompanyName, pCompanyName, 5);
+		PageBase.SendKeysTo(AddAdressCountryTGXTextField, pAddAdressCountry, 5);
+		PageBase.MediumWaitForElementEnabled();
+		PageBase.SelectFrom(
+				By.xpath("//*[@id=\"add-addr-country-selector\"]/div/ul/li[text()='" + pAddAdressCountry + "']"), 5);
+		PageBase.SendKeysTo(AddAdressAddressLine1, pAddAdressAddressLine1, 5);
+		PageBase.SendKeysTo(AddAdressAddressLine2, pAddAdressAddressLine2, 5);
+	
+		PageBase.SendKeysTo(AddAdressAddressSuburb, pAddAdressAddressSuburb, 5);
+		PageBase.ClickOn(By.xpath("//*[@id=\"add-addr-suburb-wrpr\"]/div/ul/li/div[text()='" + pSuburb + "']"), 5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(AddAdressEmailTGXTextField, pEmail, 5);
+		PageBase.retryingFindClick(AddAdressAddressContinue);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.SendKeysTo(BookAPickup_New_Address_Name, "John Smith", 10);
+		PageBase.SendKeysTo(BookAPickup_New_Address_Number, pPhoneNumber, 10);
+		PageBase.ClickOn(AddAddressCountryCode, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(By.xpath(//*[@id="add-add-form"]/div[1]/div[4]/div/div/div/ul/li[1]/span[1]
+				"//*[@id=\"add-add-form\"]/div[1]/div[4]/div/div/div/ul/li/span[text()='" + pSelectCountry + "']"),
 				10);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
@@ -1801,11 +1962,30 @@ public class BookAPickupActions {
 		return PageBase.GetText(EditAddressSavedSuccessfullyMessage, 5);
 	}
 
-	public static void SelectQuickEntryMode() {
-		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(QuickEntryMode, 5);
+	public static void SelectQuickEntryModeNo() {
+	
+		/*PageBase.ClickOn(name, 5);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		boolean results=BaseWebdriver.driver.findElement(QuickEntryModeNo).isDisplayed();
+		if (results==true)
+		{
+			action.doubleClick(BaseWebdriver.driver.findElement(QuickEntryModeNo)).perform();
+		}
+		else
+		{
+			 action.doubleClick(BaseWebdriver.driver.findElement(QuickEntryModeYes)).perform();
+			
+		}*/
+		
+	}
+	
+	public static void SelectQuickEntryModeYes() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(QuickEntryModeNo, 5);
 
 	}
+
 
 	public static void EnterServiceQME(String pService) {
 		PageBase.MinimumWaitForElementEnabled();
@@ -2002,6 +2182,11 @@ public class BookAPickupActions {
 
 	}
 
+	public static void ClosedSavedTemplateMessage() {
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.ClickOn(CloseAlert, 5);
+	}
+	
 	public static String RandomItemDescription(String pItemDescription) {
 
 		String NewItemDescription = pItemDescription + (new Date()).getTime();
@@ -2016,13 +2201,15 @@ public class BookAPickupActions {
 	}
 
 	public static void EnterEmail1(String pEmail1) {
-		PageBase.MinimumWaitForElementEnabled();
-		PageBase.SendKeysTo(emailAddress1, pEmail1, 5);
+		PageBase.MaximumWaitForElementEnabled();
+		 PageBase.MaximumWaitForElementEnabled();
+		//action.doubleClick(BaseWebdriver.driver.findElement(MyTollHomePageActions.shareShipmentEmail)).perform();
+		PageBase.SendKeysTo(MyTollHomePageActions.shareShipmentEmail, pEmail1, 5);
 	}
 
 	public static void ClickAddMoreEmailButton() {
 		 PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(addMoreEmailButton, 5);
+		PageBase.ClickOn(MyTollHomePageActions.shareShipmentEmailAdd, 5);
 	}
 
 	public static void EnterEmail2(String pEmail2) {
@@ -2057,12 +2244,12 @@ public class BookAPickupActions {
 	
 	public static void ClickShareInShareScreen() {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(shareButton, 5);
+		PageBase.ClickOn(MyTollHomePageActions.shareShipmentSubmit, 5);
 	}
 	
 	public static void ClickMyPickupsInShareScreen() {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(MyPickupsInShareScreen, 5);
+		PageBase.ClickOn(GoT0Dashboard, 5);
 	}
 	
 	

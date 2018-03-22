@@ -21,6 +21,7 @@ public class BookAPIckupCommonStepsDefinitions {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.SitUsername1, BaseWebdriver.Password);
 		MyTollHomePageActions.LaunchMyToll("https://ps.mytoll.com/");
+		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
@@ -87,7 +88,7 @@ public class BookAPIckupCommonStepsDefinitions {
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
 			// Add Address Prio Aus
 
-			BookAPickupActions.AddAddressManuallyPrioAUS(bookAPickup.get("CompanyName"), bookAPickup.get("Country"),
+			BookAPickupActions.AddAddressManuallyPrioAUSInternational(bookAPickup.get("CompanyName"), bookAPickup.get("Country"),
 					bookAPickup.get("AddressLine1"), bookAPickup.get("AddressLine2"), bookAPickup.get("Suburb"),
 					bookAPickup.get("Postcode"), bookAPickup.get("Email"), bookAPickup.get("PhoneNumber"),
 					bookAPickup.get("Phone Country"));
@@ -206,13 +207,13 @@ public class BookAPIckupCommonStepsDefinitions {
           
 			 PageBase.MaximumWaitForElementEnabled();
 			
-			BookAPickupActions.SelectDangerousGoodsDetails(bookAPickup.get("UnNumber"), bookAPickup.get("PackageDescription"),bookAPickup.get("DGPackageType"), bookAPickup.get("DGAggregateQty"));
+			BookAPickupActions.EnterDangerousGoodsDetails(Integer.parseInt(bookAPickup.get("LookupItem")),bookAPickup.get("UnNumber"), bookAPickup.get("PackageDescription"),bookAPickup.get("DGPackageType"), bookAPickup.get("DGAggregateQty"));
 			String s = bookAPickup.get("PackingGroup");
 			System.out.println("s----" + s);
 			//BookAPickupActions.SelectPackgingGroupQMEInt(Integer.parseInt(s));
 			BookAPickupActions.SelectPackgingGroupString(bookAPickup.get("PackingGroup"));
 			BookAPickupActions.EnterTechnicalName(bookAPickup.get("Technical Name"));
-			PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
+		//	PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
 		}
 		
 	

@@ -25,8 +25,8 @@ public class IntermodalSpecializedTest {
 	@BeforeMethod(alwaysRun = true)
 	//@BeforeMethod
 	public void RunSetup(String browser) throws Exception {
-		//BaseWebdriver.setUp();
-		BaseWebdriver.SetUp(browser);
+		BaseWebdriver.setUp();
+		//BaseWebdriver.SetUp(browser);
 		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
@@ -47,10 +47,7 @@ public class IntermodalSpecializedTest {
 			String palletSpace, String destination, String DestinationItem, String DestinationPostcode,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) throws Exception {
-		/*BaseWebdriver.SetUp(browser);
-		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
-		MyTollHomePageActions.ClickMenu();
-		MyTollHomePageActions.ClickBookAPIckupMenu();*/
+		
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrierIntermodalSpecialized);
 		String tollCarrier=BookAPickupActions.GetTollCarrier();
 		System.out.println(tollCarrier);
@@ -62,13 +59,13 @@ public class IntermodalSpecializedTest {
 		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
-		String company = BookAPickupActions.GetCompany(1);
+		String company = BookAPickupActions.GetCompany();
 		System.out.println(company);
-		String location = BookAPickupActions.GetLocation(1);
+		String location = BookAPickupActions.GetLocation();
 		System.out.println(location);
-		String locationLine2 = BookAPickupActions.GetLocationAddressLine2(1);
+		String locationLine2 = BookAPickupActions.GetLocationAddressLine2();
 		System.out.println(locationLine2);
-		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber(1);
+		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber();
 		System.out.println(addressPhoneNumber);
 		String companyLocation = location + locationLine2;
 		System.out.println(location + " " + locationLine2);
@@ -87,14 +84,17 @@ public class IntermodalSpecializedTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDangerousGoods);
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		String TotalWeight = Weight + " kg";
 		String chargeToAccount = BookAPickupActions.SelectChargeToAccount2(1);
 		String Destination = BookAPickupActions.SelectDestination1(destination, DestinationItem);
@@ -126,7 +126,8 @@ public class IntermodalSpecializedTest {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = BookAPickupActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
-
+		BookAPickupActions.ClickAdd();
+		
 		// Add a new item
 		BookAPickupActions.AddANewLineTollNQX(destination, DestinationItem, ServiceExpress, ItemTemplateName2,
 				NumberOfItems, palletSpace, ChargeToAccount, Length, Width, Height, Weight);
@@ -177,6 +178,7 @@ public class IntermodalSpecializedTest {
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
+//	@Test(priority=-6)
   	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
@@ -206,10 +208,11 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterService(ServiceExpress);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
@@ -227,6 +230,8 @@ public class IntermodalSpecializedTest {
 		PageBase.MaximumWaitForElementEnabled();
 		ReviewYourPickupActions.ClickEdit();
 
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDangerousGoods);
 		BookAPickupActions.SelectDangerousGoods(1);
@@ -235,12 +240,14 @@ public class IntermodalSpecializedTest {
 				BookAPickupActions.SelectPackgingGroup(PackingGroup);
 				BookAPickupActions.EnterTechnicalName(technicalName);
 				PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
-
+				BookAPickupActions.ClickAdd();
+				
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		BookAPickupActions.selectDispatchDate();
 		// ReSubmit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
@@ -283,14 +290,17 @@ public class IntermodalSpecializedTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceFCL);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
@@ -315,12 +325,14 @@ public class IntermodalSpecializedTest {
 				BookAPickupActions.SelectPackgingGroup(PackingGroup);
 				BookAPickupActions.EnterTechnicalName(technicalName);
 				PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
-
+				BookAPickupActions.ClickAdd();
+				
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 
 		// ReSubmit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
@@ -336,7 +348,7 @@ public class IntermodalSpecializedTest {
 
 	}
 
-	//@Test(priority=-1)
+	//@Test(priority=-7)
 	@Test(groups = { "Shakeout Testing" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
@@ -362,13 +374,13 @@ public class IntermodalSpecializedTest {
 		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
-		String company = BookAPickupActions.GetCompany(1);
+		String company = BookAPickupActions.GetCompany();
 		System.out.println(company);
-		String location = BookAPickupActions.GetLocation(1);
+		String location = BookAPickupActions.GetLocation();
 		System.out.println(location);
-		String locationLine2 = BookAPickupActions.GetLocationAddressLine2(1);
+		String locationLine2 = BookAPickupActions.GetLocationAddressLine2();
 		System.out.println(locationLine2);
-		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber(1);
+		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber();
 		System.out.println(addressPhoneNumber);
 		String companyLocation = location + locationLine2;
 		System.out.println(location + " " + locationLine2);
@@ -387,14 +399,18 @@ public class IntermodalSpecializedTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGFCL);
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
-		BookAPickupActions.EnterPalletSpace(palletSpace);
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.SelectChargeToAccount2(1);
+		BookAPickupActions.EnterPalletSpace(palletSpace);
+		
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		
 		String TotalWeight = Weight + " kg";
 		String chargeToAccount = BookAPickupActions.SelectChargeToAccount2(1);
 		String Destination = BookAPickupActions.SelectDestination1(destination, DestinationItem);
@@ -426,7 +442,7 @@ public class IntermodalSpecializedTest {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = BookAPickupActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
-
+		BookAPickupActions.ClickAdd();
 		// Add a new item
 		BookAPickupActions.AddANewLineTollNQX(destination, DestinationItem, ServiceExpress, ItemTemplateName2,
 				NumberOfItems, palletSpace, chargeToAccount, Length, Width, Height, Weight);
@@ -438,8 +454,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectContainFoodItem();
 
 		BookAPickupActions.selectDangerousGoodNewLine();
-		BookAPickupActions.ClickAddANewLine();
-
+		
 		PageBase.MediumWaitForElementEnabled();
 		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
@@ -500,14 +515,17 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectLocation2(locationIndex);
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceGeneral);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+	
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
@@ -557,15 +575,18 @@ public class IntermodalSpecializedTest {
 		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServicePremium);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
@@ -612,15 +633,18 @@ public class IntermodalSpecializedTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceRailGeneral);
 
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+	
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
@@ -669,16 +693,18 @@ public class IntermodalSpecializedTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
-
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterService(ServiceRefrigeration);
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		BookAPickupActions.SelectDangerousGoods(2);
@@ -729,10 +755,11 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.EnterService(ServiceDGRefrigerated);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+	
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.dangerousGoodNo);
 		BookAPickupActions.SelectDangerousGoods(1);
@@ -744,7 +771,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
-
+		BookAPickupActions.ClickAdd();
 		// Enter Pickup details
 
 		BookAPickupActions.selectDispatchDate();
@@ -788,15 +815,17 @@ public class IntermodalSpecializedTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceRailDangerousGoods);
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
-
+		
 		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.weight);
 		BookAPickupActions.SelectDangerousGoods(1);
 		BookAPickupActions.selectContainFoodItem();
@@ -806,7 +835,8 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
-
+		BookAPickupActions.ClickAdd();
+		
 		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.selectReadyTime();
 		BookAPickupActions.selectClosingTime();
@@ -823,7 +853,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.ClickConfirmPickup();
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
-
+	//@Test(priority=-8)
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
@@ -852,16 +882,19 @@ public class IntermodalSpecializedTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGExpress);
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 		BookAPickupActions.SelectDestination(destination);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 
 		// jse.executeScript("scroll(1000, 1500)");
 		PageBase.MoveToElement(BookAPickupActions.dangerousGoodNo, BookAPickupActions.weight);
@@ -875,6 +908,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		PageBase.MoveToElement(BookAPickupActions.dgPackagingDescription, BookAPickupActions.technicalName);
+		BookAPickupActions.ClickAdd();
 		// BookAPickupActions.SelectPackingGroup();
 		// Enter Pickup details
 		// jse.executeScript("scroll(1500, 1700)");
@@ -921,14 +955,17 @@ public class IntermodalSpecializedTest {
 		//BookAPickupActions.EnterLocation("CPA Aus");
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		PageBase.MaximumWaitForElementEnabled();
+		BookAPickupActions.SelectQuickEntryModeNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
 		BookAPickupActions.VerifyModeIsNotAvailable();
 		BookAPickupActions.EnterItem(ItemTemplateName);
+		BookAPickupActions.SelectChargeToAccount2(1);
 		BookAPickupActions.EnterPalletSpace(palletSpace);
 
 		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
-		BookAPickupActions.SelectChargeToAccount2(1);
+		
 		BookAPickupActions.SelectDestination(destination);
 		BookAPickupActions.SelectDangerousGoods(2);
 		BookAPickupActions.selectContainFoodItem();
@@ -998,7 +1035,7 @@ public class IntermodalSpecializedTest {
 	@AfterMethod
 	public void RunTearDown() throws Exception {
 
-	BaseWebdriver.tearDown();
+	//BaseWebdriver.tearDown();
 
 	}
 

@@ -27,10 +27,24 @@ public class BaseWebdriver {
 	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
 	public static String SitUrl="https://ps.mytoll.com/"; 
 	
-	public static String Username1="SitAutomationuser@yahoo.com"; //"NNAutomationuser1@gmail.com"; 
-	public static String Username2= "auto_bvt_ps@mailinator.com"; 
-	public static String SitUsername1="SitAutomationuser@yahoo.com"; //
+
+	// Preprod users
+	public static String Username1="SitAutomationuser@yahoo.com"; 
+	
+	//BU Admin users
+	public static String Username2="SitAutomationuser@yahoo.com";// "auto_bvt_ps@mailinator.com"; 
+	public static String SitUsername1="SitAutomationuser@yahoo.com"; 
+	
+	//Platform admin user
+	public static String SitUsername2="SitAutomationuser2@yahoo.com"; 
+
+	//Sit Normal user
+	public static String SitUsername3="SitAutomationuser3@yahoo.com"; 
+	public static String SitUsername4="SitAutomationuser4@yahoo.com"; 		
+	//Performance Test Env user
 	public static String PerformenceUsername1="perftest@toll.com";
+	
+	//Passwords
 	public static String Password="Toll@123";  
 	public static String PerformancePassword="Victoria@123"; 
 
@@ -84,7 +98,7 @@ public class BaseWebdriver {
 
 		PageBase.MaximumWaitForElementEnabled();
 		//BaseWebdriver.driver.manage().window().maximize();
-		System.out.println(driver.manage().window().getSize());
+		//System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 	}
@@ -92,9 +106,10 @@ public class BaseWebdriver {
 	@BeforeMethod
 	public static void setUp() throws Exception {
 		//DesiredCapabilities capabilities = new DesiredCapabilities();
-		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
+		//BaseWebdriver.driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (4)\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
-
 		MyTollHomePageActions.LaunchMyToll(SitUrl);
 
 		PageBase.MaximumWaitForElementEnabled();

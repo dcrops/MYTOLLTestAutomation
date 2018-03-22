@@ -95,7 +95,7 @@ public class ManifestActions {
 	public static By ManualManifestName = By.id("manifest-name");
 	public static By ManualManifestSave = By.id("save-manifest");
 	public static By AddNewShipment = By.linkText("ADD NEW SHIPMENT");
-	public static By TollCarier = By.xpath("//*[@id=\"carrier-name\"]");
+	public static By TollCarier = By.xpath("//*[@id=\"carrier-name\"]");//*[@id="portlet_shipmentportlet_WAR_mytollshipmentportlet"]/div/div/div/div/div[1]/div[3]/a
 	
 	public static final By ContinuetoManifest = By.xpath("//*[@id=\"shipment-placeholder\"]//*//a[text()=\"CONTINUE\"]");
 	
@@ -124,7 +124,6 @@ public class ManifestActions {
 	public static By commericalInvoiceReceiverCompanyName= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div[2]/div/p");
 	public static By commericalInvoiceReceiverAddress= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div[3]/div/p");
 	public static By commericalInvoiceCountryofUltimateDestination= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div[5]/div/p");
-
 	
 	
 	
@@ -450,7 +449,7 @@ public class ManifestActions {
 		
 		//Get Current Status of Manifest
 		String UpdatedStatus = BaseWebdriver.driver.findElement(ShipmentManifestStatus).getText();
-		if ("Completed".equals(UpdatedStatus)) {
+		if ("Closed".equals(UpdatedStatus)) {
 			System.out.println("Updated Manifest Status : "+UpdatedStatus);
 			Reporter.log("Updated Manifest Status : "+UpdatedStatus);
 		}

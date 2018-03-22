@@ -137,8 +137,16 @@
 		<!---Manifest test data -->
 
 		<parameter name="ManifestName" value="Automation" />
-		
-	<classes>
+
+
+<classes>
+	<class name = "manifestE2ETests.TollPriorityAUCommercialInvoice" />
+
+
+	<!-- Blocked>			
+		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
+		<class name = "manifestE2ETests.TollPriorityAUCommercialInvoice" />
+
 	    <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />
 		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
 		<class name="manifestE2ETests.ManualManifestTollIPECTest" />
@@ -146,7 +154,9 @@
 		<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
 		<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" />
 			
-			      </classes>
+
+			     </Blocked -->
+ </classes>
 
     
 	</test> <!-- Test -->

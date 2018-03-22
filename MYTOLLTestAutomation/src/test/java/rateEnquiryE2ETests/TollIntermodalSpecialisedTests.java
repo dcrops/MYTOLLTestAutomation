@@ -299,7 +299,8 @@ public class TollIntermodalSpecialisedTests {
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(priority=-1)
+	//@Test(groups = { "Shakeout Testing" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceDGFCL","DGFCLAccountNo","ItemTemplateName","DGFCLBillingType","DGFCLMode", "DGFCLNumberOfItems","DGFCLLength", "DGFCLWidth", "DGFCLHeight", "DGFCLWeight","DGFCLQtyType", "DGFCLOriginSuburb","DGFCLOriginPostCode", "DGFCLDesSuburb", "DGFCLDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_DGFCL(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -340,7 +341,7 @@ public class TollIntermodalSpecialisedTests {
 	@AfterMethod
 	public void RunTearDown() throws Exception
 	{
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 
 	}
 

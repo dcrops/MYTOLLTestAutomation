@@ -18,7 +18,7 @@ public class MyTollHomePageActions {
 	/* Login */
 	
 	public static By login=By.id("lnk-login");
-	public static By emailAddress=By.id("_com_liferay_login_web_portlet_LoginPortlet_login");
+	public static By emailAddress=By.id("_com_liferay_login_web_portlet_LoginPortlet_login"); //"_com_liferay_login_web_portlet_LoginPortlet_login");
 	public static By passwordLable=By.className("_com_liferay_login_web_portlet_LoginPortlet_password");
 	public static By password=By.id("_com_liferay_login_web_portlet_LoginPortlet_password");
 	public static By loginBtn=By.id("login-btn");
@@ -30,6 +30,7 @@ public class MyTollHomePageActions {
 	public static By HmbugerMenu=By.xpath("//*[@id=\"nav-opner\"]/i"); 
 	public static By Menulist=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a");
 	public static By BookAPickup=By.id("bookaPickup");
+	public static By MyDashboard=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[1]/a/p");
 	public static By getRateEnquiry=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a[1]/p");
 	public static By templateMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My templates']");
 	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My accounts']");//*[@id="nav-dropdown"]/ul/li[5]/a/span[2] , //*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']
@@ -92,7 +93,7 @@ public class MyTollHomePageActions {
 	public static By shareShipment = By.xpath("//*[@id=\"shareShipment\"]");
 	public static By shareShipmentEmail = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-email\"]");
 	public static By shareShipmentEmailErrorMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"to-email-sec\"]/div");
-	public static By shareShipmentSubmit = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-submit\"]");
+	public static By shareShipmentSubmit = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-emails\"]");
 	public static By shareShipmentEmailAdd = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-form-area\"]/div[1]/span/span");
 	public static By shareShipmentEmailMaxMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"max-em-used\"]/div");
 	public static By shareShipmentEmailSuccessMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*/h3");
@@ -164,7 +165,10 @@ public class MyTollHomePageActions {
 	{
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.navigate().refresh();
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.retryingFindClick(login);
+		
+		PageBase.MaximumWaitForElementEnabled();
 		try {
 			Boolean results=BaseWebdriver.driver.findElement(emailAddress).isDisplayed();
 			if(results=true)
@@ -182,13 +186,14 @@ public class MyTollHomePageActions {
 			BaseWebdriver.setUp();
 			BaseWebdriver.driver.navigate().refresh();
 			PageBase.retryingFindClick(login);
+			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(emailAddress).sendKeys(userName);
 			BaseWebdriver.driver.findElement(password).sendKeys(pPassword);
 			BaseWebdriver.driver.findElement(loginBtn).sendKeys(Keys.ENTER);
 		}
 	}
 
-	public static void ClickName()
+	public static void ClickName()  
 	{
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
@@ -196,6 +201,14 @@ public class MyTollHomePageActions {
 		BaseWebdriver.driver.findElement(MyProfile).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(MyTemplates).click();
+		PageBase.MaximumWaitForElementEnabled();
+			
+	}
+	
+	public static void ClickMyDashboard()  
+	{
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(MyDashboard, 5);
 		PageBase.MaximumWaitForElementEnabled();
 			
 	}
@@ -257,7 +270,7 @@ public class MyTollHomePageActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		//BaseWebdriver.driver.findElement(HmbugerMenu).click();
-		PageBase.click(HmbugerMenu, 5);
+		PageBase.ClickOn(HmbugerMenu, 5);
 		//BaseWebdriver.driver.findElement(Menulist).click();
 	}
 	

@@ -55,10 +55,11 @@ public class BookAPickupStepDefinitions{
 			PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.EnterService(bookAPickup.get("Service"));
 			BookAPickupActions.EnterQuantity(bookAPickup.get("NoOfItems"));
-
+			BookAPickupActions.EnterItem(bookAPickup.get("ItemDescription"));
 			BookAPickupActions.EnterPalletSpace(bookAPickup.get("PalletSpace"));
 			BookAPickupActions.SelectDestination(bookAPickup.get("Destination"));
-			BookAPickupActions.EnterItem(bookAPickup.get("ItemDescription"));
+			BookAPickupActions.VerifyDestination(bookAPickup.get("destination")); 
+			//BookAPickupActions.EnterItem(bookAPickup.get("ItemDescription"));
 			
 					
 		}
@@ -115,7 +116,7 @@ public class BookAPickupStepDefinitions{
 	@When("^User selects Dispatch date as Tommorow$")
 	public void user_selects_Dispatch_date_as_Tommorow() throws Throwable {
 		
-		BookAPickupActions.selectDispatchDate();
+		BookAPickupActions.SelectDispatchDateTomorrow();
 		
 	    
 	}
@@ -128,9 +129,7 @@ public class BookAPickupStepDefinitions{
 			ManifestActions.selectReadyTimeJS(bookAPickup.get("ReadyTime"));
 			 PageBase.MaximumWaitForElementEnabled();
 		}
-		
-		
-		
+	
 	
 	}
 
@@ -155,6 +154,8 @@ public class BookAPickupStepDefinitions{
 	  
 	}
 
+
+	
 	@When("^User clicks on Confirm Book$")
 	public void user_clicks_on_Confirm_Book() throws Throwable {
 	   

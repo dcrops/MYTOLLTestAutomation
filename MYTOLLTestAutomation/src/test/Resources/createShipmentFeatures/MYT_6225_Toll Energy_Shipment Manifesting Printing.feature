@@ -1,16 +1,19 @@
-Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
+Feature: MYT_6225 Toll Energy Shipment, Manifesting and Printing
 
   Background: 
     Given User is Registered in MyToll and is on Shipment page
 
   @tag1
-  Scenario: User wants to be able to create and print Shipments, Manifests and Labels with one line item in Toll Mining Services
+  Scenario: User wants to be able to create and print Shipments, Manifests and Labels with one line item in Toll Energy and Marine
     When user selects Toll Carrier as below to create shipment
-      | TollCarrier          |
-      | Toll Mining Services |
+      | TollCarrier            |
+      | Toll Energy and Marine |
+    Then User be able to see following Services
+      | Service1  | Service2   | Service11 | Service7 | Service12 | Service13 | Service8   | Service10 | Service9 | Service3     | Service4    | Service5   | Service6   |
+      | Dedicated | DG Courier | Hotshot   | Courier  | Overnight | Same Day  | DG Freight | General   | Express  | DG Overnight | DG Same Day | DG Express | DG Premium |
     When User continue enters shipment overview details as below to create a shipment
-      | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot     | CollectionDepot   |
-      | DG Freight | E92416        |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ANGLO MINE MOURA | ADELAIDE RAILHEAD |
+      | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot        | CollectionDepot         |
+      | DG Express | G28668        |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | TOLL ENERGY BALLERA | TOLL ENERGY BARRY BEACH |
     When User enters following input data for the line item
       | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | Weight | SenderReference | ReceiverReference |
       | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |               50 |    900 | Ref123          | Ref456            |
@@ -27,12 +30,14 @@ Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
     When User enters additional information for shipment as below
       | PurchaseOrder | SpecialInstructions       |
       | Abcd1234      | Test Special Instructions |
+    
     Then User clicks on 'Create Shipment' and User navigates to Shipment Review page and see Overview details as below.
-      | TollCarrier          | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode | DropOffDepot     | CollectionDepot   | Whopays |
-      | Toll Mining Services | E92416        |        12345 |       234567 | DG Freight | ROAD | ANGLO MINE MOURA | ADELAIDE RAILHEAD | Sender  |
-    Then User can see additional information of Toll Mining Services as below in Shipment Review page
-      | PurchaseOrders | SpecialInstructions       |
-      | Abcd1234       | Test Special Instructions |
+      | TollCarrier            | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode | DropOffDepot        | CollectionDepot         | Whopays |
+      | Toll Energy and Marine | G28668        |        12345 |       234567 | DG Express | ROAD | TOLL ENERGY BALLERA | TOLL ENERGY BARRY BEACH | Sender  |
+    Then User can see additional information as below in Shipment Review page
+      | PurchaseOrders | SpecialInstructions       | PalletInfo |
+      | Abcd1234       | Test Special Instructions | No        |
+    
     Then User be able to see line item headings as below
       | LineItemName1Heading | ItemTemplateName     | NumberOfItems | ItemDescriptionHeading | ItemsHeading | BillingTypeHeading | DimensionsHeading | TotalVolumeHeading | WeightHeading | Reference1Heading | Reference2Heading | ShipmentContainDangerousGoodsHeading |
       | Line Item 1          | Automation Template1 |            10 | Item description       | Items        | Billing type       | Dimensions        | Total volume (m3)  | Weight (kg)   | Reference1        | Reference2        | Shipment contain dangerous goods     |
@@ -50,13 +55,16 @@ Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
     Then User can print manifest successfully.
 
   @tag1
-  Scenario: User wants to be able to create and print Shipments, Manifests and Labels with two line items in Toll Mining Services
+  Scenario: User wants to be able to create and print Shipments, Manifests and Labels with two line items in Toll Energy and Marine
     When user selects Toll Carrier as below to create shipment
-      | TollCarrier          |
-      | Toll Mining Services |
+      | TollCarrier            |
+      | Toll Energy and Marine |
+    Then User be able to see following Services
+      | Service1  | Service2   | Service11 | Service7 | Service12 | Service13 | Service8   | Service10 | Service9 | Service3     | Service4    | Service5   | Service6   |
+      | Dedicated | DG Courier | Hotshot   | Courier  | Overnight | Same Day  | DG Freight | General   | Express  | DG Overnight | DG Same Day | DG Express | DG Premium |
     When User continue enters shipment overview details as below to create a shipment
-      | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot     | CollectionDepot   |
-      | DG Freight | E92416        |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ANGLO MINE MOURA | ADELAIDE RAILHEAD |
+      | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot        | CollectionDepot         |
+      | DG Express | G28668        |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | TOLL ENERGY BALLERA | TOLL ENERGY BARRY BEACH |
     When User enters following input data for the line item
       | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | Weight | SenderReference | ReceiverReference |
       | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |               50 |    900 | Ref123          | Ref456            |
@@ -79,12 +87,14 @@ Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
     When User enters additional information for shipment as below
       | PurchaseOrder | SpecialInstructions       |
       | Abcd1234      | Test Special Instructions |
+    
     Then User clicks on 'Create Shipment' and User navigates to Shipment Review page and see Overview details as below.
-      | TollCarrier          | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode | DropOffDepot     | CollectionDepot   | Whopays |
-      | Toll Mining Services | E92416        |        12345 |       234567 | DG Freight | ROAD | ANGLO MINE MOURA | ADELAIDE RAILHEAD | Sender  |
-    Then User can see additional information of Toll Mining Services as below in Shipment Review page
-      | PurchaseOrders | SpecialInstructions       |
-      | Abcd1234       | Test Special Instructions |
+      | TollCarrier            | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode | DropOffDepot        | CollectionDepot         | Whopays |
+      | Toll Energy and Marine | G28668        |        12345 |       234567 | DG Express | ROAD | TOLL ENERGY BALLERA | TOLL ENERGY BARRY BEACH | Sender  |
+    Then User can see additional information as below in Shipment Review page
+      | PurchaseOrders | SpecialInstructions       | PalletInfo |
+      | Abcd1234       | Test Special Instructions | No        |
+   
     Then User be able to see line item headings as below
       | LineItemName1Heading | ItemTemplateName     | NumberOfItems | ItemDescriptionHeading | ItemsHeading | BillingTypeHeading | DimensionsHeading | TotalVolumeHeading | WeightHeading | Reference1Heading | Reference2Heading | ShipmentContainDangerousGoodsHeading |
       | Line Item 1          | Automation Template1 |            10 | Item description       | Items        | Billing type       | Dimensions        | Total volume (m3)  | Weight (kg)   | Reference1        | Reference2        | Shipment contain dangerous goods     |
@@ -106,3 +116,5 @@ Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
     Then User can add shipment to Manifest successfully.
     When User clicks on Print
     Then User can print manifest successfully.
+    
+    
