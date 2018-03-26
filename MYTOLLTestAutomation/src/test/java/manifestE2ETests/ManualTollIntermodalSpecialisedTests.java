@@ -58,12 +58,15 @@ public class ManualTollIntermodalSpecialisedTests {
 		PageBase.click(ManifestActions.AddNewShipment, 5);
 		PageBase.verifyTextExistAttributeContains(ManifestActions.TollCarier, TollCarrier);
 		Reporter.log("User Enters Shipment Details");
+
 		CreateShipmentActions.EnterService(ServicePremium);
 		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
 		CreateShipmentActions.SelectReceiver(2);
 		ManifestActions.SelectShipmentConsolidated();
+		
+		CreateShipmentActions.setQEMNo();
 		
 		//Shipment Product Details
 		PageBase.moveToElement(BookAPickupActions.itemDescriptionTextField);

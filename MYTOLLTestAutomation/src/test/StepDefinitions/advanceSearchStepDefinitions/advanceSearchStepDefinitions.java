@@ -985,13 +985,46 @@ public class advanceSearchStepDefinitions {
 		
 		@Then("^User Verifies if Saved Search is Availble in the Dropdown$")
 		public void UserVerifiesIfSavedSearchIsAvailbleInTheDropdown() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			System.out.println("Test " +SaveSearchName );
+			MyTollHomePageActions.ClickMenu();
+			PageBase.click(MyTollHomePageActions.Dashboard, 2);
+			MyTollHomePageActions.ClickAdvanceSearchTab();
+			PageBase.MinimumWaitForElementEnabled_1();
 			PageBase.sendText(MyTollHomePageActions.LoadSearchDropDown, 5, SaveSearchName);
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.click(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']"), 5);
 		}
 		
+		@Then("^User Downloads the Saved Search and Closes the search Box$")
+		public void UserDownloadsTheSavedSearchandClosestheSearchBox() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.click(MyTollHomePageActions.DownloadSavedSearch, 5);
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.click(MyTollHomePageActions.AdvanceSearchResultsClose, 5);
+		}
 		
-
+		
+		@And("^User Verifies if Save Search is existing in Module 3 of Advance Search$")
+		public void UserVerifiesIfSaveSearchIsExistingInModule3OfAdvanceSearch() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			MyTollHomePageActions.ClickMenu();
+			PageBase.click(MyTollHomePageActions.Dashboard, 2);	
+			PageBase.click(MyTollHomePageActions.SavedSearchTab, 2);
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.isElementPresent(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]"), 5, "Saved Search - "+SaveSearchName);	
+		}
+		
+		@Then("^User loads the Saved Search From Dashboard and Edit the Saved Search$")
+		public void UserLoadsTheSavedSearchFromDashboardAndEditTheSavedSearch(DataTable advanceSearchTestData) throws Throwable {
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				PageBase.MaximumWaitForElementEnabled_1();
+				PageBase.click(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]"), 5);
+				PageBase.click(MyTollHomePageActions.EditSaveSearch, 5);
+				PageBase.isElementPresent(By.xpath("//*[@id=\"carrier-list\"]/li/span[text()='"+advSearch.get("TollCarrier")+"']"), 2, advSearch.get("TollCarrier"));
+			}
+			
+		}
 		
 		
 }

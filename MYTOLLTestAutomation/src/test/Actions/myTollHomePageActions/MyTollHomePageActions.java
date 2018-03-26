@@ -36,6 +36,8 @@ public class MyTollHomePageActions {
 	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My accounts']");//*[@id="nav-dropdown"]/ul/li[5]/a/span[2] , //*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']
 	public static By myContactMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My contacts']");
 	public static By aboutMeMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='About me']");
+	public static By Dashboard = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='Go to my dashboard']");
+	public static By SavedSearchTab = By.xpath("//*[@id=\"savedSearchTabAnchor\"]/span");
 	//*[@id="nav-dropdown"]/ul/li[1]/a/span
 	
 	
@@ -138,8 +140,10 @@ public class MyTollHomePageActions {
 	public static By Milestone = By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Milestone']");	
 	public static By SenderLocation = By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Sender location']");	
 	public static By DeliveryLocation =  By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Receiver location']");	
-	public static By EstimatedDelivery = By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Estimated/Actual Delivery']");	
+	public static By EstimatedDelivery = By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Estimated/Actual delivery']");	
 	public static By Items =  By.xpath("//*[@id=\"adv-search-result-header\"]//*[text()='Items']");	
+	public static By AdvanceSearchResultsClose =  By.xpath("//*[@id=\"advSearchRelClose\"]/span");	
+	
 	
 	//SaveSearch
 	public static By SaveSearch = By.xpath("//*[@id=\"adl_advseavedsrchBtn\"]");	
@@ -147,6 +151,9 @@ public class MyTollHomePageActions {
 	public static By SaveSearchSubmit = By.xpath("//*[@id=\"advSrchSaveBtn\"]");
 	public static By SaveSearchClose = By.xpath("//*[@id=\"dashboard-features-info\"]//*//a[@class=\"tollSaveSearch-close\"]/i");	
 	public static By LoadSearchDropDown = By.xpath("//*[@id=\"current-saved-search\"]");
+	public static By DownloadSavedSearch=By.linkText("DOWNLOAD");
+	public static By EditSaveSearch = By.xpath("//*[@id=\"edit-search-text\"]");
+	
 	
 	
 	

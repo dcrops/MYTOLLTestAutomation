@@ -601,6 +601,7 @@ public class ManifestActions {
 		//Close Pop Up
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.waitForElement(ManifestActions.ShipmentManifestPopupClose, 2);
 		PageBase.click(ManifestActions.ShipmentManifestPopupClose, 2);
 		PageBase.MinimumWaitForElementEnabled_1();
@@ -612,19 +613,19 @@ public class ManifestActions {
 		PageBase.click(ManifestActions.createCommericalInvoice, 10);
 		
 		//Shipment Details Page Item Verifications
-		String[] shipmentDetails = {"Airway Bill (Shipment Number):", "Date of Export:","No. of Pieces:","Total Weight (kgs):","Declared Value:"};
+		String[] shipmentDetails = {"Airway Bill (Shipment Number)", "Date of Export","No. of Pieces","Total Weight (kgs)","Declared value"};
 		for (int i =1; i<=shipmentDetails.length; i++) {
 			PageBase.verifyTextSubString(By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[1]/div/form/div["+i+"]/label"), shipmentDetails[i-1]);
 		}
 		
 		//Sender Details Page Item Verifications
-		String[] senderDetails = {"Contact Name:", "Company Name:","Address:","Phone Number:","Country of Export:","ABN Number:"};
+		String[] senderDetails = {"Contact name", "Company Name","Address","Phone number","Country of export","ABN Number"};
 		for (int i =1; i<=senderDetails.length; i++) {
 			PageBase.verifyTextSubString(By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[2]/div/form/div["+i+"]/label"), senderDetails[i-1]);
 		}		
 		
 		//Receiver Details Page Item Verifications
-		String[] receiverDetails = {"Contact Name:", "Company Name:","Address:","Phone Number:","Country of Ultimate Destination:","Reference Number:"};
+		String[] receiverDetails = {"Contact name", "Company Name","Address","Phone number","Country of Ultimate Destination","Reference Number"};
 		for (int i =1; i<=receiverDetails.length; i++) {
 			PageBase.verifyTextSubString(By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[3]/div/form/div["+i+"]/label"), receiverDetails[i-1]);
 		}	

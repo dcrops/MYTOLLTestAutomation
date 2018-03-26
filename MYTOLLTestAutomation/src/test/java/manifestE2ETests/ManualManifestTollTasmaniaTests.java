@@ -65,6 +65,8 @@ public class ManualManifestTollTasmaniaTests {
 		CreateShipmentActions.SelectReceiver(2);
 		ManifestActions.SelectShipmentConsolidated();
 		
+		CreateShipmentActions.setQEMNo();
+		
 		//Shipment Product Details
 		PageBase.moveToElement(BookAPickupActions.itemDescriptionTextField);
 		PageBase.sendText(BookAPickupActions.itemDescriptionTextField, 2, ItemTemplateName);
