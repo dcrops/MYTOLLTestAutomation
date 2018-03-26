@@ -12,6 +12,7 @@ import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
@@ -1737,6 +1738,30 @@ public class CreateShipmentActions {
 		}
 	
 			
+	}
+	
+	public static void setQEMYes() {
+		try {
+			WebElement QEM = BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField);
+			PageBase.click(By.cssSelector("span.switch-label"), 2);
+			System.out.println("QEM Enabled");
+		}
+		catch (Exception ex)
+		{
+			System.out.println("QEM Already Enabled");
+		}
+	}
+	
+	public static void setQEMNo() {
+		try {
+			WebElement QEM = BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField);;
+			System.out.println("QEM Already Not Enabled");
+		}
+		catch (Exception ex)
+		{
+			PageBase.click(By.cssSelector("span.switch-label"), 2);
+			System.out.println("QEM Not Enabled");
+		}
 	}
 	
 }

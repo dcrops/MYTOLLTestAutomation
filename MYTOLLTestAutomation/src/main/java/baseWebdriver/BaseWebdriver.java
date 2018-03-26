@@ -32,7 +32,7 @@ public class BaseWebdriver {
 	public static String Username1="SitAutomationuser@yahoo.com"; 
 	
 	//BU Admin users
-	public static String Username2="SitAutomationuser@yahoo.com";// "auto_bvt_ps@mailinator.com"; 
+	public static String Username2="auto_bvt_ps@mailinator.com";// "auto_bvt_ps@mailinator.com"; 
 	public static String SitUsername1="SitAutomationuser@yahoo.com"; 
 	
 	//Platform admin user
@@ -53,7 +53,7 @@ public class BaseWebdriver {
 	public static void RunSetup(String browser) throws Exception {
 
 		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (4)\\chromedriver.exe");
 			BaseWebdriver.driver = new ChromeDriver();
 			BaseWebdriver.driver.manage().window().maximize();
 		//	MyTollHomePageActions.LaunchMyToll(PreprodUrl);
@@ -121,7 +121,7 @@ public class BaseWebdriver {
 
 	@AfterMethod
 	public static void tearDown() throws Exception {
-		BaseWebdriver.driver.quit();
+		//BaseWebdriver.driver.quit();
 		//driver.close();
 
 	}
