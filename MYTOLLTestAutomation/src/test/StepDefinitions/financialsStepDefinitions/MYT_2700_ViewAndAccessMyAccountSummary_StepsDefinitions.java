@@ -12,17 +12,7 @@ import cucumber.api.java.en.When;
 
 public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 
-	@When("^User selects Search Type as below$")
-	public void user_selects_Search_Type_as_below(DataTable financeTestData) throws Throwable {
-
-		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
-
-			PageBase.MaximumWaitForElementEnabled();
-
-			FinanceActions.EnterSearchType(finance.get("SearchType"));
-
-		}
-	}
+	
 
 	@Then("^User be able to view below details$")
 	public void user_be_able_to_view_below_details(DataTable financeTestData) throws Throwable {
@@ -56,23 +46,7 @@ public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 
 	}
 
-	@When("^User enters Search Invoice number$")
-	public void user_enters_Search_Invoice_number(DataTable financeTestData) throws Throwable {
-		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
-
-			PageBase.MaximumWaitForElementEnabled();
-			PageBase.MaximumWaitForElementEnabled();
-			FinanceActions.EnterInvoiceNumber(finance.get("Search Invoice number"));
-
-		}
-
-	}
-
-	@When("^User clicks on Search$")
-	public void user_clicks_on_Search() throws Throwable {
-		FinanceActions.ClickSearchBtn();
-
-	}
+	
 
 	@Then("^User be able to view Recent Invoice and Invoice Download$")
 	public void user_be_able_to_view_Recent_Invoice_and_Invoice_Download(DataTable financeTestData) throws Throwable {
@@ -80,10 +54,10 @@ public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 
 			PageBase.MaximumWaitForElementEnabled();
-			assertEquals(FinanceActions.GetInvoiceDate(), finance.get("InvoiceDate"));
-			assertEquals(FinanceActions.GetInvoiceNumber(), finance.get("InvoiceNumber"));
-		    assertEquals(FinanceActions.GetChargeAmount(), finance.get("Chargeamount"));
-			assertEquals(FinanceActions.GetShipmentDocuments(), finance.get("ShipmentsView"));
+			assertEquals(FinanceActions.GetInvoiceDatePrio(), finance.get("InvoiceDate"));
+			assertEquals(FinanceActions.GetInvoiceNumberPrio(), finance.get("InvoiceNumber"));
+		    assertEquals(FinanceActions.GetChargeAmountPrio(), finance.get("Chargeamount"));
+			assertEquals(FinanceActions.GetShipmentDocumentsPrio(), finance.get("ShipmentsView"));
 			assertEquals(FinanceActions.GetDownloadBtn(), finance.get("Download"));
 
 		}
@@ -95,10 +69,10 @@ public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 
 			PageBase.MaximumWaitForElementEnabled();
-			assertEquals(FinanceActions.GetInvoiceDate(), finance.get("InvoiceDate"));
-			assertEquals(FinanceActions.GetInvoiceNumber(), finance.get("InvoiceNumber"));
-			assertEquals(FinanceActions.GetChargeAmount(), finance.get("Chargeamount"));
-			assertEquals(FinanceActions.GetShipmentDocuments(), finance.get("ShipmentsView"));
+			assertEquals(FinanceActions.GetInvoiceDatePrio(), finance.get("InvoiceDate"));
+			assertEquals(FinanceActions.GetInvoiceNumberPrio(), finance.get("InvoiceNumber"));
+			assertEquals(FinanceActions.GetChargeAmountPrio(), finance.get("Chargeamount"));
+			assertEquals(FinanceActions.GetShipmentDocumentsPrio(), finance.get("ShipmentsView"));
 			assertEquals(FinanceActions.GetDownloadBtn(), finance.get("Download"));
 
 		}
@@ -144,9 +118,9 @@ public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 
 			PageBase.MaximumWaitForElementEnabled();
-			assertEquals(FinanceActions.GetFileName(), finance.get("FileName"));
-			assertEquals(FinanceActions.GetStatus(), finance.get("Status"));
-		    assertEquals(FinanceActions.GetFileSize(), finance.get("Size"));
+			assertEquals(FinanceActions.GetFileNameIPEC(), finance.get("FileName"));
+			assertEquals(FinanceActions.GetStatusIPEC(), finance.get("Status"));
+		    assertEquals(FinanceActions.GetFileSizeIPEC(), finance.get("Size"));
 		
 		}
 	}
