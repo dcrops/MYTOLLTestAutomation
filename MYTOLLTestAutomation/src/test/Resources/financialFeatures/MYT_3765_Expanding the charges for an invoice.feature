@@ -27,7 +27,9 @@ Feature: MYT-3765 Expanding the charges for an invoice
     Then User can see one of shipments details as below
       | ShipmentNo | Type        | ChargeAmount | Outstanding |
       | 2868873529 | Consignment | $152.93      | $152.93     |
-    When User clicks on Consignment
+    When User clicks on following Consignment
+     |Consignment| 
+     |2868873529|
     Then User be able to see "CHARGES" section
     Then User can view "Basic Charges" "Freight Charges" "Fuel Surcharges" "GST"
     Then User can view Charge Type, Description, Charge amount for Basic Charges

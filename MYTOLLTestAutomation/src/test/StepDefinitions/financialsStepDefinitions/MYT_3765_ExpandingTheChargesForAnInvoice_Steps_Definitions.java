@@ -92,13 +92,6 @@ public class MYT_3765_ExpandingTheChargesForAnInvoice_Steps_Definitions {
 
 	}
 
-	@When("^User clicks on Consignment$")
-	public void user_clicks_on_Consignment() throws Throwable {
-
-		FinanceActions.ClickOnConsignementInvoiceSummary();
-		PageBase.Scrollbar(250, 800);
-
-	}
 
 	@Then("^User be able to see \"([^\"]*)\" section$")
 	public void user_be_able_to_see_section(String pCharges) throws Throwable {

@@ -91,8 +91,8 @@ public class FinanceActions {
 	public static By shipmentNumberInShipmentInvoiceSummary = By.xpath("//*[@id=\"2868873529\"]/td[1]");
 	public static By typeInShipmentInvoiceSummary = By.xpath("//*[@id=\"2868873529\"]/td[2]");
 	public static By chargeAmountInShipmentInvoiceSummary = By.xpath("//*[@id=\"2868873529\"]/td[3]");
-	public static By outstandingInShipmentInvoiceSummary = By.xpath("//*[@id=\"2868873529\"]/td[4]");
-	
+	public static By outstandingInShipmentInvoiceSummary = By.xpath("//*[@id=\"2868873529\"]/td[4]"); 
+		
 	// CHARGES
 	public static By ChargesHeadingInvoiceSummary = By.xpath("//*[@id=\"outstandingShipmentDetails2868873529\"]/td/table/tbody/tr[9]/td[1]/table/tbody/tr[4]/td");
 	public static By basicChargesInvoiceSummary = By.xpath("//*[@id=\"CON\"]/td[1]");
@@ -142,6 +142,12 @@ public class FinanceActions {
 	public static By totalFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[4]");
 	public static By breakToltalChargesFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[5]");
 
+	//Payment Adjustment 
+	public static By paymentAdjustments = By.xpath("//*[@id=\"paymentAdjustments\"]/td[1]"); 
+	public static By paymentAdjustmentsArrowdown = By.xpath("//*[@id=\"paymentAdjustments\"]/td[6]/i");  
+	
+	
+	
 	
 	public static void ClickFinance() {
 		PageBase.ClickOn(FinanceMegaMenu, 5);
@@ -508,8 +514,8 @@ public class FinanceActions {
 
 	}
 	
-	public static void ClickOnConsignementInvoiceSummary() {
-		PageBase.ClickOn(typeInShipmentInvoiceSummary, 5);
+	public static void ClickOnConsignementInvoiceSummary(String pConsignment) {
+		PageBase.ClickOn(By.xpath("//*[@id="+pConsignment+"]/td[1]"), 5);
 
 	}
 	
@@ -752,6 +758,14 @@ public class FinanceActions {
 
 			}
 			
+			//Payment Adjustment
+						
+			public static String GetPaymentAdjustments() {
+				return PageBase.GetText(paymentAdjustments, 5);
 
+			}
+			public static void ClickOnPaymentAdjustments() {
+				PageBase.ClickOn(paymentAdjustmentsArrowdown, 5);
 
+			}
 }
