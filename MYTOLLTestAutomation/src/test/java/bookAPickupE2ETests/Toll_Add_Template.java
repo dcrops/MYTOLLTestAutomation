@@ -50,7 +50,7 @@ public class Toll_Add_Template {
 	}
 
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test
 	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void addTemplateTTAS(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
@@ -80,7 +80,7 @@ public class Toll_Add_Template {
 	}
 	
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test
 	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak","NumberOfItems","Length", "Width", "Height", "Weight", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode"})
 	public void addTemplatePrioNZ(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
