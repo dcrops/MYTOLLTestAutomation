@@ -274,10 +274,6 @@ public class MYT_3765_ExpandingTheChargesForAnInvoice_Steps_Definitions {
 	}
 
 	
-
-
-	
-
 	@Then("^User can see folowing fields are populated in Fuel Surcharges$")
 	public void user_can_see_folowing_fields_are_populated_in_Fuel_Surcharges(DataTable arg1) throws Throwable {
 	   

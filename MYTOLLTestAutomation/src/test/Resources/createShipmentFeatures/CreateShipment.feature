@@ -5,6 +5,6 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
 
   @tag1
   Scenario: User wants to Save a Shipment as a 'Draft'in TDF
-   When User clicks on following Consignment
-     |Consignment| 
-     |2868570961|
+  When User expands the Payment Adjustments section
+    |PaymentAdjustments|
+    | PAYMENT ADJUSTMENTS|
