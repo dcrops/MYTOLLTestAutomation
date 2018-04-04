@@ -101,7 +101,7 @@ public class FinanceActions {
 	public static By freightChargesInvoiceSummary = By.xpath("//*[@id=\"FRT\"]/td[1]");
 	public static By freightRateChargesInvoiceSummary = By.xpath("//*[@id=\"FRT\"]/td[3]");
 	public static By freightChargesChargesInvoiceSummary = By.xpath("//*[@id=\"FRT\"]/td[5]");
-	public static By fuelSurchargesInvoiceSummary = By.xpath("//*[@id=\"FSC 7.48\"]/td[1]");
+	public static By fuelSurchargesInvoiceSummary = By.xpath("//*[@id=\"TNQXFSC\"]/td[1]"); 
 	public static By fuelSurchargesDescriptionInvoiceSummary = By.xpath("//*[@id=\"FSC 7.48\"]/td[3]");
 	public static By fuelSurchargesChargesInvoiceSummary = By.xpath("//*[@id=\"FSC 7.48\"]/td[5]");
 	public static By gstInvoiceSummary = By.xpath("//*[@id=\"GST\"]/td[1]");
@@ -143,9 +143,12 @@ public class FinanceActions {
 	public static By breakToltalChargesFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[5]");
 
 	//Payment Adjustment 
-	public static By paymentAdjustments = By.xpath("//*[@id=\"paymentAdjustments\"]/td[1]"); 
-	public static By paymentAdjustmentsArrowdown = By.xpath("//*[@id=\"paymentAdjustments\"]/td[6]/i");  
-	
+	public static By paymentAdjustments = By.xpath("//*[@id=\"paymentAdjustments\"]/td[1]");  //*[@id="paymentAdjustments"]/td[1]
+	public static By paymentAdjustmentsArrowdown = By.xpath("//*[@id=\"paymentAdjustments\"]/td[6]/i"); //*[@id="paymentAdjustments"]/td[6]/i
+	public static By paymentAdjustmentsRef1 = By.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[2]/td[2]"); 
+	public static By paymentAdjustmentsRef2 = By.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[3]/td[2]"); 
+	public static By paymentAdjustmentsAmount1 = By.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[2]/td[4]"); 
+	public static By paymentAdjustmentsAmount2 = By.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[3]/td[4]"); 
 	
 	
 	
@@ -761,11 +764,32 @@ public class FinanceActions {
 			//Payment Adjustment
 						
 			public static String GetPaymentAdjustments() {
-				return PageBase.GetText(paymentAdjustments, 5);
+				return PageBase.GetText(paymentAdjustments, 15);
 
 			}
 			public static void ClickOnPaymentAdjustments() {
-				PageBase.ClickOn(paymentAdjustmentsArrowdown, 5);
+				PageBase.ClickOn(paymentAdjustments, 15);
+
+			}
+			
+						
+			public static String GetPaymentAdjustmentsRef1() {
+				return PageBase.GetText(paymentAdjustmentsRef1, 5);
+
+			}
+			
+			public static String GetPaymentAdjustmentsRef2() {
+				return PageBase.GetText(paymentAdjustmentsRef2, 5);
+
+			}
+			
+			public static String GetPaymentAdjustmentsAmount1() {
+				return PageBase.GetText(paymentAdjustmentsAmount1, 5);
+
+			}
+			
+			public static String GetPaymentAdjustmentsAmount2() {
+				return PageBase.GetText(paymentAdjustmentsAmount2, 5);
 
 			}
 }

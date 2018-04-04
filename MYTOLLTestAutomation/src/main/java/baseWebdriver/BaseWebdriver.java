@@ -25,7 +25,7 @@ public class BaseWebdriver {
 
 	public static String PreprodUrl="https://www-ppd.mytoll.com/";  
 	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
-	public static String SitUrl="https://ps.mytoll.com/"; 
+	public static String SitUrl= "https://ps.mytoll.com/"; 
 	
 
 	// Preprod users
@@ -45,7 +45,7 @@ public class BaseWebdriver {
 	public static String PerformenceUsername1="perftest@toll.com";
 	
 	//Passwords
-	public static String Password="Toll@123";  
+	public static String Password="Victoria@123"; //"Toll@123";  
 	public static String PerformancePassword="Victoria@123"; 
 
 	
