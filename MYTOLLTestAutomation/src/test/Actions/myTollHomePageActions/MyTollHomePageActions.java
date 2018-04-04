@@ -153,8 +153,18 @@ public class MyTollHomePageActions {
 	public static By LoadSearchDropDown = By.xpath("//*[@id=\"current-saved-search\"]");
 	public static By DownloadSavedSearch=By.linkText("DOWNLOAD");
 	public static By EditSaveSearch = By.xpath("//*[@id=\"edit-search-text\"]");
+	public static By DeleteSaveSearchCancel = By.xpath("//*[@id=\"confirm-false\"]");
+	public static By DeleteSaveSearchConfirm = By.xpath("//*[@id=\"confirm-true\"]");
+	public static By ViewMoreSaveSearch = By.xpath("//*[@id=\"getMoreSavedRecord\"]");
 	
-	
+	public static By SavedTabTollShipmentNo = By.xpath("//*[@id=\"savedSearchThId\"]//*[text()='Toll shipment no.']");	
+	public static By SavedTabReferences = By.xpath("//*[@id=\"savedSearchThId\"]//*[text()='References']");	
+	public static By SavedTabMilestone = By.xpath("//*[@id=\"savedSearchThId\"]//*[text()='Milestone']");	
+	public static By SavedTabSenderLocation = By.xpath("//*[@id=\"savedSearchThId\"]//*[text()='Sender location']");	
+	public static By SavedTabDeliveryLocation =  By.xpath("//*[@id=\"savedSearchThId\"]//*[text()='Receiver location']");	
+	public static By SavedTabEstimatedDelivery = By.xpath("//*[@id=\"savedSearchThId\"]//*[text()='Estimated/Actual delivery']");	
+	public static By SavedTabItems =  By.xpath("//*[@id=\"savedSearchThId\"]//*[text()='Items']");	
+		
 	
 	
 	
