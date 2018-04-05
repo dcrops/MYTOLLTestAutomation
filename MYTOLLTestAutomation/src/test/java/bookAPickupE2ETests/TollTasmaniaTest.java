@@ -27,7 +27,7 @@ public class TollTasmaniaTest {
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test(priority=-1)
+	@Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierTollTasmania","AccountNumberTollTas", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
@@ -112,7 +112,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({ "TollCarrierTollTasmania", "AccountNumberTollTas","ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "DestinationItem",
@@ -177,8 +177,7 @@ public class TollTasmaniaTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
-	@Test
-
+	@Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "ServiceExpress", "AccountNumberTollTas",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
@@ -321,7 +320,7 @@ public class TollTasmaniaTest {
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 
-	@Test
+	@Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierTollTasmania", "AccountNumberTollTas", "ServiceDGFreight", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName", "lookupItem",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
@@ -390,7 +389,7 @@ public class TollTasmaniaTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
-	@Test
+	@Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierTollTasmania", "AccountNumberTollTas","ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -444,7 +443,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	@Test
+	@Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierTollTasmania","AccountNumberTollTas", "ServiceExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -498,7 +497,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollTasmania", "AccountNumberTollTas","ServiceGeneral", "locationIndex", "ItemTemplateName", "ChargeToAccount",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "DGGoods", "FoodItems", "palletSpace",
 			"Destination", "Postcode", "VendorNum", "specialIns" })
@@ -562,8 +561,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	@Test
-
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollTasmania", "AccountNumberTollTas","ServiceGeneral", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 

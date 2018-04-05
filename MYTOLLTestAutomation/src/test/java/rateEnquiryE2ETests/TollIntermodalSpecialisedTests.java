@@ -26,7 +26,7 @@ public class TollIntermodalSpecialisedTests {
 			}
 	
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceGeneral","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_General(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -67,7 +67,7 @@ public class TollIntermodalSpecialisedTests {
 	}
 	
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceExpress","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_Express(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -106,7 +106,7 @@ public class TollIntermodalSpecialisedTests {
 	}
 	
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServicePremium","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_Premium(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -145,7 +145,7 @@ public class TollIntermodalSpecialisedTests {
 	}
 	
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceRefrigeration","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_Refrigeration(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -184,7 +184,7 @@ public class TollIntermodalSpecialisedTests {
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceDangerousGoods","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_DangerousGoods(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -222,7 +222,7 @@ public class TollIntermodalSpecialisedTests {
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceDGExpress","TNAccountNo","ItemTemplateName","TNBillingType","TNMode", "TNNumberOfItems","TNLength", "TNWidth", "TNHeight", "TNWeight","TNQtyType", "TNOriginSuburb","TNOriginPostCode", "TNDesSuburb", "TNDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_DGExpress(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -261,7 +261,7 @@ public class TollIntermodalSpecialisedTests {
 	}
 	
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceFCL","FCLAccountNo","ItemTemplateName","FCLBillingType","FCLMode", "FCLNumberOfItems","FCLLength", "FCLWidth", "FCLHeight", "FCLWeight","FCLQtyType", "FCLOriginSuburb","FCLOriginPostCode", "FCLDesSuburb", "FCLDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_FCL(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -299,8 +299,8 @@ public class TollIntermodalSpecialisedTests {
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
-	@Test(priority=-1)
-	//@Test(groups = { "Shakeout Testing" })
+	
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceDGFCL","DGFCLAccountNo","ItemTemplateName","DGFCLBillingType","DGFCLMode", "DGFCLNumberOfItems","DGFCLLength", "DGFCLWidth", "DGFCLHeight", "DGFCLWeight","DGFCLQtyType", "DGFCLOriginSuburb","DGFCLOriginPostCode", "DGFCLDesSuburb", "DGFCLDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_DGFCL(String Carrier, String Service,  String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {

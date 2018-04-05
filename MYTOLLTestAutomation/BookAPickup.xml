@@ -189,9 +189,8 @@
 	<parameter name="Suburb14" value="MARMION" />
 	<parameter name="Suburb14Option" value="6020, MARMION, WA, AU" />
 	<parameter name="Postcode14" value="6020" />
-	
-<classes> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
-			/>
+	      
+
 		<!-- Blocked> <classes> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
 			/>  <class name="bookAPickupE2ETests.TollPriorityNZTest" 
 			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
@@ -202,6 +201,5 @@
 			/> <class name="bookAPickupE2ETests.TollIPECTest" /> <class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" 
 			/> <class name="bookAPickupE2ETests.Toll_Add_Template" /> </Blocked -->
 
-	</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

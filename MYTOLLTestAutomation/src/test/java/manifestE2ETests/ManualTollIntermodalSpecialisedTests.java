@@ -30,7 +30,7 @@ public class ManualTollIntermodalSpecialisedTests {
 	}
 
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing" , "E2E"})
 	@Parameters({"TollIntermodalSpecialised","AccountNumberTINTER", "ServicePremium", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",

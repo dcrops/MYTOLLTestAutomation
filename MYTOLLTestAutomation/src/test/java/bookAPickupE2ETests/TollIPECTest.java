@@ -28,7 +28,7 @@ public class TollIPECTest {
 
 	}
 
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierTollIPEC","AccountNumberTIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -88,7 +88,7 @@ public class TollIPECTest {
 		//BookAPickupActions.GetReferenceNumber();
 	}
 
-	@Test
+	 @Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierTollIPEC", "AccountNumberTIPEC","ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 

@@ -143,11 +143,11 @@ public class FinanceActions {
 	public static By breakToltalChargesFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[5]");
 
 	//Payment Adjustment 
-	public static By paymentAdjustments = By.xpath("//*[@id=\"paymentAdjustments\"]/td[1]");  //*[@id="paymentAdjustments"]/td[1]
-	public static By paymentAdjustmentsArrowdown = By.xpath("//*[@id=\"paymentAdjustments\"]/td[6]/i"); //*[@id="paymentAdjustments"]/td[6]/i
-	public static By paymentAdjustmentsRef1 = By.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[2]/td[2]"); 
-	public static By paymentAdjustmentsRef2 = By.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[3]/td[2]"); 
-	public static By paymentAdjustmentsAmount1 = By.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[2]/td[4]"); 
+	public static By paymentAdjustments = By.xpath("//*[@id=\"paymentAdjustments\"]/td[5]"); 
+	public static By paymentAdjustmentsArrowdown = By.xpath("//*[@id=\"paymentAdjustments\"]/td[6]/i"); 
+	public static By paymentAdjustmentsRef1 = By.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[2]"); 
+	public static By paymentAdjustmentsDate = By.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[1]"); 
+	public static By paymentAdjustmentsAmount1 = By.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[4]"); 
 	public static By paymentAdjustmentsAmount2 = By.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[3]/td[4]"); 
 	
 	
@@ -768,18 +768,20 @@ public class FinanceActions {
 
 			}
 			public static void ClickOnPaymentAdjustments() {
-				PageBase.ClickOn(paymentAdjustments, 15);
+				PageBase.MaximumWaitForElementEnabled();
+				PageBase.ClickOn(paymentAdjustments, 20);
 
 			}
 			
-						
+			
 			public static String GetPaymentAdjustmentsRef1() {
+				
 				return PageBase.GetText(paymentAdjustmentsRef1, 5);
 
 			}
 			
-			public static String GetPaymentAdjustmentsRef2() {
-				return PageBase.GetText(paymentAdjustmentsRef2, 5);
+			public static String GetPaymentAdjustmentsDate() {
+				return PageBase.GetText(paymentAdjustmentsDate, 5);
 
 			}
 			

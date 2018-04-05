@@ -26,7 +26,7 @@ public class TollTasmaniaTests {
 			}
 	
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral","TTAccountNo","ItemTemplateName","TTBillingType","TTMode", "TTNumberOfItems","TTLength", "TTWidth", "TTHeight", "TTWeight","TTQtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_General(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -65,7 +65,7 @@ public class TollTasmaniaTests {
 		Reporter.log("---------------END OF TEST---------------");
 	}
 		
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollTasmania", "ServiceDGFreight","TTAccountNo","ItemTemplateName","TTBillingType","TTMode", "TTNumberOfItems","TTLength", "TTWidth", "TTHeight", "TTWeight","TTQtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -103,7 +103,7 @@ public class TollTasmaniaTests {
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollTasmania", "ServiceRefrigeration","TTAccountNo","ItemTemplateName","TTBillingType","TTMode", "TTNumberOfItems","TTLength", "TTWidth", "TTHeight", "TTWeight","TTQtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Refrigeration(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -143,7 +143,7 @@ public class TollTasmaniaTests {
 	}
 	
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollTasmania", "ServiceExpress","TTAccountNo","ItemTemplateName","TTBillingType","TTMode", "TTNumberOfItems","TTLength", "TTWidth", "TTHeight", "TTWeight","TTQtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_Express(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {

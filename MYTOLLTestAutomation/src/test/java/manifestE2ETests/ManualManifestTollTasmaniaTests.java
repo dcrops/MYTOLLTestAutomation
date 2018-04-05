@@ -30,7 +30,7 @@ public class ManualManifestTollTasmaniaTests {
 	}
 
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollTasmania","AccountNumberTTas", "ServiceGeneral", "AccountNumberTTas", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",

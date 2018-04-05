@@ -24,7 +24,7 @@ public class TollPriorityAUSTests {
 				MyTollHomePageActions.ClickGetRateEnquiery();
 			}
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollPrioAU", "ServiceAusWideSatchel","TPAccountNo","ItemTemplateName","TPANumberOfItems","TPALength", "TPAWidth", "TPAHeight", "TPAWeight","TPAQtyType", "TPAOriginSuburb","TPAOriginPostCode", "TPADesSuburb", "TPADesPostCode"})
 	public void RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_AuswideSatchel(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -52,7 +52,7 @@ public class TollPriorityAUSTests {
 	}
 	
 
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollPrioAU", "ServiceParcelsOffPeak","TPAccountNo","ItemTemplateName","TPANumberOfItems","TPALength", "TPAWidth", "TPAHeight", "TPAWeight","TPAQtyType", "TPAOriginSuburb","TPAOriginPostCode", "TPADesSuburb", "TPADesPostCode"})
 	public void RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_ParcelOffPeak(String Carrier, String Service,String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -83,7 +83,7 @@ public class TollPriorityAUSTests {
 	}
 	
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({"TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments","TPAccountNo","ItemTemplateName","TPANumberOfItems","TPALength", "TPAWidth", "TPAHeight", "TPAWeight","TPAQtyType", "TPAOriginSuburb","TPAOriginPostCode", "TPADesSuburb", "TPADesPostCode", "Country"})
 	public void RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_GlobalExpressDocuments(String Carrier, String Service,String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode, String Country) {

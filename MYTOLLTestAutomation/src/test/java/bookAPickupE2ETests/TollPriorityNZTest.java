@@ -27,7 +27,7 @@ public class TollPriorityNZTest {
 		// MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "AccountNumberTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex","ReceiverTGX",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference",
 			"DestinationCountry", "specialIns" })
@@ -82,7 +82,7 @@ public class TollPriorityNZTest {
 		// BookAPickupActions.GetReferenceNumber() ;
 	}
 
-	@Test
+	@Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "AccountNumberTollPrioNZ", "ServiceGlobalExpressDocuments", "locationIndex","ReceiverTGX",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "reference",
 			"DestinationCountry", "specialIns" })
@@ -134,7 +134,7 @@ public class TollPriorityNZTest {
 
 	}
 
-	@Test(priority=-2)
+	@Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTollPrioNZ", "locationIndex","ReceiverTGX",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "DGGoodsNo", "palletSpace",
 			"reference", "DestinationNZ", "DestinationNZPostcode", "DestinationNZItem", "specialIns" })

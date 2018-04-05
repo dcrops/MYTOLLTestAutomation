@@ -33,7 +33,7 @@ public class IntermodalSpecializedTest {
 
 	}
 
-	@Test 
+	 @Test(groups = { "E2E" })
 	@Parameters({"TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceDangerousGoods", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
@@ -179,7 +179,7 @@ public class IntermodalSpecializedTest {
 	}
 
 //	@Test(priority=-6)
-  	@Test(groups = { "Shakeout Testing" })
+  	@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
@@ -264,7 +264,7 @@ public class IntermodalSpecializedTest {
 	}
 	
 	//@Test (priority=-1)
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER","ServiceFCL", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName",  "PackingGroup", "packageDescription", "pDgPkgQty",
@@ -349,7 +349,7 @@ public class IntermodalSpecializedTest {
 	}
 
 	//@Test(priority=-7)
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
@@ -495,7 +495,7 @@ public class IntermodalSpecializedTest {
 
 
 
-	@Test
+	  @Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER","ServiceGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -550,7 +550,7 @@ public class IntermodalSpecializedTest {
 	}
 
 //	@Test(priority=-1)
-	@Test
+	  @Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER","ServicePremium", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -610,7 +610,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
-	@Test
+	  @Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceRailGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"specialIns" })
@@ -669,7 +669,7 @@ public class IntermodalSpecializedTest {
 	}
 
 	//@Test(priority=-1)
-	@Test
+	  @Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
@@ -727,7 +727,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
-	@Test
+	  @Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceDGRefrigerated", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
@@ -791,7 +791,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
-	@Test
+	  @Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceRailDangerousGoods", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
@@ -854,7 +854,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 	//@Test(priority=-8)
-	@Test
+	  @Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
 			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
@@ -929,7 +929,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
-	@Test
+	  @Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
