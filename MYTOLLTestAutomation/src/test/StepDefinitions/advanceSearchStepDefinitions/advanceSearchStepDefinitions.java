@@ -17,8 +17,10 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import myTollHomePageActions.MyTollHomePageActions;
 import rateEnquiryActions.RateEnquiryActions;
+
 
 public class advanceSearchStepDefinitions {
 	
@@ -1026,5 +1028,104 @@ public class advanceSearchStepDefinitions {
 			
 		}
 		
+		@Then("^User Deletes Saved Search from the Dropdown$")
+		public void UserDeletesSavedSearchfromtheDropdown() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			System.out.println("Test " +SaveSearchName );
+			//MyTollHomePageActions.ClickMenu();
+			//PageBase.click(MyTollHomePageActions.Dashboard, 2);
+			//MyTollHomePageActions.ClickAdvanceSearchTab();
+			PageBase.MinimumWaitForElementEnabled_1();
+			PageBase.sendText(MyTollHomePageActions.LoadSearchDropDown, 5, SaveSearchName);
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.click(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']/span"), 5);
+		}
 		
+		@Then("^User Cancels Delete Saved Search$")
+		public void UserCancelsDeleteSavedSearch() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.click(MyTollHomePageActions.DeleteSaveSearchCancel, 5);
+		}
+		
+		@Then("^User Confirms Delete Saved Search$")
+		public void UserConfirmsDeleteSavedSearch() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.click(MyTollHomePageActions.DeleteSaveSearchConfirm, 5);
+		}
+		
+		@And("^User Verifies Saved Search Does not Exist on DropDown$")
+		public void UserVerifiesSavedSearchDoesNotExistOnDropDown() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			try {
+				PageBase.sendText(MyTollHomePageActions.LoadSearchDropDown, 5, SaveSearchName);
+				PageBase.MaximumWaitForElementEnabled_1();
+				PageBase.click(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']"), 5);
+				System.out.println("FAILED: Saved Seacrh Not Deleted");
+				Assert.fail("FAILED: Saved Seacrh Not Deleted");
+				
+			}
+			catch (Exception Ex) {
+				System.out.println("Saved Seacrh Does Not Exist and has been Deleted as Expected");
+			}
+			
+		}
+		
+		//Saved Search Tab
+		
+		@Then("^User loads the Saved Search From Dashboard and Click View More$")
+		public void UserLoadsTheSavedSearchFromDashboardAndClickViewMore() throws Throwable {
+				PageBase.MaximumWaitForElementEnabled_1();
+				PageBase.click(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]"), 5);
+				try {
+				PageBase.click(MyTollHomePageActions.ViewMoreSaveSearch, 5);
+				}
+				catch (Exception Ex) {
+					System.out.println("View More Button Does Not Exits");
+				}
+		}
+		
+		
+		
+		@And("^Search Results are displayed according to Track and Trace in Saved Search Tab$")
+		public void SearchResultsAreDisplayedAccordingToTrackandTraceInSavedSearchTab(DataTable advanceSearchTestData) throws Throwable {
+
+			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
+				PageBase.isElementPresent(MyTollHomePageActions.SavedTabTollShipmentNo , 5, advSearch.get("TollShipmentNo"));
+				PageBase.isElementPresent(MyTollHomePageActions.SavedTabReferences, 5, advSearch.get("References"));
+				PageBase.isElementPresent(MyTollHomePageActions.SavedTabMilestone, 5, advSearch.get("Milestone"));
+				PageBase.isElementPresent(MyTollHomePageActions.SavedTabSenderLocation, 5, advSearch.get("SenderLocation"));
+				PageBase.isElementPresent(MyTollHomePageActions.SavedTabDeliveryLocation, 5, advSearch.get("DeliveryLocation"));
+				PageBase.isElementPresent(MyTollHomePageActions.SavedTabEstimatedDelivery, 5, advSearch.get("EstimatedDelivery"));
+				PageBase.isElementPresent(MyTollHomePageActions.SavedTabItems, 5, advSearch.get("Items"));
+			}
+		}
+		
+		@Then("^User Downloads the Saved Search form Dashboard$")
+		public void UserDownloadsTheSavedSearchfromDashboard() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.click(MyTollHomePageActions.DownloadSavedSearch, 5);
+			PageBase.MaximumWaitForElementEnabled_1();
+		}
+		
+		@Then("^User Deletes Saved Search from the Dashboard$")
+		public void UserDeletesSavedSearchfromtheDashboard() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.click(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]/following-sibling::a/i"), 5);
+		}
+		
+		
+		@And("^User Verifies Saved Search Does not Exist on Dashboard$")
+		public void UserVerifiesSavedSearchDoesNotExistOnDashboard() throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			try {
+				PageBase.click(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]"), 5);
+				System.out.println("FAILED: Saved Seacrh Not Deleted");
+				Assert.fail("FAILED: Saved Seacrh Not Deleted");
+				
+			}
+			catch (Exception Ex) {
+				System.out.println("Saved Seacrh Does Not Exist and has been Deleted as Expected");
+			}
+			
+		}
 }
