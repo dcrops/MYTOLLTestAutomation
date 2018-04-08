@@ -164,7 +164,7 @@
 
 
 		<classes>
-						<class name="rateEnquiryE2ETests.TollIPECTests" />
+							<class name="rateEnquiryE2ETests.TollIPECTests" />
 				</classes>
 
 	    

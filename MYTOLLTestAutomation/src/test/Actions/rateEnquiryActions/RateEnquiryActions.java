@@ -132,7 +132,7 @@ public class RateEnquiryActions {
 		Reporter.log("User Enters Account No - "+account);
 		PageBase.sendText(enterAccountNumber, 10, account);
 		PageBase.MinimumWaitForElementEnabled_1();
-		PageBase.click(By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()='"+account+"']"), 5);  //*[@id="account-selector"]/div/ul/li[4]/div[1]
+		PageBase.click(By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()='"+account+" "+"']"), 5);  
 	}
 
 	public static void SelectModeItem(int j) {

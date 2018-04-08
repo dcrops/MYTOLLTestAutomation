@@ -61,7 +61,7 @@ public class ManualManifestTollIPECTest {
 		CreateShipmentActions.EnterService(ServiceRoadExpress);
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTIPEC);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
 		//Shipment Product Details

@@ -32,7 +32,8 @@ public class TollPriorityAUSTests {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		BookAPickupActions.EnterAccountNumber(AccountNo);
+		//RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		RateEnquiryActions.EnterItem(ItemTemplateName);
@@ -60,7 +61,8 @@ public class TollPriorityAUSTests {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		BookAPickupActions.EnterAccountNumber(AccountNo);
+		//RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
@@ -91,7 +93,8 @@ public class TollPriorityAUSTests {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		BookAPickupActions.EnterAccountNumber(AccountNo);
+		//RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		RateEnquiryActions.SelectCountry(Country);
 		

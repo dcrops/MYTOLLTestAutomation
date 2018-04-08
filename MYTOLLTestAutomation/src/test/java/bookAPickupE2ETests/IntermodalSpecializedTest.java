@@ -142,6 +142,8 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.ClickAddANewLine();
 
 		PageBase.MediumWaitForElementEnabled();
+		PageBase.MoveToElement(BookAPickupActions.length, BookAPickupActions.weight);
+
 		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);

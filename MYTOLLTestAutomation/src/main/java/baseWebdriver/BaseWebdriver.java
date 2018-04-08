@@ -32,7 +32,7 @@ public class BaseWebdriver {
 	public static String Username1="SitAutomationuser@yahoo.com"; 
 	
 	//BU Admin users
-	public static String Username2="auto_bvt_ps@mailinator.com";// "auto_bvt_ps@mailinator.com"; 
+	public static String Username2="SitAutomationuser@yahoo.com";// "auto_bvt_ps@mailinator.com"; 
 	public static String SitUsername1="SitAutomationuser@yahoo.com"; 
 	
 	//Platform admin user

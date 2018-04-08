@@ -2,11 +2,11 @@
 Feature: MYT_6298 Toll Mining Services Financials
 
   Background: 
-    Given User is Registered in MyToll
+  Given User is Registered in MyToll and user has full financial access
 
   @tag1
   Scenario: User has full financial access and wants to select Account Summary or My Financials
-    When User selects below Toll carrier and the account that has full financial access
+    When User selects Toll carrier and the account that has full financial access
       | TollCarrier            | AccountNumber                |
       | Toll Energy and Marine | G28405 SANTOS LIMITED (EABU) |
     When User selects Search Type as below

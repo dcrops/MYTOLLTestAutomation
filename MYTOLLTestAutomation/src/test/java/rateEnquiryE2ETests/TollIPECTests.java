@@ -41,7 +41,8 @@ public class TollIPECTests {
 		RateEnquiryActions.valid = true;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		BookAPickupActions.EnterAccountNumber(AccountNo);
+		//RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);

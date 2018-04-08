@@ -62,7 +62,7 @@ public class ManualManifestTollPriorityAUSTests {
 		
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTollPrioAu);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
 		//Shipment Product Details

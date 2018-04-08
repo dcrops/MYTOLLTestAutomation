@@ -62,7 +62,7 @@ public class ManualManifestTollTasmaniaTests {
 		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
 		CreateShipmentActions.setQEMNo();

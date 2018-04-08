@@ -63,7 +63,7 @@ public class ManualTollIntermodalSpecialisedTests {
 		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
 		CreateShipmentActions.setQEMNo();
