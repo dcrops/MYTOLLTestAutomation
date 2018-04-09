@@ -23,7 +23,7 @@ public class TollPriorityNZ {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	 @Test
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "WhoPays", "whoPays", "Sender", "ReceiverTGX",
 			"QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
@@ -116,7 +116,7 @@ public class TollPriorityNZ {
 
 	}
 
-	 @Test
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "WhoPays", "whoPays", "Sender", "Receiver",
 			"QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
@@ -211,7 +211,7 @@ public class TollPriorityNZ {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "WhoPays", "whoPays", "Sender", "Receiver",
 			"QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
@@ -294,7 +294,7 @@ public class TollPriorityNZ {
 
 	}
 
-	 @Test
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceEconomyPacificAirportToAirport", "WhoPays", "whoPays", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -391,7 +391,7 @@ public class TollPriorityNZ {
 
 	}
 	 
-	 @Test
+	@Test(groups = {"E2E" })
 		@Parameters({ "TollCarrierTollPrioNZ", "ServiceEconomyPacificAirportToAirport", "WhoPays", "whoPays", "Sender",
 				"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 				"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",

@@ -30,7 +30,7 @@ public class ManualManifestTollIPECTest {
 	}
 
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({"TollCarrierTollIPEC","AccountNumberTIPEC", "ServiceRoadExpress", "AccountNumberTIPEC", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -61,7 +61,7 @@ public class ManualManifestTollIPECTest {
 		CreateShipmentActions.EnterService(ServiceRoadExpress);
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTIPEC);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
 		//Shipment Product Details

@@ -49,6 +49,21 @@ public class FinancialCommonStepsDefinitions {
 		 
 	}
 	
+	@When("^User selects Toll carrier and the account that has full financial access$")
+	public void user_selects_Toll_carrier_and_the_account_that_has_full_financial_access(DataTable financeTestData) throws Throwable {
+		
+		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			FinanceActions.EnterTollCarrier(finance.get("TollCarrier"));
+			PageBase.MaximumWaitForElementEnabled();
+			FinanceActions.EnterAccountNumberWithName(finance.get("AccountNumber"));
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
+		}
+	}
+	
 	@When("^User selects Search Type as below$")
 	public void user_selects_Search_Type_as_below(DataTable financeTestData) throws Throwable {
 

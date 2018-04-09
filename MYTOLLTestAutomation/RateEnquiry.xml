@@ -29,7 +29,7 @@
 		<parameter name="ServiceDangerousGoods" value="Dangerous Goods" />
 		<parameter name="ServiceDGRefrigerated" value="DG Refrigerated" />
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
-		<parameter name="ServiceDGExpress" value="DG Express" />
+		<parameter name="ServiceDGExpress" value="Dangerous Goods Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 		<parameter name="ServiceParcelsSameDays" value="Parcels - Same Day" />
 		<parameter name="ServiceAusWideSatchel" value="Auswide 3kg Satchel - Overnight" />
@@ -68,7 +68,7 @@
 		<parameter name="TIPOriginPostCode" value="3000" />
 
 		<!---Toll NQX test data / IntermodalSpecialized -->
-		<parameter name="TNAccountNo" value="614060 " />
+		<parameter name="TNAccountNo" value="614060" />
 		<parameter name="TNOriginSuburb" value="MELBOURNE" />
 		<parameter name="TNOriginPostCode" value="3000" />
 		<parameter name="TNDesSuburb" value="SYDNEY" />
@@ -164,7 +164,7 @@
 
 
 		<classes>
-						<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	
+							<class name="rateEnquiryE2ETests.TollIPECTests" />
 				</classes>
 
 	    

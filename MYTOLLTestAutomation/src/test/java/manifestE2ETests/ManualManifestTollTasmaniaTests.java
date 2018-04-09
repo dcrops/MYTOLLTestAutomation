@@ -30,7 +30,7 @@ public class ManualManifestTollTasmaniaTests {
 	}
 
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollTasmania","AccountNumberTTas", "ServiceGeneral", "AccountNumberTTas", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -62,7 +62,7 @@ public class ManualManifestTollTasmaniaTests {
 		CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
 		CreateShipmentActions.setQEMNo();

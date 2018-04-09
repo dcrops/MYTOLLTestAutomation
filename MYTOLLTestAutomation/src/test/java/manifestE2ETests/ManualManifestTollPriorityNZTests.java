@@ -30,7 +30,7 @@ public class ManualManifestTollPriorityNZTests {
 	}
 
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollPrioNZ","AccountNumberTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTollPrioNZ", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",

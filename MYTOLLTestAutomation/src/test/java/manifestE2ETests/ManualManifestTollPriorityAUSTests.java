@@ -30,7 +30,7 @@ public class ManualManifestTollPriorityAUSTests {
 	}
 
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({"TollCarrierTollPrioAU","AccountNumberTollPrioAu", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -62,7 +62,7 @@ public class ManualManifestTollPriorityAUSTests {
 		
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTollPrioAu);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
 		//Shipment Product Details

@@ -7,7 +7,7 @@ Feature: MYT_1650 Shipment: 'Default' mode to ' Quick Entry ' mode
   Scenario: User wants to switch from 'Default' view to 'Quick mode' view and add one line item in Intermodal & Specialised
     When User enters shipment overview details as below to create a shipment with Dangerous Goods
       | TollCarrier              | AccountNumber | Service    | Mode | QuoteNumber | Whopays | Sender | Receiver | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot   | CollectionDepot      |
-      | Intermodal & Specialised |        371065 | DG Express |    1 |      123456 |       1 |      1 |        1 | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ADELAIDE  TNQX | ADELAIDE S-LINE TNQX |
+      | Intermodal & Specialised |        371065 | Dangerous Goods Express |    1 |      123456 |       1 |      1 |        1 | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ADELAIDE  TNQX | ADELAIDE S-LINE TNQX |
     And User selects switch from 'Default' mode to ' Quick Entry ' mode in shipment
     Then User able to see Line item number autopopulated
     When User enters following input data for the line item in Quick Entry Mode
@@ -35,7 +35,7 @@ Feature: MYT_1650 Shipment: 'Default' mode to ' Quick Entry ' mode
   Scenario: User wants to switch from 'Default' view to 'Quick mode' view and add multiple line items in Intermodal & Specialised
     When User enters shipment overview details as below to create a shipment
       | TollCarrier   | AccountNumber | Service    | Mode | Whopays | Sender   | Receiver    | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot | CollectionDepot |
-      | Intermodal & Specialised |        371065 | DG Express | Rail | Sender  | AccessHQ | Dialog Group| John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 |            1 |               1 |
+      | Intermodal & Specialised |        371065 | Dangerous Goods Express | Rail | Sender  | AccessHQ | Dialog Group| John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 |            1 |               1 |
     When User selects switch from 'Default' mode to ' Quick Entry ' mode
     Then User able to see Line item number autopopulated
     When User enters following input data for the line item
