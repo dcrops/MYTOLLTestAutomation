@@ -8,6 +8,12 @@ Feature: MYT-3540 Advance Search : Access Saved Searches tab in My Dashboard
     When User inputs search criteria in the Toll Carrier feild
    	 |TollCarrier|
      |Toll Priority(AU & NZ) |
+    And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|12-02-2018|
+   	And User Searches Using Shipment Created date - Date To
+   	|DateTo|
+   	|14-02-2018|
     Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
      And Save Search Option is visible
@@ -29,6 +35,12 @@ Feature: MYT-3540 Advance Search : Access Saved Searches tab in My Dashboard
     When User inputs search criteria in the Toll Carrier feild
    	 |TollCarrier|
       |Intermodal & Specialised |
+    And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|12-02-2018|
+   	And User Searches Using Shipment Created date - Date To
+   	|DateTo|
+   	|14-02-2018|
     Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
      And Save Search Option is visible

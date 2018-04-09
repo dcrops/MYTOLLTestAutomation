@@ -10,6 +10,7 @@ import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
+import createShipmentActions.CreateShipmentActions;
 
 public class RateEnquiryActions {
 
@@ -485,7 +486,7 @@ public class RateEnquiryActions {
 		//RateEnquiryActions.VerifyPricenowMessage("Note:The rate displayed is an estimate only. The rate may change if there are any variations to the actual weight, dimensions or location entered above and are based on Mon - Fri business hours. Extra service and other surcharges may apply. For further enquiries please call our Sales Dept on 1300 865 547 (Option 3)");	
 
 			RateEnquiryActions.VerifyTotalCharge("Total Charge:");
-			//RateEnquiryActions.VerifyGST("GST:");
+			RateEnquiryActions.VerifyGST("GST:");
 			RateEnquiryActions.VerifyRate("Rate:"); 
 		PageBase.MinimumWaitForElementEnabled_1();
 		}
@@ -610,7 +611,8 @@ public class RateEnquiryActions {
 	}
 
 	public static void priceCurtainVerifyTotalCharge(String pTotalCharge) {
-		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		//assertEquals(pTotalCharge, BaseWebdriver.driver.findElement(totalCharge).getText());
 		String fullCharge = BaseWebdriver.driver.findElement(priceNowCurtainTotalCharge).getText();
 		Reporter.log("Full Charge: "+fullCharge);
@@ -654,6 +656,20 @@ public class RateEnquiryActions {
 			Assert.fail("FAILED: Expected Text : "+pRate+ " DOES NOT Match the Text on Screen :" +getText);
 		}
 
+	}
+	
+	public static void ShipmentSenderSelect(String Sender) {
+		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.sendText(CreateShipmentActions.senderTextfield, 5, Sender);
+		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.click(By.xpath("//*[@id=\"sender-selector\"]//*/div[text()='"+Sender+"']"), 5);
+	}
+	
+	public static void ShipmentReceiverSelect(String Receiver) {
+		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.sendText(CreateShipmentActions.receiverTextfield, 5, Receiver);
+		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.click(By.xpath("//*[@id=\"receiver-selector\"]//*/div[text()='"+Receiver+"']"), 5);
 	}
 	
 }

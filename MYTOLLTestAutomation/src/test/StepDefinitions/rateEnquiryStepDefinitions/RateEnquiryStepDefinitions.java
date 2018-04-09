@@ -151,7 +151,7 @@ public class RateEnquiryStepDefinitions {
 				PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentCarrierName, rateEnquiry.get("TollCarrier"));
 				PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, rateEnquiry.get("Service"));
 				PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, rateEnquiry.get("Account"));
-				PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, rateEnquiry.get("Length")+"cm x "+rateEnquiry.get("Width")+" cm x "+rateEnquiry.get("Height")+"cm" );
+				//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, rateEnquiry.get("Length")+"cm x "+rateEnquiry.get("Width")+" cm x "+rateEnquiry.get("Height")+"cm" );
 				PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 			}
 	}
@@ -208,16 +208,17 @@ public class RateEnquiryStepDefinitions {
 	
 	@Then("^Rate is Displayed with no breakdown and with a disclaimer$")
 	public void RateisDisplayedwithNobreakdownAndWithAdisclaimer() throws Throwable {
+		PageBase.MediumWaitForElementEnabled_1();
 		RateEnquiryActions.priceCurtainVerifyTotalCharge("Total charge :");
 		RateEnquiryActions.priceCurtainVerifyGST("GST :");
 		RateEnquiryActions.priceCurtainVerifyRate("Rate :");	
-		RateEnquiryActions.priceCurtainVerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");	
+		RateEnquiryActions.priceCurtainVerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions or locations entered above.");	
 	}
 	
 	@Then("^Rate is Displayed with no breakdown and with a disclaimer - Prio$")
 	public void RateisDisplayedwithNobreakdownAndWithAdisclaimerPrio() throws Throwable {
 		RateEnquiryActions.priceCurtainVerifyTotalCharge("Total charge :");	
-		RateEnquiryActions.priceCurtainVerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");	
+		RateEnquiryActions.priceCurtainVerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions or locations entered above.");	
 	}
 	
 	@And("^User closes Rate Enquiry Curtain$")
@@ -263,6 +264,13 @@ public class RateEnquiryStepDefinitions {
 	}
 	 
 
-	
+	@And("^User Selects Mode$")
+	public void userSelectsMode(DataTable rateEquiryTestData) throws Throwable {
+		
+		for (Map<String, String> rateEnquiry : rateEquiryTestData.asMaps(String.class,String.class))
+			   {   
+				RateEnquiryActions.SelectMode(rateEnquiry.get("Mode"));;
+			   }
+	}
 
 }

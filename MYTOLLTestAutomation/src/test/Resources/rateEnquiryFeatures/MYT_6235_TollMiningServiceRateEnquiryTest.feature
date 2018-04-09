@@ -1,31 +1,31 @@
-Feature: MYT-6157  - Rate Enquiry for Toll Energy
+Feature: MYT-6235  - Rate Enquiry for Toll Mining Service
 
-  Background: 
+   Background: 
     Given User is Registered in MyToll and is on Rate Enquiry Page
        
   @tag1
-  Scenario: User Performs Rate Enquiry for Toll Energy - Service General
+  Scenario: User Performs Rate Enquiry for Toll Mining Service - Service General
      When User selects Toll Carrier
       | TollCarrier|
-      | Toll Energy and Marine |
+      | Toll Mining Services |
       And User select Service
       |Service|
-      |General|
+      |DG Freight|
       And User Enters and selects Account
       |Account|
-      |G18508|
+      |790135|
      Then User Enters Orgin
-      |OriginSuburb|OriginPostCode|
-      |PERTH       |6000 		|
+      |OriginSuburb  |OriginPostCode|
+      |PORT ADELAIDE |5015   		|
      Then User Enters Destination
-      |DesSuburb|DesPostCode|
-      |BRISBANE |4000		|
+      |DesSuburb   |DesPostCode|
+      |ROXBY DOWNS |5725   	|
       And User Enters Line Items for Rate Enquiry
       | ItemTemplateName     | NumberOfItems | Length | Width | Height | Weight |
       | Automation Template1 |        10     |    10  |   10  |   10   |   10   |
       And User Selects Item type
       |BillingType|
-      |ALL UNITS - PER KG|
+      |ALL UNITS - SODIUM CHLORATE PER TONNE|
       And User Selects Quantity type
       |QtyType|
       |Items|
@@ -33,24 +33,24 @@ Feature: MYT-6157  - Rate Enquiry for Toll Energy
       Then User Verifies Price and Continues to Shipment
       Then User Verifies Details on Shipment Page
       | TollCarrier               |Service     |Account| Length | Width | Height |
-      | Toll Energy and Marine    |General     |G18508 | 10     |   10  |   10   |
+      | Toll Mining Services      |DG Freight  |790135 | 10     |   10  |   10   |
    
    
   @tag2
-  Scenario: User Gets a Rate Estimate from within a Shipment - Toll Energy
+  Scenario: User Gets a Rate Estimate from within a Shipment - Toll Mining Service
   	When User Navigates Back to Shipment Page
     When User selects Toll Carrier and select Service
       | TollCarrier             | Service |
-      | Toll Energy and Marine  | General |
+      | Toll Mining Services    | DG Freight |
    Then User enters shipment overview details as below to get a Rate within a Shipment - Specific Sender Receiver
       | AccountNumber | Whopays | Sender            | Receiver |
-      |        G18508 |       1 | TEM Perth Address | TEM Brisbane Address |
+      |        790135 |       1 | TMS Port Adelaide | TMS Roxby Downs |
     When User enters following input data for the line item
-      | Item description     | Billing Type       | No of Items | Item Type | Length | Width | Height |  Weight      | SenderReference | ReceiverReference |
-      | Automation Template1 | ALL UNITS - PER KG |          10 | Item      |    10  |   10  |    10  |          10  | Ref123          | Ref456            |
+      | Item description     | Billing Type                          | No of Items | Item Type | Length | Width | Height |  Weight      | SenderReference | ReceiverReference |
+      | Automation Template1 | ALL UNITS - SODIUM CHLORATE PER TONNE |          10 | Item      |    10  |   10  |    10  |          10  | Ref123          | Ref456            |
     When User selects Dangerous Goods
       | DgGoods |
-      |       2 |
+      |       1 |
     Then User Clicks Price Now Curtain on Shipment Page
     Then Rate is Displayed with no breakdown and with a disclaimer
     #And User cannot edit any Shipment feilds

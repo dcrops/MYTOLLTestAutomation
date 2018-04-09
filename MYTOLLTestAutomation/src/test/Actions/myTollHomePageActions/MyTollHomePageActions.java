@@ -164,7 +164,19 @@ public class MyTollHomePageActions {
 	public static By SavedTabDeliveryLocation =  By.xpath("//*[@id=\"savedSearchThId\"]//*[text()='Receiver location']");	
 	public static By SavedTabEstimatedDelivery = By.xpath("//*[@id=\"savedSearchThId\"]//*[text()='Estimated/Actual delivery']");	
 	public static By SavedTabItems =  By.xpath("//*[@id=\"savedSearchThId\"]//*[text()='Items']");	
-		
+	
+	//DraftShipment
+	public static By SaveDraft =  By.xpath("//*[@id=\"save-draft-btn\"]");	
+	public static By DraftShipmentTab =  By.xpath("//*[@id=\"draftshipmentAnchor\"]");	
+	public static By DraftShipmentTabTollCarrier =  By.xpath("//*[@id=\"draftTableHead\"]/th[text()='Toll carrier']");	
+	public static By DraftShipmentTabSender =  By.xpath("//*[@id=\"draftTableHead\"]/th[text()='Sender']");	
+	public static By DraftShipmentTabReceiver =  By.xpath("//*[@id=\"draftTableHead\"]/th[text()='Receiver']");	
+	public static By DraftShipmentTabDispatchDate =  By.xpath("//*[@id=\"draftTableHead\"]/th[text()='Dispatch date']");	
+	public static By DraftShipmentGoToDashboard =  By.xpath("//*[@id=\"confirm-true\"]");	
+	public static By DraftShipmentTabDeleteShipment =  By.xpath("xxxx");	
+
+	
+	
 	
 	
 	

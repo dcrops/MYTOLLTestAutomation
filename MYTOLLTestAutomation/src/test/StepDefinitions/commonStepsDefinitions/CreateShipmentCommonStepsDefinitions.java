@@ -39,7 +39,7 @@ public class CreateShipmentCommonStepsDefinitions {
 
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 
-			BookAPickupActions.SelectIntermodalSpecializedCarrier(shipment.get("TollCarrier"));
+			BookAPickupActions.EnterTollCarrierItem(shipment.get("TollCarrier"));
 			CreateShipmentActions.EnterService(shipment.get("Service"));
 
 		}
@@ -163,5 +163,14 @@ public class CreateShipmentCommonStepsDefinitions {
 			
 		}
 	}
+	
+	@When("^User Navigates Back to Shipment Page$")
+	public void UserNavigatesBackToShipmentPage() throws Throwable {
+		MyTollHomePageActions.ClickMenu();
+		CreateShipmentActions.ClickShipment();
+		PageBase.MediumWaitForElementEnabled_1();
+		
+	}
+	
 
 }

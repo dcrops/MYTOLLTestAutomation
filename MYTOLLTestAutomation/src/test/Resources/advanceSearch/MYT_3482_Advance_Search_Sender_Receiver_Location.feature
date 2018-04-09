@@ -2,15 +2,21 @@ Feature: MYT-3482 Advance Search Using Sender (Company / Name), Receiver (Compan
 
   Background: 
     Given User is on the Advance Search Page
-    And User Searches Using Shipment Created date - Date From
-   	|DateFrom|
-   	|01-07-2017|
+#    And User Searches Using Shipment Created date - Date From
+#   	|DateFrom|
+#   	|01-11-2017|
    	
     @tag1
     Scenario: User perfroms advance search using Sender (Company/Name) feild
     When User inputs search criteria in the Sender feild
    	 |Sender|
    	 |Automation|
+   	And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|01-11-2017|
+   	And User Searches Using Shipment Created date - Date To
+   	|DateTo|
+   	|01-03-2018|
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
@@ -27,6 +33,9 @@ Feature: MYT-3482 Advance Search Using Sender (Company / Name), Receiver (Compan
      And User Deletes Tags in Sender feild and Verify if the Tags are Deleted
      |SenderTag1                    |SenderTag2  |SenderTag3                   |
      |BRIDGESTONE AUST LTD (TYRES)  |AVN PVT LTD |DULUX AUSTRALIA - WELSHPOOL  |
+    And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|15-02-2018|
      And User Exlcudes search Tags in Sender feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
@@ -38,6 +47,12 @@ Feature: MYT-3482 Advance Search Using Sender (Company / Name), Receiver (Compan
     When User inputs search criteria in the Receiver feild
    	 |Receiver|
    	 |abccompany|
+   	And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|01-11-2017|
+   	And User Searches Using Shipment Created date - Date To
+   	|DateTo|
+   	|01-03-2018|
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
@@ -53,6 +68,12 @@ Feature: MYT-3482 Advance Search Using Sender (Company / Name), Receiver (Compan
      And User Deletes Tags in Receiver feild and Verify if the Tags are Deleted
      |ReceiverTag1 |ReceiverTag2  |ReceiverTag3|
      |NZ Address   |ATOM SUPPLIES |3D INSPIRATIONS  |
+     And User Searches Using Shipment Created date - Date From
+   	 |DateFrom|
+   	 |10-01-2018|
+   	 And User Searches Using Shipment Created date - Date To
+   	 |DateTo|
+   	 |15-01-2018|
      And User Exlcudes search Tags in Receiver feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
@@ -64,6 +85,12 @@ Feature: MYT-3482 Advance Search Using Sender (Company / Name), Receiver (Compan
   When User inputs search criteria in the Sender Location feilds
      |Suburb    | State| Postcode| Country   |
      |Melbourne | VIC  | 3000    | AU|
+    And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|01-02-2018|
+   	And User Searches Using Shipment Created date - Date To
+   	|DateTo|
+   	|01-03-2018|
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
 

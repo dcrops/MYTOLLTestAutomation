@@ -41,6 +41,9 @@ Feature: MYT-5499 Rate Enquiry - Adress Book record retrieval
       And User select Service
       |Service|
       |General|
+      And User Selects Mode
+      |Mode|
+      |ROAD|
       And User Enters and selects Account
       |Account|
       |614060|
