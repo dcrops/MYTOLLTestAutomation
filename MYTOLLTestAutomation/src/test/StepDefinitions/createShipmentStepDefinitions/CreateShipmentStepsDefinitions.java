@@ -19,6 +19,8 @@ public class CreateShipmentStepsDefinitions  {
 
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.EnterItem(shipment.get("Item description"));
 			CreateShipmentActions.EnterBillingType(shipment.get("Billing Type"));
 			CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));

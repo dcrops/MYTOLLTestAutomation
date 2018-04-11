@@ -116,6 +116,7 @@ public class TollTasmaniaTests {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = CreateShipmentActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
+		BookAPickupActions.ClickAdd();
 		// CreateShipmentActions.AddANewLineNZAUS();
 		// CreateShipmentActions.EnterBillingType(BillingType);
 		// CreateShipmentActions.ItemType(2);
@@ -266,7 +267,7 @@ public class TollTasmaniaTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverviewTollTasmania(TollCarrier, AccountNumber, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ShipmentRef2, ServiceExpress, whoPays, CollectionDepot,
-				"ROAD");
+				"*");
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
@@ -391,7 +392,7 @@ public class TollTasmaniaTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverviewTollTasmania(TollCarrier, AccountNumber, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ShipmentRef2, ServiceGeneral, whoPays, CollectionDepot,
-				"ROAD");
+				"*");
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
@@ -515,7 +516,7 @@ public class TollTasmaniaTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverviewTollTasmania(TollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2,  ServiceRefrigeration, whoPays,
-				CollectionDepot, ModeRoad);
+				CollectionDepot, "*");
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,
@@ -543,8 +544,8 @@ public class TollTasmaniaTests {
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
-	
-	@Test(groups = {"E2E" })
+	@Test(priority=-1)
+	//@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -615,7 +616,7 @@ public class TollTasmaniaTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverviewTollTasmania(TollCarrier, AccountNumber, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ShipmentRef2, ServiceGeneral, whoPays, CollectionDepot,
-				"ROAD");
+				"*");
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfoNo, PurchaseOrder,

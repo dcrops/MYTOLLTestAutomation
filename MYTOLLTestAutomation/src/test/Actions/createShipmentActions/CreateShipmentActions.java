@@ -52,7 +52,7 @@ public class CreateShipmentActions {
 	public static By shipmentConsolidatedContinue = By
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]");
 	public static By shipmentConsolidatedBtn = By
-			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//a[text()='Consolidate']");
+			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//a[text()='CONSOLIDATE']");
 	public static By MessageShipmentToEnetrLineItem = By
 			.xpath("//*[@id=\"alert-box-wrapper\"]//h3[text()=' Shipment']");
 	public static By MessageContentShipmentToEnetrLineItem = By

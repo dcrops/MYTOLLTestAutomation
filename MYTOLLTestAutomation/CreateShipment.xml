@@ -195,7 +195,7 @@
 		<parameter name="ServiceDangerousGoods" value="Dangerous Goods" />
 		<parameter name="ServiceDGRefrigerated" value="DG Refrigerated" />
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
-		<parameter name="ServiceDGExpress" value="DG Express" />
+		<parameter name="ServiceDGExpress" value="Dangerous Goods Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 		<parameter name="ServiceFashion" value="Fashion" />
 		<parameter name="ServiceEconomyPacificAirportToAirport"
@@ -342,7 +342,6 @@
 
 
 		<classes>
-			
 <class name="createShipmentE2ETests.IntermodalSpecializedTests" />
       </classes>
 

@@ -55,9 +55,9 @@ public class MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition {
 			String s = shipment.get("Whopays");
 			System.out.println("S  " + s);
 			CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
-			String s2 = shipment.get("Mode");
-			System.out.println("S2  " + s2);
-			CreateShipmentActions.SelectMode(Integer.parseInt(s2));
+			//String s2 = shipment.get("Mode");
+			//System.out.println("S2  " + s2);
+			//CreateShipmentActions.SelectMode(Integer.parseInt(s2));
 			//PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.mode);
 			CreateShipmentActions.EnterSender(shipment.get("Sender"));
 			CreateShipmentActions.EnterReceiver(shipment.get("Receiver"));
@@ -114,6 +114,7 @@ public class MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition {
 
 	@When("^User clicks on 'ADD' to add dangerous goods details$")
 	public void user_clicks_on_ADD_to_add_dangerous_goods_details() throws Throwable {
+		PageBase.MaximumWaitForElementEnabled();
 		BookAPickupActions.ClickAdd();
 	}
 
@@ -185,7 +186,8 @@ public class MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition {
 			DataTable shipmentTestData) throws Throwable {
 
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
-
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
 			String mode = CreateShipmentActions.SelectMode(1);
 			PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.mode);
 			String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
@@ -199,9 +201,37 @@ public class MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition {
 			System.out.println(receiverLocation);
 
 			CreateShipmentActions.ClickReviewCreateShipment();
+			PageBase.MaximumWaitForElementEnabled();
 			ShipmentReviewActions.VerifyShipmentOverview(shipment.get("TollCarrier"), shipment.get("AccountNumber"),
 					sender, senderLocation, receiver, receiverLocation, shipment.get("ShipmentRef1"),
 					shipment.get("ShipmentRef2"), shipment.get("DropOffDepot"), shipment.get("Service"),
+					shipment.get("Whopays"), shipment.get("CollectionDepot"), shipment.get("Mode"));
+		}
+	}
+
+	@Then("^User clicks on 'Create Shipment' and User navigates to Shipment Review page and see Toll Tasmania Overview details as below\\.$")
+	public void user_clicks_on_Create_Shipment_and_User_navigates_to_Shipment_Review_page_and_see_Toll_Tasmania_Overview_details_as_below(DataTable shipmentTestData) throws Throwable {
+	   
+		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
+			String mode = CreateShipmentActions.SelectMode(1);
+			PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.mode);
+			String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
+			System.out.println(sender);
+			String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
+			System.out.println(senderLocation);
+			String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
+			System.out.println(receiver);
+
+			String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
+			System.out.println(receiverLocation);
+
+			CreateShipmentActions.ClickReviewCreateShipment();
+			PageBase.MaximumWaitForElementEnabled();
+			ShipmentReviewActions.VerifyShipmentOverviewTollTasmania(shipment.get("TollCarrier"), shipment.get("AccountNumber"),
+					sender, senderLocation, receiver, receiverLocation, shipment.get("ShipmentRef1"),
+					shipment.get("ShipmentRef2"), shipment.get("Service"),
 					shipment.get("Whopays"), shipment.get("CollectionDepot"), shipment.get("Mode"));
 		}
 	}
@@ -264,7 +294,7 @@ public class MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition {
 	public void user_be_able_to_see_line_item_headings_as_below(DataTable shipmentTestData) throws Throwable {
 
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
-
+			PageBase.MaximumWaitForElementEnabled();
 			String numberOfItems = shipment.get("ItemsHeading") + " " + shipment.get("NumberOfItems");
 			ShipmentReviewActions.VerifyLineItem1Headings(shipment.get("LineItemName1Heading"),
 					shipment.get("ItemTemplateName"), numberOfItems, shipment.get("ItemDescriptionHeading"),

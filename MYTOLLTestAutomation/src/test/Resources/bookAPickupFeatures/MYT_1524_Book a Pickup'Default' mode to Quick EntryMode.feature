@@ -19,7 +19,7 @@ Feature: MYT_1524 Book a Pickup: 'Default' mode to ' Quick Entry ' mode
     Then User able to see Line item number autopopulated
     When User select the Service as below
       | Service    |
-      | DG Express |
+      | Dangerous Goods Express |
     When User enter following input data
       | Destination | Destination Item         | ItemDescription      | NoOfItems | Item Type | Length | Width | Height | TotalWeight | PalletSpaces |
       | MELBOURNE   | 3000, MELBOURNE, VIC, AU | Automation Template1 |        10 | Misc      |    100 |   100 |    100 |         900 |            6 |

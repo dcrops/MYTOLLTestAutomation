@@ -131,7 +131,7 @@ public class TollPriorityAusTest {
 
 	}
 
-	@Test
+	@Test(priority=-1)
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country",
 			"AddressLine1", "AddressLine2", "Suburb1", "Suburb1Option", "Postcode1", "Suburb2", "Suburb2Option",
 			"Postcode2", "Suburb3", "Suburb3Option", "Postcode3", "Suburb4", "Suburb4Option", "Postcode4","Email", "PhoneNumber", "PhoneCountry1",
@@ -364,7 +364,7 @@ public class TollPriorityAusTest {
 		ManifestActions.selectReadyTimeJS("18:15");
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.verifyTextExist(BookAPickupActions.beforeTimeErrorMsg, "Ready time can not be after closing time");
+		PageBase.verifyTextExist(BookAPickupActions.beforeTimeErrorMsg, "Ready time should be before closing time");
 		ManifestActions.selectReadyTimeJS("15:15");
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
@@ -534,7 +534,7 @@ public class TollPriorityAusTest {
 		ManifestActions.selectReadyTimeJS("18:15");
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.verifyTextExist(BookAPickupActions.beforeTimeErrorMsg, "Ready time can not be after closing time");
+		PageBase.verifyTextExist(BookAPickupActions.beforeTimeErrorMsg, "Ready time should be before closing time");
 		ManifestActions.selectReadyTimeJS("09:15");
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();

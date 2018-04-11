@@ -139,6 +139,7 @@
 	<parameter name="VICAddress2" value="TestAddress, VIC,3428" />
 	<parameter name="locationIndex" value="2" />
 	<parameter name="location" value="AccessHQ" />
+	<parameter name="Company" value="AccessHQ" />
 	<parameter name="Country" value="AUSTRALIA" />
 	<parameter name="AddressLine1" value="ABC" />
 	<parameter name="AddressLine2" value="CDE" />
@@ -191,8 +192,11 @@
 	<parameter name="Postcode14" value="6020" />
 	      
 
-		<!-- Blocked> <classes> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
-			/>  <class name="bookAPickupE2ETests.TollPriorityNZTest" 
+	<classes>
+		<class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
+			/>
+		</classes>
+		<!-- Blocked> <classes>   <class name="bookAPickupE2ETests.TollPriorityNZTest" 
 			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
 			/> <class name="bookAPickupE2ETests.TollTasmaniaTest" /> <class name="bookAPickupE2ETests.TollIPEC_CutOffTime" 
 			/> <class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime" 

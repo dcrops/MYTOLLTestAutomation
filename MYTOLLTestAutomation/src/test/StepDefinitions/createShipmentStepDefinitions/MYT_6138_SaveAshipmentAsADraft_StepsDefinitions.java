@@ -18,7 +18,7 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 	@When("^User navigates to Shipment from MyDashboard$")
 	public void user_navigates_to_Shipment_from_MyDashboard() throws Throwable {
 		CreateShipmentActions.DeleteExistingDraftShipments();
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();
 		PageBase.MaximumWaitForElementEnabled();
@@ -120,6 +120,28 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 		}
 	}
 
+	@Then("^User enters following data to complete the shipment as below$")
+	public void user_enters_following_data_to_complete_the_shipment_as_below(DataTable shipmentTestData) throws Throwable {
+	  
+		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
+
+			PageBase.MaximumWaitForElementEnabled();
+			CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));
+			BookAPickupActions.EnterItem(shipment.get("Item description"));
+			
+			BookAPickupActions.EnterLengthWidthHeight(shipment.get("Length"), shipment.get("Width"),
+					shipment.get("Height"));
+			CreateShipmentActions.EnterWeight(shipment.get("Weight"));
+			PageBase.MoveToElement(CreateShipmentActions.senderReference, BookAPickupActions.dangerousGoodNo);
+
+			CreateShipmentActions.EnterSenderReference(shipment.get("SenderReference"),
+					shipment.get("ReceiverReference"));
+			PageBase.Scrollbar(500, 800);
+			BookAPickupActions.selectDangerousGood();
+			PageBase.Scrollbar(1200, 1500);
+		}
+	}
+	
 	@Then("^Draft Shipment MUST be saved under 'Draft Shipments' tab in 'My Dashboard'$")
 	public void draft_Shipment_MUST_be_saved_under_Draft_Shipments_tab_in_My_Dashboard(DataTable arg1)
 			throws Throwable {
@@ -180,6 +202,7 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 			PageBase.MaximumWaitForElementEnabled();
 			CreateShipmentActions.ClickSaveDraft();
 			assertEquals(shipment.get("Message"), CreateShipmentActions.GetSaveDraftSuccessfulMessage());
+			
 			assertEquals(shipment.get("TollCarrier"), CreateShipmentActions.GetDraftShipmentTollCarrierInMyDashboard());
 			assertEquals(shipment.get("Sender"), CreateShipmentActions.GetDraftShipmentSenderInMyDashboard());
 			assertEquals(shipment.get("Receiver"), CreateShipmentActions.GetDraftShipmentReceiverInMyDashboard());
@@ -220,8 +243,10 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 			CreateShipmentActions.EnterReceiver(shipment.get("Receiver") + " ");
 			CreateShipmentActions.SelectShipmentConsolidationContinue();
 			CreateShipmentActions.EnterShipmentReference1(shipment.get("ShipmentRef1"));
+			PageBase.MaximumWaitForElementEnabled();
+			/*CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));
 			BookAPickupActions.EnterItem(shipment.get("Item description"));
-			CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));
+			
 			BookAPickupActions.EnterLengthWidthHeight(shipment.get("Length"), shipment.get("Width"),
 					shipment.get("Height"));
 			CreateShipmentActions.EnterWeight(shipment.get("Weight"));
@@ -231,7 +256,7 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 					shipment.get("ReceiverReference"));
 			PageBase.Scrollbar(500, 800);
 			BookAPickupActions.selectDangerousGood();
-			PageBase.Scrollbar(1200, 1500);
+			PageBase.Scrollbar(1200, 1500);*/
 
 		}
 
