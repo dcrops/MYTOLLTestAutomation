@@ -36,7 +36,7 @@ public class Toll_Add_Template {
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.SitUsername4, BaseWebdriver.Password);
 		
 	}
 	
@@ -139,14 +139,14 @@ public class Toll_Add_Template {
 		Reporter.log("User Verifies if New Template Exits");  
 		try {
 			PageBase.MaximumWaitForElementEnabled(); 
-			while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//p[text()='"+NewTemplateName+"']"), 1) == null) {
-						
+			while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytollupsportlet\"]//*//p[text()='"+NewTemplateName+"']"), 1) == null) {
+				
 				PageBase.moveToElement(BookAPickupActions.addTemplateViewMore);
 				
 				PageBase.click(BookAPickupActions.addTemplateViewMore, 5);
 				
 			}
-			PageBase.verifyTextExist(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//p[text()='"+NewTemplateName+"']"), NewTemplateName);
+			PageBase.verifyTextExist(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytollupsportlet\"]//*//p[text()='"+NewTemplateName+"']"), NewTemplateName);
 			Reporter.log("New Template : "+NewTemplateName+ " Exists");
 			System.out.println("New Template : "+NewTemplateName+ " Exists");
 		}
@@ -204,7 +204,8 @@ public class Toll_Add_Template {
 		PageBase.click(By.xpath("//*[@id=\"freight-type-selector\"]//*//div[text()='"+NewTemplateName+"']"), 5);
 		CreateShipmentActions.verifyNoOfItemsLengthWidthHeightVolumeWeight(NumberOfItems, Length, Width, Height, Weight);
 		
-		
+		BookAPickupActions.SelectDangerousGoods(2);
+		CreateShipmentActions.ClickReviewCreateShipment();
 	}
 
 	
@@ -221,7 +222,7 @@ public class Toll_Add_Template {
 		PageBase.click(By.xpath("//*[@id=\"grid-carrier-dropdown\"]//*//div[contains(text(),'"+Carrier+"')]"),5);
 		
 		try {
-			while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//p[text()='"+NewTemplateName+"']"), 1) == null) {
+			while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytollupsportlet\"]//*//p[text()='"+NewTemplateName+"']"), 1) == null) {
 				PageBase.moveToElement(BookAPickupActions.addTemplateViewMore);
 				PageBase.click(BookAPickupActions.addTemplateViewMore, 5);
 			}
@@ -234,7 +235,7 @@ public class Toll_Add_Template {
 		//User Deletes New Account Created
 		PageBase.MaximumWaitForElementEnabled();
 		Reporter.log("User Deletes New Template Template");
-		PageBase.click(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//p[text()='"+NewTemplateName+"']/following::div[@class='template-col delete']/a"), 5);
+		PageBase.click(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytollupsportlet\"]//*//p[text()='"+NewTemplateName+"']/following::div[@class='template-col delete']/a"), 5);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(BookAPickupActions.addAccountDeleteMsg, "Are you sure you want to delete template?");
 		PageBase.click(BookAPickupActions.addAccountDeleteContinue, 5);
@@ -247,7 +248,7 @@ public class Toll_Add_Template {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		// BaseWebdriver.tearDown();
 	}
 
 }

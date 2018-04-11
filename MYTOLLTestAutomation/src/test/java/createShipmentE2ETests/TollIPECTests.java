@@ -64,6 +64,8 @@ public class TollIPECTests {
 		CreateShipmentActions.EnterService(ServiceRoadExpress);
 
 		BookAPickupActions.SelectAccountNumber1();
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -109,7 +111,7 @@ public class TollIPECTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumber, sender, senderLocation,
+		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, accountNo, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ServiceRoadExpress, whoPays);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
@@ -166,6 +168,8 @@ public class TollIPECTests {
 		CreateShipmentActions.EnterService(ServiceFashion);
 
 		BookAPickupActions.SelectAccountNumber1();
+		String accountNo = BookAPickupActions.GetAccountNumber();
+		System.out.println(accountNo);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		// CreateShipmentActions.EnterAccountNumber("123");
 
@@ -226,7 +230,7 @@ public class TollIPECTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumber, sender, senderLocation,
+		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, accountNo, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ServiceFashion, whoPays);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;

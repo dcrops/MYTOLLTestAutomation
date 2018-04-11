@@ -140,7 +140,7 @@ public class TollTasmaniaTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverviewTollTasmania(TollCarrier, AccountNumber, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ShipmentRef2, ServiceDGFreight, whoPays, CollectionDepot,
-				"ROAD");
+				"*");
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfo, PurchaseOrder,

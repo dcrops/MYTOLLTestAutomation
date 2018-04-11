@@ -34,7 +34,7 @@ public class Toll_MyProfile_Add_Accounts {
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.SitUsername4, BaseWebdriver.Password);
 		
 	}
 	
@@ -150,7 +150,7 @@ public class Toll_MyProfile_Add_Accounts {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 
 	}
 

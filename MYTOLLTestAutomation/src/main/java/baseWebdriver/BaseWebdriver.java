@@ -38,7 +38,7 @@ public class BaseWebdriver {
 	//Platform admin user
 	public static String SitUsername2="SitAutomationuser2@yahoo.com"; 
 
-	//Sit Normal user
+	//Sit Normal users
 	public static String SitUsername3="SitAutomationuser3@yahoo.com"; 
 	public static String SitUsername4="SitAutomationuser4@yahoo.com"; 		
 	//Performance Test Env user
@@ -124,7 +124,7 @@ public class BaseWebdriver {
 	@AfterMethod
 	public static void tearDown() throws Exception {
 		BaseWebdriver.driver.quit();
-		driver.close();
+		//driver.close();
 
 	}
 

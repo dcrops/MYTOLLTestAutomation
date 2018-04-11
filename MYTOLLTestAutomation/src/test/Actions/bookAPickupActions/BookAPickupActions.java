@@ -268,7 +268,7 @@ public class BookAPickupActions {
 	public static final By addAccountSaveMsg = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//h2");
 	public static final By addAccountSaveMsgClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
 	public static final By addAccountViewMore = By
-			.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//a[text()='VIEW MORE']");
+			.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytollupsportlet\"]//*//a[text()='VIEW MORE']");
 	public static final By addAccountDeleteMsg = By.xpath("//*[@id=\"confirm-box-wrapper\"]//*//p");
 	public static final By addAccountDeleteContinue = By.xpath("//*[@id=\"confirm-true\"]");
 	public static final By addAccountDeleteSuccessfull = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//header/h2");
@@ -353,6 +353,7 @@ public class BookAPickupActions {
 
 	public static void EnterTollCarrier(String pTollCarrierName) {
 		try {
+			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
 			PageBase.ClickOn(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"), 5);

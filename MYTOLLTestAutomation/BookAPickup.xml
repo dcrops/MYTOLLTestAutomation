@@ -193,8 +193,7 @@
 	      
 
 	<classes>
-		<class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
-			/>
+		<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/>
 		</classes>
 		<!-- Blocked> <classes>   <class name="bookAPickupE2ETests.TollPriorityNZTest" 
 			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 

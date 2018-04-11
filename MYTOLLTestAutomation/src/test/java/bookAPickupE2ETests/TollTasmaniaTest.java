@@ -38,7 +38,7 @@ public class TollTasmaniaTest {
 			String palletSpace, String destination, String specialIns) {
 
 		// Select TollTasmania
-		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 20);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
@@ -193,7 +193,7 @@ public class TollTasmaniaTest {
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
 		// Select TollTasmania
-		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 20);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
@@ -210,7 +210,7 @@ public class TollTasmaniaTest {
 
 		BookAPickupActions.SelectLocation2(locationIndex);
 
-		String company = BookAPickupActions.GetCompany(1);
+		String company = BookAPickupActions.GetCompany();
 		System.out.println(company);
 		String location = BookAPickupActions.GetLocation(1);
 		System.out.println(location);
@@ -331,7 +331,7 @@ public class TollTasmaniaTest {
 			String specialIns) {
 
 		// Select TollTasmania
-		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 20);
 		PageBase.ElementToBeClickableWait(BaseWebdriver.driver.findElement(BookAPickupActions.TollCarrierDropdown));
 		BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
@@ -571,7 +571,7 @@ public class TollTasmaniaTest {
 			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) {
 
-		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 10);
+		PageBase.WaitForElement(BookAPickupActions.TollCarrierDropdown, 20);
 
 		// Select TollTasmania
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
