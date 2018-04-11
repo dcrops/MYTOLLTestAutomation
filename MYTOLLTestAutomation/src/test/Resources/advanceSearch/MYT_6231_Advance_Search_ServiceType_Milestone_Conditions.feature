@@ -2,15 +2,19 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
 
   Background: 
     Given User is on the Advance Search Page
-    And User Searches Using Shipment Created date - Date From
-   	|DateFrom|
-   	|01-07-2017|
+ 
     
     @tag1
     Scenario: User perfroms advance search using Service Type feild
      When User inputs search criteria in the Toll Carrier feild
    	 |TollCarrier|
    	 |Intermodal & Specialised|
+     And User Searches Using Shipment Created date - Date From
+   	 |DateFrom|
+   	 |01-03-2018|
+   	 And User Searches Using Shipment Created date - Date To
+   	 |DateTo|
+   	 |15-03-2018|
    	 When User inputs search criteria in the Service Type feild
    	 |ServiceType|
    	 |Intermodal & Specialised_General|
@@ -42,6 +46,12 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
      When User inputs search criteria in the Milestone feild
    	 |Milestone|
    	 |Shipment created|
+   	 And User Searches Using Shipment Created date - Date From
+   	 |DateFrom|
+   	 |01-03-2018|
+   	 And User Searches Using Shipment Created date - Date To
+   	 |DateTo|
+   	 |05-03-2018|
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
@@ -69,6 +79,12 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
     When User Adds Multiple Tags in Sender feild
      |SenderTag1 |SenderTag2   |
      |Test1168   |DULUX AUSTRALIA - WELSHPOOL |
+    And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|01-10-2017|
+   	And User Searches Using Shipment Created date - Date To
+   	|DateTo|
+   	|01-03-2018|
     And User Adds Multiple Tags in Receiver feild
      |ReceiverTag1 |ReceiverTag2           |
      | Sender      |KOJONUP CO-OP LTD      |
@@ -92,12 +108,12 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
      |3195        | 6395     |
      And User Adds Multiple Tags in Toll Carrier feild
      |TollCarrier1            |TollCarrier2    |
-     |Toll Priority (Aus)     |Intermodal & Specialised    |
+     |Toll Priority(AU & NZ)     |Intermodal & Specialised    |
      And User Adds Multiple Tags in Service Type feild
      |ServiceType1  				         | ServiceType2   				   |
-     |Toll Priority (Aus)_Parcels - Off Peak |Intermodal & Specialised_General |
+     |Toll Priority(AU & NZ)_Parcels - Off Peak |Intermodal & Specialised_General |
      And User Adds Multiple Tags in Milestone feild
      |Milestone1  |Milestone2         |
-     |Delivered   |Shipment created   |
+     |Out for delivery  |Shipment created   |
   	 Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|

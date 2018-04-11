@@ -2,15 +2,18 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
 
   Background: 
     Given User is on the Advance Search Page
-    And User Searches Using Shipment Created date - Date From
-   	|DateFrom|
-   	|01-07-2017|
-   	
+
     @tag1
     Scenario: User perfroms advance search using Receiver Location feild
     When User inputs search criteria in the Receiver Location feilds
      |Suburb    | State| Postcode| Country   |
-     |Melbourne | VIC  | 3000    | AU        |     
+     |Melbourne | VIC  | 3000    | AU        |  
+     And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|01-01-2018|
+   	And User Searches Using Shipment Created date - Date To
+   	|DateTo|
+   	|01-03-2018|   
 	 Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
      And User Adds Multiple Tags in Receiver Surburb Location feilds
@@ -71,51 +74,62 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
     Scenario: User perfroms advance search using Reference Number feild
     When User inputs search criteria in the Reference Number feild
    	 |RefNo|
-   	 |2591990456|
-     Then User Clicks Search and results are displayed
-#     |Verify Search Results are reflected according to tags|
-
-     And User Adds Multiple Tags in Reference Number feild
-     |RefNo1       | RefNo2         |RefNo3      |
-     |MYTA003343   |MYTA008049      |2591990456  |
-     Then Reference Number Tag is Visible in search feild
-     |RefNo1       | RefNo2         |RefNo3      |
-     |MYTA003343   |MYTA008049      |2591990456  |
-     Then User Clicks Search and results are displayed
-#     |Verify Search Results are reflected according to tags|
-
-     And User Deletes Tags in Reference Number feild and Verify if the Tags are Deleted
-     |RefNo1       | RefNo2         |RefNo3      |
-     |MYTA003343   |MYTA008049      |2591990456  |
-	 Then User Clicks Search and results are displayed
-
-    
-    
-    @tag3
-    Scenario: User perfroms advance search using Shipment Creation date feild
-    When User Searches Using Shipment Created date - Date Period
-   	 |DatePeriod|
-   	 |Last month|
-   	Then User Clicks Search and results are displayed
-#     |Verify Search Results are reflected according to tags|
-   	And User Searches Using Shipment Created date - Date Period
-   	 |DatePeriod|
-   	 |Last week|
-   	Then User Clicks Search and results are displayed
-#     |Verify Search Results are reflected according to tags|
-   	And User Searches Using Shipment Created date - Date Period
-   	 |DatePeriod|
-   	 |Last 3 months|
-   	Then User Clicks Search and results are displayed
-#     |Verify Search Results are reflected according to tags|
+   	 |811037906280|
    	And User Searches Using Shipment Created date - Date From
    	|DateFrom|
    	|01-01-2018|
    	And User Searches Using Shipment Created date - Date To
    	|DateTo|
-   	|15-02-2018|
-   	Then User Clicks Search and results are displayed
-#   |Verify Search Results are reflected according to tags|
+   	|01-03-2018|  
+     Then User Clicks Search and results are displayed
+#     |Verify Search Results are reflected according to tags|
+
+     And User Adds Multiple Tags in Reference Number feild
+     |RefNo1       | RefNo2         |RefNo3       |
+     |MYTA003334   |814079231350    |814079406711 |
+     Then Reference Number Tag is Visible in search feild
+     |RefNo1       | RefNo2         |RefNo3      |
+     |MYTA003334   |814079231350    |814079406711 |
+     Then User Clicks Search and results are displayed
+#     |Verify Search Results are reflected according to tags|
+
+     And User Deletes Tags in Reference Number feild and Verify if the Tags are Deleted
+     |RefNo1       | RefNo2         |RefNo3      |
+     |MYTA003334   |814079231350    |814079406711 |
+	 Then User Clicks Search and results are displayed
+
+    
+ 
+# Too many search results for the below. Needs to be done manually    
+#...................................................................////
+
+#    @tag3
+#    Scenario: User perfroms advance search using Shipment Creation date feild
+#    When User Searches Using Shipment Created date - Date Period
+#   	 |DatePeriod|
+#   	 |Last month|
+#   	Then User Clicks Search and results are displayed
+##     |Verify Search Results are reflected according to tags|
+#   	And User Searches Using Shipment Created date - Date Period
+#   	 |DatePeriod|
+#   	 |Last week|
+#   	Then User Clicks Search and results are displayed
+##     |Verify Search Results are reflected according to tags|
+#   	And User Searches Using Shipment Created date - Date Period
+#   	 |DatePeriod|
+#   	 |Last 3 months|
+#   	Then User Clicks Search and results are displayed
+##     |Verify Search Results are reflected according to tags|
+#   	And User Searches Using Shipment Created date - Date From
+#   	|DateFrom|
+#   	|01-01-2018|
+#   	And User Searches Using Shipment Created date - Date To
+#   	|DateTo|
+#   	|15-02-2018|
+#   	Then User Clicks Search and results are displayed
+##   |Verify Search Results are reflected according to tags|
+
+#...................................................................////
 
 
    
@@ -125,22 +139,34 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
      When User inputs search criteria in the Toll Carrier feild
    	 |TollCarrier|
    	 |Intermodal & Specialised|
+   	 And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|01-03-2018|
+   	And User Searches Using Shipment Created date - Date To
+   	|DateTo|
+   	|15-03-2018|
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
      And User Adds Multiple Tags in Toll Carrier feild
      |TollCarrier1  | TollCarrier2    |TollCarrier3   |
-     |Toll IPEC     |Toll Tasmania    |Toll Priority (Aus) |
+     |Toll IPEC     |Toll Tasmania    |Toll Priority(AU & NZ) |
      Then Toll Carrier Tag is Visible in search feild
      |TollCarrier1  | TollCarrier2    |TollCarrier3   |
-     |Toll IPEC     |Toll Tasmania    |Toll Priority (Aus) |
+     |Toll IPEC     |Toll Tasmania    |Toll Priority(AU & NZ) |
      
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
      And User Deletes Tags in Toll Carrier feild and Verify if the Tags are Deleted
 	 |TollCarrier1  | TollCarrier2    |TollCarrier3   |
-     |Toll IPEC     |Toll Tasmania    |Toll Priority (Aus) |
+     |Toll IPEC     |Toll Tasmania    |Toll Priority(AU & NZ) |
+      And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|05-03-2018|
+   	And User Searches Using Shipment Created date - Date To
+   	|DateTo|
+   	|05-03-2018|
      And User Exlcudes search Tags in Toll Carrier feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|

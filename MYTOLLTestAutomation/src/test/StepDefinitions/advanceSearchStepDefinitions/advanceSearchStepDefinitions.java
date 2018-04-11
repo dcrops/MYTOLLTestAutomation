@@ -712,6 +712,7 @@ public class advanceSearchStepDefinitions {
 
 			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
 				PageBase.sendText(MyTollHomePageActions.advanceSearchTollCarrier, 10, advSearch.get("TollCarrier"));
+				PageBase.MediumWaitForElementEnabled_1();
 				PageBase.click(By.xpath("//*[@id=\"ms-carrier-ddl\"]/li[text()='"+advSearch.get("TollCarrier")+"']"), 5);
 			}
 		}

@@ -45,6 +45,7 @@ public class BaseWebdriver {
 	public static String PerformenceUsername1="perftest@toll.com";
 	
 	//Passwords
+
 	public static String Password="Toll@123";  
 	public static String PerformancePassword="Victoria@123"; 
 
@@ -101,6 +102,7 @@ public class BaseWebdriver {
 		//System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
+		
 	}
 
 	@BeforeMethod
@@ -121,8 +123,8 @@ public class BaseWebdriver {
 
 	@AfterMethod
 	public static void tearDown() throws Exception {
-		//BaseWebdriver.driver.quit();
-		//driver.close();
+		BaseWebdriver.driver.quit();
+		driver.close();
 
 	}
 
