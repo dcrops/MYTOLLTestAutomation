@@ -141,7 +141,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectDangerousGoodNewLine();
 		BookAPickupActions.ClickAddANewLine();
 
-		PageBase.MediumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MoveToElement(BookAPickupActions.length, BookAPickupActions.weight);
 
 		BookAPickupActions.selectDispatchDate();
@@ -353,14 +353,14 @@ public class IntermodalSpecializedTest {
 	//@Test(priority=-7)
 	@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
-			"ItemTemplateName2", "locationIndex", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
+			"ItemTemplateName2", "Company", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
 			"DestinationItem", "DestinationPostcode", "lookupName", "PackingGroup", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
 	public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_DGFCL(String TollCarrier,String AccountNumberTINTER,
 			String ServiceDGFCL, String ServiceExpress, String AccountNumberTollNQX, String ItemTemplateName2,
-			Integer locationIndex, String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems,
+			String Company, String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String DGGoodsYes, String DGGoodsNo, String FoodItems,
 			String palletSpace, String destination, String DestinationItem, String DestinationPostcode,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
@@ -375,7 +375,8 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.VerifyBookAPickupScreen();
 		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
-		BookAPickupActions.SelectLocation2(locationIndex);
+		//BookAPickupActions.SelectLocation2(locationIndex);
+		BookAPickupActions.EnterLocation(Company);
 		String company = BookAPickupActions.GetCompany();
 		System.out.println(company);
 		String location = BookAPickupActions.GetLocation();
@@ -983,7 +984,7 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.ClickReviewBook();
 		PageBase.MaximumWaitForElementEnabled();
 		ReviewYourPickupActions.ClickEdit();
-
+		PageBase.MaximumWaitForElementEnabled();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDangerousGoods);
 

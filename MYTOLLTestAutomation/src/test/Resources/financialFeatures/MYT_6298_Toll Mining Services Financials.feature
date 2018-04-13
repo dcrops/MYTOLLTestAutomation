@@ -30,7 +30,9 @@ Feature: MYT_6298 Toll Mining Services Financials
     When User clicks on following Consignment
       | Consignment |
       |  6270032307 |
-    Then User be able to see "CHARGES" section
+    Then User be able to see "CHARGES" section for following Consignment
+     | Consignment |
+      |  6270032307 |
     Then User can view "Basic Charges" "Freight Charges" "Fuel Surcharges" "GST"
     Then User can view Charge Type, Description, Charge amount for Freight charges
       | Charge Type     | Description  | Charge amount |

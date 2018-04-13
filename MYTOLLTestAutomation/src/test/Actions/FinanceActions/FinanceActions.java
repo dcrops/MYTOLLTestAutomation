@@ -91,67 +91,94 @@ public class FinanceActions {
 	public static By shipmentNumberInShipmentInvoiceSummary = By.xpath("//*[@id=\"2868873529\"]/td[1]");
 	public static By typeInShipmentInvoiceSummary = By.xpath("//*[@id=\"2868873529\"]/td[2]");
 	public static By chargeAmountInShipmentInvoiceSummary = By.xpath("//*[@id=\"2868873529\"]/td[3]");
-	public static By outstandingInShipmentInvoiceSummary = By.xpath("//*[@id=\"2868873529\"]/td[4]"); 
-		
+	public static By outstandingInShipmentInvoiceSummary = By.xpath("//*[@id=\"2868873529\"]/td[4]");
+
+	// Toll Energy and Marine Invoice summary screen
+
+	public static By shipmentNumberInShipmentInvoiceSummaryTE = By.xpath("//*[@id=\"6911079821\"]/td[1]");
+	public static By typeInShipmentInvoiceSummaryTE = By.xpath("//*[@id=\"6911079821\"]/td[2]");
+	public static By chargeAmountInShipmentInvoiceSummaryTE = By.xpath("//*[@id=\"6911079821\"]/td[3]");
+	public static By outstandingInShipmentInvoiceSummaryTE = By.xpath("//*[@id=\"6911079821\"]/td[4]");
+
 	// CHARGES
-	public static By ChargesHeadingInvoiceSummary = By.xpath("//*[@id=\"outstandingShipmentDetails2868873529\"]/td/table/tbody/tr[9]/td[1]/table/tbody/tr[4]/td");
-	public static By basicChargesInvoiceSummary = By.xpath("//*[@id=\"CON\"]/td[1]");
+	public static By ChargesHeadingInvoiceSummary = By.xpath("//*[@id=\"outstandingShipmentDetails2868873529\"]/td/table/tbody/tr[9]/td[1]/table/tbody/tr[4]/td");  
+	public static By basicChargesInvoiceSummary = By.xpath("//*[@id=\"CON\"]/td[1]");  //*[@id="CON1"]/td[1]
 	public static By basicChargesDescriptionInvoiceSummary = By.xpath("//*[@id=\"CON\"]/td[3]");
 	public static By basicChargesChargesInvoiceSummary = By.xpath("//*[@id=\"CON\"]/td[5]");
 	public static By freightChargesInvoiceSummary = By.xpath("//*[@id=\"FRT\"]/td[1]");
 	public static By freightRateChargesInvoiceSummary = By.xpath("//*[@id=\"FRT\"]/td[3]");
 	public static By freightChargesChargesInvoiceSummary = By.xpath("//*[@id=\"FRT\"]/td[5]");
-	public static By fuelSurchargesInvoiceSummary = By.xpath("//*[@id=\"TNQXFSC\"]/td[1]"); 
+	public static By fuelSurchargesInvoiceSummary = By.xpath("//*[@id=\"TNQXFSC\"]/td[1]");
 	public static By fuelSurchargesDescriptionInvoiceSummary = By.xpath("//*[@id=\"FSC 7.48\"]/td[3]");
 	public static By fuelSurchargesChargesInvoiceSummary = By.xpath("//*[@id=\"FSC 7.48\"]/td[5]");
 	public static By gstInvoiceSummary = By.xpath("//*[@id=\"GST\"]/td[1]");
 	public static By gstsDescriptionInvoiceSummary = By.xpath("//*[@id=\"GST\"]/td[3]");
-	public static By gstChargesInvoiceSummary = By.xpath("//*[@id=\"GST\"]/td[5]"); 
+	public static By gstChargesInvoiceSummary = By.xpath("//*[@id=\"GST\"]/td[5]");
 	public static By gstValueInvoiceSummary = By.id("GSTvalue");
-	public static By totalChargesInvoiceSummary=By.id("totalCharges");
-	
-	//Basic charges
-	public static By rateTypeBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[1]");  
-	public static By serviceBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[2]");
+	public static By totalChargesInvoiceSummary = By.id("totalCharges");
+
+	// Basic charges
+	public static By rateTypeBasicCharges = By
+			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[1]");
+	public static By serviceBasicCharges = By
+			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[2]");
 	public static By modeBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[3]");
-	public static By originBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[4]");
-	public static By destinationeBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[5]");
-	public static By commodityBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[6]");
-	public static By fullLoadBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[7]");
+	public static By originBasicCharges = By
+			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[4]");
+	public static By destinationeBasicCharges = By
+			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[5]");
+	public static By commodityBasicCharges = By
+			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[6]");
+	public static By fullLoadBasicCharges = By
+			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[7]");
 	public static By minBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[8]");
 	public static By maxBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[9]");
-	public static By uomBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[1]");   
+	public static By uomBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[1]");
 	public static By qtyBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[2]");
-	public static By rateUOMBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[3]");
+	public static By rateUOMBasicCharges = By
+			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[3]");
 	public static By totalBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[4]");
-	public static By breakToltalChargesBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[5]");
-	
-	// Freight Charges
-	public static By rateTypeFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[1]");  
-	public static By serviceFreightCharges= By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[2]");
-	public static By modeFreightCharges= By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[3]");
-	public static By originFreightCharges= By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[4]");
-	public static By destinationeFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[5]");
-	public static By commodityFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[6]");
-	public static By fullLoadFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[7]");
-	public static By minFreightCharges= By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[8]");
-	public static By maxFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[9]");
-	public static By uomFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[1]");   
-	public static By qtyFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[2]");
-	public static By rateUOMFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[3]");
-	public static By totalFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[4]");
-	public static By breakToltalChargesFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[5]");
+	public static By breakToltalChargesBasicCharges = By
+			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[5]");
 
-	//Payment Adjustment 
-	public static By paymentAdjustments = By.xpath("//*[@id=\"paymentAdjustments\"]/td[5]"); 
-	public static By paymentAdjustmentsArrowdown = By.xpath("//*[@id=\"paymentAdjustments\"]/td[6]/i"); 
-	public static By paymentAdjustmentsRef1 = By.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[2]"); 
-	public static By paymentAdjustmentsDate = By.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[1]"); 
-	public static By paymentAdjustmentsAmount1 = By.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[4]"); 
-	public static By paymentAdjustmentsAmount2 = By.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[3]/td[4]"); 
-	
-	
-	
+	// Freight Charges
+	public static By rateTypeFreightCharges = By
+			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[1]");
+	public static By serviceFreightCharges = By
+			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[2]");
+	public static By modeFreightCharges = By
+			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[3]");
+	public static By originFreightCharges = By
+			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[4]");
+	public static By destinationeFreightCharges = By
+			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[5]");
+	public static By commodityFreightCharges = By
+			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[6]");
+	public static By fullLoadFreightCharges = By
+			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[7]");
+	public static By minFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[8]");
+	public static By maxFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[9]");
+	public static By uomFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[1]");
+	public static By qtyFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[2]");
+	public static By rateUOMFreightCharges = By
+			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[3]");
+	public static By totalFreightCharges = By
+			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[4]");
+	public static By breakToltalChargesFreightCharges = By
+			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[5]");
+
+	// Payment Adjustment
+	public static By paymentAdjustments = By.xpath("//*[@id=\"paymentAdjustments\"]/td[5]");
+	public static By paymentAdjustmentsArrowdown = By.xpath("//*[@id=\"paymentAdjustments\"]/td[6]/i");
+	public static By paymentAdjustmentsRef1 = By
+			.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[2]");
+	public static By paymentAdjustmentsDate = By
+			.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[1]");
+	public static By paymentAdjustmentsAmount1 = By
+			.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[4]");
+	public static By paymentAdjustmentsAmount2 = By
+			.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[3]/td[4]");
+
 	public static void ClickFinance() {
 		PageBase.ClickOn(FinanceMegaMenu, 5);
 
@@ -494,304 +521,326 @@ public class FinanceActions {
 		PageBase.ClickOn(outstandingArrowdownInvoiceSummary, 5);
 
 	}
-	
-	//OUTSTANDING
-		
+
+	// OUTSTANDING Intermodal
+
 	public static String GetShipmentNoInvoiceSummary() {
 		return PageBase.GetText(shipmentNumberInShipmentInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetTypeInShipmentInvoiceSummary() {
 		return PageBase.GetText(typeInShipmentInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetChargeAmountInShipmentInvoiceSummary() {
 		return PageBase.GetText(chargeAmountInShipmentInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetOutstandingInShipmentInvoiceSummary() {
 		return PageBase.GetText(outstandingInShipmentInvoiceSummary, 5);
 
 	}
-	
+
 	public static void ClickOnConsignementInvoiceSummary(String pConsignment) {
-		PageBase.ClickOn(By.xpath("//*[@id="+pConsignment+"]/td[1]"), 5);
+		PageBase.ClickOn(By.xpath("//*[@id=" + pConsignment + "]/td[1]"), 5);
 
 	}
 	
-	//CHARGES 
-	
-	public static String GetChargesHeadingInvoiceSummary() {
-		return PageBase.GetText(ChargesHeadingInvoiceSummary, 5);
+	// OUTSTANDING 
+
+	public static String GetShipmentNoInvoiceSummary(String pConsignment) {
+		return PageBase.GetText(By.xpath("//*[@id=" + pConsignment + "]/td[1]"), 5);
 
 	}
-	
 
+	public static String GetTypeInShipmentInvoiceSummary(String pConsignment) {
+		return PageBase.GetText(By.xpath("//*[@id=" + pConsignment + "]/td[2]"), 5);
+
+	}
+
+	public static String GetChargeAmountInShipmentInvoiceSummary(String pConsignment) {
+		return PageBase.GetText(By.xpath("//*[@id=" + pConsignment + "]/td[3]"), 5);
+
+	}
+
+	public static String GetOutstandingInShipmentInvoiceSummary(String pConsignment) {
+		return PageBase.GetText(By.xpath("//*[@id=" + pConsignment + "]/td[4]"), 5);
+
+	}
+
+	
+	// CHARGES
+
+	public static String GetChargesHeadingInvoiceSummary(String pConsignment) {
+		return PageBase.GetText(By.xpath("//*[@id=\"outstandingShipmentDetails"+pConsignment+"\"]/td/table/tbody/tr[9]/td[1]/table/tbody/tr[4]/td"), 5);
+
+	}//*[@id="outstandingShipmentDetails6911079821"]/td/table/tbody/tr[9]/td[1]/table/tbody/tr[4]/td
+	
 	public static String GetTypeBasicChargesInvoiceSummary() {
 		return PageBase.GetText(basicChargesInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetDescriptionBasicChargesInvoiceSummary() {
 		return PageBase.GetText(basicChargesDescriptionInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetChargesBasicChargesInvoiceSummary() {
 		return PageBase.GetText(basicChargesChargesInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetTypeFreightChargesInvoiceSummary() {
 		return PageBase.GetText(freightChargesInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetDescriptionFreightChargesInvoiceSummary() {
 		return PageBase.GetText(freightRateChargesInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetChargesFreightChargesInvoiceSummary() {
 		return PageBase.GetText(freightChargesChargesInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetTypeFuelSurchargesInvoiceSummary() {
 		return PageBase.GetText(fuelSurchargesInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetDescriptionFuelSurchargesInvoiceSummary() {
 		return PageBase.GetText(fuelSurchargesDescriptionInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetChargesFuelSurchargesInvoiceSummary() {
 		return PageBase.GetText(fuelSurchargesChargesInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetTypeGSTInvoiceSummary() {
 		return PageBase.GetText(gstInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetDescriptionGSTInvoiceSummary() {
 		return PageBase.GetText(gstsDescriptionInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetChargesGSTInvoiceSummary() {
 		return PageBase.GetText(gstChargesInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetGSTValueInvoiceSummary() {
 		return PageBase.GetText(gstValueInvoiceSummary, 5);
 
 	}
-	
+
 	public static String GetTotalChargesInvoiceSummary() {
 		return PageBase.GetText(totalChargesInvoiceSummary, 5);
 
 	}
-	
-	//Basic charges
-	
+
+	// Basic charges
+
 	public static void ClickOnBasicChargesInvoiceSummary() {
 		PageBase.ClickOn(basicChargesInvoiceSummary, 5);
 
 	}
-		
-		public static String GetRateTypeBasicCharges() {
-			return PageBase.GetText(rateTypeBasicCharges, 5);
 
-		}
-		
-		public static String GetServiceBasicCharges() {
-			return PageBase.GetText(serviceBasicCharges, 5);
+	public static String GetRateTypeBasicCharges() {
+		return PageBase.GetText(rateTypeBasicCharges, 5);
 
-		}
-		
-		public static String GetModeBasicCharges() {
-			return PageBase.GetText(modeBasicCharges, 5);
+	}
 
-		}
-		
-		public static String GetOriginBasicCharges() {
-			return PageBase.GetText(originBasicCharges, 5);
+	public static String GetServiceBasicCharges() {
+		return PageBase.GetText(serviceBasicCharges, 5);
 
-		}
-		
-		public static String GetDestinationeBasicCharges() {
-			return PageBase.GetText(destinationeBasicCharges, 5);
+	}
 
-		}
-		
-		public static String GetCommodityBasicCharges() {
-			return PageBase.GetText(commodityBasicCharges, 5);
+	public static String GetModeBasicCharges() {
+		return PageBase.GetText(modeBasicCharges, 5);
 
-		}
-		
-		public static String GetFullLoadBasicCharges() {
-			return PageBase.GetText(fullLoadBasicCharges, 5);
+	}
 
-		}
-		
-		public static String GetMinBasicCharges() {
-			return PageBase.GetText(minBasicCharges, 5);
+	public static String GetOriginBasicCharges() {
+		return PageBase.GetText(originBasicCharges, 5);
 
-		}
-		
-		public static String GetMaxBasicCharges() {
-			return PageBase.GetText(maxBasicCharges, 5);
+	}
 
-		}
-		
-		public static String GetUOMBasicCharges() {
-			return PageBase.GetText(uomBasicCharges, 5);
+	public static String GetDestinationeBasicCharges() {
+		return PageBase.GetText(destinationeBasicCharges, 5);
 
-		}
-		
-		public static String GetQtyBasicCharges() {
-			return PageBase.GetText(qtyBasicCharges, 5);
+	}
 
-		}
-		
-		public static String GetRateUOMBasicCharges() {
-			return PageBase.GetText(rateUOMBasicCharges, 5);
+	public static String GetCommodityBasicCharges() {
+		return PageBase.GetText(commodityBasicCharges, 5);
 
-		}
-		
-		public static String GetTotalBasicCharges() {
-			return PageBase.GetText(totalBasicCharges, 5);
+	}
 
-		}
-		
-		public static String GetBreakToltalChargesBasicCharges() {
-			return PageBase.GetText(breakToltalChargesBasicCharges, 5);
+	public static String GetFullLoadBasicCharges() {
+		return PageBase.GetText(fullLoadBasicCharges, 5);
 
-		}
-		
-		//Freight charges
-		
-		public static void ClickOnFreightChargesInvoiceSummary() {
-			PageBase.ClickOn(freightChargesInvoiceSummary, 5);
+	}
 
-		}
-			
-			public static String GetRateTypeFreightCharges() {
-				return PageBase.GetText(rateTypeFreightCharges, 5);
+	public static String GetMinBasicCharges() {
+		return PageBase.GetText(minBasicCharges, 5);
 
-			}
-			
-			public static String GetServiceFreightCharges() {
-				return PageBase.GetText(serviceFreightCharges, 5);
+	}
 
-			}
-			
-			public static String GetModeFreightCharges() {
-				return PageBase.GetText(modeFreightCharges, 5);
+	public static String GetMaxBasicCharges() {
+		return PageBase.GetText(maxBasicCharges, 5);
 
-			}
-			
-			public static String GetOriginFreightCharges() {
-				return PageBase.GetText(originFreightCharges, 5);
+	}
 
-			}
-			
-			public static String GetDestinationeFreightCharges() {
-				return PageBase.GetText(destinationeFreightCharges, 5);
+	public static String GetUOMBasicCharges() {
+		return PageBase.GetText(uomBasicCharges, 5);
 
-			}
-			
-			public static String GetCommodityFreightCharges() {
-				return PageBase.GetText(commodityFreightCharges, 5);
+	}
 
-			}
-			
-			public static String GetFullLoadFreightCharges() {
-				return PageBase.GetText(fullLoadFreightCharges, 5);
+	public static String GetQtyBasicCharges() {
+		return PageBase.GetText(qtyBasicCharges, 5);
 
-			}
-			
-			public static String GetMinFreightCharges() {
-				return PageBase.GetText(minFreightCharges, 5);
+	}
 
-			}
-			
-			public static String GetMaxFreightCharges() {
-				return PageBase.GetText(maxFreightCharges, 5);
+	public static String GetRateUOMBasicCharges() {
+		return PageBase.GetText(rateUOMBasicCharges, 5);
 
-			}
-			
-			public static String GetUOMFreightCharges() {
-				return PageBase.GetText(uomFreightCharges, 5);
+	}
 
-			}
-			
-			public static String GetQtyFreightCharges() {
-				return PageBase.GetText(qtyFreightCharges, 5);
+	public static String GetTotalBasicCharges() {
+		return PageBase.GetText(totalBasicCharges, 5);
 
-			}
-			
-			public static String GetRateUOMFreightCharges() {
-				return PageBase.GetText(rateUOMFreightCharges, 5);
+	}
 
-			}
-			
-			public static String GetTotalFreightCharges() {
-				return PageBase.GetText(totalFreightCharges, 5);
+	public static String GetBreakToltalChargesBasicCharges() {
+		return PageBase.GetText(breakToltalChargesBasicCharges, 5);
 
-			}
-			
-			public static String GetBreakToltalChargesFreightCharges() {
-				return PageBase.GetText(breakToltalChargesFreightCharges, 5);
+	}
 
-			}
-			
-			//Fuel Surcharges
-			
-			public static void ClickOnFuelSurchargesInvoiceSummary() {
-				PageBase.ClickOn(fuelSurchargesInvoiceSummary, 5);
+	// Freight charges
 
-			}
-			
-			//Payment Adjustment
-						
-			public static String GetPaymentAdjustments() {
-				return PageBase.GetText(paymentAdjustments, 15);
+	public static void ClickOnFreightChargesInvoiceSummary() {
+		PageBase.ClickOn(freightChargesInvoiceSummary, 5);
 
-			}
-			public static void ClickOnPaymentAdjustments() {
-				PageBase.MaximumWaitForElementEnabled();
-				PageBase.ClickOn(paymentAdjustments, 20);
+	}
 
-			}
-			
-			
-			public static String GetPaymentAdjustmentsRef1() {
-				
-				return PageBase.GetText(paymentAdjustmentsRef1, 5);
+	public static String GetRateTypeFreightCharges() {
+		return PageBase.GetText(rateTypeFreightCharges, 5);
 
-			}
-			
-			public static String GetPaymentAdjustmentsDate() {
-				return PageBase.GetText(paymentAdjustmentsDate, 5);
+	}
 
-			}
-			
-			public static String GetPaymentAdjustmentsAmount1() {
-				return PageBase.GetText(paymentAdjustmentsAmount1, 5);
+	public static String GetServiceFreightCharges() {
+		return PageBase.GetText(serviceFreightCharges, 5);
 
-			}
-			
-			public static String GetPaymentAdjustmentsAmount2() {
-				return PageBase.GetText(paymentAdjustmentsAmount2, 5);
+	}
 
-			}
+	public static String GetModeFreightCharges() {
+		return PageBase.GetText(modeFreightCharges, 5);
+
+	}
+
+	public static String GetOriginFreightCharges() {
+		return PageBase.GetText(originFreightCharges, 5);
+
+	}
+
+	public static String GetDestinationeFreightCharges() {
+		return PageBase.GetText(destinationeFreightCharges, 5);
+
+	}
+
+	public static String GetCommodityFreightCharges() {
+		return PageBase.GetText(commodityFreightCharges, 5);
+
+	}
+
+	public static String GetFullLoadFreightCharges() {
+		return PageBase.GetText(fullLoadFreightCharges, 5);
+
+	}
+
+	public static String GetMinFreightCharges() {
+		return PageBase.GetText(minFreightCharges, 5);
+
+	}
+
+	public static String GetMaxFreightCharges() {
+		return PageBase.GetText(maxFreightCharges, 5);
+
+	}
+
+	public static String GetUOMFreightCharges() {
+		return PageBase.GetText(uomFreightCharges, 5);
+
+	}
+
+	public static String GetQtyFreightCharges() {
+		return PageBase.GetText(qtyFreightCharges, 5);
+
+	}
+
+	public static String GetRateUOMFreightCharges() {
+		return PageBase.GetText(rateUOMFreightCharges, 5);
+
+	}
+
+	public static String GetTotalFreightCharges() {
+		return PageBase.GetText(totalFreightCharges, 5);
+
+	}
+
+	public static String GetBreakToltalChargesFreightCharges() {
+		return PageBase.GetText(breakToltalChargesFreightCharges, 5);
+
+	}
+
+	// Fuel Surcharges
+
+	public static void ClickOnFuelSurchargesInvoiceSummary() {
+		PageBase.ClickOn(fuelSurchargesInvoiceSummary, 5);
+
+	}
+
+	// Payment Adjustment
+
+	public static String GetPaymentAdjustments() {
+		return PageBase.GetText(paymentAdjustments, 15);
+
+	}
+
+	public static void ClickOnPaymentAdjustments() {
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(paymentAdjustments, 20);
+
+	}
+
+	public static String GetPaymentAdjustmentsRef1() {
+
+		return PageBase.GetText(paymentAdjustmentsRef1, 5);
+
+	}
+
+	public static String GetPaymentAdjustmentsDate() {
+		return PageBase.GetText(paymentAdjustmentsDate, 5);
+
+	}
+
+	public static String GetPaymentAdjustmentsAmount1() {
+		return PageBase.GetText(paymentAdjustmentsAmount1, 5);
+
+	}
+
+	public static String GetPaymentAdjustmentsAmount2() {
+		return PageBase.GetText(paymentAdjustmentsAmount2, 5);
+
+	}
 }

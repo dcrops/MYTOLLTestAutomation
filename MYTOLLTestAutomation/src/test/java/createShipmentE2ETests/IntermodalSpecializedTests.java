@@ -1,5 +1,7 @@
 package createShipmentE2ETests;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -772,7 +774,6 @@ public class IntermodalSpecializedTests {
 
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
-		BookAPickupActions.ClickAdd();
 		String un = CreateShipmentActions.GetUNNumber();
 		System.out.println("Un----" + un);
 		String classDivision = CreateShipmentActions.GetClassDivision();
@@ -783,7 +784,7 @@ public class IntermodalSpecializedTests {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = CreateShipmentActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
-
+		BookAPickupActions.ClickAdd();
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
 				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);
 		CreateShipmentActions.ItemType(2);
@@ -1084,7 +1085,7 @@ public class IntermodalSpecializedTests {
 
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
-		BookAPickupActions.ClickAdd();
+		
 		String un = CreateShipmentActions.GetUNNumber();
 		System.out.println("Un----" + un);
 		String classDivision = CreateShipmentActions.GetClassDivision();
@@ -1095,7 +1096,7 @@ public class IntermodalSpecializedTests {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = CreateShipmentActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
-
+		BookAPickupActions.ClickAdd();
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
 				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);
 		CreateShipmentActions.ItemType(2);
@@ -1361,7 +1362,6 @@ public class IntermodalSpecializedTests {
 
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
-		BookAPickupActions.ClickAdd();
 		String un = CreateShipmentActions.GetUNNumber();
 		System.out.println("Un----" + un);
 		String classDivision = CreateShipmentActions.GetClassDivision();
@@ -1372,7 +1372,7 @@ public class IntermodalSpecializedTests {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = CreateShipmentActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
-
+		BookAPickupActions.ClickAdd();
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
 				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);
 		CreateShipmentActions.ItemType(2);
@@ -1509,7 +1509,7 @@ public class IntermodalSpecializedTests {
 
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
-		BookAPickupActions.ClickAdd();
+		
 		String un = CreateShipmentActions.GetUNNumber();
 		System.out.println("Un----" + un);
 		String classDivision = CreateShipmentActions.GetClassDivision();
@@ -1520,7 +1520,7 @@ public class IntermodalSpecializedTests {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = CreateShipmentActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
-
+		BookAPickupActions.ClickAdd();
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
 				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);
 		CreateShipmentActions.ItemType(2);
@@ -1572,7 +1572,7 @@ public class IntermodalSpecializedTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	
-	
+	//@Test(priority=-1)
 	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
@@ -1739,9 +1739,15 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 		
 		CreateShipmentActions.ClickReviewCreateShipment();
-		BookAPickupActions.VerifyShipmentMsg();
-		
-	
+		//BookAPickupActions.VerifyShipmentMsg();
+		assertEquals( BookAPickupActions.GetErrorMsgItemDescription(),"Please enter freight type");
+		assertEquals( BookAPickupActions.GetErrorMsgNoOfItems(),"Please enter no. of items");
+		assertEquals( BookAPickupActions.GetErrorMsgLength(),"Please enter length");
+		assertEquals( BookAPickupActions.GetErrorMsgWidth(),"Please enter width");
+		assertEquals( BookAPickupActions.GetErrorMsgHeight(),"Please enter height");
+		assertEquals( BookAPickupActions.GetErrorMsgTotalVolume(),"Please enter cubic volume");
+		assertEquals( BookAPickupActions.GetErrorMsgWeight(),"Please enter weight");
+		assertEquals(BookAPickupActions.GetErrorMsgContainDG(),"Please select an option");
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
@@ -1764,7 +1770,7 @@ public class IntermodalSpecializedTests {
 
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
-		BookAPickupActions.ClickAdd();
+		
 		String un = CreateShipmentActions.GetUNNumber();
 		System.out.println("Un----" + un);
 		String classDivision = CreateShipmentActions.GetClassDivision();
@@ -1775,7 +1781,7 @@ public class IntermodalSpecializedTests {
 		System.out.println("packingGroup1" + packingGroup1);
 		String ProperShippingName = CreateShipmentActions.GetProperShippingName();
 		System.out.println("ProperShippingName" + ProperShippingName);
-
+		BookAPickupActions.ClickAdd();
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
 				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);
 		CreateShipmentActions.ItemType(2);

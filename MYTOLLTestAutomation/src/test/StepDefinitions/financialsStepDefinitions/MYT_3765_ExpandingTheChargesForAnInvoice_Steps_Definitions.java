@@ -72,6 +72,21 @@ public class MYT_3765_ExpandingTheChargesForAnInvoice_Steps_Definitions {
 
 		}
 	}
+	
+	@Then("^User can see one of Toll Energy shipments details as below$")
+	public void user_can_see_one_of_Toll_Energy_shipments_details_as_below(DataTable financeTestData) throws Throwable {
+	
+		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
+
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.Scrollbar(250, 500);
+			assertEquals(FinanceActions.GetShipmentNoInvoiceSummary(finance.get("ShipmentNo")), finance.get("ShipmentNo"));
+			assertEquals(FinanceActions.GetTypeInShipmentInvoiceSummary(finance.get("ShipmentNo")), finance.get("Type"));
+			assertEquals(FinanceActions.GetChargeAmountInShipmentInvoiceSummary(finance.get("ShipmentNo")), finance.get("ChargeAmount"));
+			assertEquals(FinanceActions.GetOutstandingInShipmentInvoiceSummary(finance.get("ShipmentNo")), finance.get("Outstanding"));
+
+		}
+	}
 
 	@When("^User expands the Outstanding$")
 	public void user_expands_the_Outstanding() throws Throwable {
@@ -85,7 +100,10 @@ public class MYT_3765_ExpandingTheChargesForAnInvoice_Steps_Definitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 
 			PageBase.MaximumWaitForElementEnabled();
-			assertEquals(FinanceActions.GetShipmentNoInvoiceSummary(), finance.get("ShipmentNo"));
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.Scrollbar(250, 500);
+			assertEquals(FinanceActions.GetShipmentNoInvoiceSummary(finance.get("ShipmentNo")), finance.get("ShipmentNo"));
 			assertEquals(FinanceActions.GetTypeInShipmentInvoiceSummary(), finance.get("Type"));
 			assertEquals(FinanceActions.GetChargeAmountInShipmentInvoiceSummary(), finance.get("ChargeAmount"));
 			assertEquals(FinanceActions.GetOutstandingInShipmentInvoiceSummary(), finance.get("Outstanding"));
@@ -93,11 +111,16 @@ public class MYT_3765_ExpandingTheChargesForAnInvoice_Steps_Definitions {
 		}
 
 	}
+	
+	@Then("^User be able to see \"([^\"]*)\" section for following Consignment$")
+	public void user_be_able_to_see_section_for_following_Consignment(String pCharges, DataTable financeTestData) throws Throwable {
+		
+		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 
+			PageBase.MaximumWaitForElementEnabled();
+			assertEquals(FinanceActions.GetChargesHeadingInvoiceSummary(finance.get("Consignment")), pCharges);
 
-	@Then("^User be able to see \"([^\"]*)\" section$")
-	public void user_be_able_to_see_section(String pCharges) throws Throwable {
-		assertEquals(FinanceActions.GetChargesHeadingInvoiceSummary(), pCharges);
+		}
 	}
 
 	@When("^User be able expands the Charges section$")

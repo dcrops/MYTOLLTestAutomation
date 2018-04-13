@@ -30,7 +30,9 @@ Feature: MYT-3765 Expanding the charges for an invoice
     When User clicks on following Consignment
      |Consignment| 
      |2868873529|
-    Then User be able to see "CHARGES" section
+   Then User be able to see "CHARGES" section for following Consignment
+     | Consignment |
+      |  2868873529 |
     Then User can view "Basic Charges" "Freight Charges" "Fuel Surcharges" "GST"
     Then User can view Charge Type, Description, Charge amount for Basic Charges
       | Charge Type   | Description     | Charge amount |

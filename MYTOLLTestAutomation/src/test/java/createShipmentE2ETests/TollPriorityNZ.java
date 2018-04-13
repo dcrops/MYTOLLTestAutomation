@@ -57,7 +57,7 @@ public class TollPriorityNZ {
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.EnterReceiver("NZ POST Ltd");
+		CreateShipmentActions.EnterReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
@@ -212,7 +212,7 @@ public class TollPriorityNZ {
 	}
 
 	@Test(groups = {"E2E" })
-	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "WhoPays", "whoPays", "Sender", "Receiver",
+	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "WhoPays", "whoPays", "Sender", "ReceiverTGX",
 			"QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
 			"ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2", "DGYes", "DGNo",
@@ -225,7 +225,7 @@ public class TollPriorityNZ {
 			"ShipmentContainDangerousGoodsNo" })
 	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_Z_GlobalExpressDocumentsShipmentConsolidation(
 			String TollCarrier, String ServiceGlobalExpressDocuments, Integer WhoPays, String whoPays, Integer Sender,
-			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
+			String Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String ItemTemplateName2,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
@@ -246,7 +246,7 @@ public class TollPriorityNZ {
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
 		//CreateShipmentActions.SelectReceiver(Receiver);
-		CreateShipmentActions.EnterReceiver("NZ POST Ltd");
+		CreateShipmentActions.EnterReceiver(Receiver);
 
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
 		// String Sender.ccontainText(Sender);
@@ -296,7 +296,7 @@ public class TollPriorityNZ {
 
 	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceEconomyPacificAirportToAirport", "WhoPays", "whoPays", "Sender",
-			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
+			"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 			"Height", "Weight", "ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2",
 			"DGYes", "DGNo", "BillingTypeAllFreight", "PalletTransactionsInfoNo", "PurchaseOrder", "SpeceialIns",
@@ -308,7 +308,7 @@ public class TollPriorityNZ {
 			"TypeOfExport", "DeclaredValue", "DeclaredValueCurrency", "WhoPaysDutiesTaxes", "CommodityCode" })
 	public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_EconomyPacificAirportToAirport(String TollCarrier,
 			String ServiceEconomyPacificAirportToAirport, Integer WhoPays, String whoPays, Integer Sender,
-			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
+			String Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String ItemTemplateName2,
 			String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
@@ -329,8 +329,7 @@ public class TollPriorityNZ {
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.SelectReceiver(1);
-
+		CreateShipmentActions.EnterReceiver(Receiver);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 
@@ -351,7 +350,7 @@ public class TollPriorityNZ {
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
-		CreateShipmentActions.EnterWeight(Weight2);
+		CreateShipmentActions.EnterWeight(Weight);
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		BookAPickupActions.selectDangerousGood();
 		PageBase.Scrollbar(1200, 1500);
@@ -377,7 +376,7 @@ public class TollPriorityNZ {
 				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
 				WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
 		String dimensions = Length + "cm x " + Width + "cm x " + Height + "cm";
-		String weight = Weight2 + "kg";
+		String weight = Weight + "kg";
 		ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName, NumberOfItems, BillingType, dimensions,
 				VolumeLineItem1, weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 
@@ -390,10 +389,10 @@ public class TollPriorityNZ {
 				VolumeLineItem2,weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 
 	}
-	 
-	@Test(groups = {"E2E" })
+	
+ 	@Test(groups = {"E2E" })
 		@Parameters({ "TollCarrierTollPrioNZ", "ServiceEconomyPacificAirportToAirport", "WhoPays", "whoPays", "Sender",
-				"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
+				"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 				"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 				"Height", "Weight", "ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2",
 				"DGYes", "DGNo", "BillingTypeAllFreight", "PalletTransactionsInfoNo", "PurchaseOrder", "SpeceialIns",
@@ -405,7 +404,7 @@ public class TollPriorityNZ {
 				"TypeOfExport", "DeclaredValue", "DeclaredValueCurrency", "WhoPaysDutiesTaxes", "CommodityCode" })
 		public void CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_EconomyPacificAirportToAirport_ConsolidateShipment(String TollCarrier,
 				String ServiceEconomyPacificAirportToAirport, Integer WhoPays, String whoPays, Integer Sender,
-				Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
+				String Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 				String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 				String NumberOfItems, String Length, String Width, String Height, String Weight, String ItemTemplateName2,
 				String NumberOfItems2, String Length2, String Width2, String Height2, String Weight2, Integer DGYes,
@@ -425,8 +424,7 @@ public class TollPriorityNZ {
 			System.out.println(AccountNumber);
 			CreateShipmentActions.SelectWhoPays(WhoPays);
 			CreateShipmentActions.SelectSender(Sender);
-			CreateShipmentActions.SelectReceiver(1);
-
+			CreateShipmentActions.EnterReceiver(Receiver);
 			String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
 			
 			System.out.println(sender);
@@ -452,7 +450,7 @@ public class TollPriorityNZ {
 					ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
 					WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
 			String dimensions = Length + "cm x " + Width + "cm x " + Height + "cm";
-			String weight = Weight2 + "kg";
+			String weight = Weight + "kg";
 			ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName, NumberOfItems, BillingType, dimensions,
 					VolumeLineItem1, weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 

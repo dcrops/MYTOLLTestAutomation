@@ -52,7 +52,7 @@ public class CreateShipmentActions {
 	public static By shipmentConsolidatedContinue = By
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]");
 	public static By shipmentConsolidatedBtn = By
-			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//a[text()='Consolidate']");
+			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//a[text()='CONSOLIDATE']");
 	public static By MessageShipmentToEnetrLineItem = By
 			.xpath("//*[@id=\"alert-box-wrapper\"]//h3[text()=' Shipment']");
 	public static By MessageContentShipmentToEnetrLineItem = By
@@ -266,6 +266,15 @@ public class CreateShipmentActions {
 		return mode;
 	}
 
+	public static String SelectModeTasmania() {
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(mode).click();
+		String mode = BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li/div")).getText();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li/div")).click();
+		return mode;
+	}
+	
 	public static void ClickContinueAccountChangeMsg() {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(acceptAccountChangeMSG).click();
@@ -376,8 +385,8 @@ public class CreateShipmentActions {
 		PageBase.Scrollbar(500, 800);
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='" + Receiver + "']"))
-				.click();
+				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='"+Receiver+"']"))
+				.click();  //*[@id="receiver-selector"]/div[2]/ul/li[2]/div[1]  
 
 		PageBase.MaximumWaitForElementEnabled();
 

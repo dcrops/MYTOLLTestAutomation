@@ -55,7 +55,7 @@ public class TollPriorityAUSTests {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceParcelsOffPeak);
 		BookAPickupActions.SelectAccountNumber1();
-		String AccountNumber = BookAPickupActions.GetAccountNumber().toString();
+		String AccountNumber = BookAPickupActions.GetAccountNumber().substring(0, 5);
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
@@ -159,7 +159,8 @@ public class TollPriorityAUSTests {
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
 		//CreateShipmentActions.SelectReceiver(Receiver);
-		BookAPickupActions.EnterLocation(Receiver);
+		//BookAPickupActions.EnterLocation(Receiver);
+		CreateShipmentActions.EnterReceiver(Receiver);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		
