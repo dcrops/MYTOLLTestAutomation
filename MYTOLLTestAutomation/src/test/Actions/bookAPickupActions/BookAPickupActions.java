@@ -807,7 +807,7 @@ public class BookAPickupActions {
 		PageBase.SelectFrom(By.xpath("//*[@id=\"location-selector\"]/div[2]/ul/li/div[text()='" + plocation + "']"), 5);
 		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"location-selector\"]/div[2]/ul//div[text()='\"
 		// + pChargeToAccount + "']")).click();
-		// BaseWebdriver.MaximumWaitForElementEnabled();
+		// BaseWebdriver.MaximumWaitForElementEnabled();//*[@id="sender-selector"]/div[2]/ul/li[2]/div[1]
 		// *[@id="location-selector"]/div[2]/ul/li[2]/div[1]
 	}
 

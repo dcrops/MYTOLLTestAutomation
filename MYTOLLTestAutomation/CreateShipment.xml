@@ -230,7 +230,7 @@
 		<parameter name="Length" value="100" />
 		<parameter name="Width" value="200" />
 		<parameter name="Height" value="300" />
-		<parameter name="Weight" value="900" />
+		<parameter name="Weight" value="90" />
 		<parameter name="WeightPrioNZ" value="90" />
 		<parameter name="NumberOfItems2" value="15" />
 		<parameter name="Length2" value="200" />
@@ -342,7 +342,7 @@
 
 
 		<classes>
-<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+ <class name="createShipmentE2ETests.IntermodalSpecializedTests" />
       </classes>
 
 	

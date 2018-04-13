@@ -63,7 +63,7 @@ public class ShipmentReviewActions {
 	public static By line1Arrowdown=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li[1]/div[1]/div[3]");
 	
 	public static By itemDescriptionHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col item-desc']/h3");
-	public static By itemsHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col total-items']/h3");
+	public static By itemsHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[1]//div[@class='line-item-inner']//div[@class='item-inner-col total-items']/h3");
 	public static By billingTypeHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col billing-type']/h3");
 	public static By dimensionsHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col dimensions']/h3");
 	public static By totalVolumeHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col total-vol']/h3");
@@ -97,8 +97,8 @@ public class ShipmentReviewActions {
 	public static By dgQTY=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='DG qty (kg or L)']/following::div/p");
 	public static By technicalName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Technical name']/following::div/p");
 	
-	
-	//Line Item 2 Headings validation
+	//*[@id="shipment-placeholder"]/div[1]/div[1]/div/div[2]/ul/li[1]/div[1]/div[1]/h2
+	//Line Item 2 Headings validation  //*[@id="shipment-placeholder"]/div[1]/div[1]/div/div[2]/ul/li[2]/div[1]/div[1]/h2
 	public static By lineItemNumber2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-head']/div[@class='line-item-index']/h2");
 	public static By itemDescription2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-head']/div[@class='line-item-title']/h3");
 	public static By numberOfItems2=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[2]//div[@class='line-item-head']/div[@class='item-numbers']/h3");

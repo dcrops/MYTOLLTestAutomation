@@ -1740,14 +1740,14 @@ public class IntermodalSpecializedTests {
 		
 		CreateShipmentActions.ClickReviewCreateShipment();
 		//BookAPickupActions.VerifyShipmentMsg();
-		assertEquals("Please enter freight type", BookAPickupActions.GetErrorMsgItemDescription());
-		assertEquals("Please enter no. of items", BookAPickupActions.GetErrorMsgNoOfItems());
-		assertEquals("Please enter length", BookAPickupActions.GetErrorMsgLength());
-		assertEquals("Please enter width", BookAPickupActions.GetErrorMsgWidth());
-		assertEquals("Please enter height", BookAPickupActions.GetErrorMsgHeight());
-		assertEquals("Please enter cubic volume", BookAPickupActions.GetErrorMsgTotalVolume());
-		assertEquals("Please enter weight", BookAPickupActions.GetErrorMsgWeight());
-		assertEquals("Please select an option", BookAPickupActions.GetErrorMsgContainDG());
+		assertEquals( BookAPickupActions.GetErrorMsgItemDescription(),"Please enter freight type");
+		assertEquals( BookAPickupActions.GetErrorMsgNoOfItems(),"Please enter no. of items");
+		assertEquals( BookAPickupActions.GetErrorMsgLength(),"Please enter length");
+		assertEquals( BookAPickupActions.GetErrorMsgWidth(),"Please enter width");
+		assertEquals( BookAPickupActions.GetErrorMsgHeight(),"Please enter height");
+		assertEquals( BookAPickupActions.GetErrorMsgTotalVolume(),"Please enter cubic volume");
+		assertEquals( BookAPickupActions.GetErrorMsgWeight(),"Please enter weight");
+		assertEquals(BookAPickupActions.GetErrorMsgContainDG(),"Please select an option");
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);

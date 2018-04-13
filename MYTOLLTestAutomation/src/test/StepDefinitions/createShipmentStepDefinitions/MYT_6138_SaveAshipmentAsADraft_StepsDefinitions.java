@@ -65,6 +65,7 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 	public void user_Clicks_on_the_Save_Draft_option() throws Throwable {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		CreateShipmentActions.ClickSaveDraft();
 
 	}
@@ -182,6 +183,8 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 
 	@Then("^User be able to view the Draft is removed from My Draft Shipments in My Dashboard$")
 	public void user_be_able_to_view_the_Draft_is_removed_from_My_Draft_Shipments_in_My_Dashboard() throws Throwable {
+		PageBase.MediumWaitForElementEnabled();
+		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickMyDashboard();
 		CreateShipmentActions.ClickDraftShipmentTabInMyDashboard();
 		CreateShipmentActions.VerifyDraftShipmentHasRemovedFromMyDashboard();
@@ -240,7 +243,7 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 
 			CreateShipmentActions.EnterSender(shipment.get("Sender"));
 
-			CreateShipmentActions.EnterReceiver(shipment.get("Receiver") + " ");
+			CreateShipmentActions.EnterReceiver(shipment.get("Receiver"));
 			CreateShipmentActions.SelectShipmentConsolidationContinue();
 			CreateShipmentActions.EnterShipmentReference1(shipment.get("ShipmentRef1"));
 			PageBase.MaximumWaitForElementEnabled();

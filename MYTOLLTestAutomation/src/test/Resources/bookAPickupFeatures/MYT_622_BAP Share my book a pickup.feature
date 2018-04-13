@@ -53,7 +53,7 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
       | AccessHQ |
     When User enter following input data to Add Item
       | Service    | Destination | ItemDescription      | NoOfItems | PalletSpace | destination     |
-      | DG Express | MELALEUCA   | Automation Template1 |        10 |           6 | MELALEUCA, 6079 |
+      | Dangerous Goods Express | MELALEUCA   | Automation Template1 |        10 |           6 | MELALEUCA, 6079 |
     And User Selects Charge to Account as below
       | ChargeToAccount | AccountNumber |
       |               1 |         12345 |
