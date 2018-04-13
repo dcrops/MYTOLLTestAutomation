@@ -175,9 +175,53 @@ public class MyTollHomePageActions {
 	public static By DraftShipmentGoToDashboard =  By.xpath("//*[@id=\"confirm-true\"]");	
 	public static By DraftShipmentTabDeleteShipment =  By.xpath("xxxx");	
 
+	//Returns
+	public static By createReturn = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='Create a return']");
+	public static By myReturn = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My returns']");
+	public static By ReturnSameAsReceiver = By.xpath("//*[@id=\"same-as-reciever-c\"]");
+	public static By ReturnRAN = By.xpath("//*[@id=\"reference-1\"]");
+	public static By ReturnReference = By.xpath("//*[@id=\"reference-2\"]");
+	public static By ReturnReviewAndCreate = By.xpath("//*[@id=\"create-shipment-btn\"]");
+	public static By ReturnReviewPageTollCarrier = By.xpath("//*[@id=\"toll-carrier\"]");
+	public static By ReturnReviewPageService = By.xpath("//*[@id=\"service-text\"]");
+	public static By ReturnReviewPageAccountNumber = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Account number']]/p");
+	public static By ReturnReviewPageWhoPays = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Who pays']]/p");
+	public static By ReturnReviewPageRAN = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='RAN']]/p");
+	public static By ReturnReviewPageDate = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Earliest dispatch date']]/p/span");
+	public static By ReturnReviewPageReadyTime = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Ready time']]/p/span");
+	public static By ReturnReviewPageClosingTime = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Location closing time']]/p/span");
+	public static By ReturnReviewPageReturnRef = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Return Reference']]/p");
+	public static By ReturnReviewPageSpecialIns = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Special instructions']]/p");
+	public static By ReturnReviewPageSender = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Sender company name']]/p");
+	public static By ReturnReviewPageSenderLoc = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Sender location']]/p");
+	public static By ReturnReviewPageReceiver = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Receiver company name']]/p");
+	public static By ReturnReviewPageReceiverLoc = By.xpath("//*[@id=\"shipment-placeholder\"]//*//div[preceding-sibling::div/label[text()='Receiver location']]/p");
+	public static By ReturnReviewConfirm = By.linkText("CONFIRM RETURN");
+	public static By ReturnAddNewLine = By.xpath("//*[@id=\"add-line-item\"]");
+	public static By ReturnDeleteLineConfirm = By.xpath("//*[@id=\"confirm-true\"]");
 	
+	public static By ReturnSuccessMsg = By.xpath("//*[@id=\"shipment-placeholder\"]//*//h1");
+	public static By ReturnShipmentNumber = By.xpath("//*[@id=\"shipment-placeholder\"]//*//span/span[1]");
+	public static By ReturnSucessfullRAN = By.xpath("//*[@id=\"shipment-placeholder\"]//*//span/span[2]");
+	public static By ReturnPrint = By.xpath("//*[@id=\"returns-confimr-print\"]");
+	public static By ReturnGoToMyDashboard = By.xpath("//a[text()='Go to my dashboard']");
+	public static By ReturnCreateReturn = By.xpath("//a[text()='CREATE A NEW RETURN']");
+	public static By ReturnGoToMyReturns = By.xpath("//a[text()='GO TO MY RETURNS']");
 	
+	public static By MyReturnRefNo = By.xpath("//*[@id=\"return_ref_num\"]");
+	public static By MyReturnDateFrom = By.xpath("//*[@id=\"manifestFromDate\"]");
+	public static By MyReturnDateTo = By.xpath("//*[@id=\"manifestToDate\"]");
+	public static By MyReturnStatus = By.xpath("//*[@id=\"status-selector\"]/label/a/i");
+	public static By MyReturnSearch = By.xpath("//*[@id=\"searchMyReturnsResult\"]");
 	
+	public static By MyReturnTollShipmentNo = By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[1]");
+	public static By MyReturnRAN = By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[2]");
+	public static By MyReturnStatusColumn = By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[3]");
+	public static By MyReturnTollCarrier = By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[4]");
+	public static By MyReturnSenderDetails = By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[5]");
+	public static By MyReturnReceiverDetails = By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[6]");
+	public static By MyReturnEarliestDispatchDate= By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[7]");
+	public static By MyReturnReadyTime= By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[8]");
 	
 	
 	public static void LaunchMyToll(String url)

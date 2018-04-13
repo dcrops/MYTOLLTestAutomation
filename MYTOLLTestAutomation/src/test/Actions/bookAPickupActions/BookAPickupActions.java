@@ -112,9 +112,9 @@ public class BookAPickupActions {
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[2]/div[2]/div/div[3]/div[1]/i");
 	public static By closingTime = By.id("location-closing-time");
 	public static By increaseClosingTimeHours = By
-			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[1]/div[1]/i");
+			.xpath("//*[@id=\"steps-3\"]/div[1]/div[3]/div[2]/div/div[1]/div[1]/i");
 	public static By decreaseClosingTimeHours = By
-			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[1]/div[3]/i");
+			.xpath("//*[@id=\"steps-3\"]/div[1]/div[3]/div[2]/div/div[1]/div[3]/i");
 	public static By confirmReadyTime = By.id("confirm-true");
 	public static By increaseClosingTimeMinutes = By
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[3]/div[1]/i");
