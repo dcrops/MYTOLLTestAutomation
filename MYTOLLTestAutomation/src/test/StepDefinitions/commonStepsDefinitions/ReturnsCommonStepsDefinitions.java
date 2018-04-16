@@ -2,10 +2,13 @@ package commonStepsDefinitions;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
@@ -22,18 +25,18 @@ import rateEnquiryActions.RateEnquiryActions;
 
 public class ReturnsCommonStepsDefinitions {
 	
-	public static String Sender= "Company ABC";
+	public static String Sender;
 	public static String SenderLocation;
-	public static String Receiver="Sender ABC";
+	public static String Receiver;
 	public static String ReceiverLocation;
 	public static String DispatchDate;
-	public static String MyReturnPageDispatchDate ="16-Apr-2018";
-	public static String RetrunShipmentNumber = "RETM706075";
+	public static String returnDateonScreen; 
+	public static String MyReturnPageDispatchDate;
+	public static String RetrunShipmentNumber;
 	
 	
 	@Given("^User is Registered in MyToll and is on Create Return Page$")
 	public void user_is_Registered_in_MyToll_and_is_on_Create_ReturnPage() throws Throwable {
-		
 		
 		BaseWebdriver.setUp();
 		PageBase.MediumWaitForElementEnabled();
@@ -47,7 +50,7 @@ public class ReturnsCommonStepsDefinitions {
 	
 	@Given("^User is Registered in MyToll and is on My Returns Page$")
 	public void user_is_Registered_in_MyToll_and_is_on_My_ReturnsPage() throws Throwable {
-		
+	    
 		BaseWebdriver.setUp();
 		PageBase.MediumWaitForElementEnabled();
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
@@ -58,10 +61,7 @@ public class ReturnsCommonStepsDefinitions {
 		
 	}
 	
-	private DateFormat SimpleDateFormat(String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@And("^User enters shipment overview details to Create a Return$")
 	public void User_enters_shipment_overview_details_asbelow_to_get_a_Rate_within_a_Shipment_Prio(DataTable createReturnTestData)
@@ -121,15 +121,15 @@ public class ReturnsCommonStepsDefinitions {
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.sendText(MyTollHomePageActions.ReturnReference, 5, createReturn.get("Reference"));
 			PageBase.sendText(BookAPickupActions.specialInstructions, 5, createReturn.get("Special Instructions"));
-			String date = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"pickup-date\"]")).getAttribute("data-val");
-			DispatchDate = date.replaceAll("(\\d+)-(\\d+)-(\\d+)", "$3-$2-$1");
+			returnDateonScreen = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"pickup-date\"]")).getAttribute("data-val");
+			DispatchDate = returnDateonScreen.replaceAll("(\\d+)-(\\d+)-(\\d+)", "$3-$2-$1");
 			ManifestActions.returnSelectReadyTimeJS(createReturn.get("Ready Time"));
 			ManifestActions.selectClosingTimeJS(createReturn.get("Closing Time"));
 			
 			//Data Formating for My Return Page
 			String OLD_FORMAT = "dd-MM-yyyy";
 			String NEW_FORMAT = "dd-MMM-yyyy";
-			String oldDateString = date;
+			String oldDateString = returnDateonScreen;
 			SimpleDateFormat sdf = new SimpleDateFormat(OLD_FORMAT);
 			Date d = sdf.parse(oldDateString);
 			sdf.applyPattern(NEW_FORMAT);
@@ -202,13 +202,23 @@ public class ReturnsCommonStepsDefinitions {
 		System.out.println(TollShipmentNumber);
 		String RANNumber = BaseWebdriver.driver.findElement(MyTollHomePageActions.ReturnSucessfullRAN).getText();
 		System.out.println(RANNumber);
-		
+		RetrunShipmentNumber = TollShipmentNumber.substring(23);
+		System.out.println(RetrunShipmentNumber);
+	}
+	
+	
+	
+	@Then("^User Navigates to My Return Page$")
+	public void UserNavigatestoMyReturnPage() throws Throwable {
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.ReturnGoToMyReturns, 10);
 	}
 	
 	
 	@When("^User Enters Shipment Number and Searches on My Returns$")
-	public void UserEntersShipmentNumberandSearchesOnMyReturns() throws Throwable {
-		PageBase.MediumWaitForElementEnabled_1();
+	public void UserEntersShipmentNumberandSearchesOnMyReturns(DataTable myReturnTestData) throws Throwable {
+	
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.sendText(MyTollHomePageActions.MyReturnRefNo, 5, RetrunShipmentNumber);
 		PageBase.click(MyTollHomePageActions.MyReturnSearch, 10);
 	}
@@ -240,12 +250,91 @@ public class ReturnsCommonStepsDefinitions {
 		PageBase.verifyTextSubString(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[6]"), Receiver);
 		PageBase.verifyTextExist(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[7]"), MyReturnPageDispatchDate);
 		PageBase.verifyTextExist(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[8]"), myReturn.get("Ready time"));
+		PageBase.verifyTextExist(By.xpath("//*[@id=\"data-desc\"]"), "Showing 1 - 1 of 1");
 		}
 		
 		
 	}
 	
-
+	@Then("^User Filters Search Results By Status$")
+	public void UserFiltersSearchResultsByStatus(DataTable myReturnTestData) throws Throwable {
+		for (Map<String, String> myReturn : myReturnTestData.asMaps(String.class, String.class)) {
+			PageBase.click(MyTollHomePageActions.MyReturnStatus, 10);
+			PageBase.click(By.xpath("//*[@id=\"status-selector\"]//*//div[text()='"+myReturn.get("Status")+"']"), 5);
+			PageBase.MediumWaitForElementEnabled_1();
+			PageBase.click(MyTollHomePageActions.MyReturnSearch, 10);
+			PageBase.MediumWaitForElementEnabled_1();
+			PageBase.verifyTextExist(By.xpath("//*[@id=\"data-desc\"]"), "Showing 1 - 1 of 1");
+			PageBase.verifyTextExist(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[1]"), RetrunShipmentNumber);
+		}
+	}
+	
+	
+	@Then("^User Filters Search Results By Date Range$")
+	public void UserFiltersSearchResultsByDateRange(DataTable myReturnTestData) throws Throwable {
+			//Set Date One year Back
+			DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		    Date myDate = dateFormat.parse(returnDateonScreen);
+		    Calendar calendar = Calendar.getInstance();
+		    calendar.setTime(myDate);
+		    calendar.add(Calendar.YEAR, -1);
+		    Date previousDate = calendar.getTime();
+		    String DateOneYearBack = dateFormat.format(previousDate);
+		    
+			
+		  //Date From
+			PageBase.MediumWaitForElementEnabled_1();
+			((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('manifestFromDate').removeAttribute('readonly',0);");
+	        ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('manifestFromDate').setAttribute('placeholder','"+DateOneYearBack+"');");
+			WebElement fromDateBox= BaseWebdriver.driver.findElement(MyTollHomePageActions.MyReturnDateFrom);
+			fromDateBox.clear();
+			fromDateBox.sendKeys(DateOneYearBack);
+			
+			//Date To
+			PageBase.MediumWaitForElementEnabled_1();
+			((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('manifestToDate').removeAttribute('readonly',0);");
+	        ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('manifestToDate').setAttribute('placeholder','"+returnDateonScreen+"');"); 
+			WebElement fromDateBox2= BaseWebdriver.driver.findElement(MyTollHomePageActions.MyReturnDateTo);
+			fromDateBox2.clear();
+			fromDateBox2.sendKeys(returnDateonScreen);
+			
+			//User Clicks and Verifies if Search Results exist
+			PageBase.MediumWaitForElementEnabled_1();
+			PageBase.click(MyTollHomePageActions.MyReturnSearch, 10);
+			PageBase.MediumWaitForElementEnabled_1();
+			PageBase.verifyTextExist(By.xpath("//*[@id=\"data-desc\"]"), "Showing 1 - 1 of 1");
+			PageBase.verifyTextExist(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[1]"), RetrunShipmentNumber);
+		
+	}
+	
+	
+	@Then("^User Downloads the Return Results$")
+	public void UserDownloadstheReturnResults() throws Throwable {
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.click(MyTollHomePageActions.DownloadSavedSearch, 5);
+		PageBase.MaximumWaitForElementEnabled_1();;
+	}
+	
+	@Then("^User Verifies Line Item for Returns$")
+	public void UserVerifiesLineItem(DataTable myReturnTestData) throws Throwable {
+		for (Map<String, String> myReturn : myReturnTestData.asMaps(String.class, String.class)) {
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.click(By.xpath("//*[@id=\"shipment-placeholder\"]//*//h2[text()='Line Item "+myReturn.get("Line Number")+"']"), 5);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExist(By.xpath("//*[@id=\"shipment-placeholder\"]//*//li[div//preceding-sibling::h2[text()='Line Item "+myReturn.get("Line Number")
+								+"']]//*//div[@class='item-inner-col item-desc']/p"), myReturn.get("Item description"));
+		PageBase.verifyTextExist(By.xpath("//*[@id=\"shipment-placeholder\"]//*//li[div//preceding-sibling::h2[text()='Line Item "+myReturn.get("Line Number")
+								+"']]//*//div[@class='item-inner-col total-items']/p"), myReturn.get("No of Items"));
+		PageBase.verifyTextExist(By.xpath("//*[@id=\"shipment-placeholder\"]//*//li[div//preceding-sibling::h2[text()='Line Item "+myReturn.get("Line Number")
+								+"']]//*//div[@class='item-inner-col dimensions']/p"), myReturn.get("Length")+"cm x "+myReturn.get("Width")+"cm x "+myReturn.get("Height")+"cm");
+		PageBase.verifyTextExist(By.xpath("//*[@id=\"shipment-placeholder\"]//*//li[div//preceding-sibling::h2[text()='Line Item "+myReturn.get("Line Number")
+								+"']]//*//div[@class='item-inner-col weight']/p"), myReturn.get("Weight")+"kg");
+		PageBase.verifyTextExist(By.xpath("//*[@id=\"shipment-placeholder\"]//*//li[div//preceding-sibling::h2[text()='Line Item "+myReturn.get("Line Number")
+								+"']]//*//div[@class='item-inner-col reference1']/p"), myReturn.get("Reference"));
+		PageBase.MaximumWaitForElementEnabled_1();
+		}
+	}
+	
 	
 }
 

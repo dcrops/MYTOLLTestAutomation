@@ -24,6 +24,9 @@ Feature: MYT-6143 Create Return Page
   	Then User Verfies Return Shipment Details on Review Screen
     | TollCarrier          | Service                    |AccountNumber |RAN    |Reference | Special Instructions| Whopays |Ready Time| Closing Time|
   	| Toll Priority (Aus)  | 3rd Party Return - OffPeak |      401509  |123456 |Ref1212   | Special Instructions| Receiver|   12:00  | 15:00       |
+  	Then User Verifies Line Item for Returns
+  	|Line Number | Item description     | No of Items | Length | Width | Height | Weight      | Reference       |
+    |  1         | Automation Template1 |          10 |    10  |   10  |    10  |          20 | Ref123          |
   	Then User Clicks Confrim Return
     Then User Retreives Return Reference Number and Verifies Confirmation Page
   	
@@ -61,6 +64,12 @@ Feature: MYT-6143 Create Return Page
   	Then User Verfies Return Shipment Details on Review Screen
     | TollCarrier          | Service                      |AccountNumber |RAN    |Reference | Special Instructions| Whopays |Ready Time| Closing Time|
   	| Toll Priority (Aus)  | 3rd Party Return - Overnight |      401509  |123456 |Ref1212   | Special Instructions| Receiver|   12:00  | 15:00       |
+  	Then User Verifies Line Item for Returns
+  	|Line Number | Item description     | No of Items | Length | Width | Height | Weight      | Reference       |
+    |  1         | Automation Template2 |          10 |    10  |   10  |    10  |          20 | Ref124          |
+    Then User Verifies Line Item for Returns
+  	|Line Number | Item description     | No of Items | Length | Width | Height | Weight      | Reference       |
+    |  2         | Automation Template3 |          10 |    10  |   10  |    10  |          20 | Ref125          |
   	Then User Clicks Confrim Return
   	Then User Retreives Return Reference Number and Verifies Confirmation Page
   	

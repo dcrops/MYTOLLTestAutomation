@@ -1,17 +1,50 @@
-Feature: MYT-6172 Search Return
+Feature: MYT-6172 Search My Return
 
   Background: 
-    Given User is Registered in MyToll and is on My Returns Page
+    Given User is Registered in MyToll and is on Create Return Page
 
 	@tag1
 	Scenario: MyReturn Page is visible for Registered User with Toll PrioAU Account
+	When User Verfies Toll Carrier and select Service
+  	| TollCarrier          | Service |
+  	| Toll Priority (Aus)  | 3rd Party Return - OffPeak |
+  	And User enters shipment overview details to Create a Return
+    | AccountNumber | Whopays | Sender             | Receiver             |RAN    |
+    |        401509 |       2 |  TEM Perth Address | TEM Brisbane Address |123456 |
+    And User enters following input data for the line item for Return
+    | Item description     | No of Items | Length | Width | Height | Weight      | Reference       |
+    | Automation Template1 |          10 |    10  |   10  |    10  |          20 | Ref123          |
+  	Then User Clicks Price Now Curtain on Shipment Page
+    Then Rate is Displayed with no breakdown and with a disclaimer - Prio
+	And User closes Rate Enquiry Curtain
+	And User enters Return Reference and Special Instructions as below
+	|Reference | Special Instructions|Ready Time| Closing Time|
+	|Ref1212   | Special Instructions|   12:00  | 15:00       |
+  	Then User Clicks Review and Create Return
+  	Then User Verfies Return Shipment Details on Review Screen
+    | TollCarrier          | Service                    |AccountNumber |RAN    |Reference | Special Instructions| Whopays |Ready Time| Closing Time|
+  	| Toll Priority (Aus)  | 3rd Party Return - OffPeak |      401509  |123456 |Ref1212   | Special Instructions| Receiver|   12:00  | 15:00       |
+  	Then User Clicks Confrim Return
+    Then User Retreives Return Reference Number and Verifies Confirmation Page
+	Then User Navigates to My Return Page
+	
 	When User Enters Shipment Number and Searches on My Returns
+	|RetrunShipmentNumber|
+	|RunTime Retrival    |
 	Then Search Results are Displayed with the Below Columns
  	 |Toll shipment no.     |RAN     |Status     |Toll carrier     |Sender details     |Receiver details     |Earliest dispatch date     |Ready time |
  	 |Toll shipment no.     |RAN     |Status     |Toll carrier     |Sender details     |Receiver details     |Earliest dispatch date     |Ready time |
  	 And User Verifies if Return Search Results are Displayed as Per Search Criteria
 	 |Toll shipment no.     |RAN        |Status     |Toll carrier     		 |Sender details       |Receiver details     |Earliest dispatch date     |Ready time |
- 	 |RunTime Retrival      |1234576    |QUEUED     |Toll Priority (Aus)     |RunTime Retrival     |RunTime Retrival     |RunTime Retrival           |12:00 	 |
+ 	 |RunTime Retrival      |123456     |QUEUED     |Toll Priority (Aus)     |RunTime Retrival     |RunTime Retrival     |RunTime Retrival           |12:00 	 |
+ 	 Then User Filters Search Results By Status
+     |Status    |
+     |QUEUED    |
+     Then User Filters Search Results By Date Range
+     |DateFrom    						|DateTo |
+     |RunTime Retrival One Year Back    |RunTime Retrival Retrun Shipment Date|
+	  Then User Downloads the Return Results
+ 	 
 	
 
 
