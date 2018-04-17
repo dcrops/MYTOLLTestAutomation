@@ -20,7 +20,6 @@ public class BookAPIckupCommonStepsDefinitions {
 	public void user_is_Registered_in_MyToll_and_is_on_Book_a_pickup_page() throws Throwable {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.SitUsername1, BaseWebdriver.Password);
-		MyTollHomePageActions.LaunchMyToll("https://ps.mytoll.com/");
 		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
