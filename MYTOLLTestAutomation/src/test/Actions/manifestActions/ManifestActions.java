@@ -633,6 +633,15 @@ public class ManifestActions {
 		
 	}
 	
-	
+	public static void returnSelectReadyTimeJS(String time) {
+		Reporter.log("User Sets Ready Time as -"+time);
+		((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('ready-time').removeAttribute('readonly',0);");
+        ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('ready-time').setAttribute('data-timepicki-time','"+time+"');");
+		WebElement fromDateBox= BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"ready-time\"]"));
+		fromDateBox.clear();
+		PageBase.click(BookAPickupActions.decreaseReadyTime, 1);
+		PageBase.click(BookAPickupActions.increaseAvailableTimeHours, 1);
+		PageBase.verifyTextExistAttribute(By.xpath("//*[@id=\"ready-time\"]"), time);	
+	}
 	
 }
