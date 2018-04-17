@@ -34,8 +34,8 @@ public class TollPriorityNZTests {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		BookAPickupActions.EnterAccountNumber(AccountNo);
-		//RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		//BookAPickupActions.EnterAccountNumber(AccountNo);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		RateEnquiryActions.SelectCountry(Country);
 		RateEnquiryActions.SelectCountryPostCode(CountryPostCode);
@@ -50,10 +50,10 @@ public class TollPriorityNZTests {
 		
 		//Verify Details on Shipment Page
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 		Reporter.log("---------------END OF TEST---------------");
 	}
@@ -66,8 +66,8 @@ public class TollPriorityNZTests {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		BookAPickupActions.EnterAccountNumber(AccountNo);
-		//RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		//BookAPickupActions.EnterAccountNumber(AccountNo);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 
@@ -81,10 +81,10 @@ public class TollPriorityNZTests {
 		
 		//Verify Details on Shipment Page
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 		Reporter.log("---------------END OF TEST---------------");
 	}
@@ -97,8 +97,8 @@ public class TollPriorityNZTests {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		BookAPickupActions.EnterAccountNumber(AccountNo);
-		//RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
+		//BookAPickupActions.EnterAccountNumber(AccountNo);
+		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
 		RateEnquiryActions.SelecDestination(DesSuburb, DesPostCode);
 		
@@ -112,10 +112,10 @@ public class TollPriorityNZTests {
 		
 		//Verify Details on Shipment Page
 		PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentCarrierName, Carrier);
+		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentCarrierName, Carrier);
 		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, Service);
-		PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, AccountNo);
-		PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
+		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, AccountNo);
+		//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 		Reporter.log("---------------END OF TEST---------------");
 	}

@@ -209,6 +209,7 @@ public class RateEnquiryStepDefinitions {
 	@Then("^Rate is Displayed with no breakdown and with a disclaimer$")
 	public void RateisDisplayedwithNobreakdownAndWithAdisclaimer() throws Throwable {
 		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.MediumWaitForElementEnabled_1();
 		RateEnquiryActions.priceCurtainVerifyTotalCharge("Total charge :");
 		RateEnquiryActions.priceCurtainVerifyGST("GST :");
 		RateEnquiryActions.priceCurtainVerifyRate("Rate :");	
