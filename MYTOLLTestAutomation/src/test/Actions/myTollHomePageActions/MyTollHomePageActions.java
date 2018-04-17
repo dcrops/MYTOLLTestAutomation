@@ -18,12 +18,12 @@ public class MyTollHomePageActions {
 	/* Login */
 	
 	public static By login=By.id("lnk-login");
-	public static By emailAddress=By.id("_com_liferay_login_web_portlet_LoginPortlet_login"); //"_com_liferay_login_web_portlet_LoginPortlet_login");
+	public static By emailAddress=By.id("_com_liferay_login_web_portlet_LoginPortlet_login"); 
 	public static By passwordLable=By.className("_com_liferay_login_web_portlet_LoginPortlet_password");
 	public static By password=By.id("_com_liferay_login_web_portlet_LoginPortlet_password");
 	public static By loginBtn=By.id("login-btn");
 	public static By Name=By.xpath("//*[@id=\"header-right-ctrls\"]/div/ul/li[1]/a[1]");
-	public static By MyProfile=By.xpath("//*[@id=\"header-right-ctrls\"]/div/ul/li[1]/ul/li[1]/a"); //.linkText("/group/guest/ups-home-page");
+	public static By MyProfile=By.xpath("//*[@id=\"header-right-ctrls\"]/div/ul/li[1]/ul/li[1]/a"); 
 	public static By RegistrationErrorMsg = By.cssSelector("div.yui3-widget-bd");
 	
 	
@@ -33,16 +33,18 @@ public class MyTollHomePageActions {
 	public static By MyDashboard=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[1]/a/p");
 	public static By getRateEnquiry=By.xpath("//*[@id=\"nav-dropdown\"]/ul/li[2]/a[1]/p");
 	public static By templateMenu = By.xpath("//*[@id=\"nav-dropdown\"]//*//span[text()='My templates']");
-	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My accounts']");//*[@id="nav-dropdown"]/ul/li[5]/a/span[2] , //*[@id=\"nav-dropdown\"]//*//span[text()='My Accounts']
+	public static By myAccountMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My accounts']");
 	public static By myContactMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My contacts']");
 	public static By aboutMeMenu = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='About me']");
 	public static By Dashboard = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='Go to my dashboard']");
+	public static By stationery = By.xpath("//*[@id=\"my-stationary\"]/p[text()='STATIONERY']");
+	public static By orderMyStationery = By.xpath("//*[@id=\"my-stationary\"]/span[text()='Order stationery']"); 
+	public static By myOrdersStationery = By.xpath("//*[@id=\"my-stationary\"]/span[text()='My Orders']"); 
 	public static By SavedSearchTab = By.xpath("//*[@id=\"savedSearchTabAnchor\"]/span");
-	//*[@id="nav-dropdown"]/ul/li[1]/a/span
-	
+		
 	
 	//Add Template
-	public static By MyTemplates=By.xpath("//a[@href='/group/guest/my-templates']"); //"/group/guest/my-templates");
+	public static By MyTemplates=By.xpath("//a[@href='/group/guest/my-templates']"); 
 	public static By AddTemplates=By.linkText("ADD TEMPLATE");
 	public static By TollCarrierDropdown=By.xpath("//*[@id=\"bu-dropdown-new\"]/label/a/i");
 	public static By TemplateNameTextField=By.xpath("//*[@id=\"newTemplate\"]/div/section/div[2]/div/div/input"); 
@@ -50,11 +52,10 @@ public class MyTollHomePageActions {
 	public static By length = By.id("addLength");
 	public static By width = By.id("addWidth");
 	public static By height = By.id("addHeight");
-	public static By weight = By.xpath("//*[@id=\"newTemplate\"]/div/section/div[3]/div[1]/div[2]/div/input"); //.name("templateTotalWight");
-	public static By SaveTemplate=By.id("templateSave");//*[@id="response-poup-wrpr"]/div[2]/div/a/i
+	public static By weight = By.xpath("//*[@id=\"newTemplate\"]/div/section/div[3]/div[1]/div[2]/div/input");
+	public static By SaveTemplate=By.id("templateSave");
 	public static By CloseNewTemplate=By.xpath("//*[@id=\"response-poup-wrpr\"]/div[2]/div/a/i");
-	//*[@id="_userregistrationportlet_WAR_userprofileportlet_userRegForm"]/div[10]/div/label[1]
-	
+		
 	// User registration  registerlink
 	
 	public static By register=By.name("registerlink");
@@ -67,7 +68,7 @@ public class MyTollHomePageActions {
 	public static By memerobleQuesOption=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_memorableQuestion\"]/option[4]");
 	public static By memerobleAnswer=By.id("_userregistrationportlet_WAR_userprofileportlet_answer");
 	public static By recaptchalable=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_userRegForm\"]/div/div[1]/div[10]/div/label[1]");
-	public static By robotCheckBox=By.xpath("//*[@id=\"recaptcha-anchor\"]/div[5]"); //*[@id="recaptcha-anchor"]/div[5]
+	public static By robotCheckBox=By.xpath("//*[@id=\"recaptcha-anchor\"]/div[5]");
 	public static By agreeTerms = By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_userRegForm\"]/div[10]/div/label[1]");
 	
 	public static By firstNameErrorMsg=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_firstName_error\"]");
@@ -182,8 +183,6 @@ public class MyTollHomePageActions {
 	
 	public static void LaunchMyToll(String url)
 	{
-		//cesapaus003.toll.com.au:8080 
-		//http://cesapaus003.toll.com.au:8080/group/guest/bookapickup
 		BaseWebdriver.driver.get(url);
 	}
 	
@@ -209,7 +208,6 @@ public class MyTollHomePageActions {
 		catch(Exception ex)
 		{
 			BaseWebdriver.driver.navigate().refresh();
-			//BaseWebdriver.tearDown();
 			BaseWebdriver.setUp();
 			BaseWebdriver.driver.navigate().refresh();
 			PageBase.retryingFindClick(login);
@@ -243,14 +241,11 @@ public class MyTollHomePageActions {
 	public static void AddTemplates(String pTollCarrier, String pTemplateName, String pNumberOfItem,String pWeight, String pLength, String pWidth, String pHeight)
 	{
 		PageBase.MaximumWaitForElementEnabled();
-		//BaseWebdriver.driver.findElement(MyProfile).click();
-		
-	
 		BaseWebdriver.driver.findElement(AddTemplates).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"bu-dropdown-new\"]/div/ul/li/div[text()='"+pTollCarrier+"']")).click();//*[@id="bu-dropdown-new"]/div/ul/li[2]/div
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"bu-dropdown-new\"]/div/ul/li/div[text()='"+pTollCarrier+"']")).click();
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(height).click();
 		BaseWebdriver.driver.findElement(height).clear();
@@ -286,7 +281,6 @@ public class MyTollHomePageActions {
 	public static void SelectTollCarrier()
 	{
 		PageBase.MaximumWaitForElementEnabled();
-		//BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
 		PageBase.click(TollCarrierDropdown, 5);
 		
 	}
@@ -296,9 +290,7 @@ public class MyTollHomePageActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		//BaseWebdriver.driver.findElement(HmbugerMenu).click();
 		PageBase.ClickOn(HmbugerMenu, 5);
-		//BaseWebdriver.driver.findElement(Menulist).click();
 	}
 	
 	public static void ClickBookAPIckupMenu()
@@ -318,10 +310,45 @@ public class MyTollHomePageActions {
 	
 	public static void ClickGetRateEnquiery()
 	{
-		//BaseWebdriver.driver.findElement(getRateEnquiry).click();
 		PageBase.click(getRateEnquiry, 5);
 	}
 
+	public static void ClickStationery()
+	{
+	
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(stationery, 5);
+	}
+	
+	public static void ClickOrderStationery()
+	{
+		
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(orderMyStationery, 5);
+	}
+	
+	public static void ClickMyOrdersStationery()
+	{
+		
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(myOrdersStationery, 5);
+	}
+	
+	public static String GetStationery() {
+		return PageBase.GetText(stationery, 5);
+
+	}
+	
+	public static String GetOrderMyStationery() {
+		return PageBase.GetText(orderMyStationery, 5);
+
+	}
+	
+	public static String GetMyOrdersStationery() {
+		return PageBase.GetText(myOrdersStationery, 5);
+
+	}
+	
 	
 	public static void NewUserRegistration(String pFirstName, String pLastName, String pNewEmail, String pMobileNumber, String pNewPassword, String pMemerobleAnswer)
 	{
