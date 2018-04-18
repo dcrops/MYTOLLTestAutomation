@@ -7,9 +7,9 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 	,features = {"src/test/Resources/rateEnquiryFeatures/MYT_6157_TollEnergyRateEnquiryTest.feature", "src/test/Resources/rateEnquiryFeatures/MYT_6235_TollMiningServiceRateEnquiryTest.feature",
 			"src/test/Resources/rateEnquiryFeatures/MYT_1692_RateEnquiry_RateWithinAShipment.feature", "src/test/Resources/rateEnquiryFeatures/MYT_5499_RateEnquiry_AddressBook.feature",}
     ,glue= {"commonStepsDefinitions","rateEnquiryStepDefinitions","createShipmentStepDefinitions"}
-	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
+	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\RateEnquiry\\cucumber-pretty",
 
-    "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
+    "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\RateEnquiry\\cucumber-json\\CucumberTestReport.json",
 	
 }
 	
