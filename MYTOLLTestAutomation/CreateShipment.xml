@@ -340,11 +340,18 @@
 			value="Shipment contain dangerous goods" />
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 
-
-		<classes>
- <class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+<groups>    
+         <run>
+      
+          
+            <include name = "E2E"/>
+         </run>
+         
+      </groups>
+      
+      <classes>
+     <class name="createShipmentE2ETests.TollIPECTests" />
       </classes>
-
 	
 
 		<!-- Blocked><classes>

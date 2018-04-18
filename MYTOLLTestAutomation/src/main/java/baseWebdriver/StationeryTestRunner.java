@@ -6,9 +6,9 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions( strict=true
 	,features = { "src/test/Resources/stationery/ABC.feature"}
 	,glue= {"commonStepsDefinitions","stationeryStepDefinitions","createShipmentStepDefinitions"}
-	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
+	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Stationery\\cucumber-pretty",
 
-		"json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
+		"json:C:\\Source\\MYTOLLTestAutomation\\Reports\\Stationery\\cucumber-json\\CucumberTestReport.json",
 
 }
 )

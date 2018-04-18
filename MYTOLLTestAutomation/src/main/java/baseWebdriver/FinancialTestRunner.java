@@ -6,9 +6,9 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions( strict=true
 	,features = { "src/test/Resources/financialFeatures/ABC.feature"}
 	,glue= {"commonStepsDefinitions","financialStepDefinitions"}
-	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
+	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Finance\\cucumber-pretty",
 
-"json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
+"json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\Finance\\CucumberTestReport.json",
 
 }
 

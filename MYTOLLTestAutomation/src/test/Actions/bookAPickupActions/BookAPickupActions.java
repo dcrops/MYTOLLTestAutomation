@@ -313,7 +313,7 @@ public class BookAPickupActions {
 	public static By saveAsTemplateQME = By.id("gv-save-as-template");
 	public static By addNewLineQME = By.xpath("//*[@id=\"gv-grid-line-item\"]/td[13]/a[4]");
 	public static By UNNumberTextFieldQME = By.id("gv-unlookup");
-	public static By packingGroupDropdownQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/label/a/i");
+	public static By packingGroupDropdownQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/label/input[2]");
 	public static By packingGroupItemQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/div/ul/li[2]/div");
 	public static By packingGroupQME = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/input[2]");
 	public static By packingGroupTextFieldQME = By.id("gv-packaging-grp");
@@ -1246,7 +1246,7 @@ public class BookAPickupActions {
 
 	public static void selectClosingTime() {
 		BaseWebdriver.driver.findElement(closingTime).click();
-		BaseWebdriver.driver.findElement(increaseClosingTimeHours).click();
+		//BaseWebdriver.driver.findElement(increaseClosingTimeHours).click();
 
 	}
 
@@ -2009,8 +2009,9 @@ public class BookAPickupActions {
 		PageBase.MinimumWaitForElementEnabled();
 
 		PageBase.SendKeysTo(destinationQME, pDestination, 10);
-		PageBase.retryingFindClick(
-				By.xpath("//*[@id=\"gv-grid-line-item\"]/td[2]/div/div/ul/li/div[text()='" + pDestinationItem + "']"));
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.ClickOn(
+				By.xpath("//*[@id=\"gv-grid-line-item\"]//*//div/div/ul/li/div[text()='" + pDestinationItem + "']"),10); //*[@id="gv-grid-line-item"]/td[3]/div/div/ul/li[1]/div
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 	}
@@ -2104,7 +2105,7 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(UNNumberTextFieldQME, lookupItem, 5);
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.SelectFrom(By.xpath("//*[@id=\"dg-popup-form\"]/div[1]/div[1]/div[1]/div[1]/div/div[1]/ul/li/div"), 5); 
+		PageBase.SelectFrom(By.xpath("//*[@id=\"dg-popup-form\"]/td[1]/div/div[1]/ul/li/div"), 5); //*[@id="dg-popup-form"]/td[1]/div/div[1]/ul/li/div  2025 | MERCURY COMPOUND, SOLID, N.O.S | 6.1
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(dgPackagingDescriptionQME, packageDescription, 5);
 		PageBase.SendKeysTo(dgPkgQtyQME, pDgPkgQty, 5);

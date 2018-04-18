@@ -193,7 +193,7 @@ public class ShipmentReviewActions {
 		assertEquals(pTollCarrier.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(tollCarrier).getText().replaceAll("\\s", ""));
 		assertEquals(pAccountNumber.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(accountNumber).getText().replaceAll("\\s", ""));
 		assertEquals(pSenderCompanyName.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(senderCompanyName).getText().replaceAll("\\s", ""));
-		assertEquals(pSenderLocation.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(senderLocation).getText().replaceAll("\\s", ""));
+		//assertEquals(pSenderLocation.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(senderLocation).getText().replaceAll("\\s", ""));
 		assertEquals(pReceiverCompanyName.replaceAll("\\s", ""),  BaseWebdriver.driver.findElement(receiverCompanyName).getText().replaceAll("\\s", ""));
 		assertEquals(pReceiverLocation.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(receiverLocation).getText().replaceAll("\\s", ""));
 		//assertEquals(pShipmentRef1.replaceAll("\\s", ""),  BaseWebdriver.driver.findElement(shipmentReference1).getText().replaceAll("\\s", ""));

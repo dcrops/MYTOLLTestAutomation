@@ -14,7 +14,7 @@ Feature: MYT_1524 Book a Pickup: 'Default' mode to ' Quick Entry ' mode
     And User selects switch from 'Default' mode to ' Quick Entry ' mode
     Then User verify that Toll Carrier Account Number Sender Address Name and Phone Number have not been changed
       | TollCarrier | AccountNumber | Sender   |
-      | Intermodal&Specialised |        371065 | AccessHQ |
+      | Intermodal&Specialised |        371065, TOLL MTS (MANAGED TRANSPORT SERVICES), MELBOURNE, VIC | AccessHQ |
     And User can see By default, Quick entry mode will display 5 Line items
     Then User able to see Line item number autopopulated
     When User select the Service as below
@@ -61,7 +61,7 @@ Feature: MYT_1524 Book a Pickup: 'Default' mode to ' Quick Entry ' mode
     And User selects switch from 'Default' mode to ' Quick Entry ' mode
     Then User verify that Toll Carrier Account Number Sender Address Name and Phone Number have not been changed
       | TollCarrier | AccountNumber | Sender   |
-      | TollTasmania  |  100428 | AccessHQ |
+      | TollTasmania  |  100428, BRIDGESTONE AUST LTD (TYRES), ALTONA NORTH, VIC | AccessHQ |
     And User can see By default, Quick entry mode will display 5 Line items
     Then User able to see Line item number autopopulated
     When User select the Service as below

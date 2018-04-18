@@ -6,9 +6,9 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions( strict=true
 	,features = { "src/test/Resources/tollFast_TAndT/ABC.feature"}
 	,glue= {"commonStepsDefinitions","tollFast_TAndTStepDefinitions","createShipmentStepDefinitions"}
-	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
+	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\TollFast\\cucumber-pretty",
 
-	"json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
+	"json:C:\\Source\\MYTOLLTestAutomation\\Reports\\TollFast\\cucumber-json\\CucumberTestReport.json",
 
 }
 )

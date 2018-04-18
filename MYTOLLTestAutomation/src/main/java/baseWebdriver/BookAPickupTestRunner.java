@@ -11,9 +11,9 @@ import myTollHomePageActions.MyTollHomePageActions;
 @CucumberOptions( strict=true
         ,features = { "src/test/Resources/bookAPickupFeatures/MYT_622_BAP Share my book a pickup.feature//"} //MYT_1524_Book a Pickup'Default' mode to Quick EntryMode.feature"} //"}
 		,glue= {"commonStepsDefinitions","bookAPickupStepDefinitions","createShipmentStepDefinitions"}
-		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
+		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Pickups\\cucumber-pretty",
 
-                "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
+                "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\Pickups\\cucumber-json\\CucumberTestReport.json",
 				
 }
 				

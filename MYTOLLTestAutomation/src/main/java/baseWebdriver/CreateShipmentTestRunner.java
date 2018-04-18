@@ -10,9 +10,9 @@ import myTollHomePageActions.MyTollHomePageActions;
 @CucumberOptions( strict=true
         ,features = { "src/test/Resources/createShipmentFeatures/MYT_6240_Toll Mining Services Shipment Manifesting Printing.feature"}
 		,glue= {"commonStepsDefinitions", "createShipmentStepDefinitions", "bookAPickupStepDefinitions"}
-		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
+		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Shipment\\cucumber-pretty",
 
-                "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
+                "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\Shipment\\cucumber-json\\CucumberTestReport.json",
 				
 }
 				
