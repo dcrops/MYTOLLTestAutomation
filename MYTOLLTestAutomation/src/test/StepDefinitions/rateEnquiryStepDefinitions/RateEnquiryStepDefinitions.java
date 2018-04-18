@@ -150,7 +150,7 @@ public class RateEnquiryStepDefinitions {
 				PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 				PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentCarrierName, rateEnquiry.get("TollCarrier"));
 				PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, rateEnquiry.get("Service"));
-				PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, rateEnquiry.get("Account"));
+				PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, rateEnquiry.get("Account"));
 				//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, rateEnquiry.get("Length")+"cm x "+rateEnquiry.get("Width")+" cm x "+rateEnquiry.get("Height")+"cm" );
 				PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 			}
