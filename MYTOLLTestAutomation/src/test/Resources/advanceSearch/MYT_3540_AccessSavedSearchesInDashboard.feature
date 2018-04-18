@@ -30,7 +30,7 @@ Feature: MYT-3540 Advance Search : Access Saved Searches tab in My Dashboard
    	 Then User Confirms Delete Saved Search
    	 And User Verifies Saved Search Does not Exist on Dashboard
    	 
-    @tagd2
+    @tag2
     Scenario: User views all his Saved Searches from Dashboard - TDF
     When User inputs search criteria in the Toll Carrier feild
    	 |TollCarrier|

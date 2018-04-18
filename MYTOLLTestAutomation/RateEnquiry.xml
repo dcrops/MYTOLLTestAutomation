@@ -127,7 +127,7 @@
 		<parameter name="TTHeight" value="33" />
 		<parameter name="TTWeight" value="3" />
 		<parameter name="TTQtyType" value="Items" />
-		<parameter name="TTMode" value="ROAD" />
+		<parameter name="TTMode" value="*" />
 		
 		<!---IntermodalSpecialized FCL test data -->
 		<parameter name="FCLAccountNo" value="5502" />
@@ -164,7 +164,12 @@
 
 
 		<classes>
-							<class name="rateEnquiryE2ETests.TollIPECTests" />
+			<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	
+			<class name="rateEnquiryE2ETests.TollPriorityNZTests" />
+			<class name="rateEnquiryE2ETests.TollPriorityAUSTests" />
+			<class name="rateEnquiryE2ETests.TollTasmaniaTests" />
+			<class name="rateEnquiryE2ETests.TollIPECTests" />
+		
 				</classes>
 
 	    
