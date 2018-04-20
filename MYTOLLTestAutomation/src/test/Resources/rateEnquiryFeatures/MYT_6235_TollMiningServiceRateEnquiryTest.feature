@@ -34,6 +34,9 @@ Feature: MYT-6235  - Rate Enquiry for Toll Mining Service
       Then User Verifies Details on Shipment Page
       | TollCarrier               |Service     |Account| Length | Width | Height |
       | Toll Mining Services      |DG Freight  |790135 | 10     |   10  |   10   |
+      Then User Verifies Details on Shipment Page Line Items
+       | ItemTemplateName     | NumberOfItems | Length | Width | Height | Weight |BillingType                          |QtyType|
+       | Automation Template1 |        10     |    10  |   10  |   10   |   10   |ALL UNITS - SODIUM CHLORATE PER TONNE|Items  |
    
    
   @tag2

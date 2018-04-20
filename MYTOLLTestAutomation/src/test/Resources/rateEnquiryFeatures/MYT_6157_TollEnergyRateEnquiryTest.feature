@@ -34,6 +34,9 @@ Feature: MYT-6157  - Rate Enquiry for Toll Energy
       Then User Verifies Details on Shipment Page
       | TollCarrier               |Service     |Account| Length | Width | Height |
       | Toll Energy and Marine    |General     |G18508 | 10     |   10  |   10   |
+      Then User Verifies Details on Shipment Page Line Items
+       | ItemTemplateName     | NumberOfItems | Length | Width | Height | Weight |BillingType       |QtyType|
+       | Automation Template1 |        10     |    10  |   10  |   10   |   10   |ALL UNITS - PER KG|Items  |
    
    
   @tag2

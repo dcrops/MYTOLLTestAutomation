@@ -273,5 +273,16 @@ public class RateEnquiryStepDefinitions {
 				RateEnquiryActions.SelectMode(rateEnquiry.get("Mode"));;
 			   }
 	}
+	
+	@Then("^User Verifies Details on Shipment Page Line Items$")
+	public void userVerifiesDetailsOnShipmentPageLineTtems(DataTable rateEquiryTestData) throws Throwable {
+		
+		for (Map<String, String> rateEnquiry : rateEquiryTestData.asMaps(String.class,String.class))
+			   {   
+			    RateEnquiryActions.VerifyLineItem(rateEnquiry.get("ItemTemplateName"), rateEnquiry.get("BillingType"), rateEnquiry.get("NumberOfItems"), rateEnquiry.get("QtyType"), 
+			    		rateEnquiry.get("Length"), rateEnquiry.get("Width"), rateEnquiry.get("Height"), rateEnquiry.get("Weight"));
+			    
+			}
+	}
 
 }
