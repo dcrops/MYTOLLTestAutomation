@@ -59,6 +59,9 @@ public class MYT_3765_ExpandingTheChargesForAnInvoice_Steps_Definitions {
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
 			assertEquals(FinanceActions.GetInvoiceNumberInvoiceSummary(), finance.get("InvoiceNumber"));
 			assertEquals(FinanceActions.GetTollCarrierInvoiceSummary(), finance.get("TollCarrier"));
 			assertEquals(FinanceActions.GetDateInvoiceSummary(), finance.get("Date"));

@@ -350,11 +350,11 @@ public class IntermodalSpecializedTest {
 
 	}
 
-	//@Test(priority=-7)
-	@Test(groups = { "Shakeout Testing","E2E" })
+	@Test(priority=-7)
+	//@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "Company", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
-			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination",
+			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination","DestinationPostcode",
 			"DestinationItem", "DestinationPostcode", "lookupName", "PackingGroup", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "DangerousGoodsDetailsHeading", "technicalName", "specialIns" })
 
@@ -362,7 +362,7 @@ public class IntermodalSpecializedTest {
 			String ServiceDGFCL, String ServiceExpress, String AccountNumberTollNQX, String ItemTemplateName2,
 			String Company, String ItemTemplateName, String ChargeToAccount, String Length, String NumberOfItems,
 			String Width, String Height, String Weight, String DGGoodsYes, String DGGoodsNo, String FoodItems,
-			String palletSpace, String destination, String DestinationItem, String DestinationPostcode,
+			String palletSpace, String destination, String destinationPostcode,String DestinationItem, String DestinationPostcode,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
 			String DangerousGoodsDetailsHeading, String technicalName, String specialIns) {
 
@@ -373,20 +373,17 @@ public class IntermodalSpecializedTest {
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		BookAPickupActions.VerifyBookAPickupScreen();
-		//BookAPickupActions.VerifyTollCarrier(TollCarrier);
-
-		//BookAPickupActions.SelectLocation2(locationIndex);
 		BookAPickupActions.EnterLocation(Company);
 		String company = BookAPickupActions.GetCompany();
-		System.out.println(company);
+		System.out.println("company"+company);
 		String location = BookAPickupActions.GetLocation();
 		System.out.println(location);
-		String locationLine2 = BookAPickupActions.GetLocationAddressLine2();
-		System.out.println(locationLine2);
+		String locationLine2 = BookAPickupActions.GetLocationAddressLine2().replaceAll("\\s", "");
+		System.out.println("locationLine2"+locationLine2);
 		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber();
 		System.out.println(addressPhoneNumber);
-		String companyLocation = location + locationLine2;
-		System.out.println(location + " " + locationLine2);
+		String companyLocation = location+locationLine2;
+		System.out.println(location + locationLine2);
 		String name = BookAPickupActions.GetName();
 
 		System.out.println("name" + name);
@@ -416,8 +413,8 @@ public class IntermodalSpecializedTest {
 		
 		String TotalWeight = Weight + " kg";
 		String chargeToAccount = BookAPickupActions.SelectChargeToAccount2(1);
-		String Destination = BookAPickupActions.SelectDestination1(destination, DestinationItem);
-		System.out.println(Destination);
+		BookAPickupActions.VerifyDestination(destinationPostcode);
+		
 
 		BaseWebdriver.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		// BookAPickupActions.ReceiverAccountNumber("1236654");
@@ -493,6 +490,7 @@ public class IntermodalSpecializedTest {
 
 		ReviewYourPickupActions.ClickConfirmPickup();
 		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
+		ReviewYourPickupActions.VerifyRefrenceNumberContainsTW();
 		System.out.println("Book A Pickup reference  " + reference);
 	}
 

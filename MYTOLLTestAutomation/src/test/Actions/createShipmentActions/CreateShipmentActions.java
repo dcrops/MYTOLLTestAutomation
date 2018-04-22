@@ -347,15 +347,15 @@ public class CreateShipmentActions {
 	}
 
 	public static String GetSenderLocation() {
-		PageBase.MinimumWaitForElementEnabled();
+		/*PageBase.MinimumWaitForElementEnabled();
 		String vSenderLocationLine1 = BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();
+				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();*/
 		String vSenderLocationLine2 = BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[3]")).getText();
-		System.out.println(vSenderLocationLine1);
-		System.out.println(vSenderLocationLine2);
-		String SenderLocation = vSenderLocationLine1 + " " + vSenderLocationLine2;
-		return SenderLocation;
+		//System.out.println(vSenderLocationLine1);
+		//System.out.println(vSenderLocationLine2);
+	//	String SenderLocation = vSenderLocationLine1 + " " + vSenderLocationLine2;
+		return vSenderLocationLine2;
 
 	}
 
@@ -1643,6 +1643,7 @@ public class CreateShipmentActions {
 	
 	// Draft Shipment
 	public static void ClickSaveDraft() {
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(saveDraft, 5);
 		

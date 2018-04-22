@@ -242,11 +242,11 @@ public class FinanceActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(
 				By.xpath(
-						"//*[@id=\"account-number-selector\"]/div[2]/ul/li/div[text()='" + pAccountNumber + " " + "']"),
+						"//*[@id=\"account-number-selector\"]/div[2]/ul/li[4]/div[text()='" + pAccountNumber + " " + "']"),
 				10);
 
 	}
-
+	//*[@id="account-number-selector"]/div[2]/ul/li[4]/div
 	public static void EnterAccountNumberWithName(String pAccountNumber) {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(accountNumberTextField, pAccountNumber, 10);
