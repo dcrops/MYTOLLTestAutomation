@@ -164,7 +164,11 @@
 
 
 		<classes>
+
 			<class name="rateEnquiryE2ETests.TollPriorityAUSTests" />
+
+			<class name="rateEnquiryE2ETests.TollTasmaniaTests" />	
+			
 				</classes>
 
 	    

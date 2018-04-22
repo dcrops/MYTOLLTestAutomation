@@ -34,7 +34,7 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		RateEnquiryActions.SelectMode(Mode);
+		//RateEnquiryActions.SelectMode(Mode);
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
@@ -62,6 +62,7 @@ public class TollTasmaniaTests {
 		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
+		RateEnquiryActions.VerifyLineItemTTAS(ItemTemplateName, NumberOfItems, QtyType, Length, Width, Height, Weight);
 		Reporter.log("---------------END OF TEST---------------");
 	}
 		
@@ -73,7 +74,7 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		RateEnquiryActions.SelectMode(Mode);
+		//RateEnquiryActions.SelectMode(Mode);
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
@@ -100,6 +101,7 @@ public class TollTasmaniaTests {
 		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
+		RateEnquiryActions.VerifyLineItemTTAS(ItemTemplateName, NumberOfItems, QtyType, Length, Width, Height, Weight);
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
@@ -111,7 +113,7 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		RateEnquiryActions.SelectMode(Mode);
+		//RateEnquiryActions.SelectMode(Mode);
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
@@ -139,6 +141,7 @@ public class TollTasmaniaTests {
 		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
+		RateEnquiryActions.VerifyLineItemTTAS(ItemTemplateName, NumberOfItems, QtyType, Length, Width, Height, Weight);
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
@@ -151,7 +154,7 @@ public class TollTasmaniaTests {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		RateEnquiryActions.SelectMode(Mode);
+		//RateEnquiryActions.SelectMode(Mode);
 		RateEnquiryActions.EnterAccountNumberAndSelect(AccountNo);
 		
 		RateEnquiryActions.SelectOrigin(OriginSuburb, OriginPostCode);
@@ -179,6 +182,7 @@ public class TollTasmaniaTests {
 		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
+		RateEnquiryActions.VerifyLineItemTTAS(ItemTemplateName, NumberOfItems, QtyType, Length, Width, Height, Weight);
 		Reporter.log("---------------END OF TEST---------------");
 	}
 

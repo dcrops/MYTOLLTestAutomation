@@ -150,7 +150,7 @@ public class RateEnquiryStepDefinitions {
 				PageBase.waitForElement(RateEnquiryActions.shipmentCarrierName, 10);
 				PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentCarrierName, rateEnquiry.get("TollCarrier"));
 				PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, rateEnquiry.get("Service"));
-				PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentAccountNo, rateEnquiry.get("Account"));
+				PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, rateEnquiry.get("Account"));
 				//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, rateEnquiry.get("Length")+"cm x "+rateEnquiry.get("Width")+" cm x "+rateEnquiry.get("Height")+"cm" );
 				PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 			}
@@ -272,6 +272,17 @@ public class RateEnquiryStepDefinitions {
 			   {   
 				RateEnquiryActions.SelectMode(rateEnquiry.get("Mode"));;
 			   }
+	}
+	
+	@Then("^User Verifies Details on Shipment Page Line Items$")
+	public void userVerifiesDetailsOnShipmentPageLineTtems(DataTable rateEquiryTestData) throws Throwable {
+		
+		for (Map<String, String> rateEnquiry : rateEquiryTestData.asMaps(String.class,String.class))
+			   {   
+			    RateEnquiryActions.VerifyLineItem(rateEnquiry.get("ItemTemplateName"), rateEnquiry.get("BillingType"), rateEnquiry.get("NumberOfItems"), rateEnquiry.get("QtyType"), 
+			    		rateEnquiry.get("Length"), rateEnquiry.get("Width"), rateEnquiry.get("Height"), rateEnquiry.get("Weight"));
+			    
+			}
 	}
 
 }

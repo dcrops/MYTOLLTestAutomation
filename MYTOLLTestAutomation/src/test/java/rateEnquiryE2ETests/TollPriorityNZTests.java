@@ -55,6 +55,7 @@ public class TollPriorityNZTests {
 		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
+		RateEnquiryActions.VerifyLineItemIPEC(ItemTemplateName, NumberOfItems, Length, Width, Height, Weight);
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
@@ -86,6 +87,7 @@ public class TollPriorityNZTests {
 		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
+		RateEnquiryActions.VerifyLineItemIPEC(ItemTemplateName, NumberOfItems, Length, Width, Height, Weight);
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
@@ -117,6 +119,7 @@ public class TollPriorityNZTests {
 		PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, AccountNo);
 		//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, Length+"cm x "+Width+" cm x "+Height+"cm" );
 		PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
+		RateEnquiryActions.VerifyLineItemIPEC(ItemTemplateName, NumberOfItems, Length, Width, Height, Weight);
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	

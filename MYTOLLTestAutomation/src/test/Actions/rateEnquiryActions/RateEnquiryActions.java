@@ -31,9 +31,12 @@ public class RateEnquiryActions {
 	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/div[1]/a/i");
 	public static By itemDescriptionType = By.id("item-description");
 	public static By numberOfItem = By.id("numberOfItem");
+	public static By numberOfItemShipmentPage = By.id("quantity");
 	public static By quantityType = By.xpath("//*[@id=\"item-type-selector\"]/div[1]/a/i"); 
+	public static By quantityTypeShipmentPage = By.xpath("//*[@id=\"outr-pkg-selector\"]/div[1]/input[2]"); 
 	public static By numberofGarments = By.id("garments-count");
 	public static By weight = By.id("item-weight");
+	public static By weightShipmentPage = By.id("weight");
 	public static By billingTypeTextFeild = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/input[2]"); 
 	public static By billingTypeTDF = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/a/i"); 
 	public static By billingType = By.xpath("//*[@id=\"billing-type-selector0\"]/div[1]/a/i"); 
@@ -673,4 +676,50 @@ public class RateEnquiryActions {
 		PageBase.click(By.xpath("//*[@id=\"receiver-selector\"]//*/div[text()='"+Receiver+"']"), 5);
 	}
 	
+	
+	
+	public static void VerifyLineItem(String ItemTemplateName, String BillingType, String pnumberOfItem, String QtyType, String plength, String pwidth, String pheight,
+			String pweight) {
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		Reporter.log("User Verifies Line Items");
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.itemDescriptionType, ItemTemplateName);
+		PageBase.verifyTextExistAttribute(billingTypeTextFeild, BillingType);
+		PageBase.verifyTextExistAttribute(numberOfItemShipmentPage, pnumberOfItem);
+		PageBase.verifyTextExistAttribute(quantityTypeShipmentPage, QtyType);
+		PageBase.verifyTextExistAttribute(BookAPickupActions.length, plength);
+		PageBase.verifyTextExistAttribute(BookAPickupActions.width, pwidth );
+		PageBase.verifyTextExistAttribute(BookAPickupActions.height, pheight);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.weightShipmentPage, pweight);
+	}
+	
+	public static void VerifyLineItemIPEC(String ItemTemplateName, String pnumberOfItem, String plength, String pwidth, String pheight,
+			String pweight) {
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		Reporter.log("User Verifies Line Items");
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.itemDescriptionType, ItemTemplateName);
+		PageBase.verifyTextExistAttribute(numberOfItemShipmentPage, pnumberOfItem);
+		PageBase.verifyTextExistAttribute(BookAPickupActions.length, plength);
+		PageBase.verifyTextExistAttribute(BookAPickupActions.width, pwidth );
+		PageBase.verifyTextExistAttribute(BookAPickupActions.height, pheight);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.weightShipmentPage, pweight);
+	}
+	
+	public static void VerifyLineItemTTAS(String ItemTemplateName, String pnumberOfItem, String QtyType, String plength, String pwidth, String pheight,
+			String pweight) {
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		Reporter.log("User Verifies Line Items");
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.itemDescriptionType, ItemTemplateName);
+		PageBase.verifyTextExistAttribute(numberOfItemShipmentPage, pnumberOfItem);
+		PageBase.verifyTextExistAttribute(quantityTypeShipmentPage, QtyType);
+		PageBase.verifyTextExistAttribute(BookAPickupActions.length, plength);
+		PageBase.verifyTextExistAttribute(BookAPickupActions.width, pwidth );
+		PageBase.verifyTextExistAttribute(BookAPickupActions.height, pheight);
+		PageBase.verifyTextExistAttribute(RateEnquiryActions.weightShipmentPage, pweight);
+	}
 }
