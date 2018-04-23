@@ -350,8 +350,8 @@ public class IntermodalSpecializedTest {
 
 	}
 
-	@Test(priority=-7)
-	//@Test(groups = { "Shakeout Testing","E2E" })
+	//@Test(priority=-7)
+	@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER", "ServiceDGFCL", "ServiceExpress", "AccountNumberTollNQX",
 			"ItemTemplateName2", "Company", "ItemTemplateName", "ChargeToAccount", "NumberOfItems", "Length",
 			"Width", "Height", "Weight", "DGGoodsYes", "DGGoodsNo", "FoodItems", "palletSpace", "Destination","DestinationPostcode",

@@ -26,7 +26,7 @@ public class BaseWebdriver {
 	public static String PreprodUrl="https://www-ppd.mytoll.com/";  
 	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
 	public static String SitUrl= "https://ps.mytoll.com/"; 
-	
+	public static String SalesForce= "https://test.salesforce.com/"; 
 
 	// Preprod users
 	public static String Username1="SitAutomationuser@yahoo.com"; 
@@ -45,10 +45,13 @@ public class BaseWebdriver {
 	public static String PerformenceUsername1="perftest@toll.com";
 	
 	//Passwords
-
 	public static String Password="Toll@123";  
 	public static String PerformancePassword="Victoria@123"; 
-
+	public static String SalesforcePassword="tolTOL987(*&$";
+	
+	//Salesforce 
+	public static String SalesforceUser="nadiki.perera@tollgroup.com.tollperf";
+	
 	
 	@BeforeMethod
 	public static void RunSetup(String browser) throws Exception {
@@ -107,9 +110,7 @@ public class BaseWebdriver {
 
 	@BeforeMethod
 	public static void setUp() throws Exception {
-		//DesiredCapabilities capabilities = new DesiredCapabilities();
-		//System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (2)\\chromedriver.exe");
-		//BaseWebdriver.driver = new ChromeDriver();
+		
 		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (4)\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
 		MyTollHomePageActions.LaunchMyToll(SitUrl);
@@ -120,6 +121,16 @@ public class BaseWebdriver {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 	}
+	
+	public static void LaunchSalesforce() throws Exception {
+		
+		MyTollHomePageActions.LaunchMyToll(SalesForce);
+
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.manage().window().maximize();
+		
+	}
+	
 
 	@AfterMethod
 	public static void tearDown() throws Exception {

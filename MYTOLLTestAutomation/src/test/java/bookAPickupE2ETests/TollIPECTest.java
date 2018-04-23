@@ -2,6 +2,8 @@ package bookAPickupE2ETests;
 
 import GlobalActions.GlobalVariables;
 import GlobalActions.PageBase;
+import SalesforceActions.SalesforceActions;
+
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
@@ -92,10 +94,10 @@ public class TollIPECTest {
 	@Parameters({ "TollCarrierTollIPEC", "AccountNumberTIPEC","ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
 			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
-	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress_ConfirmedDetails(String TollCarrier, String AccountNumberTIPEC,
+	public void BookAPickup_TollIPEC_E2ETest_TID_1032_Service_RoadExpress_ConfirmedDetails_SalesforceVerification(String TollCarrier, String AccountNumberTIPEC,
 			String ServiceRoadExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
-			String specialIns) {
+			String specialIns) throws Exception {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -143,7 +145,18 @@ public class TollIPECTest {
 		ReviewYourPickupActions.ClickConfirmPickup();
 
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
-		//BookAPickupActions.GetReferenceNumber();
+		String reference=BookAPickupActions.GetReferenceNumber();
+		int lengthRefrence=reference.length();
+		String ReferenceNumber=reference.substring(18, lengthRefrence);
+		System.out.println("Book A Pickup reference  " + reference);
+		System.out.println("ReferenceNumber " + ReferenceNumber);
+		BaseWebdriver.LaunchSalesforce();
+		SalesforceActions.LoginSalesforce(BaseWebdriver.SalesforceUser,BaseWebdriver.SalesforcePassword);
+		SalesforceActions.ClickLocation();
+		SalesforceActions.searchPickup(ReferenceNumber);
+		SalesforceActions.searchPickup(ReferenceNumber);
+		SalesforceActions.ClickSearchResultsNumber();
+		
 	}
 
 	@AfterMethod

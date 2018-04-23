@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import GlobalActions.GlobalVariables;
 import GlobalActions.PageBase;
+import SalesforceActions.SalesforceActions;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import myTollHomePageActions.MyTollHomePageActions;
@@ -134,16 +135,17 @@ public class TollPriorityNZTest {
 
 	}
 
+	//@Test(priority=-7)
 	@Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "AccountNumberTollPrioNZ", "locationIndex","ReceiverTGX",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "DGGoodsNo", "palletSpace",
 			"reference", "DestinationNZ", "DestinationNZPostcode", "DestinationNZItem", "specialIns" })
 
-	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_ParcelsOffPeak(String TollCarrier,
+	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_ParcelsOffPeak_SalesforceVerification(String TollCarrier,
 			String ServiceParcelsOffPeak, String AccountNumberTollPrioNZ, Integer locationIndex,String Receiver,
 			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight,
 			String DGGoodsNo, String palletSpace, String reference, String destination, String DestinationNZPostcode,
-			String destinationItem, String specialIns) {
+			String destinationItem, String specialIns) throws Exception {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -227,7 +229,18 @@ public class TollPriorityNZTest {
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
-		// BookAPickupActions.GetReferenceNumber();
+		String reference1=BookAPickupActions.GetReferenceNumber();
+		int lengthRefrence=reference1.length();
+		String ReferenceNumber=reference1.substring(18, lengthRefrence);
+		System.out.println("Book A Pickup reference  " + reference1);
+		System.out.println("ReferenceNumber " + ReferenceNumber);
+		BaseWebdriver.LaunchSalesforce();
+		SalesforceActions.LoginSalesforce(BaseWebdriver.SalesforceUser,BaseWebdriver.SalesforcePassword);
+		SalesforceActions.ClickLocation();
+		SalesforceActions.searchPickup(ReferenceNumber);
+		SalesforceActions.searchPickup(ReferenceNumber);
+		SalesforceActions.ClickSearchResultsNumber();
+		
 
 	}
 
