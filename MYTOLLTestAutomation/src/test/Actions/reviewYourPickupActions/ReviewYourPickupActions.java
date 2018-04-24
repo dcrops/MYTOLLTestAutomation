@@ -618,7 +618,7 @@ public class ReviewYourPickupActions {
 			System.out.println("Cannot Edit This page");
 
 		}
-	}
+	}//*[@id="book-a-pickup-placeholder"]/div[1]/div[1]/div[1]/div[3]/span/span
 
 	public static String VerifyConfirmPickupDetails(String userName) {
 		// assertEquals("PICKUP Submitted",
@@ -629,7 +629,7 @@ public class ReviewYourPickupActions {
 		assertEquals("In transit", BaseWebdriver.driver.findElement(intransit).getText());
 		assertEquals("Out for delivery", BaseWebdriver.driver.findElement(outForDeliveryLable).getText());
 		assertEquals("Delivered", BaseWebdriver.driver.findElement(deliveredLable).getText());
-		// BookAPickupActions.GetReferenceNumber() ;
+		 BookAPickupActions.GetReferenceNumber() ;
 		String Emailable = "We have sent you an email confirming your pickup booking to:";
 		// assertEquals(Emailable.replaceAll("\\s", "")+userName
 		// , BaseWebdriver.driver.findElement(emailLable).getText().replaceAll("\\s",
@@ -637,6 +637,14 @@ public class ReviewYourPickupActions {
 		// assertEquals(userName,
 		// BaseWebdriver.driver.findElement(emailAddress).getText());
 		return BaseWebdriver.driver.findElement(emailAddress).getText();
+	}
+	
+	public static void VerifyRefrenceNumberContainsTW() {
+		
+		 String ref=BookAPickupActions.GetReferenceNumber();
+		 Boolean results=ref.contains("TW");
+		 assertEquals(true, results);
+		 
 	}
 
 	public static void VerifyEmailableMessage(String EmailableMsg) {

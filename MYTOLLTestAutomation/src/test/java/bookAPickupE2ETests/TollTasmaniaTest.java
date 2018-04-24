@@ -209,17 +209,16 @@ public class TollTasmaniaTest {
 		BookAPickupActions.VerifyTollCarrier(TollCarrier);
 
 		BookAPickupActions.SelectLocation2(locationIndex);
-
 		String company = BookAPickupActions.GetCompany();
-		System.out.println(company);
-		String location = BookAPickupActions.GetLocation(1);
+		System.out.println("company"+company);
+		String location = BookAPickupActions.GetLocation();
 		System.out.println(location);
-		String locationLine2 = BookAPickupActions.GetLocationAddressLine2(1);
-		System.out.println(locationLine2);
+		String locationLine2 = BookAPickupActions.GetLocationAddressLine2().replaceAll("\\s", "");
+		System.out.println("locationLine2"+locationLine2);
 		String addressPhoneNumber = BookAPickupActions.GetAddressPhoneNumber(1);
 		System.out.println(addressPhoneNumber);
 		String companyLocation = location + locationLine2;
-		System.out.println(location + " " + locationLine2);
+		System.out.println(location + locationLine2);
 		String name = BookAPickupActions.GetName();
 
 		System.out.println("name" + name);
@@ -285,6 +284,8 @@ public class TollTasmaniaTest {
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MoveToElement(BookAPickupActions.weight,BookAPickupActions.length);
+
+		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.SelectDispatchDateTomorrow();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);
@@ -317,7 +318,10 @@ public class TollTasmaniaTest {
 
 		ReviewYourPickupActions.ClickConfirmPickup();
 		String reference = ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
+		ReviewYourPickupActions.VerifyRefrenceNumberContainsTW();
 		System.out.println("Book A Pickup reference  " + reference);
+		
+		
 	}
 
 	@Test(groups = { "E2E" })
@@ -546,6 +550,8 @@ public class TollTasmaniaTest {
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MoveToElement(BookAPickupActions.weight,BookAPickupActions.length);
+
+		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.SelectDispatchDateTomorrow();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);

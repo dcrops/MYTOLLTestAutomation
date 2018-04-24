@@ -34,7 +34,7 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
   When User selects a Draft Shipment
   Then User can see all data in the draft shipment transferred to the 'Create Shipment' page
   | TollCarrier              | Service | AccountNumber |
-  | Intermodal & Specialised | Express |        137289 |
+  | Intermodal & Specialised | Express |        137289, MUMME TOOLS PTY LTD, LONSDALE, SA |
   When User changes either of the fields
   | TollCarrier              | Service | AccountNumber |
   | Intermodal & Specialised | Express |        371065 |
@@ -172,7 +172,7 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
   When User selects a Draft Shipment
   Then User can see all data in the draft shipment transferred to the 'Create Shipment' page
   | TollCarrier   | Service | AccountNumber |
-  | Toll Tasmania | Express |        100428 |
+  | Toll Tasmania | Express |        100428, BRIDGESTONE AUST LTD (TYRES), ALTONA NORTH, VIC |
   When User changes either of the fields
   | TollCarrier   | Service | AccountNumber |
   | Toll Tasmania | Express |        107573 |

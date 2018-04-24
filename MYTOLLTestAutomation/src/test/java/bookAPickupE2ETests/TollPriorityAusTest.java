@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import GlobalActions.GlobalVariables;
 import GlobalActions.PageBase;
+import SalesforceActions.SalesforceActions;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import manifestActions.ManifestActions;
@@ -25,20 +26,20 @@ public class TollPriorityAusTest {
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}
 
-	
+	//@Test(priority=-7)
 	@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country",
 			"AddressLine1", "AddressLine2", "Suburb1", "Suburb1Option", "Postcode1", "Email", "PhoneNumber",
 			"PhoneCountry1", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "DGGoodsNo",
 			"palletSpace", "reference", "Destination", "DestinationItem", "DestinationPostcode", "specialIns" })
 
-	public void BookAPickup_TollPriority_AUS_E2ETest_TID_620_Service_ServiceParcelsOffPeak(String TollCarrier,
+	public void BookAPickup_TollPriority_AUS_E2ETest_TID_620_Service_ServiceParcelsOffPeak_SalesforceVerification(String TollCarrier,
 			String ServiceParcelsOffPeak, String AccountNumberTollPrioAu, String location, String Country,
 			String AddressLine1, String AddressLine2, String Suburb1, String Suburb1Option, String Postcode1,
 			String Email, String PhoneNumber, String PhoneCountry1, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String DGGoodsNo, String palletSpace,
 			String reference, String destination, String DestinationItem, String DestinationPostcode,
-			String specialIns) {
+			String specialIns) throws Exception {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
@@ -120,7 +121,7 @@ public class TollPriorityAusTest {
 		// BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 
-		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, accountNumber, location,
+		ReviewYourPickupActions.VerifyPickupDetails(TollCarrier, AccountNumberTollPrioAu, location,
 				"ABC CDE MELBOURNE VIC 3004 AU", name, userPhoneNumber, readyTime, closingTime, specialInstruction);
 		ReviewYourPickupActions.VerifyItemDetails1TollPrioAU("0", "ITEM DETAILS", "Box / Carton", DestinationPostcode,
 				ServiceParcelsOffPeak, NumberOfItems, Length, Width, Height, TotalWeight, DGGoodsNo);
@@ -128,6 +129,17 @@ public class TollPriorityAusTest {
 		// Confirm Pickup and Verify pickup confirmation details
 		ReviewYourPickupActions.ClickConfirmPickup();
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
+		String reference1=BookAPickupActions.GetReferenceNumber();
+		int lengthRefrence=reference1.length();
+		String ReferenceNumber=reference1.substring(18, lengthRefrence);
+		System.out.println("Book A Pickup reference  " + reference1);
+		System.out.println("ReferenceNumber " + ReferenceNumber);
+		BaseWebdriver.LaunchSalesforce();
+		SalesforceActions.LoginSalesforce(BaseWebdriver.SalesforceUser,BaseWebdriver.SalesforcePassword);
+		SalesforceActions.ClickLocation();
+		SalesforceActions.searchPickup(ReferenceNumber);
+		SalesforceActions.searchPickup(ReferenceNumber);
+		SalesforceActions.ClickSearchResultsNumber();
 
 	}
 

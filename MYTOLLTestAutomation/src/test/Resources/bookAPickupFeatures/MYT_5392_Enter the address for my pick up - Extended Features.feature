@@ -3,20 +3,20 @@ Feature: MYT-5392 Enter the address for my pick up - Extended Features
   Background: 
     Given User is Registered in MyToll and is on Book a pickup page
 
-  #Scenario: User Add Suburb and Postcode for Sender Address in Toll Tasmania from 'Book a pickup' page
-    #When User selects Toll Carrier and Account Number
-      #| TollCarrier              | AccountNumber |
-      #| Intermodal & Specialised |        371065 |
-    #When User selects NO I am located at the pick up location option
-    #And User be able to add Suburb with string max 40 and Postcode with 4 Strings for Sender Address
-      #| CompanyName | AddressLine1       | AddressLine2 | Suburb                                   | SuburbItem               | Postcode | State |
-      #| AccessHQ    | 60, Collins Street | CDE          | H012345678901234567890123456789012345678 | 3000, MELBOURNE, VIC, AU |     7001 | VIC   |
-    #And User be able to add Suburb and Postcode for Sender Address
-      #| CompanyName | AddressLine1       | AddressLine2 | Suburb    | SuburbItem               | Postcode | State |
-      #| AccessHQ    | 60, Collins Street | CDE          | Melbourne | 3000, MELBOURNE, VIC, AU |     1024 | VIC   |
-    #Then User able to see modified address in MY Contacts in My Profile
-      #| CompanyName | Name         | Email                       | CountryCode | PhoneNumber | AddressLine1       |
-      #| AccessHQ    | John William | NNAutomationuser1@gmail.com | 61-         |  0452456876 | 60, Collins Street |
+  Scenario: User Add Suburb and Postcode for Sender Address in Toll Tasmania from 'Book a pickup' page
+    When User selects Toll Carrier and Account Number
+      | TollCarrier              | AccountNumber |
+      | Intermodal & Specialised |        371065 |
+    When User selects NO I am located at the pick up location option
+    And User be able to add Suburb with string max 40 and Postcode with 4 Strings for Sender Address
+      | CompanyName | AddressLine1       | AddressLine2 | Suburb                                   | SuburbItem               | Postcode | State |
+      | AccessHQ    | 60, Collins Street | CDE          | H012345678901234567890123456789012345678 | 3000, MELBOURNE, VIC, AU |     7001 | VIC   |
+    And User be able to add Suburb and Postcode for Sender Address
+      | CompanyName | AddressLine1       | AddressLine2 | Suburb    | SuburbItem               | Postcode | State |
+      | AccessHQ    | 60, Collins Street | CDE          | Melbourne | 3000, MELBOURNE, VIC, AU |     1024 | VIC   |
+    Then User able to see modified address in MY Contacts in My Profile
+      | CompanyName | Name         | Email                       | CountryCode | PhoneNumber | AddressLine1       |
+      | AccessHQ    | John William | NNAutomationuser1@gmail.com | 61-         |  0452456876 | 60, Collins Street |
 
   Scenario: User Add Suburb,Postcode,Contact Email, and Description of goods for Sender Address in Toll IPEC from 'Book a pickup' page
 		 When User selects Toll Carrier and Account Number

@@ -193,7 +193,8 @@
 	      
 
 	<classes>
-<class name="bookAPickupE2ETests.TollTasmaniaTest" />
+<class name="bookAPickupE2ETests.TollPriorityNZTest" 
+			/>
 		</classes>
 		<!-- Blocked> <classes>   <class name="bookAPickupE2ETests.TollPriorityNZTest" 
 			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 

@@ -8,7 +8,7 @@ Feature: MYT-3765 Expanding the charges for an invoice
   Scenario: User wants to expand the Charges section of an invoice to view and access my connotes for the invoice in TDF
     When User selects below Toll carrier and the account that has full financial access
       | TollCarrier              | AccountNumber |
-      | Intermodal & Specialised |        137289 |
+      | Intermodal & Specialised |        137289 MUMME TOOLS PTY LTD |
     When User selects Search Type as below
       | SearchType |
       | Invoice    |

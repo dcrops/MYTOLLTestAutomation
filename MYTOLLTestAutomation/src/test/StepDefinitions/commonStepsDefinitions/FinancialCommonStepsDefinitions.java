@@ -40,7 +40,7 @@ public class FinancialCommonStepsDefinitions {
 			PageBase.MaximumWaitForElementEnabled();
 			FinanceActions.EnterTollCarrier(finance.get("TollCarrier"));
 			PageBase.MaximumWaitForElementEnabled();
-			FinanceActions.EnterAccountNumber(finance.get("AccountNumber"));
+			FinanceActions.EnterAccountNumberWithName(finance.get("AccountNumber"));
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();

@@ -278,7 +278,7 @@ public class BookAPickupActions {
 
 	public static By confirmPickupBtn = By.id("submit-pickup");
 	public static By pickUpReferenceNumber = By
-			.xpath("//*[@id=\"book-a-pickup-placeholder\"]//*//span[@class=\"reference-no\"]/span");  
+			.xpath("//*[@id=\"book-a-pickup-placeholder\"]//*//span[@class=\"reference-no\"]/span");  //*[@id="book-a-pickup-placeholder"]/div[1]/div[1]/div[1]/div[3]/span/span
 	public static String pressARROW_DOWN = Keys.chord(Keys.ARROW_DOWN);
 	public static String pressEnter = Keys.chord(Keys.ENTER);
 	public static String pressTab = Keys.chord(Keys.TAB);
@@ -626,7 +626,17 @@ public class BookAPickupActions {
 
 	public static String GetAccountNumber() {
 		PageBase.MinimumWaitForElementEnabled();
-		String accountNo = BaseWebdriver.driver.findElement(accountNumber).getAttribute("value");
+		String accountNo = BaseWebdriver.driver.findElement(accountNumber).getAttribute("value").replaceAll("[^0-9]+", "");
+		System.out.println(accountNo);
+		/*StringBuilder builder= new StringBuilder();
+		for (int i=0; i<=accountNo.length(); i++)
+		{
+			char ch=accountNo.charAt(i);
+			if(Character.isDigit(ch))
+			{
+				builder.append(ch);
+			}
+		}*/
 		return accountNo;
 
 	}
@@ -645,7 +655,7 @@ public class BookAPickupActions {
 	public static String GetCompany() {
 		PageBase.MinimumWaitForElementEnabled();
 		//BaseWebdriver.driver.findElement(locationDropdown).click();
-		return  PageBase.GetText(location, 5);
+		return  PageBase.GetAttributeValue(location, 5);//*[@id="location-selector"]/div[1]/div[2]  //*[@id="location-selector"]/div[1]/div[4]
 
 	}
 
@@ -661,7 +671,7 @@ public class BookAPickupActions {
 	public static String GetLocation() {
 		PageBase.MaximumWaitForElementEnabled();
 		String vLocation = BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[2]")).getText();
+				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[3]")).getText();//*[@id="location-selector"]/div[1]/div[3]
 		return vLocation;
 
 	}
@@ -678,7 +688,7 @@ public class BookAPickupActions {
 	public static String GetLocationAddressLine2() {
 		PageBase.MaximumWaitForElementEnabled();
 		String vLocationAddressLine2 = BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[3]")).getText();
+				.findElement(By.xpath("//*[@id=\"location-selector\"]/div[1]/div[4]")).getText();
 		return vLocationAddressLine2;
 
 	}
@@ -869,31 +879,19 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(destination).click();
 		BaseWebdriver.driver.findElement(destination).clear();
 		BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
-		// action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField),
-		// pressSpace).perform();
 		PageBase.MaximumWaitForElementEnabled();
 		try {
-			
-			
+						
 			PageBase.retryingFindClick(
 					By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[2]/div"));
+			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
 		}
 
 		catch (Exception ex) {
 			// SelectDestinationOnReviewBookAPickup(pDestination+" ");
 		}
-		/*
-		 * PageBase.MaximumWaitForElementEnabled();
-		 * PageBase.retryingFindClick(destination);
-		 * PageBase.waitForElement(BaseWebdriver.driver.findElement(destination), 10);
-		 * BaseWebdriver.driver.findElement(destination).clear();
-		 * BaseWebdriver.driver.findElement(destination).sendKeys(pDestination);
-		 * PageBase.MaximumWaitForElementEnabled();
-		 * BaseWebdriver.driver.findElement(By.xpath(
-		 * "//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li[text()='"+
-		 * pDestination+"']")).click(); PageBase.retryingFindClick(destinationaddress);
-		 */
+	
 
 	}
 	
@@ -904,10 +902,14 @@ public class BookAPickupActions {
 		System.out.println("Destinations"+ Destination);
 		if (pDestination.equalsIgnoreCase(Destination)==false) {
 		SelectDestination(pDestination);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		}
 		
 		else {
 			System.out.println("Destinations are equal");
+			PageBase.MaximumWaitForElementEnabled();
 		}
 	}
 
@@ -1361,7 +1363,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(addANewLine).click();
 		// BaseWebdriver.driver.manage().timeouts().pageLoadTimeout(20,
 		// TimeUnit.SECONDS);
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BookAPickupActions.EnterService(pService);
 		BookAPickupActions.EnterItem(pItemTemplateName);
 		BookAPickupActions.SelectModeItem(1);
@@ -1384,7 +1386,7 @@ public class BookAPickupActions {
 
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 		PageBase.ClickOn(addANewLine, 10);
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BookAPickupActions.EnterService(pService);
 		BookAPickupActions.EnterItem(pItemTemplateName);
 		BookAPickupActions.EnterQuantity(pNumberOfItems);
@@ -1407,6 +1409,7 @@ public class BookAPickupActions {
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
 
 		BaseWebdriver.driver.findElement(addANewLine).click();
+		PageBase.MaximumWaitForElementEnabled();
 		BookAPickupActions.EnterItem("Automation Temp1");
 		BookAPickupActions.Selectservice(2);
 		BookAPickupActions.SelectDestination("melb");
@@ -1542,8 +1545,7 @@ public class BookAPickupActions {
 	public static String GetReferenceNumber() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		String referenceNumber = BaseWebdriver.driver.findElement(pickUpReferenceNumber).getAttribute("value")
-				.toString();
+		String referenceNumber = PageBase.GetText(By.xpath("//*[@id=\"book-a-pickup-placeholder\"]/div[1]/div[1]/div[1]/div[3]/span"), 5);
 		System.out.println("Reference Number "+ referenceNumber);
 		return referenceNumber;
 

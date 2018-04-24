@@ -340,18 +340,11 @@
 			value="Shipment contain dangerous goods" />
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 
-<groups>    
-         <run>
-      
-          
-            <include name = "E2E"/>
-         </run>
-         
-      </groups>
-      
-      <classes>
-     <class name="createShipmentE2ETests.TollIPECTests" />
-      </classes>
+	<classes>
+ <class name="createShipmentE2ETests.TollPriorityAUSTests" />
+		</classes>
+
+     
 	
 
 		<!-- Blocked><classes>
@@ -362,8 +355,8 @@
 		  <class name="createShipmentE2ETests.TollPriorityNZ" />
 			 <class name="createShipmentE2ETests.TollIPECTests" /> <class name="createShipmentE2ETests.TollPriorityAUSTests" 
 			/> <class name="createShipmentE2ETests.TollTasmaniaTests" /> <class name="createShipmentE2ETests.TollIntermodalTests_AddAdress" 
-			/> 
-	</classes> </Blocked -->
+			/> </Blocked -->
+	
 
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

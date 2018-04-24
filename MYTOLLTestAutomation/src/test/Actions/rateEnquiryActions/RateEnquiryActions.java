@@ -149,8 +149,8 @@ public class RateEnquiryActions {
 	
 	public static void SelectMode(String mode) {
 		Reporter.log("User Selects Mode - "+mode);
-		PageBase.click(selectMode, 5);
-		PageBase.click(By.xpath("//*[@id=\"mode-selector\"]/div/ul/li/div[text()='"+mode+"']"), 5);
+		//PageBase.click(selectMode, 5);
+		//PageBase.click(By.xpath("//*[@id=\"mode-selector\"]/div/ul/li/div[text()='"+mode+"']"), 5);
 	}
 
 	public static void SelectOriginSuburbPostcode(int j) {
