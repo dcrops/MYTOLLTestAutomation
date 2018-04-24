@@ -558,6 +558,21 @@ public class CreateShipmentActions {
 			SelectNotifySenderAndReceiver();
 		}
 	}
+	
+	public static void SelectShipmentConsolidation() {
+		try {
+			PageBase.MaximumWaitForElementEnabled();
+			Boolean results = BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).isDisplayed();
+			if (results == true) {
+				BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).click();
+				PageBase.MaximumWaitForElementEnabled(); 
+			}
+		}
+
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
+	}
 
 	public static void MessageEnterLineItemShipmentConsolidation(String pItemTemplateName, String pBillingType,
 			String pNumberOfItems, String pShipmentRef1, String pShipmentRef2, String pLength, String pWidth,

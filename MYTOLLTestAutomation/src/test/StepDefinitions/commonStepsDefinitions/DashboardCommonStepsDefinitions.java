@@ -96,7 +96,7 @@ public class DashboardCommonStepsDefinitions {
 			PageBase.MediumWaitForElementEnabled_1();
 			PageBase.MediumWaitForElementEnabled_1();
 			PageBase.MediumWaitForElementEnabled_1();
-			CreateShipmentActions.SelectShipmentConsolidationContinue();
+			CreateShipmentActions.SelectShipmentConsolidation();
 		}
 	}
 	
@@ -223,6 +223,27 @@ public class DashboardCommonStepsDefinitions {
 	public void UserConfirmsDeleteSavedSearch() throws Throwable {
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(MyTollHomePageActions.DeleteSaveSearchConfirm, 5);
+	}
+	
+	
+	@Given("^User is Registered in MyToll and is on My Dashboard$")
+	public void user_is_Registered_in_MyToll_and_is_on_My_Dashboard() throws Throwable {
+
+		BaseWebdriver.setUp();
+		PageBase.MediumWaitForElementEnabled();
+		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
+		PageBase.MediumWaitForElementEnabled();
+	}
+	
+	@Given("^User is Registered in MyToll and is on Shipment Page - Commercial Invoice$")
+	public void user_is_Registered_in_MyToll_and_is_on_Shipment_page_Commercial_Invoice() throws Throwable {
+
+		BaseWebdriver.setUp();
+		PageBase.MediumWaitForElementEnabled();
+		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
+		PageBase.MediumWaitForElementEnabled();
+		MyTollHomePageActions.ClickMenu();
+		CreateShipmentActions.ClickShipment();
 	}
 
 }
