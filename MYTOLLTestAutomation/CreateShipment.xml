@@ -38,7 +38,7 @@
 		<parameter name="AccountNumberTINTER" value="371065" />
 		<parameter name="AccountNumberTNQX" value="371065" />
 		<parameter name="AccountNumberTTas" value="100428" />
-		<parameter name="AccountNumberTIPEC" value="FC3333" />
+		<parameter name="AccountNumberTIPEC" value="2230899" />
 		
 		<parameter name="AccountNumberTollPrioAu" value="200BHY" />
 		<parameter name="AccountNumberTollPrioNZ" value="100181" />
@@ -105,7 +105,7 @@
 		<parameter name="Sender" value="1" />
 		<parameter name="ReceiverName" value="Test" />
 		<parameter name="ReceiverItem" value="Toll Group Test" />
-		<parameter name="SenderEmail" value="CF@TEST.COM" />
+		<parameter name="SenderEmail" value="nadiki.perera@tollgroup.com" />
 		<parameter name="ReceiverEmail" value="NNAutomationuser2@gmail.com" />
 		<parameter name="ShipmentRef1" value="12345" />
 		<parameter name="ShipmentRef2" value="567879" />
@@ -206,7 +206,6 @@
 		<parameter name="AccountNumberTINTER" value="371065" />
 		<parameter name="AccountNumberTollNQX" value="371065" />
 		<parameter name="AccountNumberTollTas" value="100428" />
-		<parameter name="AccountNumberTIPEC" value="FC3333" />
 		<parameter name="AccountNumberTollPrioAu" value="200BHY" />
 		<parameter name="AccountNumberTollPrioNZ" value="100181" />
 		<parameter name="SenderName" value="COLLINS" />
@@ -341,7 +340,7 @@
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
 
 	<classes>
- <class name="createShipmentE2ETests.TollPriorityAUSTests" />
+ <class name="createShipmentE2ETests.TollTasmaniaTests" />
 		</classes>
 
      

@@ -783,7 +783,7 @@ public class IntermodalSpecializedTest {
 
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
-		BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
+		//BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		PageBase.MaximumWaitForElementEnabled();
 

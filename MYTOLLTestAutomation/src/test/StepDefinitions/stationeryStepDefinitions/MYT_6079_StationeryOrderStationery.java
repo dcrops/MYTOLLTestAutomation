@@ -1,10 +1,17 @@
 package stationeryStepDefinitions;
 
+import static org.testng.Assert.assertEquals;
+
+import java.util.Map;
+
+import bookAPickupActions.BookAPickupActions;
+import createShipmentActions.CreateShipmentActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import myTollHomePageActions.MyTollHomePageActions;
+import stationeryActions.StationeryActions;
 
 public class MYT_6079_StationeryOrderStationery {
 	
@@ -20,33 +27,79 @@ public class MYT_6079_StationeryOrderStationery {
 
 
 	@Then("^User able to select Consignment Notes products and select one of those$")
-	public void user_able_to_select_Consignment_Notes_products_and_select_one_of_those(DataTable arg1) throws Throwable {
+	public void user_able_to_select_Consignment_Notes_products_and_select_one_of_those(DataTable StationeryTestData) throws Throwable {
 	
+		 for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			 MyTollHomePageActions.ClickStationery();
+				StationeryActions.SelectProductCategory(stationery.get("Product"));
+				
+			}
+		
 	}
 
 	@When("^User can increase or Decrease the Qty of a product by (\\d+)$")
-	public void user_can_increase_or_Decrease_the_Qty_of_a_product_by(int arg1, DataTable arg2) throws Throwable {
+	public void user_can_increase_or_Decrease_the_Qty_of_a_product_by(int arg1, DataTable StationeryTestData) throws Throwable {
 	  
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+
+			StationeryActions.IncreaseProductQty();
+			assertEquals(StationeryActions.GetProductQty(),stationery.get("NoOfQtyIncrease"));
+			StationeryActions.DecreaseProductQty();
+			assertEquals(StationeryActions.GetProductQty(),stationery.get("NoOfQtyDecrease"));
+			
+		}
+		
 	}
 
 	@When("^User be able to enter preprint detatil as below$")
-	public void user_be_able_to_enter_preprint_detatil_as_below(DataTable arg1) throws Throwable {
+	public void user_be_able_to_enter_preprint_detatil_as_below(DataTable StationeryTestData) throws Throwable {
 	  
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+
+			StationeryActions.ClickAddPreprintDetails();
+			StationeryActions.ClickPreprintFrom();
+			StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),stationery.get("preprintFromContactName"));
+			StationeryActions.ClickPreprintTo();
+			StationeryActions.EnterPreprintToDetails(stationery.get("PreprintTo"),stationery.get("preprintToContactName"));
+			StationeryActions.ClickAddDetails();
+					
+		}
 	}
 
 	@When("^User be able to edit preprint detatil as below$")
-	public void user_be_able_to_edit_preprint_detatil_as_below(DataTable arg1) throws Throwable {
+	public void user_be_able_to_edit_preprint_detatil_as_below(DataTable StationeryTestData) throws Throwable {
 	 
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+
+			StationeryActions.ClickAddPreprintDetails();
+			StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),stationery.get("preprintFromContactName"));
+			StationeryActions.EnterPreprintToDetails(stationery.get("PreprintTo"),stationery.get("preprintToContactName"));
+			StationeryActions.ClickAddDetails();
+					
+		}
 	}
 
 	@When("^User ADD TO CART a Product$")
-	public void user_ADD_TO_CART_a_Product(DataTable arg1) throws Throwable {
+	public void user_ADD_TO_CART_a_Product() throws Throwable {
 	
+		StationeryActions.ClickAddToCart();
 	}
 
 	@Then("^User be able to see product added to the cart and the number of items in the cart increment by (\\d+)$")
-	public void user_be_able_to_see_product_added_to_the_cart_and_the_number_of_items_in_the_cart_increment_by(int arg1, DataTable arg2) throws Throwable {
-	 
+	public void user_be_able_to_see_product_added_to_the_cart_and_the_number_of_items_in_the_cart_increment_by(int arg1, DataTable StationeryTestData) throws Throwable {
+		
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+
+			assertEquals(StationeryActions.GetNoOfItems(),stationery.get("NoOfItems"));
+			StationeryActions.ClickItems();
+			assertEquals(StationeryActions.GetproductNameFromTheCart(),stationery.get("Product"));
+			assertEquals(StationeryActions.GetproductQtyFromTheCart(),stationery.get("NoOfQty"));
+			assertEquals(StationeryActions.GetTotalItemsFromCart(),stationery.get("TotalItems"));
+			
+			StationeryActions.ClickAddDetails();
+					
+		}
+		
 	}
 
 	@When("^User edit product details inside the cart$")

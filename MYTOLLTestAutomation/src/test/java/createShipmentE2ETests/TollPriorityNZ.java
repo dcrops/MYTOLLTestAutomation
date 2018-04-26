@@ -23,7 +23,8 @@ public class TollPriorityNZ {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(priority=-7)
+	//@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "WhoPays", "whoPays", "Sender", "ReceiverTGX",
 			"QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
@@ -210,8 +211,8 @@ public class TollPriorityNZ {
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
-
-	@Test(groups = {"E2E" })
+	@Test(priority=-6)
+	//@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceGlobalExpressDocuments", "WhoPays", "whoPays", "Sender", "ReceiverTGX",
 			"QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
