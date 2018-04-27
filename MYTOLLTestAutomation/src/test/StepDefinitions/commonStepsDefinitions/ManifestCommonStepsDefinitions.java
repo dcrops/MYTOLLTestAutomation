@@ -204,6 +204,8 @@ public class ManifestCommonStepsDefinitions {
 
 		for (Map<String, String> manifest : manifestTestData.asMaps(String.class, String.class)) {
 			ManifestActions.commercailInvoiceOtherDetails(manifest.get("TypeOfExport"), Integer.parseInt(manifest.get("TermsofTrade")));
+			PageBase.verifyTextExistAttribute(ManifestActions.DeclarationCompanyName, SenderCompanyName);
+			PageBase.verifyTextExistAttribute(ManifestActions.DeclarationContactName, SenderContactName);
 			PageBase.click(ManifestActions.commericalInvoiceSave, 5);
 		}
 	}
