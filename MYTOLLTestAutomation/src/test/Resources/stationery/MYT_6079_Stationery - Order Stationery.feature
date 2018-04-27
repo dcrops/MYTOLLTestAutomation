@@ -8,29 +8,27 @@ Feature: MYT_6079 Stationery - Order Stationery
     Then User must be able to see an option to select Order Stationery
     And User selects Order Stationery
     Then User able to select Consignment Notes products and select one of those
-      | Product                       |
-      | Same Day Consignment (LO6626) |
+      | Product           |
+      | Consignment Notes |
     When User can increase or Decrease the Qty of a product by 5
-      | NoOfQty | NoOfQty |
-      |      30 |      25 |
+      | NoOfQtyIncrease | NoOfQtyDecrease |
+      |              30 |              25 |
     When User be able to enter preprint detatil as below
-      | Preprint From | Prepriny To  |
-      | AccessHQ      | Dialog Group |
+      | PreprintFrom | PreprintTo   | preprintFromContactName | preprintToContactName |
+      | AccessHQ     | Dialog Group | Cath                    | Johnson               |
     And User be able to edit preprint detatil as below
-      | Preprint From | Prepriny To  |
-      | AccessHQ      | Dialog Group |
+      | PreprintFrom  | PreprintTo | preprintFromContactName | preprintToContactName |
+      | Australia Post | AccessHQ    | Anna                    | Anne                  |
     When User ADD TO CART a Product
-      | Product                       |
-      | Same Day Consignment (LO6626) |
     Then User be able to see product added to the cart and the number of items in the cart increment by 1
       | Product                       | NoOfItems | NoOfQty | TotalItems |
-      | Same Day Consignment (LO6626) |         1 |      25 |          1 |
+      | Same Day Consignment (LO6626) |         1 ITEMS |      25 |          1 |
     Then User be able to see product added to the cart and the number of items in the cart increment by 1
       | Product                        | NoOfItems | NoOfQty | TotalItems |
       | Overnight Consignment (LO5133) |         2 |      25 |          2 |
     When User edit product details inside the cart
-      | Preprint From | PreprintFromContactName | Prepriny To  | PreprintToContactName |Message|
-      | AccessHQ      | Anna                    | Dialog Group | Anne                  |Success|
+      | PreprintFrom | PreprintFromContactName | PreprintTo  | PreprintToContactName | Message |
+      | AccessHQ      | Anna                    | Dialog Group | Anne                  | Success |
     When User PROOCEED TO ORDER
     Then User navigates to Enter your stationery delivery details page
       | Page Heading    | Page Description                             |

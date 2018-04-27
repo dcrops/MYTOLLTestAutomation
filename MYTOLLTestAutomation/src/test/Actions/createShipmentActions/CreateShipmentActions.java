@@ -25,12 +25,12 @@ import myTollHomePageActions.MyTollHomePageActions;
 public class CreateShipmentActions {
 
 	public static By createShipmentsHeading = By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/header/div/h1");
-	public static By shipments = By.id("createShipment"); 
-	public static By dispatchDate = By.id("dispatch-date"); 
-	public static By dispatchDateItem = By.xpath("//*[@id=\"create-shipment\"]/div[1]/div/div/div/ul/li[2]"); 
-	public static By servicedropdown = By.xpath("//*[@id=\"service-selector\"]/label/a/i"); 
-	public static By serviceTextfield = By.name("placeholder-service"); //*[@id="service-selector"]/label/input[2]
-	public static By servicedropdownItemList = By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div"); 
+	public static By shipments = By.id("createShipment");
+	public static By dispatchDate = By.id("dispatch-date");
+	public static By dispatchDateItem = By.xpath("//*[@id=\"create-shipment\"]/div[1]/div/div/div/ul/li[2]");
+	public static By servicedropdown = By.xpath("//*[@id=\"service-selector\"]/label/a/i");
+	public static By serviceTextfield = By.name("placeholder-service"); // *[@id="service-selector"]/label/input[2]
+	public static By servicedropdownItemList = By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div");
 	public static By mode = By.xpath("//*[@id=\"mode-selector\"]/div[1]/a/i");
 	public static By TempretureTypeDropdown = By.xpath("//*[@id=\"refrigeration-type-selector\"]/div[1]/a/i");
 	public static By TempretureTypeTextField = By.name("placeholder-refrigeration-type");
@@ -39,14 +39,14 @@ public class CreateShipmentActions {
 	public static By whoPaysdropdown = By.xpath("//*[@id=\"payer-selector\"]/label/a/i");
 	public static By senderdropdown = By.xpath("//*[@id=\"sender-selector\"]/label/a/i");
 	public static By accountNumber = By.name("account-text");
-	public static By receiverdropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i"); 
+	public static By receiverdropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i");
 	public static By senderTextfield = By.name("placeholder-location");
 
-	public static By receiverTextfield = By.xpath("//*[@id=\"receiver-selector\"]/label/input[2]"); 
+	public static By receiverTextfield = By.xpath("//*[@id=\"receiver-selector\"]/label/input[2]");
 	public static By shipmentConsolidatedMSGHeading = By
-			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/header/h2"); 
-	public static By shipmentConsolidatedRadioBtn = By.name("shipmentcon"); 
-																			
+			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/header/h2");
+	public static By shipmentConsolidatedRadioBtn = By.name("shipmentcon");
+
 	public static By shipmentConsolidatedArrowdown = By
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]");
 	public static By shipmentConsolidatedContinue = By
@@ -75,8 +75,8 @@ public class CreateShipmentActions {
 	public static By senderReference = By.id("sender-reference");
 	public static By receiverReference = By.id("reciever-reference");
 	public static By numberOfItem = By.id("quantity");
-	public static By itemType = By.xpath("//*[@id=\"outr-pkg-selector\"]/div[1]/a");
-	public static By itemTypeTextField = By.xpath("//*[@id=\"outr-pkg-selector\"]/div[1]/input[2]");
+	public static By itemType = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/a/i");
+	public static By itemTypeTextField = By.xpath("billing-type-description");
 	public static By numberOfGarments = By.id("garmentsCount");
 	public static By weight = By.id("weight");
 	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector\"]/label/a/i");
@@ -88,8 +88,8 @@ public class CreateShipmentActions {
 	public static By packingGroup = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/input[2]");
 	public static By subRisk = By.xpath("//*[@id=\"sub-risk-selector-\"]/label/input[2]");
 	public static By properShippingName = By.id("shipping-name-");
-	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i"); 
-	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li[2]/div"); 
+	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i");
+	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li[2]/div");
 	public static By dgPackagingDescription = By.id("packing-description-");
 	public static By dgPkgQty = By.id("dg-pkg-qty-");
 	public static By dgQtyKg = By.id("dg-qty-");
@@ -124,7 +124,7 @@ public class CreateShipmentActions {
 	public static By addPurchaseOrderBtn = By.xpath("//*[@id=\"add-po\"]/i");
 	public static By deletePurchaseOrderBtn = By.xpath("//*[@id=\"po-values\"]/li/a");
 	public static By tollExtraSrviceNOBtn = By.id("toll-extra-service-check");
-	public static By foodPackagingNOBtn = By.xpath("//*[@id=\"steps-3\"]/div[8]/div[1]/div/label/span[2]"); 
+	public static By foodPackagingNOBtn = By.xpath("//*[@id=\"steps-3\"]/div[8]/div[1]/div/label/span[2]");
 	public static By authorityToLeaveNoBtn = By.xpath("//*[@id=\"steps-3\"]/div[5]/div/div[2]/label/span[2]");
 	public static By tollExtraSrviceAmount = By.id("toll-extra-service");
 	public static By reviewCreateShipmentBtn = By.id("create-shipment-btn");
@@ -157,22 +157,23 @@ public class CreateShipmentActions {
 	public static By QuickEntryMode = By.xpath("//*[@id=\"quick-entry-wrapper\"]/div[2]/label/span[2]");
 	public static By billingTypeQME = By.id("gv-billing-type");
 	public static By enterVolumeCheckBoxQME = By.id("gv-volume-only-chkbox");
-	public static By itemTypeQME = By.xpath("//*[@id=\"gv-outr-pkg-selector\"]/div[1]/input[2]"); 
+	public static By itemTypeQME = By.xpath("//*[@id=\"gv-outr-pkg-selector\"]/div[1]/input[2]");
 	public static By senderReferenceQME = By.id("sender-reference");
-	public static By receiverReferenceQME = By.id("reciever-reference"); 
-	public static By PackingGroupQME=By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/label/input[2]");
-	
-	//Save as a draft  
-	public static By saveDraft = By.id("save-draft-btn"); 
+	public static By receiverReferenceQME = By.id("reciever-reference");
+	public static By PackingGroupQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/label/input[2]");
+
+	// Save as a draft
+	public static By saveDraft = By.id("save-draft-btn");
 	public static By saveDraftSuccessfulMessage = By.xpath("//*[@id=\"confirm-box-wrapper\"]/div/div[1]/div[2]/p");
-	public static By goToMyDashboardBtn = By.id("confirm-true"); 
-	public static By goBackBtn = By.id("confirm-false");  
+	public static By goToMyDashboardBtn = By.id("confirm-true");
+	public static By goBackBtn = By.id("confirm-false");
 	public static By draftShipmentTabInMyDashboard = By.xpath("//*[@id=\"draftshipmentAnchor\"]/span");
-	public static By draftShipmentList=By.xpath("//*[@id=\"draftShipList\"]/tr"); //*[@id="draftShipList"]
-	public static By deleteButtonDraftShipmenInMyDashboard = By.xpath("//*[@id=\"draftShipList\"]//td/span[@class='draftshipDel']/i");//*[@id="draft1531"]/td[5]/a
+	public static By draftShipmentList = By.xpath("//*[@id=\"draftShipList\"]/tr"); // *[@id="draftShipList"]
+	public static By deleteButtonDraftShipmenInMyDashboard = By
+			.xpath("//*[@id=\"draftShipList\"]//td/span[@class='draftshipDel']/i");// *[@id="draft1531"]/td[5]/a
 	public static By continueDeleteButtonDraftShipmenInMyDashboard = By.id("confirm-true");
-	public static By completeShipmentButtonDraftShipmenInMyDashboard = By.xpath("//*[@id=\"draftShipList\"]/td[5]/a"); 
-	
+	public static By completeShipmentButtonDraftShipmenInMyDashboard = By.xpath("//*[@id=\"draftShipList\"]/td[5]/a");
+
 	public static final String SenderAddressCompanyName = "TestSender";
 	public static final String SenderAddressCompanyAdd = "60 Collins Street, MELBOURNE VIC 3000";
 	public static final String ReceiverAddressCompanyName = "TestReceiver";
@@ -184,14 +185,15 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(shipments).click();
 
 	}
-	
+
 	public static void SelectDispatchDate() {
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.ClickOn(dispatchDate, 5);
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.ClickOn(dispatchDateItem, 5);
-		
+
 	}
+
 	public static void SelectTollCarrierItem(int j) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"BU-selector\"]/label/a/i")).click();
@@ -232,49 +234,53 @@ public class CreateShipmentActions {
 				.click();
 
 	}
-	
+
 	public static String GetService() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		return PageBase.GetAttributeValue(serviceTextfield, 5);
-		
+
 	}
-	
+
 	public static int GetServiceItemListSize() {
 		BaseWebdriver.driver.findElement(servicedropdown).click();
-		 List<WebElement> elements=BaseWebdriver.driver.findElements(servicedropdownItemList);
-		 return elements.size();
+		List<WebElement> elements = BaseWebdriver.driver.findElements(servicedropdownItemList);
+		return elements.size();
 	}
-	
+
 	public static void GetServiceItemList(String serviceItem, int itemIndex) {
 		BaseWebdriver.driver.findElement(servicedropdown).click();
 		String itemList = null;
-		for (int i=1; i<=itemIndex; i++) {
-		itemList=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li["+i+"]/div")).getText(); 
-		System.out.println("from ui"+itemList);
-		assertEquals(serviceItem, itemList);
+		for (int i = 1; i <= itemIndex; i++) {
+			itemList = BaseWebdriver.driver
+					.findElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li[" + i + "]/div")).getText();
+			System.out.println("from ui" + itemList);
+			assertEquals(serviceItem, itemList);
 		}
-	
+
 	}
-	
+
 	public static String SelectMode(int i) {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(mode).click();
-		String mode = BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).getText();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i + "]/div")).click();
+		// BaseWebdriver.driver.findElement(mode).click();
+		// String mode = BaseWebdriver.driver
+		// .findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i +
+		// "]/div")).getText();
+		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li["
+		// + i + "]/div")).click();
+		String mode = "";
 		return mode;
 	}
 
 	public static String SelectModeTasmania() {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(mode).click();
-		String mode = BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li/div")).getText();
+		String mode = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li/div"))
+				.getText();
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li/div")).click();
 		return mode;
 	}
-	
+
 	public static void ClickContinueAccountChangeMsg() {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(acceptAccountChangeMSG).click();
@@ -333,7 +339,7 @@ public class CreateShipmentActions {
 		PageBase.Scrollbar(500, 800);
 		BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()='" + pSender + "']"))
-				.click(); //*[@id="sender-selector"]/div[2]/ul/li[6]/div[1]
+				.click();
 		PageBase.MaximumWaitForElementEnabled();
 
 	}
@@ -347,15 +353,15 @@ public class CreateShipmentActions {
 	}
 
 	public static String GetSenderLocation() {
-		/*PageBase.MinimumWaitForElementEnabled();
+		PageBase.MinimumWaitForElementEnabled();
 		String vSenderLocationLine1 = BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();*/
-		String vSenderLocationLine2 = BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[3]")).getText();
-		//System.out.println(vSenderLocationLine1);
-		//System.out.println(vSenderLocationLine2);
-	//	String SenderLocation = vSenderLocationLine1 + " " + vSenderLocationLine2;
-		return vSenderLocationLine2;
+		String vSenderLocationLine2 = BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[4]")).getText();
+		System.out.println(vSenderLocationLine1);
+		System.out.println(vSenderLocationLine2);
+		String SenderLocation = vSenderLocationLine1 + vSenderLocationLine2;
+		return SenderLocation;
 
 	}
 
@@ -373,7 +379,7 @@ public class CreateShipmentActions {
 		PageBase.Scrollbar(500, 800);
 		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
 				.click();
-		PageBase.MaximumWaitForElementEnabled();//*[@id="receiver-selector"]/div[2]/ul/li/div[1]
+		PageBase.MaximumWaitForElementEnabled();
 
 	}
 
@@ -385,8 +391,8 @@ public class CreateShipmentActions {
 		PageBase.Scrollbar(500, 800);
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='"+Receiver+"']"))
-				.click();  //*[@id="receiver-selector"]/div[2]/ul/li[2]/div[1]  
+				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='" + Receiver + "']"))
+				.click(); 
 
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -403,9 +409,9 @@ public class CreateShipmentActions {
 	public static String GetReceiverLocation() {
 		PageBase.MinimumWaitForElementEnabled();
 		String ReceiverLocationLine1 = BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[2]")).getText();
-		String ReceiverLocationLine2 = BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[3]")).getText();
+		String ReceiverLocationLine2 = BaseWebdriver.driver
+				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[4]")).getText();
 		System.out.println(ReceiverLocationLine1);
 		System.out.println(ReceiverLocationLine2);
 		String ReceiverLocation = ReceiverLocationLine1 + " " + ReceiverLocationLine2;
@@ -555,7 +561,7 @@ public class CreateShipmentActions {
 
 		catch (Exception ex) {
 			System.out.println(ex);
-			SelectNotifySenderAndReceiver();
+			//SelectNotifySenderAndReceiver();
 		}
 	}
 	
@@ -811,9 +817,9 @@ public class CreateShipmentActions {
 
 	public static void ItemType(int j) {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(itemTypeTextField).click();
+		BaseWebdriver.driver.findElement(itemType).click();
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"outr-pkg-selector\"]/div[2]/ul/li[" + j + "]/div"))  //*[@id="outr-pkg-selector"]/div[2]/ul/li[2]/div
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + j + "]/div"))
 				.click();
 
 	}
@@ -845,30 +851,21 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterBillingType(String pBillingType) {
-		/*
-		 * BaseWebdriver.driver.findElement(billingTypedropdown).click();
-		 * //PageBase.MinimumWaitForElementEnabled(); BaseWebdriver.driver
-		 * .findElement(By.xpath(
-		 * "//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='" + pBillingType
-		 * + "']")) .click();
-		 */
+
 		try {
-			/*PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,
-					CreateShipmentActions.shipmentReference1);*/
+
 			Boolean results = BaseWebdriver.driver.findElement(billingTypedropdown).isDisplayed();
 			System.out.println("Billing type displayed");
 			if (results == true) {
 				BaseWebdriver.driver.findElement(billingTypedropdown).click();
-				// PageBase.MinimumWaitForElementEnabled();
 				BaseWebdriver.driver
 						.findElement(By.xpath(
 								"//*[@id=\"billing-type-selector\"]/div[2]/ul/li/div[text()='" + pBillingType + "']"))
 						.click();
 			}
 		} catch (Exception ex) {
-			System.out.println("Billing type displayed");
-			/*PageBase.MoveToElement(BookAPickupActions.itemDescriptionDropdown,
-					CreateShipmentActions.shipmentReference1);*/
+			System.out.println("Billing type is not displayed");
+
 		}
 
 	}
@@ -886,13 +883,15 @@ public class CreateShipmentActions {
 			String pDgQtyKg) {
 
 		PageBase.MaximumWaitForElementEnabled();
-		//BaseWebdriver.driver.findElement(UNNumberDropdown).click();
+		// BaseWebdriver.driver.findElement(UNNumberDropdown).click();
 		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
-		//BaseWebdriver.driver.findElement(searchBtn).click();
+		// BaseWebdriver.driver.findElement(searchBtn).click();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div[text()='2025 | MERCURY COMPOUND, SOLID, N.O.S | 6.1']")).click(); 
-		PageBase.MaximumWaitForElementEnabled(); 
+		BaseWebdriver.driver.findElement(By.xpath(
+				"//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div[text()='2025 | MERCURY COMPOUND, SOLID, N.O.S | 6.1']"))
+				.click();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dgPackagingDescription).sendKeys(packageDescription);
 		BaseWebdriver.driver.findElement(dgPkgQty).sendKeys(pDgPkgQty);
 		BaseWebdriver.driver.findElement(dgQtyKg).sendKeys(pDgQtyKg);
@@ -1109,7 +1108,7 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(loscamOtherDocket).sendKeys(pLoscamOtherDocketNo);
 
 	}
-	
+
 	public static void EnterPalletTransActionChepInformations(String pChepCustomer, String pChepExchange,
 			String pChepTansferToToll, String pChepDocketNo) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -1127,8 +1126,8 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(chepDocket).clear();
 		BaseWebdriver.driver.findElement(chepDocket).sendKeys(pChepDocketNo);
 	}
-	
-	public static void EnterPalletTransActionLoscamInformations( String pLoscamCustomer, String pLoascamExchange,
+
+	public static void EnterPalletTransActionLoscamInformations(String pLoscamCustomer, String pLoascamExchange,
 			String pLoscamTransferToToll, String pLoscamDocketNo) {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(loscamCustomer).click();
@@ -1144,19 +1143,19 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(loscamDocket).clear();
 		BaseWebdriver.driver.findElement(loscamDocket).sendKeys(pLoscamDocketNo);
 	}
-	
+
 	public static void EnterPalletTransActionOtherCustomerInformations(String pOtherCostomer) {
 		PageBase.MaximumWaitForElementEnabled();
-		
+
 		BaseWebdriver.driver.findElement(otherCustomer).click();
 		BaseWebdriver.driver.findElement(otherCustomer).clear();
 		BaseWebdriver.driver.findElement(otherCustomer).sendKeys(pOtherCostomer);
 	}
-	
+
 	public static void EnterPalletTransActionChepOtherInformations(String pChepOtherExchange,
 			String pChepOtherTransferToToll, String pchepOtherDocketNo) {
 		PageBase.MaximumWaitForElementEnabled();
-	
+
 		BaseWebdriver.driver.findElement(chepOtherExchange).click();
 		BaseWebdriver.driver.findElement(chepOtherExchange).clear();
 		BaseWebdriver.driver.findElement(chepOtherExchange).sendKeys(pChepOtherExchange);
@@ -1168,10 +1167,10 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(chepOtherCustomer).sendKeys(pchepOtherDocketNo);
 	}
 
-	public static void EnterPalletTransActionLoscamOtherInformations( String pLoscamOtherExchange,
+	public static void EnterPalletTransActionLoscamOtherInformations(String pLoscamOtherExchange,
 			String pLoscamOtherTransferToToll, String pLoscamOtherDocketNo) {
 		PageBase.MaximumWaitForElementEnabled();
-	
+
 		BaseWebdriver.driver.findElement(loscamOtherExchange).click();
 		BaseWebdriver.driver.findElement(loscamOtherExchange).clear();
 		BaseWebdriver.driver.findElement(loscamOtherExchange).sendKeys(pLoscamOtherExchange);
@@ -1183,6 +1182,7 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(loscamOtherDocket).sendKeys(pLoscamOtherDocketNo);
 
 	}
+
 	public static void VerifyDocketNoNotMandatoryInLocamOther(String pChepCustomer, String pChepExchange,
 			String pChepTansferToToll, String pChepDocketNo, String pLoscamCustomer, String pLoascamExchange,
 			String pLoscamTransferToToll, String pLoscamDocketNo, String pOtherCostomer, String pChepOtherExchange,
@@ -1604,189 +1604,172 @@ public class CreateShipmentActions {
 		PageBase.click(BookAPickupActions.popUpClose, 5);
 		PageBase.MaximumWaitForElementEnabled_1();
 	}
-	
-	//QuickEntryMode
-	
+
+	// QuickEntryMode
+
 	public static void ClickQuickEntryMode() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(QuickEntryMode, 5);
-		
+
 	}
-	
+
 	public static void ItemTypeQME(String pItemType) {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(itemTypeQME, 5);
 		PageBase.ClickOn(By.xpath("//*[@id=\"gv-outr-pkg-selector\"]/div[2]/ul/li/div[text()='" + pItemType + "']"),
 				10);
-	} 
-	
+	}
+
 	public static void EnterSenderRef(String pSenderRef) {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(senderReferenceQME, pSenderRef, 10);
-		
+
 	}
-	
+
 	public static void EnterReceiverRef(String pSenderRef) {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(receiverReferenceQME, pSenderRef, 10);
-		
+
 	}
-	
+
 	public static void SelectDangerousGoodsDetailsQME(String lookupItem, String packageDescription, String pDgPkgQty,
 			String pDgQtyKg) {
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(BookAPickupActions.UNNumberTextFieldQME, lookupItem, 5);
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.SelectFrom(By.xpath("//*[@id=\"dg-popup-form\"]/td[1]/div/div[1]/ul/li/div"), 5); 
+		PageBase.SelectFrom(By.xpath("//*[@id=\"dg-popup-form\"]/td[1]/div/div[1]/ul/li/div"), 5);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(BookAPickupActions.dgPackagingDescriptionQME, packageDescription, 5);
 		PageBase.SendKeysTo(BookAPickupActions.dgPkgQtyQME, pDgPkgQty, 5);
 		PageBase.SendKeysTo(BookAPickupActions.dgQtyKgQME, pDgQtyKg, 5);
 
 	}
-	
+
 	public static void SelectPackgingGroupQME(String packagingGroup) {
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(PackingGroupQME, 5);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SelectFrom(
-				By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/div/ul/li/div[text()='" + packagingGroup + "']"), 10);   
+				By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/div/ul/li/div[text()='" + packagingGroup + "']"), 10);
 		PageBase.MaximumWaitForElementEnabled();
 	}
-	
+
 	// Draft Shipment
 	public static void ClickSaveDraft() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(saveDraft, 5);
-		
+
 	}
-	
-	public static String GetSaveDraftButtonName()
-	{
+
+	public static String GetSaveDraftButtonName() {
 		return PageBase.GetText(saveDraft, 5);
-		
-	
+
 	}
-	
-	public static String GetSaveDraftSuccessfulMessage()
-	{
+
+	public static String GetSaveDraftSuccessfulMessage() {
 		PageBase.MaximumWaitForElementEnabled();
 		return PageBase.GetText(saveDraftSuccessfulMessage, 5);
-		
-	
+
 	}
-	
+
 	public static void ClickGoToMyDashboardBtn() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(goToMyDashboardBtn, 5);
-		
+
 	}
-	
+
 	public static void ClickGoBackBtn() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(goBackBtn, 5);
-		
+
 	}
-	
+
 	public static void ClickDraftShipmentTabInMyDashboard() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(draftShipmentTabInMyDashboard, 5);
-		
+
 	}
-	public static String GetDraftShipmentTabNameInMyDashboard()
-	{
+
+	public static String GetDraftShipmentTabNameInMyDashboard() {
 		PageBase.MaximumWaitForElementEnabled();
 		return PageBase.GetText(draftShipmentTabInMyDashboard, 5);
-		
-	
-	}  
-	
-	public static String GetDraftShipmentTollCarrierInMyDashboard()
-	{
-		PageBase.MaximumWaitForElementEnabled();
-		return PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5); //*[@id="draft1525"]/td[1]/text()
-			
+
 	}
-	
-	public static String GetDraftShipmentSenderInMyDashboard()
-	{
+
+	public static String GetDraftShipmentTollCarrierInMyDashboard() {
 		PageBase.MaximumWaitForElementEnabled();
-		return PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[2]"), 5); //*[@id="draft1525"]/td[1]/text()
-			
+		return PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5); // *[@id="draft1525"]/td[1]/text()
+
 	}
-	
-	public static String GetDraftShipmentReceiverInMyDashboard()
-	{
+
+	public static String GetDraftShipmentSenderInMyDashboard() {
 		PageBase.MaximumWaitForElementEnabled();
-		return PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[3]"), 5); //*[@id="draft1525"]/td[1]/text()
-			
+		return PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[2]"), 5); // *[@id="draft1525"]/td[1]/text()
+
 	}
-	
-	public static void DeleteExistingDraftShipments()
-	{
+
+	public static String GetDraftShipmentReceiverInMyDashboard() {
+		PageBase.MaximumWaitForElementEnabled();
+		return PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[3]"), 5); // *[@id="draft1525"]/td[1]/text()
+
+	}
+
+	public static void DeleteExistingDraftShipments() {
 		ClickDraftShipmentTabInMyDashboard();
 		PageBase.MaximumWaitForElementEnabled();
-		List<WebElement> list=BaseWebdriver.driver.findElements(draftShipmentList);
-		System.out.println("Number of draft shipments   "+ list.size()  );
-		if (list.size()>0) {
-						
-		for(int i=1; i<=list.size(); i++)
-		{
-		
-			PageBase.ClickOn(deleteButtonDraftShipmenInMyDashboard, 5); 
-			PageBase.MaximumWaitForElementEnabled();
-			PageBase.ClickOn(continueDeleteButtonDraftShipmenInMyDashboard, 5);
-			PageBase.MaximumWaitForElementEnabled();
-		}
+		List<WebElement> list = BaseWebdriver.driver.findElements(draftShipmentList);
+		System.out.println("Number of draft shipments   " + list.size());
+		if (list.size() > 0) {
+
+			for (int i = 1; i <= list.size(); i++) {
+
+				PageBase.ClickOn(deleteButtonDraftShipmenInMyDashboard, 5);
+				PageBase.MaximumWaitForElementEnabled();
+				PageBase.ClickOn(continueDeleteButtonDraftShipmenInMyDashboard, 5);
+				PageBase.MaximumWaitForElementEnabled();
+			}
 		}
 	}
-	
+
 	public static void ClickOnDraftShipmenInMyDashboard() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5);
-		
+
 	}
-	
-	public static void VerifyDraftShipmentHasRemovedFromMyDashboard()
-	{
+
+	public static void VerifyDraftShipmentHasRemovedFromMyDashboard() {
 		PageBase.MaximumWaitForElementEnabled();
 		try {
-		PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5);
-		assertEquals("123", "1234");
-		}
-		catch (Exception ex)
-		{
+			PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5);
+			assertEquals("123", "1234");
+		} catch (Exception ex) {
 			System.out.println("Draft Shipment has been removed");
 		}
-	
-			
+
 	}
-	
+
 	public static void setQEMYes() {
 		try {
 			WebElement QEM = BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField);
 			PageBase.click(By.cssSelector("span.switch-label"), 2);
 			System.out.println("QEM Enabled");
-		}
-		catch (Exception ex)
-		{
+		} catch (Exception ex) {
 			System.out.println("QEM Already Enabled");
 		}
 	}
-	
+
 	public static void setQEMNo() {
 		try {
-			WebElement QEM = BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField);;
+			WebElement QEM = BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField);
+			;
 			System.out.println("QEM Already Not Enabled");
-		}
-		catch (Exception ex)
-		{
+		} catch (Exception ex) {
 			PageBase.click(By.cssSelector("span.switch-label"), 2);
 			System.out.println("QEM Not Enabled");
 		}
 	}
-	
+
 }

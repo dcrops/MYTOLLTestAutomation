@@ -47,7 +47,7 @@ public class TollIPECTests {
 			"ShipmentContainDangerousGoodsNo" })
 
 	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress_CreateShipmentAndShipmentReview(String TollCarrier,
-			String ServiceRoadExpress, String AccountNumber, Integer WhoPays, String whoPays, Integer Sender,
+			String ServiceRoadExpress, String AccountNumberTIPEC, Integer WhoPays, String whoPays, Integer Sender,
 			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String ItemTemplateName2,
@@ -63,7 +63,8 @@ public class TollIPECTests {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceRoadExpress);
 
-		BookAPickupActions.SelectAccountNumber1();
+		//BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTIPEC);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
@@ -111,7 +112,7 @@ public class TollIPECTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, accountNo, sender, senderLocation,
+		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumberTIPEC, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ServiceRoadExpress, whoPays);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
@@ -151,7 +152,7 @@ public class TollIPECTests {
 			"ShipmentContainDangerousGoodsNo" })
 
 	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_Fashion(String TollCarrier,
-			String ServiceFashion,String AccountNumber, Integer WhoPays, String whoPays, Integer Sender, Integer Receiver, String QuoteNumber,
+			String ServiceFashion,String AccountNumberTIPEC, Integer WhoPays, String whoPays, Integer Sender, Integer Receiver, String QuoteNumber,
 			String DropOffDepot, String collectionDepot, String DGContactName, String SenderEmail, String ReceiverEmail,
 			String ShipmentRef1, String ShipmentRef2, String ItemTemplateName, String NumberOfItems,String NumberOfGarments, String Length,
 			String Width, String Height, String Weight, String ItemTemplateName2,
@@ -167,7 +168,8 @@ public class TollIPECTests {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceFashion);
 
-		BookAPickupActions.SelectAccountNumber1();
+		//BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTIPEC);
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
@@ -230,7 +232,7 @@ public class TollIPECTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, accountNo, sender, senderLocation,
+		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumberTIPEC, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ServiceFashion, whoPays);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
@@ -271,7 +273,7 @@ public class TollIPECTests {
 			"ShipmentContainDangerousGoodsNo" })
 
 	public void CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress_Z_ConsolidateShipments(String TollCarrier,
-			String ServiceRoadExpress, String AccountNumber, Integer WhoPays, String whoPays, Integer Sender,
+			String ServiceRoadExpress, String AccountNumberTIPEC, Integer WhoPays, String whoPays, Integer Sender,
 			Integer Receiver, String QuoteNumber, String DropOffDepot, String CollectionDepot, String DGContactName,
 			String SenderEmail, String ReceiverEmail, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, String ItemTemplateName2,
@@ -287,7 +289,8 @@ public class TollIPECTests {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceRoadExpress);
 
-		BookAPickupActions.SelectAccountNumber1();
+		//BookAPickupActions.SelectAccountNumber1();
+		BookAPickupActions.EnterAccountNumber(AccountNumberTIPEC);
 		String accountNumber = BookAPickupActions.GetAccountNumber().toString();
 		System.out.println(accountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
@@ -308,7 +311,7 @@ public class TollIPECTests {
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);		
+		PageBase.MoveToElement(BookAPickupActions.specialInstructions, CreateShipmentActions.receiverReference);		
 		CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraSrviceAmount(TollExtraSrviceAmount);
 
@@ -317,7 +320,7 @@ public class TollIPECTests {
 		CreateShipmentActions.ClickReviewCreateShipment();
 
 		// Shipment Review
-		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, accountNumber, sender, senderLocation,
+		ShipmentReviewActions.VerifyShipmentOverviewTGX(TollCarrier, AccountNumberTIPEC, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ServiceRoadExpress, whoPays);
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;

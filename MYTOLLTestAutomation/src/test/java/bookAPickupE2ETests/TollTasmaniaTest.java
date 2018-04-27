@@ -280,12 +280,12 @@ public class TollTasmaniaTest {
 		String Volume2 = volume2 + " m3";
 
 		BookAPickupActions.selectDangerousGoodNewLine();
-		BookAPickupActions.ClickAddANewLine();
+		//BookAPickupActions.ClickAddANewLine();
 
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MoveToElement(BookAPickupActions.weight,BookAPickupActions.length);
+		PageBase.MoveToElement(BookAPickupActions.length,BookAPickupActions.weight);
 
-		jse.executeScript("scroll(500, 800)");
+		jse.executeScript("scroll(800, 1000)");
 		BookAPickupActions.SelectDispatchDateTomorrow();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println(pickupDate);

@@ -105,7 +105,7 @@ public class TollTasmaniaTests {
 		BookAPickupActions.SelectPackgingGroup(PackingGroup);
 		BookAPickupActions.EnterTechnicalName(technicalName);
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		BookAPickupActions.ClickAdd();
+		
 		String un = CreateShipmentActions.GetUNNumber();
 		System.out.println("Un----" + un);
 		String classDivision = CreateShipmentActions.GetClassDivision();
@@ -544,15 +544,15 @@ public class TollTasmaniaTests {
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
-	@Test(priority=-1)
-	//@Test(groups = {"E2E" })
+	//@Test(priority=-1)
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2", "Width2", "Height2",
 			"Weight2", "DGYes", "PackingGroup", "lookupName", "lookupItem", "packageDescription", "pDgPkgQty",
 			"pDgQtyKg", "technicalName", "DGNo", "BillingType", "SpeceialIns", "DGItem", "LookupSearch",
-			"PalletTransactionsInfo", "ChepCustomer", "ChepExchange", "ChepTansferToToll", "ChepDocketNo",
+			"PalletTransactionsInfoNo", "ChepCustomer", "ChepExchange", "ChepTansferToToll", "ChepDocketNo",
 			"LoscamCustomer", "LoascamExchange", "LoscamTransferToToll", "LoscamDocketNo", "OtherCostomer",
 			"ChepOtherExchange", "ChepOtherTransferToToll", "chepOtherDocketNo", "LoscamOtherExchange",
 			"LoscamOtherTransferToToll", "LoscamOtherDocketNo", "PurchaseOrder", "TollExtraServiceAmount",
@@ -604,7 +604,7 @@ public class TollTasmaniaTests {
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
-		CreateShipmentActions.ClickReviewCreateShipment();
+	
 		
 		/*CreateShipmentActions.MessageEnterLineItemShipmentConsolidation(ItemTemplateName,BillingType,NumberOfItems,ShipmentRef1, ShipmentRef2,Length, Width, Height, Weight,ItemTemplateName2, NumberOfItems2,
 				Length2,Width2,Height2,Weight2, DGNo, ChepCustomer, ChepExchange, ChepTansferToToll,
@@ -613,6 +613,8 @@ public class TollTasmaniaTests {
 				LoscamOtherTransferToToll, LoscamOtherDocketNo,PurchaseOrder,
 				TollExtraSrviceAmount,SpeceialIns);*/
 
+		
+		CreateShipmentActions.ClickReviewCreateShipment();
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverviewTollTasmania(TollCarrier, AccountNumber, sender, senderLocation,
 				receiver, receiverLocation, ShipmentRef1, ShipmentRef2, ServiceGeneral, whoPays, CollectionDepot,
