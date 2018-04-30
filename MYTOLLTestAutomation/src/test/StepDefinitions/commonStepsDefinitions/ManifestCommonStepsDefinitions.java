@@ -226,8 +226,62 @@ public class ManifestCommonStepsDefinitions {
 		PageBase.verifyTextExist(ManifestActions.commericalInvoiceErrorMsg2, "Please remember that this Commercial Invoice must be printed on to your company letterhead .");
 		PageBase.isElementPresent(ManifestActions.finalPrintCommericalInvoice, 10, "Commercial Invoice Final Print Button");
 	}
-	
 
+	@Then("^User Navigates Back to Dashboard$")
+	public void UserNavigatesBackToDashboard() throws Throwable {
+		PageBase.click(ManifestActions.GoToDashboard, 2);
+	}
 	
-
+	@And("^User Selects the Shipment for BAP$")
+	public void UserSelectsTheShipmentForBAP(DataTable manifestTestData) throws Throwable {
+		PageBase.MaximumWaitForElementEnabled_1();
+		ManifestActions.manifestToBookaPickUp(NewManifestName);
+		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
+	}
+	
+	@Then("^User Verifies Shipment Details on BAP Page$")
+	public void UserVerifiesShipmentDetailsonBAPPage(DataTable manifestTestData) throws Throwable {
+		for (Map<String, String> manifest : manifestTestData.asMaps(String.class, String.class)) {
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.TollCarrierTextField, manifest.get("Toll carrier"));
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.accountNumber, manifest.get("AccountNumber"));
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.name, SenderContactName);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.location, SenderCompanyName);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.serviceSelected, manifest.get("Service"));
+			
+		}
+	}
+	
+	@And("^User Verifies Line Item on BAP Page$")
+	public void UserVerifiesLineItemOnBAPPage(DataTable manifestTestData) throws Throwable {
+		for (Map<String, String> manifest : manifestTestData.asMaps(String.class, String.class)) {
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.itemDescriptionTextField, manifest.get("Item description"));
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.enterQuantity, manifest.get("No of Items"));
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.length, manifest.get("Length"));
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.width, manifest.get("Width"));
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.height, manifest.get("Height"));
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.weight, manifest.get("Weight"));			
+		}
+	}
+	
+	@Then("^User Selects Dispatch Date and Ready Time$")
+	public void UserSelectsDispatchDateAndReadyTime(DataTable manifestTestData) throws Throwable {
+		for (Map<String, String> manifest : manifestTestData.asMaps(String.class, String.class)) {
+			ManifestActions.selectPickupDate();
+			ManifestActions.selectReadyTimeJS(manifest.get("ReadyTime"));
+		}
+	}
+	
+	@Then("^User Clicks Review and Book$")
+	public void UserClicksReviewAndBook() throws Throwable {
+		BookAPickupActions.ClickReviewBook();
+	}
+	
+	@Then("^User Confirms Pick Up and Gets BAP Reference Number$")
+	public void UserConfirmsPickUpAndGetsBAPReferenceNumber() throws Throwable {
+		BookAPickupActions.ConfirmPickUpandGetReferenceNo();
+	}
+	
+	
+	
+	
 }

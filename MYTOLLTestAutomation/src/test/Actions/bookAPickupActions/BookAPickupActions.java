@@ -341,6 +341,8 @@ public class BookAPickupActions {
 	public static By shareButton = By.id("share-emails"); 
 	public static By NumberOfUserMessageInShareScreen = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-form-body\"]/div[2]/p");  
 	public static By GoT0Dashboard = By.linkText("GO TO DASHBOARD");
+	
+	public static By serviceSelected= By.xpath("//*[@id=\"service-type-label\"]");
 
 	public static void EnterTollCarrierItem(String pTollCarrierName) {
 		PageBase.MinimumWaitForElementEnabled();

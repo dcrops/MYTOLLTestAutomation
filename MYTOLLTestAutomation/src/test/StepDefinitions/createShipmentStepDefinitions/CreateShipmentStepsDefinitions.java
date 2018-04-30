@@ -2,16 +2,24 @@ package createShipmentStepDefinitions;
 
 import java.util.Map;
 
+import org.testng.Reporter;
+
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
+import createShipmentActions.ShipmentReviewActions;
 import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import manifestActions.ManifestActions;
 import myTollHomePageActions.MyTollHomePageActions;
 
 public class CreateShipmentStepsDefinitions  {
+	
+	public static String AccountNo;
 
 
 	@When("^User enters following input data for the line item$")
@@ -67,4 +75,39 @@ public class CreateShipmentStepsDefinitions  {
 		CreateShipmentActions.ClickReviewCreateShipment();
 	}
 
+	@Then("^User Clicks Review and Create Shipment$")
+	public void UserClicksReviewAndCreateShipment() throws Throwable {
+		PageBase.click(CreateShipmentActions.reviewCreateShipmentBtn,5);
+	}
+	
+	@Then("^User Clicks Continue Manifest on Shipment Review Page$")
+	public void UserClicksContinueManifestonShipmentReviewPage() throws Throwable {
+		PageBase.MaximumWaitForElementEnabled_1();
+		AccountNo = BaseWebdriver.driver.findElement(ShipmentReviewActions.accountNumber).getText();
+		PageBase.waitForElement(ManifestActions.ContinuetoManifest, 5);
+		PageBase.click(ManifestActions.ContinuetoManifest, 5);
+	}
+	
+	@And("^User Submits and Prints Manifest$")
+	public void UserSubmitsandPrintsManifest() throws Throwable {
+		ManifestActions.submitandPrintManifest();
+	}
+	
+	@When("^User enters following input data for the line item - TCHEM$")
+	public void user_enters_following_input_data_for_the_line_item_TCHEM(DataTable shipmentTestData) throws Throwable {
+
+		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.MaximumWaitForElementEnabled();
+			BookAPickupActions.EnterItem(shipment.get("Item description"));
+			CreateShipmentActions.EnterBillingType(shipment.get("Billing Type")+ " ");
+			CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));
+			BookAPickupActions.EnterLengthWidthHeight(shipment.get("Length"), shipment.get("Width"),
+					shipment.get("Height"));
+			CreateShipmentActions.EnterWeight(shipment.get("Weight"));
+		}
+
+	}
+	
 }
