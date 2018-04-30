@@ -144,6 +144,8 @@ public class ManifestActions {
 	public static By commericalInvoiceTotalValue= By.xpath("//*[@id=\"c-total-val0\"]");
 	public static By printCommericalInvoice= By.xpath("//*[@id=\"print-commercial\"]");
 	public static By finalPrintCommericalInvoice= By.xpath("//*[@id=\"commercial-print\"]");
+	public static By DeclarationCompanyName= By.xpath("//*[@id=\"company-name\"]");
+	public static By DeclarationContactName= By.xpath("//*[@id=\"contact-name\"]");
 	
 	
 	public static String NewInvoiceNumber;
@@ -638,6 +640,7 @@ public class ManifestActions {
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.waitForElement(ManifestActions.ShipmentManifestPopupClose, 2);
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(ManifestActions.ShipmentManifestPopupClose, 2);
 		PageBase.MinimumWaitForElementEnabled_1();
 		PageBase.MinimumWaitForElementEnabled_1();
@@ -711,6 +714,7 @@ public static void commercialInvoiceItemDetails(String Description, String PartN
 	}
 	
 	public static void verifyCommercialInvoicePage(String Description, String PartNo, String AHECCCode, String Qty, String Weight, String UnitValue, String InvoiceValue) {
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExistAttribute(commericalInvoiceDescription, Description);
 		PageBase.verifyTextExistAttribute(commericalInvoicePartNo, PartNo);
 		PageBase.verifyTextExistAttribute(commericalInvoiceAHECCCode, AHECCCode);
