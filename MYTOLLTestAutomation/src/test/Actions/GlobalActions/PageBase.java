@@ -43,7 +43,7 @@ public class PageBase {
 	
 	public static WebElement WaitForElement(By ObjectLocater, int secsToWait) {
 		WebElement element=BaseWebdriver.driver.findElement(ObjectLocater);
-		return (new WebDriverWait(BaseWebdriver.driver, secsToWait)).until(ExpectedConditions.presenceOfElementLocated(ObjectLocater));//.visibilityOf());
+		return (new WebDriverWait(BaseWebdriver.driver, secsToWait)).until(ExpectedConditions.elementToBeClickable(ObjectLocater)); //.visibilityOfElementLocated(ObjectLocater)); //.presenceOfElementLocated(ObjectLocater));//.visibilityOf());
 	}
 
 	public static boolean SendKeysTo(By ObjectLocater, String keysToSend,int secsToWait) {
@@ -162,6 +162,7 @@ public class PageBase {
 	public static void MaximumWaitForElementEnabled() {
 		try {
 			Thread.sleep(1000);
+			
 
 		}
 

@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.Map;
 
+import GlobalActions.PageBase;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import cucumber.api.DataTable;
@@ -11,117 +12,315 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import myTollHomePageActions.MyTollHomePageActions;
+import stationeryActions.ReviewOrderActions;
 import stationeryActions.StationeryActions;
 
 public class MYT_6079_StationeryOrderStationery {
-	
-
-	
 
 	@Then("^User must be able to see an option to select Order Stationery$")
 	public void user_must_be_able_to_see_an_option_to_select_Order_Stationery() throws Throwable {
-		
+
 		MyTollHomePageActions.GetStationery();
-		
+
 	}
 
-
 	@Then("^User able to select Consignment Notes products and select one of those$")
-	public void user_able_to_select_Consignment_Notes_products_and_select_one_of_those(DataTable StationeryTestData) throws Throwable {
-	
-		 for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
-			 MyTollHomePageActions.ClickStationery();
-				StationeryActions.SelectProductCategory(stationery.get("Product"));
-				
-			}
-		
+	public void user_able_to_select_Consignment_Notes_products_and_select_one_of_those(DataTable StationeryTestData)
+			throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			MyTollHomePageActions.ClickStationery();
+			StationeryActions.SelectProductCategory(stationery.get("Product"));
+
+		}
+
 	}
 
 	@When("^User can increase or Decrease the Qty of a product by (\\d+)$")
-	public void user_can_increase_or_Decrease_the_Qty_of_a_product_by(int arg1, DataTable StationeryTestData) throws Throwable {
-	  
+	public void user_can_increase_or_Decrease_the_Qty_of_a_product_by(int arg1, DataTable StationeryTestData)
+			throws Throwable {
+
 		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
 
 			StationeryActions.IncreaseProductQty();
-			assertEquals(StationeryActions.GetProductQty(),stationery.get("NoOfQtyIncrease"));
+			assertEquals(StationeryActions.GetProductQty(), stationery.get("NoOfQtyIncrease"));
 			StationeryActions.DecreaseProductQty();
-			assertEquals(StationeryActions.GetProductQty(),stationery.get("NoOfQtyDecrease"));
-			
+			assertEquals(StationeryActions.GetProductQty(), stationery.get("NoOfQtyDecrease"));
+
 		}
-		
+
 	}
 
 	@When("^User be able to enter preprint detatil as below$")
 	public void user_be_able_to_enter_preprint_detatil_as_below(DataTable StationeryTestData) throws Throwable {
-	  
+
 		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
 
 			StationeryActions.ClickAddPreprintDetails();
 			StationeryActions.ClickPreprintFrom();
-			StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),stationery.get("preprintFromContactName"));
-			StationeryActions.ClickPreprintTo();
-			StationeryActions.EnterPreprintToDetails(stationery.get("PreprintTo"),stationery.get("preprintToContactName"));
+			StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),
+					stationery.get("preprintFromContactName"));
+			PageBase.MaximumWaitForElementEnabled();
+		/*	StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),
+					stationery.get("preprintFromContactName"));*/
+			PageBase.MaximumWaitForElementEnabled();
 			StationeryActions.ClickAddDetails();
-					
+			
+
 		}
 	}
 
 	@When("^User be able to edit preprint detatil as below$")
 	public void user_be_able_to_edit_preprint_detatil_as_below(DataTable StationeryTestData) throws Throwable {
-	 
+
 		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
 
 			StationeryActions.ClickAddPreprintDetails();
-			StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),stationery.get("preprintFromContactName"));
-			StationeryActions.EnterPreprintToDetails(stationery.get("PreprintTo"),stationery.get("preprintToContactName"));
+			StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),
+					stationery.get("preprintFromContactName"));
+		/*	StationeryActions.EnterPreprintToDetails(stationery.get("PreprintTo"),
+					stationery.get("preprintToContactName"));*/
 			StationeryActions.ClickAddDetails();
-					
+		
+
 		}
 	}
 
 	@When("^User ADD TO CART a Product$")
 	public void user_ADD_TO_CART_a_Product() throws Throwable {
-	
-		StationeryActions.ClickAddToCart();
+
+		StationeryActions.ClickAddToCartProduct1();
 	}
 
 	@Then("^User be able to see product added to the cart and the number of items in the cart increment by (\\d+)$")
-	public void user_be_able_to_see_product_added_to_the_cart_and_the_number_of_items_in_the_cart_increment_by(int arg1, DataTable StationeryTestData) throws Throwable {
-		
+	public void user_be_able_to_see_product_added_to_the_cart_and_the_number_of_items_in_the_cart_increment_by(int arg1,
+			DataTable StationeryTestData) throws Throwable {
+
 		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
 
-			assertEquals(StationeryActions.GetNoOfItems(),stationery.get("NoOfItems"));
+			assertEquals(StationeryActions.GetNoOfItems(), stationery.get("NoOfItems"));
 			StationeryActions.ClickItems();
-			assertEquals(StationeryActions.GetproductNameFromTheCart(),stationery.get("Product"));
-			assertEquals(StationeryActions.GetproductQtyFromTheCart(),stationery.get("NoOfQty"));
-			assertEquals(StationeryActions.GetTotalItemsFromCart(),stationery.get("TotalItems"));
-			
-			StationeryActions.ClickAddDetails();
-					
+			String ProductDetails = stationery.get("Product").replaceAll(" \\s ", "") + "\n"
+					+ stationery.get("NoOfQty").replaceAll("\\s ", "") + "\n"
+					+ stationery.get("PreprintLabel").replaceAll("\\s", "");
+			assertEquals(StationeryActions.GetproductName1FromTheCart().replaceAll(" \n ", ""), ProductDetails);
+			assertEquals(StationeryActions.GetTotalItemsFromCart(), stationery.get("TotalItems"));
+
 		}
-		
+
 	}
 
-	@When("^User edit product details inside the cart$")
-	public void user_edit_product_details_inside_the_cart(DataTable arg1) throws Throwable {
-	  
+	@When("^User clicks Edit preprint icon in the cart$")
+	public void user_clicks_Edit_preprint_icon_in_the_cart() throws Throwable {
+
+		StationeryActions.ClickPreprintInTheCart();
+	}
+
+	@When("^User edits preprint details inside the cart$")
+	public void user_edits_preprint_details_inside_the_cart(DataTable StationeryTestData) throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+
+			/*
+			 * PageBase.MaximumWaitForElementEnabled();
+			 * PageBase.MaximumWaitForElementEnabled();
+			 * PageBase.MaximumWaitForElementEnabled();
+			 * PageBase.MaximumWaitForElementEnabled();
+			 */
+			PageBase.WaitForElement(StationeryActions.increaseProductQtyInsideTheCart, 10);
+			StationeryActions.IncreaseProductQtyInsideTheCart();
+			assertEquals(StationeryActions.GetProductQtyInsideTheCart(), stationery.get("NoOfQtyIncrease"));
+			StationeryActions.DecreaseProductQtyInsideTheCart();
+			assertEquals(StationeryActions.GetProductQtyInsideTheCart(), stationery.get("NoOfQtyDecrease"));
+			StationeryActions.EnterPreprintFromDetailsInsideTheCart(stationery.get("PreprintFrom"),
+					stationery.get("PreprintFromContactName"));
+			StationeryActions.EnterPreprintToDetailsInsideTheCart(stationery.get("PreprintTo"),
+					stationery.get("PreprintToContactName"));
+			StationeryActions.ClickAddDetailsInsideTheCart();
+			assertEquals(StationeryActions.GetSuccessMessageUpdatePreprint().replaceAll(" \\s ", ""),
+					stationery.get("Message"));
+			StationeryActions.ClickBackToListPreprintUpdate();
+		}
+	}
+
+	@When("^User ADD TO CART a second product$")
+	public void user_ADD_TO_CART_a_second_product() throws Throwable {
+
+		StationeryActions.ClickAddToCartProduct2();
+
+	}
+
+	@Then("^User be able to see second product added to the cart and the number of items in the cart increment by (\\d+)$")
+	public void user_be_able_to_see_second_product_added_to_the_cart_and_the_number_of_items_in_the_cart_increment_by(
+			int arg1, DataTable StationeryTestData) throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+
+			assertEquals(StationeryActions.GetNoOfItems(), stationery.get("NoOfItems"));
+			StationeryActions.ClickItems();
+			PageBase.MaximumWaitForElementEnabled();
+			String ProductDetails = stationery.get("Product").replaceAll(" \\s ", "") + "\n"
+					+ stationery.get("NoOfQty").replaceAll("\\s ", "");
+			assertEquals(StationeryActions.GetproductName2FromTheCart().replaceAll(" \n ", ""), ProductDetails);
+			assertEquals(StationeryActions.GetTotalItemsFromCart(), stationery.get("TotalItems"));
+
+		}
+
+	}
+
+	@When("^User removes second product from the cart$")
+	public void user_removes_second_product_from_the_cart() throws Throwable {
+
+		PageBase.MaximumWaitForElementEnabled();
+		StationeryActions.ClickRemoveProduct2();
+
+	}
+
+	@Then("^User be able to see cart has been updated as below$")
+	public void user_be_able_to_see_cart_has_been_updated_as_below(DataTable StationeryTestData) throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			assertEquals(StationeryActions.GetNoOfItems(), stationery.get("NoOfItems"));
+			String ProductDetails = stationery.get("Product").replaceAll(" \\s ", "") + "\n"
+					+ stationery.get("NoOfQty").replaceAll("\\s ", "") + "\n"
+					+ stationery.get("PreprintLabel").replaceAll("\\s", "");
+			assertEquals(StationeryActions.GetproductName1FromTheCart().replaceAll(" \n ", ""), ProductDetails);
+			assertEquals(StationeryActions.GetTotalItemsFromCart(), stationery.get("TotalItems"));
+
+		}
+	}
+
+	@Then("^User be able to see second product added to the cart again$")
+	public void user_be_able_to_see_second_product_added_to_the_cart_again(DataTable StationeryTestData)
+			throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			assertEquals(StationeryActions.GetNoOfItems(), stationery.get("NoOfItems"));
+			String ProductDetails = stationery.get("Product").replaceAll(" \\s ", "") + "\n"
+					+ stationery.get("NoOfQty").replaceAll("\\s ", "");
+			assertEquals(StationeryActions.GetproductName2FromTheCart().replaceAll(" \n ", ""), ProductDetails);
+			assertEquals(StationeryActions.GetTotalItemsFromCart(), stationery.get("TotalItems"));
+
+		}
+
 	}
 
 	@When("^User PROOCEED TO ORDER$")
 	public void user_PROOCEED_TO_ORDER() throws Throwable {
-	   
+		PageBase.MaximumWaitForElementEnabled();
+		StationeryActions.ClickProceedToCart();
 	}
 
 	@Then("^User navigates to Enter your stationery delivery details page$")
-	public void user_navigates_to_Enter_your_stationery_delivery_details_page(DataTable arg1) throws Throwable {
-	 
+	public void user_navigates_to_Enter_your_stationery_delivery_details_page(DataTable StationeryTestData)
+			throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+
+			assertEquals(StationeryActions.GetProfileDetailsHeading(), stationery.get("PageHeading"));
+			assertEquals(StationeryActions.GetProfileDetailsStatement(), stationery.get("PageDescription"));
+			// assertEquals(StationeryActions.GetTollCarrier(),
+			// stationery.get("TollCarrier"));
+
+		}
+
 	}
 
 	@When("^User enter Review Order details as below$")
-	public void user_enter_Review_Order_details_as_below(DataTable arg1) throws Throwable {
-	  
+	public void user_enter_Review_Order_details_as_below(DataTable StationeryTestData) throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+
+			StationeryActions.EnterAccountNumber(stationery.get("AccountNumber"));
+			StationeryActions.EnterContactNumber(stationery.get("ContactName"), stationery.get("ContactNumber"));
+			StationeryActions.EnterDeliveryDetails(stationery.get("DeliverAddress"),
+					stationery.get("DeliveryContactName"), stationery.get("NotifybyEmail"),
+					stationery.get("CustomerReference"), stationery.get("DeliveryInstructions"));
+
+		}
+
 	}
 
+	@Then("^User be able to see Overview details in the Review Page as below$")
+	public void user_be_able_to_see_Overview_details_in_the_Review_Page_as_below(DataTable StationeryTestData)
+			throws Throwable {
 
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			ReviewOrderActions.VerifyReviewOrder(stationery.get("TollCarrier"), stationery.get("AccountNumber"),
+					stationery.get("Contact name"), stationery.get("Contact number"));
+
+		}
+
+	}
+
+	@Then("^User be able to see Delivery details in the Review page as below$")
+	public void user_be_able_to_see_Delivery_details_in_the_Review_page_as_below(DataTable StationeryTestData)
+			throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			ReviewOrderActions.VerifyDeliveryDetails(stationery.get("Contact name"), stationery.get("Phone number"),
+					stationery.get("Company name"), stationery.get("Address"), stationery.get("Customer reference"),
+					stationery.get("Delivery instructions"));
+
+		}
+	}
+
+	
+	@Then("^User be able to see first Line item details as below$")
+	public void user_be_able_to_see_first_Line_item_details_as_below(DataTable StationeryTestData) throws Throwable {
+	 
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			ReviewOrderActions.VerifyLineItem1details(stationery.get("ProductName"), stationery.get("Quantity"),
+					stationery.get("UnitPrice"), stationery.get("Total"), stationery.get("PreprintFrom"));
+
+		}
+	}
+
+	@Then("^User be able to see second Line item details as below$")
+	public void user_be_able_to_see_second_Line_item_details_as_below(DataTable StationeryTestData) throws Throwable {
+	
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			ReviewOrderActions.VerifyLineItem2details(stationery.get("ProductName"), stationery.get("Quantity"),
+					stationery.get("UnitPrice"), stationery.get("Total"));
+
+		}
+		
+	}
+	
+	@Then("^User must see following message$")
+	public void user_must_see_following_message(DataTable StationeryTestData) throws Throwable {
+		
+		
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			ReviewOrderActions.VerifyGSTMSG(stationery.get("GSTMSG"));
+
+		}
+
+	}
+
+	@Then("^User be able to charges in Review page as below$")
+	public void user_be_able_to_charges_in_Review_page_as_below(DataTable StationeryTestData) throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			ReviewOrderActions.VerifyTotals(stationery.get("TotalSurcharges"),stationery.get("TotalCharges"));
+
+		}
+	}
+
+	@When("^User Clicks on Confirm Order$")
+	public void user_Clicks_on_Confirm_Order() throws Throwable {
+		ReviewOrderActions.ConfirmOrder();
+	}
 
 }

@@ -3,10 +3,17 @@ package myTollHomePageActions;
 import GlobalActions.PageBase;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
@@ -334,6 +341,20 @@ public class MyTollHomePageActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
+		
+	/*	Wait<WebDriver> wait = new FluentWait<WebDriver>(BaseWebdriver.driver)
+			    .withTimeout(30, TimeUnit.SECONDS)
+			    .pollingEvery(5, TimeUnit.SECONDS)
+			    .ignoring(NoSuchElementException.class);
+
+			WebElement HmbugerMenu1 = wait.until(new Function<WebDriver, WebElement>() 
+			{
+			  public WebElement apply(WebDriver driver) {
+			  return  driver.findElement(MyTollHomePageActions.HmbugerMenu);
+			}
+			});*/
+			
+		PageBase.WaitForElement(MyTollHomePageActions.HmbugerMenu,20);
 		PageBase.ClickOn(HmbugerMenu, 5);
 	}
 	
