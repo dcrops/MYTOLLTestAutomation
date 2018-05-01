@@ -12,6 +12,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import myTollHomePageActions.MyTollHomePageActions;
+import stationeryActions.OrderSummaryActions;
 import stationeryActions.ReviewOrderActions;
 import stationeryActions.StationeryActions;
 
@@ -61,11 +62,12 @@ public class MYT_6079_StationeryOrderStationery {
 			StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),
 					stationery.get("preprintFromContactName"));
 			PageBase.MaximumWaitForElementEnabled();
-		/*	StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),
-					stationery.get("preprintFromContactName"));*/
+			/*
+			 * StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),
+			 * stationery.get("preprintFromContactName"));
+			 */
 			PageBase.MaximumWaitForElementEnabled();
 			StationeryActions.ClickAddDetails();
-			
 
 		}
 	}
@@ -78,18 +80,22 @@ public class MYT_6079_StationeryOrderStationery {
 			StationeryActions.ClickAddPreprintDetails();
 			StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),
 					stationery.get("preprintFromContactName"));
-		/*	StationeryActions.EnterPreprintToDetails(stationery.get("PreprintTo"),
-					stationery.get("preprintToContactName"));*/
+			/*
+			 * StationeryActions.EnterPreprintToDetails(stationery.get("PreprintTo"),
+			 * stationery.get("preprintToContactName"));
+			 */
 			StationeryActions.ClickAddDetails();
-		
 
 		}
 	}
 
 	@When("^User ADD TO CART a Product$")
-	public void user_ADD_TO_CART_a_Product() throws Throwable {
+	public void user_ADD_TO_CART_a_Product(DataTable StationeryTestData) throws Throwable {
 
-		StationeryActions.ClickAddToCartProduct1();
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+
+			StationeryActions.ClickAddToCart(stationery.get("Product"));
+		}
 	}
 
 	@Then("^User be able to see product added to the cart and the number of items in the cart increment by (\\d+)$")
@@ -103,7 +109,8 @@ public class MYT_6079_StationeryOrderStationery {
 			String ProductDetails = stationery.get("Product").replaceAll(" \\s ", "") + "\n"
 					+ stationery.get("NoOfQty").replaceAll("\\s ", "") + "\n"
 					+ stationery.get("PreprintLabel").replaceAll("\\s", "");
-			assertEquals(StationeryActions.GetproductName1FromTheCart().replaceAll(" \n ", ""), ProductDetails);
+			assertEquals(StationeryActions.GetproductName1FromTheCart(stationery.get("Product")).replaceAll(" \n ", ""),
+					ProductDetails);
 			assertEquals(StationeryActions.GetTotalItemsFromCart(), stationery.get("TotalItems"));
 
 		}
@@ -185,7 +192,8 @@ public class MYT_6079_StationeryOrderStationery {
 			String ProductDetails = stationery.get("Product").replaceAll(" \\s ", "") + "\n"
 					+ stationery.get("NoOfQty").replaceAll("\\s ", "") + "\n"
 					+ stationery.get("PreprintLabel").replaceAll("\\s", "");
-			assertEquals(StationeryActions.GetproductName1FromTheCart().replaceAll(" \n ", ""), ProductDetails);
+			assertEquals(StationeryActions.GetproductName1FromTheCart(stationery.get("Product")).replaceAll(" \n ", ""),
+					ProductDetails);
 			assertEquals(StationeryActions.GetTotalItemsFromCart(), stationery.get("TotalItems"));
 
 		}
@@ -244,12 +252,12 @@ public class MYT_6079_StationeryOrderStationery {
 		}
 
 	}
-	
+
 	@When("^User clicks Review Order$")
 	public void user_clicks_Review_Order() throws Throwable {
-	   
+
 		StationeryActions.ClickReviewOrder();
-		
+
 	}
 
 	@Then("^User be able to see Overview details in the Review Page as below$")
@@ -278,10 +286,8 @@ public class MYT_6079_StationeryOrderStationery {
 		}
 	}
 
-	
 	@Then("^User be able to see first Line item details as below$")
 	public void user_be_able_to_see_first_Line_item_details_as_below(DataTable StationeryTestData) throws Throwable {
-	 
 
 		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled();
@@ -293,20 +299,19 @@ public class MYT_6079_StationeryOrderStationery {
 
 	@Then("^User be able to see second Line item details as below$")
 	public void user_be_able_to_see_second_Line_item_details_as_below(DataTable StationeryTestData) throws Throwable {
-	
+
 		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled();
 			ReviewOrderActions.VerifyLineItem2details(stationery.get("ProductName"), stationery.get("Quantity"),
 					stationery.get("UnitPrice"), stationery.get("Total"));
 
 		}
-		
+
 	}
-	
+
 	@Then("^User must see following message$")
 	public void user_must_see_following_message(DataTable StationeryTestData) throws Throwable {
-		
-		
+
 		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled();
 			ReviewOrderActions.VerifyGSTMSG(stationery.get("GSTMSG"));
@@ -320,7 +325,7 @@ public class MYT_6079_StationeryOrderStationery {
 
 		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled();
-			ReviewOrderActions.VerifyTotals(stationery.get("TotalSurcharges"),stationery.get("TotalCharges"));
+			ReviewOrderActions.VerifyTotals(stationery.get("TotalSurcharges"), stationery.get("TotalCharges"));
 
 		}
 	}
@@ -329,19 +334,130 @@ public class MYT_6079_StationeryOrderStationery {
 	public void user_Clicks_on_Confirm_Order() throws Throwable {
 		ReviewOrderActions.ConfirmOrder();
 	}
-	
+
 	@When("^User clicks the EDIT button$")
 	public void user_clicks_the_EDIT_button() throws Throwable {
-	   
+
 		ReviewOrderActions.ClickEdit();
-		
-	}
-	
-	@When("^User clicks the Edit Delivery Details button$")
-	public void user_clicks_the_Edit_Delivery_Details_button() throws Throwable {
-	 
-		ReviewOrderActions.ClickEditDeliveryDetails();
-		
+
 	}
 
+	@When("^User clicks the Edit Delivery Details button$")
+	public void user_clicks_the_Edit_Delivery_Details_button() throws Throwable {
+
+		ReviewOrderActions.ClickEditDeliveryDetails();
+
+	}
+
+	@Then("^User be able to see third product added to the cart and the number of items in the cart increment by (\\d+)$")
+	public void user_be_able_to_see_third_product_added_to_the_cart_and_the_number_of_items_in_the_cart_increment_by(
+			int arg1, DataTable StationeryTestData) throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			assertEquals(StationeryActions.GetNoOfItems(), stationery.get("NoOfItems"));
+			StationeryActions.ClickItems();
+			String ProductDetails = stationery.get("Product").replaceAll(" \\s ", "") + "\n"
+					+ stationery.get("NoOfQty").replaceAll("\\s ", "");
+			assertEquals(StationeryActions.GetproductName3FromTheCart().replaceAll(" \n ", ""), ProductDetails);
+			assertEquals(StationeryActions.GetTotalItemsFromCart(), stationery.get("TotalItems"));
+
+		}
+	}
+
+	@Then("^User be able to see third Line item details as below$")
+	public void user_be_able_to_see_third_Line_item_details_as_below(DataTable StationeryTestData) throws Throwable {
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			ReviewOrderActions.VerifyLineItem3details(stationery.get("ProductName"), stationery.get("Quantity"),
+					stationery.get("UnitPrice"), stationery.get("Total"));
+		}
+
+	}
+
+	@When("^User Confirm Order$")
+	public void user_Confirm_Order() throws Throwable {
+
+		ReviewOrderActions.ConfirmOrder();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+	}
+
+	@Then("^User be able to see Order number and Order created Date$")
+	public void user_be_able_to_see_Order_number_and_Order_created_Date() throws Throwable {
+
+		ReviewOrderActions.VerifyOrderNumber();
+		ReviewOrderActions.VerifyCreatedOn();
+	}
+
+	@Then("^User be able to create a new order$")
+	public void user_be_able_to_create_a_new_order() throws Throwable {
+
+		ReviewOrderActions.VerifyCreateANewOrder();
+
+	}
+
+	@Then("^User be able to go back to Dashboard$")
+	public void user_be_able_to_go_back_to_Dashboard() throws Throwable {
+
+		ReviewOrderActions.VerifyBackToDashboard();
+
+	}
+
+	@Then("^User can go to MY ORDERS$")
+	public void user_can_go_to_MY_ORDERS() throws Throwable {
+
+		ReviewOrderActions.VerifyMYOrders();
+
+	}
+
+	@Then("^User have ability to Print the order details$")
+	public void user_have_ability_to_Print_the_order_details() throws Throwable {
+
+		ReviewOrderActions.ClickPrint();
+	}
+
+	@When("^User Clicks on Myorders to see created ordered$")
+	public void user_Clicks_on_Myorders_to_see_created_ordered() throws Throwable {
+
+		ReviewOrderActions.ClickMyorder();
+	}
+
+	@Then("^User navigated to MYorders screen and can open the created order$")
+	public void user_navigated_to_MYorders_screen_and_can_open_the_created_order(DataTable arg1) throws Throwable {
+		ReviewOrderActions.VerifyMYOrdersScreenHeading();
+		ReviewOrderActions.ClickOrderItem();
+	}
+
+	@Then("^User be able to see Overview details in the Order Summary Page as below$")
+	public void user_be_able_to_see_Overview_details_in_the_Order_Summary_Page_as_below(DataTable StationeryTestData)
+			throws Throwable {
+
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			OrderSummaryActions.VerifyReviewOrder(stationery.get("TollCarrier"), stationery.get("AccountNumber"),
+					stationery.get("Contact name"), stationery.get("Contact number"));
+
+		}
+	}
+
+	@Then("^User be able to see Delivery details in the Order Summary Page as below$")
+	public void user_be_able_to_see_Delivery_details_in_the_Order_Summary_Page_as_below(DataTable StationeryTestData)
+			throws Throwable {
+		
+
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			OrderSummaryActions.VerifyDeliveryDetails(stationery.get("Contact name"), stationery.get("Phone number"),
+					stationery.get("Company name"), stationery.get("Address"), stationery.get("Customer reference"),
+					stationery.get("Delivery instructions"));
+
+		}
+
+	}
 }
