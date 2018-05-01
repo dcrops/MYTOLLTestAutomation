@@ -65,10 +65,30 @@ Feature: MYT_6079 Stationery - Order Stationery
     Then User be able to charges in Review page as below
       | TotalSurcharges | TotalCharges |
       | TOTAL SURCHARGES AUD $0.00       |Total Charges AUD $0.00    |
-   When User clicks the EDIT button
+   When User clicks the Edit Delivery Details button
     When User enter Review Order details as below
       | AccountNumber            | ContactName | ContactNumber | DeliverAddress | DeliveryContactName | NotifybyEmail              | CustomerReference | DeliveryInstructions      |
       | 200B1F NHP ELECTRICAL | Nadiki        |     498765432 | Toll Group   | Henry             | sitautomationuser@yahoo.com| 98765Ref        | New Test DeliveryInstructions |
+       When User clicks Review Order
+    Then User be able to see Overview details in the Review Page as below
+      | TollCarrier | AccountNumber | Contact name | Contact number |
+      | PRIO        | 200B1F       | Nadiki          | 61-498765432   |
+    Then User be able to see Delivery details in the Review page as below
+      | Contact name | Phone number | Company name | Address                                  | Customer reference | Delivery instructions     |
+      | Henry       | 61-498765432 | Toll Group | 60, Collins Street MELBOURNE VIC 3000 AU | 98765Ref           | New Test DeliveryInstructions |
+    Then User be able to see first Line item details as below
+      | ProductName                   | Quantity | UnitPrice          | Total       | PreprintFrom                                 |
+      | Same Day Consignment (LO6626) | Qty 25   | Unit price : $0.00 | Total $0.00 | 60, Collins Street CDE MELBOURNE VIC 3000 AU |
+    Then User be able to see second Line item details as below
+      | ProductName                    | Quantity | UnitPrice          | Total       |
+      | Overnight Consignment (LO5133) | Qty 25   | Unit price : $0.00 | Total $0.00 |              
+    Then User must see following message
+      | GSTMSG                                                                                                                                                        |
+      | * For the purpose of this order, the Total excludes GST . The applicable amount of GST in relation to this order will be included in the final tax invoice Note : All $ units in AUD |
+    Then User be able to charges in Review page as below
+      | TotalSurcharges | TotalCharges |
+      | TOTAL SURCHARGES AUD $0.00       |Total Charges AUD $0.00    |   
+       
     #Then User can see an email will be generated and sent to the email address specified
     
     #Then User returns to the Order Stationery screen and all the previous entered information will be retained

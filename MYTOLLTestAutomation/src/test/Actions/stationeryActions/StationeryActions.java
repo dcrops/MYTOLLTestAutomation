@@ -122,19 +122,17 @@ public class StationeryActions {
 		PageBase.ClickOn(By.xpath("//*[@id=\"preprint-modal-from-address-selector-1\"]/div[2]/ul/li/div[text()='" + pPreprintFrom + "']"), 10); 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(preprintFromContactName, pPreprintFromContactName, 5);
-		PageBase.MaximumWaitForElementEnabled();
+	
 	
 	}
 	
 	public static void EnterPreprintToDetails(String pPreprintTo, String pPreprintToContactName) {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(preprintToTextfield, pPreprintTo, 5);
-		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(By.xpath("//*[@id=\"preprint-modal-to-address-selector-1\"]/div[2]/ul/li/div[text()='" + pPreprintTo + "']"), 10);  
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(preprintToContactName, pPreprintToContactName, 10);
-		PageBase.MaximumWaitForElementEnabled();
+		
 	
 	}  
 	
@@ -173,13 +171,11 @@ public class StationeryActions {
 	
 	public static String GetproductName1FromTheCart() {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
 		return PageBase.GetText(productName1InTheCart, 5);
 		
 	}
 	
 	public static String GetproductName2FromTheCart() {
-		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		return PageBase.GetText(productName2InTheCart, 5);
 		
@@ -268,7 +264,6 @@ public class StationeryActions {
 	
 	public static void ClickProceedToCart() {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(proceedToCart, 5);
 		
 	}  
@@ -313,12 +308,11 @@ public class StationeryActions {
 		PageBase.ClickOn(By.xpath("//*[@id=\"location-selector\"]/div[2]/ul/li/div[text()='" + pAddress + "']"), 5);
 		PageBase.SendKeysTo(deliveryContactNameTextfield, pDeliveryContactName, 10);
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
 		//PageBase.ClickOn(notifyCheckbox, 5);
 		PageBase.SendKeysTo(notifyEmail, pNotifyEmail, 5);
 		PageBase.SendKeysTo(customerReferenceNumber, pCustomerReferenceNum, 5);
 		PageBase.SendKeysTo(deliveryInstructionTextField, pDeliveryInstructions, 5);
-		PageBase.ClickOn(reviewOrdersBtn, 5);		
+		//PageBase.ClickOn(reviewOrdersBtn, 5);		
 	}
 	
 	public static void ClickReviewOrder() {

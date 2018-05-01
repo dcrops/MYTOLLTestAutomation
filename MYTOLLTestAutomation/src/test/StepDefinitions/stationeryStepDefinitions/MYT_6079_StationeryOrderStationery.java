@@ -244,6 +244,13 @@ public class MYT_6079_StationeryOrderStationery {
 		}
 
 	}
+	
+	@When("^User clicks Review Order$")
+	public void user_clicks_Review_Order() throws Throwable {
+	   
+		StationeryActions.ClickReviewOrder();
+		
+	}
 
 	@Then("^User be able to see Overview details in the Review Page as below$")
 	public void user_be_able_to_see_Overview_details_in_the_Review_Page_as_below(DataTable StationeryTestData)
@@ -321,6 +328,20 @@ public class MYT_6079_StationeryOrderStationery {
 	@When("^User Clicks on Confirm Order$")
 	public void user_Clicks_on_Confirm_Order() throws Throwable {
 		ReviewOrderActions.ConfirmOrder();
+	}
+	
+	@When("^User clicks the EDIT button$")
+	public void user_clicks_the_EDIT_button() throws Throwable {
+	   
+		ReviewOrderActions.ClickEdit();
+		
+	}
+	
+	@When("^User clicks the Edit Delivery Details button$")
+	public void user_clicks_the_Edit_Delivery_Details_button() throws Throwable {
+	 
+		ReviewOrderActions.ClickEditDeliveryDetails();
+		
 	}
 
 }
