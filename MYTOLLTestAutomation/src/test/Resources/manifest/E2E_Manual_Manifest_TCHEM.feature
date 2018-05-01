@@ -32,19 +32,3 @@ Feature: E2E Manual Manifest TMS - Manual Manifest -> Shipment
 #     
 #	// PICK UP Function Not availble yet
 #
-#
-#     And User Selects the Shipment for BAP
-#     |	ManifestName        |
-#     |	Retreived OnRunTime |
-#     Then User Verifies Shipment Details on BAP Page
-#     |Toll carrier                   |Sender                | 	AccountNumber| Service|
-#     |Intermodal & Specialised       |Retreived on Runtime  |	790135       | General|
-#     And User Verifies Line Item on BAP Page
-#      | Item description     | No of Items | Length | Width | Height |  Weight      |
-#      | Automation Template1 |          10 |    100 |   100 |    100 |          900 |
-#     Then User Selects Dispatch Date and Ready Time
-#     |	ReadyTime       |
-#     |	10:00           |
-#     Then User Clicks Review and Book
-#     Then User Confirms Pick Up and Gets BAP Reference Number
-     

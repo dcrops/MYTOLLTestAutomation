@@ -39,7 +39,7 @@ public class ManualManifestTollPriorityNZTests {
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
-			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount) {
+			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount) throws Throwable {
 		
 		//Random Manifest Name
 		int Number = (int) (Math.random()*10000);
@@ -64,12 +64,14 @@ public class ManualManifestTollPriorityNZTests {
 		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
+		ManifestActions.UserRetrivesSenderandReciverLocationsandDetials();
+		
 		//Shipment Product Details
 		PageBase.moveToElement(BookAPickupActions.itemDescriptionTextField);
 		PageBase.sendText(BookAPickupActions.itemDescriptionTextField, 2, ItemTemplateName);
-		CreateShipmentActions.NumberOfItem("15"); 
-		BookAPickupActions.EnterLengthWidthHeight("40","20","10");
-		CreateShipmentActions.EnterWeight("10");
+		CreateShipmentActions.NumberOfItem(NumberOfItems); 
+		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
+		CreateShipmentActions.EnterWeight(Weight);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 
 		//Submit Shipment and Print Manifest
@@ -86,18 +88,11 @@ public class ManualManifestTollPriorityNZTests {
 		PageBase.click(ManifestActions.GoToDashboard, 2);
 		ManifestActions.manifestToBookaPickUp(NewManifestName);
 		
-		//Book a Pick Up Page
+		//User Navigates to BAP Page and Verifies details
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
-		PageBase.verifyTextExistAttribute(BookAPickupActions.TollCarrierTextField, TollCarrier);
-		
-		String pickABookUpAccountNo = BaseWebdriver.driver.findElement(BookAPickupActions.accountNumber).getAttribute("value");
-		if (pickABookUpAccountNo.contains(AccountNo)) {
-			Reporter.log("Expected Text : "+AccountNo+ " Matched the Text on Screen :" +pickABookUpAccountNo);
-			System.out.println("Expected Text : "+AccountNo+ " Matched the Text on Screen :" +pickABookUpAccountNo);
-		}else{
-			Reporter.log("FAILED: Expected Text : "+AccountNo+ " DOES NOT Match the Text on Screen :" +pickABookUpAccountNo);
-			Assert.fail("FAILED: Expected Text : "+AccountNo+ " DOES NOT Match the Text on Screen :" +pickABookUpAccountNo);
-		}
+		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTollPrioNZ, ServiceParcelsOffPeak);
+		ManifestActions.UserVerifiesLineItemOnBAPPage_TGX(NumberOfItems, Length, Width, Height, Weight);
+		//PageBase.sendText(BookAPickupActions.phoneNumber, 10, "33818565");
 		BookAPickupActions.SelectLargestItem(2);
 		ManifestActions.selectPickupDate();
 		ManifestActions.selectReadyTimeJS("09:15");
