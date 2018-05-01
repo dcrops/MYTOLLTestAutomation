@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -17,6 +18,7 @@ import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import createShipmentActions.ShipmentReviewActions;
+import cucumber.api.DataTable;
 import rateEnquiryActions.RateEnquiryActions;
 
 public class ManifestActions {
@@ -149,6 +151,12 @@ public class ManifestActions {
 	
 	
 	public static String NewInvoiceNumber;
+	public static String SenderCompanyName;
+	public static String SenderContactName;
+	public static String SenderLocation;
+	public static String ReceiverCompanyName;
+	public static String ReceiverContactName;
+	public static String ReceiverLocation;
 	
 	
 	public static void VerifyManifestDetails(String pStatus, String pSenderLocation, String pTollCarrier,
@@ -456,7 +464,7 @@ public class ManifestActions {
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.waitForElement(ShipmentManifestTab, 2);
+		PageBase.waitForElement(ShipmentManifestTab, 10);
 		PageBase.moveToElement(ShipmentManifestTab);
 		PageBase.click(ShipmentManifestTab, 2);
 		Reporter.log("User Select Download PDF from Shipment/Manifest Tab");
@@ -728,5 +736,50 @@ public static void commercialInvoiceItemDetails(String Description, String PartN
 		PageBase.verifyTextExistAttribute(commericalInvoiceNumber, NewInvoiceNumber);
 	}
 
+	public static void UserRetrivesSenderandReciverLocationsandDetials() throws Throwable {
+		PageBase.MinimumWaitForElementEnabled_1();
+
+		SenderCompanyName = BaseWebdriver.driver.findElement(CreateShipmentActions.senderTextfield).getAttribute("value");
+		SenderContactName = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();
+		SenderLocation = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[3]")).getText();
+		System.out.println("SenderCompanyName ="+SenderCompanyName);
+		System.out.println("SenderContactName ="+ SenderContactName);
+		System.out.println("SenderLocation ="+SenderLocation);
+
+		ReceiverCompanyName = BaseWebdriver.driver.findElement(CreateShipmentActions.receiverTextfield).getAttribute("value");
+		ReceiverContactName = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[2]")).getText();
+		ReceiverLocation = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[3]")).getText();
+		System.out.println("ReceiverCompanyName ="+ReceiverCompanyName);
+		System.out.println("ReceiverContactName ="+ReceiverContactName);
+		System.out.println("ReceiverLocation ="+ReceiverLocation);
+	}
+	
+	public static void UserVerifiesShipmentDetailsonBAPPage(String Carrier, String AccountNo, String Service) throws Throwable {
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.TollCarrierTextField, Carrier);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.accountNumber, AccountNo);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.name, SenderContactName);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.location, SenderCompanyName);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.serviceSelected, Service);
+	}
+	
+	
+	public static void UserVerifiesLineItemOnBAPPage_TDF(String ItemTemplateName,
+			String NumberOfItems, String Length, String Width, String Height, String Weight) throws Throwable {
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.itemDescriptionTextField, ItemTemplateName);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.enterQuantity, NumberOfItems);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.length, Length);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.width, Width);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.height, Height);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.weight, Weight);			
+	}
+	
+	public static void UserVerifiesLineItemOnBAPPage_TGX(String NumberOfItems, String Length, String Width, String Height, String Weight) throws Throwable {
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.enterQuantity, NumberOfItems);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.length, Length);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.width, Width);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.height, Height);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.weight, Weight);			
+	}
 	
 }

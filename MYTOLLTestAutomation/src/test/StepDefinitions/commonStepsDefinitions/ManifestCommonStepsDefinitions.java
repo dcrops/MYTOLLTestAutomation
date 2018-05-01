@@ -149,21 +149,23 @@ public class ManifestCommonStepsDefinitions {
 	
 	@And("^User Retrives Sender and Reciver Locations and Detials$")
 	public void UserRetrivesSenderandReciverLocationsandDetials() throws Throwable {
-		PageBase.MinimumWaitForElementEnabled_1();
-
-		SenderCompanyName = BaseWebdriver.driver.findElement(CreateShipmentActions.senderTextfield).getAttribute("value");
-		SenderContactName = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();
-		SenderLocation = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[3]")).getText();
-		System.out.println("SenderCompanyName ="+SenderCompanyName);
-		System.out.println("SenderContactName ="+ SenderContactName);
-		System.out.println("SenderLocation ="+SenderLocation);
-
-		ReceiverCompanyName = BaseWebdriver.driver.findElement(CreateShipmentActions.receiverTextfield).getAttribute("value");
-		ReceiverContactName = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[2]")).getText();
-		ReceiverLocation = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[3]")).getText();
-		System.out.println("ReceiverCompanyName ="+ReceiverCompanyName);
-		System.out.println("ReceiverContactName ="+ReceiverContactName);
-		System.out.println("ReceiverLocation ="+ReceiverLocation);
+//		PageBase.MinimumWaitForElementEnabled_1();
+//
+//		SenderCompanyName = BaseWebdriver.driver.findElement(CreateShipmentActions.senderTextfield).getAttribute("value");
+//		SenderContactName = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();
+//		SenderLocation = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[3]")).getText();
+//		System.out.println("SenderCompanyName ="+SenderCompanyName);
+//		System.out.println("SenderContactName ="+ SenderContactName);
+//		System.out.println("SenderLocation ="+SenderLocation);
+//
+//		ReceiverCompanyName = BaseWebdriver.driver.findElement(CreateShipmentActions.receiverTextfield).getAttribute("value");
+//		ReceiverContactName = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[2]")).getText();
+//		ReceiverLocation = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[3]")).getText();
+//		System.out.println("ReceiverCompanyName ="+ReceiverCompanyName);
+//		System.out.println("ReceiverContactName ="+ReceiverContactName);
+//		System.out.println("ReceiverLocation ="+ReceiverLocation);
+		
+		ManifestActions.UserRetrivesSenderandReciverLocationsandDetials();
 		
 	}
 	
@@ -242,24 +244,17 @@ public class ManifestCommonStepsDefinitions {
 	@Then("^User Verifies Shipment Details on BAP Page$")
 	public void UserVerifiesShipmentDetailsonBAPPage(DataTable manifestTestData) throws Throwable {
 		for (Map<String, String> manifest : manifestTestData.asMaps(String.class, String.class)) {
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.TollCarrierTextField, manifest.get("Toll carrier"));
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.accountNumber, manifest.get("AccountNumber"));
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.name, SenderContactName);
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.location, SenderCompanyName);
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.serviceSelected, manifest.get("Service"));
+			ManifestActions.UserVerifiesShipmentDetailsonBAPPage(manifest.get("Toll carrier"), manifest.get("AccountNumber"), manifest.get("Service"));
+			
 			
 		}
 	}
 	
 	@And("^User Verifies Line Item on BAP Page$")
 	public void UserVerifiesLineItemOnBAPPage(DataTable manifestTestData) throws Throwable {
-		for (Map<String, String> manifest : manifestTestData.asMaps(String.class, String.class)) {
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.itemDescriptionTextField, manifest.get("Item description"));
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.enterQuantity, manifest.get("No of Items"));
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.length, manifest.get("Length"));
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.width, manifest.get("Width"));
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.height, manifest.get("Height"));
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.weight, manifest.get("Weight"));			
+		for (Map<String, String> manifest : manifestTestData.asMaps(String.class, String.class)) {	
+			ManifestActions.UserVerifiesLineItemOnBAPPage_TDF(manifest.get("Item description"), manifest.get("No of Items"), manifest.get("Length"), manifest.get("Width"), 
+					manifest.get("Height"), manifest.get("Weight"));
 		}
 	}
 	

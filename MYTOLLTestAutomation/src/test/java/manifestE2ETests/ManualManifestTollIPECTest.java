@@ -39,7 +39,7 @@ public class ManualManifestTollIPECTest {
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
-			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount) {
+			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount) throws Throwable {
 		
 		//Random Manifest Name
 		int Number = (int) (Math.random()*10000);
@@ -64,6 +64,8 @@ public class ManualManifestTollIPECTest {
 		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
+		ManifestActions.UserRetrivesSenderandReciverLocationsandDetials();
+		
 		//Shipment Product Details
 		PageBase.moveToElement(BookAPickupActions.itemDescriptionTextField);
 		PageBase.sendText(BookAPickupActions.itemDescriptionTextField, 2, ItemTemplateName);
@@ -86,18 +88,11 @@ public class ManualManifestTollIPECTest {
 		PageBase.click(ManifestActions.GoToDashboard, 2);
 		ManifestActions.manifestToBookaPickUp(NewManifestName);
 		
-		//Book a Pick Up Page
+		//User Navigates to BAP Page and Verifies details
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
-		PageBase.verifyTextExistAttribute(BookAPickupActions.TollCarrierTextField, TollCarrier);
-		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "398185656");
-		String pickABookUpAccountNo = BaseWebdriver.driver.findElement(BookAPickupActions.accountNumber).getAttribute("value");
-			if (pickABookUpAccountNo.contains(AccountNo)) {
-				Reporter.log("Expected Text : "+AccountNo+ " Matched the Text on Screen :" +pickABookUpAccountNo);
-				System.out.println("Expected Text : "+AccountNo+ " Matched the Text on Screen :" +pickABookUpAccountNo);
-			}else{
-				Reporter.log("FAILED: Expected Text : "+AccountNo+ " DOES NOT Match the Text on Screen :" +pickABookUpAccountNo);
-				Assert.fail("FAILED: Expected Text : "+AccountNo+ " DOES NOT Match the Text on Screen :" +pickABookUpAccountNo);
-			}
+		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTIPEC, ServiceRoadExpress);
+		ManifestActions.UserVerifiesLineItemOnBAPPage_TGX(NumberOfItems, Length, Width, Height, Weight);
+		
 		BookAPickupActions.SelectLargestItem(1);
 		ManifestActions.selectPickupDate();
 		ManifestActions.selectReadyTimeJS("09:15");

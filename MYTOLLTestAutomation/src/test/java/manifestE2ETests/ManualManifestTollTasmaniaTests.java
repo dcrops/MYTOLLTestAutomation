@@ -39,7 +39,7 @@ public class ManualManifestTollTasmaniaTests {
 			String AccountNumber, String ReceiverName, String ReceiverItem, String dropOffDepot, String collectionDepot,
 			String DGContactName, String ShipmentRef1, String ShipmentRef2, String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight, Integer DGYes,
-			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount) {
+			Integer DGNo, String BillingType, String SpeceialIns, String TollExtraServiceAmount) throws Throwable {
 		
 		//Random Manifest Name
 		int Number = (int) (Math.random()*10000);
@@ -65,6 +65,7 @@ public class ManualManifestTollTasmaniaTests {
 		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
+		ManifestActions.UserRetrivesSenderandReciverLocationsandDetials();
 		CreateShipmentActions.setQEMNo();
 		
 		//Shipment Product Details
@@ -91,18 +92,10 @@ public class ManualManifestTollTasmaniaTests {
 		PageBase.click(ManifestActions.GoToDashboard, 2);
 		ManifestActions.manifestToBookaPickUp(NewManifestName);
 		
-		//Book a Pick Up Page
-		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
-		PageBase.verifyTextExistAttribute(BookAPickupActions.TollCarrierTextField, TollCarrier);
-		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "398185656");
-		String pickABookUpAccountNo = BaseWebdriver.driver.findElement(BookAPickupActions.accountNumber).getAttribute("value");
-		if (pickABookUpAccountNo.contains(AccountNo)) {
-			Reporter.log("Expected Text : "+AccountNo+ " Matched the Text on Screen :" +pickABookUpAccountNo);
-			System.out.println("Expected Text : "+AccountNo+ " Matched the Text on Screen :" +pickABookUpAccountNo);
-		}else{
-			Reporter.log("FAILED: Expected Text : "+AccountNo+ " DOES NOT Match the Text on Screen :" +pickABookUpAccountNo);
-			Assert.fail("FAILED: Expected Text : "+AccountNo+ " DOES NOT Match the Text on Screen :" +pickABookUpAccountNo);
-		}
+		//User Navigates to BAP Page and Verifies details 
+		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTollTas, ServiceGeneral);
+		ManifestActions.UserVerifiesLineItemOnBAPPage_TDF(ItemTemplateName, NumberOfItems, Length, Width, Height, Weight);
+		
 		ManifestActions.selectPickupDate();
 		ManifestActions.selectReadyTimeJS("09:15");
 		Reporter.log("User Clicks Review Book Up");
