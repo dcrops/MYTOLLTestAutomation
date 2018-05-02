@@ -23,11 +23,7 @@ public class StationeryCommonStepsDefinitions {
 	
 	@When("^User clicks on the mega menu$")
 	public void user_clicks_on_the_mega_menu() throws Throwable {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled(); 
-		
+		PageBase.LongWaitForElementEnabled();
 		//PageBase.WaitForElement(MyTollHomePageActions.HmbugerMenu,30);
 		MyTollHomePageActions.ClickMenu();
 		

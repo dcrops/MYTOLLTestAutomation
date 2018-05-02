@@ -165,13 +165,11 @@ public class ReviewOrderActions {
 	}
 	
 	public static void VerifyOrderNumber() {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.LongWaitForElementEnabled();
+		PageBase.LongWaitForElementEnabled();
+		
 		try {
-			PageBase.MaximumWaitForElementEnabled();
+			
 		String OrderNumber=PageBase.GetText(orderNumber, 5);
 		if(orderNumber.equals(null)){
 			System.out.println("OrderNumber: "+ OrderNumber);
@@ -233,7 +231,7 @@ public class ReviewOrderActions {
 	
 	
 	public static void ClickOrderItem() {
-
+		PageBase.LongWaitForElementEnabled();
 		PageBase.ClickOn(orderItem1, 5);
 		PageBase.MaximumWaitForElementEnabled();
 	}

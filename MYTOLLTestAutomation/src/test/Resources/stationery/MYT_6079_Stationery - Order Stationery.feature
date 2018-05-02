@@ -134,11 +134,11 @@ Feature: MYT_6079 Stationery - Order Stationery
     Then User can go to MY ORDERS
     When User Clicks on Myorders to see created ordered
     Then User navigated to MYorders screen and can open the created order
-    |ScreenHeading|
-    |MY ORDERS|
+      | ScreenHeading |
+      | MY ORDERS     |
     Then User be able to see Overview details in the Order Summary Page as below
-      | TollCarrier | AccountNumber | Contact name | Contact number |
-      | PRIO        | 200BHY NATIONAL PRIORITY FOC       | Matthew      | 61-481234563   |
+      | TollCarrier | AccountNumber                | Contact name | Contact number |
+      | PRIO        | 200BHY NATIONAL PRIORITY FOC | Matthew      | 61-481234563   |
     Then User be able to see Delivery details in the Order Summary Page as below
       | Contact name | Phone number | Company name | Address                                  | Customer reference | Delivery instructions                 |
       | Andrea       | 61-412345678 | Dialog Group | 60, Collins Street MELBOURNE VIC 3000 AU | Ref876543          | Third times Test DeliveryInstructions |
@@ -157,5 +157,4 @@ Feature: MYT_6079 Stationery - Order Stationery
     Then User be able to charges in Review page as below
       | TotalSurcharges            | TotalCharges            |
       | TOTAL SURCHARGES AUD $0.00 | Total Charges AUD $0.00 |
-    
     Then User have ability to Print the order details
