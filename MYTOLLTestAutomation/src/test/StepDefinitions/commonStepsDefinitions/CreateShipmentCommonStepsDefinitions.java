@@ -7,6 +7,7 @@ import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -169,6 +170,17 @@ public class CreateShipmentCommonStepsDefinitions {
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();
 		PageBase.MediumWaitForElementEnabled_1();
+		
+	}
+	
+	@And("^User Selects Mode For Shipment$")
+	public void UserSelectsMode(DataTable shipmentTestData) throws Throwable {
+		
+		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
+			String s2 = shipment.get("Mode");
+			System.out.println("S2  " + s2);
+			CreateShipmentActions.SelectMode(Integer.parseInt(s2));
+		}
 		
 	}
 	
