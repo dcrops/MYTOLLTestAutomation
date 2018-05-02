@@ -139,10 +139,10 @@ public class IntermodalSpecializedTest {
 		BookAPickupActions.selectContainFoodItem();
 
 		BookAPickupActions.selectDangerousGoodNewLine();
-		BookAPickupActions.ClickAddANewLine();
+		//BookAPickupActions.ClickAddANewLine();
 
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MoveToElement(BookAPickupActions.length, BookAPickupActions.weight);
+		//PageBase.MaximumWaitForElementEnabled();
+		//PageBase.MoveToElement(BookAPickupActions.length, BookAPickupActions.weight);
 
 		BookAPickupActions.selectDispatchDate();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();

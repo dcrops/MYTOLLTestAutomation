@@ -159,6 +159,19 @@ public class PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
+	public static void LongWaitForElementEnabled() {
+		try {
+			Thread.sleep(5000);
+			
+
+		}
+
+		catch (Exception ex) {
+			System.out.println(ex);
+
+		}
+	}
+
 	public static void MaximumWaitForElementEnabled() {
 		try {
 			Thread.sleep(1000);

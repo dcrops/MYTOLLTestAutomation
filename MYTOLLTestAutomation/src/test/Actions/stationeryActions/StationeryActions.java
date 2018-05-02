@@ -24,10 +24,12 @@ public class StationeryActions {
 	public static By addDetailsBtn= By.name("addDetailsBtn");  
 	public static By productNameInTheList= By.xpath("//*[@id=\"main-cont\"]/div[2]/div[2]/div/div/h4"); 
 	public static By addToCartProduct1= By.xpath("//*[@id=\"main-cont\"]/div[2]/div[2]/div/div/p[3]/button");
-	public static By addToCartProduct2= By.xpath("//*[@id=\"main-cont\"]/div[2]/div[3]/div/div/p[3]/button");
+	public static By addToCartProduct2= By.xpath("//*[@id=\"main-cont\"]/div[2]/div[3]/div/div/p[3]/button"); 
+	public static By addToCart= By.xpath("//*[@id=\"main-cont\"]/div[2]/div[4]/div/div/p[3]/button"); 
 	public static By items= By.xpath("//*[@id=\"main-cont\"]/div[1]/span[2]"); 
 	public static By productName1InTheCart= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[2]/div/div[1]"); 
 	public static By productName2InTheCart= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[2]/div[2]/div[1]"); 
+	public static By productName3InTheCart= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[2]/div[3]/div[1]");
 	public static By product1QtyIntheCart= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[2]/div[1]/div[1]/span[1]");
 	public static By preprintProduct1= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[2]/div[1]/div[1]/span[2]");  
 	public static By totalItemsInTheCart= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[3]/span");  
@@ -136,12 +138,12 @@ public class StationeryActions {
 	
 	}  
 	
-	public static void ClickAddToCartProduct1() {
+	public static void ClickAddToCart(String pProductName) {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(addToCartProduct1, 5);
-		
-	}
+		PageBase.ClickOn(By.xpath("//*[@id=\"main-cont\"]//*//div/h4[text()='"+pProductName+"']//following::P[3]/button"), 5);
 	
+	}
+
 	public static void ClickAddToCartProduct2() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(addToCartProduct2, 5);
@@ -169,7 +171,7 @@ public class StationeryActions {
 		
 	}
 	
-	public static String GetproductName1FromTheCart() {
+	public static String GetproductName1FromTheCart(String pProductName) {
 		PageBase.MaximumWaitForElementEnabled();
 		return PageBase.GetText(productName1InTheCart, 5);
 		
@@ -177,7 +179,13 @@ public class StationeryActions {
 	
 	public static String GetproductName2FromTheCart() {
 		PageBase.MaximumWaitForElementEnabled();
-		return PageBase.GetText(productName2InTheCart, 5);
+		return PageBase.GetText(productName2InTheCart,5);
+		
+	}
+	
+	public static String GetproductName3FromTheCart() {
+		PageBase.MaximumWaitForElementEnabled();
+		return PageBase.GetText(productName3InTheCart,5);
 		
 	}
 	
