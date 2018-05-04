@@ -59,6 +59,7 @@ public class OrderSummaryActions {
 
 	public static By TotalCharge = By
 			.xpath("//*[@id=\"order-detail-step1\"]/div[2]/div[2]/div[2]/div/div/div[2]/div/p");
+	public static By print = By.id("orderPrint");
 	
 	public static void VerifyReviewOrder(String pReviewOrder, String pAccountNumber, String pContactName,
 			String pContactNumber) {
@@ -80,6 +81,25 @@ public class OrderSummaryActions {
 		assertEquals( PageBase.GetText(address, 5),pAddress);
 		assertEquals( PageBase.GetText(deliveryCustomerReference, 5),pDeliveryCustomerReference);
 		assertEquals( PageBase.GetText(deliveryInstructions, 5),pDeliveryInstructions);
+	}
+	
+	public static void VerifyGSTMSG(String pGSTMsg) {
+
+		assertEquals( PageBase.GetText(GSTMEssage, 5).replaceAll("\\s", ""),pGSTMsg.replaceAll("\\s", ""));
+					
+	}
+	
+	public static void VerifyTotals(String pTotalSurcharges,String pTotalchages) {
+
+		assertEquals( PageBase.GetText(TotalSurcharge, 5).replaceAll("\\s", ""),pTotalSurcharges.replaceAll("\\s", ""));
+		assertEquals( PageBase.GetText(TotalCharge, 5).replaceAll("\\s", ""),pTotalchages.replaceAll("\\s", ""));
+		
+	}
+	
+	public static void ClickPrint() {
+
+		PageBase.ClickOn(print, 5);
+		PageBase.MaximumWaitForElementEnabled();
 	}
 
 }

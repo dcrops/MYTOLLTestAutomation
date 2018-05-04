@@ -2,6 +2,8 @@ package myTollHomePageActions;
 
 import GlobalActions.PageBase;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -17,6 +19,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
+import stationeryActions.StationeryActions;
 
 
 public class MyTollHomePageActions {
@@ -461,6 +464,32 @@ public class MyTollHomePageActions {
 	public static void ClickAdvanceSearchTab() {
 		PageBase.click(advanceSearchTab, 5);
 
+	}
+	
+	public static void VerifyAdvancedSearchNotDisplay() {
+	
+		try {
+			Boolean results=PageBase.FindElement(advanceSearchTab).isDisplayed();
+		assertEquals(results, "false");
+		}
+		catch(Exception ex)
+		{
+			assertEquals("true", "true");
+		}
+			
+	}
+	
+	public static void VerifyTrackAndTraceBtnIsDisplay() {
+		
+		try {
+			Boolean results=PageBase.FindElement(trackAndTraceSearch).isDisplayed();
+		assertEquals(results, "true");
+		}
+		catch(Exception ex)
+		{
+			assertEquals("true", "fail");
+		}
+			
 	}
 	
 	public static void VerifyAdvanceSearchResultsDisplayed() {

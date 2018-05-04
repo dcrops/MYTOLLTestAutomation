@@ -157,10 +157,7 @@ public class StationeryActions {
 	}
 	
 	public static String GetNoOfItems() {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.LongWaitForElementEnabled();
 		return PageBase.GetText(items, 10);
 		
 	}

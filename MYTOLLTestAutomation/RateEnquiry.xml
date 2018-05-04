@@ -164,12 +164,9 @@
 
 
 		<classes>
-
-		
-			<class name="rateEnquiryE2ETests.TollTasmaniaTests" />
-			
-			
-				</classes>
+	    <class name="rateEnquiryE2ETests.TollTasmaniaTests" />
+		<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	
+		</classes>
 
 	    
 	 	<!-- Blocked> <classes>	

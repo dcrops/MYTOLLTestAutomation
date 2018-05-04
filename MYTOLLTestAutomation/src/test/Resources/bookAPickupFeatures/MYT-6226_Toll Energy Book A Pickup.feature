@@ -57,7 +57,7 @@ Feature: MYT_6226 Toll Energy Book A Pickup
       | Special Ins          |
     Then User clicks on Review & Book and User be able to see pickup details entered in Review Your Pickup screen
       | TollCarrier            | AccountNumber | Company  | Location                                     | Booked by | Phone number | Ready time | Location closing time | Special instructions |
-      | Toll Energy and Marine | G28668        | AccessHQ | 60, Collins Street CDE MELBOURNE VIC 3000 AU | Test5213  |    452456876 | 14:45      | 18:00                 | Special Ins          |
+      | Toll Energy and Marine | G28668        | AccessHQ | 60, Collins Street CDE MELBOURNE VIC 3000 AU | Kate      |    452456876 | 14:45      | 21:00                 | Special Ins          |
     Then User be able to see first item details entered in Review Your Pickup screen
       | ItemDescription     | Destination   | Mode | Service    | ChargeTo | NoOfItems | PalletSpaces | Length | Width | Height | Volume    | TotalWeight | DangerousGoods | FoodItem |
       | Automation Template | MELEUCA, 6079 | Road | DG Express | Sender   |        10 |            6 |    100 |   100 |    100 | 10.000 m3 | 900 kg      | Yes            | No       |
@@ -71,8 +71,8 @@ Feature: MYT_6226 Toll Energy Book A Pickup
     Then User navigates to "PICKUP CONFIRMED" screen
     Then User can see "Refrence Number" with "TW"
     Then User be able to see a message as an email delivered.
-      | Msg                                                 |
-      | Wehavesentyouanemailconfirmingyourpickupbookingto:: |
+      | Msg                                                |
+      | Wehavesentyouanemailconfirmingyourpickupbookingto: |
     Then User can see email address for an email deliveredpickup confirmation.
 
   @tag1
@@ -107,7 +107,7 @@ Feature: MYT_6226 Toll Energy Book A Pickup
       | Special Ins          |
     Then User clicks on Review & Book and User be able to see pickup details entered in Review Your Pickup screen
       | TollCarrier            | AccountNumber | Company  | Location                                     | Booked by | Phone number | Ready time | Location closing time | Special instructions |
-      | Toll Energy and Marine | G28668        | AccessHQ | 60, Collins Street CDE MELBOURNE VIC 3000 AU | Test5213  |    452456876 | 14:45      | 18:00                 | Special Ins          |
+      | Toll Energy and Marine | G28668        | AccessHQ | 60, Collins Street CDE MELBOURNE VIC 3000 AU | Kate      |    452456876 | 14:45      | 21:00                 | Special Ins          |
     Then User be able to see first item details entered in Review Your Pickup screen
       | ItemDescription     | Destination   | Mode | Service | ChargeTo | NoOfItems | PalletSpaces | Length | Width | Height | Volume    | TotalWeight | DangerousGoods | FoodItem |
       | Automation Template | MELEUCA, 6079 | Road | General | Sender   |        10 |            6 |    100 |   100 |    100 | 10.000 m3 | 900 kg      | No             | No       |
@@ -115,6 +115,6 @@ Feature: MYT_6226 Toll Energy Book A Pickup
     Then User navigates to "PICKUP CONFIRMED" screen
     Then User can see "Refrence Number" with "TW"
     Then User be able to see a message as an email delivered.
-      | Msg                                                 |
-      | Wehavesentyouanemailconfirmingyourpickupbookingto:: |
+      | Msg                                                |
+      | Wehavesentyouanemailconfirmingyourpickupbookingto: |
     Then User can see email address for an email deliveredpickup confirmation.

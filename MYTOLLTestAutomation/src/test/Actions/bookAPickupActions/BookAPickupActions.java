@@ -121,7 +121,7 @@ public class BookAPickupActions {
 	public static By specialInstructions = By.id("comments");
 	public static By referenceNumber = By.xpath("//*[@id=\"custom-ref-num\"]");
 	public static By consignmentNotes = By.xpath("//*[@id=\"steps-3\"]/div[2]/div[1]/div/label/span[2]");
-	public static By reviewBookBtn = By.id("review-pickup");
+	public static By reviewBookBtn = By.id("review-pickup"); 
 
 	public static By recieverAccount = By.id("reciever-account");
 
@@ -562,7 +562,7 @@ public class BookAPickupActions {
 	public static void VerifyShipmentMsg() {
 		PageBase.MaximumWaitForElementEnabled();
 		assertEquals("Shipment", BaseWebdriver.driver.findElement(NOUNAddedMsgHeading).getText());
-		assertEquals("Select at least one line item", BaseWebdriver.driver.findElement(NOUNAddedMsgContent).getText());
+		assertEquals("Enter DG data in at least one line item", BaseWebdriver.driver.findElement(NOUNAddedMsgContent).getText());
 		BaseWebdriver.driver.findElement(CloseAlert).click();
 	}
 

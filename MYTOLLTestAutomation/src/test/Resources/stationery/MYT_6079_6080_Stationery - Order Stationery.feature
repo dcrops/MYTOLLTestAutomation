@@ -131,6 +131,7 @@ Feature: MYT_6079 Stationery - Order Stationery
     Then User be able to see Order number and Order created Date
     Then User be able to create a new order
     Then User be able to go back to Dashboard
+    And User have ability to Print the order details after confirming the order
     Then User can go to MY ORDERS
     When User Clicks on Myorders to see created ordered
     Then User navigated to MYorders screen and can open the created order
@@ -141,7 +142,7 @@ Feature: MYT_6079 Stationery - Order Stationery
       | PRIO        | 200BHY NATIONAL PRIORITY FOC | Matthew      | 61-481234563   |
     Then User be able to see Delivery details in the Order Summary Page as below
       | Contact name | Phone number | Company name | Address                                  | Customer reference | Delivery instructions                 |
-      | Andrea       | 61-412345678 | Dialog Group | 60, Collins Street MELBOURNE VIC 3000 AU | Ref876543          | Third times Test DeliveryInstructions |
+      | John      | 61-412345678 | Dialog Group | 60, Collins Street MELBOURNE VIC 3000 | Ref876543          | Third times Test DeliveryInstructions |
     Then User be able to see first Line item details as below
       | ProductName                   | Quantity | UnitPrice          | Total       | PreprintFrom                                 |
       | Same Day Consignment (LO6626) | Qty 25   | Unit price : $0.00 | Total $0.00 | 60, Collins Street CDE MELBOURNE VIC 3000 AU |
@@ -151,10 +152,10 @@ Feature: MYT_6079 Stationery - Order Stationery
     Then User be able to see third Line item details as below
       | ProductName                   | Quantity | UnitPrice          | Total       |
       | Off Peak Consignment (LO5134) | Qty 25   | Unit price : $0.00 | Total $0.00 |
-    Then User must see following message
+    Then User must see following message in the Order Summary Page as below
       | GSTMSG                                                                                                                                                                               |
       | * For the purpose of this order, the Total excludes GST . The applicable amount of GST in relation to this order will be included in the final tax invoice Note : All $ units in AUD |
-    Then User be able to charges in Review page as below
+    Then User be able to charges in the Order Summary Page as below
       | TotalSurcharges            | TotalCharges            |
       | TOTAL SURCHARGES AUD $0.00 | Total Charges AUD $0.00 |
-    Then User have ability to Print the order details
+    And User have ability to Print the order details in the Order Summary Page as below

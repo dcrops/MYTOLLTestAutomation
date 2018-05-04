@@ -75,7 +75,7 @@ public class CreateShipmentActions {
 	public static By senderReference = By.id("sender-reference");
 	public static By receiverReference = By.id("reciever-reference");
 	public static By numberOfItem = By.id("quantity");
-	public static By itemType = By.xpath("//*[@id=\"billing-type-selector\"]/div[1]/a/i");
+	public static By itemType = By.xpath("//*[@id=\"outr-pkg-selector\"]/div[1]/input[2]"); //.xpath("//*[@id=\"billing-type-selector\"]/div[1]/a/i");//*[@id="outr-pkg-selector"]/div[1]/input[2]
 	public static By itemTypeTextField = By.xpath("billing-type-description");
 	public static By numberOfGarments = By.id("garmentsCount");
 	public static By weight = By.id("weight");
@@ -819,8 +819,8 @@ public class CreateShipmentActions {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(itemType).click();
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"billing-type-selector\"]/div[2]/ul/li[" + j + "]/div"))
-				.click();
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"outr-pkg-selector\"]/div[2]/ul/li[" + j + "]/div"))
+				.click();//*[@id="outr-pkg-selector"]/div[2]/ul/li[2]/div
 
 	}
 
