@@ -29,7 +29,7 @@
 
 			
 	
-			<class name="baseWebdriver.ManifestTestRunner"/> 
+			<class name="baseWebdriver.RateEnquiryTestRunner"/> 
 			
 			
 			<!-- Blocked>   <class name="baseWebdriver.CreateShipmentTestRunner" />
