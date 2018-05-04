@@ -248,7 +248,7 @@ public class ReturnsCommonStepsDefinitions {
 		PageBase.verifyTextExist(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[4]"), myReturn.get("Toll carrier"));
 		PageBase.verifyTextSubString(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[5]"), Sender);
 		PageBase.verifyTextSubString(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[6]"), Receiver);
-		PageBase.verifyTextExist(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[7]"), MyReturnPageDispatchDate);
+		PageBase.verifyDateReformated(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[7]"), MyReturnPageDispatchDate);
 		PageBase.verifyTextExist(By.xpath("//*[@id=\"myreturnsDataTbody\"]/tr/td[8]"), myReturn.get("Ready time"));
 		PageBase.verifyTextExist(By.xpath("//*[@id=\"data-desc\"]"), "Showing 1 - 1 of 1");
 		}

@@ -190,10 +190,33 @@
 	<parameter name="Suburb14" value="MARMION" />
 	<parameter name="Suburb14Option" value="6020, MARMION, WA, AU" />
 	<parameter name="Postcode14" value="6020" />
+	
+    <parameter name="TNQXACTAddress1" value="Hackett House, 19 Hackett Place, HACKETT  ACT  2602"/>
+	<parameter name="TNQXACTAddress2" value="1 Wreck Bay Road, JERVIS BAY  OT  2540"/>
+	<parameter name="TNQXNSWAddress1" value="19 Hickson Road, DAWES POINT  NSW  2000"/>
+	<parameter name="TNQXNSWAddress2" value="338 Yarrawonga Road, YARRAWONGA  NSW  2850"/>
+	<parameter name="TNQXNSWAddress3" value="22 Arcadia Road, GLEBE  NSW  2037"/>
+	<parameter name="TNQXSAAddress1" value="Adelaide Remand Centre, 208 Currie Street, ADELAIDE  SA  5000"/>
+	<parameter name="TNQXSAAddress2" value="172 Port Wakefield-Auburn Road, BOWMANS  SA  5550"/>
+	<parameter name="TNQXVICAddress1" value="South Wharf Office Tower, 30 Convention Centre Place, SOUTH WHARF  VIC  3006"/>
+	<parameter name="TNQXVICAddress2" value="6 Wheeler Street, BERWICK  VIC  3806"/>
+	<parameter name="TNQXVICAddress3" value="60 Collins Street, MELBOURNE  VIC  3000"/>
+	<parameter name="TNQXWAAddress1" value="97 William Street, PERTH  WA  6000"/>
+	<parameter name="TNQXWAAddress2" value="1347 Chester Pass Road, NAPIER  WA  6330"/>
+	
+	<parameter name="IPECACTAddress1" value="Hackett House, 19 Hackett Place, HACKETT  ACT  2602"/>
+	<parameter name="IPECNSWAddress1" value="Collyben, Lot 105  Belmore Road, MUNGINDI  QLD  2406"/>
+	<parameter name="IPECNTAddress1" value="5 Achernar Ct, Woodroffe NT 0830"/>
+	<parameter name="IPECQLDAddress1" value="Level 1  80 Ann Street, BRISBANE CITY  QLD  4000"/>
+	<parameter name="IPECSAAddress1" value="40 Alexander Street, SELLICKS BEACH  SA  5174"/>
+	<parameter name="IPECTASAddress1" value="208 Collins Street, HOBART  TAS  7000"/>
+	<parameter name="IPECVICAddress1" value="1-7 Hillcrest Grove, SPRINGVALE  VIC  3171"/>
+	<parameter name="IPECWAAddress1" value="97 William Street, PERTH  WA  6000"/>
 	      
 
 	<classes>
-<class name="bookAPickupE2ETests.TollIPECTest" />
+			<class name="bookAPickupE2ETests.TollIPEC_CutOffTime"/> 
+			<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime"/>
 		</classes>
 		<!-- Blocked> <classes>   <class name="bookAPickupE2ETests.TollPriorityNZTest" 
 			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 

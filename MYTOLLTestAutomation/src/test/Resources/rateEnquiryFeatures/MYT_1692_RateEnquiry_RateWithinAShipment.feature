@@ -16,17 +16,30 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
       |    1 |
     When User enters following input data for the line item
       | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height |  Weight      | SenderReference | ReceiverReference |
-      | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |          900 | Ref123          | Ref456            |
+      | Automation Template1 | General Freight |          10 | Item      |    100 |   100 |    100 |          900 | Ref123          | Ref456            |
     When User selects Dangerous Goods
       | DgGoods |
       |       2 |
     Then User Clicks Price Now Curtain on Shipment Page
     Then Rate is Displayed with no breakdown and with a disclaimer
-#    And User cannot edit any Shipment feilds
-
+#    And User cannot edit any Shipment feild
 	And User closes Rate Enquiry Curtain
-#   And User Saves the Shipment
-#   Then Rate is Stored for future reference in dashboard
+ 	Then User Clicks Save Draft on Shipment Page
+    And User Click Complete Shipment and is Navagiated Back to Create Shipment page
+     |Toll carrier               |Sender                 | Receiver            |
+     | Intermodal & Specialised  |TNQX Melbourne Address | TNQX Sydney Address |
+    Then User Verifies Shipment Details and Clicks Price Now Curtain
+    | TollCarrier               | Service |
+    | Intermodal & Specialised  | General |
+    Then User Verifies if the Total Charge Remained the Same
+    | Rate                |
+    | Retreived on RunTime|
+    And User closes Rate Enquiry Curtain
+    And User Navigates back to Dashboard and Draft Shipment Tab
+	Then User Deletes Draft Shipment
+	 |Toll carrier               |Sender                 | Receiver            |
+     | Intermodal & Specialised  |TNQX Melbourne Address | TNQX Sydney Address |
+	Then User Confirms Delete Draft Search
       
       
   @tag2
@@ -46,10 +59,23 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
     Then User Clicks Price Now Curtain on Shipment Page
     Then Rate is Displayed with no breakdown and with a disclaimer
 #    And User cannot edit any Shipment feilds
-
 	And User closes Rate Enquiry Curtain
-#   And User Saves the Shipment
-#   Then Rate is Stored for future reference in dashboard
+	Then User Clicks Save Draft on Shipment Page
+    And User Click Complete Shipment and is Navagiated Back to Create Shipment page
+     |Toll carrier               |Sender                 | Receiver            |
+     | Toll Priority (Aus)       |TNQX Melbourne Address | TNQX Sydney Address |
+    Then User Verifies Shipment Details and Clicks Price Now Curtain
+    | TollCarrier               | Service |
+    | Toll Priority (Aus)  | Parcels - Overnight |
+    Then User Verifies if the Total Charge Remained the Same
+    | Rate                |
+    | Retreived on RunTime|
+    And User closes Rate Enquiry Curtain
+    And User Navigates back to Dashboard and Draft Shipment Tab
+	Then User Deletes Draft Shipment
+	|Toll carrier               |Sender                 | Receiver            |
+    | Toll Priority (Aus)       |TNQX Melbourne Address | TNQX Sydney Address |
+	Then User Confirms Delete Draft Search
     
  
   @tag3
@@ -69,10 +95,23 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
     Then User Clicks Price Now Curtain on Shipment Page
     Then Rate is Displayed with no breakdown and with a disclaimer - Prio
 #    And User cannot edit any Shipment feilds
-
 	And User closes Rate Enquiry Curtain
-#   And User Saves the Shipment
-#   Then Rate is Stored for future reference in dashboard
+	Then User Clicks Save Draft on Shipment Page
+    And User Click Complete Shipment and is Navagiated Back to Create Shipment page
+     |Toll carrier               |Sender                 | Receiver            |
+     | Toll Priority (NZ)        |NZ Sender              | IPEC Footscray      |
+    Then User Verifies Shipment Details and Clicks Price Now Curtain
+    | TollCarrier               | Service |
+    | Toll Priority (NZ)  | Global - Express Parcels |
+    Then User Verifies if the Total Charge Remained the Same
+    | Rate                |
+    | Retreived on RunTime|
+    And User closes Rate Enquiry Curtain
+    And User Navigates back to Dashboard and Draft Shipment Tab
+	Then User Deletes Draft Shipment
+	|Toll carrier               |Sender                 | Receiver            |
+    | Toll Priority (NZ)        |NZ Sender              | IPEC Footscray      |
+	Then User Confirms Delete Draft Search
     
     
  @tag4
@@ -92,7 +131,20 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
     Then User Clicks Price Now Curtain on Shipment Page
     Then Rate is Displayed with no breakdown and with a disclaimer
 #    And User cannot edit any Shipment feilds
-
 	And User closes Rate Enquiry Curtain
-#   And User Saves the Shipment
-#   Then Rate is Stored for future reference in dashboard
+	Then User Clicks Save Draft on Shipment Page
+    And User Click Complete Shipment and is Navagiated Back to Create Shipment page
+     |Toll carrier    |Sender                 | Receiver            |
+     | Toll IPEC      |IPEC Melbourne         | IPEC Footscray      |
+    Then User Verifies Shipment Details and Clicks Price Now Curtain
+    | TollCarrier         | Service |
+    | Toll IPEC           | Road Express   | 
+    Then User Verifies if the Total Charge Remained the Same
+    | Rate                |
+    | Retreived on RunTime|
+	And User closes Rate Enquiry Curtain
+    And User Navigates back to Dashboard and Draft Shipment Tab
+	Then User Deletes Draft Shipment
+	|Toll carrier               |Sender                 | Receiver            |
+    | Toll IPEC                 |IPEC Melbourne         | IPEC Footscray      |
+	Then User Confirms Delete Draft Search

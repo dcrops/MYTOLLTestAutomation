@@ -29,14 +29,7 @@ import reviewYourPickupActions.ReviewYourPickupActions;
 public class TollIPEC_CutOffTime {
 
 	public static Integer locationIndex = 4;
-	public static String ACTAddress1 = "Hackett House, 19 Hackett Place, HACKETT  ACT  2602";
-	public static String NSWAddress1 = "Collyben, Lot 105  Belmore Road, MUNGINDI  QLD  2406";
-	public static String NTAddress1 = "5 Achernar Ct, Woodroffe NT 0830";
-	public static String QLDAddress1 = "Level 1  80 Ann Street, BRISBANE CITY  QLD  4000";
-	public static String SAAddress1 = "40 Alexander Street, SELLICKS BEACH  SA  5174";
-	public static String TASAddress1 = "208 Collins Street, HOBART  TAS  7000";
-	public static String VICAddress1 = "1-7 Hillcrest Grove, SPRINGVALE  VIC  3171";
-	public static String WAAddress1 = "97 William Street, PERTH  WA  6000";
+
 
 	
 	
@@ -56,10 +49,10 @@ public class TollIPEC_CutOffTime {
 	
 	@Test
 	@Parameters({ "TollCarrierTollIPEC", "ServicePriority", "locationIndex", "ItemTemplateName", "NumberOfItems",
-		"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+		"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns",  "IPECACTAddress1" })
 	public void IPEC_CutOffTime_ACT_01(String TollCarrier, String ServicePriority,
 			Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-			String Height, String Weight, String palletSpace, String destination, String specialIns) {
+			String Height, String Weight, String palletSpace, String destination, String specialIns, String ACTAddress1) {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		//Select Account
@@ -93,10 +86,10 @@ public class TollIPEC_CutOffTime {
 	
 		@Test
 		@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns", "IPECNSWAddress1" })
 		public void IPEC_CutOffTime_NSW_01(String TollCarrier, String ServiceRoadExpress,
 				Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-				String Height, String Weight, String palletSpace, String destination, String specialIns) {
+				String Height, String Weight, String palletSpace, String destination, String specialIns, String NSWAddress1) {
 
 			BookAPickupActions.EnterTollCarrier(TollCarrier);
 			//Select Account
@@ -130,10 +123,10 @@ public class TollIPEC_CutOffTime {
 		
 		@Test
 		@Parameters({ "TollCarrierTollIPEC", "ServicePriority", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns", "IPECNTAddress1" })
 		public void IPEC_CutOffTime_NT_01(String TollCarrier, String ServicePriority,
 				Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-				String Height, String Weight, String palletSpace, String destination, String specialIns) {
+				String Height, String Weight, String palletSpace, String destination, String specialIns, String NTAddress1) {
 
 			BookAPickupActions.EnterTollCarrier(TollCarrier);
 			//Select Account
@@ -167,10 +160,10 @@ public class TollIPEC_CutOffTime {
 		
 		@Test
 		@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns", "IPECQLDAddress1" })
 		public void IPEC_CutOffTime_QLD_01(String TollCarrier, String ServiceRoadExpress,
 				Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-				String Height, String Weight, String palletSpace, String destination, String specialIns) {
+				String Height, String Weight, String palletSpace, String destination, String specialIns, String QLDAddress1) {
 
 			BookAPickupActions.EnterTollCarrier(TollCarrier);
 			//Select Account
@@ -204,10 +197,10 @@ public class TollIPEC_CutOffTime {
 		
 		@Test
 		@Parameters({ "TollCarrierTollIPEC", "ServicePriority", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns", "IPECSAAddress1" })
 		public void IPEC_CutOffTime_SA_01(String TollCarrier, String ServicePriority,
 				Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-				String Height, String Weight, String palletSpace, String destination, String specialIns) {
+				String Height, String Weight, String palletSpace, String destination, String specialIns, String SAAddress1) {
 
 			BookAPickupActions.EnterTollCarrier(TollCarrier);
 			//Select Account
@@ -241,10 +234,10 @@ public class TollIPEC_CutOffTime {
 		
 		@Test
 		@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns", "IPECTASAddress1" })
 		public void IPEC_CutOffTime_TAS_01(String TollCarrier, String ServiceRoadExpress,
 				Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-				String Height, String Weight, String palletSpace, String destination, String specialIns) {
+				String Height, String Weight, String palletSpace, String destination, String specialIns, String TASAddress1) {
 
 			BookAPickupActions.EnterTollCarrier(TollCarrier);
 			//Select Account
@@ -278,10 +271,10 @@ public class TollIPEC_CutOffTime {
 		
 		@Test
 		@Parameters({ "TollCarrierTollIPEC", "ServicePriority", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns", "IPECVICAddress1" })
 		public void IPEC_CutOffTime_VIC_01(String TollCarrier, String ServicePriority,
 				Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-				String Height, String Weight, String palletSpace, String destination, String specialIns) {
+				String Height, String Weight, String palletSpace, String destination, String specialIns, String VICAddress1) {
 
 			BookAPickupActions.EnterTollCarrier(TollCarrier);
 			//Select Account
@@ -315,10 +308,10 @@ public class TollIPEC_CutOffTime {
 		
 		@Test
 		@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "locationIndex", "ItemTemplateName", "NumberOfItems",
-			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+			"Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns", "IPECWAAddress1"})
 		public void IPEC_CutOffTime_WA_01(String TollCarrier, String ServiceRoadExpress,
 				Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems, String Width,
-				String Height, String Weight, String palletSpace, String destination, String specialIns) {
+				String Height, String Weight, String palletSpace, String destination, String specialIns, String WAAddress1) {
 
 			BookAPickupActions.EnterTollCarrier(TollCarrier);
 			//Select Account

@@ -360,8 +360,8 @@ public class CreateShipmentActions {
 				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[4]")).getText();
 		System.out.println(vSenderLocationLine1);
 		System.out.println(vSenderLocationLine2);
-		String SenderLocation = vSenderLocationLine1 + vSenderLocationLine2;
-		return SenderLocation;
+		String SenderLocation = vSenderLocationLine1 + " " + vSenderLocationLine2;
+		return SenderLocation; 
 
 	}
 

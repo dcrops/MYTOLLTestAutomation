@@ -29,26 +29,12 @@ import reviewYourPickupActions.ReviewYourPickupActions;
 public class TollCarrierIntermodalSpecialized_CutOffTime {
 
 	public static Integer locationIndex = 4;
-	public static String ACTAddress1 = "Hackett House, 19 Hackett Place, HACKETT  ACT  2602";
-	public static String ACTAddress2 = "1 Wreck Bay Road, JERVIS BAY  OT  2540";
-	public static String NSWAddress1 = "19 Hickson Road, DAWES POINT  NSW  2000";
-	public static String NSWAddress2 = "338 Yarrawonga Road, YARRAWONGA  NSW  2850";
-	public static String NSWAddress3 = "22 Arcadia Road, GLEBE  NSW  2037";
-	public static String SAAddress1 = "Adelaide Remand Centre, 208 Currie Street, ADELAIDE  SA  5000";
-	public static String SAAddress2 = "172 Port Wakefield-Auburn Road, BOWMANS  SA  5550";
-	public static String VICAddress1 = "South Wharf Office Tower, 30 Convention Centre Place, SOUTH WHARF  VIC  3006";
-	public static String VICAddress2 = "6 Wheeler Street, BERWICK  VIC  3806";
-	public static String VICAddress3 = "60 Collins Street, MELBOURNE  VIC  3000";
-	public static String WAAddress1 = "97 William Street, PERTH  WA  6000";
-	public static String WAAddress2 = "1347 Chester Pass Road, NAPIER  WA  6330";
-	
-	
-	
+
 
 	@BeforeMethod
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 
@@ -60,11 +46,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXACTAddress1" })
 	public void TNQX_CutOffTime_ACT_01(String TollCarrier,
 			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String ACTAddress1) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -100,11 +86,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXACTAddress2" })
 	public void TNQX_CutOffTime_ACT_02(String TollCarrier,
 			String ServiceExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String ACTAddress2) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -140,11 +126,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXACTAddress1" })
 	public void TNQX_CutOffTime_ACT_03(String TollCarrier,
 			String ServiceFCL, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String ACTAddress1) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -185,12 +171,12 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "lookupName",
-			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns" })
+			"PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName", "specialIns", "TNQXNSWAddress1" })
 	public void TNQX_CutOffTime_NSW_01(String TollCarrier,
 			String ServiceDGExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String palletSpace, String destination,
 			String lookupName, Integer PackingGroup, String packageDescription, String pDgPkgQty, String pDgQtyKg,
-			String technicalName, String specialIns) {
+			String technicalName, String specialIns, String NSWAddress1) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -229,11 +215,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXNSWAddress2" })
 	public void TNQX_CutOffTime_NSW_02(String TollCarrier,
 			String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String NSWAddress2) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -269,11 +255,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXNSWAddress2" })
 	public void TNQX_CutOffTime_NSW_03(String TollCarrier,
 			String ServiceFCL, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String NSWAddress2) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -315,11 +301,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXSAAddress1" })
 	public void TNQX_CutOffTime_SA_01(String TollCarrier,
 			String ServiceExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String SAAddress1) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -355,11 +341,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXSAAddress2" })
 	public void TNQX_CutOffTime_SA_02(String TollCarrier,
 			String ServiceFCL, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String SAAddress2) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -400,11 +386,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRefrigeration", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXVICAddress1" })
 	public void TNQX_CutOffTime_VIC_01(String TollCarrier,
 			String ServiceRefrigeration, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String VICAddress1) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -439,11 +425,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXVICAddress2" })
 	public void TNQX_CutOffTime_VIC_02(String TollCarrier,
 			String ServiceExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String VICAddress2) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -479,11 +465,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXVICAddress3" })
 	public void TNQX_CutOffTime_VIC_03(String TollCarrier,
 			String ServiceFCL, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String VICAddress3) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -525,11 +511,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXWAAddress1" })
 	public void TNQX_CutOffTime_WA_01(String TollCarrier,
 			String ServiceExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String WAAddress1) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account
@@ -565,11 +551,11 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	@Test
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceFCL", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
-			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
+			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns", "TNQXWAAddress2" })
 	public void TNQX_CutOffTime_WA_02(String TollCarrier,
 			String ServiceFCL, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
-			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
+			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns, String WAAddress2) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
 		//Select Account

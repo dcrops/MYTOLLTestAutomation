@@ -346,7 +346,7 @@ public class PageBase {
 	public static void verifyTextExist(By locator, String expectedText){
 		try {
 			String getText = BaseWebdriver.driver.findElement(locator).getText();
-			
+		 
 			if (getText.equalsIgnoreCase(expectedText)){
 				Reporter.log("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getText);
 				System.out.println("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getText);
@@ -491,6 +491,32 @@ public class PageBase {
 		return null;
 	}
 
+	public static void verifyDateReformated(By locator, String expectedText){
+		try {
+			String getText = BaseWebdriver.driver.findElement(locator).getText();
+			String getTextNew;
+			
+			if (getText.length() == 10) {
+				getTextNew="0"+getText;
+			}
+			else {
+				getTextNew=getText;
+			}
+		 
+			if (getTextNew.equalsIgnoreCase(expectedText)){
+				Reporter.log("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getTextNew);
+				System.out.println("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getTextNew);
+			}else{
+				Reporter.log("FAILED: Expected Text : "+expectedText+ " DOES NOT Match the Text on Screen :" +getTextNew);
+				Assert.fail("FAILED: Expected Text : "+expectedText+ " DOES NOT Match the Text on Screen :" +getTextNew);
+			}
+		}
+		catch(Exception e) {
+			Reporter.log("xpath not found: " + locator+"<br>");
+			Assert.fail("xpath not found: " + locator+"<br>");
+			
+		}
+	}
 
 	
 }

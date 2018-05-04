@@ -31,7 +31,9 @@ public class RateEnquiryStepDefinitions {
 	public static String ReceiverShipmentPage;
 	public static String ReceiverLocRateEnquiry;
 	public static String ReceiverLocShipmentPage;
-	
+	public static String fullChargeBeforeDraft;
+	public static String fullChargeAfterDraft;
+
 		
 	@Given("^User is Registered in MyToll and is on Rate Enquiry Page$")
 	public void user_is_Registered_in_MyToll_and_is_on_Book_a_pickup_page() throws Throwable {
@@ -39,7 +41,7 @@ public class RateEnquiryStepDefinitions {
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickGetRateEnquiery();
-		
+	
 		//Test
 	}
 
@@ -210,6 +212,7 @@ public class RateEnquiryStepDefinitions {
 	public void RateisDisplayedwithNobreakdownAndWithAdisclaimer() throws Throwable {
 		PageBase.MediumWaitForElementEnabled_1();
 		PageBase.MediumWaitForElementEnabled_1();
+		fullChargeBeforeDraft = BaseWebdriver.driver.findElement(RateEnquiryActions.priceNowCurtainTotalCharge).getText();
 		RateEnquiryActions.priceCurtainVerifyTotalCharge("Total charge :");
 		RateEnquiryActions.priceCurtainVerifyGST("GST :");
 		RateEnquiryActions.priceCurtainVerifyRate("Rate :");	
@@ -218,6 +221,7 @@ public class RateEnquiryStepDefinitions {
 	
 	@Then("^Rate is Displayed with no breakdown and with a disclaimer - Prio$")
 	public void RateisDisplayedwithNobreakdownAndWithAdisclaimerPrio() throws Throwable {
+		fullChargeBeforeDraft = BaseWebdriver.driver.findElement(RateEnquiryActions.priceNowCurtainTotalCharge).getText();
 		RateEnquiryActions.priceCurtainVerifyTotalCharge("Total charge :");	
 		RateEnquiryActions.priceCurtainVerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions or locations entered above.");	
 	}
@@ -284,5 +288,33 @@ public class RateEnquiryStepDefinitions {
 			    
 			}
 	}
+	
+	@Then("^User Verifies Shipment Details and Clicks Price Now Curtain$")
+	public void UserVerifiesShipmentDetailsAndClicksPriceNowCurtain(DataTable rateEquiryTestData) throws Throwable {
+		for (Map<String, String> rateEnquiry : rateEquiryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentCarrierName, rateEnquiry.get("TollCarrier"));
+			PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, rateEnquiry.get("Service"));PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.click(RateEnquiryActions.priceNowCurtainBtn, 10);
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
+		}
+	}
+	
+	@Then("^User Verifies if the Total Charge Remained the Same$")
+	public void UserVerifiesIfTheTotalChargeRemainedTheSame(DataTable rateEquiryTestData) throws Throwable {
+		for (Map<String, String> rateEnquiry : rateEquiryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.waitForElement(RateEnquiryActions.priceNowCurtainTotalCharge, 10);
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.verifyTextExist(RateEnquiryActions.priceNowCurtainTotalCharge, fullChargeBeforeDraft);
+		}
+	
+	}
+	
 
 }
