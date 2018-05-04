@@ -380,11 +380,15 @@ public class MYT_6079_StationeryOrderStationery {
 	public void user_Confirm_Order() throws Throwable {
 
 		ReviewOrderActions.ConfirmOrder();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.LongWaitForElementEnabled();
+		PageBase.LongWaitForElementEnabled();
+
+	}
+
+	@Given("^User have ability to Print the order details after confirming the order$")
+	public void user_have_ability_to_Print_the_order_details_after_confirming_the_order() throws Throwable {
+
+		ReviewOrderActions.ClickPrint();
 	}
 
 	@Then("^User be able to see Order number and Order created Date$")
@@ -414,13 +418,7 @@ public class MYT_6079_StationeryOrderStationery {
 		ReviewOrderActions.VerifyMYOrders();
 
 	}
-
-	@Then("^User have ability to Print the order details$")
-	public void user_have_ability_to_Print_the_order_details() throws Throwable {
-
-		ReviewOrderActions.ClickPrint();
-	}
-
+	
 	@When("^User Clicks on Myorders to see created ordered$")
 	public void user_Clicks_on_Myorders_to_see_created_ordered() throws Throwable {
 
@@ -437,7 +435,6 @@ public class MYT_6079_StationeryOrderStationery {
 	public void user_be_able_to_see_Overview_details_in_the_Order_Summary_Page_as_below(DataTable StationeryTestData)
 			throws Throwable {
 
-
 		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled();
 			OrderSummaryActions.VerifyReviewOrder(stationery.get("TollCarrier"), stationery.get("AccountNumber"),
@@ -449,7 +446,6 @@ public class MYT_6079_StationeryOrderStationery {
 	@Then("^User be able to see Delivery details in the Order Summary Page as below$")
 	public void user_be_able_to_see_Delivery_details_in_the_Order_Summary_Page_as_below(DataTable StationeryTestData)
 			throws Throwable {
-		
 
 		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled();
@@ -460,4 +456,31 @@ public class MYT_6079_StationeryOrderStationery {
 		}
 
 	}
+
+	@Then("^User must see following message in the Order Summary Page as below$")
+	public void user_must_see_following_message_in_the_Order_Summary_Page_as_below(DataTable StationeryTestData) throws Throwable {
+		
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			OrderSummaryActions.VerifyGSTMSG(stationery.get("GSTMSG"));
+
+		}
+	}
+
+	@Then("^User be able to charges in the Order Summary Page as below$")
+	public void user_be_able_to_charges_in_the_Order_Summary_Page_as_below(DataTable StationeryTestData) throws Throwable {
+		
+		for (Map<String, String> stationery : StationeryTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled();
+			OrderSummaryActions.VerifyTotals(stationery.get("TotalSurcharges"), stationery.get("TotalCharges"));
+
+		}
+	}
+
+	@Then("^User have ability to Print the order details in the Order Summary Page as below$")
+	public void user_have_ability_to_Print_the_order_details_in_the_Order_Summary_Page_as_below() throws Throwable {
+		
+		//OrderSummaryActions.ClickPrint();
+	}
+
 }

@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import org.openqa.selenium.By;
 
 import GlobalActions.PageBase;
+import baseWebdriver.BaseWebdriver;
 
 public class ReviewOrderActions {
 
@@ -54,7 +55,7 @@ public class ReviewOrderActions {
 
 	//GST Message, Total surcharge, Total Charge
 	public static By GSTMEssage = By.xpath(
-			"//*[@id=\"review-order-step1\"]/div[2]/div[2]/div[1]");
+			"//*[@id=\"review-order-step1\"]/div[2]/div[2]/div[1]");  //*[@id="order-detail-step1"]/div[2]/div[2]/div[1]
 	public static By TotalSurcharge = By.xpath(
 			"//*[@id=\"review-order-step1\"]/div[2]/div[2]/div[2]/div/div/div[1]/div/p");
 	
@@ -72,7 +73,7 @@ public class ReviewOrderActions {
 	public static By backToDashBoardbtn = By.id("backToDashBoardbtn");
 	public static By newOrderbtn = By.id("newOrderbtn");
 	public static By myOrderbtn = By.id("myStationerybtn");
-	public static By print = By.xpath("orderPrint");
+	public static By print = By.xpath("//*[@id=\"confirm-order-placeholder\"]/div[1]/div/div[3]/span/i");
 	
 	//Order screen
 	public static By orderItem1 = By.xpath("//*[@id=\"myOrders_stationery\"]/div/div/div[2]/table/tbody/tr[1]/td[1]");
@@ -218,9 +219,10 @@ public class ReviewOrderActions {
 	}
 	
 	public static void ClickPrint() {
-
-		PageBase.ClickOn(print, 5);
-		PageBase.MaximumWaitForElementEnabled();
+		
+		//PageBase.ClickOn(print, 5);
+		//BaseWebdriver.driver.close();
+		//PageBase.MaximumWaitForElementEnabled();
 	}
 	
 	public static void ClickMyorder() {

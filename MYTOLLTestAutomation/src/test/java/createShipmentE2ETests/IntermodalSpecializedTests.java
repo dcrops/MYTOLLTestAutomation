@@ -2,6 +2,7 @@ package createShipmentE2ETests;
 
 import static org.testng.Assert.assertEquals;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -1740,14 +1741,14 @@ public class IntermodalSpecializedTests {
 		
 		CreateShipmentActions.ClickReviewCreateShipment();
 		//BookAPickupActions.VerifyShipmentMsg();
-		assertEquals( BookAPickupActions.GetErrorMsgItemDescription(),"Please enter freight type");
-		assertEquals( BookAPickupActions.GetErrorMsgNoOfItems(),"Please enter no. of items");
-		assertEquals( BookAPickupActions.GetErrorMsgLength(),"Please enter length");
-		assertEquals( BookAPickupActions.GetErrorMsgWidth(),"Please enter width");
-		assertEquals( BookAPickupActions.GetErrorMsgHeight(),"Please enter height");
-		assertEquals( BookAPickupActions.GetErrorMsgTotalVolume(),"Please enter cubic volume");
-		assertEquals( BookAPickupActions.GetErrorMsgWeight(),"Please enter weight");
-		assertEquals(BookAPickupActions.GetErrorMsgContainDG(),"Please select an option");
+		assertEquals( BookAPickupActions.GetErrorMsgItemDescription(),"please enter freight type");
+		assertEquals( BookAPickupActions.GetErrorMsgNoOfItems(),"please enter no. of items");
+		assertEquals( BookAPickupActions.GetErrorMsgLength(),"please enter length");
+		assertEquals( BookAPickupActions.GetErrorMsgWidth(),"please enter width");
+		assertEquals( BookAPickupActions.GetErrorMsgHeight(),"please enter height");
+		assertEquals( BookAPickupActions.GetErrorMsgTotalVolume(),"please enter cubic volume");
+		assertEquals( BookAPickupActions.GetErrorMsgWeight(),"please enter weight");
+		assertEquals(BookAPickupActions.GetErrorMsgContainDG(),"please select an option");
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
@@ -1757,11 +1758,12 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.EnterWeight(Weight);
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, BookAPickupActions.dangerousGoodNo);
 		BookAPickupActions.SelectDangerousGoods(2);
+		PageBase.MoveToElement(CreateShipmentActions.purchaseorderTextField, BookAPickupActions.specialInstructions);
 		// ReSubmit Book a pickup details
-		BookAPickupActions.ClickReviewBook();
+		CreateShipmentActions.ClickReviewCreateShipment();
 		PageBase.MaximumWaitForElementEnabled();
 
-		BookAPickupActions.NoUNAddedErrorMsgValidation();
+		BookAPickupActions.VerifyShipmentMsg();
 
 		BookAPickupActions.SelectDangerousGoods(DGYes);
 

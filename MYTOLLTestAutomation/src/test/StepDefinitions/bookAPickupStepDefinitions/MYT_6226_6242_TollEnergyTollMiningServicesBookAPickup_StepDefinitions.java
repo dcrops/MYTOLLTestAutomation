@@ -2,6 +2,8 @@ package bookAPickupStepDefinitions;
 
 import java.util.Map;
 
+import org.openqa.selenium.JavascriptExecutor;
+
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
@@ -17,11 +19,16 @@ public class MYT_6226_6242_TollEnergyTollMiningServicesBookAPickup_StepDefinitio
 	public void user_clicks_on_Review_Book_and_User_be_able_to_see_pickup_details_entered_in_Review_Your_Pickup_screen(
 			DataTable bookAPickupTestData) throws Throwable {
 		
-		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
-		System.out.println(sender);
-		String senderLocation = CreateShipmentActions.GetSenderLocation().toString().replaceAll("\\s","");
-		System.out.println(senderLocation);
-		
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+		jse.executeScript("scroll(0, 250)");
+		String company = BookAPickupActions.GetCompany();
+		System.out.println(company);
+		String location = BookAPickupActions.GetLocation();
+		System.out.println(location);
+		String locationLine2 = BookAPickupActions.GetLocationAddressLine2();
+		System.out.println(locationLine2);
+		String senderLocation = location + locationLine2;
+		jse.executeScript("scroll(800,1000)");
 		BookAPickupActions.ClickReviewBook();
 		//BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
@@ -29,7 +36,7 @@ public class MYT_6226_6242_TollEnergyTollMiningServicesBookAPickup_StepDefinitio
 			PageBase.MaximumWaitForElementEnabled();
 			String PhoneNumber = "+61-" + bookAPickup.get("Phone number");
 			ReviewYourPickupActions.VerifyPickupDetails(bookAPickup.get("TollCarrier"),
-					bookAPickup.get("AccountNumber"), sender, senderLocation,
+					bookAPickup.get("AccountNumber"), company, senderLocation,
 					bookAPickup.get("Booked by"), PhoneNumber, bookAPickup.get("Ready time"),
 					bookAPickup.get("Location closing time"), bookAPickup.get("Special instructions"));
 
