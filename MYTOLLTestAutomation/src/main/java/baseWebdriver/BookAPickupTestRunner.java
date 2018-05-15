@@ -9,7 +9,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/bookAPickupFeatures/MYT_622_BAP Share my book a pickup.feature//"} //MYT_1524_Book a Pickup'Default' mode to Quick EntryMode.feature"} //"}
+        ,features = { "src/test/Resources/bookAPickupFeatures/MYT_5885_EditSenderAddressFromBookAPickupPage.feature"}
 		,glue= {"commonStepsDefinitions","bookAPickupStepDefinitions","createShipmentStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Pickups\\cucumber-pretty",
 

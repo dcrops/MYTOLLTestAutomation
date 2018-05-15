@@ -411,6 +411,7 @@ public class ManifestActions {
 	}
 	
 	public static void addManifestManually() {
+		PageBase.MaximumWaitForElementEnabled_1();
 		Reporter.log("User Navigates to Manifest Tab and Selects Add Manifest Manually");
 		PageBase.waitForElement(MyManifestTab, 5);
 		PageBase.click(MyManifestTab, 2);

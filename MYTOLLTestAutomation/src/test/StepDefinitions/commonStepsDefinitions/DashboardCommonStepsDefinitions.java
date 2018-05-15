@@ -245,5 +245,10 @@ public class DashboardCommonStepsDefinitions {
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();
 	}
+	
+	@Then("^User Closes the Browser$")
+	public void UserClosestheBrowser() throws Throwable {
+		BaseWebdriver.tearDown();
+	}
 
 }

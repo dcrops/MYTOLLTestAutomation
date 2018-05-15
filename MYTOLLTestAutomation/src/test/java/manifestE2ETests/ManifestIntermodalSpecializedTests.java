@@ -57,7 +57,7 @@ public class ManifestIntermodalSpecializedTests {
 		String receiver=CreateShipmentActions.GetRecieverCompanyName();
 		
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
+		//PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
@@ -120,7 +120,7 @@ public class ManifestIntermodalSpecializedTests {
 		
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
+		//PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
@@ -192,7 +192,7 @@ public class ManifestIntermodalSpecializedTests {
 		
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
+		//PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
@@ -273,7 +273,7 @@ public class ManifestIntermodalSpecializedTests {
 		
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
+		//PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
@@ -351,7 +351,7 @@ public class ManifestIntermodalSpecializedTests {
 
 		
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-		PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
+		//PageBase.MoveToElement(CreateShipmentActions.notifyReceiverCheckBox, CreateShipmentActions.notifySenderCheckBox);
 
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
@@ -404,7 +404,7 @@ public class ManifestIntermodalSpecializedTests {
 	
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-	//	BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 
 	}
 }

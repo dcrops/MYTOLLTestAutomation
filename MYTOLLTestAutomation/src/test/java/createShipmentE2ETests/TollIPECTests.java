@@ -139,7 +139,7 @@ public class TollIPECTests {
 
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierTollIPEC", "ServiceFashion","AccountNumberTIPEC", "WhoPays", "whoPays", "Sender", "Receiver", "QuoteNumber",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1",
 			"ShipmentRef2", "ItemTemplateName", "NumberOfItems","NumberOfGarments", "Length", "Width", "Height", "Weight", "ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2",
@@ -204,7 +204,7 @@ public class TollIPECTests {
 		
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
-		CreateShipmentActions.ItemType(1);
+		//CreateShipmentActions.ItemType(1);
 		CreateShipmentActions.NumberOfGarments(NumberOfGarments);
 		// CreateShipmentActions.SelectBillingType(BillingType);
 
@@ -259,7 +259,7 @@ public class TollIPECTests {
 	
 	}
 	
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "AccountNumberTIPEC", "WhoPays", "whoPays", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -347,9 +347,9 @@ public class TollIPECTests {
 
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 }

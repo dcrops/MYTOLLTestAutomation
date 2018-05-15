@@ -121,7 +121,7 @@
 		<parameter name="TypeOfExport" value="Permanent" />
 		<parameter name="DeclaredValue" value="5000" />
 		<parameter name="DeclaredValueCurrency" value="New Zealand dollar" />
-		<parameter name="WhoPaysDutiesTaxes" value="Sender " />
+		<parameter name="WhoPaysDutiesTaxes" value="Sender" />
 		<parameter name="CommodityCode" value="ABC123" />
 		<!---Pallet Information Test data -->
 
@@ -289,7 +289,7 @@
 		<parameter name="TypeOfExport" value="Permanent" />
 		<parameter name="DeclaredValue" value="5000" />
 		<parameter name="DeclaredValueCurrency" value="New Zealand dollar" />
-		<parameter name="WhoPaysDutiesTaxes" value="Sender " />
+		<parameter name="WhoPaysDutiesTaxes" value="Sender" />
 		<parameter name="CommodityCode" value="ABC123" />
 		<!---Pallet Information Test data -->
 
@@ -338,9 +338,20 @@
 		<parameter name="ShipmentContainDangerousGoodsHeading"
 			value="Shipment contain dangerous goods" />
 		<parameter name="DangerousGoodsDetailsHeading" value="DANGEROUS GOODS DETAILS" />
-
+	
+	<groups>
+	    <run>
+	      <include name="E2E1"  />
+	    </run>
+	 </groups>	
+	
 	<classes>
-    <class name="createShipmentE2ETests.TollPriorityNZ" />
+		<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+		<class name="createShipmentE2ETests.TollPriorityAUSTests" />
+		<class name="createShipmentE2ETests.TollPriorityNZ" />
+		<class name="createShipmentE2ETests.TollIPECTests" />
+		<class name="createShipmentE2ETests.TollTasmaniaTests" /> 
+		<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress"/>
 		
 		</classes>
 

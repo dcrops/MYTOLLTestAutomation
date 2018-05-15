@@ -15,7 +15,7 @@ import baseWebdriver.BaseWebdriver;
 
 public class TollPriorityNZ {
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
@@ -117,7 +117,7 @@ public class TollPriorityNZ {
 
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "WhoPays", "whoPays", "Sender", "Receiver",
 			"QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
@@ -295,7 +295,7 @@ public class TollPriorityNZ {
 
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceEconomyPacificAirportToAirport", "WhoPays", "whoPays", "Sender",
 			"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -391,7 +391,7 @@ public class TollPriorityNZ {
 
 	}
 	
- 	@Test(groups = {"E2E" })
+ 	@Test(groups = {"E2E1" })
 		@Parameters({ "TollCarrierTollPrioNZ", "ServiceEconomyPacificAirportToAirport", "WhoPays", "whoPays", "Sender",
 				"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 				"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -465,7 +465,7 @@ public class TollPriorityNZ {
 
 		}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		// BaseWebdriver.tearDown();
 

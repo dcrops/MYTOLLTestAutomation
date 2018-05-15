@@ -39,31 +39,31 @@ public class Toll_MyProfile_Add_Accounts {
 	}
 	
 	
-	@Test
+	@Test(groups = { "E2E"})
 	@Parameters({ "TollCarrierTollTasmania","AccountNumberTTas", "AccountAccessTypeFullFinancial"})
 	public void addAccountsTasmania(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing" , "E2E" })
 	@Parameters({ "TollIntermodalSpecialised","AccountNumberTNQX", "AccountAccessTypeFullFinancial"})
 	public void addAccountsNQX(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({ "TollCarrierTollIPEC","AccountNumberTIPEC", "AccountAccessTypeFullFinancial"})
 	public void addAccountsIPEC(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({ "TollCarrierTollPrioAU","AccountNumberTPrioAU", "AccountAccessTypeFullFinancial"})
 	public void addAccountsPrioAU(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 	
-	@Test
+	@Test(groups = { "E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ","AccountNumberTPrioNZ", "AccountAccessTypeFullFinancial"})
 	public void addAccountsPrioNZ(String TollCarrier, String AccountNo, String AccessType ) {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
@@ -74,11 +74,11 @@ public class Toll_MyProfile_Add_Accounts {
 	private void addAccount(String Carrier, String AccountNo, String AccessType) {
 		String NewAccountNumber = AccountNo;
 		//Random Account Number - for testing only
-		int Number = (int) (Math.random()*10000);
+		int Number = (int) (Math.random()*20000);
 		String newNumber = String.valueOf(Number);
 		
 		if (NewAccountNumber == "") {
-		NewAccountNumber = "Toll"+newNumber;	
+		NewAccountNumber = "TOLL"+newNumber;	
 		}
 		String totalAccounts[]= NewAccountNumber.split(",");
 		
@@ -119,7 +119,7 @@ public class Toll_MyProfile_Add_Accounts {
 			//Verify New Account Exists
 			Reporter.log("User Verifies if New Account Exits");
 			try {
-				while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//p[contains(text(),'"+totalAccounts[i]+"')]"), 1) == null) {
+				while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//ul/li/div/div/p[contains(text(),'"+totalAccounts[i]+"')]"), 1) == null) {
 					PageBase.moveToElement(BookAPickupActions.addAccountViewMore);
 					PageBase.click(BookAPickupActions.addAccountViewMore, 5);
 				}
@@ -134,7 +134,7 @@ public class Toll_MyProfile_Add_Accounts {
 			//User Deletes New Account Created
 			PageBase.MaximumWaitForElementEnabled_1();
 			Reporter.log("User Deletes New Account Created");
-			PageBase.click(By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//p[contains(text(),'"+totalAccounts[i]+"')]/following::div[@class='account-list-col delete']/a"), 5);
+			PageBase.click(By.xpath("//*[@id=\"portlet_mytolluserAccountportlet_WAR_mytollupsportlet\"]//*//ul/li/div/div/p[contains(text(),'"+totalAccounts[i]+"')]/following::div[@class='account-list-col delete']/a"), 5);
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.verifyTextExist(BookAPickupActions.addAccountDeleteMsg, "YOU HAVE REQUESTED YOUR ACCOUNT TO BE DELETED.");
 			PageBase.click(BookAPickupActions.addAccountDeleteContinue, 5);
@@ -150,7 +150,7 @@ public class Toll_MyProfile_Add_Accounts {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 
 	}
 

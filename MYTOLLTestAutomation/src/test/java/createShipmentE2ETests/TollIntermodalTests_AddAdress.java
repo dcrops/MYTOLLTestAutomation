@@ -24,7 +24,7 @@ public class TollIntermodalTests_AddAdress {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E1" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
@@ -50,10 +50,10 @@ public class TollIntermodalTests_AddAdress {
 		CreateShipmentActions.verifyReceiverAddress();
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		BaseWebdriver.tearDown();
-		BaseWebdriver.driver.quit();
+		//BaseWebdriver.driver.quit();
 	}
 
 }

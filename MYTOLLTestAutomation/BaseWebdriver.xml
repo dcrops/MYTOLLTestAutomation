@@ -27,9 +27,8 @@
 	<test name="CucumberTest">
 		<classes>
 
-			
 	
-			<class name="baseWebdriver.ReturnsTestRunner"/> 
+			<class name="baseWebdriver.BookAPickupTestRunner"/>
 			
 			
 			<!-- Blocked>   <class name="baseWebdriver.CreateShipmentTestRunner" />

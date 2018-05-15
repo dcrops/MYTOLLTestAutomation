@@ -18,7 +18,7 @@ import rateEnquiryActions.RateEnquiryActions;
 public class RateEnquiry_ErrorMsgValidations {
 	
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
@@ -30,7 +30,7 @@ public class RateEnquiry_ErrorMsgValidations {
 	
 	//This Test Case Covers Error Msg Validations in Rate Enquiry for all Toll Carriers
 	
-	@Test
+	@Test(groups = { "E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceGeneral","TNAccountNo","ItemTemplateName","TIBillingType","TIMode", "TINumberOfItems","TILength", "TIWidth", "TIHeight", "TIWeight","TIQtyType", "TIOriginSuburb","TIOriginPostCode", "TIDesSuburb", "TIDesPostCode"})
 	public void RateEnquiry_TollIntermodalSpecialised_E2ETest_TID_1052_Service_General(String Carrier, String Service,String AccountNo, String ItemTemplateName,String BillingType, String Mode,String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode ) {
@@ -75,7 +75,7 @@ public class RateEnquiry_ErrorMsgValidations {
 	}
 	
 	
-	@Test
+	@Test(groups = { "E2E" })
 	@Parameters({"TollCarrierTollIPEC", "ServiceRoadExpress", "TIPAccountNo","ItemTemplateName","TIPBillingType","TIPMode", "TIPNumberOfItems","TIPLength", "TIPWidth", "TIPHeight", "TIPWeight","TIPQtyType", "TIPOriginSuburb","TIPOriginPostCode", "TIPDesSuburb", "TIPDesPostCode"})
 	public void RateEnquiry_TollIPEC_E2ETest_TID_1052_Service_RoadExpress(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode)
@@ -118,7 +118,7 @@ public class RateEnquiry_ErrorMsgValidations {
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
-	@Test
+	@Test(groups = { "E2E" })
 	@Parameters({"TollCarrierTollPrioAU", "ServiceParcelsOffPeak","TPAccountNo","ItemTemplateName","TPANumberOfItems","TPALength", "TPAWidth", "TPAHeight", "TPAWeight","TPAQtyType", "TPAOriginSuburb","TPAOriginPostCode", "TPADesSuburb", "TPADesPostCode"})
 	public void RateEnquiry_TollPriorityAUS_E2ETest_TID_1052_Service_ParcelOffPeak(String Carrier, String Service,String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
@@ -154,7 +154,7 @@ public class RateEnquiry_ErrorMsgValidations {
 	}
 	
 	
-	@Test
+	@Test(groups = { "E2E" })
 	@Parameters({"TollCarrierTollPrioNZ", "ServiceGlobalExpressParcels", "TNZAccountNo","ItemTemplateName","TNZNumberOfItems","TNZLength", "TNZWidth", "TNZHeight", "TNZWeight","TNZQtyType", "TNZOriginSuburb1","TNZOriginPostCode1", "TNZDesSuburb", "TNZDesPostCode", "TNZCountry", "CountryPostCode"})
 	public void RateEnquiry_TollPriorityNZ_E2ETest_TID_1052_Service_GlobalExpressParcels(String Carrier, String Service, String AccountNo, String ItemTemplateName, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode, String Country, String CountryPostCode) {
@@ -192,7 +192,7 @@ public class RateEnquiry_ErrorMsgValidations {
 	}
 
 	
-	@Test
+	@Test(groups = { "E2E" })
 	@Parameters({"TollCarrierTollTasmania", "ServiceDGFreight","TTAccountNo","ItemTemplateName","TTBillingType","TTMode", "TTNumberOfItems","TTLength", "TTWidth", "TTHeight", "TTWeight","TTQtyType", "TTOriginSuburb","TTOriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void RateEnquiry_TollTasmanias_E2ETest_TID_1052_Service_DGFreight(String Carrier, String Service, String AccountNo, String ItemTemplateName, String BillingType, String Mode, String NumberOfItems, String Length, String Width,
 			String Height, String Weight, String QtyType, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {

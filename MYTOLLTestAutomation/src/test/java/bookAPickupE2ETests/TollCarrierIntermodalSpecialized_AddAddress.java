@@ -41,7 +41,7 @@ public class TollCarrierIntermodalSpecialized_AddAddress {
 
 	}
 
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })

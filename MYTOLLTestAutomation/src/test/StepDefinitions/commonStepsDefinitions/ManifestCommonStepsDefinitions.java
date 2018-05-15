@@ -118,7 +118,7 @@ public class ManifestCommonStepsDefinitions {
 			CreateShipmentActions.TypeOfExport(manifest.get("TypeOfExport"));
 			CreateShipmentActions.DeclaredValue(manifest.get("DeclaredValue"));
 			CreateShipmentActions.DeclaredValueCurrency(manifest.get("DeclaredValueCurrency"));
-			CreateShipmentActions.WhoPaysDutiesTaxes(manifest.get("WhoPaysDutiesTaxes")+ " ");
+			CreateShipmentActions.WhoPaysDutiesTaxes(manifest.get("WhoPaysDutiesTaxes"));
 			CreateShipmentActions.HarmonisedCommodityCode(manifest.get("CommodityCode"));
 		
 		}
@@ -149,23 +149,23 @@ public class ManifestCommonStepsDefinitions {
 	
 	@And("^User Retrives Sender and Reciver Locations and Detials$")
 	public void UserRetrivesSenderandReciverLocationsandDetials() throws Throwable {
-//		PageBase.MinimumWaitForElementEnabled_1();
-//
-//		SenderCompanyName = BaseWebdriver.driver.findElement(CreateShipmentActions.senderTextfield).getAttribute("value");
-//		SenderContactName = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();
-//		SenderLocation = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[3]")).getText();
-//		System.out.println("SenderCompanyName ="+SenderCompanyName);
-//		System.out.println("SenderContactName ="+ SenderContactName);
-//		System.out.println("SenderLocation ="+SenderLocation);
-//
-//		ReceiverCompanyName = BaseWebdriver.driver.findElement(CreateShipmentActions.receiverTextfield).getAttribute("value");
-//		ReceiverContactName = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[2]")).getText();
-//		ReceiverLocation = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[3]")).getText();
-//		System.out.println("ReceiverCompanyName ="+ReceiverCompanyName);
-//		System.out.println("ReceiverContactName ="+ReceiverContactName);
-//		System.out.println("ReceiverLocation ="+ReceiverLocation);
+		PageBase.MinimumWaitForElementEnabled_1();
+
+		SenderCompanyName = BaseWebdriver.driver.findElement(CreateShipmentActions.senderTextfield).getAttribute("value");
+		SenderContactName = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[2]")).getText();
+		SenderLocation = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[1]/div[3]")).getText();
+		System.out.println("SenderCompanyName ="+SenderCompanyName);
+		System.out.println("SenderContactName ="+ SenderContactName);
+		System.out.println("SenderLocation ="+SenderLocation);
+
+		ReceiverCompanyName = BaseWebdriver.driver.findElement(CreateShipmentActions.receiverTextfield).getAttribute("value");
+		ReceiverContactName = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[2]")).getText();
+		ReceiverLocation = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[1]/div[3]")).getText();
+		System.out.println("ReceiverCompanyName ="+ReceiverCompanyName);
+		System.out.println("ReceiverContactName ="+ReceiverContactName);
+		System.out.println("ReceiverLocation ="+ReceiverLocation);
 		
-		ManifestActions.UserRetrivesSenderandReciverLocationsandDetials();
+		//ManifestActions.UserRetrivesSenderandReciverLocationsandDetials();
 		
 	}
 	

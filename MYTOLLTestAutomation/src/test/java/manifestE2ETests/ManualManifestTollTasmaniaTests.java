@@ -59,7 +59,7 @@ public class ManualManifestTollTasmaniaTests {
 		PageBase.verifyTextExistAttribute(ManifestActions.TollCarier, TollCarrier);
 		Reporter.log("User Enters Shipment Details");
 		CreateShipmentActions.EnterService(ServiceGeneral);
-		CreateShipmentActions.SelectMode(1);
+		
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
 		CreateShipmentActions.SelectReceiver(1);

@@ -1574,7 +1574,7 @@ public class IntermodalSpecializedTests {
 	}
 	
 	//@Test(priority=-1)
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -1669,7 +1669,7 @@ public class IntermodalSpecializedTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGExpress", "AccountNumberTNQX", "WhoPays", "whoPays","Mode", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -1839,7 +1839,7 @@ public class IntermodalSpecializedTests {
 	
 
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		 //BaseWebdriver.tearDown();
 

@@ -102,82 +102,82 @@ public class FinanceActions {
 
 	// CHARGES
 	public static By ChargesHeadingInvoiceSummary = By.xpath("//*[@id=\"outstandingShipmentDetails2868873529\"]/td/table/tbody/tr[9]/td[1]/table/tbody/tr[4]/td");  
-	public static By basicChargesInvoiceSummary = By.xpath("//*[@id=\"CON\"]/td[1]");  //*[@id="CON1"]/td[1]
-	public static By basicChargesDescriptionInvoiceSummary = By.xpath("//*[@id=\"CON\"]/td[3]");
-	public static By basicChargesChargesInvoiceSummary = By.xpath("//*[@id=\"CON\"]/td[5]");
-	public static By freightChargesInvoiceSummary = By.xpath("//*[@id=\"FRT\"]/td[1]");
-	public static By freightRateChargesInvoiceSummary = By.xpath("//*[@id=\"FRT\"]/td[3]");
-	public static By freightChargesChargesInvoiceSummary = By.xpath("//*[@id=\"FRT\"]/td[5]");
-	public static By fuelSurchargesInvoiceSummary = By.xpath("//*[@id=\"TNQXFSC\"]/td[1]");
-	public static By fuelSurchargesDescriptionInvoiceSummary = By.xpath("//*[@id=\"FSC 7.48\"]/td[3]");
-	public static By fuelSurchargesChargesInvoiceSummary = By.xpath("//*[@id=\"FSC 7.48\"]/td[5]");
-	public static By gstInvoiceSummary = By.xpath("//*[@id=\"GST\"]/td[1]");
-	public static By gstsDescriptionInvoiceSummary = By.xpath("//*[@id=\"GST\"]/td[3]");
-	public static By gstChargesInvoiceSummary = By.xpath("//*[@id=\"GST\"]/td[5]");
+	public static By basicChargesInvoiceSummary = By.xpath("//*[contains(@id,'CON')]/td[1]");  //*[@id="CON1"]/td[1]
+	public static By basicChargesDescriptionInvoiceSummary = By.xpath("//*[contains(@id,'CON')]/td[3]");
+	public static By basicChargesChargesInvoiceSummary = By.xpath("//*[contains(@id,'CON')]/td[5]");
+	public static By freightChargesInvoiceSummary = By.xpath("//*[contains(@id,'FRT') or contains(@id,'UNIT')]/td[1]");
+	public static By freightRateChargesInvoiceSummary = By.xpath("//*[contains(@id,'FRT') or contains(@id,'UNIT')]/td[3]");
+	public static By freightChargesChargesInvoiceSummary = By.xpath("//*[contains(@id,'FRT') or contains(@id,'UNIT')]/td[5]");
+	public static By fuelSurchargesInvoiceSummary = By.xpath("//*[contains(@id,'FSC')]/td[1]");
+	public static By fuelSurchargesDescriptionInvoiceSummary = By.xpath("//*[contains(@id,'FSC')]/td[3]");
+	public static By fuelSurchargesChargesInvoiceSummary = By.xpath("//*[contains(@id,'FSC')]/td[5]");
+	public static By gstInvoiceSummary = By.xpath("//*[contains(@id,'GST')]/td[1]");
+	public static By gstsDescriptionInvoiceSummary = By.xpath("//*[contains(@id,'GST')]/td[3]");
+	public static By gstChargesInvoiceSummary = By.xpath("//*[contains(@id,'GST')]/td[5]");
 	public static By gstValueInvoiceSummary = By.id("GSTvalue");
 	public static By totalChargesInvoiceSummary = By.id("totalCharges");
 
 	// Basic charges
 	public static By rateTypeBasicCharges = By
-			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[1]");
+			.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[2]/td[1]");
 	public static By serviceBasicCharges = By
-			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[2]");
-	public static By modeBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[3]");
+			.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[2]/td[2]");
+	public static By modeBasicCharges = By.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[2]/td[3]");
 	public static By originBasicCharges = By
-			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[4]");
+			.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[2]/td[4]");
 	public static By destinationeBasicCharges = By
-			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[5]");
+			.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[2]/td[5]");
 	public static By commodityBasicCharges = By
-			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[6]");
+			.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[2]/td[6]");
 	public static By fullLoadBasicCharges = By
-			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[7]");
-	public static By minBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[8]");
-	public static By maxBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[2]/td[9]");
-	public static By uomBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[1]");
-	public static By qtyBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[2]");
+			.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[2]/td[7]");
+	public static By minBasicCharges = By.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[2]/td[8]");
+	public static By maxBasicCharges = By.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[2]/td[9]");
+	public static By uomBasicCharges = By.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[4]/td[1]");
+	public static By qtyBasicCharges = By.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[4]/td[2]");
 	public static By rateUOMBasicCharges = By
-			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[3]");
-	public static By totalBasicCharges = By.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[4]");
+			.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[4]/td[3]");
+	public static By totalBasicCharges = By.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[4]/td[4]");
 	public static By breakToltalChargesBasicCharges = By
-			.xpath("//*[@id=\"chargeDetailsCON2868873529\"]/td/table/tbody/tr[4]/td[5]");
+			.xpath("//*[contains(@id,'chargeDetailsCON')]/td/table/tbody/tr[4]/td[5]");
 
 	// Freight Charges
 	public static By rateTypeFreightCharges = By
-			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[1]");
+			.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[2]/td[1]");
 	public static By serviceFreightCharges = By
-			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[2]");
+			.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[2]/td[2]");
 	public static By modeFreightCharges = By
-			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[3]");
+			.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[2]/td[3]");
 	public static By originFreightCharges = By
-			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[4]");
+			.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[2]/td[4]");
 	public static By destinationeFreightCharges = By
-			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[5]");
+			.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[2]/td[5]");
 	public static By commodityFreightCharges = By
-			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[6]");
+			.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[2]/td[6]");
 	public static By fullLoadFreightCharges = By
-			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[7]");
-	public static By minFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[8]");
-	public static By maxFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[2]/td[9]");
-	public static By uomFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[1]");
-	public static By qtyFreightCharges = By.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[2]");
+			.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[2]/td[7]");
+	public static By minFreightCharges = By.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[2]/td[8]");
+	public static By maxFreightCharges = By.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[2]/td[9]");
+	public static By uomFreightCharges = By.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[4]/td[1]");
+	public static By qtyFreightCharges = By.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[4]/td[2]");
 	public static By rateUOMFreightCharges = By
-			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[3]");
+			.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[4]/td[3]");
 	public static By totalFreightCharges = By
-			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[4]");
+			.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[4]/td[4]");
 	public static By breakToltalChargesFreightCharges = By
-			.xpath("//*[@id=\"chargeDetailsFRT2868873529\"]/td/table/tbody/tr[4]/td[5]");
+			.xpath("//*[contains(@id,'chargeDetailsFRT')  or contains(@id,'chargeDetailsUNIT')]/td/table/tbody/tr[4]/td[5]");
 
 	// Payment Adjustment
-	public static By paymentAdjustments = By.xpath("//*[@id=\"paymentAdjustments\"]/td[5]");
+	public static By paymentAdjustments = By.xpath("//*[@class=\"outstanding-shipment-list accordion-toggle\"]/td[1]");
 	public static By paymentAdjustmentsArrowdown = By.xpath("//*[@id=\"paymentAdjustments\"]/td[6]/i");
 	public static By paymentAdjustmentsRef1 = By
-			.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[2]");
+			.xpath("//*[contains(@id,'paymentAdjustmentsDetails')]/td/table/tbody/tr[2]/td[2]");
 	public static By paymentAdjustmentsDate = By
-			.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[1]");
+			.xpath("//*[contains(@id,'paymentAdjustmentsDetails')]/td/table/tbody/tr[2]/td[1]");
 	public static By paymentAdjustmentsAmount1 = By
-			.xpath("//*[@id=\"paymentAdjustmentsDetails2868553261\"]/td/table/tbody/tr[2]/td[4]");
+			.xpath("//*[contains(@id,'paymentAdjustmentsDetails')]/td/table/tbody/tr[2]/td[4]");
 	public static By paymentAdjustmentsAmount2 = By
-			.xpath("//*[@id=\"paymentAdjustmentsDetails6014841\"]/td/table/tbody/tr[3]/td[4]");
+			.xpath("//*[contains(@id,'paymentAdjustmentsDetails')]/td/table/tbody/tr[3]/td[4]");
 
 	public static void ClickFinance() {
 		PageBase.ClickOn(FinanceMegaMenu, 5);
@@ -230,6 +230,7 @@ public class FinanceActions {
 
 	public static void EnterTollCarrier(String pTollCarrierName) {
 		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(tollCarrierTextField, pTollCarrierName, 10);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(
@@ -242,7 +243,7 @@ public class FinanceActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(
 				By.xpath(
-						"//*[@id=\"account-number-selector\"]/div[2]/ul/li[4]/div[text()='" + pAccountNumber + " " + "']"),
+						"//*[@id=\"account-number-selector\"]/div[2]/ul/li[4]/div[contains(text(),'" + pAccountNumber + " " + "')]"),
 				10);
 
 	}
@@ -252,7 +253,7 @@ public class FinanceActions {
 		PageBase.SendKeysTo(accountNumberTextField, pAccountNumber, 10);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(
-				By.xpath("//*[@id=\"account-number-selector\"]/div[2]/ul/li/div[text()='" + pAccountNumber + "']"), 10);
+				By.xpath("//*[@id=\"account-number-selector\"]/div[2]/ul/li/div[contains(text(),'" + pAccountNumber + "')]"), 10);
 
 	}
 
@@ -545,7 +546,7 @@ public class FinanceActions {
 	}
 
 	public static void ClickOnConsignementInvoiceSummary(String pConsignment) {
-		PageBase.ClickOn(By.xpath("//*[@id=" + pConsignment + "]/td[1]"), 5);
+		PageBase.click(By.xpath("//*[@id=" + pConsignment + "]/td[1]"), 5);
 
 	}
 	

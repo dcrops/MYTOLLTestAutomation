@@ -225,6 +225,8 @@ public class ShipmentReviewActions {
 	public static void VerifyShipmentOverviewTGX(String pTollCarrier, String pAccountNumber, String pSenderCompanyName,String pSenderLocation,String pReceiverCompanyName, String pReceiverLocation,String pShipmentRef1,
 			String pService,String pWhopays) {
 		 PageBase.MaximumWaitForElementEnabled();
+		 PageBase.MaximumWaitForElementEnabled();
+		 PageBase.MaximumWaitForElementEnabled();
 		assertEquals(pTollCarrier.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(tollCarrier).getText().replaceAll("\\s", ""));
 		assertEquals(pAccountNumber.replaceAll("\\s", ""),BaseWebdriver.driver.findElement(accountNumber).getText().replaceAll("\\s", ""));
 		assertEquals(pSenderCompanyName.replaceAll("\\s", ""), BaseWebdriver.driver.findElement(senderCompanyName).getText().replaceAll("\\s", ""));

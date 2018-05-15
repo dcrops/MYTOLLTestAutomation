@@ -103,13 +103,11 @@ public class MYT_3765_ExpandingTheChargesForAnInvoice_Steps_Definitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 
 			PageBase.MaximumWaitForElementEnabled();
-			PageBase.MaximumWaitForElementEnabled();
-			PageBase.MaximumWaitForElementEnabled();
-			PageBase.Scrollbar(250, 500);
+			//PageBase.Scrollbar(250, 500);
 			assertEquals(FinanceActions.GetShipmentNoInvoiceSummary(finance.get("ShipmentNo")), finance.get("ShipmentNo"));
-			assertEquals(FinanceActions.GetTypeInShipmentInvoiceSummary(), finance.get("Type"));
-			assertEquals(FinanceActions.GetChargeAmountInShipmentInvoiceSummary(), finance.get("ChargeAmount"));
-			assertEquals(FinanceActions.GetOutstandingInShipmentInvoiceSummary(), finance.get("Outstanding"));
+			assertEquals(FinanceActions.GetTypeInShipmentInvoiceSummary(finance.get("ShipmentNo")), finance.get("Type"));
+			assertEquals(FinanceActions.GetChargeAmountInShipmentInvoiceSummary(finance.get("ShipmentNo")), finance.get("ChargeAmount"));
+			assertEquals(FinanceActions.GetOutstandingInShipmentInvoiceSummary(finance.get("ShipmentNo")), finance.get("Outstanding"));
 
 		}
 
@@ -139,6 +137,27 @@ public class MYT_3765_ExpandingTheChargesForAnInvoice_Steps_Definitions {
 		assertEquals(FinanceActions.GetTypeBasicChargesInvoiceSummary(), pBasicCharges);
 		assertEquals(FinanceActions.GetTypeFreightChargesInvoiceSummary(), pFreightCharges);
 		assertEquals(FinanceActions.GetTypeFuelSurchargesInvoiceSummary(), pFuelSurcharges);
+		assertEquals(FinanceActions.GetTypeGSTInvoiceSummary(), pGST);
+
+	}
+	
+	@Then("^User can view \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+	public void user_can_view(String pBasicCharges, String pFreightCharges, String pGST)
+			throws Throwable {
+
+		PageBase.MaximumWaitForElementEnabled();
+		assertEquals(FinanceActions.GetTypeBasicChargesInvoiceSummary(), pBasicCharges);
+		assertEquals(FinanceActions.GetTypeFreightChargesInvoiceSummary(), pFreightCharges);
+		assertEquals(FinanceActions.GetTypeGSTInvoiceSummary(), pGST);
+
+	}
+	
+	@Then("^User can view \"([^\"]*)\" \"([^\"]*)\"$")
+	public void user_can_view(String pFreightCharges, String pGST)
+			throws Throwable {
+
+		PageBase.MaximumWaitForElementEnabled();
+		assertEquals(FinanceActions.GetTypeFreightChargesInvoiceSummary(), pFreightCharges);
 		assertEquals(FinanceActions.GetTypeGSTInvoiceSummary(), pGST);
 
 	}

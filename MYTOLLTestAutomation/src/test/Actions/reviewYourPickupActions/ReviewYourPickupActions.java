@@ -462,7 +462,9 @@ public class ReviewYourPickupActions {
 			String length, String width, String height, String pVolume, String pWeight, String pDangerousGoods,
 			String pFoodItems) {
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(itemArrowDownItem2).click();
+		PageBase.MaximumWaitForElementEnabled();
+		//BaseWebdriver.driver.findElement(itemArrowDownItem2).click();
+		PageBase.click(itemArrowDownItem2, 5);
 		PageBase.MaximumWaitForElementEnabled();
 		// assertEquals(pPickupHeading,
 		// BaseWebdriver.driver.findElement(itemDetailsHeading2).getText());

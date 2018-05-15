@@ -1,11 +1,13 @@
 package bookAPickupStepDefinitions;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.util.Map;
 
 import GlobalActions.PageBase;
 import bookAPickupActions.BookAPickupActions;
+import createShipmentActions.CreateShipmentActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -17,7 +19,8 @@ public class MYT_1524_BAP_DefaultModeToQuickEntryMode_StepDefinitions {
 	@When("^User selects switch from 'Default' mode to ' Quick Entry ' mode$")
 	public void user_selects_switch_from_Default_mode_to_Quick_Entry_mode() throws Throwable {
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeYes();
+		//BookAPickupActions.SelectQuickEntryModeYes();
+		BookAPickupActions.setQEMYes();
 	  
 	}
 
@@ -33,7 +36,10 @@ public class MYT_1524_BAP_DefaultModeToQuickEntryMode_StepDefinitions {
 			
 			assertEquals(bookAPickup.get("TollCarrier"),tollCarrier);
 
-			assertEquals(bookAPickup.get("AccountNumber"),accountNo);
+			//assertEquals(bookAPickup.get("AccountNumber"),accountNo);
+			assertTrue(accountNo.contains(bookAPickup.get("AccountNumber")));
+
+			
 			//String company = BookAPickupActions.GetCompany(1);
 			//System.out.println(company);
 			//assertEquals(company,bookAPickup.get("Sender"));

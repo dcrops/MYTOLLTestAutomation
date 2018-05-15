@@ -15,7 +15,7 @@ import rateEnquiryActions.RateEnquiryActions;
 public class TollPriorityAUSTests {
 	
 		
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception
 			{
 				BaseWebdriver.setUp();

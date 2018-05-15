@@ -1,6 +1,7 @@
 package financialsStepDefinitions;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.util.Map;
 
@@ -24,7 +25,8 @@ public class MYT_2699_SelectMyCarrierAndAccount_StepDefinitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 			
 			assertEquals(finance.get("TollCarrier"), FinanceActions.GetTollCarrier());
-			assertEquals(finance.get("AccountNumber"), FinanceActions.GetAccountNumber());
+			//assertEquals(finance.get("AccountNumber"), FinanceActions.GetAccountNumber());
+			assertTrue(FinanceActions.GetAccountNumber().contains(finance.get("AccountNumber")));
 		}
 		
 	}

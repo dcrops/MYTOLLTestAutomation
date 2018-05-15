@@ -50,9 +50,9 @@ public class CreateShipmentActions {
 	public static By shipmentConsolidatedArrowdown = By
 			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/section/div/ul/li[2]/div[1]/div[7]");
 	public static By shipmentConsolidatedContinue = By
-			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/a[1]");
+			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]/div/div/footer/button[1]");
 	public static By shipmentConsolidatedBtn = By
-			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//a[text()='CONSOLIDATE']");
+			.xpath("//*[@id=\"shipment-cons-popup-wrpr\"]//button[text()='CONSOLIDATE']");
 	public static By MessageShipmentToEnetrLineItem = By
 			.xpath("//*[@id=\"alert-box-wrapper\"]//h3[text()=' Shipment']");
 	public static By MessageContentShipmentToEnetrLineItem = By
@@ -262,13 +262,10 @@ public class CreateShipmentActions {
 
 	public static String SelectMode(int i) {
 		PageBase.MinimumWaitForElementEnabled();
-		// BaseWebdriver.driver.findElement(mode).click();
-		// String mode = BaseWebdriver.driver
-		// .findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i +
-		// "]/div")).getText();
-		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li["
-		// + i + "]/div")).click();
-		String mode = "";
+		BaseWebdriver.driver.findElement(mode).click();
+		 String mode = BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li[" + i +"]/div")).getText();
+		 BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li["+ i + "]/div")).click();
+		//String mode = "";
 		return mode;
 	}
 
@@ -732,11 +729,12 @@ public class CreateShipmentActions {
 
 		try {
 
-			BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
+			//BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
+			PageBase.click(notifySenderCheckBox, 5);
 
 			PageBase.MinimumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(notifyReceiverCheckBox).click();
-
+			//BaseWebdriver.driver.findElement(notifyReceiverCheckBox).click();
+			PageBase.click(notifyReceiverCheckBox, 5);
 		} catch (Exception ex) {
 			PageBase.MoveToElement(CreateShipmentActions.quoteNumber, CreateShipmentActions.accountNumber);
 		}
@@ -746,14 +744,16 @@ public class CreateShipmentActions {
 	public static void EnterShipmentReferences(String pShipmentRef1, String pShipmentRef2) {
 		// PageBase.MinimumWaitForElementEnabled();
 
-		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
-		BaseWebdriver.driver.findElement(shipmentReference1).click();
-		BaseWebdriver.driver.findElement(shipmentReference1).clear();
-		BaseWebdriver.driver.findElement(shipmentReference1).sendKeys(pShipmentRef1);
-		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(shipmentReference2).click();
-		BaseWebdriver.driver.findElement(shipmentReference2).clear();
-		BaseWebdriver.driver.findElement(shipmentReference2).sendKeys(pShipmentRef2);
+//		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
+//		BaseWebdriver.driver.findElement(shipmentReference1).click();
+//		BaseWebdriver.driver.findElement(shipmentReference1).clear();
+//		BaseWebdriver.driver.findElement(shipmentReference1).sendKeys(pShipmentRef1);
+//		PageBase.MinimumWaitForElementEnabled();
+//		BaseWebdriver.driver.findElement(shipmentReference2).click();
+//		BaseWebdriver.driver.findElement(shipmentReference2).clear();
+//		BaseWebdriver.driver.findElement(shipmentReference2).sendKeys(pShipmentRef2);
+		PageBase.sendText(shipmentReference1, 5, pShipmentRef1);
+		PageBase.sendText(shipmentReference2, 5, pShipmentRef2);
 
 	}
 
@@ -1280,7 +1280,7 @@ public class CreateShipmentActions {
 	}
 
 	public static void EnterTollExtraSrviceAmount(String pTollExtraSrviceAmount) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(tollExtraSrviceAmount).click();
 		BaseWebdriver.driver.findElement(tollExtraSrviceAmount).clear();
 		BaseWebdriver.driver.findElement(tollExtraSrviceAmount).sendKeys(pTollExtraSrviceAmount);
@@ -1319,10 +1319,12 @@ public class CreateShipmentActions {
 	public static void WhoPaysDutiesTaxes(String pWhoPaysDutiesTaxes) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(whoPaysDutiesTaxesArrowdown).click();
-		BaseWebdriver.driver
-				.findElement(By.xpath(
-						"//*[@id=\"duty-payer-selector\"]/div[2]/ul/li/div[text()='" + pWhoPaysDutiesTaxes + "']"))
-				.click();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(By.xpath("//*[@id=\"duty-payer-selector\"]/div[2]/ul/li/div[text()='"+ pWhoPaysDutiesTaxes +"']"), 5);
+//		BaseWebdriver.driver
+//				.findElement(By.xpath(
+//						"//*[@id=\"duty-payer-selector\"]/div[2]/ul/li/div[text()='"+ pWhoPaysDutiesTaxes +"']"))
+//				.click();
 
 	}
 
@@ -1396,7 +1398,8 @@ public class CreateShipmentActions {
 
 		if (resultsNotifySenderCheckBox == false) {
 			PageBase.MinimumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
+			//BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
+			PageBase.click(notifySenderCheckBox, 5);
 			System.out.println("resultsNotifySenderCheckBox clicked");
 			PageBase.MinimumWaitForElementEnabled();
 
@@ -1432,7 +1435,8 @@ public class CreateShipmentActions {
 			PageBase.MinimumWaitForElementEnabled();
 		} else {
 			PageBase.MinimumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(notifyReceiverCheckBox).click();
+			//BaseWebdriver.driver.findElement(notifyReceiverCheckBox).click();
+			PageBase.click(notifyReceiverCheckBox, 5);
 			System.out.println("resultsReceiverCheckBox  clicked");
 			PageBase.MinimumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(receiverEmail).click();
@@ -1543,6 +1547,7 @@ public class CreateShipmentActions {
 		Reporter.log("User Navigates to My Contactcs Page");
 		PageBase.click(MyTollHomePageActions.myContactMenu, 10);
 		Reporter.log("User Searches for New Contact added -" + newSenderCompanyName);
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.sendText(BookAPickupActions.SearchContactTxtFeild, 10, newSenderCompanyName);
 		PageBase.click(BookAPickupActions.SearchContactButton, 10);
 		PageBase.MaximumWaitForElementEnabled_1();

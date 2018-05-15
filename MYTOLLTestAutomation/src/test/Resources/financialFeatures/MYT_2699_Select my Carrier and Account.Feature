@@ -24,4 +24,5 @@ Feature: MYT_2699 Select my Carrier and Account
        Then The screen needs to display the name of the Carrier and the Account Number.
       | TollCarrier | AccountNumber |
       | Toll Priority (Aus)   |      200BHY | 
+      Then User Closes the Browser
 

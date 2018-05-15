@@ -18,7 +18,7 @@ public class MYT_3766_ExpandingThePaymentAdjustmentForAnInvoice_StepDefinitions 
 
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 			FinanceActions.ClickOnConsignementInvoiceSummary(finance.get("Consignment"));
-			PageBase.Scrollbar(250, 800);
+			//PageBase.Scrollbar(250, 800);
 		}
 
 	}

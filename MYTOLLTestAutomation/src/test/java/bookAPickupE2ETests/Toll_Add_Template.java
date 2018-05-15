@@ -36,11 +36,11 @@ public class Toll_Add_Template {
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.SitUsername4, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
 		
 	}
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({"TollCarrierTollIPEC", "ServiceRoadExpress","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
 	public void addTemplateIPEC(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
@@ -50,7 +50,7 @@ public class Toll_Add_Template {
 	}
 
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void addTemplateTTAS(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
@@ -60,7 +60,7 @@ public class Toll_Add_Template {
 	}
 	
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
 	public void addTemplateTollIntermodalSpecialised(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
@@ -70,7 +70,7 @@ public class Toll_Add_Template {
 	}
 	
 	
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({"TollCarrierTollPrioAU", "ServiceParcelsOffPeak","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
 	public void addTemplatePrioAus(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
@@ -80,7 +80,7 @@ public class Toll_Add_Template {
 	}
 	
 	
-	@Test
+	@Test(groups = {"E2E" })
 	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak","NumberOfItems","Length", "Width", "Height", "Weight", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode"})
 	public void addTemplatePrioNZ(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
@@ -111,7 +111,7 @@ public class Toll_Add_Template {
 		//Random Template name
 		int Number = (int) (Math.random()*10000);
 		String newNumber = String.valueOf(Number);
-		NewTemplateName = "Test "+Carrier+newNumber;
+		NewTemplateName = "TEST "+Carrier+newNumber;
 
 		Reporter.log("User Enters Template Name - "+NewTemplateName);
 		PageBase.sendText(BookAPickupActions.addTemplateName, 10, NewTemplateName);
@@ -123,6 +123,8 @@ public class Toll_Add_Template {
 		PageBase.sendText(BookAPickupActions.addTemplateHeight, 10, Height);
 		Reporter.log("User Clicks Save");
 		PageBase.click(BookAPickupActions.addTemplateSave, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		
 		//Verify Template Save Successfully
@@ -248,7 +250,7 @@ public class Toll_Add_Template {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 	}
 
 }

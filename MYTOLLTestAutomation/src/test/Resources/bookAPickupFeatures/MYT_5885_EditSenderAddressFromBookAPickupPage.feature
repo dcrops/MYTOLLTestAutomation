@@ -2,7 +2,8 @@ Feature: MYT-5885 User needs to Edit Sender Address from 'Book a pickup' page
 
   Background: 
     Given User is Registered in MyToll and is on Book a pickup page
-
+    
+ @tag1
   Scenario: User Edit Sender Address in Toll Intermodal Specialised from 'Book a pickup' page
     When User selects Toll Carrier and Account Number
       | TollCarrier   | AccountNumber |
@@ -30,15 +31,16 @@ Feature: MYT-5885 User needs to Edit Sender Address from 'Book a pickup' page
     Then User able to see modified address in MY Contacts in My Profile
       | CompanyName    | Name         | Email                       | CountryCode | PhoneNumber | AddressLine1         |
       | Toll Group Inc | John William | NNAutomationuser1@gmail.com | 61-         |   412367897 | 352, Wellington Road |
-      
+      Then User Closes the Browser 
 
+  @tag2
   Scenario: User Edit Sender Address in Toll Priority (AUS) from 'Book a pickup' page
     When User selects Toll Carrier and Account Number
       | TollCarrier         | AccountNumber |
       | Toll Priority (Aus) | 200BHY        |
     And User add Address for the sender in TGX
       | CompanyName | Country     | AddressLine1        | AddressLine2 | Suburb   | Postcode | Email                       | PhoneNumber | Phone Country |
-      | NZ Post Ltd | NEW ZEALAND | 445 Mount Eden Road | Mount Eden   | Auckland |     1024 | NNAutomationuser1@gmail.com |   800300400 | New Zealand   |
+      | NZ Post Ltd | NEW ZEALAND | 445 Mount Eden Road | Mount Eden   | AUCKLAND |     1024 | NNAutomationuser1@gmail.com |   800300400 | New Zealand   |
     And User selects a existing Sender address from the Sender field
       | Sender      |
       | NZ Post Ltd |
@@ -59,3 +61,4 @@ Feature: MYT-5885 User needs to Edit Sender Address from 'Book a pickup' page
     Then User able to see modified address in MY Contacts in My Profile
       | CompanyName        | Name         | Email                       | CountryCode | PhoneNumber | AddressLine1 |
       | Genesis Energy Ltd | John William | NNAutomationuser2@gmail.com | 64-         |   800300400 | 94 Bryce St  |
+	 Then User Closes the Browser 

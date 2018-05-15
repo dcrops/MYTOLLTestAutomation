@@ -48,6 +48,7 @@ public class PageBase {
 
 	public static boolean SendKeysTo(By ObjectLocater, String keysToSend,int secsToWait) {
 		try {
+			PageBase.moveToElement(ObjectLocater);
 			WebElement element = WaitForElement(ObjectLocater, secsToWait);
 			element.click();
 			element.clear();
@@ -90,6 +91,7 @@ public class PageBase {
 	
 	public static boolean ClickOn(By ObjectLocater, int secsToWait) {
 		try {
+			PageBase.moveToElement(ObjectLocater);
 			WebElement element = WaitForElement(ObjectLocater, secsToWait);
 			element.click();
 		} catch (TimeoutException ex) {
@@ -174,7 +176,7 @@ public class PageBase {
 
 	public static void MaximumWaitForElementEnabled() {
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(1500);
 			
 
 		}
@@ -516,6 +518,26 @@ public class PageBase {
 			Assert.fail("xpath not found: " + locator+"<br>");
 			
 		}
+	}
+	
+	public static void verifyTextExistContains(By locator, String expectedText){
+		try {
+			String getText = BaseWebdriver.driver.findElement(locator).getText();
+		 
+			if (getText.contains(expectedText)){
+				Reporter.log("Expected Text : "+expectedText+ " Contains within the Text on Screen :" +getText);
+				System.out.println("Expected Text : "+expectedText+ " Contains within the Text on Screen :" +getText);
+			}else{
+				Reporter.log("FAILED: Expected Text : "+expectedText+ " DOES NOT Contains within the Text on Screen :" +getText);
+				Assert.fail("FAILED: Expected Text : "+expectedText+ " DOES NOT Contains within the Text on Screen :" +getText);
+			}
+		}
+		catch(Exception e) {
+			Reporter.log("xpath not found: " + locator+"<br>");
+			Assert.fail("xpath not found: " + locator+"<br>");
+			
+		}
+		
 	}
 
 	

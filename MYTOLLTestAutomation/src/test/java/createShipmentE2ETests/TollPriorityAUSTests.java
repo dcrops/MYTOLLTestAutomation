@@ -55,7 +55,7 @@ public class TollPriorityAUSTests {
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		CreateShipmentActions.EnterService(ServiceParcelsOffPeak);
 		BookAPickupActions.SelectAccountNumber1();
-		String AccountNumber = BookAPickupActions.GetAccountNumber().substring(0, 5);
+		String AccountNumber = BookAPickupActions.GetAccountNumber().substring(0, 6);
 		System.out.println(AccountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
@@ -219,7 +219,7 @@ public class TollPriorityAUSTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments","WhoPays", "whoPays", "Sender",
 		"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -300,9 +300,9 @@ public class TollPriorityAUSTests {
 
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 

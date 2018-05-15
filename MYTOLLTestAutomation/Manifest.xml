@@ -63,7 +63,7 @@
 		<parameter name="TypeOfExport" value="Permanent" />
 		<parameter name="DeclaredValue" value="1500" />
 		<parameter name="DeclaredValueCurrency" value="New Zealand dollar" />
-		<parameter name="WhoPaysDutiesTaxes" value="Sender " />
+		<parameter name="WhoPaysDutiesTaxes" value="Sender" />
 		<parameter name="CommodityCode" value="ABC123" />
 		<parameter name="CommercialInvoiceDes" value="TestAuto" />
 		<parameter name="PartNo" value="01" />
@@ -142,10 +142,17 @@
 		<!---Manifest test data -->
 
 		<parameter name="ManifestName" value="Automation" />
+		
+		<!-- <groups>
+	    <run>
+	      <include name="E2E"  />
+	    </run>
+	  	</groups> -->  
 
 
 	<classes>
-  <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />
+  		
+		<class name="manifestE2ETests.TollPriorityAUCommercialInvoice" />
 	<!-- Blocked>			
 		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
 		<class name = "manifestE2ETests.TollPriorityAUCommercialInvoice" />

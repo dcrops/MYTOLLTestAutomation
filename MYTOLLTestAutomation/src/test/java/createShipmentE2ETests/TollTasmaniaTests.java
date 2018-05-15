@@ -15,7 +15,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 public class TollTasmaniaTests {
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
@@ -23,7 +23,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -67,7 +67,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectWhoPays(1);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
-		CreateShipmentActions.SelectMode(1);
+		//CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
 
@@ -171,7 +171,7 @@ public class TollTasmaniaTests {
 
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceExpress", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -214,7 +214,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectWhoPays(1);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
-		CreateShipmentActions.SelectMode(1);
+		//CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
 
@@ -296,7 +296,7 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -339,7 +339,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectWhoPays(1);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
-		CreateShipmentActions.SelectMode(1);
+		//CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
 
@@ -421,7 +421,7 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(groups = { "Shakeout Testing","E2E" })
+	@Test(groups = { "Shakeout Testing","E2E1" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceRefrigeration", "AccountNumberTTas", "WhoPays", "whoPays",
 		"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "dropOffDepot", "DropOffDepot",
 		"CollectionDepotTTas", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -463,7 +463,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectTempratureType(1);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
-		CreateShipmentActions.SelectMode(ModeInt);
+		//CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -545,7 +545,7 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	//@Test(priority=-1)
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -588,7 +588,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectWhoPays(1);
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
-		CreateShipmentActions.SelectMode(1);
+		//CreateShipmentActions.SelectMode(1);
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.SelectReceiver(Receiver);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
@@ -647,9 +647,9 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
-	// BaseWebdriver.tearDown();
+	 //BaseWebdriver.tearDown();
 
 	}
 

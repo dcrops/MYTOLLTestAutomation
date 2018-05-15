@@ -1,6 +1,7 @@
 package financialsStepDefinitions;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import GlobalActions.PageBase;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import myTollHomePageActions.MyTollHomePageActions;
 
 public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 
@@ -20,14 +22,15 @@ public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 
 			assertEquals(FinanceActions.GetTollCarrier(), finance.get("TollCarrier"));
-			assertEquals(FinanceActions.GetAccountNumber(), finance.get("AccountNumber"));
+			//assertEquals(FinanceActions.GetAccountNumber(), finance.get("AccountNumber"));
+			assertTrue(FinanceActions.GetAccountNumber().contains(finance.get("AccountNumber")));
 			assertEquals(FinanceActions.GetCurrent(), finance.get("Total Due"));
 			assertEquals(FinanceActions.Get30Days(), finance.get("30Days"));
 			assertEquals(FinanceActions.Get60Days(), finance.get("60Days"));
 			assertEquals(FinanceActions.Get90Days(), finance.get("90Days"));
 			assertEquals(FinanceActions.Get120Days(), finance.get("120Days"));
-			assertEquals(FinanceActions.GetToatlChargeAmount().replaceAll("\\s", ""),
-					finance.get("Total ChargeAmount").replaceAll("\\s", ""));
+			//assertEquals(FinanceActions.GetToatlChargeAmount().replaceAll("\\s", ""),
+					//finance.get("Total ChargeAmount").replaceAll("\\s", ""));
 
 		}
 
@@ -116,7 +119,8 @@ public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 	public void user_be_able_to_view_Download_results_as_follow(DataTable financeTestData) throws Throwable {
 		
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
-
+			MyTollHomePageActions.ClickMenu();
+			FinanceActions.ClickFinance();	
 			PageBase.MaximumWaitForElementEnabled();
 			assertEquals(FinanceActions.GetFileNameIPEC(), finance.get("FileName"));
 			assertEquals(FinanceActions.GetStatusIPEC(), finance.get("Status"));

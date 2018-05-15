@@ -16,7 +16,7 @@ import rateEnquiryActions.RateEnquiryActions;
 public class TollTasmaniaTests {
 	
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception
 			{
 				BaseWebdriver.setUp();

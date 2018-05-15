@@ -1,4 +1,4 @@
-Feature: E2E Manual Manifest TMS - Manual Manifest -> Shipment 
+Feature: E2E Manual Manifest TCHEM - Manual Manifest -> Shipment 
 
   Background: 
     Given User is Registered in MyToll and is on My Dashboard

@@ -33,3 +33,4 @@ Feature: MYT-3766 Expanding the Payment Adjustment for an invoice
     Then User can view following details
       | Date             | Reference No1 | Reference No2 | Note | Amount1   | Amount2 |
       | Wed, 31 Jan 2018 |        310118 |               |      | $ -159.67 |         |
+      Then User Closes the Browser 

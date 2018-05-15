@@ -1,5 +1,7 @@
 Feature: MYT-5392 Enter the address for my pick up - Extended Features
 
+# MARK AS OUT OF SCOPE FOR AUTOMATION UNTILL FURHTER NOtice
+
   Background: 
     Given User is Registered in MyToll and is on Book a pickup page
 

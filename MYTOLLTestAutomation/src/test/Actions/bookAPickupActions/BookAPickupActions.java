@@ -18,6 +18,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 
@@ -311,18 +312,18 @@ public class BookAPickupActions {
 	public static By containsDangerousGoodsNoQME = By.xpath("//*[@id=\"gv-dg-radios\"]/label[2]/input");
 	public static By containsDangerousGoodsYesQME = By.xpath("//*[@id=\"gv-dg-radios\"]/label[1]/input");
 	public static By saveAsTemplateQME = By.id("gv-save-as-template");
-	public static By addNewLineQME = By.xpath("//*[@id=\"gv-grid-line-item\"]/td[13]/a[4]");
+	public static By addNewLineQME = By.xpath("//*[@id=\"gv-grid-line-item\"]//*//button[@class= 'box-link black']");
 	public static By UNNumberTextFieldQME = By.id("gv-unlookup");
 	public static By packingGroupDropdownQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/label/input[2]");
 	public static By packingGroupItemQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/div/ul/li[2]/div");
 	public static By packingGroupQME = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/input[2]");
-	public static By packingGroupTextFieldQME = By.id("gv-packaging-grp");
+	public static By packingGroupTextFieldQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/label/input[2]");
 	public static By dgPackagingDescriptionQME = By.id("gv-dg-pckg-description");
 	public static By dgPkgQtyQME = By.id("gv-dgPkgQty");
 	public static By dgQtyKgQME = By.id("gv-dgPkgWgt");
 	public static By technicalNameQME = By.id("gv-technical-name");
 	public static By classDivisionQME = By.id("gv-class-division");
-	public static By subRiskQME = By.name("sub-risk");
+	public static By subRiskQME = By.xpath("//*[@id=\"gv-sub-risk-selector\"]/label/input[2]");
 	public static By properShippingNameQME = By.id("gv-shipping-name");
 	public static By addButtonDGScreenQME = By.id("gv-add-dg-item");
 	public static By closeButtonDGScreenQME = By.xpath("//*[@id=\"dg-popup-inner-wrpr\"]/a[2]/i");
@@ -1739,6 +1740,8 @@ public class BookAPickupActions {
 		PageBase.SendKeysTo(AddAdressAddressLine2, pAddAdressAddressLine2, 5);
 		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 5);
 		PageBase.SendKeysTo(AddAdressAddressSuburb, pAddAdressAddressSuburb, 5);
+		PageBase.SelectFrom(By.xpath(
+				"//*[@id=\"add-addr-suburb-wrpr\"]/div/ul/li/div[contains(text(),'" + pAddAdressAddressSuburb + "')]"), 15);
 		PageBase.SendKeysTo(AddAdressEmailTGXTextField, pEmail, 5);
 		PageBase.retryingFindClick(AddAdressAddressContinue);
 		PageBase.MaximumWaitForElementEnabled();
@@ -2267,6 +2270,27 @@ public class BookAPickupActions {
 		PageBase.ClickOn(GoT0Dashboard, 5);
 	}
 	
+	
+	public static void setQEMYes() {
+		try {
+			WebElement QEM = BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField);
+			PageBase.click(QuickEntryModeNo, 2);
+			System.out.println("QEM Enabled");
+		} catch (Exception ex) {
+			System.out.println("QEM Already Enabled");
+		}
+	}
+
+	public static void setQEMNo() {
+		try {
+			WebElement QEM = BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField);
+			;
+			System.out.println("QEM Already Not Enabled");
+		} catch (Exception ex) {
+			PageBase.click(QuickEntryModeNo, 2);
+			System.out.println("QEM Not Enabled");
+		}
+	}
 	
 	
 }

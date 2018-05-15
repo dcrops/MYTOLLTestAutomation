@@ -234,18 +234,18 @@ public class TollPriorityNZTest {
 		String ReferenceNumber=reference1.substring(18, lengthRefrence);
 		System.out.println("Book A Pickup reference  " + reference1);
 		System.out.println("ReferenceNumber " + ReferenceNumber);
-		BaseWebdriver.LaunchSalesforce();
-		SalesforceActions.LoginSalesforce(BaseWebdriver.SalesforceUser,BaseWebdriver.SalesforcePassword);
-		SalesforceActions.ClickLocation();
-		SalesforceActions.searchPickup(ReferenceNumber);
-		SalesforceActions.searchPickup(ReferenceNumber);
-		SalesforceActions.ClickSearchResultsNumber();
+//		BaseWebdriver.LaunchSalesforce();
+//		SalesforceActions.LoginSalesforce(BaseWebdriver.SalesforceUser,BaseWebdriver.SalesforcePassword);
+//		SalesforceActions.ClickLocation();
+//		SalesforceActions.searchPickup(ReferenceNumber);
+//		SalesforceActions.searchPickup(ReferenceNumber);
+//		SalesforceActions.ClickSearchResultsNumber();
 		
 
 	}
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 	}
 }
