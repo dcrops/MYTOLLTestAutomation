@@ -92,7 +92,7 @@ public class ManualManifestTollIPECTest {
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
 		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTIPEC, ServiceRoadExpress);
 		ManifestActions.UserVerifiesLineItemOnBAPPage_TGX(NumberOfItems, Length, Width, Height, Weight);
-		
+		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "424579833");
 		BookAPickupActions.SelectLargestItem(1);
 		ManifestActions.selectPickupDate();
 		ManifestActions.selectReadyTimeJS("09:15");
@@ -107,7 +107,7 @@ public class ManualManifestTollIPECTest {
 	
 	
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		BaseWebdriver.tearDown();
 	}

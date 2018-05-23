@@ -245,8 +245,6 @@ public class ManifestCommonStepsDefinitions {
 	public void UserVerifiesShipmentDetailsonBAPPage(DataTable manifestTestData) throws Throwable {
 		for (Map<String, String> manifest : manifestTestData.asMaps(String.class, String.class)) {
 			ManifestActions.UserVerifiesShipmentDetailsonBAPPage(manifest.get("Toll carrier"), manifest.get("AccountNumber"), manifest.get("Service"));
-			
-			
 		}
 	}
 	
@@ -274,6 +272,11 @@ public class ManifestCommonStepsDefinitions {
 	@Then("^User Confirms Pick Up and Gets BAP Reference Number$")
 	public void UserConfirmsPickUpAndGetsBAPReferenceNumber() throws Throwable {
 		BookAPickupActions.ConfirmPickUpandGetReferenceNo();
+	}
+	
+	@Then("^User Enters Phone Number$")
+	public void UserEntersPhoneNumber() throws Throwable {
+		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "424579833");
 	}
 	
 	

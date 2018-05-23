@@ -42,8 +42,9 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
     Then User can send email to 5 users with the booking content
       | Message                                                                                                                             | MessagetoSend      | User1                       | User2                       | User3                       | User4                       | User5                      |
       | Enter your email and the email of up to 5 others to share a link to this pickup. They will see public information about this pickup | Test share message | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
+    Then User Closes the Browser
 
-  @tag1
+  @tag2
   Scenario: User wants to Print and/or Share my pick up booking in Intermodal & Specialised
     When User selects Toll Carrier and Account Number
       | TollCarrier              | AccountNumber |
@@ -101,7 +102,9 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
     Then User can send email to 5 users with the booking content
       | Message                                                                                                                             | MessagetoSend      | User1                       | User2                       | User3                       | User4                       | User5                      |
       | Enter your email and the email of up to 5 others to share a link to this pickup. They will see public information about this pickup | Test share message | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
+     Then User Closes the Browser
 
+  @tag3
   Scenario: User wants to Print and/or Share my pick up booking in TGX
     When User selects Toll Carrier and Account Number
       | TollCarrier         | AccountNumber |
@@ -140,3 +143,4 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
     Then User can send email to 5 users with the booking content
       | Message                                                                                                                             | MessagetoSend      | User1                       | User2                       | User3                       | User4                       | User5                      |
       | Enter your email and the email of up to 5 others to share a link to this pickup. They will see public information about this pickup | Test share message | NNAutomationuser1@gmail.com | NNAutomationuser2@gmail.com | SitAutomationuser@yahoo.com | Nadiki.perera@tollgroup.com | Nadiki.perera@accesshq.com |
+   Then User Closes the Browser

@@ -40,7 +40,7 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
 	 |Toll carrier               |Sender                 | Receiver            |
      | Intermodal & Specialised  |TNQX Melbourne Address | TNQX Sydney Address |
 	Then User Confirms Delete Draft Search
-      
+	Then User Closes the Browser
       
   @tag2
   Scenario: User Gets a Rate Estimate from within a Shipment - PrioAU
@@ -76,6 +76,7 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
 	|Toll carrier               |Sender                 | Receiver            |
     | Toll Priority (Aus)       |TNQX Melbourne Address | TNQX Sydney Address |
 	Then User Confirms Delete Draft Search
+	Then User Closes the Browser
     
  
   @tag3
@@ -111,7 +112,8 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
 	Then User Deletes Draft Shipment
 	|Toll carrier               |Sender                 | Receiver            |
     | Toll Priority (NZ)        |NZ Sender              | IPEC Footscray      |
-	Then User Confirms Delete Draft Search
+  Then User Confirms Delete Draft Search
+  Then User Closes the Browser
     
     
  @tag4
@@ -148,3 +150,4 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
 	|Toll carrier               |Sender                 | Receiver            |
     | Toll IPEC                 |IPEC Melbourne         | IPEC Footscray      |
 	Then User Confirms Delete Draft Search
+	Then User Closes the Browser

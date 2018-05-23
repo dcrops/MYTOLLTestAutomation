@@ -79,7 +79,8 @@ public class CreateShipmentCommonStepsDefinitions {
 			throws Throwable {
 
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
-			//CreateShipmentActions.EnterService(shipment.get("Service"));
+			BookAPickupActions.SelectIntermodalSpecializedCarrier(shipment.get("TollCarrier"));
+			CreateShipmentActions.EnterService(shipment.get("Service"));
 			BookAPickupActions.EnterAccountNumber(shipment.get("AccountNumber"));
 			String s = shipment.get("Whopays");
 			System.out.println("S  " + s);

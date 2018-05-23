@@ -46,4 +46,5 @@ Feature: E2E Manual Manifest TEM - Manual Manifest -> Shipment -> BAP
      |	10:00           |
      Then User Clicks Review and Book
      Then User Confirms Pick Up and Gets BAP Reference Number
+     Then User Closes the Browser
      

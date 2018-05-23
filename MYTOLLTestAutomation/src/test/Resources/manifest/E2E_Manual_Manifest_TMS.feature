@@ -38,6 +38,7 @@ Feature: E2E Manual Manifest TMS - Manual Manifest -> Shipment -> BAP
      Then User Verifies Shipment Details on BAP Page
      |Toll carrier                   |Sender                | 	AccountNumber| Service|
      |Intermodal & Specialised       |Retreived on Runtime  |	790135       | General|
+     Then User Enters Phone Number
      And User Verifies Line Item on BAP Page
       | Item description     | No of Items | Length | Width | Height |  Weight      |
       | Automation Template1 |          10 |    100 |   100 |    100 |          900 |
@@ -46,4 +47,5 @@ Feature: E2E Manual Manifest TMS - Manual Manifest -> Shipment -> BAP
      |	10:00           |
      Then User Clicks Review and Book
      Then User Confirms Pick Up and Gets BAP Reference Number
+     Then User Closes the Browser
      

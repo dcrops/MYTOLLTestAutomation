@@ -46,10 +46,10 @@ Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
       | ManifestName |
       | Automation   |
     Then User can add shipment to Manifest successfully.
-    When User clicks on Print
     Then User can print manifest successfully.
+    Then User Closes the Browser
 
-  @tag1
+  @tag2
   Scenario: User wants to be able to create and print Shipments, Manifests and Labels with two line items in Toll Mining Services
     When user selects Toll Carrier as below to create shipment
       | TollCarrier          |
@@ -104,5 +104,5 @@ Feature: MYT_6225 Toll Mining Services Shipment, Manifesting and Printing
       | ManifestName |
       | Automation   |
     Then User can add shipment to Manifest successfully.
-    When User clicks on Print
     Then User can print manifest successfully.
+	Then User Closes the Browser

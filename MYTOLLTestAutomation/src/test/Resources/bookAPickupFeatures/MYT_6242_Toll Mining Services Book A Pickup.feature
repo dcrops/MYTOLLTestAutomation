@@ -57,7 +57,7 @@ Feature: MYT_6242 Toll Mining Services Book A Pickup
       | Special Ins          |
     Then User clicks on Review & Book and User be able to see pickup details entered in Review Your Pickup screen
       | TollCarrier          | AccountNumber | Company  | Location                                     | Booked by | Phone number | Ready time | Location closing time | Special instructions |
-      | Toll Mining Services | E92416        | AccessHQ | 60, Collins Street CDE MELBOURNE VIC 3000 AU | Kate  |    452456876 | 14:45      | 21:00                 | Special Ins          |
+      | Toll Mining Services | E92416        | AccessHQ | 60, Collins Street CDE MELBOURNE VIC 3000 AU | Kate  |    452456876 | 14:45      | 18:00                 | Special Ins          |
     Then User be able to see first item details entered in Review Your Pickup screen
       | ItemDescription     | Destination   | Mode | Service    | ChargeTo | NoOfItems | PalletSpaces | Length | Width | Height | Volume    | TotalWeight | DangerousGoods | FoodItem |
       | Automation Template | MELEUCA, 6079 | Road | DG Freight | Sender   |        10 |            6 |    100 |   100 |    100 | 10.000 m3 | 900 kg      | Yes            | No       |
@@ -74,8 +74,9 @@ Feature: MYT_6242 Toll Mining Services Book A Pickup
       | Msg                                                          |
       |  Wehavesentyouanemailconfirmingyourpickupbookingto: |
     Then User can see email address for an email deliveredpickup confirmation.
+     Then User Closes the Browser
 
-  @tag1
+  @tag2
   Scenario: User wants to be able to book a pickup for one line item using Toll Mining Services
     When User selects Toll Carrier and Account Number
       | TollCarrier          | AccountNumber |
@@ -107,7 +108,7 @@ Feature: MYT_6242 Toll Mining Services Book A Pickup
       | Special Ins          |
     Then User clicks on Review & Book and User be able to see pickup details entered in Review Your Pickup screen
       | TollCarrier            | AccountNumber | Company  | Location                                     | Booked by | Phone number | Ready time | Location closing time | Special instructions |
-      | Toll Energy and Marine | E92416        | AccessHQ | 60, Collins Street CDE MELBOURNE VIC 3000 AU | Kate  |    452456876 | 14:45      | 21:00                 | Special Ins          |
+      | Toll Energy and Marine | E92416        | AccessHQ | 60, Collins Street CDE MELBOURNE VIC 3000 AU | Kate      |    452456876 | 14:45      | 18:00                 | Special Ins          |
     Then User be able to see first item details entered in Review Your Pickup screen
       | ItemDescription     | Destination   | Mode | Service | ChargeTo | NoOfItems | PalletSpaces | Length | Width | Height | Volume    | TotalWeight | DangerousGoods | FoodItem |
       | Automation Template | MELEUCA, 6079 | Road | General | Sender   |        10 |            6 |    100 |   100 |    100 | 10.000 m3 | 900 kg      | No             | No       |
@@ -118,3 +119,4 @@ Feature: MYT_6242 Toll Mining Services Book A Pickup
       | Msg                                                                             |
       | Wehavesentyouanemailconfirmingyourpickupbookingto: |
     Then User can see email address for an email deliveredpickup confirmation.
+    Then User Closes the Browser

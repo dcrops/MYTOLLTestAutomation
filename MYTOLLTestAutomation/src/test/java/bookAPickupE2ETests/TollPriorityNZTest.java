@@ -124,11 +124,11 @@ public class TollPriorityNZTest {
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.selectDispatchDate();
 		BookAPickupActions.SelectDispatchDateTomorrow();
-		BookAPickupActions.selectClosingTime();
-		BookAPickupActions.EnterReferenceNumber(reference);
+		BookAPickupActions.selectReadyTime();
+		
 		BookAPickupActions.SelectPickupFrom(1);
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
-
+		BookAPickupActions.EnterReferenceNumber(reference);
 		BookAPickupActions.ClickReviewBook();
 		ReviewYourPickupActions.ClickConfirmPickup();
 		// BookAPickupActions.GetReferenceNumber() ;
@@ -244,7 +244,7 @@ public class TollPriorityNZTest {
 
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		 BaseWebdriver.tearDown();
 	}

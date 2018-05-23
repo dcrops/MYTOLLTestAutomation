@@ -215,8 +215,8 @@ public class MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition {
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
-			String mode = CreateShipmentActions.SelectMode(1);
-			PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.mode);
+			//String mode = CreateShipmentActions.SelectMode(1);
+			//PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.mode);
 			String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
 			System.out.println(sender);
 			String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
@@ -410,7 +410,7 @@ public void user_be_able_to_see_second_line_item_headings_as_below(DataTable shi
 
 	@When("^User selects Dangerous Goods as No$")
 	public void user_selects_Dangerous_Goods_as_No() throws Throwable {
-
+		BookAPickupActions.SelectDangerousGoodsNoQME();
 	}
 
 }

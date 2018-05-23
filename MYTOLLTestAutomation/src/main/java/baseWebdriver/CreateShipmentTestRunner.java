@@ -8,7 +8,8 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/createShipmentFeatures/MYT_6240_Toll Mining Services Shipment Manifesting Printing.feature"}
+        ,features = { "src/test/Resources/createShipmentFeatures/MYT_1650_Shipment Default mode to Quick Entry  mode.feature", "src/test/Resources/createShipmentFeatures/MYT_6138_Save a shipment as a Draft.feature",
+        		      "src/test/Resources/createShipmentFeatures/MYT_6225_Toll Energy_Shipment Manifesting Printing.feature", "src/test/Resources/createShipmentFeatures/MYT_6240_Toll Mining Services Shipment Manifesting Printing.feature"}
 		,glue= {"commonStepsDefinitions", "createShipmentStepDefinitions", "bookAPickupStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Shipment\\cucumber-pretty",
 

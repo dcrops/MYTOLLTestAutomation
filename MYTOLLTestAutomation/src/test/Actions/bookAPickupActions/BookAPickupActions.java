@@ -3,6 +3,7 @@ package bookAPickupActions;
 
 import GlobalActions.PageBase;
 import createShipmentActions.CreateShipmentActions;
+import manifestActions.ManifestActions;
 import myTollHomePageActions.MyTollHomePageActions;
 import reviewYourPickupActions.ReviewYourPickupActions;
 
@@ -312,6 +313,7 @@ public class BookAPickupActions {
 	public static By containsDangerousGoodsNoQME = By.xpath("//*[@id=\"gv-dg-radios\"]/label[2]/input");
 	public static By containsDangerousGoodsYesQME = By.xpath("//*[@id=\"gv-dg-radios\"]/label[1]/input");
 	public static By saveAsTemplateQME = By.id("gv-save-as-template");
+	public static By saveAsTemplateQMEShipment = By.id("gv-save-as-template0");
 	public static By addNewLineQME = By.xpath("//*[@id=\"gv-grid-line-item\"]//*//button[@class= 'box-link black']");
 	public static By UNNumberTextFieldQME = By.id("gv-unlookup");
 	public static By packingGroupDropdownQME = By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/label/input[2]");
@@ -629,7 +631,8 @@ public class BookAPickupActions {
 
 	public static String GetAccountNumber() {
 		PageBase.MinimumWaitForElementEnabled();
-		String accountNo = BaseWebdriver.driver.findElement(accountNumber).getAttribute("value").replaceAll("[^0-9]+", "");
+		//String accountNo = BaseWebdriver.driver.findElement(accountNumber).getAttribute("value").replaceAll("[^0-9]+", "");
+		String accountNo = BaseWebdriver.driver.findElement(accountNumber).getAttribute("value");
 		System.out.println(accountNo);
 		/*StringBuilder builder= new StringBuilder();
 		for (int i=0; i<=accountNo.length(); i++)
@@ -738,7 +741,7 @@ public class BookAPickupActions {
 	}
 
 	public static String GetReadyTime() {
-		// BookAPickupActions.selectReadyTime();
+		 BookAPickupActions.selectReadyTime();
 		PageBase.MaximumWaitForElementEnabled();
 
 		String vAvailableTime = BaseWebdriver.driver.findElement(availableTime).getAttribute("value");
@@ -817,7 +820,7 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(location).clear();
 		BaseWebdriver.driver.findElement(location).sendKeys(plocation);
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.SelectFrom(By.xpath("//*[@id=\"location-selector\"]/div[2]/ul/li/div[text()='" + plocation + "']"), 5);
+		PageBase.SelectFrom(By.xpath("//*[@id=\"location-selector\" or @id=\"location-selector\"]/div/ul/li/div[text()='" + plocation + "']"), 5);
 		// BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"location-selector\"]/div[2]/ul//div[text()='\"
 		// + pChargeToAccount + "']")).click();
 		// BaseWebdriver.MaximumWaitForElementEnabled();//*[@id="sender-selector"]/div[2]/ul/li[2]/div[1]
@@ -1223,29 +1226,31 @@ public class BookAPickupActions {
 	}
 
 	public static void selectReadyTime() {
+		
+		ManifestActions.selectReadyTimeJS("12:00");
 
-		String readyTime = GetReadyTime().toString();
-		String newReadyTime = readyTime.substring(0, 2);
-		System.out.println(newReadyTime);
-		Integer readyTimeInt = Integer.parseInt(newReadyTime);
-		System.out.println(readyTimeInt);
-
-		if (readyTimeInt >= 15) {
-			BaseWebdriver.driver.findElement(availableTime).click();
-			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
-			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
-
-			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
-			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
-		}
-
-		if (readyTimeInt <= 8) {
-			BaseWebdriver.driver.findElement(availableTime).click();
-			BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-			BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-
-			BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
-		}
+//		String readyTime = GetReadyTime().toString();
+//		String newReadyTime = readyTime.substring(0, 2);
+//		System.out.println(newReadyTime);
+//		Integer readyTimeInt = Integer.parseInt(newReadyTime);
+//		System.out.println(readyTimeInt);
+//
+//		if (readyTimeInt >= 15) {
+//			BaseWebdriver.driver.findElement(availableTime).click();
+//			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
+//			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
+//
+//			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
+//			BaseWebdriver.driver.findElement(decreaseReadyTime).click();
+//		}
+//
+//		if (readyTimeInt <= 8) {
+//			BaseWebdriver.driver.findElement(availableTime).click();
+//			BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
+//			BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
+//
+//			BaseWebdriver.driver.findElement(increaseAvailableTimeHours).click();
+//		}
 		
 	}
 
@@ -2099,6 +2104,12 @@ public class BookAPickupActions {
 		PageBase.ClickOn(saveAsTemplateQME, 5);
 
 	}
+	
+	public static void SaveLineItemQMEShipment() {
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.ClickOn(saveAsTemplateQMEShipment, 5);
+
+	}
 
 	public static void addQMELineItemQME() {
 		PageBase.MinimumWaitForElementEnabled();
@@ -2206,8 +2217,10 @@ public class BookAPickupActions {
 	}
 	
 	public static String RandomItemDescription(String pItemDescription) {
-
-		String NewItemDescription = pItemDescription + (new Date()).getTime();
+		
+		int Number = (int) (Math.random()*10000);
+		String newNumber = String.valueOf(Number);
+		String NewItemDescription = pItemDescription + newNumber;
 		return NewItemDescription;
 	}
 

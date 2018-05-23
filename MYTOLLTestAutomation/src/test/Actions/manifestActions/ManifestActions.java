@@ -16,6 +16,7 @@ import org.testng.Reporter;
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
+import commonStepsDefinitions.ManifestCommonStepsDefinitions;
 import createShipmentActions.CreateShipmentActions;
 import createShipmentActions.ShipmentReviewActions;
 import cucumber.api.DataTable;
@@ -413,7 +414,8 @@ public class ManifestActions {
 	public static void addManifestManually() {
 		PageBase.MaximumWaitForElementEnabled_1();
 		Reporter.log("User Navigates to Manifest Tab and Selects Add Manifest Manually");
-		PageBase.waitForElement(MyManifestTab, 5);
+		//PageBase.waitForElement(MyManifestTab, 5);
+		
 		PageBase.click(MyManifestTab, 2);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(AddManifestManuallyButton, 2);	
@@ -759,8 +761,8 @@ public static void commercialInvoiceItemDetails(String Description, String PartN
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.verifyTextExistAttributeContains(BookAPickupActions.TollCarrierTextField, Carrier);
 			PageBase.verifyTextExistAttributeContains(BookAPickupActions.accountNumber, AccountNo);
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.name, SenderContactName);
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.location, SenderCompanyName);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.name, ManifestCommonStepsDefinitions.SenderContactName);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.location, ManifestCommonStepsDefinitions.SenderCompanyName);
 			PageBase.verifyTextExistAttributeContains(BookAPickupActions.serviceSelected, Service);
 	}
 	

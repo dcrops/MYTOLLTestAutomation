@@ -22,7 +22,7 @@ import manifestActions.ManifestActions;
 
 public class ManualManifestTollPriorityNZTests {
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
@@ -92,7 +92,7 @@ public class ManualManifestTollPriorityNZTests {
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
 		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTollPrioNZ, ServiceParcelsOffPeak);
 		ManifestActions.UserVerifiesLineItemOnBAPPage_TGX(NumberOfItems, Length, Width, Height, Weight);
-		//PageBase.sendText(BookAPickupActions.phoneNumber, 10, "33818565");
+		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "33818565");
 		BookAPickupActions.SelectLargestItem(2);
 		ManifestActions.selectPickupDate();
 		ManifestActions.selectReadyTimeJS("09:15");
@@ -107,9 +107,9 @@ public class ManualManifestTollPriorityNZTests {
 	
 	
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 	}
 	
 }

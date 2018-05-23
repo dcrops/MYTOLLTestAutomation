@@ -208,6 +208,9 @@ public class MYT_1524_BAP_DefaultModeToQuickEntryMode_StepDefinitions {
 	   
 	}
 
-
+	@When("^User clicks on 'Save template' for Shipment$")
+	public void user_clicks_on_Save_template_Shipment() throws Throwable {
+		BookAPickupActions.SaveLineItemQMEShipment();
+	}
 
 }

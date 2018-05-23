@@ -9,7 +9,10 @@ import myTollHomePageActions.MyTollHomePageActions;
 
 
 @CucumberOptions( strict=true
-        ,features = { "src/test/Resources/bookAPickupFeatures/MYT_5885_EditSenderAddressFromBookAPickupPage.feature"}
+//        ,features = { "src/test/Resources/bookAPickupFeatures/MYT_1524_Book a Pickup'Default' mode to Quick EntryMode.feature","src/test/Resources/bookAPickupFeatures/MYT_5885_EditSenderAddressFromBookAPickupPage.feature",
+//        		      "src/test/Resources/bookAPickupFeatures/MYT_622_BAP Share my book a pickup.feature", "src/test/Resources/bookAPickupFeatures/MYT_6242_Toll Mining Services Book A Pickup.feature",
+//        		      "src/test/Resources/bookAPickupFeatures/MYT-6226_Toll Energy Book A Pickup.feature"}
+		,features = { "src/test/Resources/bookAPickupFeatures/MYT_6242_Toll Mining Services Book A Pickup.feature"}
 		,glue= {"commonStepsDefinitions","bookAPickupStepDefinitions","createShipmentStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Pickups\\cucumber-pretty",
 

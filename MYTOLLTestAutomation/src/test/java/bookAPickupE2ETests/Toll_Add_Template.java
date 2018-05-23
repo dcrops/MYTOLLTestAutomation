@@ -248,7 +248,7 @@ public class Toll_Add_Template {
 
 	
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		 BaseWebdriver.tearDown();
 	}

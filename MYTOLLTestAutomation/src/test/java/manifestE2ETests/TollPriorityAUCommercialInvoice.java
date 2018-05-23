@@ -27,7 +27,7 @@ import manifestActions.ManifestActions;
 
 public class TollPriorityAUCommercialInvoice {
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
@@ -36,7 +36,7 @@ public class TollPriorityAUCommercialInvoice {
 	}
 
 	
-	@Test
+	@Test(groups = {"E2E"})
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressParcels","WhoPays", "Sender",
 		"Receiver", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 		"Height", "Weight","DGYes", "DGNo", "TypeOfExport", "DeclaredValue", "DeclaredValueCurrency", "WhoPaysDutiesTaxes", "CommodityCode", "CountryOfExportAU", "DestinationNZ",
@@ -53,7 +53,8 @@ public class TollPriorityAUCommercialInvoice {
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(Receiver);
+		//CreateShipmentActions.SelectReceiver(Receiver);
+		RateEnquiryActions.ShipmentReceiverSelect("NZ Address");
 		
 		PageBase.MinimumWaitForElementEnabled_1();
 		String AccountNumber = BookAPickupActions.GetAccountNumber().toString();
@@ -65,7 +66,7 @@ public class TollPriorityAUCommercialInvoice {
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println("sl ="+senderLocation);
 
-		CreateShipmentActions.SelectReceiver(Receiver);
+		//CreateShipmentActions.SelectReceiver(Receiver);
 		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString().replace("\n", "");
 		System.out.println("r ="+receiver);
 	
@@ -138,7 +139,7 @@ public class TollPriorityAUCommercialInvoice {
 	}
 
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		// BaseWebdriver.tearDown();
 

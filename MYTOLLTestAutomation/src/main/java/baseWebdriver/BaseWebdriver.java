@@ -25,22 +25,22 @@ public class BaseWebdriver {
 
 	public static String PreprodUrl="https://www-ppd.mytoll.com/";  
 	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
-	public static String SitUrl= "https://ps.mytoll.com/"; 
+	public static String SitUrl= "https://www-ppd.mytoll.com/"; 
 	public static String SalesForce= "https://test.salesforce.com/"; 
 
 	// Preprod users
-	public static String Username1="SitAutomationuser@yahoo.com"; 
+	public static String Username1= "SitAutomationuser@mailinator.com"; //"SitAutomationuser@yahoo.com"; 
 	
 	//BU Admin users
-	public static String Username2="auto_bvt_ps@mailinator.com";// "auto_bvt_ps@mailinator.com"; 
-	public static String SitUsername1="SitAutomationuser@yahoo.com"; 
+	public static String Username2="auto_bvt_ppd@mailinator.com";// "auto_bvt_ps@mailinator.com"; 
+	public static String SitUsername1="SitAutomationuser@mailinator.com"; //"SitAutomationuser@yahoo.com"; 
 	
 	//Platform admin user
-	public static String SitUsername2="SitAutomationuser2@yahoo.com"; 
+	public static String SitUsername2= "SitAutomationuser2@mailinator.com"; //"SitAutomationuser2@yahoo.com"; 
 
 	//Sit Normal users
-	public static String SitUsername3="SitAutomationuser3@yahoo.com"; 
-	public static String SitUsername4="SitAutomationuser4@yahoo.com"; 		
+	public static String SitUsername3="SitAutomationuser3@mailinator.com"; //"SitAutomationuser3@yahoo.com"; 
+	public static String SitUsername4="SitAutomationuser4@mailinator.com"; //"SitAutomationuser4@yahoo.com"; 		
 	//Performance Test Env user
 	public static String PerformenceUsername1="perftest@toll.com";
 	

@@ -148,7 +148,7 @@ public class Toll_MyProfile_Add_Accounts {
 	
 	
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		BaseWebdriver.tearDown();
 

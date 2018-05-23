@@ -93,7 +93,7 @@ public class ManualManifestTollPriorityAUSTests {
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
 		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTollPrioAu, ServiceParcelsOffPeak);
 		ManifestActions.UserVerifiesLineItemOnBAPPage_TGX(NumberOfItems, Length, Width, Height, Weight);
-		
+		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "424579833");
 		BookAPickupActions.SelectItemDescriptionTollPriorityAU();
 		ManifestActions.selectPickupDate();
 		ManifestActions.selectReadyTimeJS("09:15");
@@ -108,9 +108,9 @@ public class ManualManifestTollPriorityAUSTests {
 	
 	
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
-		//BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 	}
 	
 }

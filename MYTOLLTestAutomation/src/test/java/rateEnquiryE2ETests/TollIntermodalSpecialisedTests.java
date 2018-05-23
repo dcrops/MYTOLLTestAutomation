@@ -346,7 +346,7 @@ public class TollIntermodalSpecialisedTests {
 		Reporter.log("---------------END OF TEST---------------");
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception
 	{
 		BaseWebdriver.tearDown();

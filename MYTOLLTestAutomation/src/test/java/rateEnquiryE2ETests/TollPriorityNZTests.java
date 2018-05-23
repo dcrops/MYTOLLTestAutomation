@@ -124,7 +124,7 @@ public class TollPriorityNZTests {
 	}
 	
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	  public void RunTearDown() throws Exception
 		{
 		BaseWebdriver.tearDown();

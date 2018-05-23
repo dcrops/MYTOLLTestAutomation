@@ -29,6 +29,8 @@ public class CreateShipmentStepsDefinitions  {
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
+			CreateShipmentActions.setQEMNo();
+			PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.EnterItem(shipment.get("Item description"));
 			CreateShipmentActions.EnterBillingType(shipment.get("Billing Type"));
 			CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));

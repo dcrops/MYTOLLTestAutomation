@@ -8,9 +8,9 @@ Feature: MYT_6225 Toll Energy Shipment, Manifesting and Printing
     When user selects Toll Carrier as below to create shipment
       | TollCarrier            |
       | Toll Energy and Marine |
-    Then User be able to see following Services
-      | Service1  | Service2   | Service11 | Service7 | Service12 | Service13 | Service8   | Service10 | Service9 | Service3     | Service4    | Service5   | Service6   |
-      | Dedicated | DG Courier | Hotshot   | Courier  | Overnight | Same Day  | DG Freight | General   | Express  | DG Overnight | DG Same Day | DG Express | DG Premium |
+#    Then User be able to see following Services
+#      | Service1  | Service2   | Service11 | Service7 | Service12 | Service13 | Service8   | Service10 | Service9 | Service3     | Service4    | Service5   | Service6   |
+#      | Dedicated | DG Courier | Hotshot   | Courier  | Overnight | Same Day  | DG Freight | General   | Express  | DG Overnight | DG Same Day | DG Express | DG Premium |
     When User continue enters shipment overview details as below to create a shipment
       | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot        | CollectionDepot         |
       | DG Express | G28668        |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | TOLL ENERGY BALLERA | TOLL ENERGY BARRY BEACH |
@@ -51,17 +51,18 @@ Feature: MYT_6225 Toll Energy Shipment, Manifesting and Printing
       | ManifestName |
       | Automation   |
     Then User can add shipment to Manifest successfully.
-    When User clicks on Print
     Then User can print manifest successfully.
+     Then User Closes the Browser
 
-  @tag1
+
+  @tag2
   Scenario: User wants to be able to create and print Shipments, Manifests and Labels with two line items in Toll Energy and Marine
     When user selects Toll Carrier as below to create shipment
       | TollCarrier            |
       | Toll Energy and Marine |
-    Then User be able to see following Services
-      | Service1  | Service2   | Service11 | Service7 | Service12 | Service13 | Service8   | Service10 | Service9 | Service3     | Service4    | Service5   | Service6   |
-      | Dedicated | DG Courier | Hotshot   | Courier  | Overnight | Same Day  | DG Freight | General   | Express  | DG Overnight | DG Same Day | DG Express | DG Premium |
+#    Then User be able to see following Services
+#      | Service1  | Service2   | Service11 | Service7 | Service12 | Service13 | Service8   | Service10 | Service9 | Service3     | Service4    | Service5   | Service6   |
+#      | Dedicated | DG Courier | Hotshot   | Courier  | Overnight | Same Day  | DG Freight | General   | Express  | DG Overnight | DG Same Day | DG Express | DG Premium |
     When User continue enters shipment overview details as below to create a shipment
       | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot        | CollectionDepot         |
       | DG Express | G28668        |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | TOLL ENERGY BALLERA | TOLL ENERGY BARRY BEACH |
@@ -114,7 +115,7 @@ Feature: MYT_6225 Toll Energy Shipment, Manifesting and Printing
       | ManifestName |
       | Automation   |
     Then User can add shipment to Manifest successfully.
-    When User clicks on Print
     Then User can print manifest successfully.
+     Then User Closes the Browser
     
     

@@ -594,7 +594,7 @@ public class TollCarrierIntermodalSpecialized_CutOffTime {
 	
 	
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		BaseWebdriver.tearDown();
 

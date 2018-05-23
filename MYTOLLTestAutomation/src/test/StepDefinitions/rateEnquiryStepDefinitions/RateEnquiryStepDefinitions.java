@@ -311,6 +311,7 @@ public class RateEnquiryStepDefinitions {
 			PageBase.waitForElement(RateEnquiryActions.priceNowCurtainTotalCharge, 10);
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.verifyTextExist(RateEnquiryActions.priceNowCurtainTotalCharge, fullChargeBeforeDraft);
 		}
 	

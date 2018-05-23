@@ -1033,7 +1033,7 @@ public class IntermodalSpecializedTest {
 
 	} 
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 
 	BaseWebdriver.tearDown();

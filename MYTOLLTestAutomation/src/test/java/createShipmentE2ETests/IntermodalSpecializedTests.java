@@ -1278,7 +1278,7 @@ public class IntermodalSpecializedTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRailDangerousGoods", "AccountNumberTNQX", "WhoPays", "whoPays","Mode", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -1787,13 +1787,14 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.AddANewLineNZAUS(1000, 1500, ItemTemplateName2, BillingType, NumberOfItems2, Length2,
 				Width2, Height2, Weight2, ShipmentRef1, ShipmentRef2);
 		CreateShipmentActions.ItemType(2);
-		BookAPickupActions.SelectDangerousGoods(DGNo);
+		BookAPickupActions.SelectDangerousGoods(DGYes);
+		BookAPickupActions.ClickAdd();
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
 		CreateShipmentActions.SelectPalletTransactionsYes();
 		CreateShipmentActions.VerifyDocketNoNotMandatoryInLocamOther(ChepCustomer, ChepExchange, ChepTansferToToll,
 				ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
 				ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
-				LoscamOtherTransferToToll);
+				LoscamOtherTransferToToll, LoscamOtherDocketNo);
 
 		CreateShipmentActions.DeletePurchaseOrder(PurchaseOrder);
 		CreateShipmentActions.EnterPurchaseOrder(PurchaseOrder);
@@ -1805,7 +1806,7 @@ public class IntermodalSpecializedTests {
 		// Shipment Review
 		ShipmentReviewActions.VerifyShipmentOverview(tollCarrier, AccountNumber, sender, senderLocation, receiver,
 				receiverLocation, ShipmentRef1, ShipmentRef2, DropOffDepot, ServiceDGExpress, whoPays,
-				CollectionDepot, Mode);
+				CollectionDepot, ModeRoad);
 
 		String tollExtraServiceAmount = "$" + TollExtraServiceAmount;
 		ShipmentReviewActions.VerifyAdditionalInformationForDangerousGoods(SpeceialIns, PalletTransactionsInfo, PurchaseOrder);
@@ -1821,7 +1822,7 @@ public class IntermodalSpecializedTests {
 		String dimensions = Length + "cm x " + Width + "cm x " + Height + "cm";
 		String weight = Weight + "kg";
 		ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName, NumberOfItems, BillingType, dimensions,
-				VolumeLineItem1, weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsYes);
+				VolumeLineItem1, weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 
 		ShipmentReviewActions.VerifyDangerousGoodsDetails(DangerousGoodsDetailsHeading, lookupName, classDivision,
 				packingGroup1, subRisk, ProperShippingName, packageDescription, pDgPkgQty, pDgQtyKg, technicalName);
@@ -1833,7 +1834,7 @@ public class IntermodalSpecializedTests {
 		String weight2 = Weight2 + "kg";
 
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
-				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo); 
+				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsYes); 
 	}
 	
 	
@@ -1841,7 +1842,7 @@ public class IntermodalSpecializedTests {
 	
 	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
-		 //BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 

@@ -51,8 +51,10 @@ public class BookAPickupStepDefinitions{
 	public void user_enter_following_input_data_to_Add_Item(DataTable bookAPickupTestData) throws Throwable {
 
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
+			
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
+			BookAPickupActions.setQEMNo();
 			BookAPickupActions.EnterService(bookAPickup.get("Service"));
 			BookAPickupActions.EnterQuantity(bookAPickup.get("NoOfItems"));
 			BookAPickupActions.EnterItem(bookAPickup.get("ItemDescription"));

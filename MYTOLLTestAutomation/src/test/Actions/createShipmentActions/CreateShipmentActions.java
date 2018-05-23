@@ -1187,7 +1187,7 @@ public class CreateShipmentActions {
 			String pChepTansferToToll, String pChepDocketNo, String pLoscamCustomer, String pLoascamExchange,
 			String pLoscamTransferToToll, String pLoscamDocketNo, String pOtherCostomer, String pChepOtherExchange,
 			String pChepOtherTransferToToll, String pchepOtherDocketNo, String pLoscamOtherExchange,
-			String pLoscamOtherTransferToToll) {
+			String pLoscamOtherTransferToToll, String LoscamOtherDocketNo) {
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.MoveToElement(CreateShipmentActions.chepCustomer, CreateShipmentActions.loscamCustomer);
 		BaseWebdriver.driver.findElement(chepCustomer).click();
@@ -1232,6 +1232,7 @@ public class CreateShipmentActions {
 		BaseWebdriver.driver.findElement(loscamOtherTransfer).click();
 		BaseWebdriver.driver.findElement(loscamOtherTransfer).clear();
 		BaseWebdriver.driver.findElement(loscamOtherTransfer).sendKeys(pLoscamOtherTransferToToll);
+		PageBase.sendTextandSubmit(loscamOtherDocket, 5, LoscamOtherDocketNo);
 
 	}
 
@@ -1338,8 +1339,10 @@ public class CreateShipmentActions {
 
 	public static void ClickReviewCreateShipment() {
 
-		PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.specialInstructions);
-		BaseWebdriver.driver.findElement(reviewCreateShipmentBtn).click();
+		//PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.specialInstructions);
+		//BaseWebdriver.driver.findElement(reviewCreateShipmentBtn).click();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(reviewCreateShipmentBtn, 5);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();

@@ -205,7 +205,7 @@ public class TollIPECTests {
 		BookAPickupActions.EnterLengthWidthHeight(Length, Width, Height);
 		CreateShipmentActions.EnterWeight(Weight);
 		//CreateShipmentActions.ItemType(1);
-		CreateShipmentActions.NumberOfGarments(NumberOfGarments);
+		//CreateShipmentActions.NumberOfGarments(NumberOfGarments);
 		// CreateShipmentActions.SelectBillingType(BillingType);
 
 		// Shipment contain Dangerous goods=no and no food items

@@ -50,10 +50,10 @@ public class TollCarrierIntermodalSpecialized_addAddress {
 		CreateShipmentActions.verifyReceiverAddress();
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		BaseWebdriver.tearDown();
-		BaseWebdriver.driver.quit();
+		//BaseWebdriver.driver.quit();
 	}
 
 }

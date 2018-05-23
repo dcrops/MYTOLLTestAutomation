@@ -163,7 +163,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.SelectDispatchDateTomorrow();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		// BookAPickupActions.selectReadyTime();
+		BookAPickupActions.selectReadyTime();
 
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
@@ -379,7 +379,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.SelectDispatchDateTomorrow();
 		// String pickupDate = BookAPickupActions.ReturnPickupDate();
 
-		// BookAPickupActions.selectReadyTime();
+		 BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
@@ -433,7 +433,7 @@ public class TollTasmaniaTest {
 		PageBase.Scrollbar(500, 1000);
 		jse.executeScript("scroll(500, 800)");
 		BookAPickupActions.SelectDispatchDateTomorrow();
-		// BookAPickupActions.selectReadyTime();
+		 BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		// Submit Book a pickup details
@@ -486,7 +486,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.SelectDangerousGoods(2);
 
 		BookAPickupActions.SelectDispatchDateTomorrow();
-		// BookAPickupActions.selectReadyTime();
+		 BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 
@@ -619,7 +619,7 @@ public class TollTasmaniaTest {
 		BookAPickupActions.SelectDispatchDateTomorrow();
 		String pickupDate = BookAPickupActions.ReturnPickupDate();
 		System.out.println("pickupDate" + pickupDate);
-		// BookAPickupActions.selectReadyTime();
+		BookAPickupActions.selectReadyTime();
 		// BookAPickupActions.selectClosingTime();
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
 		PageBase.MoveToElement(BookAPickupActions.specialInstructions,BookAPickupActions.specialInstructions);
@@ -634,7 +634,7 @@ public class TollTasmaniaTest {
 
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		BaseWebdriver.tearDown();
 	}

@@ -34,7 +34,7 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
   When User selects a Draft Shipment
   Then User can see all data in the draft shipment transferred to the 'Create Shipment' page
   | TollCarrier              | Service | AccountNumber |
-  | Intermodal & Specialised | Express |        137289, MUMME TOOLS PTY LTD, LONSDALE, SA |
+  | Intermodal & Specialised | Express |        137289 |
   When User changes either of the fields
   | TollCarrier              | Service | AccountNumber |
   | Intermodal & Specialised | Express |        371065 |
@@ -108,7 +108,7 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
   | Intermodal & Specialised | AccessHQ | Dialog Group |
   When User selects a Draft Shipment
   When User moves to Add NEW LInes
-  Then User clicks on 'Create Shipment' and User navigates to Shipment Review page and see Overview details as below.
+Then User clicks on 'Create Shipment' and User navigates to Shipment Review page and see Overview details as below.
   | TollCarrier              | AccountNumber | ShipmentRef1 | ShipmentRef2 | Service    | Mode | DropOffDepot  | CollectionDepot      | Whopays |
   | Intermodal & Specialised |        137289 |        12345 |       234567 | Dangerous Goods Express | ROAD | ADELAIDE TNQX | ADELAIDE S-LINE TNQX | Sender  |
   Then User can see additional information as below in Shipment Review page
@@ -133,16 +133,18 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
   | Item description     | Billing Type    | NumberOfItems | Item Type | Length | Width | Height | TotalCubicVolume | TotalWeight | SenderReference | ReceiverReference | ShipmentContainDangerousGoods |
   | Automation Template2 | General Freight |            20 | Misc      |    200 |   200 |    200 | 160 m3           |         900 | Ref567          | Ref987            | No                            |
   Then User be able to view the Draft is removed from My Draft Shipments in My Dashboard
-  When User clicks on 'Add To Manifest Manually'
-  | ManifestName |
-  | Automation   |
-  Then User can add shipment to Manifest successfully.
-  When User clicks on 'Add New Shipment' from an 'In Progress' Manifest
-  Then User MUST have an option to SAVE the Shipment as a Draft Shipment
-  | ButtonName | Message                | TollCarrier              | Service    | AccountNumber |
-  | SAVE DRAFT | Draft Shipment Created | Intermodal & Specialised | Dangerous Goods Express |        137289 |
-  
-  @tag1
+#  When User clicks on 'Add To Manifest Manually'
+#  | ManifestName |
+#  | Automation   |
+#  Then User can add shipment to Manifest successfully.
+#  When User clicks on 'Add New Shipment' from an 'In Progress' Manifest
+#  Then User MUST have an option to SAVE the Shipment as a Draft Shipment
+#  | ButtonName | Message                | TollCarrier              | Service    | AccountNumber |
+#  | SAVE DRAFT | Draft Shipment Created | Intermodal & Specialised | Dangerous Goods Express |        137289 |
+   Then User Closes the Browser
+
+
+  @tag2
   Scenario: User wants to Save a Shipment with one line items as a 'Draft Shipment'in TDF
   When User navigates to Shipment from MyDashboard
   When User selects 'Dispatch date' in to create a shipment
@@ -172,7 +174,7 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
   When User selects a Draft Shipment
   Then User can see all data in the draft shipment transferred to the 'Create Shipment' page
   | TollCarrier   | Service | AccountNumber |
-  | Toll Tasmania | Express |        100428, BRIDGESTONE AUST LTD (TYRES), ALTONA NORTH, VIC |
+  | Toll Tasmania | Express |        100428 |
   When User changes either of the fields
   | TollCarrier   | Service | AccountNumber |
   | Toll Tasmania | Express |        107573 |
@@ -181,7 +183,7 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
   |             |         |                |
   When User continue entering shipment overview details as below to create a shipment
   | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | CollectionDepot           |
-  | DG Freight |        107573 |    * |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ADELAIDE EQUIPMENT DEHIRE |
+  | DG Freight |        107573 |    * |       1 | AccessHQNEW | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ADELAIDE EQUIPMENT DEHIRE |
   When User Clicks on the Save Draft option
   Then User MUST have an option in the UI prompt to be re-directed to 'My Dashboard'
   | ButtonName         |
@@ -228,7 +230,7 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
   | Go to my dashboard |
   Then User can see pre-filled data available in 'Draft Shipments'
   | TollCarrier   | Sender   | Receiver     |
-  | Toll Tasmania | AccessHQ | Dialog Group |
+  | Toll Tasmania | AccessHQNEW | Dialog Group |
   When User selects a Draft Shipment
   And user moves to shipment reference number
   Then User clicks on 'Create Shipment' and User navigates to Shipment Review page and see Toll Tasmania Overview details as below.
@@ -249,15 +251,18 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
   Then User can see dangerous good details in shipment review page as below
   | DangerousGoodsDetailsHeading | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      | Class/Div | SubRisk | PackingGroup | Proper Shoping Name            |
   | DANGEROUS GOODS DETAILS      |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
-  When User clicks on 'Add To Manifest Manually'
-  | ManifestName |
-  | Automation   |
-  Then User can add shipment to Manifest successfully.
-  When User clicks on 'Add New Shipment' from an 'In Progress' Manifest
-  Then User MUST have an option to SAVE the Shipment as a Draft Shipment
-  | ButtonName | Message                | TollCarrier   | Service    | AccountNumber |
-  | SAVE DRAFT | Draft Shipment Created | Toll Tasmania | DG Freight |        107573 |
-  @tag1
+	Then User be able to view the Draft is removed from My Draft Shipments in My Dashboard
+#  When User clicks on 'Add To Manifest Manually'
+#  | ManifestName |
+#  | Automation   |
+#  Then User can add shipment to Manifest successfully.
+#  When User clicks on 'Add New Shipment' from an 'In Progress' Manifest
+#  Then User MUST have an option to SAVE the Shipment as a Draft Shipment
+#  | ButtonName | Message                | TollCarrier   | Service    | AccountNumber |
+#  | SAVE DRAFT | Draft Shipment Created | Toll Tasmania | DG Freight |        107573 |
+   Then User Closes the Browser
+
+  @tag3
   Scenario: User wants to Save a Shipment as a 'Draft'in TGX
     When User navigates to Shipment from MyDashboard
     When User selects 'Dispatch date' in to create a shipment
@@ -301,8 +306,8 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
     When User selects a Draft Shipment
     And user moves to shipment reference number
     Then User enters following data to complete the shipment as below
-      | Item description     | No of Items | Length | Width | Height | TotalWeight | SenderReference | ReceiverReference | PalletSpaces | ChargeToAccount |
-      | Automation Template1 |          10 |    100 |   100 |    100 |         900 | Ref123          | Ref456            |            6 | Sender          |
+      | Item description     | No of Items | Length | Width | Height | Weight | SenderReference | ReceiverReference | PalletSpaces | ChargeToAccount |
+      | Automation Template1 |          10 |    100 |   100 |    100 |    900 | Ref123          | Ref456            |            6 | Sender          |
     When User selects Dangerous Goods
       | DgGoods |
       |       2 |
@@ -317,11 +322,12 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
     When User Clicks on 'Review & Create Shipment' and see all data
       | TollCarrier         |
       | Toll Priority (Aus) |
-    When User clicks on 'Add To Manifest Manually'
-      | ManifestName |
-      | Automation   |
-    Then User can add shipment to Manifest successfully.
-    When User clicks on 'Add New Shipment' from an 'In Progress' Manifest
-    Then User MUST have an option to SAVE the Shipment as a Draft Shipment
-      | ButtonName | Message                | TollCarrier   | Service    | AccountNumber |
-      | SAVE DRAFT | Draft Shipment Created | Toll Tasmania | DG Freight |        107573 |
+#    When User clicks on 'Add To Manifest Manually'
+#      | ManifestName |
+#      | Automation   |
+#    Then User can add shipment to Manifest successfully.
+#    When User clicks on 'Add New Shipment' from an 'In Progress' Manifest
+#    Then User MUST have an option to SAVE the Shipment as a Draft Shipment
+#      | ButtonName | Message                | TollCarrier   | Service    | AccountNumber |
+#      | SAVE DRAFT | Draft Shipment Created | Toll Tasmania | DG Freight |        107573 |
+     Then User Closes the Browser

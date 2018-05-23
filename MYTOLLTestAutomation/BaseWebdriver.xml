@@ -28,10 +28,11 @@
 		<classes>
 
 	
-			<class name="baseWebdriver.BookAPickupTestRunner"/>
+		
+			<class name="baseWebdriver.AdvancedSearchTestRunner"/>
+		
 			
-			
-			<!-- Blocked>   <class name="baseWebdriver.CreateShipmentTestRunner" />
+			<!-- Blocked>   <class name="baseWebdriver.CreateShipmentTestRunner" /><class name="baseWebdriver.BookAPickupTestRunner" />
 			<class 	name="baseWebdriver.ManifestTestRunner"/> <class name="baseWebdriver.AdvancedSearchTestRunner"/> 
 				<class name="baseWebdriver.RateEnquiryTestRunner"/> <class name="baseWebdriver.FinancialTestRunner"/> 
 				<class name="baseWebdriver.DashboardTestRunner"/> <class name="baseWebdriver.ReturnsTestRunner"/> 

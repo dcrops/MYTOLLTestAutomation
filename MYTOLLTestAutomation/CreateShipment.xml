@@ -84,7 +84,7 @@
 		<parameter name="PackingGroup" value="3" />
 		<parameter name="packingGroup" value="II" />
 		<parameter name="pDgPkgQty" value="5" />
-		<parameter name="pDgQtyKg" value="60" />
+		<parameter name="pDgQtyKg" value="20" />
 		<parameter name="technicalName" value="Test Technical name" />
 		<parameter name="DGItem" value="2" />
 		<parameter name="LookupSearch" value="1234" />
@@ -250,7 +250,7 @@
 		<parameter name="PackingGroup" value="3" />
 		<parameter name="packingGroup" value="II" />
 		<parameter name="pDgPkgQty" value="5" />
-		<parameter name="pDgQtyKg" value="60" />
+		<parameter name="pDgQtyKg" value="20" />
 		<parameter name="technicalName" value="Test Technical name" />
 		<parameter name="DGItem" value="2" />
 		<parameter name="LookupSearch" value="1234" />

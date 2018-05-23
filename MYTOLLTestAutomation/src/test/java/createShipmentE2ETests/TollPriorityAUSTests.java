@@ -26,7 +26,7 @@ public class TollPriorityAUSTests {
 	}
 
 
-	@Test(groups = { "Shakeout Testing","E2E" })
+	@Test(groups = { "Shakeout Testing","E2E1" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak","WhoPays", "whoPays", "Sender",
 		"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -123,7 +123,7 @@ public class TollPriorityAUSTests {
 	}
 
 
-	@Test(groups = { "Shakeout Testing","E2E" })
+	@Test(groups = { "Shakeout Testing","E2E1" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments","WhoPays", "whoPays", "Sender",
 		"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",

@@ -15,7 +15,8 @@ public class MYT_1650_ShipmentDefaultModetoQuickEntryMode_StepDefinitions {
 	@When("^User selects switch from 'Default' mode to ' Quick Entry ' mode in shipment$")
 	public void user_selects_switch_from_Default_mode_to_Quick_Entry_mode_in_shipment() throws Throwable {
 	
-		CreateShipmentActions.ClickQuickEntryMode();
+		//CreateShipmentActions.ClickQuickEntryMode();
+		CreateShipmentActions.setQEMYes();
 	}
 	
 	@When("^User enters following input data for the line item in Quick Entry Mode$")
