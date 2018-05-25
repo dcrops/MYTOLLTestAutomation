@@ -4,7 +4,7 @@ Feature: MYT-3765 Expanding the charges for an invoice
   Background: 
     Given User is Registered in MyToll and user has full financial access
 
-  @tag1
+  @tag1 @Shakeout
   Scenario: User wants to expand the Charges section of an invoice to view and access my connotes for the invoice in TDF
     When User selects below Toll carrier and the account that has full financial access
       | TollCarrier              | AccountNumber |

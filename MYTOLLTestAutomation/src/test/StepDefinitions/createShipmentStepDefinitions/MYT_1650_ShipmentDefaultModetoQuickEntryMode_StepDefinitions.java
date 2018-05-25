@@ -2,6 +2,7 @@ package createShipmentStepDefinitions;
 
 import java.util.Map;
 
+import GlobalActions.PageBase;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import cucumber.api.DataTable;
@@ -60,6 +61,8 @@ public class MYT_1650_ShipmentDefaultModetoQuickEntryMode_StepDefinitions {
 			System.out.println("s----" + s);
 			//BookAPickupActions.SelectPackgingGroupQMEInt(Integer.parseInt(s));
 			  CreateShipmentActions.SelectPackgingGroupQME(bookAPickup.get("PackingGroup"));
+			  //BookAPickupActions.addDGItemQME();
+			  //CreateShipmentActions.SelectPackgingGroupQME(bookAPickup.get("PackingGroup"));
 			BookAPickupActions.EnterTechnicalNameQME(bookAPickup.get("Technical Name"));
 		}
 		

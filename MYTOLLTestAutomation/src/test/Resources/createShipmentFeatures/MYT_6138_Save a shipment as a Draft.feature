@@ -262,7 +262,7 @@ Then User clicks on 'Create Shipment' and User navigates to Shipment Review page
 #  | SAVE DRAFT | Draft Shipment Created | Toll Tasmania | DG Freight |        107573 |
    Then User Closes the Browser
 
-  @tag3
+  @tag3 @Shakeout
   Scenario: User wants to Save a Shipment as a 'Draft'in TGX
     When User navigates to Shipment from MyDashboard
     When User selects 'Dispatch date' in to create a shipment

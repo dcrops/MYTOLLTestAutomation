@@ -61,6 +61,7 @@ public class TollPriorityNZ {
 		CreateShipmentActions.EnterReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
@@ -117,7 +118,7 @@ public class TollPriorityNZ {
 
 	}
 
-	@Test(groups = {"E2E1" })
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "WhoPays", "whoPays", "Sender", "Receiver",
 			"QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
@@ -154,6 +155,7 @@ public class TollPriorityNZ {
 		// CreateShipmentActions.EnterReceiver("Test", "Test174");
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
 		System.out.println(sender);
@@ -295,7 +297,7 @@ public class TollPriorityNZ {
 
 	}
 
-	@Test(groups = {"E2E1" })
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceEconomyPacificAirportToAirport", "WhoPays", "whoPays", "Sender",
 			"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -332,6 +334,7 @@ public class TollPriorityNZ {
 		CreateShipmentActions.SelectSender(Sender);
 		CreateShipmentActions.EnterReceiver(Receiver);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
@@ -391,7 +394,7 @@ public class TollPriorityNZ {
 
 	}
 	
- 	@Test(groups = {"E2E1" })
+ 	@Test(groups = {"E2E" })
 		@Parameters({ "TollCarrierTollPrioNZ", "ServiceEconomyPacificAirportToAirport", "WhoPays", "whoPays", "Sender",
 				"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 				"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",

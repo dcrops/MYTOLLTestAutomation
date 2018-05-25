@@ -4,7 +4,7 @@ Feature: MYT_2699 Select my Carrier and Account
   Background: 
     Given User is Registered in MyToll and user has full financial access
 
-  @tag1
+  @tag1 @Shakeout
   Scenario: User wants to select my BU and my account
     When User selects below Toll carrier and the account that has full financial access
       | TollCarrier              | AccountNumber |

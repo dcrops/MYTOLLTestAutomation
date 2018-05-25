@@ -23,7 +23,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(groups = {"E2E1" })
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollTasmania", "ServiceDGFreight", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -72,6 +72,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
@@ -219,6 +220,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
@@ -344,6 +346,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.SelectReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
@@ -478,7 +481,7 @@ public class TollTasmaniaTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-		
+		CreateShipmentActions.setQEMNo();
 		CreateShipmentActions.EnterCollectionDepot(CollectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
@@ -604,14 +607,14 @@ public class TollTasmaniaTests {
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
-	
+		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		
-		/*CreateShipmentActions.MessageEnterLineItemShipmentConsolidation(ItemTemplateName,BillingType,NumberOfItems,ShipmentRef1, ShipmentRef2,Length, Width, Height, Weight,ItemTemplateName2, NumberOfItems2,
+		CreateShipmentActions.MessageEnterLineItemShipmentConsolidation(ItemTemplateName,BillingType,NumberOfItems,ShipmentRef1, ShipmentRef2,Length, Width, Height, Weight,ItemTemplateName2, NumberOfItems2,
 				Length2,Width2,Height2,Weight2, DGNo, ChepCustomer, ChepExchange, ChepTansferToToll,
 				ChepDocketNo, LoscamCustomer, LoascamExchange, LoscamTransferToToll, LoscamDocketNo, OtherCostomer,
 				ChepOtherExchange, ChepOtherTransferToToll, chepOtherDocketNo, LoscamOtherExchange,
 				LoscamOtherTransferToToll, LoscamOtherDocketNo,PurchaseOrder,
-				TollExtraSrviceAmount,SpeceialIns);*/
+				TollExtraSrviceAmount,SpeceialIns);
 
 		
 		CreateShipmentActions.ClickReviewCreateShipment();
@@ -621,7 +624,7 @@ public class TollTasmaniaTests {
 				"*");
 
 		String tollExtraServiceAmount = "$" + TollExtraSrviceAmount;
-		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, PalletTransactionsInfoNo, PurchaseOrder,
+		ShipmentReviewActions.VerifyAdditionalInformation(SpeceialIns, "Yes", PurchaseOrder,
 				tollExtraServiceAmount);
 
 		ShipmentReviewActions.VerifyPalletTransactionsInformations(ChepCustomer, ChepExchange, ChepTansferToToll,

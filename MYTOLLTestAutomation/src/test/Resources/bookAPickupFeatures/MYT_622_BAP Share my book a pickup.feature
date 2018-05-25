@@ -3,7 +3,7 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
   Background: 
     Given User is Registered in MyToll and is on Book a pickup page
 
-  @tag1
+  @tag1 @Shakeout
   Scenario: User wants to Print and/or Share my pick up booking in TDF
     When User selects Toll Carrier and Account Number
       | TollCarrier              | AccountNumber |

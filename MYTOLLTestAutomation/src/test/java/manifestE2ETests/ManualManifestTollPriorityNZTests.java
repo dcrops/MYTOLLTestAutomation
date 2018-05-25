@@ -90,7 +90,7 @@ public class ManualManifestTollPriorityNZTests {
 		
 		//User Navigates to BAP Page and Verifies details
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
-		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTollPrioNZ, ServiceParcelsOffPeak);
+		ManifestActions.UserVerifiesShipmentDetailsonBAPPageManualManifest(TollCarrier, AccountNumberTollPrioNZ, ServiceParcelsOffPeak);
 		ManifestActions.UserVerifiesLineItemOnBAPPage_TGX(NumberOfItems, Length, Width, Height, Weight);
 		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "33818565");
 		BookAPickupActions.SelectLargestItem(2);

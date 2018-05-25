@@ -90,7 +90,7 @@ public class ManualManifestTollIPECTest {
 		
 		//User Navigates to BAP Page and Verifies details
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
-		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTIPEC, ServiceRoadExpress);
+		ManifestActions.UserVerifiesShipmentDetailsonBAPPageManualManifest(TollCarrier, AccountNumberTIPEC, ServiceRoadExpress);
 		ManifestActions.UserVerifiesLineItemOnBAPPage_TGX(NumberOfItems, Length, Width, Height, Weight);
 		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "424579833");
 		BookAPickupActions.SelectLargestItem(1);

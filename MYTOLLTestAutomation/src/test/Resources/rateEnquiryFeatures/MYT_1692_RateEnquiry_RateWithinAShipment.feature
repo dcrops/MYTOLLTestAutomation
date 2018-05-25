@@ -3,7 +3,7 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
   Background: 
     Given User is Registered in MyToll and is on Shipment Page - Rate Enquiry
 
-  @tag1
+  @tag1 @Shakeout
   Scenario: User Gets a Rate Estimate from within a Shipment - TNQX
     When User selects Toll Carrier and select Service
       | TollCarrier | Service |
@@ -116,7 +116,7 @@ Feature: MYT-1692 Rate Enquiry - Rate  Within a Shipment
   Then User Closes the Browser
     
     
- @tag4
+ @tag4 @Shakeout
   Scenario: User Gets a Rate Estimate from within a Shipment - IPEC
     When User selects Toll Carrier and select Service
       | TollCarrier         | Service        |

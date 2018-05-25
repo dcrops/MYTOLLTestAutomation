@@ -3,7 +3,7 @@ Feature: MYT-1795 Manifest : Create Commercial Invoice for International Order
   Background: 
     Given User is Registered in MyToll and is on Shipment Page - Commercial Invoice
 
-       @tag1
+       @tag1 @Shakeout
   	Scenario: User Creates Commercial Invoice for PrioAU and Saves Commercial Invoice
   			When User selects Toll Carrier and select Service
       | TollCarrier          | Service                  |

@@ -93,7 +93,7 @@ public class ManualManifestTollTasmaniaTests {
 		ManifestActions.manifestToBookaPickUp(NewManifestName);
 		
 		//User Navigates to BAP Page and Verifies details 
-		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTollTas, ServiceGeneral);
+		ManifestActions.UserVerifiesShipmentDetailsonBAPPageManualManifest(TollCarrier, AccountNumberTollTas, ServiceGeneral);
 		ManifestActions.UserVerifiesLineItemOnBAPPage_TDF(ItemTemplateName, NumberOfItems, Length, Width, Height, Weight);
 		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "424579833");
 		ManifestActions.selectPickupDate();

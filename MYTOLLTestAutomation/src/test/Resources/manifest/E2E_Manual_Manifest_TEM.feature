@@ -3,7 +3,7 @@ Feature: E2E Manual Manifest TEM - Manual Manifest -> Shipment -> BAP
   Background: 
     Given User is Registered in MyToll and is on My Dashboard
 
-	@tag1
+	@tag1 @Shakeout
     Scenario: User Creates a Manual Manifest from Dashboard and Proceeds to BAP - TEM
     When User Click My Manifest tab on My Dahsboad and Click Add Manifest Manually
     And User Creates Manual Manifest

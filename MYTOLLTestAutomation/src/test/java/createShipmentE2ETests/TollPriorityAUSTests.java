@@ -26,7 +26,7 @@ public class TollPriorityAUSTests {
 	}
 
 
-	@Test(groups = { "Shakeout Testing","E2E1" })
+	@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak","WhoPays", "whoPays", "Sender",
 		"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -63,6 +63,7 @@ public class TollPriorityAUSTests {
 		// CreateShipmentActions.EnterReceiver("Test", "Test174");
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
@@ -123,7 +124,7 @@ public class TollPriorityAUSTests {
 	}
 
 
-	@Test(groups = { "Shakeout Testing","E2E1" })
+	@Test(groups = { "Shakeout Testing","E2E" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments","WhoPays", "whoPays", "Sender",
 		"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -162,6 +163,7 @@ public class TollPriorityAUSTests {
 		//BookAPickupActions.EnterLocation(Receiver);
 		CreateShipmentActions.EnterReceiver(Receiver);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
 		
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
@@ -219,7 +221,7 @@ public class TollPriorityAUSTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(groups = {"E2E1" })
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressDocuments","WhoPays", "whoPays", "Sender",
 		"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 		"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -254,7 +256,8 @@ public class TollPriorityAUSTests {
 		CreateShipmentActions.SelectWhoPays(WhoPays);
 		CreateShipmentActions.SelectSender(Sender);
 		//CreateShipmentActions.SelectReceiver(Receiver);
-		BookAPickupActions.EnterLocation(Receiver);
+		//BookAPickupActions.EnterLocation(Receiver);
+		CreateShipmentActions.EnterReceiver(Receiver);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
 		//String Sender.ccontainText(Sender);
 		System.out.println(sender);

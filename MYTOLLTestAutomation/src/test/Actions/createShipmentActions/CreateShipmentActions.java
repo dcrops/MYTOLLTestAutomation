@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -1549,6 +1550,8 @@ public class CreateShipmentActions {
 		MyTollHomePageActions.ClickMenu();
 		Reporter.log("User Navigates to My Contactcs Page");
 		PageBase.click(MyTollHomePageActions.myContactMenu, 10);
+		Alert alert = BaseWebdriver.driver.switchTo().alert();
+		alert.accept();
 		Reporter.log("User Searches for New Contact added -" + newSenderCompanyName);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.sendText(BookAPickupActions.SearchContactTxtFeild, 10, newSenderCompanyName);
@@ -1583,7 +1586,7 @@ public class CreateShipmentActions {
 		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
 		MyTollHomePageActions.ClickMenu();
 		Reporter.log("User Navigates to My Contactcs Page");
-		PageBase.click(MyTollHomePageActions.myContactMenu, 10);
+		PageBase.click(MyTollHomePageActions.myContactMenu, 10); 
 		Reporter.log("User Searches for New Contact added -" + newReceiverCompanyName);
 		PageBase.sendText(BookAPickupActions.SearchContactTxtFeild, 10, newReceiverCompanyName);
 		PageBase.click(BookAPickupActions.SearchContactButton, 10);

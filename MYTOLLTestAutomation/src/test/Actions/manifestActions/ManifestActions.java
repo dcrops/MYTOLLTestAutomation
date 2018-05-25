@@ -766,6 +766,15 @@ public static void commercialInvoiceItemDetails(String Description, String PartN
 			PageBase.verifyTextExistAttributeContains(BookAPickupActions.serviceSelected, Service);
 	}
 	
+	public static void UserVerifiesShipmentDetailsonBAPPageManualManifest(String Carrier, String AccountNo, String Service) throws Throwable {
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.verifyTextExistAttributeContains(BookAPickupActions.TollCarrierTextField, Carrier);
+		PageBase.verifyTextExistAttributeContains(BookAPickupActions.accountNumber, AccountNo);
+		PageBase.verifyTextExistAttributeContains(BookAPickupActions.name, SenderContactName);
+		PageBase.verifyTextExistAttributeContains(BookAPickupActions.location, SenderCompanyName);
+		PageBase.verifyTextExistAttributeContains(BookAPickupActions.serviceSelected, Service);
+}
+	
 	
 	public static void UserVerifiesLineItemOnBAPPage_TDF(String ItemTemplateName,
 			String NumberOfItems, String Length, String Width, String Height, String Weight) throws Throwable {

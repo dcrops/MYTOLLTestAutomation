@@ -3,7 +3,7 @@ Feature: MYT_1524 Book a Pickup: 'Default' mode to ' Quick Entry ' mode
   Background: 
     Given User is Registered in MyToll and is on Book a pickup page
 
-  @tag1
+  @tag1 @Shakeout
   Scenario: User wants to switch from 'Default' view to 'Quick Entry Mode' view in Toll Intermodal Specialised.
     When User selects Toll Carrier and Account Number
       | TollCarrier | AccountNumber |

@@ -99,7 +99,7 @@ public class ManualTollIntermodalSpecialisedTests {
 		ManifestActions.manifestToBookaPickUp(NewManifestName);
 		
 		//User Navigates to BAP Page and Verifies details 
-		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTINTER, ServicePremium);
+		ManifestActions.UserVerifiesShipmentDetailsonBAPPageManualManifest(TollCarrier, AccountNumberTINTER, ServicePremium);
 		ManifestActions.UserVerifiesLineItemOnBAPPage_TDF(ItemTemplateName, NumberOfItems, Length, Width, Height, Weight);
 		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "424579833");
 		ManifestActions.selectPickupDate();

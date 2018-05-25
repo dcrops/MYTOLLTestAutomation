@@ -3,7 +3,7 @@ Feature: MYT-6172 User Searchs for Return from  My Return Page
   Background: 
     Given User is Registered in MyToll and is on Create Return Page
 
-	@tag1
+	@tag1 @Shakeout
 	Scenario: MyReturn Page is visible for Registered User with Toll PrioAU Account
 	When User Verfies Toll Carrier and select Service
   	| TollCarrier          | Service |

@@ -91,7 +91,7 @@ public class ManualManifestTollPriorityAUSTests {
 		
 		//User Navigates to BAP Page and Verifies details
 		PageBase.waitForElement(BookAPickupActions.TollCarrierTextField, 5);
-		ManifestActions.UserVerifiesShipmentDetailsonBAPPage(TollCarrier, AccountNumberTollPrioAu, ServiceParcelsOffPeak);
+		ManifestActions.UserVerifiesShipmentDetailsonBAPPageManualManifest(TollCarrier, AccountNumberTollPrioAu, ServiceParcelsOffPeak);
 		ManifestActions.UserVerifiesLineItemOnBAPPage_TGX(NumberOfItems, Length, Width, Height, Weight);
 		PageBase.sendText(BookAPickupActions.phoneNumber, 10, "424579833");
 		BookAPickupActions.SelectItemDescriptionTollPriorityAU();

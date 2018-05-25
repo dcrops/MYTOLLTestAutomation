@@ -24,7 +24,7 @@ public class TollIntermodalTests_AddAdress {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(groups = { "Shakeout Testing", "E2E1" })
+	@Test(groups = { "Shakeout Testing2", "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",

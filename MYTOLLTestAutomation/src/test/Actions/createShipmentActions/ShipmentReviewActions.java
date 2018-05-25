@@ -87,16 +87,16 @@ public class ShipmentReviewActions {
 	
 	//Dangerous Goods Details validation  
 	public static By dangerousGoodsHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='clearfix']/h5");
-	public static By dangerousGoodsArrowdown=By.xpath("//*[@id=\"dg-line-00\"]/div[1]/div[7]/a/i");
-	public static By unNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='UN number']/following::div/p");
-	public static By classDivision=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Class / Division']/following::div/p");
-	public static By packingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Packing group']/following::div/p");
-	public static By subrisk=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Sub risk']/following::div/p");
-	public static By properShippingName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Proper shipping name ']/following::div/p");
-	public static By dgPackingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='DG packaging description']/following::div/p");
-	public static By dgPKG=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='DG pkg (qty)']/following::div/p");
-	public static By dgQTY=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='DG qty (kg or L)']/following::div/p");
-	public static By technicalName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@id='dg-line-00']//label[text()='Technical name']/following::div/p");
+	public static By dangerousGoodsArrowdown=By.xpath("//*[contains(@id,\"dg-line\")]/div[1]/div[7]/a/i");
+	public static By unNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='UN number']/following::div/p");
+	public static By classDivision=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Class / Division']/following::div/p");
+	public static By packingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Packing group']/following::div/p");
+	public static By subrisk=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Sub risk']/following::div/p");
+	public static By properShippingName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Proper shipping name ']/following::div/p");
+	public static By dgPackingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='DG packaging description']/following::div/p");
+	public static By dgPKG=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='DG pkg (qty)']/following::div/p");
+	public static By dgQTY=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='DG qty (kg or L)']/following::div/p");
+	public static By technicalName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Technical name']/following::div/p");
 	
 	//*[@id="shipment-placeholder"]/div[1]/div[1]/div/div[2]/ul/li[1]/div[1]/div[1]/h2
 	//Line Item 2 Headings validation  //*[@id="shipment-placeholder"]/div[1]/div[1]/div/div[2]/ul/li[2]/div[1]/div[1]/h2

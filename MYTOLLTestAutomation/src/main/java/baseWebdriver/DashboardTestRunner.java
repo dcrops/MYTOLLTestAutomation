@@ -5,6 +5,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions( strict=true
 	,features = { "src/test/Resources/dashboard/MYT_3539_Access_Draft_Shipment.feature"}
+    ,tags = {"@Shakeout"}
 	,glue= {"commonStepsDefinitions","dashboardStepDefinitions","createShipmentStepDefinitions"}
 	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Dashboard\\cucumber-pretty",
 

@@ -85,7 +85,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-		
+		CreateShipmentActions.setQEMNo();
 		PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 				CreateShipmentActions.notifyReceiverCheckBox);
 		//CreateShipmentActions.EnterSenderEmail(SenderEmail);
@@ -219,7 +219,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-
+		CreateShipmentActions.setQEMNo();
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
@@ -349,7 +349,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-
+		CreateShipmentActions.setQEMNo();
 		//CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
@@ -480,6 +480,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		// PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 		// CreateShipmentActions.notifyReceiverCheckBox);
 		//CreateShipmentActions.EnterSenderEmail(SenderEmail);
@@ -611,6 +612,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		// PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 		// CreateShipmentActions.notifyReceiverCheckBox);
 		//CreateShipmentActions.EnterSenderEmail(SenderEmail);
@@ -746,7 +748,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-
+		CreateShipmentActions.setQEMNo();
 		PageBase.MinimumWaitForElementEnabled();
 		// PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 		// CreateShipmentActions.notifyReceiverCheckBox);
@@ -902,6 +904,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		PageBase.MinimumWaitForElementEnabled();
 		// PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 		// CreateShipmentActions.notifyReceiverCheckBox);
@@ -1061,6 +1064,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		PageBase.MinimumWaitForElementEnabled();
 		// PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
 		// CreateShipmentActions.notifyReceiverCheckBox);
@@ -1207,7 +1211,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
-
+		CreateShipmentActions.setQEMNo();
 		PageBase.MediumWaitForElementEnabled();
 
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
@@ -1278,7 +1282,7 @@ public class IntermodalSpecializedTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 
-	@Test(groups = {"E2E1" })
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceRailDangerousGoods", "AccountNumberTNQX", "WhoPays", "whoPays","Mode", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -1339,6 +1343,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		PageBase.MinimumWaitForElementEnabled();
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 
@@ -1486,6 +1491,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		PageBase.MinimumWaitForElementEnabled();
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 
@@ -1574,7 +1580,7 @@ public class IntermodalSpecializedTests {
 	}
 	
 	//@Test(priority=-1)
-	@Test(groups = {"E2E1" })
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServicePremium", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -1669,7 +1675,7 @@ public class IntermodalSpecializedTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	
-	@Test(groups = {"E2E1" })
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGExpress", "AccountNumberTNQX", "WhoPays", "whoPays","Mode", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -1731,6 +1737,7 @@ public class IntermodalSpecializedTests {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
+		CreateShipmentActions.setQEMNo();
 		PageBase.MinimumWaitForElementEnabled();
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 
@@ -1823,9 +1830,6 @@ public class IntermodalSpecializedTests {
 		String weight = Weight + "kg";
 		ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName, NumberOfItems, BillingType, dimensions,
 				VolumeLineItem1, weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
-
-		ShipmentReviewActions.VerifyDangerousGoodsDetails(DangerousGoodsDetailsHeading, lookupName, classDivision,
-				packingGroup1, subRisk, ProperShippingName, packageDescription, pDgPkgQty, pDgQtyKg, technicalName);
 		
 		ShipmentReviewActions.VerifyLineItem2Headings(LineItemName2Heading, ItemTemplateName2, numberOfItems,
 				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
@@ -1835,6 +1839,9 @@ public class IntermodalSpecializedTests {
 
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsYes); 
+		
+		ShipmentReviewActions.VerifyDangerousGoodsDetails(DangerousGoodsDetailsHeading, lookupName, classDivision,
+				packingGroup1, subRisk, ProperShippingName, packageDescription, pDgPkgQty, pDgQtyKg, technicalName);
 	}
 	
 	

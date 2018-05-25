@@ -4,7 +4,7 @@ Feature: MYT_2700 View and access my Account Summary
   Background: 
     Given User is Registered in MyToll and user has full financial access
 
-  @tag1
+  @tag1 @Shakeout
   Scenario: User wants to view and access Account Summary in TDF
     When User selects below Toll carrier and the account that has full financial access
       | TollCarrier              | AccountNumber |

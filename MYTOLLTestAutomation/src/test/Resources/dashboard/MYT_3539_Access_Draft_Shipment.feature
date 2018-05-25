@@ -3,7 +3,7 @@ Feature: MYT_3539 Access 'Draft' Shipment from My Dashboard
  Background: 
     Given User is Registered in MyToll and is on Shipment Page - Draft Shipment
 
-  @tag1
+  @tag1 @Shakeout
   Scenario: User accesses 'Draft Shipment' from My Dashboard - TDF
     When User selects Toll Carrier and select Service
       | TollCarrier | Service |

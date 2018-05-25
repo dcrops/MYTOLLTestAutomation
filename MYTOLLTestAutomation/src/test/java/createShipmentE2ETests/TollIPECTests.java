@@ -82,7 +82,7 @@ public class TollIPECTests {
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MaximumWaitForElementEnabled();
-
+		CreateShipmentActions.setQEMNo();
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 
@@ -139,7 +139,7 @@ public class TollIPECTests {
 
 	}
 
-	@Test(groups = {"E2E1" })
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollIPEC", "ServiceFashion","AccountNumberTIPEC", "WhoPays", "whoPays", "Sender", "Receiver", "QuoteNumber",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1",
 			"ShipmentRef2", "ItemTemplateName", "NumberOfItems","NumberOfGarments", "Length", "Width", "Height", "Weight", "ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2",
@@ -191,7 +191,7 @@ public class TollIPECTests {
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		PageBase.MaximumWaitForElementEnabled();
-
+		CreateShipmentActions.setQEMNo();
 		CreateShipmentActions.EnterSenderEmail(SenderEmail);
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 
@@ -222,8 +222,8 @@ public class TollIPECTests {
 
 		CreateShipmentActions.AddANewLineTIPEC(ItemTemplateName2,NumberOfItems2,Length2,Width2,Height2,Weight2,ShipmentRef1,ShipmentRef2);
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
-		CreateShipmentActions.ItemType(1);
-		CreateShipmentActions.NumberOfGarments(NumberOfGarments);
+		//CreateShipmentActions.ItemType(1);
+		//CreateShipmentActions.NumberOfGarments(NumberOfGarments);
 		BookAPickupActions.SelectDangerousGoods(DGNo);
 		CreateShipmentActions.SelectAuthorityToLeaveYes();
 		
@@ -246,7 +246,7 @@ public class TollIPECTests {
 		String weight = Weight + "kg";
 		ShipmentReviewActions.VerifyLineItem1Values(ItemTemplateName, NumberOfItems, ItemTypeGarments, dimensions,
 				VolumeLineItem1, weight, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
-		ShipmentReviewActions.VerifyNumberofGarmentsLineItem1(NumberOfGarments);
+		//ShipmentReviewActions.VerifyNumberofGarmentsLineItem1(NumberOfGarments);
 		ShipmentReviewActions.VerifyLineItem2Headings(LineItemName2Heading, ItemTemplateName2, numberOfItems,
 				ItemDescriptionHeading, ItemsHeading, BillingTypeHeading, DimensionsHeading, TotalVolumeHeading,
 				WeightHeading, Reference1Heading, Reference2Heading, ShipmentContainDangerousGoodsHeading);
@@ -255,11 +255,11 @@ public class TollIPECTests {
 
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, ItemTypeGarments, dimensions2,
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
-		ShipmentReviewActions.VerifyNumberofGarmentsLineItem1(NumberOfGarments);
+		//ShipmentReviewActions.VerifyNumberofGarmentsLineItem1(NumberOfGarments);
 	
 	}
 	
-	@Test(groups = {"E2E1" })
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "AccountNumberTIPEC", "WhoPays", "whoPays", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -311,6 +311,7 @@ public class TollIPECTests {
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
 		PageBase.MaximumWaitForElementEnabled();
+		CreateShipmentActions.setQEMNo();
 		PageBase.MoveToElement(BookAPickupActions.specialInstructions, CreateShipmentActions.receiverReference);		
 		CreateShipmentActions.SelectTollExtraYes();
 		CreateShipmentActions.EnterTollExtraSrviceAmount(TollExtraSrviceAmount);

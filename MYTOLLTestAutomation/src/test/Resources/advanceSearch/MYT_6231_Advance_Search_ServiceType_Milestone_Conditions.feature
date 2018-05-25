@@ -74,7 +74,7 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
     
        
         
-   	@tag3
+   	@tag3 @Shakeout
     Scenario: User Perfroms advance with Multi Tagging accross all feilds
     When User Adds Multiple Tags in Sender feild
      |SenderTag1 |SenderTag2   |
