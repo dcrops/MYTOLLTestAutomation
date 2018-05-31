@@ -8,7 +8,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 			 "src/test/Resources/manifest/MYT_6292_Manifest_SaveShipmentAsDraft.feature" ,  "src/test/Resources/manifest/E2E_Manual_Manifest_TEM.feature", 
 			 "src/test/Resources/manifest/E2E_Manual_Manifest_TMS.feature"}
 	//,features = {"src/test/Resources/manifest/E2E_Manual_Manifest_TMS.feature"}
-	,tags = {"@Shakeout"}
+//,tags = {"@Shakeout"}
 	,glue= {"commonStepsDefinitions","createShipmentStepDefinitions"}
 	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Manifest\\cucumber-pretty",
 

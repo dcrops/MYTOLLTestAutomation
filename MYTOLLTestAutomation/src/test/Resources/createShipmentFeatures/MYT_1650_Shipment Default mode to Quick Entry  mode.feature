@@ -3,7 +3,7 @@ Feature: MYT_1650 Shipment: 'Default' mode to ' Quick Entry ' mode
   Background: 
     Given User is Registered in MyToll and is on Shipment page
 
-  @tag1 @Shakeout1
+  @tag1 @Shakeout
   Scenario: User wants to switch from 'Default' view to 'Quick mode' view and add one line item in Intermodal & Specialised
     When User enters shipment overview details as below to create a shipment with Dangerous Goods
       | TollCarrier              | AccountNumber | Service                 | Mode | QuoteNumber | Whopays | Sender | Receiver | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot   | CollectionDepot      |

@@ -259,7 +259,7 @@ public class TollIPECTests {
 	
 	}
 	
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E2" })
 	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "AccountNumberTIPEC", "WhoPays", "whoPays", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",

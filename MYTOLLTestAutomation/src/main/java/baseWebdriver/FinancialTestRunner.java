@@ -9,7 +9,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 			"src/test/Resources/financialFeatures/MYT_3766_Expanding the Payment Adjustment for an invoice.feature", "src/test/Resources/financialFeatures/MYT_6297_Toll Energy Financials.feature", 
 			"src/test/Resources/financialFeatures/MYT_6298_Toll Mining Services Financials.feature"}
 	//,features = {"src/test/Resources/financialFeatures/MYT_2700_View and access my Account Summary.feature" }
-    ,tags = {"@Shakeout"}
+// ,tags = {"@Shakeout"}
 	,glue= {"commonStepsDefinitions","financialsStepDefinitions"}
 	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Finance\\cucumber-pretty",
 

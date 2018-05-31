@@ -2,9 +2,12 @@ Feature: MYT-3482 Advance Search : Load Saved Search
 
   Background: 
     Given User is on the Advance Search Page
-#    And User Searches Using Shipment Created date - Date From
-#   	|DateFrom|
-#   	|01-07-2017|
+    And User Searches Using Shipment Created date - Date From
+   	|DateFrom|
+   	|07-05-2018|
+   	And User Searches Using Shipment Created date - Date To
+   	|DateTo|
+   	|25-05-2018|
    	
     @tag1
     Scenario: User views all his searched shipment results from Advance Search - TGX
@@ -28,6 +31,7 @@ Feature: MYT-3482 Advance Search : Load Saved Search
 	 Then User Deletes Saved Search from the Dropdown
      Then User Confirms Delete Saved Search
      And User Verifies Saved Search Does not Exist on DropDown
+     Then User Closes the Browser
      
      
     @tag2
@@ -52,6 +56,7 @@ Feature: MYT-3482 Advance Search : Load Saved Search
 	 Then User Deletes Saved Search from the Dropdown
      Then User Confirms Delete Saved Search
      And User Verifies Saved Search Does not Exist on DropDown
+     Then User Closes the Browser
 
 
 

@@ -341,13 +341,18 @@
 	
 	<groups>
 	    <run>
-	      <include name="E2E"  />
+	      <include name="E2E2"  />
 	    </run>
 	 </groups>	
 	
 	<classes>
 	
+		<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
+		<class name="createShipmentE2ETests.TollPriorityAUSTests" />
+		<class name="createShipmentE2ETests.TollPriorityNZ" />
 		<class name="createShipmentE2ETests.TollIPECTests" />
+		<class name="createShipmentE2ETests.TollTasmaniaTests" /> 
+		<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress"/>
 		
 	
 		

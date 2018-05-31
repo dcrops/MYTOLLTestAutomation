@@ -33,8 +33,8 @@ public class advanceSearchStepDefinitions {
 	public void UserCliksSearchAndVerifiesResults() throws Throwable {
 
 		PageBase.click(MyTollHomePageActions.advanceSearchSubmit, 10);
-		PageBase.MediumWaitForElementEnabled_1();
-		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.VerifyAdvanceSearchResultsDisplayed();
 		//Verify details later when system functionality works
 		
@@ -1023,6 +1023,7 @@ public class advanceSearchStepDefinitions {
 			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
 				PageBase.MaximumWaitForElementEnabled_1();
 				PageBase.click(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]"), 5);
+				PageBase.MaximumWaitForElementEnabled_1();
 				PageBase.click(MyTollHomePageActions.EditSaveSearch, 5);
 				PageBase.isElementPresent(By.xpath("//*[@id=\"carrier-list\"]/li/span[text()='"+advSearch.get("TollCarrier")+"']"), 2, advSearch.get("TollCarrier"));
 			}

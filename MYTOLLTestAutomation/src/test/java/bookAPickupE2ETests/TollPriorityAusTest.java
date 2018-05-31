@@ -27,7 +27,7 @@ public class TollPriorityAusTest {
 	}
 
 	//@Test(priority=-7)
-	@Test(groups = { "Shakeout Testing","E2E" })
+	@Test(groups = { "Shakeout Testing","E2E2" })
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceParcelsOffPeak", "AccountNumberTollPrioAu", "location", "Country",
 			"AddressLine1", "AddressLine2", "Suburb1", "Suburb1Option", "Postcode1", "Email", "PhoneNumber",
 			"PhoneCountry1", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "DGGoodsNo",

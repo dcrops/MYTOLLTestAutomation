@@ -56,10 +56,10 @@ public class RateEnquiry_ErrorMsgValidations {
 		
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
-		
+		RateEnquiryActions.NumberOfItem("9999");
 		//Verify Error Msgs in the Rate Enquiry Page
 		Reporter.log("User Verifies Error Msg on Screen");
-		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 250. Please edit your line items and calculate your rate again.");
+		//PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 250. Please edit your line items and calculate your rate again.");
 		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight("9999", "9999", "9999", "9999");
 		RateEnquiryActions.ClickPriceNow();
 		PageBase.MaximumWaitForElementEnabled_1();
@@ -100,10 +100,10 @@ public class RateEnquiry_ErrorMsgValidations {
 		
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
-		
+		RateEnquiryActions.NumberOfItem("9999");
 		//Verify Error Msgs in the Rate Enquiry Page
 		Reporter.log("User Verifies Error Msg on Screen");
-		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 99. Please edit your line items and calculate your rate again.");
+		//PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 99. Please edit your line items and calculate your rate again.");
 		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight("9999", "9999", "9999", "9999");
 		RateEnquiryActions.ClickPriceNow();
 		PageBase.MaximumWaitForElementEnabled_1();
@@ -133,10 +133,10 @@ public class RateEnquiry_ErrorMsgValidations {
 
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
-		
+		RateEnquiryActions.NumberOfItem("9999");
 		//Verify Error Msgs in the Rate Enquiry Page
 		Reporter.log("User Verifies Error Msg on Screen");
-		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 99. Please edit your line items and calculate your rate again.");
+		//PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 99. Please edit your line items and calculate your rate again.");
 		RateEnquiryActions.ClickPriceNow();
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgLength, "Please enter length");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgWidth, "Please enter width");
@@ -170,10 +170,10 @@ public class RateEnquiry_ErrorMsgValidations {
 		
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
-	
+		RateEnquiryActions.NumberOfItem("9999");
 		//Verify Error Msgs in the Rate Enquiry Page
 		Reporter.log("User Verifies Error Msg on Screen");
-		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 99. Please edit your line items and calculate your rate again.");
+		//PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 99. Please edit your line items and calculate your rate again.");
 		RateEnquiryActions.ClickPriceNow();
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgLength, "Please enter length");
 		PageBase.verifyTextExist(RateEnquiryActions.errorMsgWidth, "Please enter width");
@@ -200,9 +200,10 @@ public class RateEnquiry_ErrorMsgValidations {
 		RateEnquiryActions.valid = false;
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
-		RateEnquiryActions.SelectMode(Mode);
+		//RateEnquiryActions.SelectMode(Mode);
 		
 		// TES Check
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.waitForElement(RateEnquiryActions.tollExtraServiceLable, 10);
 		PageBase.verifyTextExist(RateEnquiryActions.tollExtraServiceLable, "Toll Extra Service required");
 		PageBase.isElementPresent(RateEnquiryActions.tollExtraServiceSlider, 5, "TES Slider");
@@ -217,10 +218,10 @@ public class RateEnquiry_ErrorMsgValidations {
 		
 		//Check for Price and Continue to Shipment
 		RateEnquiryActions.ClickPriceNow();
-		
+		RateEnquiryActions.NumberOfItem("9999");
 		//Verify Error Msgs in the Rate Enquiry Page
 		Reporter.log("User Verifies Error Msg on Screen");
-		PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 250. Please edit your line items and calculate your rate again.");
+		//PageBase.verifyTextExist(RateEnquiryActions.errorMsgNoOfItemsExceedQty, "Rate could not be calculated as you have exceeded the maximum item limit of 250. Please edit your line items and calculate your rate again.");
 		RateEnquiryActions.EnterLengthWidthHeightVolumeWeight("9999", "9999", "9999", "9999");
 		RateEnquiryActions.ClickPriceNow();
 		PageBase.MaximumWaitForElementEnabled_1();

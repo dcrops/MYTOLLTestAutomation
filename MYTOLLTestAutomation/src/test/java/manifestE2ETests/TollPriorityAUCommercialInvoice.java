@@ -36,7 +36,7 @@ public class TollPriorityAUCommercialInvoice {
 	}
 
 	
-	@Test(groups = {"E2E"})
+	@Test(groups = {"E2E2"})
 	@Parameters({ "TollCarrierTollPrioAU", "ServiceGlobalExpressParcels","WhoPays", "Sender",
 		"Receiver", "ItemTemplateName", "NumberOfItems", "Length", "Width",
 		"Height", "Weight","DGYes", "DGNo", "TypeOfExport", "DeclaredValue", "DeclaredValueCurrency", "WhoPaysDutiesTaxes", "CommodityCode", "CountryOfExportAU", "DestinationNZ",

@@ -3,50 +3,53 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
   Background: 
     Given User is on the Advance Search Page
 
-    @tag1
+    @tag1 
     Scenario: User perfroms advance search using Receiver Location feild
     When User inputs search criteria in the Receiver Location feilds
      |Suburb    | State| Postcode| Country   |
      |Melbourne | VIC  | 3000    | AU        |  
      And User Searches Using Shipment Created date - Date From
    	|DateFrom|
-   	|01-01-2018|
+   	|01-11-2017|
    	And User Searches Using Shipment Created date - Date To
    	|DateTo|
-   	|01-03-2018|   
+   	|01-03-2018|  
 	 Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
      And User Adds Multiple Tags in Receiver Surburb Location feilds
      |Suburb1     | Suburb2    | Suburb3       |
-     |Lost River  | Cervantes  | Brandy Creek  |
+     |WELSHPOOL  | Brendale  | Auburn   |
      Then Receiver Surburb Location Tag is Visible in search feild
      |Suburb1     | Suburb2    | Suburb3       |
-     |Lost River  | Cervantes  | Brandy Creek  |
+     |WELSHPOOL  | Brendale  | Auburn   |
      And User Adds Multiple Tags in Receiver State Location feilds
      |State1   | State2| State3|
-     |NSW      | WA    | QLD   |
+     |WA       | QLD   | NSW   |
      Then Receiver State Location Tag is Visible in search feild
      |State1   | State2| State3|
-     |NSW      | WA    | QLD   |
+     |WA       | QLD   | NSW   |
      And User Adds Multiple Tags in Receiver Postcode Location feilds
      |Postcode1   | Postcode2| Postcode3|
-     |2583        | 6511     | 4800     |
+     |6106        | 4500     | 2144    |
      Then Receiver Postcode Location Tag is Visible in search feild
      |Postcode1   | Postcode2| Postcode3|
-     |2583        | 6511     | 4800     |
+     |6106        | 4500     | 2144    |
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags| 
      And User Deletes Tags in Receiver Surburb Location and Verify if the Tags are Deleted
      |Suburb1     | Suburb2    | Suburb3       |
-     |Lost River  | Cervantes  | Brandy Creek  |
+     |WELSHPOOL  | Brendale  | Auburn   |
      And User Deletes Tags in Receiver State Location and Verify if the Tags are Deleted
      |State1   | State2| State3|
-     |NSW      | WA    | QLD   |
+     |WA       | QLD   | NSW   |
      And User Deletes Tags in Receiver Postcode Location and Verify if the Tags are Deleted
      |Postcode1   | Postcode2| Postcode3|
-     |2583        | 6511     | 4800     |
+     |6106        | 4500     | 2144    |
      Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags| 
+	 And User Searches Using Shipment Created date - Date To
+   	 |DateTo|
+   	 |10-11-2017|
      And User Exlcudes search Tags in Receiver Location Feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
@@ -74,28 +77,26 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
     Scenario: User perfroms advance search using Reference Number feild
     When User inputs search criteria in the Reference Number feild
    	 |RefNo|
-   	 |811037906280|
+   	 |4274877634|
    	And User Searches Using Shipment Created date - Date From
    	|DateFrom|
-   	|01-01-2018|
+   	|01-11-2017|
    	And User Searches Using Shipment Created date - Date To
    	|DateTo|
-   	|01-03-2018|  
+   	|01-03-2018| 
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
-
      And User Adds Multiple Tags in Reference Number feild
      |RefNo1       | RefNo2         |RefNo3       |
-     |MYTA003334   |814079231350    |814079406711 |
+     |6350761660   |ACIR071481      |4110881016   |
      Then Reference Number Tag is Visible in search feild
      |RefNo1       | RefNo2         |RefNo3      |
-     |MYTA003334   |814079231350    |814079406711 |
+     |6350761660   |ACIR071481      |4110881016   |
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
-
      And User Deletes Tags in Reference Number feild and Verify if the Tags are Deleted
      |RefNo1       | RefNo2         |RefNo3      |
-     |MYTA003334   |814079231350    |814079406711 |
+     |6350761660   |ACIR071481      |4110881016   |
 	 Then User Clicks Search and results are displayed
 
     

@@ -162,7 +162,7 @@ public class IntermodalSpecializedTests {
 
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E2" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",

@@ -191,6 +191,7 @@ public class RateEnquiryActions {
 		//PageBase.click(destinationSuburbPostcodeTextField, 2);
 		//PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"destination-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
+		PageBase.MaximumWaitForElementEnabled_1();
 	}
 	
 	

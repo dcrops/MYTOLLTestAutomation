@@ -4,17 +4,17 @@ Feature: MYT-3483 Advance Search : View Search Shipment Results
     Given User is on the Advance Search Page
 
    	
-    @tag1
+    @tag1 
     Scenario: User views all his searched shipment results from Advance Search - TGX
     When User inputs search criteria in the Toll Carrier feild
    	 |TollCarrier|
      |Toll Priority(AU & NZ) |
-    And User Searches Using Shipment Created date - Date From
+   	And User Searches Using Shipment Created date - Date From
    	|DateFrom|
-   	|12-02-2018|
+   	|07-05-2018|
    	And User Searches Using Shipment Created date - Date To
    	|DateTo|
-   	|14-02-2018|
+   	|25-05-2018|
     Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
@@ -32,19 +32,20 @@ Feature: MYT-3483 Advance Search : View Search Shipment Results
      Then User loads the Saved Search From Dashboard and Edit the Saved Search
 	 |TollCarrier|
      |Toll Priority(AU & NZ) |
+     Then User Closes the Browser
      
      
-    @tag2
+    @tag2 
     Scenario: User views all his searched shipment results from Advance Search - TDF
     When User inputs search criteria in the Toll Carrier feild
    	 |TollCarrier|
      |Intermodal & Specialised |
-    And User Searches Using Shipment Created date - Date From
+   	And User Searches Using Shipment Created date - Date From
    	|DateFrom|
-   	|12-02-2018|
+   	|07-05-2018|
    	And User Searches Using Shipment Created date - Date To
    	|DateTo|
-   	|14-02-2018|
+   	|25-05-2018|
     Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
@@ -62,5 +63,6 @@ Feature: MYT-3483 Advance Search : View Search Shipment Results
      Then User loads the Saved Search From Dashboard and Edit the Saved Search
 	 |TollCarrier|
      |Intermodal & Specialised |
+     Then User Closes the Browser
      
      
