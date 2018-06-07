@@ -83,7 +83,7 @@ public class advanceSearchStepDefinitions {
 	
 	@Then("^User Deletes Tags in Receiver feild and Verify if the Tags are Deleted$")
 	public void UserDeletesTagsInReceiverFeildAndVerifyIfTheTagsAreDeleted(DataTable advanceSearchTestData) throws Throwable {
-
+		PageBase.MaximumWaitForElementEnabled_1();
 		for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
 			Iterator tags = advSearch.entrySet().iterator();
 		    while (tags.hasNext()) {

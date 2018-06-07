@@ -53,6 +53,8 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
      And User Exlcudes search Tags in Receiver Location Feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
+	 Then User Closes the Browser
+	 
 
 
 #=============================================================================================
@@ -73,32 +75,32 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
 ##    |Verify Search Results are reflected according to tags|
 #============================================================================================= 
  
-    @tag2
+    @tag2 
     Scenario: User perfroms advance search using Reference Number feild
     When User inputs search criteria in the Reference Number feild
    	 |RefNo|
-   	 |4274877634|
+   	 |4040064497|
    	And User Searches Using Shipment Created date - Date From
    	|DateFrom|
-   	|01-11-2017|
+   	|01-05-2018|
    	And User Searches Using Shipment Created date - Date To
    	|DateTo|
-   	|01-03-2018| 
+   	|31-05-2018| 
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
      And User Adds Multiple Tags in Reference Number feild
      |RefNo1       | RefNo2         |RefNo3       |
-     |6350761660   |ACIR071481      |4110881016   |
+     |4040087410   |6346780071      |MYTA105011   |
      Then Reference Number Tag is Visible in search feild
      |RefNo1       | RefNo2         |RefNo3      |
-     |6350761660   |ACIR071481      |4110881016   |
+     |4040087410   |6346780071      |MYTA105011   |
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
      And User Deletes Tags in Reference Number feild and Verify if the Tags are Deleted
      |RefNo1       | RefNo2         |RefNo3      |
-     |6350761660   |ACIR071481      |4110881016   |
+     |4040087410   |6346780071      |MYTA105011   |
 	 Then User Clicks Search and results are displayed
-
+	Then User Closes the Browser
     
  
 # Too many search results for the below. Needs to be done manually    
@@ -134,7 +136,7 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
 
 
    
-    @tag4
+    @tag4 
     Scenario: User perfroms advance search using Toll Carrier feild
     
      When User inputs search criteria in the Toll Carrier feild
@@ -164,12 +166,12 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
      |Toll IPEC     |Toll Tasmania    |Toll Priority(AU & NZ) |
       And User Searches Using Shipment Created date - Date From
    	|DateFrom|
-   	|05-03-2018|
+   	|01-03-2018|
    	And User Searches Using Shipment Created date - Date To
    	|DateTo|
-   	|05-03-2018|
+   	|01-04-2018|
      And User Exlcudes search Tags in Toll Carrier feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
-    
+    Then User Closes the Browser
     

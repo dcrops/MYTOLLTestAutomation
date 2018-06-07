@@ -11,10 +11,10 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
    	 |Intermodal & Specialised|
      And User Searches Using Shipment Created date - Date From
    	 |DateFrom|
-   	 |01-03-2018|
+   	 |01-01-2018|
    	 And User Searches Using Shipment Created date - Date To
    	 |DateTo|
-   	 |15-03-2018|
+   	 |15-05-2018|
    	 When User inputs search criteria in the Service Type feild
    	 |ServiceType|
    	 |Intermodal & Specialised_General|
@@ -37,7 +37,7 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
      And User Exlcudes search Tags in Service Type feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
-    
+    Then User Closes the Browser
 
 
   
@@ -51,7 +51,7 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
    	 |01-03-2018|
    	 And User Searches Using Shipment Created date - Date To
    	 |DateTo|
-   	 |05-03-2018|
+   	 |05-05-2018|
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 
@@ -71,7 +71,7 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
      And User Exlcudes search Tags in Milestone feild
 	 Then User Clicks Search and results are displayed
 #    |Verify Search Results are reflected according to tags|
-    
+    Then User Closes the Browser
        
         
    	@tag3 @Shakeout
@@ -117,3 +117,4 @@ Feature: MYT-6231 Advance Search Using Service Type, Milestone and with Conditio
      |Out for delivery  |Shipment created   |
   	 Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
+	Then User Closes the Browser
