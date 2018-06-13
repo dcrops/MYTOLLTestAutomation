@@ -45,7 +45,7 @@ public class BaseWebdriver {
 	public static String PerformenceUsername1="perftest@toll.com";
 	
 	//Passwords
-	public static String Password="Toll@123";  
+	public static String Password="Toll@12345";  
 	public static String PerformancePassword="Victoria@123"; 
 	public static String SalesforcePassword="tolTOL987(*&$";
 	
@@ -134,8 +134,8 @@ public class BaseWebdriver {
 
 	@AfterMethod
 	public static void tearDown() throws Exception {
-	BaseWebdriver.driver.quit();
-		//driver.close();
+	//BaseWebdriver.driver.quit();
+    driver.close();
 
 	}
 

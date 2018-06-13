@@ -145,7 +145,7 @@
 		
 		<groups>
 	    <run>
-	      <include name="E2E"  />
+	      <include name="Shakeout Testing"  />
 	    </run>
 	  	</groups>
 

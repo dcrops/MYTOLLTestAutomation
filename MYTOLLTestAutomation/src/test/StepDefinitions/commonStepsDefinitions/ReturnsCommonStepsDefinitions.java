@@ -259,6 +259,8 @@ public class ReturnsCommonStepsDefinitions {
 	@Then("^User Filters Search Results By Status$")
 	public void UserFiltersSearchResultsByStatus(DataTable myReturnTestData) throws Throwable {
 		for (Map<String, String> myReturn : myReturnTestData.asMaps(String.class, String.class)) {
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.click(MyTollHomePageActions.MyReturnStatus, 10);
 			PageBase.click(By.xpath("//*[@id=\"status-selector\"]//*//div[text()='"+myReturn.get("Status")+"']"), 5);
 			PageBase.MediumWaitForElementEnabled_1();

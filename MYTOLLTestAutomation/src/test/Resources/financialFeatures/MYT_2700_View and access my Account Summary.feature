@@ -15,9 +15,9 @@ Feature: MYT_2700 View and access my Account Summary
     Then User be able to view below details
       | TollCarrier              | AccountNumber | Total Due | 30Days  | 60Days  | 90Days  | 120Days    | Total ChargeAmount          |
       | Intermodal & Specialised |        137289 | CURRENT   | 30 DAYS | 60 DAYS | 90 DAYS | 120 DAYS + | TOTAL CHARGE AMOUNT$5464.56 |
-#      Then User Closes the Browser
+     Then User Closes the Browser
 
-  @tag2
+  @tag2 
   Scenario: User wants to view and access Account Summary in PRIO
     Given User selects below Toll carrier and the account that has full financial access
       | TollCarrier         | AccountNumber |
@@ -33,11 +33,13 @@ Feature: MYT_2700 View and access my Account Summary
       | InvoiceDate      | InvoiceNumber | Chargeamount | ShipmentsView | Download |
       | Fri, 24 Nov 2017 | P60575241     | $1222.50     | View          | Download |
     When User selects Search Invoice by Date range
+    |DateFrom    |    DateTo|
+    |24 Nov 2017 |  24 Nov 2017 |
     And User clicks on Search
     Then User be able to view Recent Invoices and Invoice Download
       | InvoiceDate      | InvoiceNumber | Chargeamount | ShipmentsView | Download |
       | Fri, 24 Nov 2017 | P60575241     | $1222.50     | View          | Download |
-#	Then User Closes the Browser
+	Then User Closes the Browser
 	
 
   @tag3
@@ -55,5 +57,5 @@ Feature: MYT_2700 View and access my Account Summary
     And User clicks on Delete
     Then User be able to view Download results as follow
       | FileName             | Status      | Size        |
-      | IPEC_NA4271_0594.zip | In Progress      | 106.74 KB   |
-#	Then User Closes the Browser
+      | IPEC_NA4271_0594.zip | Ready      | 106.74 KB   |
+	Then User Closes the Browser

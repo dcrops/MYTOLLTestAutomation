@@ -3,7 +3,7 @@ Feature: MYT-6292 Manifest : Save Shipment as a Draft from open Manifests
   Background: 
     Given User is Registered in MyToll and is on My Dashboard
 
-	@tag1
+	@tag1 @Fail
     Scenario: User Saves Shipment In Progress from the Manifest Tab as a Draft - TDF
     When User Click My Manifest tab on My Dahsboad and Click Add Manifest Manually
     And User Creates Manual Manifest
@@ -45,7 +45,7 @@ Feature: MYT-6292 Manifest : Save Shipment as a Draft from open Manifests
 	Then User Confirms Delete Draft Search
 	
 	
-	@tag2
+	@tag2 @Fail
     Scenario: User Saves Shipment In Progress from the Manifest Tab as a Draft - TGX
     When User Click My Manifest tab on My Dahsboad and Click Add Manifest Manually
     And User Creates Manual Manifest
