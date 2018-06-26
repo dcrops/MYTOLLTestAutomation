@@ -164,8 +164,8 @@
 		
 		<groups>
 	    <run>
-	      <include name="Shakeout Testing"  />
-	    </run>
+	      <include name="Shakeout Testing" />
+	  	    </run>
 	 	</groups>
 
 		<classes>
