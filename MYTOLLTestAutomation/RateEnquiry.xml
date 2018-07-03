@@ -176,6 +176,7 @@
 			<class name="rateEnquiryE2ETests.TollIPECTests" />
 			<class name="rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations" /> 
 			
+			
 		</classes>
 
 	    
