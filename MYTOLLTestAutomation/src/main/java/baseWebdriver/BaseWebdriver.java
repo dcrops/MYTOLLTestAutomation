@@ -74,7 +74,7 @@ public class BaseWebdriver {
 		}
 
 		else if (browser.equalsIgnoreCase("ie")) {
-			System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_3.12.0\\IEDriverServer.exe");
 			BaseWebdriver.driver = new InternetExplorerDriver();
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.manage().window().maximize();
@@ -113,6 +113,8 @@ public class BaseWebdriver {
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (4)\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
+		//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
+		//BaseWebdriver.driver = new InternetExplorerDriver();
 		MyTollHomePageActions.LaunchMyToll(SitUrl);
 
 		PageBase.MaximumWaitForElementEnabled();
