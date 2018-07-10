@@ -85,7 +85,7 @@ public class IntermodalSpecializedTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDangerousGoods);
 		BookAPickupActions.SelectDestination(destination);
@@ -206,6 +206,7 @@ public class IntermodalSpecializedTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
 		BookAPickupActions.SelectDestination(destination);
@@ -233,7 +234,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.ClickEdit();
 
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDangerousGoods);
 		BookAPickupActions.SelectDangerousGoods(1);
@@ -293,7 +294,7 @@ public class IntermodalSpecializedTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceFCL);
 		BookAPickupActions.SelectDestination(destination);
@@ -400,7 +401,7 @@ public class IntermodalSpecializedTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGFCL);
 		BookAPickupActions.SelectDestination(destination);
@@ -517,7 +518,7 @@ public class IntermodalSpecializedTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceGeneral);
 		BookAPickupActions.SelectDestination(destination);
@@ -577,7 +578,7 @@ public class IntermodalSpecializedTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServicePremium);
 		BookAPickupActions.SelectDestination(destination);
@@ -635,7 +636,7 @@ public class IntermodalSpecializedTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceRailGeneral);
 
@@ -695,7 +696,7 @@ public class IntermodalSpecializedTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterService(ServiceRefrigeration);
 		BookAPickupActions.SelectDestination(destination);
 
@@ -752,6 +753,7 @@ public class IntermodalSpecializedTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGRefrigerated);
 		BookAPickupActions.SelectDestination(destination);
@@ -817,7 +819,7 @@ public class IntermodalSpecializedTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceRailDangerousGoods);
 		BookAPickupActions.SelectDestination(destination);
@@ -884,7 +886,7 @@ public class IntermodalSpecializedTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGExpress);
 		BookAPickupActions.SelectDestination(destination);
@@ -957,7 +959,7 @@ public class IntermodalSpecializedTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.SelectQuickEntryModeNo();
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
 		BookAPickupActions.VerifyModeIsNotAvailable();

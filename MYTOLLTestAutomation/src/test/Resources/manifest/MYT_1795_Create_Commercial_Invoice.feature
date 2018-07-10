@@ -10,7 +10,7 @@ Feature: MYT-1795 Manifest : Create Commercial Invoice for International Order
       | Toll Priority (Aus)  | Global - Express Parcels |
     Then User enters shipment overview details as below Draft Shipment - Specific Sender Receiver - Prio
       | AccountNumber | Whopays| Sender            | Receiver |
-      |        401509 |       1| TEM Perth Address | NZ Address |
+      |        401509 |       1| IPEC Melbourne    | NZ Address |
     And User Retrives Sender and Reciver Locations and Detials
     When User enters following input data for the line item for Draft Shipment - Prio
       | Item description     | No of Items | Length | Width | Height |  Weight    | SenderReference | ReceiverReference |

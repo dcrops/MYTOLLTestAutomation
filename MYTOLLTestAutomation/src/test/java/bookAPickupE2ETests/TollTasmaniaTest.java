@@ -72,6 +72,7 @@ public class TollTasmaniaTest {
 		
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		// Select service
 		BookAPickupActions.EnterService(ServiceRefrigeration);
@@ -144,7 +145,7 @@ public class TollTasmaniaTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
-	
+		BookAPickupActions.setQEMNo();
 		// Select service
 		BookAPickupActions.EnterService(ServiceRefrigeration);
 		BookAPickupActions.EnterQuantity(NumberOfItems);
@@ -234,6 +235,7 @@ public class TollTasmaniaTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGFreight);
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -353,6 +355,7 @@ public class TollTasmaniaTest {
 		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceDGFreight);
 		BookAPickupActions.VerifyModeIsNotAvailable();
@@ -417,6 +420,7 @@ public class TollTasmaniaTest {
 		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -471,6 +475,7 @@ public class TollTasmaniaTest {
 		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceExpress);
 		BookAPickupActions.SelectDestination(destination);
@@ -528,6 +533,7 @@ public class TollTasmaniaTest {
 
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceGeneral);
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -595,6 +601,7 @@ public class TollTasmaniaTest {
 		// Mode(=Road)
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
+		BookAPickupActions.setQEMNo();
 		BookAPickupActions.EnterQuantity(NumberOfItems);
 		BookAPickupActions.EnterService(ServiceGeneral);
 		BookAPickupActions.SelectDestination(destination);
