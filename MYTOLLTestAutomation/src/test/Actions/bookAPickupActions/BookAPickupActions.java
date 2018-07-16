@@ -257,8 +257,8 @@ public class BookAPickupActions {
 	public static final By addTemplateSaveMsg = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//h2");
 	public static final By addTemplateSaveMsgClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
 	public static final By addTemplateViewMore = By
-			.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]//*//a[text()='View More']");
-
+			//.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytolltemplateportlet\"]/div//a[text()='View More']");
+				.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytollupsportlet\"]/div//a[text()='View More']");
 	// Add Accounts
 	public static final By addAccount = By.linkText("ADD ACCOUNT");
 	public static final By addAccountCarrier = By.xpath("//*[@id=\"addAccountForm\"]//*//label/a/i");

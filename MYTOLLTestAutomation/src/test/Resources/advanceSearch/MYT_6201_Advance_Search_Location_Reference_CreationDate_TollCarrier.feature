@@ -147,7 +147,7 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
    	|01-03-2018|
    	And User Searches Using Shipment Created date - Date To
    	|DateTo|
-   	|15-03-2018|
+   	|15-07-2018|
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
 

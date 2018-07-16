@@ -257,7 +257,7 @@ public class MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition {
 	@Then("^User can see additional information as below in Shipment Review page$")
 	public void user_can_see_additional_information_as_below_in_Shipment_Review_page(DataTable shipmentTestData)
 			throws Throwable {
-
+					
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 
 		
