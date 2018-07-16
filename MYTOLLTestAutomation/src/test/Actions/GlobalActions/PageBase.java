@@ -1,5 +1,10 @@
 package GlobalActions;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -16,9 +21,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import org.testng.Reporter;
 
+import com.google.common.base.Objects;
+
 import baseWebdriver.BaseWebdriver;
 
-public class PageBase {
+public class PageBase 
+{
+	public static Robot robot;
 	
 	public static boolean retryingFindClick(By by) {
 		boolean result = false;
@@ -540,5 +549,46 @@ public class PageBase {
 		
 	}
 
+	public static void CopyToClipboard(String _copyString)
+	{
+		StringSelection ss = new StringSelection(_copyString);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+	}
+	public static void PasteFromClipboard(String _copyString) throws AWTException, InterruptedException
+	{
+		ImplementKeyPress(KeyEvent.VK_CONTROL);
+		ImplementKeyPress(KeyEvent.VK_V);
+		ImplementKeyRelease(KeyEvent.VK_V);
+		ImplementKeyRelease(KeyEvent.VK_CONTROL);
+		Thread.sleep(1500);
+		ImplementKeyPress(KeyEvent.VK_ENTER);
+		ImplementKeyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(1500);
+	}
 	
+	public static void InitializeRobotClass() throws AWTException
+	{
+		if(java.util.Objects.equals(robot, null))
+		{
+			robot = new Robot();
+		}
+		
+	}
+
+	public static void ImplementKeyPress(int vk) throws AWTException 
+	{
+		InitializeRobotClass();
+		robot.keyPress(vk);
+	}
+	
+	public static void ImplementKeyRelease(int vk) throws AWTException
+	{
+		InitializeRobotClass();
+		robot.keyRelease(vk);
+	}
+	
+	
+	
+	
+
 }

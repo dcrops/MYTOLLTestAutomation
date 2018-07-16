@@ -5,21 +5,15 @@ import GlobalActions.PageBase;
 import static org.testng.Assert.assertEquals;
 
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
+
+
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
-import stationeryActions.StationeryActions;
 
 
 public class MyTollHomePageActions {
@@ -513,6 +507,11 @@ public class MyTollHomePageActions {
 		PageBase.isElementPresent(By.xpath("//*[@id=\"tblAdvSerhResult\"]/tr[1]"), 5, "Search Result 1st Line");
 		
 		
+	}
+	
+	public static void ClickMyContacts()
+	{
+		PageBase.FindElement(myContactMenu).click();
 	}
 		
 	
