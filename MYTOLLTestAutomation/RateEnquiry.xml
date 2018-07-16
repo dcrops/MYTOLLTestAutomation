@@ -169,6 +169,7 @@
 	 	</groups>
 
 		<classes>
+			
 	    	<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	
 			<class name="rateEnquiryE2ETests.TollPriorityNZTests" />
 			<class name="rateEnquiryE2ETests.TollPriorityAUSTests" />

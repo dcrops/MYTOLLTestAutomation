@@ -265,7 +265,7 @@ public class PageBase
 	
 	public static WebElement click(By locator, int waitSeconds) {
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, waitSeconds);
-		WebElement we = (WebElement) wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		WebElement we = (WebElement) wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		if (we == null) {
 			//logger.warn("elemet with: " + locator.toString() + " not found");
 			Reporter.log("element with: " + locator.toString() + " not found" +"<br>");

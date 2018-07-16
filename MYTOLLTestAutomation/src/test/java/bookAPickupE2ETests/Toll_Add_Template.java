@@ -40,7 +40,7 @@ public class Toll_Add_Template {
 		
 	}
 	
-	@Test(groups = { "Shakeout Testing", "E2E" })
+	@Test(groups = { "Shakeout Testing", "E2E1" })
 	@Parameters({"TollCarrierTollIPEC", "ServiceRoadExpress","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
 	public void addTemplateIPEC(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
@@ -70,7 +70,7 @@ public class Toll_Add_Template {
 	}
 	
 	
-	@Test(groups = { "Shakeout Testing", "E2E" })
+	@Test(groups = { "Shakeout Testing", "E2E1" })
 	@Parameters({"TollCarrierTollPrioAU", "ServiceParcelsOffPeak","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
 	public void addTemplatePrioAus(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
@@ -80,7 +80,7 @@ public class Toll_Add_Template {
 	}
 	
 	
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E1" })
 	@Parameters({"TollCarrierTollPrioNZ", "ServiceParcelsOffPeak","NumberOfItems","Length", "Width", "Height", "Weight", "TNZOriginSuburb","TNZOriginPostCode", "TNZDesSuburb", "TNZDesPostCode"})
 	public void addTemplatePrioNZ(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
@@ -133,15 +133,22 @@ public class Toll_Add_Template {
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		
+		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
+		MyTollHomePageActions.ClickMenu();
+		Reporter.log("User Navigates to My Templates Page");
+		PageBase.click(MyTollHomePageActions.templateMenu, 10);
+		
 		//User Filters Carriers
 		PageBase.click(BookAPickupActions.addTemplateCarrierSelector, 5);
 		PageBase.click(By.xpath("//*[@id=\"grid-carrier-dropdown\"]//*//div[contains(text(),'"+Carrier+"')]"),5);
+		
 		
 		//Verify Template Exists
 		Reporter.log("User Verifies if New Template Exits");  
 		try {
 			PageBase.MaximumWaitForElementEnabled(); 
-			while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytollupsportlet\"]//*//p[text()='"+NewTemplateName+"']"), 1) == null) {
+			while(PageBase.waitForElement(By.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytollupsportlet\"]/div//p[text()='"+NewTemplateName+"']"), 1) == null) {
+				////*[@id="portlet_mytolltemplateportlet_WAR_mytollupsportlet"]/div//p[text()=
 				
 				PageBase.moveToElement(BookAPickupActions.addTemplateViewMore);
 				

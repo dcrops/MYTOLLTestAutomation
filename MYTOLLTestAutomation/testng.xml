@@ -9,7 +9,8 @@
 	<suite-file path="Manifest.xml"></suite-file>	
 	<suite-file path="RateEnquiry.xml"></suite-file>
 	<suite-file path="CreateShipment.xml"></suite-file>
-    <suite-file path="BookAPickup.xml"></suite-file>
+    <suite-file path="BaseWebdriver.xml"></suite-file>
+    
 
 	</suite-files>
 

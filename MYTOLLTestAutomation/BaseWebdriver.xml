@@ -29,17 +29,16 @@
 	
 		<classes>
 		
-	 
-	     	
-	<!-- 	<class name="baseWebdriver.AdvancedSearchTestRunner"/>
+	 	
+			
 	     	<class name="baseWebdriver.BookAPickupTestRunner" />
 	     	<class name="baseWebdriver.ManifestTestRunner"/>
 	     	<class name="baseWebdriver.RateEnquiryTestRunner"/> 
 	     	<class name="baseWebdriver.FinancialTestRunner"/>
-	     	
-	     		<class name="baseWebdriver.ReturnsTestRunner"/>
-	     	<class name="baseWebdriver.CreateShipmentTestRunner" /> -->
-	     <class name="baseWebdriver.DashboardTestRunner"/>
+	     	<class name="baseWebdriver.AdvancedSearchTestRunner"/>
+			<class name="baseWebdriver.CreateShipmentTestRunner" />
+	     	<class name="baseWebdriver.ReturnsTestRunner"/>
+	     	<class name="baseWebdriver.DashboardTestRunner"/>
 			
 			<!-- Blocked>   <class name="baseWebdriver.CreateShipmentTestRunner" /><class name="baseWebdriver.BookAPickupTestRunner" />
 			<class 	name="baseWebdriver.ManifestTestRunner"/> <class name="baseWebdriver.AdvancedSearchTestRunner"/> 
