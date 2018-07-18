@@ -346,6 +346,15 @@ public class BookAPickupActions {
 	public static By GoT0Dashboard = By.linkText("GO TO DASHBOARD");
 	
 	public static By serviceSelected= By.xpath("//*[@id=\"service-type-label\"]");
+	
+	//View SLA
+	public static By addAccountToggler = By.xpath("//*[@id=\"addAccountForm\"]//*//div[@class=\"toggle-link\"]/a");
+	public static By addAccountSLAStandardAccess= By.xpath("//*[@id=\"addAccountForm\"]//*//b[1]");
+	public static By addAccountSLAStandardAccessMsg= By.xpath("//*[@id=\"addAccountForm\"]/div/section/section[3]/div[1]");
+	public static By addAccountSLATPAccess= By.xpath("//*[@id=\"addAccountForm\"]//*//b[2]");
+	public static By addAccountSLATPAccessMsg= By.xpath("//*[@id=\"addAccountForm\"]/div/section/section[3]/div[1]");
+	public static By addAccountSLAFullFinancialAccess= By.xpath("//*[@id=\"addAccountForm\"]//*//b[3]");
+	public static By addAccountSLASFullFinancianAccessMsg= By.xpath("//*[@id=\"addAccountForm\"]/div/section/section[3]/div[1]");
 
 	public static void EnterTollCarrierItem(String pTollCarrierName) {
 		PageBase.MinimumWaitForElementEnabled();

@@ -487,9 +487,7 @@ public class RateEnquiryActions {
 		PageBase.MaximumWaitForElementEnabled_1();
 		Boolean results=BaseWebdriver.driver.findElement(totalCharge).isDisplayed();
 		if (results=true) {
-		//RateEnquiryActions.VerifyPricenowMessage("Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
-		//RateEnquiryActions.VerifyPricenowMessage("Note:The rate displayed is an estimate only. The rate may change if there are any variations to the actual weight, dimensions or location entered above and are based on Mon - Fri business hours. Extra service and other surcharges may apply. For further enquiries please call our Sales Dept on 1300 865 547 (Option 3)");	
-
+			RateEnquiryActions.VerifyPricenowMessage();
 			RateEnquiryActions.VerifyTotalCharge("Total Charge:");
 			RateEnquiryActions.VerifyGST("GST:");
 			RateEnquiryActions.VerifyRate("Rate:"); 
@@ -502,11 +500,25 @@ public class RateEnquiryActions {
 		}
 		}
 		
-	public static void VerifyPricenowMessage(String pPricenowMsg) {
+	public static void VerifyPricenowMessage() {
 		PageBase.MinimumWaitForElementEnabled_1();
-		//assertEquals(pPricenowMsg, BaseWebdriver.driver.findElement(pricenowMsg).getText());
-		PageBase.verifyTextExist(pricenowMsg, pPricenowMsg);
-
+		
+		String Carrier = BaseWebdriver.driver.findElement(TollCarrierTextfield).getAttribute("value");	
+		if ("Toll IPEC".equals(Carrier)) {
+			
+			PageBase.verifyTextExist(pricenowMsg, "Note: The rate displayed is an estimate only. The rate may change if there are any variations to the actual weight, dimensions or location entered above and are based on Mon - Fri business hours. Extra service and other surcharges may apply. For further enquiries please call our Sales Dept on 1300 865 547 (Option 3)");
+		}
+		else if (Carrier.contains("Toll Priority")) {
+			
+			PageBase.verifyTextExist(pricenowMsg, "Note: This is an estimate only. Results may vary if actual details differ. Transit Times exclude weekends/public holidays. International Non Documents may incur extra 24 hours subject to commodity type and local customs clearance. Delivery outside metro areas may increase time.");
+		}
+		else {
+			PageBase.verifyTextExist(pricenowMsg, "Note: The rate shown may change if there are any variations to the actual weight, dimensions, or locations entered above.");
+		}
+		
+		
+		
+		
 	}
 
 	public static void VerifyTotalCharge(String pTotalCharge) {

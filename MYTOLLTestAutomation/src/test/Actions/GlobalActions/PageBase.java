@@ -357,6 +357,7 @@ public class PageBase
 	public static void verifyTextExist(By locator, String expectedText){
 		try {
 			String getText = BaseWebdriver.driver.findElement(locator).getText();
+			System.out.println(getText);
 		 
 			if (getText.equalsIgnoreCase(expectedText)){
 				Reporter.log("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getText);

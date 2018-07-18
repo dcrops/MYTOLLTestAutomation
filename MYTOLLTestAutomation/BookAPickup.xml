@@ -212,6 +212,12 @@
 	<parameter name="IPECTASAddress1" value="208 Collins Street, HOBART  TAS  7000"/>
 	<parameter name="IPECVICAddress1" value="1-7 Hillcrest Grove, SPRINGVALE  VIC  3171"/>
 	<parameter name="IPECWAAddress1" value="97 William Street, PERTH  WA  6000"/>
+	
+	<!-- View Add Account SLA -->
+	<parameter name="StandardAccess" value="Standard access can be granted on accounts owned by the registered MyToll user. In order for Standard access to be authorised the account must belong to a user at the registered address. Upon approval by our accounts department, you can access the following services (subject to service availability for the selected carrier): Track and Trace (including Proof of Delivery), Pickups, Rate Enquiry, Consignment Entry"/>
+	<parameter name="ThirdPartyAccess" value="Third Party access can be granted on accounts where the owner of the account is not the registered user or the account is not located at the registered users address. Some Third Party access requires a letter of authorisation from the account owner. Upon approval by our accounts department and the owner of this account, you can access the following services (subject to service availability for the selected carrier): Track and Trace (including Proof of Delivery), Pickups, Consignment Entry (limited access upon request)"/>
+	<parameter name="FullFinancialAccess" value="Full Financial access can be granted on any account, normally with a letter of authorisation from the account owner. Upon approval by our accounts department, you can access the following services (subject to service availability for the selected carrier): Track and Trace (including Proof of Delivery), Pickups, Rate Enquiry, Consignment Entry Invoices"/>
+	
 	  
 	<groups>
 	    <run>
