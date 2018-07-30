@@ -218,12 +218,20 @@ public class BookAPickupActions {
 			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]//*//div[@class=\"contact-col edit\"]/input");
 	public static final By SearchContactEditCompanyName = By.xpath("//*[@id=\"CompanyName\"]");
 	public static final By SearchContactEditName = By.xpath("//*[@id=\"ContactFirstName\"]");
-	public static final By SearchContactEditCompanyNameErrorMsg = By
-	.xpath("//*[@id=\"updateJSONData\"]/div/section//div/span[3]");
-	public static final By SearchContactEditNameErrorMsg = By
-		.xpath("//*[@id=\"updateJSONData\"]/div/section/div[1]/div[1]/div[2]/div/span[2]");
+	
+	
+	public static final By SearchContactEditCompanyNameErrorMsg = By .xpath("//*[@id=\"updateJSONData\"]/div/section//div/span[3]");
+	//new-xpath = //*[@id=\"updateJSONData\"]//div/span[@class='cust-error-msg' and text()='Enter Company Name'];
+	//old-xpath = //*[@id=\"updateJSONData\"]/div/section/div[1]/div[1]/div[1]/div
+	//public static final By SearchContactEditCompanyNameErrorMsg = By .xpath("//*[@id=\"updateJSONData\"]/div/section//div/span[3]");
+	
+	public static final By SearchContactEditNameErrorMsg = By.xpath("//*[@id=\"updateJSONData\"]/div/section/div[1]/div[1]/div[2]/div/span[2]");
+	
+//	public static final By SearchContactEditSave = By.cssSelector("input.save-btn");
 	public static final By SearchContactEditSave = By.xpath("//*[@id=\"updateJSONData\"]/div/footer/input");
+	
 	public static final By popUpMsg = By.xpath("//*[@id=\"response-poup-wrpr\"]/div[2]/div/header/h2");
+										
 	public static final By popUpClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*/a/i");
 	
 	// Edit Address
@@ -1886,11 +1894,23 @@ public class BookAPickupActions {
 		Reporter.log("User Navigates to My Contactcs Page");
 		PageBase.click(MyTollHomePageActions.myContactMenu, 10);
 		Reporter.log("User Searches for New Contact added -" + NewCompanyName);
-			
+		
+		
+		//PageBase.sendText(SearchContactTxtFeild, 10, "Company ABC");
+		
+		/////
 		PageBase.sendText(SearchContactTxtFeild, 10, NewCompanyName);
+		/////
 		PageBase.click(SearchContactButton, 10);
 		PageBase.MaximumWaitForElementEnabled_1();
+		
+		
+		//PageBase.verifyTextExist(SearchContactCompanyLocation, "Company ABC");
+		////
 		PageBase.verifyTextExist(SearchContactCompanyLocation, NewCompanyName);
+		////
+		
+		
 		Reporter.log("User Clicks Edit Contact and Edits Contact Details");
 		PageBase.click(SearchContactEdit, 10);
 		PageBase.MaximumWaitForElementEnabled_1();

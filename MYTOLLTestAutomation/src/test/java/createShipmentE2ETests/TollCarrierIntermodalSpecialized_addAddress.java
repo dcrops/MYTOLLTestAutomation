@@ -23,12 +23,12 @@ public class TollCarrierIntermodalSpecialized_addAddress {
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username2_new, BaseWebdriver.Password_new);
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(groups = { "Shakeout Testing"})
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",

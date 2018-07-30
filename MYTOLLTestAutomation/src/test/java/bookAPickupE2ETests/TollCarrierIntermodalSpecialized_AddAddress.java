@@ -32,7 +32,7 @@ public class TollCarrierIntermodalSpecialized_AddAddress {
 	@BeforeMethod(alwaysRun=true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username2_new, BaseWebdriver.Password_new);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 
