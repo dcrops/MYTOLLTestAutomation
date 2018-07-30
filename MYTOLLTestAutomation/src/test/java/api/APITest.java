@@ -16,11 +16,11 @@ import static com.jayway.restassured.RestAssured.*;
 
 public class APITest {
 
-	@BeforeMethod
-public void setup()
-{
-	proxy("10.68.3.12", 8080);
-}
+//@BeforeMethod
+//public void setup()
+//{
+//	proxy("10.68.3.12", 8080);
+//}
 
 
  @Test
