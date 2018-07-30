@@ -29,10 +29,7 @@ public class TollCarrierIntermodalSpecialized_AddAddress {
 
 	public static Integer locationIndex = 4;
 	
-	
-	
-
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
@@ -46,7 +43,7 @@ public class TollCarrierIntermodalSpecialized_AddAddress {
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "temperatureLow", "temperatureHigh",
 			"refrigerationRefNum", "bookInNum", "VendorNum", "palletSpace", "Destination", "specialIns" })
 
-	public void TollCarrierIntermodalSpecialized_AddAddress(String TollCarrier,
+	public void TollCarrierIntermodalSpecialized_AddAddress_1(String TollCarrier,
 			String ServiceExpress, Integer locationIndex, String ItemTemplateName, String Length,
 			String NumberOfItems, String Width, String Height, String Weight, String tempLow, String tempHigh,
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
@@ -55,16 +52,14 @@ public class TollCarrierIntermodalSpecialized_AddAddress {
 		//Select Account
 		BookAPickupActions.SelectAccountNumber1();
 		PageBase.MaximumWaitForElementEnabled();
-		
+
 		//Add Address
 		BookAPickupActions.addAdderess("60 Collins Street, MELBOURNE VIC 3000");
 		BookAPickupActions.verfiyAddress();
 
-		
 	}
-	
-	
 
+	
 	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 		 BaseWebdriver.tearDown();

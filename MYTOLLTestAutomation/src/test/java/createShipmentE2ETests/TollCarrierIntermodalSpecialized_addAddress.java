@@ -1,10 +1,14 @@
 package createShipmentE2ETests;
 
 
+import java.awt.print.Pageable;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import com.gargoylesoftware.htmlunit.Page;
 
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
@@ -24,7 +28,7 @@ public class TollCarrierIntermodalSpecialized_addAddress {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(groups = { "Shakeout Testing" })
+	@Test(groups = { "Shakeout Testing"})
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 			"ItemTemplateName2", "NumberOfItems", "Length", "Width", "Height", "Weight", "NumberOfItems2", "Length2",
@@ -46,7 +50,24 @@ public class TollCarrierIntermodalSpecialized_addAddress {
 		//Add Address
 		CreateShipmentActions.addSenderAdderess();
 		CreateShipmentActions.addReceiverAdderess(); 
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		System.out.println("About to enter the Verify Sender Address function");
+		
+		
+		
 		CreateShipmentActions.verifySenderAddress();
+		
+
 		CreateShipmentActions.verifyReceiverAddress();
 	}
 	
