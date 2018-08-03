@@ -69,6 +69,12 @@ public class Toll_MyProfile_Add_Accounts {
 		this.addAccount(TollCarrier, AccountNo,  AccessType);
 	}
 
+	
+	@Test(groups = { "E2E" })
+	@Parameters({ "StandardAccess","ThirdPartyAccess", "FullFinancialAccess"})
+	public void viewSLA(String StandardAccess, String ThirdPartyAccess, String FullFinancialAccess ) {
+		this.viewSLAMsg(StandardAccess, ThirdPartyAccess, FullFinancialAccess);
+	}
 
 	
 	private void addAccount(String Carrier, String AccountNo, String AccessType) {
@@ -143,6 +149,29 @@ public class Toll_MyProfile_Add_Accounts {
 			PageBase.click(BookAPickupActions.addAccountDeleteClose, 5);
 		
 		}
+		
+	}
+	
+	private void viewSLAMsg(String StandardAccess, String ThirdPartyAccess, String FullFinancialAccess) {
+		
+		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
+		MyTollHomePageActions.ClickMenu();
+		Reporter.log("User Navigates to My Accounts Page");
+		PageBase.click(MyTollHomePageActions.myAccountMenu, 20);
+		Reporter.log("User Clicks Add Account");
+		PageBase.moveToElement(BookAPickupActions.addAccount);
+		PageBase.click(BookAPickupActions.addAccount, 10);
+		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.click(BookAPickupActions.addAccountToggler, 10);
+		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.moveToElement(BookAPickupActions.addAccountSLAStandardAccess);
+		PageBase.verifyTextExist(BookAPickupActions.addAccountSLAStandardAccess, "Standard Access");
+		PageBase.verifyTextExistContains(BookAPickupActions.addAccountSLAStandardAccessMsg, StandardAccess);
+		PageBase.verifyTextExist(BookAPickupActions.addAccountSLATPAccess, "Third Party Access");
+		PageBase.verifyTextExistContains(BookAPickupActions.addAccountSLATPAccessMsg, ThirdPartyAccess);
+		PageBase.verifyTextExist(BookAPickupActions.addAccountSLAFullFinancialAccess, "Full Financial Access");
+		PageBase.verifyTextExistContains(BookAPickupActions.addAccountSLASFullFinancianAccessMsg, FullFinancialAccess);
+
 		
 	}
 	

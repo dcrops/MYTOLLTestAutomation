@@ -21,7 +21,7 @@ public class IntermodalSpecializedTests {
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		PageBase.MediumWaitForElementEnabled();
-		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username2_new, BaseWebdriver.Password_new);
 		PageBase.MediumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();
@@ -161,8 +161,8 @@ public class IntermodalSpecializedTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 
 	}
-
-	@Test(groups = {"E2E2" })
+	
+	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTNQX", "WhoPays", "whoPays",
 			"ModeInt", "ModeRoad", "Sender", "Receiver", "QuoteNumber", "DropOffDepot", "DropOffDepot",
 			"CollectionDepot", "DGContactName", "DGContactNumber","SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2",
@@ -735,7 +735,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 		String mode=CreateShipmentActions.SelectMode(ModeInt);
 		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
-		CreateShipmentActions.SelectSender(Sender);
+		CreateShipmentActions.SelectSender(2);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
@@ -839,6 +839,17 @@ public class IntermodalSpecializedTests {
 
 		ShipmentReviewActions.VerifyLineItem2Values(ItemTemplateName2, NumberOfItems2, BillingType, dimensions2,
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
+		
+		
+	//////Nishant
+		
+		
+		PageBase.click(MyTollHomePageActions.edit_ShipmentReview, 10);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.verifyTextExistAttribute(CreateShipmentActions.dgContactName, DGContactName);		
+		PageBase.verifyTextExistAttribute(CreateShipmentActions.dgContactNumber, DGContactNumber);		
+		
+	
 	}
 
 
@@ -1000,7 +1011,6 @@ public class IntermodalSpecializedTests {
 	
 
 	}
-
 	
 	@Test(groups = {"E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGRefrigerated", "AccountNumberTNQX", "WhoPays", "whoPays", "ModeInt",
@@ -1842,6 +1852,11 @@ public class IntermodalSpecializedTests {
 		
 		ShipmentReviewActions.VerifyDangerousGoodsDetails(DangerousGoodsDetailsHeading, lookupName, classDivision,
 				packingGroup1, subRisk, ProperShippingName, packageDescription, pDgPkgQty, pDgQtyKg, technicalName);
+	
+
+		
+		
+		
 	}
 	
 	
@@ -1849,7 +1864,7 @@ public class IntermodalSpecializedTests {
 	
 	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
+		 //BaseWebdriver.tearDown();
 
 	}
 

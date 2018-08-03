@@ -26,6 +26,7 @@ public class BaseWebdriver {
 	public static String PreprodUrl="https://www-ppd.mytoll.com/";  
 	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
 	public static String SitUrl= "https://www-ppd.mytoll.com/"; 
+	public static String PSURL = "https://ps.mytoll.com/";
 	public static String SalesForce= "https://test.salesforce.com/"; 
 	public static String PSURL = "https://ps.mytoll.com/";
 
@@ -34,6 +35,7 @@ public class BaseWebdriver {
 	
 	//BU Admin users
 	public static String Username2="auto_bvt_ppd@mailinator.com";// "auto_bvt_ps@mailinator.com"; 
+	public static String Username2_new = "auto_bvt_ps@mailinator.com";
 	public static String SitUsername1="SitAutomationuser@mailinator.com"; //"SitAutomationuser@yahoo.com"; 
 	public static String PSUsername = "auto_bvt_ps@mailinator.com";
 	
@@ -48,7 +50,8 @@ public class BaseWebdriver {
 	public static String PerformenceUsername1="perftest@toll.com";
 	
 	//Passwords
-	public static String Password="Toll@12345";  
+	public static String Password="Toll@12345"; 
+	public static String Password_new = "Toll@123";
 	public static String PerformancePassword="Victoria@123"; 
 	public static String SalesforcePassword="tolTOL987(*&$";
 	public static String PSPassword = "Toll@123";
@@ -122,11 +125,17 @@ public class BaseWebdriver {
 		MyTollHomePageActions.LaunchMyToll(PSURL);
 
 		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.manage().window().maximize();
 		System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 	}
+	
 	
 	public static void LaunchSalesforce() throws Exception {
 		
