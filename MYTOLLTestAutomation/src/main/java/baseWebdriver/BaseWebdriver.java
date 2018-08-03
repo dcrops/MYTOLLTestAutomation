@@ -28,7 +28,6 @@ public class BaseWebdriver {
 	public static String SitUrl= "https://www-ppd.mytoll.com/"; 
 	public static String PSURL = "https://ps.mytoll.com/";
 	public static String SalesForce= "https://test.salesforce.com/"; 
-	public static String PSURL = "https://ps.mytoll.com/";
 
 	// Preprod users
 	public static String Username1= "SitAutomationuser@mailinator.com"; //"SitAutomationuser@yahoo.com"; 
@@ -105,7 +104,7 @@ public class BaseWebdriver {
 	@BeforeMethod
 	public static void SetUp(String browser) throws Exception {
 		RunSetup(browser);
-		MyTollHomePageActions.LaunchMyToll(PSURL);
+		MyTollHomePageActions.LaunchMyToll(SitUrl);
 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.manage().window().maximize();
@@ -122,7 +121,7 @@ public class BaseWebdriver {
 		BaseWebdriver.driver = new ChromeDriver();
 		//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 		//BaseWebdriver.driver = new InternetExplorerDriver();
-		MyTollHomePageActions.LaunchMyToll(PSURL);
+		MyTollHomePageActions.LaunchMyToll(SitUrl);
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
