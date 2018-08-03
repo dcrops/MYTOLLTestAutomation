@@ -55,7 +55,7 @@ Feature: MYT_6079 Stationery - Order Stationery
     When User clicks Review Order
     Then User be able to see Overview details in the Review Page as below
       | TollCarrier | AccountNumber | Contact name | Contact number |
-      | PRIO        | 0007CDS       | Joe          | 61-412345678   |
+      | PRIO        | 0007CDS CITY OF NEDLANDS       | Joe          | 61-412345678   |
     Then User be able to see Delivery details in the Review page as below
       | Contact name | Phone number | Company name | Address                                  | Customer reference | Delivery instructions     |
       | Andrew       | 61-412345678 | Dialog Group | 60, Collins Street MELBOURNE VIC 3000 AU | Ref123456          | Test DeliveryInstructions |
@@ -78,7 +78,7 @@ Feature: MYT_6079 Stationery - Order Stationery
     When User clicks Review Order
     Then User be able to see Overview details in the Review Page as below
       | TollCarrier | AccountNumber | Contact name | Contact number |
-      | PRIO        | 200B1F        | Nadiki       | 61-498765432   |
+      | PRIO        | 200B1F NHP ELECTRICAL        | Nadiki       | 61-498765432   |
     Then User be able to see Delivery details in the Review page as below
       | Contact name | Phone number | Company name | Address                                                 | Customer reference | Delivery instructions         |
       | Henry        | 61-498765432 | Toll Group   | Wellington road 352, Mulgrave road Mulgrave VIC 3052 AU | 98765Ref           | New Test DeliveryInstructions |

@@ -4,6 +4,8 @@ import GlobalActions.PageBase;
 
 import static org.testng.Assert.assertEquals;
 
+import java.awt.AWTException;
+import java.awt.event.KeyEvent;
 import java.util.Date;
 
 
@@ -352,7 +354,8 @@ public class MyTollHomePageActions {
 			});*/
 			
 		PageBase.WaitForElement(MyTollHomePageActions.HmbugerMenu,30);
-		PageBase.ClickOn(HmbugerMenu, 5);
+		PageBase.click(HmbugerMenu, 5);
+		
 	}
 	
 	public static void ClickBookAPIckupMenu()

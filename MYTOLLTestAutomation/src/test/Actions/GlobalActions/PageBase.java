@@ -16,6 +16,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -265,7 +266,7 @@ public class PageBase
 	
 	public static WebElement click(By locator, int waitSeconds) {
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, waitSeconds);
-		WebElement we = (WebElement) wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		WebElement we = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(locator));
 		if (we == null) {
 			//logger.warn("elemet with: " + locator.toString() + " not found");
 			Reporter.log("element with: " + locator.toString() + " not found" +"<br>");
@@ -276,6 +277,8 @@ public class PageBase
 		we.click();
 		return we;
 	}
+	
+	
 
 	
 	public static void sendText(By locator, int secsToWait, String keysToSend) {
@@ -333,6 +336,7 @@ public class PageBase
 		try {
 			WebElement element = BaseWebdriver.driver.findElement(locator);
 			((JavascriptExecutor) BaseWebdriver.driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			
 			Thread.sleep(500);
 		}
 		catch (Exception e) {
@@ -575,10 +579,10 @@ public class PageBase
 		
 	}
 
-	public static void ImplementKeyPress(int vk) throws AWTException 
+	public static void ImplementKeyPress(int _vk) throws AWTException 
 	{
 		InitializeRobotClass();
-		robot.keyPress(vk);
+		robot.keyPress(_vk);
 	}
 	
 	public static void ImplementKeyRelease(int vk) throws AWTException
@@ -586,6 +590,36 @@ public class PageBase
 		InitializeRobotClass();
 		robot.keyRelease(vk);
 	}
+	
+	
+	private static Select identifyDropdown(By _dropdownlocator) 
+	{
+		PageBase.moveToElement(_dropdownlocator);
+		Select dropdown = new Select(PageBase.FindElement(_dropdownlocator));
+		return dropdown;
+	}
+	
+	public static void IdentifyELementInDropdownByIndex(By _dropdownlocator, int elementIndex)
+	{
+		Select dropdown = identifyDropdown(_dropdownlocator);
+		dropdown.selectByIndex(elementIndex);
+		
+	}
+	
+	public static void IdentifyELementInDropdownByValue(By _dropdownlocator, String elementValue)
+	{
+		Select dropdown = identifyDropdown(_dropdownlocator);
+		dropdown.selectByValue(elementValue);
+	}
+	
+	public static void IdentifyELementInDropdownByVisibleText(By _dropdownlocator, String VisibleText)
+	{
+		Select dropdown = identifyDropdown(_dropdownlocator);
+		dropdown.selectByValue(VisibleText);
+		
+	}
+	
+	
 	
 	
 	

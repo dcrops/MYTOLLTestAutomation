@@ -27,6 +27,7 @@ public class BaseWebdriver {
 	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
 	public static String SitUrl= "https://www-ppd.mytoll.com/"; 
 	public static String SalesForce= "https://test.salesforce.com/"; 
+	public static String PSURL = "https://ps.mytoll.com/";
 
 	// Preprod users
 	public static String Username1= "SitAutomationuser@mailinator.com"; //"SitAutomationuser@yahoo.com"; 
@@ -34,6 +35,8 @@ public class BaseWebdriver {
 	//BU Admin users
 	public static String Username2="auto_bvt_ppd@mailinator.com";// "auto_bvt_ps@mailinator.com"; 
 	public static String SitUsername1="SitAutomationuser@mailinator.com"; //"SitAutomationuser@yahoo.com"; 
+	public static String PSUsername = "auto_bvt_ps@mailinator.com";
+	
 	
 	//Platform admin user
 	public static String SitUsername2= "SitAutomationuser2@mailinator.com"; //"SitAutomationuser2@yahoo.com"; 
@@ -48,6 +51,7 @@ public class BaseWebdriver {
 	public static String Password="Toll@12345";  
 	public static String PerformancePassword="Victoria@123"; 
 	public static String SalesforcePassword="tolTOL987(*&$";
+	public static String PSPassword = "Toll@123";
 	
 	//Salesforce 
 	public static String SalesforceUser="nadiki.perera@tollgroup.com.tollperf";
@@ -65,7 +69,7 @@ public class BaseWebdriver {
 		}
 
 		else  if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "C:\\Source\\geckodriver-v0.18.0-win32\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "C:\\Source\\geckodriver-v0.18.0-win64\\geckodriver.exe");
 			BaseWebdriver.driver = new FirefoxDriver();
 			PageBase.MaximumWaitForElementEnabled();
 			//MyTollHomePageActions.LaunchMyToll(PreprodUrl);
@@ -98,11 +102,11 @@ public class BaseWebdriver {
 	@BeforeMethod
 	public static void SetUp(String browser) throws Exception {
 		RunSetup(browser);
-		MyTollHomePageActions.LaunchMyToll(SitUrl);
+		MyTollHomePageActions.LaunchMyToll(SitURL);
 
 		PageBase.MaximumWaitForElementEnabled();
-		//BaseWebdriver.driver.manage().window().maximize();
-		//System.out.println(driver.manage().window().getSize());
+		BaseWebdriver.driver.manage().window().maximize();
+		System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 		
@@ -115,7 +119,7 @@ public class BaseWebdriver {
 		BaseWebdriver.driver = new ChromeDriver();
 		//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 		//BaseWebdriver.driver = new InternetExplorerDriver();
-		MyTollHomePageActions.LaunchMyToll(SitUrl);
+		MyTollHomePageActions.LaunchMyToll(SitURL);
 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.manage().window().maximize();
