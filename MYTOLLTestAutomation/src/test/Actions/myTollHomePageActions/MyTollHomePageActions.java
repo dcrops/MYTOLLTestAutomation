@@ -179,7 +179,7 @@ public class MyTollHomePageActions {
 	public static By DraftShipmentTabDispatchDate =  By.xpath("//*[@id=\"draftTableHead\"]/th[text()='Dispatch date']");	
 	public static By DraftShipmentGoToDashboard =  By.xpath("//*[@id=\"confirm-true\"]");	
 	public static By DraftShipmentTabDeleteShipment =  By.xpath("xxxx");	
-
+	
 	//Returns
 	public static By createReturn = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='Create a return']");
 	public static By myReturn = By.xpath("//*[@id=\"nav-dropdown\"]//span[text()='My returns']");
@@ -205,6 +205,10 @@ public class MyTollHomePageActions {
 	public static By ReturnAddNewLine = By.xpath("//*[@id=\"add-line-item\"]");
 	public static By ReturnDeleteLineConfirm = By.xpath("//*[@id=\"confirm-true\"]");
 	
+	////Nishant
+	public static By edit_ShipmentReview = By .xpath("//*[@id=\"shipment-placeholder\"]/div[1]/header/div[2]/a");
+	
+	////
 	public static By ReturnSuccessMsg = By.xpath("//*[@id=\"shipment-placeholder\"]//*//h1");
 	public static By ReturnShipmentNumber = By.xpath("//*[@id=\"shipment-placeholder\"]//*//span/span[1]");
 	public static By ReturnSucessfullRAN = By.xpath("//*[@id=\"shipment-placeholder\"]//*//span/span[2]");

@@ -78,7 +78,7 @@ public class ManifestActions {
 	public static By CloseBtnManifestScreen = By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/a/i");
 	
 	// Add to manifest
-	public static By AddToManifestTtile = By.xpath("//h2[text()='Add to Manifest']");
+	public static By AddToManifestTtile = By.xpath("//*[@id=\"manually-create-manifest\"]");
 	public static By AddToExistingManifestBtn =By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[2]/input"); // By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]//h3[text()='Add to existing manifest']/div[2]/button[value()='Add to Manifest']"); //div[@class='manifest-btn-wrap'and value='Add to Manifest']");
 			//.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[2]/input"); 
 	public static By AddToManifestRadioBtn = By

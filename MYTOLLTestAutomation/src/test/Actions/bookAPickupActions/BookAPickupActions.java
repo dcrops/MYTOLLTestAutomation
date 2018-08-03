@@ -218,14 +218,22 @@ public class BookAPickupActions {
 			"//*[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]//*//div[@class=\"contact-col edit\"]/input");
 	public static final By SearchContactEditCompanyName = By.xpath("//*[@id=\"CompanyName\"]");
 	public static final By SearchContactEditName = By.xpath("//*[@id=\"ContactFirstName\"]");
-	public static final By SearchContactEditCompanyNameErrorMsg = By
-			.xpath("//*[@id=\"updateJSONData\"]//*//div[1]/div/span[3]");
-	public static final By SearchContactEditNameErrorMsg = By
-			.xpath("//*[@id=\"updateJSONData\"]//*//div[2]/div/span[2]");
-	public static final By SearchContactEditSave = By.cssSelector("input.save-btn");
-	public static final By popUpMsg = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//h2");
+	
+	
+	public static final By SearchContactEditCompanyNameErrorMsg = By .xpath("//*[@id=\"updateJSONData\"]/div/section//div/span[3]");
+	//new-xpath = //*[@id=\"updateJSONData\"]//div/span[@class='cust-error-msg' and text()='Enter Company Name'];
+	//old-xpath = //*[@id=\"updateJSONData\"]/div/section/div[1]/div[1]/div[1]/div
+	//public static final By SearchContactEditCompanyNameErrorMsg = By .xpath("//*[@id=\"updateJSONData\"]/div/section//div/span[3]");
+	
+	public static final By SearchContactEditNameErrorMsg = By.xpath("//*[@id=\"updateJSONData\"]/div/section/div[1]/div[1]/div[2]/div/span[2]");
+	
+//	public static final By SearchContactEditSave = By.cssSelector("input.save-btn");
+	public static final By SearchContactEditSave = By.xpath("//*[@id=\"updateJSONData\"]/div/footer/input");
+	
+	public static final By popUpMsg = By.xpath("//*[@id=\"response-poup-wrpr\"]/div[2]/div/header/h2");
+										
 	public static final By popUpClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*/a/i");
-
+	
 	// Edit Address
 
 	public static By EditAddressIcon = By.xpath("//*[@id=\"location-selector\"]/div[1]/div[1]/a/i");
@@ -412,9 +420,7 @@ public class BookAPickupActions {
 					.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='Intermodal & Specialised']"))
 					.click();
 			PageBase.MaximumWaitForElementEnabled();
-
 		}
-
 	}
 
 	public static void SelectTollCarrierItem(int i) {
@@ -921,7 +927,7 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		}
-		
+
 		else {
 			System.out.println("Destinations are equal");
 			PageBase.MaximumWaitForElementEnabled();
@@ -960,7 +966,6 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		return Destination;
-
 	}
 
 	public static void SelectDestinationCountry(String pDestination, String pDestinationCountry) {
@@ -995,7 +1000,7 @@ public class BookAPickupActions {
 		PageBase.SendKeysTo(destination, pDestination, 20);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li/div[text()='"+pDestinationItem+"']"),10);
-		
+			
 	}
 
 	public static void SelectDestinationCountry(int j) {
@@ -1889,10 +1894,23 @@ public class BookAPickupActions {
 		Reporter.log("User Navigates to My Contactcs Page");
 		PageBase.click(MyTollHomePageActions.myContactMenu, 10);
 		Reporter.log("User Searches for New Contact added -" + NewCompanyName);
+		
+		
+		//PageBase.sendText(SearchContactTxtFeild, 10, "Company ABC");
+		
+		/////
 		PageBase.sendText(SearchContactTxtFeild, 10, NewCompanyName);
+		/////
 		PageBase.click(SearchContactButton, 10);
 		PageBase.MaximumWaitForElementEnabled_1();
+		
+		
+		//PageBase.verifyTextExist(SearchContactCompanyLocation, "Company ABC");
+		////
 		PageBase.verifyTextExist(SearchContactCompanyLocation, NewCompanyName);
+		////
+		
+		
 		Reporter.log("User Clicks Edit Contact and Edits Contact Details");
 		PageBase.click(SearchContactEdit, 10);
 		PageBase.MaximumWaitForElementEnabled_1();
@@ -1901,17 +1919,34 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(SearchContactEditName).click();
 		BaseWebdriver.driver.findElement(SearchContactEditName).clear();
 		PageBase.click(SearchContactEditSave, 10);
-		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.verifyTextExist(SearchContactEditCompanyNameErrorMsg, "Enter Company Name");
-		PageBase.verifyTextExist(SearchContactEditNameErrorMsg, "Enter First Name");
+	
+		PageBase.verifyTextExist(SearchContactEditCompanyNameErrorMsg, "Enter Company Name");			//this is the text that is not matching 
+		PageBase.verifyTextExist(SearchContactEditNameErrorMsg, "Enter First Name");					// and this as well
+			
+		PageBase.MaximumWaitForElementEnabled();
+		
+		
+	//	PageBase.sendText(SearchContactEditCompanyName, 5, "New_Company");
+	//	PageBase.sendText(SearchContactEditName, 5, "New_name");
+		
 		PageBase.sendText(SearchContactEditCompanyName, 5, NewCompanyName);
 		PageBase.sendText(SearchContactEditName, 5, NewCompanyName);
 		Reporter.log("User Saves Contact Details");
+
+		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"AddressReference_edit\"]")).click();
+		
+		//*[@id="AddressReference_edit"]
+		
 		PageBase.click(SearchContactEditSave, 10);
-		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.waitForElement(popUpMsg, 10);
+		
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		
+
+		PageBase.waitForElement(popUpMsg, 20);
+
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		PageBase.verifyTextExist(popUpMsg, "Address Successfully Updated To Addressbook");
 		PageBase.click(popUpClose, 5);
 		PageBase.MaximumWaitForElementEnabled_1();
