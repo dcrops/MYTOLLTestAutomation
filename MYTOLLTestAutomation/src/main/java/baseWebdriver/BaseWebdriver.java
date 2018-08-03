@@ -102,7 +102,7 @@ public class BaseWebdriver {
 	@BeforeMethod
 	public static void SetUp(String browser) throws Exception {
 		RunSetup(browser);
-		MyTollHomePageActions.LaunchMyToll(SitURL);
+		MyTollHomePageActions.LaunchMyToll(PSURL);
 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.manage().window().maximize();
@@ -119,7 +119,7 @@ public class BaseWebdriver {
 		BaseWebdriver.driver = new ChromeDriver();
 		//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 		//BaseWebdriver.driver = new InternetExplorerDriver();
-		MyTollHomePageActions.LaunchMyToll(SitURL);
+		MyTollHomePageActions.LaunchMyToll(PSURL);
 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.manage().window().maximize();

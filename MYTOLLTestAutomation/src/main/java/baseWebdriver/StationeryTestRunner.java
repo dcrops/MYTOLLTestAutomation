@@ -4,7 +4,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions( strict=true
-	,features = { "src/test/Resources/stationery/MYT_6079_6080_Stationery - Order Stationery.feature",
+	,features = { //"src/test/Resources/stationery/MYT_6079_6080_Stationery - Order Stationery.feature",
 				"src/test/Resources/stationery/MYT_8264_Save Address to Address Book.feature"
 			}
 	,glue= {"commonStepsDefinitions","stationeryStepDefinitions","createShipmentStepDefinitions"}
