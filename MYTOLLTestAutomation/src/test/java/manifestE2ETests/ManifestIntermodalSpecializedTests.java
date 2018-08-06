@@ -66,7 +66,7 @@ public class ManifestIntermodalSpecializedTests {
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-
+		CreateShipmentActions.setQEMNo();
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
@@ -129,7 +129,7 @@ public class ManifestIntermodalSpecializedTests {
 		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		//CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-
+		CreateShipmentActions.setQEMNo();
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
@@ -201,7 +201,7 @@ public class ManifestIntermodalSpecializedTests {
 		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		//CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-
+		CreateShipmentActions.setQEMNo();
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
@@ -282,7 +282,7 @@ public class ManifestIntermodalSpecializedTests {
 		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		//CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-
+		CreateShipmentActions.setQEMNo();
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
@@ -360,7 +360,7 @@ public class ManifestIntermodalSpecializedTests {
 		//CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		//CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
-
+		CreateShipmentActions.setQEMNo();
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.EnterBillingType(BillingType);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);
