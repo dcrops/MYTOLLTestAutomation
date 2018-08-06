@@ -355,8 +355,8 @@
 		<class name="createShipmentE2ETests.TollPriorityNZ" />
 		<class name="createShipmentE2ETests.TollIPECTests" />
 		<class name="createShipmentE2ETests.TollTasmaniaTests" /> 
-		<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress"/> 
-		<class name="createShipmentE2ETests.TollCarrierIntermodalSpecialized_addAddress" />
+		<class name="createShipmentE2ETests.TollCarrierIntermodalSpecialized_addAddress"/> 
+		
 		
 				
 		</classes>
