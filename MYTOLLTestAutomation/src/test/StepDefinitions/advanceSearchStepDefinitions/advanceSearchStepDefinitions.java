@@ -33,8 +33,8 @@ public class advanceSearchStepDefinitions {
 	public void UserCliksSearchAndVerifiesResults() throws Throwable {
 
 		PageBase.click(MyTollHomePageActions.advanceSearchSubmit, 10);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		MyTollHomePageActions.VerifyAdvanceSearchResultsDisplayed();
 		//Verify details later when system functionality works
 		
@@ -691,7 +691,10 @@ public class advanceSearchStepDefinitions {
 		
 		@Then("^User Deletes Tags in Reference Number feild and Verify if the Tags are Deleted$")
 		public void UserDeletesTagsInReferenceNumberFeildAndVerifyIfTheTagsAreDeleted(DataTable advanceSearchTestData) throws Throwable {
-
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
 			for (Map<String, String> advSearch : advanceSearchTestData.asMaps(String.class, String.class)) {
 				Iterator tags = advSearch.entrySet().iterator();
 			    while (tags.hasNext()) {
