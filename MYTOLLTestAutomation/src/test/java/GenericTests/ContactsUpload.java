@@ -34,6 +34,14 @@ public void UploadContactsFile() throws AWTException, InterruptedException
 	  
 }
   
+  @Test
+  public void DownloadContactsFile()
+  {
+	  myContactsActions.NavigateToManageContactsTab();
+	  myContactsActions.DownloadContacts();
+  }
+  
+  
 
   @AfterMethod
 public void afterMethod() 
