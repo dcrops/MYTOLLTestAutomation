@@ -14,7 +14,7 @@ public class ShipmentReviewActions {
 	
 	
 	
-	public static By tollCarrier=By.id("toll-carrier"); 
+	public static By tollCarrier=By.id("toll-carrier");
 	public static By accountNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Account number']/following::div/p"); 
 	public static By senderCompanyName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Sender company name']/following::div/p"); 
 	public static By senderLocation=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='ship-detail-list']/li//label[text()='Sender location']/following::div/p");

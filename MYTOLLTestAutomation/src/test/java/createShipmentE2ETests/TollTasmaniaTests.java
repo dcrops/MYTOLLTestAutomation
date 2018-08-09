@@ -342,7 +342,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
 		//CreateShipmentActions.SelectMode(1);
-		CreateShipmentActions.SelectSender(Sender);
+		CreateShipmentActions.SelectSender(3);
 		CreateShipmentActions.SelectReceiver(Receiver);
 
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
@@ -548,7 +548,7 @@ public class TollTasmaniaTests {
 				VolumeLineItem2, weight2, ShipmentRef1, ShipmentRef2, ShipmentContainDangerousGoodsNo);
 	}
 	//@Test(priority=-1)
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E"})
 	@Parameters({ "TollCarrierTollTasmania", "ServiceGeneral", "AccountNumberTTas", "whoPays", "Mode", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepotTTas", "DGContactName", "DGContactNumber",
 			"SenderEmail", "ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "ItemTemplateName2",
@@ -592,7 +592,7 @@ public class TollTasmaniaTests {
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
 		//CreateShipmentActions.SelectMode(1);
-		CreateShipmentActions.SelectSender(Sender);
+		CreateShipmentActions.SelectSender(3);
 		CreateShipmentActions.SelectReceiver(Receiver);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
@@ -607,7 +607,7 @@ public class TollTasmaniaTests {
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
 		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
-		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
+		//CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
 		
 		CreateShipmentActions.MessageEnterLineItemShipmentConsolidation(ItemTemplateName,BillingType,NumberOfItems,ShipmentRef1, ShipmentRef2,Length, Width, Height, Weight,ItemTemplateName2, NumberOfItems2,
 				Length2,Width2,Height2,Weight2, DGNo, ChepCustomer, ChepExchange, ChepTansferToToll,

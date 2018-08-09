@@ -1015,6 +1015,7 @@ public class advanceSearchStepDefinitions {
 			PageBase.click(MyTollHomePageActions.Dashboard, 2);	
 			PageBase.click(MyTollHomePageActions.SavedSearchTab, 2);
 			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.isElementPresent(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]"), 5, "Saved Search - "+SaveSearchName);	
 		}
 		

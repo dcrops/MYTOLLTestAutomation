@@ -320,11 +320,13 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectSender(int i) {
+		PageBase.MinimumWaitForElementEnabled_1();
+		//BaseWebdriver.driver.findElement(senderdropdown).click();
+		PageBase.click(senderdropdown, 5);
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(senderdropdown).click();
-		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
-				.click();
+		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
+		//		.click();
+		PageBase.click(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[" + i + "]/div[2]"), 5);
 		PageBase.MinimumWaitForElementEnabled();
 
 	}
@@ -372,11 +374,13 @@ public class CreateShipmentActions {
 	}
 
 	public static void SelectReceiver(int i) {
-		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(receiverdropdown).click();
-		PageBase.Scrollbar(500, 800);
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
-				.click();
+		PageBase.MaximumWaitForElementEnabled_1();
+		//BaseWebdriver.driver.findElement(receiverdropdown).click();
+		PageBase.click(receiverdropdown, 5);
+		//PageBase.Scrollbar(500, 800);
+		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
+			//	.click();
+		PageBase.click(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"), 5);
 		PageBase.MaximumWaitForElementEnabled();
 
 	}

@@ -75,7 +75,7 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
 ##    |Verify Search Results are reflected according to tags|
 #============================================================================================= 
  
-    @tag2 
+    @tag2
     Scenario: User perfroms advance search using Reference Number feild
     When User inputs search criteria in the Reference Number feild
    	 |RefNo|
