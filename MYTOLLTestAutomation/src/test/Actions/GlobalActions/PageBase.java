@@ -620,8 +620,77 @@ public class PageBase
 		
 	}
 	
-	
-	
+	public static void ProvideCompanyNameToVerify(By dropdownlocator, String _testCompanyName)
+	{
+		//Type in test company name on Address in Profile Details
+		PageBase.FindElement(dropdownlocator).sendKeys(_testCompanyName);
+	}
+	public static Boolean VerifyAddressDetailsInTheList(By _dropdownLocator,
+													String _ListElementID, 
+													String _companyName,
+													String _name,
+													String _address, 
+													String _suburb, 
+													String _phone)
+		{
+			String companyName, name, address, suburb, phone;
+			Boolean AddressExists = false;
+			//Type in test company name on Address in Profile Details
+			ProvideCompanyNameToVerify(_dropdownLocator,_companyName);
+			
+			//get the xpath for the company name
+			try 
+			{
+			//get the xpath for the company name
+			String companyname_xpath = "//*[@id=\""+_ListElementID+"\"]//div[contains(text(),'"+_companyName+"')]";
+			companyName = PageBase.FindElement(By.xpath(companyname_xpath)).getText();
+			System.out.println("companyname_xpath is :" + companyname_xpath);
+			System.out.println("company is :" + companyName);
+			
+			//get the xpath for the name
+			//name = PageBase.FindElement(By.xpath("//*[@id=\""+_ListElementID+"\"]//div[contains(text(),'"+_name+"')]")).getText();
+			//System.out.println(name);
+			
+			//get the xpath for the company address
+			String address_xpath = "//*[@id=\""+_ListElementID+"\"]//div[contains(text(),'"+_address+"')]";
+			address = PageBase.FindElement(By.xpath(address_xpath)).getText(); 
+			System.out.println("address_xpath is :" + address_xpath);
+			System.out.println("address is: "+ address);
+			
+			//get the xpath for the company suburb
+			String suburb_xpath = "//*[@id=\""+_ListElementID+"\"]//div[contains(text(),'"+_suburb+"')]";
+			suburb = PageBase.FindElement(By.xpath(suburb_xpath)).getText();
+			System.out.println("suburb_xpath is :" + suburb_xpath);
+			System.out.println("suburb is :" +suburb);
+			
+			//get the xpath for the company phone
+			String phone_xpath = "//*[@id=\""+_ListElementID+"\"]//div[contains(text(),'"+_phone+"')]";
+			phone = PageBase.FindElement(By.xpath(phone_xpath)).getText();
+			System.out.println("phone_xpath is :" + phone_xpath);
+			System.out.println("phone is : "+ phone);
+			
+			if(companyName == _companyName && 
+				//name == _name &&
+				address == _address &&
+				suburb == _suburb &&
+				phone == _phone)
+			{
+				AddressExists = true;
+				Assert.assertTrue(AddressExists);
+			}
+			else
+				Assert.assertTrue(false);
+			
+			
+			
+			} catch (Exception ex) 
+			{
+				Reporter.log("Verify Address Details In the List failed with : " + ex.getMessage());
+				Assert.fail("Element not found" + ex.getMessage());
+			}
+			return AddressExists; 
+			
+		}
 	
 	
 	
