@@ -13,7 +13,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		  "src/test/Resources/advanceSearch/MYT_6201_Advance_Search_Location_Reference_CreationDate_TollCarrier.feature"
 		  ,"src/test/Resources/advanceSearch/MYT_6231_Advance_Search_ServiceType_Milestone_Conditions.feature"
 		}
-//,tags = {"@09082018"}
+
 ,glue= {"commonStepsDefinitions","advanceSearchStepDefinitions"}
 , plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\AdvancedSearch\\cucumber-pretty",
 

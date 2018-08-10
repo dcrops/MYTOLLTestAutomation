@@ -15,6 +15,7 @@ import myTollHomePageActions.MyTollHomePageActions;
 		//,features = { "src/test/Resources/bookAPickupFeatures/MYT_6242_Toll Mining Services Book A Pickup.feature",
 						//"src/test/Resources/bookAPickupFeatures/MYT-6226_Toll Energy Book A Pickup.feature"}
 		//,tags = {"@Shakeout"}
+
 		,glue= {"commonStepsDefinitions","bookAPickupStepDefinitions","createShipmentStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Pickups\\cucumber-pretty",
 

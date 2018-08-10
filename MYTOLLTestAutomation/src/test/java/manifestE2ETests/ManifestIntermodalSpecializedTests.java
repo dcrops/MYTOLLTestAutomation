@@ -163,7 +163,7 @@ public class ManifestIntermodalSpecializedTests {
 		
 	}
 	
-	@Test(groups = { "Shakeout Testing", "E2E" })
+	@Test(groups = { "Shakeout Testing", "E2E","08082018" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -186,7 +186,7 @@ public class ManifestIntermodalSpecializedTests {
 		
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
+		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(1);
 
 		
@@ -267,7 +267,7 @@ public class ManifestIntermodalSpecializedTests {
 		
 		PageBase.MoveToElement( CreateShipmentActions.accountNumber,CreateShipmentActions.quoteNumber);
 
-		CreateShipmentActions.SelectSender(1);
+		CreateShipmentActions.SelectSender(2);
 		CreateShipmentActions.SelectReceiver(1);
 
 		
@@ -323,7 +323,7 @@ public class ManifestIntermodalSpecializedTests {
 		
 	}
 	
-	@Test(groups = { "Shakeout Testing","E2E" })
+	@Test(groups = { "Shakeout Testing","E2E"})
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",

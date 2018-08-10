@@ -34,7 +34,7 @@
 	     	<class name="baseWebdriver.BookAPickupTestRunner" />
 	     	<class name="baseWebdriver.ManifestTestRunner"/>
 	     	<class name="baseWebdriver.RateEnquiryTestRunner"/> 
-	     	<class name="baseWebdriver.FinancialTestRunner"/>
+	<!--      	<class name="baseWebdriver.FinancialTestRunner"/> -->
 	     	<class name="baseWebdriver.AdvancedSearchTestRunner"/>
 			<class name="baseWebdriver.CreateShipmentTestRunner" />
 	     	<class name="baseWebdriver.ReturnsTestRunner"/>
