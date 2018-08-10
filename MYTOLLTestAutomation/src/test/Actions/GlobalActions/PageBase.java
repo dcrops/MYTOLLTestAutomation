@@ -428,12 +428,12 @@ public class PageBase
 		PageBase.moveToElement(locator);
 		
 		if (isElementPresent == true) {
-			Reporter.log("Element : "+itemDescription+ " Exits on Screen");
-			System.out.println("Element : "+itemDescription+ " Exits on Screen");
+			Reporter.log("Element : "+itemDescription+ " Exists on Screen");
+			System.out.println("Element : "+itemDescription+ " Exists on Screen");
 		}
 		else {
-			Reporter.log("FAILED: Element : "+itemDescription+ " Exits on Screen");
-			Assert.fail("FAILED: Element : "+itemDescription+ " Exits on Screen");
+			Reporter.log("FAILED: Element : "+itemDescription+ " Does not exist on Screen");
+			Assert.fail("FAILED: Element : "+itemDescription+ " Does not exist on Screen");
 		}
 		
 		
@@ -692,7 +692,29 @@ public class PageBase
 			
 		}
 	
+	public static List<WebElement> FindElements(By _locator)
+	{
+		List<WebElement> Elements = null;
+		try {
+			Elements = BaseWebdriver.driver.findElements(_locator);
+			return Elements;
+		} catch (TimeoutException ex) 
+		{
+			logElementNotFound(ex);
+			return Elements;
+		}
+		
+	}
 	
-	
+	public static void ClickElementFromTheList(List<WebElement> _elementsList, int _itemRank)
+	{
+		for(int i = 0; i< _elementsList.size(); i++)
+		{
+			if(i == _itemRank)
+			{
+				_elementsList.get(i).click();
+			}
+		}
+	}
 
 }

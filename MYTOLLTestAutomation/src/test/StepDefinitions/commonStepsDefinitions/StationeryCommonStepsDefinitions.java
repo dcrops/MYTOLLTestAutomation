@@ -2,6 +2,7 @@ package commonStepsDefinitions;
 
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -16,7 +17,7 @@ public class StationeryCommonStepsDefinitions {
 	  
 		//BaseWebdriver.SetUp("firefox");
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.SitUsername1, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
 		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickStationery();
@@ -35,5 +36,6 @@ public class StationeryCommonStepsDefinitions {
 		
 		MyTollHomePageActions.GetOrderMyStationery();
 	}
-
+	
+	
 }

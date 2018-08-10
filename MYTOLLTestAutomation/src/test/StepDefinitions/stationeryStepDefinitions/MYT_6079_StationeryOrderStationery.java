@@ -4,17 +4,22 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.Map;
 
+import org.junit.Assert;
+
 import GlobalActions.PageBase;
+import baseWebdriver.BaseWebdriver;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.api.java.After;
 import myTollHomePageActions.MyTollHomePageActions;
 import stationeryActions.OrderSummaryActions;
 import stationeryActions.ReviewOrderActions;
 import stationeryActions.StationeryActions;
 
-public class MYT_6079_StationeryOrderStationery {
+public class MYT_6079_StationeryOrderStationery 
+{
 
 	@Then("^User must be able to see an option to select Order Stationery$")
 	public void user_must_be_able_to_see_an_option_to_select_Order_Stationery() throws Throwable {
@@ -478,9 +483,52 @@ public class MYT_6079_StationeryOrderStationery {
 	}
 
 	@Then("^User have ability to Print the order details in the Order Summary Page as below$")
-	public void user_have_ability_to_Print_the_order_details_in_the_Order_Summary_Page_as_below() throws Throwable {
+	public void user_have_ability_to_Print_the_order_details_in_the_Order_Summary_Page_as_below() 
+	{
 		
 		//OrderSummaryActions.ClickPrint();
 	}
+	
+	@When("^User clicks My Orders$")
+	public void user_clicks_My_Orders() 
+	{
+	 MyTollHomePageActions.ClickMyOrdersStationery();  
+	}
+
+	@Then("^User must see My Orders page$")
+	public void user_must_see_My_Orders_page() 
+	{
+		PageBase.isElementPresent(StationeryActions.MyOrdersPage, 2, "My Orders page");
+	}
+
+	@Then("^user must be able to view the orders on My Orders page$")
+	public void user_must_be_able_to_view_and_sort_the_orders_on_My_Orders_page() 
+	{
+		Assert.assertTrue(StationeryActions.VerifyIfOrdersPresent());
+	}
+
+	@When("^User clicks on an Order that appears in the list$")
+	public void user_clicks_on_an_Order_that_appears_in_the_list() 
+	{
+		
+	    PageBase.ClickElementFromTheList(StationeryActions.MyOrdersList, 0);
+	   
+	}
+
+	@Then("^User will be able to view the details of the Order$")
+	public void user_will_be_able_to_view_the_details_of_the_Order() 
+	{
+	    StationeryActions.VerifyOrderDetails();
+	   
+	}
+
+	@Then("^User must be able to print$")
+	public void user_must_be_able_to_print() 
+	{
+	    StationeryActions.PrintOrder();
+	    
+	}
+	
+	
 
 }

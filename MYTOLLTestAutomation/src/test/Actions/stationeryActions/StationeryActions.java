@@ -3,6 +3,8 @@ package stationeryActions;
 import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.assertTrue;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -105,7 +107,18 @@ public class StationeryActions {
 	//Order Details Page
 	public static By OrderStationaryPage = By.xpath("//*[@id=\"portlet_mytollstationaryportlet_WAR_mytollstationaryportlet\"]/div//h1[contains(text(),'ORDER STATIONERY')]");
 	
+	//My Orders page
+	public static By MyOrdersPage = By.xpath("//*[@id=\"portlet_myorders_WAR_mytollstationaryportlet\"]/div//h1[contains(text(),'MY ORDERS')]");
+	public static By MyOrders = By.xpath("//*[@id=\"myOrders_stationery\"]/div//table/tbody/tr");
+	public static List<WebElement> MyOrdersList;
 	
+	//MyOrders Order Summary Page
+	public static By OrderSummaryPage = By.xpath("//*[@id=\"portlet_myorders_WAR_mytollstationaryportlet\"]/div//h1[contains(text(),'ORDER SUMMARY')]");
+	public static By OrderNumber = By.xpath("//*[@id=\"order-detail-step1\"]//p[contains(text(),'20413606')]");
+	public static By AccountNumber = By.xpath("//*[@id=\"order-detail-step1\"]//p[contains(text(),'200BHY NATIONAL PRIORITY FOC')]");
+	public static By PrintBtn = By.id("orderPrint");
+	
+			
 		
 	public static void SelectProductCategory(String product) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -441,6 +454,23 @@ public class StationeryActions {
 	public static void CloseProfileDetailsPage()
 	{
 		PageBase.click(closeProfileDetailsPage, 2);
+	}
+	
+	public static Boolean VerifyIfOrdersPresent()
+	{
+		MyOrdersList = PageBase.FindElements(MyOrders);
+		return !MyOrdersList.isEmpty();
+	}
+	
+	public static void VerifyOrderDetails()
+	{
+		Assert.assertEquals((PageBase.GetText(AccountNumber, 2)),"200BHY NATIONAL PRIORITY FOC");
+		Assert.assertEquals((PageBase.GetText(OrderNumber, 2)), "20413606");
+	}
+	
+	public static void PrintOrder()
+	{
+		PageBase.click(PrintBtn, 2);
 	}
 	
 	
