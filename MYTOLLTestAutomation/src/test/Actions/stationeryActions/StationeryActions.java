@@ -1,9 +1,21 @@
 package stationeryActions;
 
+import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertTrue;
+
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.Reporter;
+
+import com.gargoylesoftware.htmlunit.Page;
 
 import GlobalActions.PageBase;
+import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
+import junit.framework.AssertionFailedError;
 
 public class StationeryActions {
 	
@@ -26,7 +38,7 @@ public class StationeryActions {
 	public static By addToCartProduct1= By.xpath("//*[@id=\"main-cont\"]/div[2]/div[2]/div/div/p[3]/button");
 	public static By addToCartProduct2= By.xpath("//*[@id=\"main-cont\"]/div[2]/div[3]/div/div/p[3]/button"); 
 	public static By addToCart= By.xpath("//*[@id=\"main-cont\"]/div[2]/div[4]/div/div/p[3]/button"); 
-	public static By items= By.xpath("//*[@id=\"main-cont\"]/div[1]/span[2]"); 
+	public static By items= By.xpath("//*[@id=\"main-cont\"]/div[1]/span[2]"); //cart locator
 	public static By productName1InTheCart= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[2]/div/div[1]"); 
 	public static By productName2InTheCart= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[2]/div[2]/div[1]"); 
 	public static By productName3InTheCart= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[2]/div[3]/div[1]");
@@ -49,7 +61,7 @@ public class StationeryActions {
 	public static By successMessageUpdatingPreprint= By.xpath("//*[@id=\"alert-box-wrapper\"]/div/div/div[2]"); 
 	public static By backToList= By.id("alert-ok-btn"); 
 	public static By removeProduct2= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[2]/div[2]/div[2]/span[2]/i"); 
-	public static By proceedToCart= By.xpath("//*[@id=\"stationery-step1\"]/div[1]/div[4]/button"); 
+	public static By proceedToCart= By.xpath("//*[@id=\"stationery-step1\"]/div//button[@class='btn-order-cart']"); //proceed to order 
 	
 	//Profile details page
 	public static By profileDetailsPageHeading= By.xpath("//*[@id=\"add-addr-step2\"]/header/h2"); 
@@ -58,14 +70,55 @@ public class StationeryActions {
 	public static By accountNumber= By.xpath("//*[@id=\"account-number-selector\"]/label/input[2]"); 
 	public static By contact_name= By.id("contact_name");
 	public static By contact_number= By.id("phone"); 
-	public static By deliveryAddressTextfield= By.name("placeholder-location"); 
+	public static By deliveryAddressTextfield= By.name("placeholder-location"); //Address under delivery details
 	public static By deliveryContactNameTextfield= By.name("AddrContactName"); 
 	public static By notifyCheckbox= By.id("notify-me-checkbox"); 
 	public static By notifyEmail= By.id("AddrNotifyEmail"); 
 	public static By customerReferenceNumber= By.id("custom-ref-num"); 
 	public static By deliveryInstructionTextField= By.id("SpecialInstruction");
 	public static By reviewOrdersBtn= By.id("reviewOrderBtn"); 
+	public static By closeProfileDetailsPage = By.xpath("//*[@id=\"add-addr-step2\"]/a[@class='profileDetail-popup-close close-ico']");
 	
+	
+	//Add Address Details
+	public static By addAddressBtnUnderDeliveryDetails = By.xpath("//div[@id=\"location-selector\"]//div[@class='add-new-elem']");
+	public static By companyNamePlaceHolder = By.id("profile-modal-add-addr-mnly-company");
+	public static By namePlaceHolder = By.id("profile-modal-add-addr-mnly-name");
+	public static By emailAddressPlaceHolder = By.id("profile-modal-add-addr-mnly-email");
+	public static By phoneNumberPlaceHolder = By.id("profile-modal-add-addr-mnly-phone");
+	public static By addressLine1PlaceHolder = By.id("profile-modal-add-addr-mnly-addr1");
+	public static By addressLine2Placeholder = By.id("profile-modal-add-addr-mnly-addr2");
+	public static By countryPlaceHolder = By.id("profile-modal-add-addr-mnly-country");
+	public static By suburbPlaceHolder = By.id("profile-modal-add-addr-mnly-suburb");
+	public static By statePlaceHolder = By.id("profile-modal-add-addr-mnly-state");
+	public static By postCodePlaceHolder = By.id("profile-modal-add-addr-mnly-postcode");
+	
+	
+	//Add New Address Page
+	public static By AddNewAddressPage = By.id("add-addr-aut-step1");
+	public static By AddNewAddressPage_CompanyNamePlaceHolder = By.id("profile-modal-company-sugg");
+	public static By AddNewAddressPage_AddressPlaceHolder = By.id("profile-modal-sugg-input");
+	public static By AddNewAddressPage_unableFindAddress = By.xpath("//*[@id=\"add-add-form\"]/div/p[@class='unable-find pull-right']");
+	public static By AddNewAddressPage_addAddressManually = By.id("add-address-manually-link-profile-modal");
+	public static By AddNewAddressPage_addAddressBtn = By.id("profile-modal-add-addr-mnly-btn");
+	public static By AddNewAddressPage_StatePlaceHolder_VIC = By.xpath("//*[@id=\"profile-modal-add-addr-mnly-state-selector\"]/div//li[text()='VIC']");
+	
+	
+	//Order Details Page
+	public static By OrderStationaryPage = By.xpath("//*[@id=\"portlet_mytollstationaryportlet_WAR_mytollstationaryportlet\"]/div//h1[contains(text(),'ORDER STATIONERY')]");
+	
+	//My Orders page
+	public static By MyOrdersPage = By.xpath("//*[@id=\"portlet_myorders_WAR_mytollstationaryportlet\"]/div//h1[contains(text(),'MY ORDERS')]");
+	public static By MyOrders = By.xpath("//*[@id=\"myOrders_stationery\"]/div//table/tbody/tr");
+	public static List<WebElement> MyOrdersList;
+	
+	//MyOrders Order Summary Page
+	public static By OrderSummaryPage = By.xpath("//*[@id=\"portlet_myorders_WAR_mytollstationaryportlet\"]/div//h1[contains(text(),'ORDER SUMMARY')]");
+	public static By OrderNumber = By.xpath("//*[@id=\"order-detail-step1\"]//p[contains(text(),'20413606')]");
+	public static By AccountNumber = By.xpath("//*[@id=\"order-detail-step1\"]//p[contains(text(),'200BHY NATIONAL PRIORITY FOC')]");
+	public static By PrintBtn = By.id("orderPrint");
+	
+			
 		
 	public static void SelectProductCategory(String product) {
 		PageBase.MaximumWaitForElementEnabled();
@@ -326,5 +379,99 @@ public class StationeryActions {
 		PageBase.ClickOn(reviewOrdersBtn, 5);
 		
 	}
+	
+	public static void AddAddressDetails(By _CompanyNameLocator, String _CompanyName, 
+									By _NameLocator, String _Name,
+									By _EmailLocator, String _Email,
+									By _PhoneNumberLocator, String _PhoneNumber,
+									By _AddressLine1Locator, String _AddressLine1,
+									By _AddressLine2Locator, String _AddressLine2,
+									By _SuburbLocator, String _Suburb,
+									//By _StateLocator, String _State,
+									By _PostcodeLocator, String _Postcode
+									)
+	{
+		PageBase.FindElement(_CompanyNameLocator).sendKeys(_CompanyName);
+		PageBase.FindElement(_NameLocator).sendKeys(_Name);
+		PageBase.FindElement(_EmailLocator).sendKeys(_Email);
+		PageBase.FindElement(_PhoneNumberLocator).sendKeys(_PhoneNumber);
+		PageBase.FindElement(_AddressLine1Locator).sendKeys(_AddressLine1);
+		PageBase.FindElement(_AddressLine2Locator).sendKeys(_AddressLine2);
+		PageBase.FindElement(_SuburbLocator).sendKeys(_Suburb);
+		//PageBase.FindElement(_StateLocator).sendKeys(_State);
+		PageBase.FindElement(_PostcodeLocator).sendKeys(_Postcode);
+		//click the dropdown here first
+		PageBase.moveToElement(statePlaceHolder);
+		PageBase.FindElement(statePlaceHolder).click();
+		PageBase.FindElement(AddNewAddressPage_StatePlaceHolder_VIC).click();
+		PageBase.FindElement(AddNewAddressPage_addAddressBtn).click();
+		
+	}
+	
+	
+	
+	/*public static Boolean VerifyAddressStored(String _TestCompanyName)
+	{
+		//Search generated list for test company details
+		return VerifyAddressDetailsInTheList("",_TestCompanyName,"","","","");
+	}*/
+	
+	
+	
+	public static void ClickAddressInDeliveryDetails()
+	{
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(deliveryAddressTextfield, 2);
+	}
+
+	public static void ClickAddAddressInDeliveryDetails()
+	{
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(addAddressBtnUnderDeliveryDetails, 2);
+	}
+	
+	public static void ClickOnAddAddressManually()
+	{
+		PageBase.MaximumWaitForElementEnabled_1();
+		//BaseWebdriver.driver.findElement(By.linkText("Add Manually")).click();
+		
+		PageBase.click(AddNewAddressPage_addAddressManually, 5);
+	}
+	
+	public static Boolean VerifyAddNewPageDisplayed()
+	{
+		return PageBase.isElementPresent(AddNewAddressPage_CompanyNamePlaceHolder);
+	}
+	
+	public static String GenerateRandomCompanyName(String _sampleCompanyName)
+	{
+		int Number = (int) (Math.random()*10000);
+		String newNumber = String.valueOf(Number);
+		String NewCompanyName = _sampleCompanyName+newNumber;
+		return NewCompanyName;
+	}
+	
+	public static void CloseProfileDetailsPage()
+	{
+		PageBase.click(closeProfileDetailsPage, 2);
+	}
+	
+	public static Boolean VerifyIfOrdersPresent()
+	{
+		MyOrdersList = PageBase.FindElements(MyOrders);
+		return !MyOrdersList.isEmpty();
+	}
+	
+	public static void VerifyOrderDetails()
+	{
+		Assert.assertEquals((PageBase.GetText(AccountNumber, 2)),"200BHY NATIONAL PRIORITY FOC");
+		Assert.assertEquals((PageBase.GetText(OrderNumber, 2)), "20413606");
+	}
+	
+	public static void PrintOrder()
+	{
+		PageBase.click(PrintBtn, 2);
+	}
+	
 	
 }

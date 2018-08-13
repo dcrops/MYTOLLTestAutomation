@@ -21,7 +21,7 @@ public class IntermodalSpecializedTests {
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
 		PageBase.MediumWaitForElementEnabled();
-		MyTollHomePageActions.Login(BaseWebdriver.Username2_new, BaseWebdriver.Password_new);
+		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
 		PageBase.MediumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();
@@ -686,7 +686,7 @@ public class IntermodalSpecializedTests {
 	}
 
 
-	@Test(groups = { "Shakeout Testing" , "E2E"})
+	@Test(groups = { "Shakeout Testing" , "E2E", "08082018"})
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDangerousGoods", "AccountNumberTNQX","WhoPays", "whoPays", "ModeInt",
 			"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 			"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",
@@ -853,7 +853,7 @@ public class IntermodalSpecializedTests {
 	}
 
 
-	@Test(groups = { "Shakeout Testing","E2E" })
+	@Test(groups = { "Shakeout Testing","E2E"})
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceDGExpress", "AccountNumberTNQX", "WhoPays", "whoPays", "ModeInt",
 		"ModeRoad", "ReceiverName", "ReceiverItem", "Sender", "Receiver", "QuoteNumber", "DropOffDepot",
 		"CollectionDepot", "dropOffDepot", "collectionDepot", "DGContactName", "DGContactNumber", "SenderEmail",

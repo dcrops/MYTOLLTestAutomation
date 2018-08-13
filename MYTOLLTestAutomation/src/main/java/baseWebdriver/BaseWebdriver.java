@@ -29,32 +29,19 @@ public class BaseWebdriver {
 	public static String PSURL = "https://ps.mytoll.com/";
 	public static String SalesForce= "https://test.salesforce.com/"; 
 
-	// Preprod users
-	public static String Username1= "SitAutomationuser@mailinator.com"; //"SitAutomationuser@yahoo.com"; 
+	// Preprod users - Change accordingly to the Enviornments
+	public static String Username1= "SitAutomationuser@mailinator.com"; 
+	public static String Username2="auto_bvt_ppd@mailinator.com";
+	public static String SitUsername1="SitAutomationuser@mailinator.com";
+	public static String SitUsername2= "SitAutomationuser2@mailinator.com";
+	public static String SitUsername3="SitAutomationuser3@mailinator.com";
+	public static String SitUsername4="SitAutomationuser4@mailinator.com"; 
 	
-	//BU Admin users
-	public static String Username2="auto_bvt_ppd@mailinator.com";// "auto_bvt_ps@mailinator.com"; 
-	public static String Username2_new = "auto_bvt_ps@mailinator.com";
-	public static String SitUsername1="SitAutomationuser@mailinator.com"; //"SitAutomationuser@yahoo.com"; 
-	
-	//Platform admin user
-	public static String SitUsername2= "SitAutomationuser2@mailinator.com"; //"SitAutomationuser2@yahoo.com"; 
-
-	//Sit Normal users
-	public static String SitUsername3="SitAutomationuser3@mailinator.com"; //"SitAutomationuser3@yahoo.com"; 
-	public static String SitUsername4="SitAutomationuser4@mailinator.com"; //"SitAutomationuser4@yahoo.com"; 		
-	//Performance Test Env user
-	public static String PerformenceUsername1="perftest@toll.com";
 	
 	//Passwords
 	public static String Password="Toll@12345"; 
-	public static String Password_new = "Toll@123";
-	public static String PerformancePassword="Victoria@123"; 
-	public static String SalesforcePassword="tolTOL987(*&$";
-	
-	//Salesforce 
-	public static String SalesforceUser="nadiki.perera@tollgroup.com.tollperf";
-	
+
+
 	
 	@BeforeMethod
 	public static void RunSetup(String browser) throws Exception {
@@ -68,7 +55,7 @@ public class BaseWebdriver {
 		}
 
 		else  if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "C:\\Source\\geckodriver-v0.18.0-win32\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "C:\\Source\\geckodriver-v0.18.0-win64\\geckodriver.exe");
 			BaseWebdriver.driver = new FirefoxDriver();
 			PageBase.MaximumWaitForElementEnabled();
 			//MyTollHomePageActions.LaunchMyToll(PreprodUrl);
@@ -104,8 +91,8 @@ public class BaseWebdriver {
 		MyTollHomePageActions.LaunchMyToll(SitUrl);
 
 		PageBase.MaximumWaitForElementEnabled();
-		//BaseWebdriver.driver.manage().window().maximize();
-		//System.out.println(driver.manage().window().getSize());
+		BaseWebdriver.driver.manage().window().maximize();
+		System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 		
@@ -118,7 +105,7 @@ public class BaseWebdriver {
 		BaseWebdriver.driver = new ChromeDriver();
 		//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 		//BaseWebdriver.driver = new InternetExplorerDriver();
-		MyTollHomePageActions.LaunchMyToll(PSURL);
+		MyTollHomePageActions.LaunchMyToll(SitUrl);
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
@@ -145,8 +132,8 @@ public class BaseWebdriver {
 
 	@AfterMethod
 	public static void tearDown() throws Exception {
-	//BaseWebdriver.driver.quit();
-		BaseWebdriver.driver.close();
+	BaseWebdriver.driver.quit();
+		//BaseWebdriver.driver.close();
 
 	}
 

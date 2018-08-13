@@ -16,6 +16,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -265,7 +266,7 @@ public class PageBase
 	
 	public static WebElement click(By locator, int waitSeconds) {
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, waitSeconds);
-		WebElement we = (WebElement) wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		WebElement we = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(locator));
 		if (we == null) {
 			//logger.warn("elemet with: " + locator.toString() + " not found");
 			Reporter.log("element with: " + locator.toString() + " not found" +"<br>");
@@ -276,6 +277,8 @@ public class PageBase
 		we.click();
 		return we;
 	}
+	
+	
 
 	
 	public static void sendText(By locator, int secsToWait, String keysToSend) {
@@ -333,6 +336,7 @@ public class PageBase
 		try {
 			WebElement element = BaseWebdriver.driver.findElement(locator);
 			((JavascriptExecutor) BaseWebdriver.driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			
 			Thread.sleep(500);
 		}
 		catch (Exception e) {
@@ -424,12 +428,12 @@ public class PageBase
 		PageBase.moveToElement(locator);
 		
 		if (isElementPresent == true) {
-			Reporter.log("Element : "+itemDescription+ " Exits on Screen");
-			System.out.println("Element : "+itemDescription+ " Exits on Screen");
+			Reporter.log("Element : "+itemDescription+ " Exists on Screen");
+			System.out.println("Element : "+itemDescription+ " Exists on Screen");
 		}
 		else {
-			Reporter.log("FAILED: Element : "+itemDescription+ " Exits on Screen");
-			Assert.fail("FAILED: Element : "+itemDescription+ " Exits on Screen");
+			Reporter.log("FAILED: Element : "+itemDescription+ " Does not exist on Screen");
+			Assert.fail("FAILED: Element : "+itemDescription+ " Does not exist on Screen");
 		}
 		
 		
@@ -576,10 +580,10 @@ public class PageBase
 		
 	}
 
-	public static void ImplementKeyPress(int vk) throws AWTException 
+	public static void ImplementKeyPress(int _vk) throws AWTException 
 	{
 		InitializeRobotClass();
-		robot.keyPress(vk);
+		robot.keyPress(_vk);
 	}
 	
 	public static void ImplementKeyRelease(int vk) throws AWTException
@@ -589,7 +593,128 @@ public class PageBase
 	}
 	
 	
+	private static Select identifyDropdown(By _dropdownlocator) 
+	{
+		PageBase.moveToElement(_dropdownlocator);
+		Select dropdown = new Select(PageBase.FindElement(_dropdownlocator));
+		return dropdown;
+	}
 	
+	public static void IdentifyELementInDropdownByIndex(By _dropdownlocator, int elementIndex)
+	{
+		Select dropdown = identifyDropdown(_dropdownlocator);
+		dropdown.selectByIndex(elementIndex);
+		
+	}
 	
+	public static void IdentifyELementInDropdownByValue(By _dropdownlocator, String elementValue)
+	{
+		Select dropdown = identifyDropdown(_dropdownlocator);
+		dropdown.selectByValue(elementValue);
+	}
+	
+	public static void IdentifyELementInDropdownByVisibleText(By _dropdownlocator, String VisibleText)
+	{
+		Select dropdown = identifyDropdown(_dropdownlocator);
+		dropdown.selectByValue(VisibleText);
+		
+	}
+	
+	public static void ProvideCompanyNameToVerify(By dropdownlocator, String _testCompanyName)
+	{
+		//Type in test company name on Address in Profile Details
+		PageBase.FindElement(dropdownlocator).sendKeys(_testCompanyName);
+	}
+	public static Boolean VerifyAddressDetailsInTheList(By _dropdownLocator,
+													String _ListElementID, 
+													String _companyName,
+													String _name,
+													String _address, 
+													String _suburb, 
+													String _phone)
+		{
+			String companyName, name, address, suburb, phone;
+			Boolean AddressExists = false;
+			//Type in test company name on Address in Profile Details
+			ProvideCompanyNameToVerify(_dropdownLocator,_companyName);
+			
+			//get the xpath for the company name
+			try 
+			{
+			//get the xpath for the company name
+			String companyname_xpath = "//*[@id=\""+_ListElementID+"\"]//div[contains(text(),'"+_companyName+"')]";
+			companyName = PageBase.FindElement(By.xpath(companyname_xpath)).getText();
+			System.out.println("companyname_xpath is :" + companyname_xpath);
+			System.out.println("company is :" + companyName);
+			
+			//get the xpath for the name
+			//name = PageBase.FindElement(By.xpath("//*[@id=\""+_ListElementID+"\"]//div[contains(text(),'"+_name+"')]")).getText();
+			//System.out.println(name);
+			
+			//get the xpath for the company address
+			String address_xpath = "//*[@id=\""+_ListElementID+"\"]//div[contains(text(),'"+_address+"')]";
+			address = PageBase.FindElement(By.xpath(address_xpath)).getText(); 
+			System.out.println("address_xpath is :" + address_xpath);
+			System.out.println("address is: "+ address);
+			
+			//get the xpath for the company suburb
+			String suburb_xpath = "//*[@id=\""+_ListElementID+"\"]//div[contains(text(),'"+_suburb+"')]";
+			suburb = PageBase.FindElement(By.xpath(suburb_xpath)).getText();
+			System.out.println("suburb_xpath is :" + suburb_xpath);
+			System.out.println("suburb is :" +suburb);
+			
+			//get the xpath for the company phone
+			String phone_xpath = "//*[@id=\""+_ListElementID+"\"]//div[contains(text(),'"+_phone+"')]";
+			phone = PageBase.FindElement(By.xpath(phone_xpath)).getText();
+			System.out.println("phone_xpath is :" + phone_xpath);
+			System.out.println("phone is : "+ phone);
+			
+			if(companyName == _companyName && 
+				//name == _name &&
+				address == _address &&
+				suburb == _suburb &&
+				phone == _phone)
+			{
+				AddressExists = true;
+				Assert.assertTrue(AddressExists);
+			}
+			else
+				Assert.assertTrue(false);
+			
+			
+			
+			} catch (Exception ex) 
+			{
+				Reporter.log("Verify Address Details In the List failed with : " + ex.getMessage());
+				Assert.fail("Element not found" + ex.getMessage());
+			}
+			return AddressExists; 
+			
+		}
+	
+	public static List<WebElement> FindElements(By _locator)
+	{
+		List<WebElement> Elements = null;
+		try {
+			Elements = BaseWebdriver.driver.findElements(_locator);
+			return Elements;
+		} catch (TimeoutException ex) 
+		{
+			logElementNotFound(ex);
+			return Elements;
+		}
+		
+	}
+	
+	public static void ClickElementFromTheList(List<WebElement> _elementsList, int _itemRank)
+	{
+		for(int i = 0; i< _elementsList.size(); i++)
+		{
+			if(i == _itemRank)
+			{
+				_elementsList.get(i).click();
+			}
+		}
+	}
 
 }

@@ -260,8 +260,8 @@
 		<parameter name="DGNo" value="2" />
 		<parameter name="DGoodsNo" value="No" />
 
-		<parameter name="DGContactName" value="Dadd" />
-		<parameter name="DGContactNumber" value="34324324" />
+		<parameter name="DGContactName" value="wtf ergeg" />
+		<parameter name="DGContactNumber" value="4242054039" />
 		<parameter name="DGQuoteNumber" value="12345" />
 		<parameter name="WhoPays" value="1" />
 		<parameter name="whoPays" value="Sender" />
@@ -342,7 +342,8 @@
 	<groups>
 	    <run>
 
-	    <include name="E2E"  />
+	  <include name="E2E"  />
+	   <!-- <include name="08082018"  /> -->
 	    
 	    </run>
 	 </groups>	
@@ -355,8 +356,8 @@
 		<class name="createShipmentE2ETests.TollPriorityNZ" />
 		<class name="createShipmentE2ETests.TollIPECTests" />
 		<class name="createShipmentE2ETests.TollTasmaniaTests" /> 
-		<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress"/> 
-		<class name="createShipmentE2ETests.TollCarrierIntermodalSpecialized_addAddress" />
+		<class name="createShipmentE2ETests.TollCarrierIntermodalSpecialized_addAddress"/> 
+		
 		
 				
 		</classes>

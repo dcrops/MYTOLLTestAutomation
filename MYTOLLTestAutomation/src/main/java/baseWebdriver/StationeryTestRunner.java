@@ -4,7 +4,10 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions( strict=true
-	,features = { "src/test/Resources/stationery/ABC.feature"}
+	,features = { //"src/test/Resources/stationery/MYT_6079_6080_Stationery - Order Stationery.feature",
+				"src/test/Resources/stationery/MYT_8264_Save Address to Address Book.feature",
+				"src/test/Resources/stationery/MYT_6080_My Orders List Orders that I have submitted previously.feature"
+			}
 	,glue= {"commonStepsDefinitions","stationeryStepDefinitions","createShipmentStepDefinitions"}
 	, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\Stationery\\cucumber-pretty",
 

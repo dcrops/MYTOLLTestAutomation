@@ -75,30 +75,30 @@ Feature: MYT-6201 Advance Search Using Receiver Location, Reference Number, Ship
 ##    |Verify Search Results are reflected according to tags|
 #============================================================================================= 
  
-    @tag2 
+    @tag2
     Scenario: User perfroms advance search using Reference Number feild
     When User inputs search criteria in the Reference Number feild
    	 |RefNo|
-   	 |4040064497|
+   	 |6346806177|
    	And User Searches Using Shipment Created date - Date From
    	|DateFrom|
-   	|01-05-2018|
+   	|01-07-2018|
    	And User Searches Using Shipment Created date - Date To
    	|DateTo|
-   	|31-05-2018| 
+   	|15-07-2018| 
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
      And User Adds Multiple Tags in Reference Number feild
      |RefNo1       | RefNo2         |RefNo3       |
-     |4040087410   |6346780071      |MYTA105011   |
+     |2857269418   |2857263690      |6983996361   |
      Then Reference Number Tag is Visible in search feild
      |RefNo1       | RefNo2         |RefNo3      |
-     |4040087410   |6346780071      |MYTA105011   |
+      |2857269418   |2857263690      |6983996361   |
      Then User Clicks Search and results are displayed
 #     |Verify Search Results are reflected according to tags|
      And User Deletes Tags in Reference Number feild and Verify if the Tags are Deleted
      |RefNo1       | RefNo2         |RefNo3      |
-     |4040087410   |6346780071      |MYTA105011   |
+     |2857269418   |2857263690      |6983996361   |
 	 Then User Clicks Search and results are displayed
 	Then User Closes the Browser
     
