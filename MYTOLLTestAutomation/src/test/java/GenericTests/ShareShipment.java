@@ -57,6 +57,7 @@ public class ShareShipment {
 		PageBase.verifyTextExist(MyTollHomePageActions.shareShipmentEmailSuccessMsg2, "We have sent an email with a link to this shipment which will display public information.");
 		PageBase.click(MyTollHomePageActions.shareShipmentEmailSuccessClose, 2);
 		PageBase.MinimumWaitForElementEnabled_1();
+
 	}
 	
 	@Test

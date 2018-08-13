@@ -32,7 +32,7 @@ public class TollCarrierIntermodalSpecialized_AddAddress {
 	@BeforeMethod(alwaysRun=true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username2_new, BaseWebdriver.Password_new);
+		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 
@@ -49,21 +49,25 @@ public class TollCarrierIntermodalSpecialized_AddAddress {
 			String ref, String BookNo, String vendorNum, String palletSpace, String destination, String specialIns) {
 
 		BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+		System.out.println("line 52");
+		
 		//Select Account
 		BookAPickupActions.SelectAccountNumber1();
+		System.out.println("line 56");
 		PageBase.MaximumWaitForElementEnabled();
 
 		//Add Address
 		BookAPickupActions.addAdderess("60 Collins Street, MELBOURNE VIC 3000");
+		System.out.println("line 61");
 		BookAPickupActions.verfiyAddress();
-
+		System.out.println("line 63");
 	}
 
 	
 	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
-		 BaseWebdriver.tearDown();
-		//BaseWebdriver.driver.quit();
+		// BaseWebdriver.tearDown();
+	//	BaseWebdriver.driver.quit();
 
 	}
 

@@ -66,11 +66,52 @@ public class MyTollHomePageActions {
 	public static By firstName=By.id("_userregistrationportlet_WAR_userprofileportlet_firstName");
 	public static By lastName=By.id("_userregistrationportlet_WAR_userprofileportlet_lastName");
 	public static By newEmailAddress=By.id("_userregistrationportlet_WAR_userprofileportlet_emailAddress");
+	
+	
+
+	//Nishant
+	public static By confirmEmailAddress=By.id("_userregistrationportlet_WAR_userprofileportlet_confirmEmail");
+	
+	public static By confirmPassword=By.id("_userregistrationportlet_WAR_userprofileportlet_confirmPwd");
+	
+	//
+	
+	//Nishant
+
+	
+	//public static By recaptchalable=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_userRegForm\"]/div/div[1]/div[10]/div/label[1]");
+	//
+
+	//Nishant
+	public static By existingTollYes = By.xpath("//*[@id=\"existing-toll-user\"]/label[1]/input");
+	public static By existingTollNo = By.xpath("//*[@id=\"existing-toll-user\"]/label[2]/input");
+			//when user selects YES
+	public static By tollOnlineUsernameText = By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_validationForm\"]/div[2]/label");
+	public static By tollOnlinepasswordText = By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_validationForm\"]/div[3]/label");
+	public static By tollOnlineUsernameBox = By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_userId\"]");
+	public static By tollOnlinePasswordBox = By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_tollPasswd\"]");
+	
+	
+	//
+	
+	
+	
+	//Nishant		
+	public static By confirmEmailAddressErrorMsg=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_confirmEmail_error\"]/span[1]");
+	public static By ProvidepasswordErrorMsg=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_pwd_error\"]");
+	public static By confirmationPasswordError=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_confirm_pwd_error\"]/span[2]");	
+	
+
+	//
+	
+	
 	public static By mobileNumber=By.id("_userregistrationportlet_WAR_userprofileportlet_mobileNum");
 	public static By newPassword=By.id("_userregistrationportlet_WAR_userprofileportlet_pwd");
 	public static By memerobleQuesDropdown=By.id("_userregistrationportlet_WAR_userprofileportlet_memorableQuestion");
 	public static By memerobleQuesOption=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_memorableQuestion\"]/option[4]");
 	public static By memerobleAnswer=By.id("_userregistrationportlet_WAR_userprofileportlet_answer");
+	public static By memerobleAnswererror=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_mm-answer_error\"]");
+
 	public static By recaptchalable=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_userRegForm\"]/div/div[1]/div[10]/div/label[1]");
 	public static By robotCheckBox=By.xpath("//*[@id=\"recaptcha-anchor\"]/div[5]");
 	public static By agreeTerms = By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_userRegForm\"]/div[10]/div/label[1]");
@@ -85,11 +126,24 @@ public class MyTollHomePageActions {
 
 	//Change Memeorable Password
 	public static By changeMemorableQuestionBtn = By.linkText("CHANGE MEMORABLE QUESTION");
-	public static By securityQuestionDropdown = By.xpath("//*[@id=\"security-quest-dropdown\"]/div[1]/a/i");
+	public static By securityQuestionDropdown = By.xpath("//*[@id=\"security-quest-dropdown\"]/div[1]/a");
+	public static By securityQuestionDropdownoptions = By.xpath("//*[@id=\"security-quest-dropdown\"]/div[2]/ul/li[2]/div");
 	public static By securityQuestionAnswer = By.xpath("//*[@id=\"mm-answer\"]");
 	public static By securityQuestionSave = By.xpath("//*[@id=\"chg-mem-question\"]");
 	public static By securityQuestionSaveMsgPopup = By.xpath("//*[@id=\"alert-box-wrapper\"]//*//div[2]");
 	public static By securityQuestion = By.xpath("//*[@id=\"closeAlert\"]");
+	public static By securityQuestionErrorMsg = By.xpath("//*[@id=\"_mytolluserProfileportlet_WAR_mytollupsportlet_chg-mem-question-form\"]/div[2]/div/div");
+	
+	
+	//change password
+	public static By changePasswordButton = By.xpath("//*[@id=\"security-settings\"]//div[1]/a");
+	public static By changePasswordOldPasswordTextbox = By.xpath("//*[@id=\"oldPwd\"]");
+	public static By changePasswordNewPasswordTextbox = By.xpath("//*[@id=\"newPwd\"]");
+	public static By changePasswordConfirmPasswordTextbox = By.xpath("//*[@id=\"cnfNewPwd\"]");
+	public static By changePasswordErrorMsg = By.xpath("//*[@id=\"invalid-new-pwd\"]");
+	public static By changePasswordErrorMsg2 = By.xpath("//*[@id=\"invalid-cnf-new-pwd\"]");
+	
+	
 	
 	//Track and Trace
 	public static By trackAndTrace = By.id("quickSearch");
@@ -98,13 +152,33 @@ public class MyTollHomePageActions {
 	public static By shareShipment = By.xpath("//*[@id=\"shareShipment\"]");
 	public static By shareShipmentEmail = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-email\"]");
 	public static By shareShipmentEmailErrorMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"to-email-sec\"]/div");
-	public static By shareShipmentSubmit = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-emails\"]");
+	//public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\"]");
+	public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\" and (contains(@class,'toll-blue-bg'))]");
+	
 	public static By shareShipmentEmailAdd = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-form-area\"]/div[1]/span/span");
 	public static By shareShipmentEmailMaxMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"max-em-used\"]/div");
 	public static By shareShipmentEmailSuccessMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*/h3");
 	public static By shareShipmentEmailSuccessMsg2 = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*/p");
 	public static By shareShipmentEmailSuccessClose = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"close-0\"]");
  
+	
+	//Nishant
+	public static By ShipmentDocumentTab = By.xpath("//*[@id=\"shipementDetailForm\"]/div[2]/div[1]/div[1]/div[4]");
+	public static By ProofOfDeliveryTab = By.xpath("//*[@id=\"pod-tab-button\"]");
+	public static By ProofOfDeliveryDoc = By.xpath("//*[@id=\"list-container\"]/div/table/tbody/tr/td[1]/a");	
+	public static By ProofOfDeliveryDownload = By.xpath("//*[@id=\"POD-Download\"]");
+	public static By ProofOfDeliveryDownloadheader = By.xpath("//*[@id=\"popup-header\"]/h2");
+	public static By ProofOfDeliveryWindow_close = By.xpath("//*[@id=\"print-mani-popup\"]/div/div/a");
+	
+	public static By ShipmentSearchResult = By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr[3]/td[2]");
+	public static By ShipmentSearchResulttext = By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr[2]/td");
+	
+	
+	
+	
+
+	
+	///
 
 	//AdvanceSearch
 	public static By advanceSearchTab = By.xpath("//*[@id=\"advancesearchTabAnchor\"]");
@@ -232,7 +306,12 @@ public class MyTollHomePageActions {
 	public static By MyReturnEarliestDispatchDate= By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[7]");
 	public static By MyReturnReadyTime= By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[8]");
 	
-	
+	//Nishant
+	public static By CompleteprofileMsglocator= By.xpath("//*[@id=\"outage-box-wrapper\"]/div/div[1]/div[2]/h3");
+	public static By CompleteprofileUpdateNowBtn= By.xpath("//*[@id=\"navigate-to\"]");
+	public static By AboutMe= By.xpath("//*[@id=\"portlet_mytolluserProfileportlet_WAR_mytollupsportlet\"]//div/h1");
+	//
+		
 	public static void LaunchMyToll(String url)
 	{
 		BaseWebdriver.driver.get(url);
@@ -268,6 +347,8 @@ public class MyTollHomePageActions {
 			BaseWebdriver.driver.findElement(password).sendKeys(pPassword);
 			BaseWebdriver.driver.findElement(loginBtn).sendKeys(Keys.ENTER);
 		}
+	
+		BaseWebdriver.driver.get(BaseWebdriver.SitUrl);
 	}
 
 	public static void ClickName()  
@@ -459,6 +540,8 @@ public class MyTollHomePageActions {
 		PageBase.MaximumWaitForElementEnabled_1();
 	}
 	
+
+	
 	public static void ClickAdvanceSearchTab() {
 		PageBase.click(advanceSearchTab, 5);
 
@@ -516,6 +599,12 @@ public class MyTollHomePageActions {
 	public static void ClickMyContacts()
 	{
 		PageBase.FindElement(myContactMenu).click();
+	}
+
+
+	public static void clickesearchShipmentresult(String shipmentNo) {
+		// TODO Auto-generated method stub
+		
 	}
 		
 	

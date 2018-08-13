@@ -36,6 +36,8 @@
 		  <classes>
 			<class name="GenericTests.ShareShipment" />
 			<class name="GenericTests.RegistrationPage_UserProfileStore" />
+			<class name="GenericTests.BAP_without_complete_profile" />
+			
 		</classes>
 		
 	
