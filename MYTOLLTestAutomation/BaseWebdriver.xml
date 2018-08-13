@@ -39,6 +39,7 @@
 			<class name="baseWebdriver.CreateShipmentTestRunner" />
 	     	<class name="baseWebdriver.ReturnsTestRunner"/>
 	     	<class name="baseWebdriver.DashboardTestRunner"/>
+	     	<class name="baseWebdriver.StationeryTestRunner"/>
 			
 			<!-- Blocked>   <class name="baseWebdriver.CreateShipmentTestRunner" /><class name="baseWebdriver.BookAPickupTestRunner" />
 			<class 	name="baseWebdriver.ManifestTestRunner"/> <class name="baseWebdriver.AdvancedSearchTestRunner"/> 

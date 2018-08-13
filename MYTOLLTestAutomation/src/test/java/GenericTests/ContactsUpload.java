@@ -21,7 +21,7 @@ public class ContactsUpload
 public void beforeMethod() throws Exception
 {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.SitUsername3, BaseWebdriver.Password);
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickMyContacts();	
 }
@@ -30,6 +30,10 @@ public void UploadContactsFile() throws AWTException, InterruptedException
 {
 	  myContactsActions.NavigateToManageContactsTab();
 	  myContactsActions.UploadFile(ContactsBook2);//pass the file URL here.
+	  myContactsActions.AssertFileUpload();
+	  
+	  //Reset Contact to 1 file
+	  myContactsActions.UploadFile(ContactsBook3);//pass the file URL here.
 	  myContactsActions.AssertFileUpload();
 	  
 }
