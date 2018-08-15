@@ -43,7 +43,7 @@ Feature: MYT_6138 Save a shipment as a 'Draft'
   |             |         |                |
   When User continue enters shipment overview details as below to create a shipment
   | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot   | CollectionDepot      |
-  | Dangerous Goods Express |        137289 |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ADELAIDE  TNQX | ADELAIDE S-LINE TNQX |
+  | Dangerous Goods Express |        137289 |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ADELAIDE TNQX | ADELAIDE S-LINE TNQX |
   When User Clicks on the Save Draft option
   Then User MUST have an option in the UI prompt to be re-directed to 'My Dashboard'
   | ButtonName         |
