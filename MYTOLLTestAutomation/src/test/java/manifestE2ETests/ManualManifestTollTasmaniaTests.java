@@ -85,7 +85,8 @@ public class ManualManifestTollTasmaniaTests {
 		Reporter.log("User Clicks Continue to Manifest");
 		PageBase.waitForElement(ManifestActions.ContinuetoManifest, 5);
 		PageBase.click(ManifestActions.ContinuetoManifest, 5);
-		ManifestActions.submitandPrintManifest();	
+		ManifestActions.submitandPrintManifest();
+		
 
 		//Move from Manifest to Book a PickUp
 		Reporter.log("User Clicks Go To Dashboard to Book a Pick Up");

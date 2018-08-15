@@ -275,8 +275,10 @@ public class BookAPickupActions {
 	public static final By addAccountAccessType = By
 			.xpath("//*[@id=\"addAccountForm\"]//*//div[@data-placeholder=\"Select Access Type\"]/label/a/i");
 	public static final By addAccountSave = By.linkText("SAVE");
-	public static final By addAccountSaveMsg = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//h2");
-	public static final By addAccountSaveMsgClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
+	//public static final By addAccountSaveMsg = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//h2");
+	public static final By addAccountSaveMsg = By.xpath("//*[@id=\"alert-box-wrapper\"]/div/div/div[1]/h3");
+	public static final By addAccountSaveMsgClose = By.xpath("//*[@id=\"alert-ok-btn\"]");
+	//public static final By addAccountSaveMsgClose = By.xpath("//*[@id=\"response-poup-wrpr\"]//*//a/i");
 	public static final By addAccountViewMore = By
 			.xpath("//*[@id=\"portlet_mytolltemplateportlet_WAR_mytollupsportlet\"]//*//a[text()='VIEW MORE']");
 	public static final By addAccountDeleteMsg = By.xpath("//*[@id=\"confirm-box-wrapper\"]//*//p");

@@ -62,7 +62,6 @@ public class ManifestIntermodalSpecializedTests {
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
 
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
-
 		CreateShipmentActions.EnterDropOffDepot(dropOffDepot);
 		CreateShipmentActions.EnterCollectionDepot(collectionDepot);
 		CreateShipmentActions.EnterShipmentReferences(ShipmentRef1, ShipmentRef2);
