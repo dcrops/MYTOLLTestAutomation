@@ -17,7 +17,7 @@ public class StationeryCommonStepsDefinitions {
 	  
 		//BaseWebdriver.SetUp("firefox");
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.SitUsername1, BaseWebdriver.Password);
 		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickStationery();
