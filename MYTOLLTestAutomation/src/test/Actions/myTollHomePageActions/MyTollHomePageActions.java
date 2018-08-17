@@ -285,6 +285,14 @@ public class MyTollHomePageActions {
 	public static By edit_ShipmentReview = By .xpath("//*[@id=\"shipment-placeholder\"]/div[1]/header/div[2]/a");
 	
 	////
+	
+	public static By addressTextbox = By.xpath("//*[@id=\"my-search-address\"]");
+	public static By aboutMeSaveButton = By.xpath("//*[@id=\"userProfile\"]");
+	public static By aboutMeSavePopup = By.xpath("//*[@id=\"alert-box-wrapper\"]/div/div/div[2]");
+	public static By aboutMeSavePopupClose = By.xpath("//*[@id=\"closeAlert\"]");
+	
+	////
+	
 	public static By ReturnSuccessMsg = By.xpath("//*[@id=\"shipment-placeholder\"]//*//h1");
 	public static By ReturnShipmentNumber = By.xpath("//*[@id=\"shipment-placeholder\"]//*//span/span[1]");
 	public static By ReturnSucessfullRAN = By.xpath("//*[@id=\"shipment-placeholder\"]//*//span/span[2]");

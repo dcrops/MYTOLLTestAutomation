@@ -38,6 +38,11 @@ public class BaseWebdriver {
 	public static String SitUsername4="SitAutomationuser4@mailinator.com"; 
 	public static String SitUsername5="SitAutomationuser5@mailinator.com"; 
 	
+	//Nishant
+	public static String AdminUser="milarepa@mailinator.com";
+	public static String AdminPassword="Toll@1234";
+
+	
 	//Passwords
 	public static String Password="Toll@12345"; 
 

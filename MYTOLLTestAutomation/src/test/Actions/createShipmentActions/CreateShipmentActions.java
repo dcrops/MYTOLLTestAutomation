@@ -23,8 +23,10 @@ import bookAPickupActions.BookAPickupActions;
 import manifestActions.ManifestActions;
 import myTollHomePageActions.MyTollHomePageActions;
 
-public class CreateShipmentActions {
-
+public class CreateShipmentActions {//Nishant
+	public static By createShipmentServiceSelector = By.xpath("//*[@id=\"service-label\"]");
+	public static By modeSelectorSHIP = By.xpath("//*[@id=\"mode-selector\"]/div[2]/ul/li/div[text()='SHIP']");
+	//Nishant
 	public static By createShipmentsHeading = By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/header/div/h1");
 	public static By shipments = By.id("createShipment");
 	public static By dispatchDate = By.id("dispatch-date");
