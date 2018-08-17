@@ -62,8 +62,11 @@ public class MYT_6079_StationeryOrderStationery
 
 			StationeryActions.ClickAddPreprintDetails();
 			StationeryActions.ClickPreprintFrom();
+			StationeryActions.ClickPreprintTo();
 			StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),
 					stationery.get("preprintFromContactName"));
+			StationeryActions.EnterPreprintToDetails(stationery.get("PreprintTo"),
+					stationery.get("preprintToContactName"));
 			PageBase.MaximumWaitForElementEnabled();
 			/*
 			 * StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),

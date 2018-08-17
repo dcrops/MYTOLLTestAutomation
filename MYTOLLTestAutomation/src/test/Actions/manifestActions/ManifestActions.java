@@ -548,7 +548,7 @@ public class ManifestActions {
 		PageBase.waitForElement(ShipmentManifestTab, 2);
 		PageBase.moveToElement(ShipmentManifestTab);
 		PageBase.click(ShipmentManifestTab, 2);
-		PageBase.click(RePrintShipmentCheckBox, 5);
+		//PageBase.click(RePrintShipmentCheckBox, 5);
 		Reporter.log("User Select Download PDF from Shipment/Manifest Tab");
 		PageBase.click(ShipmentDownloadPDF, 2);
 		System.out.println("Downloading PDF instead of Printing, Content of PDF not CHECKED");

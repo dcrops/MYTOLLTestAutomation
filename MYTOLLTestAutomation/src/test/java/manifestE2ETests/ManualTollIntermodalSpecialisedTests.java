@@ -30,7 +30,7 @@ public class ManualTollIntermodalSpecialisedTests {
 	}
 
 	
-	@Test(groups = { "Shakeout Testing" , "E2E","Test07082018"})
+	@Test(groups = { "Shakeout Testing" , "E2E", })
 	@Parameters({"TollIntermodalSpecialised","AccountNumberTINTER", "ServicePremium", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -88,14 +88,14 @@ public class ManualTollIntermodalSpecialisedTests {
 		PageBase.click(ManifestActions.ContinuetoManifest, 5);
 		ManifestActions.submitandPrintManifest();	
 		
-		//User Reprints Manifest
+		//User Reprints Manifest - MYT-8089
 		Reporter.log("User Clicks Go To Dashboard to Reprint");
 		PageBase.click(ManifestActions.GoToDashboard, 2);
-		//ManifestActions.reprintManifest(NewManifestName);
+		ManifestActions.reprintManifest(NewManifestName);
 
 		//Move from Manifest to Book a PickUp
-		//Reporter.log("User Clicks Go To Dashboard to Book a Pick Up");
-		//PageBase.click(ManifestActions.GoToDashboard, 2);
+		Reporter.log("User Clicks Go To Dashboard to Book a Pick Up");
+		PageBase.click(ManifestActions.GoToDashboard, 2);
 		ManifestActions.manifestToBookaPickUp(NewManifestName);
 		
 		//User Navigates to BAP Page and Verifies details 

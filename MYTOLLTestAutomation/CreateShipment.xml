@@ -110,7 +110,7 @@
 		<parameter name="ShipmentRef1" value="12345" />
 		<parameter name="ShipmentRef2" value="567879" />
 		<parameter name="QuoteNumber" value="5123355" />
-		<parameter name="DropOffDepot" value="ADELAIDE  TNQX" />
+		<parameter name="DropOffDepot" value="ADELAIDE TNQX" />
 		<parameter name="CollectionDepot" value="ADELAIDE S-LINE TNQX" />
 		<parameter name="dropOffDepot" value="1" />
 		<parameter name="collectionDepot" value="2" />
@@ -277,7 +277,7 @@
 		<parameter name="ShipmentRef1" value="12345" />
 		<parameter name="ShipmentRef2" value="567879" />
 		<parameter name="QuoteNumber" value="5123355" />
-		<parameter name="DropOffDepot" value="ADELAIDE  TNQX" />
+		<parameter name="DropOffDepot" value="ADELAIDE TNQX" />
 		<parameter name="CollectionDepot" value="ADELAIDE S-LINE TNQX" />
 		<parameter name="CollectionDepotTTas" value="ADELAIDE EQUIPMENT DEHIRE" />
 		<parameter name="dropOffDepot" value="1" />

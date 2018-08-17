@@ -254,7 +254,7 @@ public class PageBase
 		WebElement we = null;
 		try {
 			we = (WebElement) (new WebDriverWait(BaseWebdriver.driver, waitSeconds))
-				.until(ExpectedConditions.presenceOfElementLocated(locator));
+				.until(ExpectedConditions.elementToBeClickable(locator));
 		} catch (TimeoutException e) {
 			System.out.println("xpath not found: " + locator);
 			//Reporter.log("xpath not found: " + locator);

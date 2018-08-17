@@ -113,8 +113,8 @@ public class Toll_MyProfile_Add_Accounts {
 			PageBase.click(BookAPickupActions.addAccountSave, 10);
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.MaximumWaitForElementEnabled_1();
-			//Verify Template Save Successfully
-			PageBase.verifyTextExist(BookAPickupActions.addAccountSaveMsg, "Account Has Been Successfully Added.");
+			//Verify Template Save Successfully  [Story] MYT-8251
+			PageBase.verifyTextExist(BookAPickupActions.addAccountSaveMsg, "Account approval pending");
 			PageBase.click(BookAPickupActions.addAccountSaveMsgClose, 10);
 			PageBase.MaximumWaitForElementEnabled_1();
 			

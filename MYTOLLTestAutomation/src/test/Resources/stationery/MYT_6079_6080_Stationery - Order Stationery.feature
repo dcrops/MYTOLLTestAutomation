@@ -81,7 +81,7 @@ Feature: MYT_6079 Stationery - Order Stationery
       | PRIO        | 200B1F NHP ELECTRICAL        | Nadiki       | 61-498765432   |
     Then User be able to see Delivery details in the Review page as below
       | Contact name | Phone number | Company name | Address                                                 | Customer reference | Delivery instructions         |
-      | Henry        | 61-498765432 | Toll Group   | Wellington road 352, Mulgrave road Mulgrave VIC 3052 AU | 98765Ref           | New Test DeliveryInstructions |
+      | Henry        | 61-498765432 | Toll Group   | Wellington road 352, Mulgrave road MULGRAVE VIC 3170 AU | 98765Ref           | New Test DeliveryInstructions |
     Then User be able to see first Line item details as below
       | ProductName                   | Quantity | UnitPrice          | Total       | PreprintFrom                                 |
       | Same Day Consignment (LO6626) | Qty 25   | Unit price : $0.00 | Total $0.00 | 60, Collins Street CDE MELBOURNE VIC 3000 AU |
@@ -108,7 +108,7 @@ Feature: MYT_6079 Stationery - Order Stationery
     When User clicks Review Order
     Then User be able to see Overview details in the Review Page as below
       | TollCarrier | AccountNumber | Contact name | Contact number |
-      | PRIO        | 200BHY        | Matthew      | 61-481234563   |
+      | PRIO        | 200BHY NATIONAL PRIORITY FOC        | Matthew      | 61-481234563   |
     Then User be able to see Delivery details in the Review page as below
       | Contact name | Phone number | Company name | Address                                  | Customer reference | Delivery instructions                 |
       | Andrea       | 61-412345678 | Dialog Group | 60, Collins Street MELBOURNE VIC 3000 AU | Ref876543          | Third times Test DeliveryInstructions |
@@ -142,7 +142,7 @@ Feature: MYT_6079 Stationery - Order Stationery
       | PRIO        | 200BHY NATIONAL PRIORITY FOC | Matthew      | 61-481234563   |
     Then User be able to see Delivery details in the Order Summary Page as below
       | Contact name | Phone number | Company name | Address                                  | Customer reference | Delivery instructions                 |
-      | John      | 61-412345678 | Dialog Group | 60, Collins Street MELBOURNE VIC 3000 | Ref876543          | Third times Test DeliveryInstructions |
+      | Andrea      | 61-412345678 | Dialog Group | 60, Collins Street MELBOURNE VIC 3000 | Ref876543          | Third times Test DeliveryInstructions |
     Then User be able to see first Line item details as below
       | ProductName                   | Quantity | UnitPrice          | Total       | PreprintFrom                                 |
       | Same Day Consignment (LO6626) | Qty 25   | Unit price : $0.00 | Total $0.00 | 60, Collins Street CDE MELBOURNE VIC 3000 AU |

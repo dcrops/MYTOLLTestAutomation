@@ -82,6 +82,11 @@ public class ManualManifestTollPriorityNZTests {
 		PageBase.waitForElement(ManifestActions.ContinuetoManifest, 5);
 		PageBase.click(ManifestActions.ContinuetoManifest, 5);
 		ManifestActions.submitandPrintManifest();	
+		
+		//User Reprints Manifest - MYT-8089
+		Reporter.log("User Clicks Go To Dashboard to Reprint");
+		PageBase.click(ManifestActions.GoToDashboard, 2);
+		ManifestActions.reprintManifest(NewManifestName);
 
 		//Move from Manifest to Book a PickUp
 		Reporter.log("User Clicks Go To Dashboard to Book a Pick Up");
