@@ -34,11 +34,11 @@ public void user_changes_the_address_and_clicks_SAVE(DataTable addressNew) throw
 		PageBase.sendText(MyTollHomePageActions.addressTextbox, 2, addressUpdated.get("Address"));
 	}   
 	PageBase.click(By.xpath("//*[@id=\"addressSection\"]/div/div/ul"), 2);
-	PageBase.MaximumWaitForElementEnabled();
-	PageBase.MaximumWaitForElementEnabled();
-	PageBase.MaximumWaitForElementEnabled();
-	PageBase.MaximumWaitForElementEnabled();
+
 	PageBase.click(MyTollHomePageActions.aboutMeSaveButton, 2);
+	PageBase.MaximumWaitForElementEnabled();
+	PageBase.MaximumWaitForElementEnabled();
+
 }
 
 @Then("^SUCCESS msg pops up$")
@@ -88,6 +88,7 @@ public void user_goes_back_to_ABOUT_ME_page_and_edits_the_address_and_saves_it(D
 	PageBase.click(By.xpath("//*[@id=\"addressSection\"]/div/div/ul"), 2);
 	PageBase.MaximumWaitForElementEnabled();
 	PageBase.click(MyTollHomePageActions.aboutMeSaveButton, 2);
+	PageBase.MaximumWaitForElementEnabled();
 	PageBase.click(MyTollHomePageActions.aboutMeSavePopupClose, 2);
 	
 }

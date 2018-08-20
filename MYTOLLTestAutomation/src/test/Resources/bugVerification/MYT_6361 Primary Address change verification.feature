@@ -19,5 +19,5 @@ Then the updated address is available under the Sender section
 
 When user goes back to ABOUT ME page and edits the address and saves it
 |Address|
-|L 10, 60 Collins St, MELBOURNE, VIC, 3000, AU|
+|60 Collins St, MELBOURNE|
 Then another success msg pops up

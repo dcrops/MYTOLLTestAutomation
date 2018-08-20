@@ -34,8 +34,9 @@
 		<parameter name="EmailAddress5" value="Test5@test.com" />
 		
 		  <classes>
-<!-- 			<class name="GenericTests.ShareShipment" />
-			<class name="GenericTests.RegistrationPage_UserProfileStore" /> -->
+		  	<class name="GenericTests.Registration_contacts_check_Mining_energy" />
+			<class name="GenericTests.RegistrationPage_UserProfileStore" />
+			<class name="GenericTests.ShareShipment" />
 			<class name="GenericTests.BAP_without_complete_profile" />
 			<class name="GenericTests.ContactsUpload" />
 			

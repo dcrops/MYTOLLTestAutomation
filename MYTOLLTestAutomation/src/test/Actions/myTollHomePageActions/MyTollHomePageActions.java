@@ -95,7 +95,7 @@ public class MyTollHomePageActions {
 	
 	
 	//
-	
+
 	
 	
 	//Nishant		
@@ -103,7 +103,17 @@ public class MyTollHomePageActions {
 	public static By ProvidepasswordErrorMsg=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_pwd_error\"]");
 	public static By confirmationPasswordError=By.xpath("//*[@id=\"_userregistrationportlet_WAR_userprofileportlet_confirm_pwd_error\"]/span[2]");	
 	
+	//
+	//xpaths of Contact Us page
+	public static By contactUsIcon = By.xpath("//*[@id=\"header-right-ctrls\"]/div/ul/li[3]");
+	public static By TollMiningContactUs = By.xpath("//*[@id=\"contact-acdn\"]/div[4]");
+	public static By TollEnergyContactUs = By.xpath("//*[@id=\"contact-acdn\"]/div[1]/div[1]");
+	
 
+	public static By WebsiteContactUs = By.xpath("//*[@id=\"contact-acdn\"]/div[4]/div[2]/div[5]/div[2]/div[1]");
+	public static By WebsiteContactUs2 = By.xpath("//*[@id=\"contact-acdn\"]/div[1]/div[2]/div[3]/div[2]/div[1]");
+	
+	
 	//
 	
 	
