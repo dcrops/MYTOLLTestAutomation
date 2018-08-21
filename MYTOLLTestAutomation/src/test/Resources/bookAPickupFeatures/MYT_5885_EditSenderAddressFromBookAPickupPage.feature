@@ -20,7 +20,7 @@ Feature: MYT-5885 User needs to Edit Sender Address from 'Book a pickup' page
       | Edit Address |
     And User Edit the address entering new sender details
       | CompanyName    | Name         | Email                       | PhoneNumber | AddressLine1         | AddressLine2  |
-      | Toll Group Inc | John William | NNAutomationuser1@gmail.com |   412367897 | 352, Wellington Road | Mulgrave, VIC |
+      | Toll Group Inc2 | John William | NNAutomationuser1@gmail.com |   412367897 | 352, Wellington Road | Mulgrave, VIC |
     And User can see a text as edit their full address via the My profile section
       | TextEditFullAddress                         |
       | Please click here to edit your full address |
@@ -30,7 +30,7 @@ Feature: MYT-5885 User needs to Edit Sender Address from 'Book a pickup' page
       | Address saved successfully |
     Then User able to see modified address in MY Contacts in My Profile
       | CompanyName    | Name         | Email                       | CountryCode | PhoneNumber | AddressLine1         |
-      | Toll Group Inc | John William | NNAutomationuser1@gmail.com | 61-         |   412367897 | 352, Wellington Road |
+      | Toll Group Inc2 | John William | NNAutomationuser1@gmail.com | 61-         |   412367897 | 352, Wellington Road |
       Then User Closes the Browser 
 
   @tag2
