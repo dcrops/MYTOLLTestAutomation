@@ -114,9 +114,9 @@ public class BookAPickupActions {
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[2]/div[2]/div/div[3]/div[1]/i");
 	public static By closingTime = By.id("location-closing-time");
 	public static By increaseClosingTimeHours = By
-			.xpath("//*[@id=\"steps-3\"]/div[1]/div[3]/div[2]/div/div[1]/div[1]/i");
+			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[1]/div[1]");
 	public static By decreaseClosingTimeHours = By
-			.xpath("//*[@id=\"steps-3\"]/div[1]/div[3]/div[2]/div/div[1]/div[3]/i");
+			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[1]/div[3]/i");
 	public static By confirmReadyTime = By.id("confirm-true");
 	public static By increaseClosingTimeMinutes = By
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[3]/div[1]/i");
@@ -125,6 +125,9 @@ public class BookAPickupActions {
 	public static By consignmentNotes = By.xpath("//*[@id=\"steps-3\"]/div[2]/div[1]/div/label/span[2]");
 	public static By reviewBookBtn = By.id("review-pickup"); 
 
+	//Nishant
+	public static By readyTimeErrorMsg = By.xpath("//*[@id=\"error-ready-time\"]");
+	//
 	public static By recieverAccount = By.id("reciever-account");
 
 	public static By temperatureLow = By.id("temperature-lo");
