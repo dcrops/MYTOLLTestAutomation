@@ -36,10 +36,10 @@ public class BaseWebdriver {
 	public static String SitUsername2= "SitAutomationuser2@mailinator.com";
 	public static String SitUsername3="SitAutomationuser3@mailinator.com";
 	public static String SitUsername4="SitAutomationuser4@mailinator.com"; 
-	public static String SitUsername5="SitAutomationuser5@mailinator.com"; 
+	public static String SitUsername5="SitAutomationuser5@mailinator.com";
 	
 	//Passwords
-	public static String Password="Toll@12345"; 
+public static String Password="Toll@12345"; 
 
 
 	
