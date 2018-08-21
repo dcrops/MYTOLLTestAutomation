@@ -39,7 +39,18 @@ public class BaseWebdriver {
 	public static String SitUsername5="SitAutomationuser5@mailinator.com";
 	
 	//Passwords
-public static String Password="Toll@12345"; 
+	public static String Password="Toll@12345"; 
+	
+	//Setting for PS environment
+	/*public static String Username1= "auto_bvt_ps@mailinator.com"; 
+	public static String Username2="auto_bvt_ps@mailinator.com";
+	public static String SitUsername1="auto_bvt_ps@mailinator.com";
+	public static String SitUsername2= "auto_bvt_ps@mailinator.com";
+	public static String SitUsername3="auto_bvt_ps@mailinator.com";
+	public static String SitUsername4="auto_bvt_ps@mailinator.com"; 
+	public static String SitUsername5="auto_bvt_ps@mailinator.com";
+	public static String Password="Toll@123"; */
+	
 
 
 	
