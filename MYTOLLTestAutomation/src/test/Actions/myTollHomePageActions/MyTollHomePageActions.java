@@ -47,6 +47,7 @@ public class MyTollHomePageActions {
 	public static By orderMyStationery = By.xpath("//*[@id=\"my-stationary\"]/span[text()='Order stationery']"); 
 	public static By myOrdersStationery = By.xpath("//*[@id=\"my-stationary\"]/span[text()='My Orders']"); 
 	public static By SavedSearchTab = By.xpath("//*[@id=\"savedSearchTabAnchor\"]/span");
+	public static By MyAdminMenu = By.xpath("//*[@id=\"nav-dropdown\"]/ul//p[text()='MY ADMIN']");
 		
 	
 	//Add Template

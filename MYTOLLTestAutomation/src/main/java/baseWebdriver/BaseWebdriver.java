@@ -40,7 +40,7 @@ public class BaseWebdriver {
 	
 	//Nishant
 	public static String AdminUser="milarepa@mailinator.com";
-	public static String AdminPassword="Toll@1234";
+	public static String AdminPassword="Toll@123";
 
 	
 	//Passwords
