@@ -612,8 +612,7 @@ public class ManifestActions {
 		Reporter.log("User Saves Manifest and Proceeds");
 		
 	}
-	
-	
+		
 	public static void SelectShipmentConsolidated() {
 		try {
 		PageBase.MaximumWaitForElementEnabled_1();

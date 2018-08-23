@@ -162,7 +162,7 @@ public class ManifestIntermodalSpecializedTests {
 		
 	}
 	
-	@Test(groups = { "Shakeout Testing", "E2E","08082018" })
+	@Test(groups = { "Shakeout Testing", "E2E","20082018" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
