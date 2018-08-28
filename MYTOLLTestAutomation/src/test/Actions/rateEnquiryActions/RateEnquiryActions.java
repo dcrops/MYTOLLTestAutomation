@@ -26,6 +26,8 @@ public class RateEnquiryActions {
 	public static By originSuburbPostCodeTextField = By.id("originAddress");
 	public static By destinationSuburbPostcode = By.xpath("//*[@id=\"receiver-selector\"]/div[1]/a/i");
 	public static By destinationSuburbPostcodeTextField = By.xpath("//*[@id=\"destinationAddress\"]");
+	public static By destinationcountryField = By.xpath("//*[@id=\"country-selector\"]/label/input[2]");
+	public static By destinationPostcodeField = By.xpath("//*[@id=\"destination-postcode\"]");
 	public static By destinationCountryTextField = By.name("placeholder-country");
 	public static By destinationPostCode = By.id("destination-postcode");
 	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/div[1]/a/i");
@@ -70,6 +72,8 @@ public class RateEnquiryActions {
 	public static By errorMsgHeight = By.xpath("//*[@id=\"dimensions-height\"]/span[2]");
 	public static By errorMsgWeight = By.xpath("//*[@id=\"item-total-weight\"]/span[2]");
 	public static By errorMsgCubicVolume = By.xpath("//*[@id=\"volume-container\"]/div/span[2]");
+	
+	public static By disclaimerMessage = By.xpath("//*[@id=\"show-calculated-rate\"]/div[2]");
 	
 	//TES
 	public static By tollExtraServiceLable = By.xpath("//*[@id=\"is-extra-service\"]/div/div/div[1]/label");
@@ -191,6 +195,17 @@ public class RateEnquiryActions {
 		//PageBase.click(destinationSuburbPostcodeTextField, 2);
 		//PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"destination-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
+		PageBase.MaximumWaitForElementEnabled_1();
+	}
+	
+	public static void SelectnewDestination(String Suburb) {
+		
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.click(destinationcountryField, 2);
+		PageBase.sendText(destinationcountryField, 5, Suburb);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.click(By.xpath("//*[@id=\"country-selector\"]/div/ul/li[12]/div[text()='"+Suburb+"']"), 2);
+	//	PageBase.click(By.xpath("//*[@id=\"destination-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
 		PageBase.MaximumWaitForElementEnabled_1();
 	}
 	
