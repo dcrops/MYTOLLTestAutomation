@@ -149,6 +149,11 @@ public class BookAPickupActions {
 	public static By addANewLine = By.id("add-line-item");
 	public static By confirmBtn = By.id("confirm-true");
 
+	public static By searchNumberReference = By.xpath("//*[@id=\"quickSearch\"]");
+	public static By searchNumberShipmentNo = By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr[3]/td[1]");
+	public static By searchNumberReferenceName = By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr[3]/td[2]");
+	public static By searchShipmentButton = By.xpath("//*[@id=\"search-shipment-btn\"]");
+	public static By searchResultMsg = By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr[2]/td");
 	// *[@id="alert-box-wrapper"]/div/div/div[1]/h3
 	// Error Messages
 	public static By itemDescriptionErrorMsg = By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[1]/div/span");
