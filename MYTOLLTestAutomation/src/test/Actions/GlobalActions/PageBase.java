@@ -263,6 +263,19 @@ public class PageBase
 		return we;
 	}
 	
+	public static WebElement waitForElementToBeVisible(By locator, int waitSeconds) {
+		WebElement we = null;
+		try {
+			we = (WebElement) (new WebDriverWait(BaseWebdriver.driver, waitSeconds))
+				.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		} catch (TimeoutException e) {
+			System.out.println("xpath not found: " + locator);
+			//Reporter.log("xpath not found: " + locator);
+			return null;
+		}
+		return we;
+	}
+	
 	
 	public static WebElement click(By locator, int waitSeconds) {
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, waitSeconds);

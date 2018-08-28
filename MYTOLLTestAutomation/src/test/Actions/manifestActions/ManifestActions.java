@@ -584,8 +584,8 @@ public class ManifestActions {
         ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('location-closing-time').setAttribute('data-timepicki-time','"+time+"');");
 		WebElement fromDateBox= BaseWebdriver.driver.findElement(BookAPickupActions.closingTime);
 		fromDateBox.clear();
-		PageBase.click(BookAPickupActions.decreaseClosingTimeHours, 1);
-		PageBase.click(BookAPickupActions.increaseClosingTimeHours, 1);
+		PageBase.click(BookAPickupActions.decreaseClosingTimeHours, 2);
+		PageBase.click(BookAPickupActions.increaseClosingTimeHours, 2);
 		PageBase.verifyTextExistAttribute(BookAPickupActions.closingTime, time);	
 	}
 	
