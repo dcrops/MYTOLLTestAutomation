@@ -300,6 +300,7 @@ public class RateEnquiryStepDefinitions {
 			PageBase.click(RateEnquiryActions.priceNowCurtainBtn, 10);
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
 		}
 	}
 	
@@ -308,7 +309,10 @@ public class RateEnquiryStepDefinitions {
 		for (Map<String, String> rateEnquiry : rateEquiryTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.MaximumWaitForElementEnabled_1();
-			PageBase.waitForElement(RateEnquiryActions.priceNowCurtainTotalCharge, 10);
+			//PageBase.waitForElementToBeVisible(RateEnquiryActions.priceNowCurtainTotalCharge, 20);
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.MaximumWaitForElementEnabled_1();
