@@ -34,7 +34,7 @@ public class myContactsActions
 	public static void UploadFile(String _fileLocation) throws AWTException, InterruptedException
 	{
 		String filePath;
-		PageBase.FindElement(FileAddress).click();
+		PageBase.click(FileAddress, 20);
 		filePath = FileSystems.getDefault().getPath(_fileLocation).normalize().toAbsolutePath().toString();
 			//System.out.println(filePath);
 		

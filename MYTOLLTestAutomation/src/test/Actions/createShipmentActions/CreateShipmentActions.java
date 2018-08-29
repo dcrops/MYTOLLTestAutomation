@@ -191,9 +191,9 @@ public class CreateShipmentActions {//Nishant
 
 	public static void SelectDispatchDate() {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(dispatchDate, 5);
+		PageBase.click(dispatchDate, 20);
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(dispatchDateItem, 5);
+		PageBase.click(dispatchDateItem, 20);
 
 	}
 
@@ -324,7 +324,7 @@ public class CreateShipmentActions {//Nishant
 	public static void SelectSender(int i) {
 		PageBase.MinimumWaitForElementEnabled_1();
 		//BaseWebdriver.driver.findElement(senderdropdown).click();
-		PageBase.click(senderdropdown, 5);
+		PageBase.click(senderdropdown, 20);
 		PageBase.MinimumWaitForElementEnabled();
 		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
 		//		.click();
@@ -339,9 +339,10 @@ public class CreateShipmentActions {//Nishant
 		BaseWebdriver.driver.findElement(senderTextfield).clear();
 		BaseWebdriver.driver.findElement(senderTextfield).sendKeys(pSender);
 		PageBase.Scrollbar(500, 800);
-		BaseWebdriver.driver
+		/*BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()='" + pSender + "']"))
-				.click();
+				.click();*/
+		PageBase.click(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()='" + pSender + "']"), 20);
 		PageBase.MaximumWaitForElementEnabled();
 
 	}
@@ -378,11 +379,11 @@ public class CreateShipmentActions {//Nishant
 	public static void SelectReceiver(int i) {
 		PageBase.MaximumWaitForElementEnabled_1();
 		//BaseWebdriver.driver.findElement(receiverdropdown).click();
-		PageBase.click(receiverdropdown, 5);
+		PageBase.click(receiverdropdown, 20);
 		//PageBase.Scrollbar(500, 800);
 		//BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"))
 			//	.click();
-		PageBase.click(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"), 5);
+		PageBase.click(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[" + i + "]/div[2]"), 20);
 		PageBase.MaximumWaitForElementEnabled();
 
 	}
@@ -394,9 +395,10 @@ public class CreateShipmentActions {//Nishant
 		BaseWebdriver.driver.findElement(receiverTextfield).sendKeys(Receiver);
 		PageBase.Scrollbar(500, 800);
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver
+		/*BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='" + Receiver + "']"))
-				.click(); 
+				.click(); */
+		PageBase.click(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='" + Receiver + "']"), 20);
 
 		PageBase.MaximumWaitForElementEnabled();
 
@@ -737,11 +739,11 @@ public class CreateShipmentActions {//Nishant
 		try {
 
 			//BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
-			PageBase.click(notifySenderCheckBox, 5);
+			PageBase.click(notifySenderCheckBox, 20);
 
 			PageBase.MinimumWaitForElementEnabled();
 			//BaseWebdriver.driver.findElement(notifyReceiverCheckBox).click();
-			PageBase.click(notifyReceiverCheckBox, 5);
+			PageBase.click(notifyReceiverCheckBox, 20);
 		} catch (Exception ex) {
 			PageBase.MoveToElement(CreateShipmentActions.quoteNumber, CreateShipmentActions.accountNumber);
 		}
@@ -788,10 +790,13 @@ public class CreateShipmentActions {//Nishant
 		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference1);
 		BaseWebdriver.driver.findElement(dropoffDepotTextField).click();
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver
+		
+		/*BaseWebdriver.driver
 				.findElement(By
 						.xpath("//*[@id=\"drop-off-depot-selector\"]/div[2]/ul/li/div[text()='" + pDropOffDepot + "']"))
-				.click(); // *[@id="drop-off-depot-selector"]/div[2]/ul/li[1]/div
+				.click(); // *[@id="drop-off-depot-selector"]/div[2]/ul/li[1]/div*/
+		PageBase.click(By
+						.xpath("//*[@id=\"drop-off-depot-selector\"]/div[2]/ul/li/div[text()='" + pDropOffDepot + "']"), 20);
 		PageBase.MinimumWaitForElementEnabled();
 	}
 
@@ -1328,7 +1333,7 @@ public class CreateShipmentActions {//Nishant
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(whoPaysDutiesTaxesArrowdown).click();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.click(By.xpath("//*[@id=\"duty-payer-selector\"]/div[2]/ul/li/div[text()='"+ pWhoPaysDutiesTaxes +"']"), 5);
+		PageBase.click(By.xpath("//*[@id=\"duty-payer-selector\"]/div[2]/ul/li/div[text()='"+ pWhoPaysDutiesTaxes +"']"), 20);
 //		BaseWebdriver.driver
 //				.findElement(By.xpath(
 //						"//*[@id=\"duty-payer-selector\"]/div[2]/ul/li/div[text()='"+ pWhoPaysDutiesTaxes +"']"))
@@ -1357,7 +1362,7 @@ public class CreateShipmentActions {//Nishant
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.click(reviewCreateShipmentBtn, 5);
+		PageBase.click(reviewCreateShipmentBtn, 20);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
@@ -1417,7 +1422,7 @@ public class CreateShipmentActions {//Nishant
 		if (resultsNotifySenderCheckBox == false) {
 			PageBase.MinimumWaitForElementEnabled();
 			//BaseWebdriver.driver.findElement(notifySenderCheckBox).click();
-			PageBase.click(notifySenderCheckBox, 5);
+			PageBase.click(notifySenderCheckBox, 20);
 			System.out.println("resultsNotifySenderCheckBox clicked");
 			PageBase.MinimumWaitForElementEnabled();
 
@@ -1454,7 +1459,7 @@ public class CreateShipmentActions {//Nishant
 		} else {
 			PageBase.MinimumWaitForElementEnabled();
 			//BaseWebdriver.driver.findElement(notifyReceiverCheckBox).click();
-			PageBase.click(notifyReceiverCheckBox, 5);
+			PageBase.click(notifyReceiverCheckBox, 20);
 			System.out.println("resultsReceiverCheckBox  clicked");
 			PageBase.MinimumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(receiverEmail).click();
@@ -1466,7 +1471,7 @@ public class CreateShipmentActions {//Nishant
 
 	public static void addSenderAdderess() {
 		PageBase.waitForElement(senderdropdown, 10);
-		PageBase.click(senderdropdown, 10);
+		PageBase.click(senderdropdown, 20);
 
 		PageBase.waitForElement(SenderAddress_Add_Address, 10);
 		PageBase.click(SenderAddress_Add_Address, 10);
@@ -1475,12 +1480,12 @@ public class CreateShipmentActions {//Nishant
 		String newNumber = String.valueOf(Number);
 		newSenderCompanyName = SenderAddressCompanyName + newNumber;
 		PageBase.sendText(New_AddressCompanName, 10, newSenderCompanyName);
-		PageBase.click(New_AddressSearch, 10);
+		PageBase.click(New_AddressSearch, 20);
 		PageBase.sendText(New_AddressSearch, 10, SenderAddressCompanyAdd);
-		PageBase.click(New_AddressSearch_Select, 10);
+		PageBase.click(New_AddressSearch_Select, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.click(New_AddressSearch_Contine, 10);
+		PageBase.click(New_AddressSearch_Contine, 20);
 		PageBase.sendText(New_Address_Name, 10, newSenderCompanyName);
 		PageBase.sendText(New_Address_Number, 10, "0452456876");
 		PageBase.sendText(New_Address_Email, 10, "Test@test.com");
@@ -1490,7 +1495,7 @@ public class CreateShipmentActions {//Nishant
 			PageBase.sendText(New_Address_DGName, 10, "Test	");
 			PageBase.sendText(New_Address_DGNumber, 10, "0452567879");
 		}
-		PageBase.click(New_Address_Add, 10);
+		PageBase.click(New_Address_Add, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		// Verify Address is Selected
 		PageBase.verifyTextExistAttribute(SenderAddress_Location_Selected, newSenderCompanyName);
@@ -1508,20 +1513,20 @@ public class CreateShipmentActions {//Nishant
 
 	public static void addReceiverAdderess() {
 		PageBase.waitForElement(receiverdropdown, 10);
-		PageBase.click(receiverdropdown, 10);
+		PageBase.click(receiverdropdown, 20);
 		PageBase.waitForElement(ReceiverAddress_Add_Address, 10);
-		PageBase.click(ReceiverAddress_Add_Address, 10);
+		PageBase.click(ReceiverAddress_Add_Address, 20);
 
 		int Number = (int) (Math.random() * 10000);
 		String newNumber = String.valueOf(Number);
 		newReceiverCompanyName = ReceiverAddressCompanyName + newNumber;
 		PageBase.sendText(New_AddressCompanName, 10, newReceiverCompanyName);
-		PageBase.click(New_AddressSearch, 10);
+		PageBase.click(New_AddressSearch, 20);
 		PageBase.sendText(New_AddressSearch, 10, ReceiverAddressCompanyAdd);
-		PageBase.click(New_AddressSearch_Select, 10);
+		PageBase.click(New_AddressSearch_Select, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.click(New_AddressSearch_Contine, 10);
+		PageBase.click(New_AddressSearch_Contine, 20);
 		PageBase.sendText(New_Address_Name, 10, newReceiverCompanyName);
 		PageBase.sendText(New_Address_Number, 10, "0452456876");
 		PageBase.sendText(New_Address_Email, 10, "Test@test.com");
@@ -1531,7 +1536,7 @@ public class CreateShipmentActions {//Nishant
 			PageBase.sendText(New_Address_DGName, 10, "Test	");
 			PageBase.sendText(New_Address_DGNumber, 10, "0452567879");
 		}
-		PageBase.click(New_Address_Add, 10);
+		PageBase.click(New_Address_Add, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		// Verify Address is Selected
 		PageBase.verifyTextExistAttribute(ReceiverAddress_Location_Selected, newReceiverCompanyName);
@@ -1566,19 +1571,19 @@ public class CreateShipmentActions {//Nishant
 		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
 		MyTollHomePageActions.ClickMenu();
 		Reporter.log("User Navigates to My Contactcs Page");
-		PageBase.click(MyTollHomePageActions.myContactMenu, 10);
+		PageBase.click(MyTollHomePageActions.myContactMenu, 20);
 		Alert alert = BaseWebdriver.driver.switchTo().alert();
 		alert.accept();
 		Reporter.log("User Searches for New Contact added -" + newSenderCompanyName);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.sendText(BookAPickupActions.SearchContactTxtFeild, 10, newSenderCompanyName);
-		PageBase.click(BookAPickupActions.SearchContactButton, 10);
+		PageBase.click(BookAPickupActions.SearchContactButton, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(BookAPickupActions.SearchContactCompanyLocation, newSenderCompanyName);
 		System.out.println("line 1563");
 		Reporter.log("User Clicks Edit Contact and Edits Contact Details");
 		System.out.println("line 1565");
-		PageBase.click(BookAPickupActions.SearchContactEdit, 10);
+		PageBase.click(BookAPickupActions.SearchContactEdit, 20);
 		System.out.println("line 1567");
 		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditCompanyName).click();
@@ -1586,7 +1591,7 @@ public class CreateShipmentActions {//Nishant
 		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditName).click();
 		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditName).clear();
 		System.out.println("line 1574");
-		PageBase.click(BookAPickupActions.SearchContactEditSave, 10);
+		PageBase.click(BookAPickupActions.SearchContactEditSave, 20);
 		System.out.println("line 1575");
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled();
@@ -1597,14 +1602,14 @@ public class CreateShipmentActions {//Nishant
 		PageBase.sendText(BookAPickupActions.SearchContactEditCompanyName, 5, newSenderCompanyName);
 		PageBase.sendText(BookAPickupActions.SearchContactEditName, 5, newSenderCompanyName);
 		Reporter.log("User Saves Contact Details");
-		PageBase.click(BookAPickupActions.SearchContactEditSave, 10);
+		PageBase.click(BookAPickupActions.SearchContactEditSave, 20);
 		System.out.println("line 1587");
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.waitForElement(BookAPickupActions.popUpMsg, 10);
 		//PageBase.verifyTextExist(BookAPickupActions.popUpMsg, "Address Successfully Updated To Addressbook");
-		PageBase.click(BookAPickupActions.popUpClose, 5);
+		PageBase.click(BookAPickupActions.popUpClose, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled();
 	}
@@ -1613,33 +1618,33 @@ public class CreateShipmentActions {//Nishant
 		PageBase.moveToElement(MyTollHomePageActions.HmbugerMenu);
 		MyTollHomePageActions.ClickMenu();
 		Reporter.log("User Navigates to My Contactcs Page");
-		PageBase.click(MyTollHomePageActions.myContactMenu, 10); 
+		PageBase.click(MyTollHomePageActions.myContactMenu, 20); 
 		Reporter.log("User Searches for New Contact added -" + newReceiverCompanyName);
 		PageBase.sendText(BookAPickupActions.SearchContactTxtFeild, 10, newReceiverCompanyName);
-		PageBase.click(BookAPickupActions.SearchContactButton, 10);
+		PageBase.click(BookAPickupActions.SearchContactButton, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(BookAPickupActions.SearchContactCompanyLocation, newReceiverCompanyName);
 		Reporter.log("User Clicks Edit Contact and Edits Contact Details");
-		PageBase.click(BookAPickupActions.SearchContactEdit, 10);
+		PageBase.click(BookAPickupActions.SearchContactEdit, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditCompanyName).click();
 		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditCompanyName).clear();
 		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditName).click();
 		BaseWebdriver.driver.findElement(BookAPickupActions.SearchContactEditName).clear();
-		PageBase.click(BookAPickupActions.SearchContactEditSave, 10);
+		PageBase.click(BookAPickupActions.SearchContactEditSave, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 	//	PageBase.verifyTextExist(BookAPickupActions.SearchContactEditCompanyNameErrorMsg, "Enter Company Name");
 	//	PageBase.verifyTextExist(BookAPickupActions.SearchContactEditNameErrorMsg, "Enter First Name");
 		PageBase.sendText(BookAPickupActions.SearchContactEditCompanyName, 5, newReceiverCompanyName);
 		PageBase.sendText(BookAPickupActions.SearchContactEditName, 5, newReceiverCompanyName);
 		Reporter.log("User Saves Contact Details");
-		PageBase.click(BookAPickupActions.SearchContactEditSave, 10);
+		PageBase.click(BookAPickupActions.SearchContactEditSave, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.waitForElement(BookAPickupActions.popUpMsg, 10);
 	//	PageBase.verifyTextExist(BookAPickupActions.popUpMsg, "Address Successfully Updated To Addressbook");
-		PageBase.click(BookAPickupActions.popUpClose, 5);
+		PageBase.click(BookAPickupActions.popUpClose, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled();
 	}
@@ -1648,15 +1653,15 @@ public class CreateShipmentActions {//Nishant
 
 	public static void ClickQuickEntryMode() {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(QuickEntryMode, 5);
+		PageBase.click(QuickEntryMode, 20);
 
 	}
 
 	public static void ItemTypeQME(String pItemType) {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(itemTypeQME, 5);
-		PageBase.ClickOn(By.xpath("//*[@id=\"gv-outr-pkg-selector\"]/div[2]/ul/li/div[text()='" + pItemType + "']"),
-				10);
+		PageBase.click(itemTypeQME, 20);
+		PageBase.click(By.xpath("//*[@id=\"gv-outr-pkg-selector\"]/div[2]/ul/li/div[text()='" + pItemType + "']"),
+				20);
 	}
 
 	public static void EnterSenderRef(String pSenderRef) {
@@ -1688,7 +1693,7 @@ public class CreateShipmentActions {//Nishant
 	public static void SelectPackgingGroupQME(String packagingGroup) {
 
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(PackingGroupQME, 5);
+		PageBase.click(PackingGroupQME, 20);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SelectFrom(
 				By.xpath("//*[@id=\"gv-packaging-grp-selector\"]/div/ul/li/div[text()='" + packagingGroup + "']"), 10);
@@ -1699,7 +1704,7 @@ public class CreateShipmentActions {//Nishant
 	public static void ClickSaveDraft() {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(saveDraft, 5);
+		PageBase.click(saveDraft, 20);
 
 	}
 
@@ -1716,19 +1721,19 @@ public class CreateShipmentActions {//Nishant
 
 	public static void ClickGoToMyDashboardBtn() {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(goToMyDashboardBtn, 5);
+		PageBase.click(goToMyDashboardBtn, 20);
 
 	}
 
 	public static void ClickGoBackBtn() {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(goBackBtn, 5);
+		PageBase.click(goBackBtn, 20);
 
 	}
 
 	public static void ClickDraftShipmentTabInMyDashboard() {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(draftShipmentTabInMyDashboard, 5);
+		PageBase.click(draftShipmentTabInMyDashboard, 20);
 
 	}
 
@@ -1765,9 +1770,9 @@ public class CreateShipmentActions {//Nishant
 
 			for (int i = 1; i <= list.size(); i++) {
 
-				PageBase.ClickOn(deleteButtonDraftShipmenInMyDashboard, 5);
+				PageBase.click(deleteButtonDraftShipmenInMyDashboard, 20);
 				PageBase.MaximumWaitForElementEnabled();
-				PageBase.ClickOn(continueDeleteButtonDraftShipmenInMyDashboard, 5);
+				PageBase.click(continueDeleteButtonDraftShipmenInMyDashboard, 20);
 				PageBase.MaximumWaitForElementEnabled();
 			}
 		}
@@ -1775,7 +1780,7 @@ public class CreateShipmentActions {//Nishant
 
 	public static void ClickOnDraftShipmenInMyDashboard() {
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5);
+		PageBase.click(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 20);
 
 	}
 
@@ -1793,7 +1798,7 @@ public class CreateShipmentActions {//Nishant
 	public static void setQEMYes() {
 		try {
 			WebElement QEM = BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField);
-			PageBase.click(By.cssSelector("span.switch-label"), 2);
+			PageBase.click(By.cssSelector("span.switch-label"), 20);
 			System.out.println("QEM Enabled");
 		} catch (Exception ex) {
 			System.out.println("QEM Already Enabled");
@@ -1806,7 +1811,7 @@ public class CreateShipmentActions {//Nishant
 			;
 			System.out.println("QEM Already Not Enabled");
 		} catch (Exception ex) {
-			PageBase.click(By.cssSelector("span.switch-label"), 2);
+			PageBase.click(By.cssSelector("span.switch-label"), 20);
 			System.out.println("QEM Not Enabled");
 		}
 	}

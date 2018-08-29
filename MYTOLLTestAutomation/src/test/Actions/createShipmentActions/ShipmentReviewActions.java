@@ -433,13 +433,15 @@ public class ShipmentReviewActions {
 	
 	public static void ClickContinue() {
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(continueBtn).click();
+		//BaseWebdriver.driver.findElement(continueBtn).click();
+		PageBase.click(continueBtn, 20);
 		PageBase.MaximumWaitForElementEnabled();
 	}
 	
 	public static void ClickAddToManifestManually() {
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(AddToManifestManuallyBtn).click();
+		//BaseWebdriver.driver.findElement(AddToManifestManuallyBtn).click();
+		PageBase.click(AddToManifestManuallyBtn, 20);
 	}
 	
 }

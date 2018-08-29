@@ -260,7 +260,7 @@
 		<parameter name="DGNo" value="2" />
 		<parameter name="DGoodsNo" value="No" />
 
-		<parameter name="DGContactName" value="wtf ergeg" />
+		<parameter name="DGContactName" value="George William" />
 		<parameter name="DGContactNumber" value="4242054039" />
 		<parameter name="DGQuoteNumber" value="12345" />
 		<parameter name="WhoPays" value="1" />
@@ -342,8 +342,8 @@
 	<groups>
 	    <run>
 
-	  <include name="E2E"  />
-	   <!-- <include name="08082018"  /> -->
+	<include name="E2E"  />
+	      <!--<include name="123"  /> -->
 	    
 	    </run>
 	 </groups>	

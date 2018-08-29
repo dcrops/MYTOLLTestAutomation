@@ -382,8 +382,9 @@ public class BookAPickupActions {
 		try {
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
-			PageBase.ClickOn(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"), 5);
+			//BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
+			PageBase.click(TollCarrierDropdown, 20);
+			PageBase.click(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"), 20);
 			PageBase.MaximumWaitForElementEnabled();
 
 		}
@@ -391,7 +392,7 @@ public class BookAPickupActions {
 		catch (Exception ex) {
 			BaseWebdriver.driver.navigate().refresh();
 			PageBase.retryingFindClick(TollCarrierDropdown);
-			PageBase.ClickOn(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"), 5);
+			PageBase.click(By.xpath("//div[@id='BU-selector']/div/ul/li/div[text()='" + pTollCarrierName + "']"), 20);
 			PageBase.MaximumWaitForElementEnabled();
 
 		}
@@ -2324,19 +2325,19 @@ public class BookAPickupActions {
 	
 	public static void ClickShareInShareScreen() {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(MyTollHomePageActions.shareShipmentSubmit, 5);
+		PageBase.click(MyTollHomePageActions.shareShipmentSubmit, 20);
 	}
 	
 	public static void ClickMyPickupsInShareScreen() {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.ClickOn(GoT0Dashboard, 5);
+		PageBase.click(GoT0Dashboard, 20);
 	}
 	
 	
 	public static void setQEMYes() {
 		try {
 			WebElement QEM = BaseWebdriver.driver.findElement(BookAPickupActions.itemDescriptionTextField);
-			PageBase.click(QuickEntryModeNo, 2);
+			PageBase.click(QuickEntryModeNo, 20);
 			System.out.println("QEM Enabled");
 		} catch (Exception ex) {
 			System.out.println("QEM Already Enabled");
@@ -2349,7 +2350,7 @@ public class BookAPickupActions {
 			;
 			System.out.println("QEM Already Not Enabled");
 		} catch (Exception ex) {
-			PageBase.click(QuickEntryModeNo, 2);
+			PageBase.click(QuickEntryModeNo, 20);
 			System.out.println("QEM Not Enabled");
 		}
 	}

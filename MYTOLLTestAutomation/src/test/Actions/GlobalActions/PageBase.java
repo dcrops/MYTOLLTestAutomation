@@ -22,6 +22,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import org.testng.Reporter;
 
+import com.gargoylesoftware.htmlunit.Page;
 import com.google.common.base.Objects;
 
 import baseWebdriver.BaseWebdriver;
@@ -35,7 +36,8 @@ public class PageBase
 		int attempts = 0;
 		while (attempts < 2) {
 			try {
-				BaseWebdriver.driver.findElement(by).click();
+				//BaseWebdriver.driver.findElement(by).click();
+				click(by, 50);
 				result = true;
 				break;
 			} catch (StaleElementReferenceException e) {
@@ -45,15 +47,48 @@ public class PageBase
 		return result;
 	}
 	
-	public static WebElement FindElement(By ObjectLocater) {
-		return BaseWebdriver.driver.findElement(ObjectLocater);
+	public static WebElement FindElement(By ObjectLocater) 
+	{
+		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 50);
+		WebElement we = (WebElement) wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectLocater));
+		if (we == null) {
+			//logger.warn("elemet with: " + locator.toString() + " not found");
+			Reporter.log("element with: " + ObjectLocater.toString() + " not found" +"<br>");
+			Assert.fail("element with: " + ObjectLocater.toString() + " not found" +"<br>");
+			//return null;
+		}
+	//	PageBase.moveToElement(ObjectLocater);
+		//we.click();
+		return we;
+		
+	}
+	
+	public static WebElement FindElement(WebElement _element) 
+	{
+		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 50);
+		WebElement we = (WebElement) wait.until(ExpectedConditions.visibilityOf(_element));
+		if (we == null) {
+			//logger.warn("elemet with: " + locator.toString() + " not found");
+			Reporter.log("element with: " + _element.toString() + " not found" +"<br>");
+			Assert.fail("element with: " + _element.toString() + " not found" +"<br>");
+			//return null;
+		}
+		//PageBase.moveToElement(_element);
+		//we.click();
+		return we;
 		
 	}
 	
 	
-	public static WebElement WaitForElement(By ObjectLocater, int secsToWait) {
-		WebElement element=BaseWebdriver.driver.findElement(ObjectLocater);
-		return (new WebDriverWait(BaseWebdriver.driver, secsToWait)).until(ExpectedConditions.elementToBeClickable(ObjectLocater)); //.visibilityOfElementLocated(ObjectLocater)); //.presenceOfElementLocated(ObjectLocater));//.visibilityOf());
+	public static WebElement WaitForElement(By ObjectLocater, int secsToWait) 
+	{
+		if(secsToWait<=20)
+		{
+			secsToWait= 50;
+		}
+		//WebElement element=BaseWebdriver.driver.findElement(ObjectLocater);
+		//WebElement element= FindElement(ObjectLocater);
+		return (new WebDriverWait(BaseWebdriver.driver, secsToWait)).until(ExpectedConditions.visibilityOfElementLocated(ObjectLocater)); //.visibilityOfElementLocated(ObjectLocater)); //.presenceOfElementLocated(ObjectLocater));//.visibilityOf());
 	}
 
 	public static boolean SendKeysTo(By ObjectLocater, String keysToSend,int secsToWait) {
@@ -167,7 +202,7 @@ public class PageBase
 	}
 
 	public static void ElementToBeClickableWait(WebElement element) {
-		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 10);
+		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 50);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
@@ -264,7 +299,12 @@ public class PageBase
 	}
 	
 	
-	public static WebElement click(By locator, int waitSeconds) {
+	public static WebElement click(By locator, int waitSeconds) 
+	{
+		if(waitSeconds<=20)
+		{
+			waitSeconds= 50;
+		}
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, waitSeconds);
 		WebElement we = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(locator));
 		if (we == null) {
@@ -278,11 +318,34 @@ public class PageBase
 		return we;
 	}
 	
+	public static WebElement click(WebElement _element, int waitSeconds) 
+	{
+		if(waitSeconds<=20)
+		{
+			waitSeconds= 50;
+		}
+		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, waitSeconds);
+		WebElement we = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(_element));
+		if (we == null) {
+			//logger.warn("elemet with: " + locator.toString() + " not found");
+			Reporter.log("element with: " + _element.toString() + " not found" +"<br>");
+			Assert.fail("element with: " + _element.toString() + " not found" +"<br>");
+			//return null;
+		}
+		PageBase.moveToElement(_element);
+		we.click();
+		return we;
+	}
+	
 	
 
 	
 	public static void sendText(By locator, int secsToWait, String keysToSend) {
 		try {
+			if(secsToWait<=20)
+			{
+				secsToWait = 50;
+			}
 			PageBase.moveToElement(locator);
 			WebElement element = waitForElement(locator,secsToWait);
 			element.clear();
@@ -334,7 +397,8 @@ public class PageBase
 	
 	public static void moveToElement(By locator){
 		try {
-			WebElement element = BaseWebdriver.driver.findElement(locator);
+			//WebElement element = BaseWebdriver.driver.findElement(locator);
+			WebElement element = FindElement(locator);
 			((JavascriptExecutor) BaseWebdriver.driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			
 			Thread.sleep(500);
@@ -343,6 +407,21 @@ public class PageBase
 			System.out.println("element with: " + locator.toString() + " not found");
 			Reporter.log("element with: " + locator.toString() + " not found" +"<br>");
 			Assert.fail("element with: " + locator.toString() + " not found" +"<br>");
+		}
+	}
+	
+	public static void moveToElement(WebElement _element){
+		try {
+			//WebElement element = BaseWebdriver.driver.findElement(locator);
+			WebElement element = FindElement(_element);
+			((JavascriptExecutor) BaseWebdriver.driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			
+			Thread.sleep(500);
+		}
+		catch (Exception e) {
+			System.out.println("element with: " + _element.toString() + " not found");
+			Reporter.log("element with: " + _element.toString() + " not found" +"<br>");
+			Assert.fail("element with: " + _element.toString() + " not found" +"<br>");
 		}
 	}
 	
@@ -360,7 +439,8 @@ public class PageBase
 
 	public static void verifyTextExist(By locator, String expectedText){
 		try {
-			String getText = BaseWebdriver.driver.findElement(locator).getText();
+			//String getText = BaseWebdriver.driver.findElement(locator).getText();
+			String getText= PageBase.GetText(locator, 20);
 			System.out.println(getText);
 		 
 			if (getText.equalsIgnoreCase(expectedText)){
@@ -381,8 +461,8 @@ public class PageBase
 	
 	public static void verifyTextSubString(By locator, String expectedText){
 		try {
-			String getText = BaseWebdriver.driver.findElement(locator).getText().replace("\n", "");
-			
+			//String getText = BaseWebdriver.driver.findElement(locator).getText().replace("\n", "");
+			String getText = PageBase.FindElement(locator).getText().replace("\n", "");
 			if (getText.contains(expectedText)){
 				Reporter.log("Expected Text : "+expectedText+ " Matched the Text on Screen : " +getText);
 				System.out.println("Expected Text : "+expectedText+ " Matched the Text on Screen : " +getText);
@@ -695,8 +775,11 @@ public class PageBase
 	public static List<WebElement> FindElements(By _locator)
 	{
 		List<WebElement> Elements = null;
+		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 50);
+				
 		try {
-			Elements = BaseWebdriver.driver.findElements(_locator);
+			//Elements = BaseWebdriver.driver.findElements(_locator);
+			Elements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(_locator));
 			return Elements;
 		} catch (TimeoutException ex) 
 		{
@@ -712,7 +795,10 @@ public class PageBase
 		{
 			if(i == _itemRank)
 			{
-				_elementsList.get(i).click();
+				//_elementsList.get(i).click();
+				click(_elementsList.get(i), 50);
+				
+				
 			}
 		}
 	}

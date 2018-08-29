@@ -179,14 +179,14 @@ public class RateEnquiryActions {
 		PageBase.sendText(originSuburbPostCodeTextField, 5, Suburb);
 		PageBase.click(originSuburbPostCodeTextField, 2);
 		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.click(By.xpath("//*[@id=\"origin-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 5);
+		PageBase.click(By.xpath("//*[@id=\"origin-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 20);
 	}
 	
 	public static void SelecDestination(String Suburb, String PostCode) {
 		Reporter.log("User Selects Destination - Surburb:"+Suburb+" PostCode:"+PostCode);
 		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.click(destinationSuburbPostcodeTextField, 2);
-		PageBase.sendText(destinationSuburbPostcodeTextField, 5, Suburb);
+		PageBase.click(destinationSuburbPostcodeTextField, 20);
+		PageBase.sendText(destinationSuburbPostcodeTextField, 20, Suburb);
 		PageBase.MaximumWaitForElementEnabled_1();
 		//PageBase.click(destinationSuburbPostcodeTextField, 2);
 		//PageBase.MaximumWaitForElementEnabled_1();
@@ -457,7 +457,8 @@ public class RateEnquiryActions {
 	public static void ContinueCreateShipment() {
 		try {
 		PageBase.MaximumWaitForElementEnabled_1();
-		Boolean results=BaseWebdriver.driver.findElement(createShipmentContinue).isDisplayed();
+		//Boolean results=BaseWebdriver.driver.findElement(createShipmentContinue).isDisplayed();
+		Boolean results = PageBase.FindElement(createShipmentContinue).isDisplayed();
 		
 		if (results=true && valid) {
 			Reporter.log("FAILED - Valid Shipment Price Unavailable");
@@ -588,12 +589,12 @@ public class RateEnquiryActions {
 	public static void ClickCreateShipment() {
 		PageBase.MinimumWaitForElementEnabled_1();
 		//BaseWebdriver.driver.findElement(createShipmentBtn).click();
-		PageBase.click(createShipmentBtn, 2);
+		PageBase.click(createShipmentBtn, 20);
 	}
 	
 	public static void EnterItem(String itemName) {
 		Reporter.log("User Enters Item Description - "+itemName);
-		PageBase.click(RateEnquiryActions.itemDescriptionType, 2);
+		PageBase.click(RateEnquiryActions.itemDescriptionType, 20);
 		PageBase.sendText(RateEnquiryActions.itemDescriptionType, 2, itemName);
 	
 	}
