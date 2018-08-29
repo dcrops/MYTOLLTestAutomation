@@ -29,7 +29,7 @@ Feature: MYT_622 BAP: Share my 'book a pickup'
     When User selects Dispatch date as Tommorow
     When User selects Ready Time
       | ReadyTime |
-      | 11:30     |
+      | 11:30     |	
     When User enters Special Instructions as below
       | Special Instructions      |
       | Special Instructions Test |

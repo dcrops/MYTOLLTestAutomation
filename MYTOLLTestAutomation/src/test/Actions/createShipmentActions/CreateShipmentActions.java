@@ -94,6 +94,11 @@ public class CreateShipmentActions {//Nishant
 	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i");
 	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li[2]/div");
 	public static By dgPackagingDescription = By.id("packing-description-");
+	
+	public static By dgDetailsClass = By.xpath("//*[@id=\"class-division-\"]");
+	public static By dgDetailsProperShoppingName = By.xpath("//*[@id=\"shipping-name-\"]");
+	
+	
 	public static By dgPkgQty = By.id("dg-pkg-qty-");
 	public static By dgQtyKg = By.id("dg-qty-");
 	public static By technicalName = By.id("technical-name-");

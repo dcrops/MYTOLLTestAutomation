@@ -114,9 +114,9 @@ public class BookAPickupActions {
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[2]/div[2]/div/div[3]/div[1]/i");
 	public static By closingTime = By.id("location-closing-time");
 	public static By increaseClosingTimeHours = By
-			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[1]/div[1]");
+			.xpath("//*[@id=\"steps-3\"]//div[3]//div[1]/div[1]/i");
 	public static By decreaseClosingTimeHours = By
-			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[1]/div[3]/i");
+			.xpath("//*[@id=\"steps-3\"]//div[3]//div[1]/div[3]/i");
 	public static By confirmReadyTime = By.id("confirm-true");
 	public static By increaseClosingTimeMinutes = By
 			.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[3]/div[2]/div/div[3]/div[1]/i");
@@ -149,6 +149,11 @@ public class BookAPickupActions {
 	public static By addANewLine = By.id("add-line-item");
 	public static By confirmBtn = By.id("confirm-true");
 
+	public static By searchNumberReference = By.xpath("//*[@id=\"quickSearch\"]");
+	public static By searchNumberShipmentNo = By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr[3]/td[1]");
+	public static By searchNumberReferenceName = By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr[3]/td[2]");
+	public static By searchShipmentButton = By.xpath("//*[@id=\"search-shipment-btn\"]");
+	public static By searchResultMsg = By.xpath("//*[@id=\"quickSearchTableResult\"]/tbody/tr[2]/td");
 	// *[@id="alert-box-wrapper"]/div/div/div[1]/h3
 	// Error Messages
 	public static By itemDescriptionErrorMsg = By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[1]/div/span");
@@ -2325,7 +2330,13 @@ public class BookAPickupActions {
 	
 	public static void ClickShareInShareScreen() {
 		PageBase.MinimumWaitForElementEnabled();
+
 		PageBase.click(MyTollHomePageActions.shareShipmentSubmit, 20);
+
+	//	PageBase.FindElement(MyTollHomePageActions.shareShipmentSubmit).click();
+		//PageBase.ClickOn(MyTollHomePageActions.shareShipmentSubmit, 5);
+		PageBase.click(By.xpath("//*[@id=\"modal-content-overlay-0\"]//*[@id=\"share-emails\"]"), 10);
+
 	}
 	
 	public static void ClickMyPickupsInShareScreen() {
