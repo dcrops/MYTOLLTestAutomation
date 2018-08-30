@@ -75,6 +75,9 @@ public class RateEnquiryActions {
 	
 	public static By disclaimerMessage = By.xpath("//*[@id=\"show-calculated-rate\"]/div[2]");
 	
+	public static By noReturnsMessage = By.xpath("//*[@id=\"myreturnsNoDataMsgDiv\"]");
+	
+	
 	//TES
 	public static By tollExtraServiceLable = By.xpath("//*[@id=\"is-extra-service\"]/div/div/div[1]/label");
 	public static By tollExtraServiceSlider = By.xpath("//*[@id=\"is-extra-service\"]/div/div/div[1]/div/label/span[1]");

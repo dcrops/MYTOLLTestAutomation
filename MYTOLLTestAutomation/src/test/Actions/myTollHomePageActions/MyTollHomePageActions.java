@@ -318,6 +318,9 @@ public class MyTollHomePageActions {
 	public static By MyReturnStatus = By.xpath("//*[@id=\"status-selector\"]/label/a/i");
 	public static By MyReturnSearch = By.xpath("//*[@id=\"searchMyReturnsResult\"]");
 	
+	public static By MyReturnNoResultSearch = By.xpath("//*[@id=\"myreturnsNoDataMsgDiv\"]");
+	
+	
 	public static By MyReturnTollShipmentNo = By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[1]");
 	public static By MyReturnRAN = By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[2]");
 	public static By MyReturnStatusColumn = By.xpath("//*[@id=\"myreturnsTableId\"]/thead/tr/th[3]");

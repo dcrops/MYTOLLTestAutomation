@@ -5,7 +5,7 @@ Feature: MYT_7077 When UN number is deleted, the auto-populated fields should be
 
   @tag1
   Scenario: User wants to be able to create and print Shipments, Manifests and Labels with one line item in Toll Mining Services
-    When user selects Toll Carrier as below to create shipment
+    When user selects Toll Carrier as below
       | TollCarrier          |
       | Toll Mining Services |
     When User continue enters shipment overview details as below to create a shipment

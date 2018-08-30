@@ -29,8 +29,8 @@ public class MYT_6523_ready_time_and_close_time_check{
 		MyTollHomePageActions.ClickBookAPIckupMenu();		
 	}
 
-	@When("^User selects Toll Carrier and Account Number$")
-	public void user_selects_Toll_Carrier_and_Account_Number(DataTable bookAPickupTestData) throws Throwable {
+	@When("^User selects Toll Carrier and an Account Number$")
+	public void user_selects_Toll_Carrier_and_an_Account_Number(DataTable bookAPickupTestData) throws Throwable {
 	  
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
 
@@ -40,8 +40,8 @@ public class MYT_6523_ready_time_and_close_time_check{
 
 	}
 
-	@When("^User selects a existing Sender address from the Sender field$")
-	public void user_selects_a_existing_Sender_address_from_the_Sender_field(DataTable bookAPickupTestData) throws Throwable {
+	@When("^User selects an existing Sender address from the Sender field$")
+	public void user_selects_an_existing_Sender_address_from_the_Sender_field(DataTable bookAPickupTestData) throws Throwable {
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
 			// Add Address
 			BookAPickupActions.EnterLocation(bookAPickup.get("Sender"));

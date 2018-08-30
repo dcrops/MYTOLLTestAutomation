@@ -18,7 +18,7 @@ import cucumber.api.java.en.When;
 import myTollHomePageActions.MyTollHomePageActions;
 public class MYT_7077_UN_number_delete_clear_check
 {
-	@Given("^User is Registered in MyToll and is on Shipment page$")
+	/*@Given("^User is Registered in MyToll and is on Shipment page$")
 	public void user_is_Registered_in_MyToll_and_is_on_Shipment_page() throws Throwable {
 	    
 
@@ -28,10 +28,10 @@ public class MYT_7077_UN_number_delete_clear_check
 		MyTollHomePageActions.ClickMenu();
 		CreateShipmentActions.ClickShipment();
 	     
-	}
+	}*/
 
-	@When("^user selects Toll Carrier as below to create shipment$")
-	public void user_selects_Toll_Carrier_as_below_to_create_shipment(DataTable shipmentTestData) throws Throwable {
+	@When("^user selects Toll Carrier as below$")
+	public void user_selects_Toll_Carrier_as_below(DataTable shipmentTestData) throws Throwable {
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 			
 			BookAPickupActions.EnterTollCarrier(shipment.get("TollCarrier"));
@@ -159,8 +159,8 @@ public class MYT_7077_UN_number_delete_clear_check
 		//PageBase.verifyTextExist(CreateShipmentActions.dgDetailsProperShoppingName, "");
 	}
 	
-	@Then("^User Closes the Browser$")
-	public void UserClosestheBrowser() throws Throwable {
+//	@Then("^User Closes the Browser$")
+//	public void UserClosestheBrowser() throws Throwable {
 	//	BaseWebdriver.tearDown();
-	}
+//	}
 }
