@@ -203,7 +203,8 @@ public class ManifestActions {
 	public static void AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(String pNewManifestName) {
 		PageBase.MinimumWaitForElementEnabled();
 	try {
-		boolean results = BaseWebdriver.driver.findElement(AddToManifestTtile).isDisplayed();
+		//boolean results = BaseWebdriver.driver.findElement(AddToManifestTtile).isDisplayed();
+		boolean results= PageBase.FindElement(AddToManifestTtile).isDisplayed();
 		System.out.println("AddToManifestTtile results" + results);
 		if (results = true) {
 			AddToManifestForExistingAnManiestSubmittingCreateshipment();
@@ -308,7 +309,8 @@ public class ManifestActions {
 		System.out.println("listSize" +listSize);
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.MoveToElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label"), ManifestActions.AddToManifestTtile);
-		boolean results=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).isDisplayed();
+		//boolean results=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).isDisplayed();
+		boolean results= PageBase.FindElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).isDisplayed();
 		System.out.println("results listelement" +results);
 		PageBase.MaximumWaitForElementEnabled();
 		String manifestnameBySys=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).getText();
@@ -332,7 +334,8 @@ public class ManifestActions {
 	
 	public static String GetManifestNameFromManifestReviewPage() {
 		PageBase.MinimumWaitForElementEnabled();
-		return BaseWebdriver.driver.findElement(manifestHeading).getText();
+		return PageBase.GetText(manifestHeading, 50);
+		//return BaseWebdriver.driver.findElement(manifestHeading).getText();
 	}
 	
 	public static void CreateNewManifestFromAddToManifestMannually(String pNewManifestName) {
@@ -573,8 +576,8 @@ public class ManifestActions {
         ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('available-time').setAttribute('data-timepicki-time','"+time+"');");
 		WebElement fromDateBox= BaseWebdriver.driver.findElement(BookAPickupActions.availableTime);
 		fromDateBox.clear();
-		PageBase.click(BookAPickupActions.decreaseReadyTime, 1);
-		PageBase.click(BookAPickupActions.increaseAvailableTimeHours, 1);
+		PageBase.click(BookAPickupActions.decreaseReadyTime, 5);
+		PageBase.click(BookAPickupActions.increaseAvailableTimeHours, 5);
 		PageBase.verifyTextExistAttribute(BookAPickupActions.availableTime, time);	
 	}
 	
@@ -584,8 +587,10 @@ public class ManifestActions {
         ((JavascriptExecutor)BaseWebdriver.driver).executeScript("document.getElementById('location-closing-time').setAttribute('data-timepicki-time','"+time+"');");
 		WebElement fromDateBox= BaseWebdriver.driver.findElement(BookAPickupActions.closingTime);
 		fromDateBox.clear();
+
 		PageBase.click(BookAPickupActions.decreaseClosingTimeHours, 2);
 		PageBase.click(BookAPickupActions.increaseClosingTimeHours, 2);
+
 		PageBase.verifyTextExistAttribute(BookAPickupActions.closingTime, time);	
 	}
 	

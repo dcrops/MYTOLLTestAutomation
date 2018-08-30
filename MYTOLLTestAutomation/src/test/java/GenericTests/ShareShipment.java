@@ -65,7 +65,7 @@ public class ShareShipment {
 	public void AuntenticatedUser_ShareShipment_NegativeSenario(String ShipmentNo, String EmailAddress1) {
 		MyTollHomePageActions.searchShipment(ShipmentNo);
 		Reporter.log("User Clicks Share Shipment");
-		PageBase.click(MyTollHomePageActions.shareShipment, 2);
+		PageBase.click(MyTollHomePageActions.shareShipment, 20);
 		PageBase.MaximumWaitForElementEnabled_1();
 		Reporter.log("User Submits with Blnk Email Address");
 		PageBase.click(MyTollHomePageActions.shareShipmentSubmit, 2);

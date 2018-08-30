@@ -50,7 +50,7 @@ public class Toll_Add_Template {
 	}
 
 	
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E","24082018" })
 	@Parameters({"TollCarrierTollTasmania", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "TTDesSuburb", "TTDesPostCode"})
 	public void addTemplateTTAS(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
