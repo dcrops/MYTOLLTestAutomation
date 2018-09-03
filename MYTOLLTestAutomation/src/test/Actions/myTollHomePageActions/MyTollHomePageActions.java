@@ -70,7 +70,9 @@ public class MyTollHomePageActions {
 	public static By lastName=By.id("_userregistrationportlet_WAR_userprofileportlet_lastName");
 	public static By newEmailAddress=By.id("_userregistrationportlet_WAR_userprofileportlet_emailAddress");
 	
-	
+	//Add account
+	public static By addAccount=By.id("add-popup");
+	public static By addContactAddress=By.xpath("//*[@id=\"address-list\"]");
 
 	//Nishant
 	public static By confirmEmailAddress=By.id("_userregistrationportlet_WAR_userprofileportlet_confirmEmail");
