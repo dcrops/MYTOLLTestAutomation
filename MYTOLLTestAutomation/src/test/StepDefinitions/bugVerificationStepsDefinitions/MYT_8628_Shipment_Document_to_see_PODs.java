@@ -24,6 +24,14 @@ public class MYT_8628_Shipment_Document_to_see_PODs
 		BaseWebdriver.setUp();
 		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
 	}
+	
+	@Given("^User is Registered SitAutomationUser2 in MyToll and is on the homepage$")
+	public void user_is_Registered_SitAutomationUser2_in_MyToll_and_is_on_the_homepage() throws Throwable {
+		
+		BaseWebdriver.setUp();
+		MyTollHomePageActions.Login(BaseWebdriver.SitUsername2, BaseWebdriver.Password);
+	}
+	
 
 	@When("^user searcher following shipment number in the search shipment$")
 	public void user_searcher_following_shipment_number_in_the_search_shipment(DataTable ShipmentNoTestData) throws Throwable {
@@ -39,7 +47,7 @@ public class MYT_8628_Shipment_Document_to_see_PODs
 	public void user_is_able_to_see_the_following_shipment(DataTable ShipmentNoTestData) throws Throwable {
 		for (Map < String, String>ShipmentNumberData: ShipmentNoTestData.asMaps(String.class, String.class)) {
 		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.verifyTextExist(MyTollHomePageActions.ShipmentSearchResulttext,"1 shipment matches 6571462292316 in our systems");
+		PageBase.verifyTextExist(MyTollHomePageActions.ShipmentSearchResulttext,"1 shipment matches 2857290153 in our systems");
 		PageBase.MaximumWaitForElementEnabled_1();
 		}
 			

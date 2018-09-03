@@ -1771,7 +1771,7 @@ public class BookAPickupActions {
 		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 5);
 		PageBase.SendKeysTo(AddAdressAddressSuburb, pAddAdressAddressSuburb, 5);
 		PageBase.SelectFrom(By.xpath(
-				"//*[@id=\"add-addr-suburb-wrpr\"]/div/ul/li/div[contains(text(),'" + pAddAdressAddressSuburb + "')]"), 15);
+				"//*[@id=\"add-addr-suburb-wrpr\"]/div[2]/ul/li[1]/div[contains(text(),'" + pAddAdressAddressSuburb + "')]"), 15);
 		PageBase.SendKeysTo(AddAdressEmailTGXTextField, pEmail, 5);
 		PageBase.retryingFindClick(AddAdressAddressContinue);
 		PageBase.MaximumWaitForElementEnabled();

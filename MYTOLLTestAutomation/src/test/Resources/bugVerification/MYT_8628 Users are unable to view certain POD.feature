@@ -1,20 +1,20 @@
 Feature: MYT-8628: Users are unable to view certain PODs
 
   Background: 
-    Given User is Registered in MyToll and is on the homepage
+    Given User is Registered SitAutomationUser2 in MyToll and is on the homepage
 
 Scenario: Users wants to view certain PODs
 
 When user searcher following shipment number in the search shipment
 |ShipmentNumberRefererence|
-|6571462292316|
+|2857290153|
 Then user is able to see the following shipment
 |TollShipmentNo|
-|6571462292316|
+|2857290153|
 
 When user clicks on the shipment
 |TollShipmentNo|
-|6571462292316|
+|2857290153|
 Then the shipment opens up with Shipment Documents tab
 #verify using the text on the screen
 
