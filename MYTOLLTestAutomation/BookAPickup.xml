@@ -10,7 +10,7 @@
 
 	<!---Toll carriers test data -->
 
-	<parameter name="TollCarrierTollIntermodal" value="Intermodal" />
+	<!-- <parameter name="TollCarrierTollIntermodal" value="Intermodal" /> -->
 	<parameter name="TollCarrierTollTasmania" value="Toll Tasmania" />
 	<parameter name="TollCarrierIntermodalSpecialized" value="Intermodal" />
 	<parameter name="TollCarrierTollIPEC" value="Toll IPEC" />
@@ -45,6 +45,7 @@
 	<parameter name="AccountNumberTIPEC" value="3N7763" />
 	<parameter name="AccountNumberTollPrioAu" value="200BHY" />
 	<parameter name="AccountNumberTollPrioNZ" value="100181" />
+	<parameter name="PayerAccountNumber4Digit" value="7778"/>
 	<parameter name="AccountNumber1" value="" />
 	<parameter name="AccountNumberTInter" value="" />
 	<parameter name="AccountNumberTNQX" value="" />
@@ -58,6 +59,8 @@
 	<parameter name="ItemTemplateName2" value="Automation Template2" />
 	<parameter name="Mode" value="2" />
 	<parameter name="ChargeToAccount" value="Sender" />
+	<parameter name="ChargeToAccountReceiver" value="Receiver"/>
+	<parameter name="ChargeToAccountThirdParty" value="Third party"/>
 	<parameter name="destination" value="AUSTRALIA" />
 	<parameter name="Destination" value="MELALEUCA" />
 	<parameter name="DestinationPostcode" value="MELALEUCA, 6079" />
@@ -221,7 +224,8 @@
 	  
 	<groups>
 	    <run>
-	      <include name="E2E"  />
+	      <!--<include name="E2E"  /> -->
+	       <include name="123"  />
 	    </run>
 	 </groups>
 
@@ -229,7 +233,7 @@
 	
 
 			<class name="bookAPickupE2ETests.TollPriorityNZTest"/> 
-			 <class name="bookAPickupE2ETests.TollPriorityAusTest" />  
+			 <class name="bookAPickupE2ETests.TollPriorityAusTest" />   
 			<class name="bookAPickupE2ETests.IntermodalSpecializedTest"/>
 			<class name="bookAPickupE2ETests.TollTasmaniaTest"/> 
 			<class name="bookAPickupE2ETests.TollIPECTest" />
