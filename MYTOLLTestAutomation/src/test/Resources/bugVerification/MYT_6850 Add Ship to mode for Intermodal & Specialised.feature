@@ -7,7 +7,7 @@ Scenario: SHIP mode is available for Refrigeration, Dangerous Goods, Express, Ge
 
 When user enters the following
 |service 1|service 2|service 3|service 4|service 5|service 6|service 7|service 8|service 10|
-|Refrigeration|Dangerous Goods|Express|General|DG FCL|FCL|DG Refrigerated|Dangerous Goods Express|Premium|
+|Refrigeration|Dangerous Goods|Express|General|FCL|DG FCL|DG Refrigerated|Dangerous Goods Express|Premium|
 
 
 Then verify the result

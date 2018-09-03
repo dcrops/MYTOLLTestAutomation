@@ -184,7 +184,7 @@ public class RateEnquiryActions {
 		Reporter.log("User Selects Orgin - Surburb:"+Suburb+" PostCode:"+PostCode);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.sendText(originSuburbPostCodeTextField, 5, Suburb);
-		PageBase.click(originSuburbPostCodeTextField, 2);
+		//PageBase.click(originSuburbPostCodeTextField, 2);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"origin-suburb-postcode\"]/div[1]/ul/li/div[contains(text(),'"+PostCode+"') and contains(text(),'"+Suburb+"')]"), 20);
 	}

@@ -44,8 +44,10 @@ public void user_enters_the_following(DataTable createshipmentSHIPservices) thro
 	       	PageBase.MaximumWaitForElementEnabled();
 	     	PageBase.FindElement(CreateShipmentActions.createShipmentServiceSelector).click();
 	     	PageBase.FindElement(By.xpath("//*[@id=\"service-selector\"]/div/ul/li/div[text()='"+pair.getValue()+"']")).click();
-	    	PageBase.FindElement(CreateShipmentActions.mode).click();
-	    	PageBase.verifyTextExist(CreateShipmentActions.modeSelectorSHIP,"SHIP");
+	     	PageBase.MaximumWaitForElementEnabled();
+	     	PageBase.FindElement(CreateShipmentActions.mode).click();
+	     	PageBase.MaximumWaitForElementEnabled();
+	     	PageBase.verifyTextExist(CreateShipmentActions.modeSelectorSHIP,"SHIP");
 	    }
 	}
 }
