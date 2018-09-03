@@ -23,6 +23,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 
+import com.gargoylesoftware.htmlunit.Page;
+
 import baseWebdriver.BaseWebdriver;
 import rateEnquiryActions.RateEnquiryActions;
 
@@ -61,7 +63,8 @@ public class BookAPickupActions {
 	public static By Mode = By.xpath("//*[@id=\"mode-type-selector\"]/label/a/i");
 	public static By modeItem = By.xpath("//*[@id=\"mode-type-selector\"]/div/ul/li");
 	public static By chargeToAccountItem = By.xpath("//*[@id=\"charge-to-selector\"]/div/ul/li[1]/div");
-	public static By chargeToAccount = By.xpath("//*[@id=\"charge-to-selector\"]/label/a/i");
+	//public static By chargeToAccount = By.xpath("//*[@id=\"charge-to-selector\"]/label/a/i");
+	public static By chargeToAccount = By.id("charge-to-selector");
 	public static By ReceiverAccount = By.id("reciever-account");
 	public static By itemDescription = By.xpath("//*[@id=\"freight-type-selector\"]/label/a/i");
 	public static By itemDescriptionDropdown = By.xpath("//*[@id=\"freight-type-selector\"]//a/i");
@@ -374,6 +377,10 @@ public class BookAPickupActions {
 	public static By addAccountSLAFullFinancialAccess= By.xpath("//*[@id=\"addAccountForm\"]//*//b[3]");
 	public static By addAccountSLASFullFinancianAccessMsg= By.xpath("//*[@id=\"addAccountForm\"]/div/section/section[3]/div[1]");
 
+	
+	//Field level validation
+	public static By addAccountNumberError = By.id("error-payer-account");
+	
 	public static void EnterTollCarrierItem(String pTollCarrierName) {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
@@ -553,11 +560,11 @@ public class BookAPickupActions {
 	}
 
 	public static String SelectChargeToAccount(int j) {
-		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(chargeToAccount).click();
-		String chargeToAccount = BaseWebdriver.driver
-				.findElement(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li[" + j + "]/div")).getText();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li[" + j + "]/div")).click();
+		//PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(chargeToAccount, 50);
+		PageBase.FindElement(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li[" + j + "]/div"));
+		String chargeToAccount = PageBase.GetText(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li[" + j + "]/div"), 50);
+		PageBase.click(By.xpath("//*[@id=\"charge-to-selector\"]//ul/li[" + j + "]/div"), 50);
 		return chargeToAccount;
 	}
 
@@ -1048,11 +1055,9 @@ public class BookAPickupActions {
 
 	}
 
-	public static String SelectChargeToAccountReceiver(int j) {
-		PageBase.WaitForElement(chargeToAccount, 10);
-		PageBase.SendKeysTo(ReceiverAccount, "123456", 10);
-		return SelectChargeToAccountReceiver(j);
-
+	public static void SetPayerAccountNumber(String _payerAccountNumber) {
+		PageBase.WaitForElement(chargeToAccount, 50);
+		PageBase.SendKeysTo(ReceiverAccount, _payerAccountNumber , 50);
 	}
 
 	public static void SelectItemDescription() {
@@ -1124,21 +1129,11 @@ public class BookAPickupActions {
 	public static void EnterLengthWidthHeightVolumeWeight(String plength, String pwidth, String pheight,
 			String pweight) {
 		try {
-			PageBase.MinimumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(length).click();
-			BaseWebdriver.driver.findElement(length).clear();
-			BaseWebdriver.driver.findElement(length).sendKeys(plength);
-			BaseWebdriver.driver.findElement(width).click();
-			BaseWebdriver.driver.findElement(width).clear();
-			BaseWebdriver.driver.findElement(width).sendKeys(pwidth);
-			BaseWebdriver.driver.findElement(height).click();
-			BaseWebdriver.driver.findElement(height).clear();
-			BaseWebdriver.driver.findElement(height).sendKeys(pheight);
-			PageBase.MinimumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(weight).click();
-			BaseWebdriver.driver.findElement(weight).clear();
-			BaseWebdriver.driver.findElement(weight).sendKeys(pweight);
-		}
+				PageBase.sendText(length, 50, plength);
+				PageBase.sendText(width, 50, pwidth);
+				PageBase.sendText(height, 50, pheight);
+				PageBase.sendText(weight, 50, pweight);
+			}
 
 		catch (Exception ex) {
 			RateEnquiryActions.EnterWeight(pweight);
@@ -1297,8 +1292,10 @@ public class BookAPickupActions {
 		BaseWebdriver.driver.findElement(specialInstructions).sendKeys(comment);
 	}
 
-	public static void ClickReviewBook() {
-		BaseWebdriver.driver.findElement(reviewBookBtn).click();
+	public static void ClickReviewBook() 
+	{
+		//BaseWebdriver.driver.findElement(reviewBookBtn).click();
+		PageBase.click(reviewBookBtn, 50);
 
 	}
 
@@ -2363,6 +2360,20 @@ public class BookAPickupActions {
 		} catch (Exception ex) {
 			PageBase.click(QuickEntryModeNo, 20);
 			System.out.println("QEM Not Enabled");
+		}
+	}
+	
+	public static void SetPayersAccountNumber(int _payersAccountNumber)
+	{
+		//PageBase.click(ReceiverAccount, 50);
+		PageBase.sendText(ReceiverAccount, 50,  Integer.toString(_payersAccountNumber));
+	}
+	
+	public static void ValidatePayersAccountNumber()
+	{
+		if(PageBase.findElement(addAccountNumberError, 50))
+		{
+			Assert.fail();
 		}
 	}
 	

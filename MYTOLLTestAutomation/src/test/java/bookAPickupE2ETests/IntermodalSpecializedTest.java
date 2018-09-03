@@ -496,8 +496,8 @@ public class IntermodalSpecializedTest {
 	}
 
 
-
-	  @Test(groups = { "E2E" })
+	
+	  @Test(groups = { "E2E"})
 	@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER","ServiceGeneral", "locationIndex", "ItemTemplateName",
 			"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 
@@ -932,7 +932,7 @@ public class IntermodalSpecializedTest {
 		ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
 	}
 
-	  @Test(groups = { "E2E" })
+	  @Test(groups = { "E2E"})
 	@Parameters({ "TollCarrierIntermodalSpecialized","AccountNumberTINTER", "ServiceExpress", "ServiceDangerousGoods", "locationIndex",
 			"ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination",
 			"lookupName", "PackingGroup", "packageDescription", "pDgPkgQty", "pDgQtyKg", "technicalName",
@@ -1035,6 +1035,63 @@ public class IntermodalSpecializedTest {
 
 	} 
 
+	  @Test(groups = { "E2E","123"})
+		@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER","ServiceGeneral", "locationIndex", "ItemTemplateName",
+				"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
+	 public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_General_PayerAccountNumber_Length_Check(String TollCarrier, String AccountNumberTINTER,
+				String ServiceGeneral, Integer locationIndex, String ItemTemplateName, String Length, String NumberOfItems,
+				String Width, String Height, String Weight, String palletSpace, String destination, String specialIns) 
+	  {
+
+			BookAPickupActions.SelectIntermodalSpecializedCarrier(TollCarrier);
+			String tollCarrier=BookAPickupActions.GetTollCarrier();
+			System.out.println(tollCarrier);
+			BookAPickupActions.EnterAccountNumber(AccountNumberTINTER);
+			String accountNo = BookAPickupActions.GetAccountNumber();
+			System.out.println(accountNo);
+			BookAPickupActions.VerifyBookAPickupScreen();
+			//BookAPickupActions.VerifyTollCarrier(TollCarrier);
+
+			BookAPickupActions.SelectLocation2(locationIndex);
+			JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
+			jse.executeScript("scroll(0, 250)");
+			PageBase.MaximumWaitForElementEnabled();
+			BookAPickupActions.setQEMNo();
+			BookAPickupActions.EnterQuantity(NumberOfItems);
+			BookAPickupActions.EnterService(ServiceGeneral);
+			BookAPickupActions.SelectDestination(destination);
+			BookAPickupActions.EnterItem(ItemTemplateName);
+			BookAPickupActions.SelectChargeToAccount(2);
+			BookAPickupActions.SetPayersAccountNumber(7778);
+			BookAPickupActions.EnterPalletSpace(palletSpace);
+
+			BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		
+
+			PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+			BookAPickupActions.SelectDangerousGoods(2);
+			BookAPickupActions.selectContainFoodItem();
+
+			// Enter Pickup details
+			BookAPickupActions.selectDispatchDate();
+			BookAPickupActions.selectReadyTime();
+			BookAPickupActions.selectClosingTime();
+			BookAPickupActions.EnterSpecialInstructions(specialIns);
+			PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.reviewBookBtn);
+
+			// Submit Book a pickup details
+			BookAPickupActions.ClickReviewBook();
+			BookAPickupActions.ValidatePayersAccountNumber();
+			BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
+			BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
+			PageBase.MaximumWaitForElementEnabled();
+
+			// Confirm Pickup and Verify pickup confirmation details
+			ReviewYourPickupActions.ClickConfirmPickup();
+			ReviewYourPickupActions.VerifyConfirmPickupDetails(BaseWebdriver.Username1);
+		}
+  
+	  
 	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
 
