@@ -38,8 +38,8 @@ public class MYT_7077_UN_number_delete_clear_check
 			}
 	}
 
-	@When("^User continue enters shipment overview details as below to create a shipment$")
-	public void user_continue_enters_shipment_overview_details_as_below_to_create_a_shipment(DataTable shipmentTestData) throws Throwable {
+	@When("^User continue enters shipment overview detail as below to create a shipment$")
+	public void user_continue_enters_shipment_overview_detail_as_below_to_create_a_shipment(DataTable shipmentTestData) throws Throwable {
 	    
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 			 CreateShipmentActions.EnterService(shipment.get("Service"));
@@ -68,46 +68,10 @@ public class MYT_7077_UN_number_delete_clear_check
 	     
 	}
 
-	@When("^User enters following input data for the line item$")
-	public void user_enters_following_input_data_for_the_line_item(DataTable shipmentTestData) throws Throwable {
-	    
 
-		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
-			PageBase.MaximumWaitForElementEnabled();
-			PageBase.MaximumWaitForElementEnabled();
-			PageBase.MaximumWaitForElementEnabled();
-			CreateShipmentActions.setQEMNo();
-			PageBase.MaximumWaitForElementEnabled();
-			BookAPickupActions.EnterItem(shipment.get("Item description"));
-			CreateShipmentActions.EnterBillingType(shipment.get("Billing Type"));
-			CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));
-			//CreateShipmentActions.ItemType(2);
-			BookAPickupActions.EnterLengthWidthHeight(shipment.get("Length"), shipment.get("Width"),
-					shipment.get("Height"));
-			CreateShipmentActions.EnterWeight(shipment.get("Weight"));
-			PageBase.MoveToElement(CreateShipmentActions.senderReference, BookAPickupActions.dangerousGoodNo);
 
-			CreateShipmentActions.EnterSenderReference(shipment.get("SenderReference"),
-					shipment.get("ReceiverReference"));
-
-		}
-	     
-	}
-
-	@When("^User selects Dangerous Goods$")
-	public void user_selects_Dangerous_Goods(DataTable shipmentTestData) throws Throwable {
-		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
-
-			String s = shipment.get("DgGoods");
-			System.out.println("S4  " + s);
-			BookAPickupActions.SelectDangerousGoods(Integer.parseInt(s));
-		}
-	    
-	     
-	}
-
-	@When("^User enters following dangerous goods details$")
-	public void user_enters_following_dangerous_goods_details(DataTable shipmentTestData) throws Throwable {
+	@When("^User enters following dangerous goods detail$")
+	public void user_enters_following_dangerous_goods_detail(DataTable shipmentTestData) throws Throwable {
 
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 
@@ -119,8 +83,8 @@ public class MYT_7077_UN_number_delete_clear_check
 	   
 	}
 
-	@Then("^User be able to see following fields are autopopulated\\.$")
-	public void user_be_able_to_see_following_fields_are_autopopulated(DataTable shipmentTestData) throws Throwable {
+	@Then("^User be able to see following field are autopopulated\\.$")
+	public void user_be_able_to_see_following_field_are_autopopulated(DataTable shipmentTestData) throws Throwable {
 	    
 	  
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
