@@ -61,6 +61,19 @@ public class ReturnsCommonStepsDefinitions {
 		
 	}
 	
+	
+	@Given("^User is Registered in MyToll and is on My Accounts Page$")
+	public void user_is_Registered_in_MyToll_and_is_on_My_AccountsPage() throws Throwable {
+	    
+		BaseWebdriver.setUp();
+		PageBase.MediumWaitForElementEnabled();
+		MyTollHomePageActions.Login(BaseWebdriver.Username2, BaseWebdriver.Password);
+		PageBase.MediumWaitForElementEnabled();
+		MyTollHomePageActions.ClickMenu();
+		PageBase.click(MyTollHomePageActions.myAccountMenu, 50);
+		PageBase.MaximumWaitForElementEnabled_1();
+		
+	}
 
 
 	@And("^User enters shipment overview details to Create a Return$")
