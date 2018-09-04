@@ -168,7 +168,8 @@ public class MyTollHomePageActions {
 	public static By shareShipmentEmail = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-email\"]");
 	public static By shareShipmentEmailErrorMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"to-email-sec\"]/div");
 	//public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\"]");
-	public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\" and (contains(@class,'toll-blue-bg'))]");
+	public static By shareShipmentSubmit = By.xpath("//*[@id=\"modal-content-overlay-0\"]//*[@id=\"share-emails\"]");
+//	public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\" and (contains(@class,'toll-blue-bg'))]");
 	
 	public static By shareShipmentEmailAdd = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-form-area\"]/div[1]/span/span");
 	public static By shareShipmentEmailMaxMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"max-em-used\"]/div");
