@@ -141,7 +141,7 @@ public class TollPriorityAUCommercialInvoice {
 	
 	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
-		// BaseWebdriver.tearDown();
+		 BaseWebdriver.tearDown();
 
 	}
 

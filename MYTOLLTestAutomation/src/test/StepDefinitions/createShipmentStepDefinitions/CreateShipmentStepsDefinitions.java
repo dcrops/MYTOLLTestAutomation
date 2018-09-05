@@ -86,8 +86,13 @@ public class CreateShipmentStepsDefinitions  {
 	public void UserClicksContinueManifestonShipmentReviewPage() throws Throwable {
 		PageBase.MaximumWaitForElementEnabled_1();
 		AccountNo = BaseWebdriver.driver.findElement(ShipmentReviewActions.accountNumber).getText();
+		System.out.println(AccountNo);
+		System.out.println("Line 90");
 		PageBase.waitForElement(ManifestActions.ContinuetoManifest, 5);
+		System.out.println("Line 92");
 		PageBase.click(ManifestActions.ContinuetoManifest, 5);
+		System.out.println("Line 94");
+		System.out.println(ManifestActions.ContinuetoManifest);
 	}
 	
 	@And("^User Submits and Prints Manifest$")

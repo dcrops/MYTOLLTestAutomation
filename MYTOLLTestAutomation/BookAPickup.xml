@@ -224,8 +224,9 @@
 	  
 	<groups>
 	    <run>
-	      <!--<include name="E2E"  /> -->
-	       <include name="123"  />
+	      <include name="E2E"  /> 
+	      
+
 	    </run>
 	 </groups>
 

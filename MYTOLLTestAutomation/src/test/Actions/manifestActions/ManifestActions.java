@@ -329,7 +329,7 @@ public class ManifestActions {
 	
 	public static String GetManifestNameFromAddToManifest() {
 		PageBase.MaximumWaitForElementEnabled();
-		return BaseWebdriver.driver.findElement(AddToManifestFirstManifestName).getText();
+		return PageBase.GetText(AddToManifestFirstManifestName, 50);
 	}
 	
 	public static String GetManifestNameFromManifestReviewPage() {
