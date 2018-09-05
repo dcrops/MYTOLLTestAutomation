@@ -92,7 +92,7 @@ public class ManifestIntermodalSpecializedTests {
 
 
 
-	@Test(groups = { "Shakeout Testing", "E2E" })
+	@Test(groups = { "Shakeout Testing", "E2E"})
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -160,7 +160,7 @@ public class ManifestIntermodalSpecializedTests {
 		//ShipmentReviewActions.ClickAddToManifestManually();
 		//ManifestActions.MoveToManifestAndCreateNewManifest(NewManifestName);
 		//System.out.println(" NewManifestName passed ");
-		
+		ManifestActions.submitandPrintManifest();
 		
 		
 	}
