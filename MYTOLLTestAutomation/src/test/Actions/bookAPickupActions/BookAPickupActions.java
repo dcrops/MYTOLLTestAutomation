@@ -2332,8 +2332,8 @@ public class BookAPickupActions {
 
 	//	PageBase.FindElement(MyTollHomePageActions.shareShipmentSubmit).click();
 		//PageBase.ClickOn(MyTollHomePageActions.shareShipmentSubmit, 5);
-		PageBase.click(By.xpath("//*[@id=\"modal-content-overlay-0\"]//*[@id=\"share-emails\"]"), 10);
-
+	//	PageBase.click(By.xpath("//*[@id=\"modal-content-overlay-0\"]//*[@id=\"share-emails\"]"), 10);
+								 //*[@id="modal-content-overlay-0"]//*[@id="share-emails"]
 	}
 	
 	public static void ClickMyPickupsInShareScreen() {
