@@ -200,6 +200,19 @@ public class PageBase
 		// Log the Action
 		return result;
 	}
+	//Nishant
+	public static Boolean IsDisplayed(By locator) {
+		Boolean result;
+		try {
+			result = findElement(locator, 2);
+//			result = element.isDisplayed();
+		} catch (Exception ex) {
+			result = false;
+			System.out.println("\n locator isDisplayed method did not work  " /* + result + " " + ex.toString()*/);
+		}
+		// Log the Action
+		return result;
+	}
 	
 	public static void ElementToBeClickableWait(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 50);
