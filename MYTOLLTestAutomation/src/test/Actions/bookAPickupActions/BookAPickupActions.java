@@ -2328,11 +2328,11 @@ public class BookAPickupActions {
 	public static void ClickShareInShareScreen() {
 		PageBase.MinimumWaitForElementEnabled();
 
-		PageBase.click(MyTollHomePageActions.shareShipmentSubmit, 20);
+	//	PageBase.click(MyTollHomePageActions.shareShipmentSubmit, 20);
 
 	//	PageBase.FindElement(MyTollHomePageActions.shareShipmentSubmit).click();
 		//PageBase.ClickOn(MyTollHomePageActions.shareShipmentSubmit, 5);
-	//	PageBase.click(By.xpath("//*[@id=\"modal-content-overlay-0\"]//*[@id=\"share-emails\"]"), 10);
+		PageBase.click(By.xpath("//*[@id=\"modal-content-overlay-0\"]//*[@id=\"share-emails\"]"), 10);
 								 //*[@id="modal-content-overlay-0"]//*[@id="share-emails"]
 	}
 	
