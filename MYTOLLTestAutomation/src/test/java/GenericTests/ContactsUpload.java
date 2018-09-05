@@ -48,9 +48,9 @@ public void UploadContactsFile() throws AWTException, InterruptedException
   
 
   @AfterMethod
-public void afterMethod() 
+public void afterMethod() throws Exception 
   {
-	  BaseWebdriver.driver.close();
+	  BaseWebdriver.tearDown();
   }
 
 }

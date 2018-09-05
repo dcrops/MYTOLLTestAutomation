@@ -84,7 +84,7 @@ public class Registration_contacts_check_Mining_energy {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-	//	BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 
 	}
 }

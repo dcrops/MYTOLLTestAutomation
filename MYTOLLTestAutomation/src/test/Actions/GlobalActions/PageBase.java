@@ -200,7 +200,7 @@ public class PageBase
 		// Log the Action
 		return result;
 	}
-
+	
 	public static void ElementToBeClickableWait(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 50);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -495,6 +495,7 @@ public class PageBase
 	
 	public static void waitForPageLoadingEnd (By locator, int seconds, String pageName) {
 		boolean loadingExists = BaseWebdriver.driver.findElement(locator).isDisplayed();
+		
 		try {
 			for (int i = 1; i <= seconds; i++){
 				if (loadingExists == false) {

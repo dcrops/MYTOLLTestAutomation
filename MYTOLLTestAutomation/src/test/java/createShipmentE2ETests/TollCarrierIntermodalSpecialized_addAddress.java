@@ -73,7 +73,7 @@ public class TollCarrierIntermodalSpecialized_addAddress {
 	
 	@AfterMethod(alwaysRun = true)
 	public void RunTearDown() throws Exception {
-//		BaseWebdriver.tearDown();
+		BaseWebdriver.tearDown();
 		//BaseWebdriver.driver.quit();
 	}
 
