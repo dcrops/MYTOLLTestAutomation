@@ -1,0 +1,42 @@
+Feature: MYT-6126  - Rate Enquiry Disclaimer Content is Incorrect bug verification
+
+  Background:
+    Given User is Registered in MyToll and is on Rate Enquiry Page
+
+  Scenario: The rate enquiry disclaimer text is the same as displayed in Toll Online
+    When User selects Toll Carrier
+      | TollCarrier |
+      | Toll IPEC   |
+    And User select Service
+      | Service      |
+      | Road Express |
+    And User Enters and selects Account
+      | Account |
+      | 3N7763  |
+    Then User Enters Orgin
+      | OriginSuburb | OriginPostCode |
+      | PERTH        | 6000           |
+    Then User Enters Destination
+      | DesSuburb | DesPostCode |
+      | BRISBANE  | 4000        |
+    And User Enters Line Items for Rate Enquiry
+      | ItemTemplateName     | NumberOfItems | Length | Width | Height | Weight |
+      | Automation Template1 | 10            | 10     | 10    | 10     | 10     |
+    And User Selects Item type
+      | BillingType        |
+      | ALL UNITS - PER KG |
+    And User Selects Quantity type
+      | QtyType |
+      | Items   |
+    When User Clicks Price Now
+    Then User verifies disclaimer message with text
+    """
+    The rate displayed is an estimate only. The rate may change if there are any variations to the actual weight, dimensions or location entered above and are based on Mon - Fri business hours. Extra service and other surcharges may apply. For further enquiries please call our Sales Dept on 1300 865 547 (Option 3)
+    """
+    Then User Verifies Price and Continues to Shipment
+    Then User Verifies Details on Shipment Page
+      | TollCarrier | Service      | Account | Length | Width | Height |
+      | Toll IPEC   | Road Express | 3N7763  | 10     | 10    | 10     |
+    Then User Verifies Details on Shipment Page Line Items
+      | ItemTemplateName     | NumberOfItems | Length | Width | Height | Weight | BillingType        | QtyType |
+      | Automation Template1 | 10            | 10     | 10    | 10     | 10     | ALL UNITS - PER KG | Items   |
