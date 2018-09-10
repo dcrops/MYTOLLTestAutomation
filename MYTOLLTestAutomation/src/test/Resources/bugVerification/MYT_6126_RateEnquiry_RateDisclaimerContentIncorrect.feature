@@ -33,10 +33,3 @@ Feature: MYT-6126  - Rate Enquiry Disclaimer Content is Incorrect bug verificati
     """
     The rate displayed is an estimate only. The rate may change if there are any variations to the actual weight, dimensions or location entered above and are based on Mon - Fri business hours. Extra service and other surcharges may apply. For further enquiries please call our Sales Dept on 1300 865 547 (Option 3)
     """
-    Then User Verifies Price and Continues to Shipment
-    Then User Verifies Details on Shipment Page
-      | TollCarrier | Service      | Account | Length | Width | Height |
-      | Toll IPEC   | Road Express | 3N7763  | 10     | 10    | 10     |
-    Then User Verifies Details on Shipment Page Line Items
-      | ItemTemplateName     | NumberOfItems | Length | Width | Height | Weight | BillingType        | QtyType |
-      | Automation Template1 | 10            | 10     | 10    | 10     | 10     | ALL UNITS - PER KG | Items   |
