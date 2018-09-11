@@ -184,6 +184,9 @@ public class CreateShipmentCommonStepsDefinitions {
 		}
 		
 	}
-	
 
+	@Then("^User verifies who pays as \"([^\"]*)\"$")
+	public void userVerifiesWhoPaysAs(String payer) throws Throwable {
+		PageBase.verifyTextExistAttribute(CreateShipmentActions.whoPaysDropdownText, payer);
+	}
 }

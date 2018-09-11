@@ -40,6 +40,7 @@ public class CreateShipmentActions {//Nishant
 	public static By TempretureFromTextField = By.id("temp-from");
 	public static By TempretureToTextField = By.id("temp-to");
 	public static By whoPaysdropdown = By.xpath("//*[@id=\"payer-selector\"]/label/a/i");
+	public static By whoPaysDropdownText = By.id("payer-label");
 	public static By senderdropdown = By.xpath("//*[@id=\"sender-selector\"]/label/a/i");
 	public static By accountNumber = By.name("account-text");
 	public static By receiverdropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i");
