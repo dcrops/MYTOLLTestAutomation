@@ -1,9 +1,10 @@
+@MYT8826
 Feature: MYT_8826 User unable to print due to zero weight at Print & Close Manifest
 
   Background:
     Given User is Registered in MyToll and is on Shipment page
 
-  @tag1 @MYT8826
+  @tag1
   Scenario: User is unable to print because the weights change to zero at the Print & Close Manifest screen
     When user selects Toll Carrier as below to create shipment
       | TollCarrier            |
