@@ -150,8 +150,9 @@ public class DashboardCommonStepsDefinitions {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
 		String date = sdf.format(new Date()); 
 		System.out.println(date);
-		PageBase.click(By.xpath("	//*/td[preceding-sibling::td[text()='"+draftShipment.get("Toll carrier")+"']][preceding-sibling::td[text()='"+draftShipment.get("Sender")+"']] "
-				+ "[preceding-sibling::td[text()='"+draftShipment.get("Receiver")+"']] [preceding-sibling::td[text()='"+date+"']]/a"), 5);
+		String xpath= "	//*/td[preceding-sibling::td[text()='"+draftShipment.get("Toll carrier")+"']][preceding-sibling::td[text()='"+draftShipment.get("Sender")+"']] "
+				+ "[preceding-sibling::td[text()='"+draftShipment.get("Receiver")+"']] [preceding-sibling::td[text()='"+date+"']]/a";
+		PageBase.click(By.xpath(xpath), 5);
 		
 		}
 	}

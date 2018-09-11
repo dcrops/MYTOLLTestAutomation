@@ -331,6 +331,7 @@ public class PageBase
 		{
 			waitSeconds= 50;
 		}
+		PageBase.moveToElement(locator);
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, waitSeconds);
 		WebElement we = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(locator));
 		if (we == null) {
@@ -339,7 +340,7 @@ public class PageBase
 			Assert.fail("element with: " + locator.toString() + " not found" +"<br>");
 			//return null;
 		}
-		PageBase.moveToElement(locator);
+		
 		we.click();
 		return we;
 	}
