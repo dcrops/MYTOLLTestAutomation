@@ -2,6 +2,7 @@ package rateEnquiryStepDefinitions;
 
 import java.util.Map;
 
+import cucumber.api.PendingException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -320,6 +321,11 @@ public class RateEnquiryStepDefinitions {
 		}
 	
 	}
-	
 
+
+	@Then("^User verifies disclaimer message with text$")
+	public void userVerifiesDisclaimerMessageWithText(String disclaimerText) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		PageBase.verifyTextExistContains(RateEnquiryActions.disclaimerMessage, disclaimerText);
+	}
 }

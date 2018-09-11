@@ -549,7 +549,7 @@ public class PageBase
 	
 	public static void isElementNotPresent (By locator, int seconds, String itemDescription) {
 		try {
-		boolean isElementPresent = BaseWebdriver.driver.findElement(locator).isDisplayed();
+			boolean isElementPresent = PageBase.FindElement(locator).isDisplayed();
 		
 		if (isElementPresent == true) {
 			Reporter.log("FAILED: Element : "+itemDescription+ " Exits on Screen");
