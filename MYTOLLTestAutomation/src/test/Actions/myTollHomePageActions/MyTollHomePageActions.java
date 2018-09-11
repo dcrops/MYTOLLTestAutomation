@@ -170,8 +170,8 @@ public class MyTollHomePageActions {
 	//public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\"]");
 
 //	public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\" and (contains(@class,'toll-blue-bg'))]");
-	public static By shareShipmentSubmit = By.xpath("//*[@id=\"modal-content-overlay-0\"]//*[@id=\"share-emails\"]");
-
+	public static By shareShipmentSubmit = By.xpath("//*[@id=\"modal-content-overlay-0\"]//*[@id=\"share-submit\"]");
+	//public static By shareShipmentSubmit = By.id("share-submit");
 
 	public static By shareShipmentEmailAdd = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-form-area\"]/div[1]/span/span");
 	public static By shareShipmentEmailMaxMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"max-em-used\"]/div");
@@ -449,10 +449,10 @@ public class MyTollHomePageActions {
 	
 	public static void ClickMenu()
 	{
+		/*PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		
+		*/
 	/*	Wait<WebDriver> wait = new FluentWait<WebDriver>(BaseWebdriver.driver)
 			    .withTimeout(30, TimeUnit.SECONDS)
 			    .pollingEvery(5, TimeUnit.SECONDS)
@@ -465,7 +465,7 @@ public class MyTollHomePageActions {
 			}
 			});*/
 			
-		PageBase.WaitForElement(MyTollHomePageActions.HmbugerMenu,30);
+		//PageBase.WaitForElement(MyTollHomePageActions.HmbugerMenu,30);
 		PageBase.click(HmbugerMenu, 5);
 		
 	}
