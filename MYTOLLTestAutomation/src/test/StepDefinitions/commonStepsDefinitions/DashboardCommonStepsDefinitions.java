@@ -150,9 +150,8 @@ public class DashboardCommonStepsDefinitions {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
 		String date = sdf.format(new Date()); 
 		System.out.println(date);
-		CreateShipmentActions.ClickShipment();
-		//PageBase.click(By.xpath("	//*/td[preceding-sibling::td[text()='"+draftShipment.get("Toll carrier")+"']][preceding-sibling::td[text()='"+draftShipment.get("Sender")+"']] "
-			//	+ "[preceding-sibling::td[text()='"+draftShipment.get("Receiver")+"']] [preceding-sibling::td[text()='"+date+"']]/a"), 5);
+		PageBase.click(By.xpath("	//*/td[preceding-sibling::td[text()='"+draftShipment.get("Toll carrier")+"']][preceding-sibling::td[text()='"+draftShipment.get("Sender")+"']] "
+				+ "[preceding-sibling::td[text()='"+draftShipment.get("Receiver")+"']] [preceding-sibling::td[text()='"+date+"']]/a"), 5);
 		
 		}
 	}
