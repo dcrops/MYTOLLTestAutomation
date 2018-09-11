@@ -467,7 +467,7 @@ public class PageBase
 	public static void verifyTextExist(By locator, String expectedText){
 		try {
 			//String getText = BaseWebdriver.driver.findElement(locator).getText();
-			String getText= PageBase.GetText(locator, 20);
+			String getText= PageBase.GetText(locator, 10);
 			System.out.println(getText);
 		 
 			if (getText.equalsIgnoreCase(expectedText)){
@@ -485,6 +485,38 @@ public class PageBase
 		}
 		
 	}
+	
+	public static boolean verifyTextExistsBoolean(By locator, String expectedText){
+		try {
+			//String getText = BaseWebdriver.driver.findElement(locator).getText();
+				String getText= PageBase.GetText(locator, 10);
+				System.out.println(getText);
+			 
+				if (getText.equalsIgnoreCase(expectedText)){
+					Reporter.log("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getText);
+					System.out.println("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getText);
+					return true;
+				}else{
+					Reporter.log("FAILED: Expected Text : "+expectedText+ " DOES NOT Match the Text on Screen :" +getText);
+					//Assert.fail("FAILED: Expected Text : "+expectedText+ " DOES NOT Match the Text on Screen :" +getText);
+					return false; 
+				}
+				
+			}
+		catch(Exception e) 
+		{
+			Reporter.log("xpath not found: " + locator+"<br>");
+			return false;
+		}
+		
+		 
+	}
+	
+	
+	
+	
+	
+	
 	
 	public static void verifyTextSubString(By locator, String expectedText){
 		try {

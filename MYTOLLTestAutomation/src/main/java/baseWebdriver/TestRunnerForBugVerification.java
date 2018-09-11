@@ -7,9 +7,11 @@ import cucumber.api.testng.*;
 
 @CucumberOptions( strict=true
 
-        ,features = {"src/test/Resources/bugVerification/MYT_550_checking_references_with_spaces_can_be_searched.feature", 
+        ,features = {"src/test/Resources/bugVerification/MYT_550_checking_references_with_spaces_can_be_searched.feature",
+                "src/test/Resources/bugVerification/MYT_8447_error messages are displayed even when filled in.feature",
+        		"src/test/Resources/bugVerification/MYT_8628 Users are unable to view certain POD.feature",
         		"src/test/Resources/bugVerification/MYT_6850 Add Ship to mode for Intermodal & Specialised.feature",
-        		//"src/test/Resources/bugVerification/MYT_6361 Primary Address change verification.feature",
+        		"src/test/Resources/bugVerification/MYT_6361 Primary Address change verification.feature",
         		"src/test/Resources/bugVerification/MYT_9022_Spelling_Error_in_the_account_already_exists_message.feature",
          		"src/test/Resources/bugVerification/MYT_6523 Ready Time and close time check.feature",
          		"src/test/Resources/bugVerification/MYT_7077_UN_number_delete_clear_check.feature",
@@ -18,7 +20,7 @@ import cucumber.api.testng.*;
          		"src/test/Resources/bugVerification/MYT_9027_Grammar_error_on_the_My_Returns_page.feature",
         		"src/test/Resources/bugVerification/MYT_8887Shipment_International_Domestic_Addresses.feature",
          		"src/test/Resources/bugVerification/MYT_8628 Users are unable to view certain POD.feature"}
-		, glue= {"bugVerificationStepsDefinitions","commonStepsDefinitions","createShipmentStepDefinitions"}
+		, glue= {"bugVerificationStepsDefinitions","ErrorMessagesAreDisplayed","commonStepsDefinitions","createShipmentStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
 
                 "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-json\\CucumberTestReport.json",
