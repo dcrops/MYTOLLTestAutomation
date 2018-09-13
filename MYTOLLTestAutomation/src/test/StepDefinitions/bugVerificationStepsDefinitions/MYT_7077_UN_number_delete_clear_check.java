@@ -30,44 +30,58 @@ public class MYT_7077_UN_number_delete_clear_check
 	     
 	}*/
 
-	@When("^user selects Toll Carrier as below$")
+	/*@When("^user selects Toll Carrier as below$")
 	public void user_selects_Toll_Carrier_as_below(DataTable shipmentTestData) throws Throwable {
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 			
 			BookAPickupActions.EnterTollCarrier(shipment.get("TollCarrier"));
 			}
-	}
+	}*/
+//
+//	@When("^User continue enters shipment overview details as below to create shipment$")
+//	public void user_continue_enters_shipment_overview_details_as_below_to_create_shipment(DataTable shipmentTestData) throws Throwable {
+//
+//		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
+//			 CreateShipmentActions.EnterService(shipment.get("Service"));
+//			BookAPickupActions.EnterAccountNumber(shipment.get("AccountNumber"));
+//			String s = shipment.get("Whopays");
+//			System.out.println("S  " + s);
+//			CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
+//			String s2 = shipment.get("Mode");
+//			System.out.println("S2  " + s2);
+//			CreateShipmentActions.SelectMode(Integer.parseInt(s2));
+//			CreateShipmentActions.EnterSender(shipment.get("Sender"));
+//			CreateShipmentActions.EnterReceiver(shipment.get("Receiver"));
+//			CreateShipmentActions.SelectShipmentConsolidationContinue();
+//			CreateShipmentActions.EnterDGContactDetails(shipment.get("DGContactName"), shipment.get("DGContactNumber"));
+//			/*PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
+//					CreateShipmentActions.notifyReceiverCheckBox);*/
+//			// CreateShipmentActions.EnterSenderEmail(SenderEmail);
+//			CreateShipmentActions.EnterReceiverEmail(shipment.get("ReceiverEmail"));
+//			CreateShipmentActions.EnterDropOffDepot(shipment.get("DropOffDepot"));
+//			CreateShipmentActions.EnterCollectionDepot(shipment.get("CollectionDepot"));
+//
+//			PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
+//			CreateShipmentActions.EnterShipmentReferences(shipment.get("ShipmentRef1"), shipment.get("ShipmentRef2"));
+//			PageBase.MaximumWaitForElementEnabled();
+//		}
+//
+//	}
 
-	@When("^User continue enters shipment overview detail as below to create a shipment$")
-	public void user_continue_enters_shipment_overview_detail_as_below_to_create_a_shipment(DataTable shipmentTestData) throws Throwable {
+/*	@When("^User enters following input data for the line item$")
+	public void user_enters_following_input_data_for_the_line_item(DataTable shipmentTestData) throws Throwable {
 	    
-		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
-			 CreateShipmentActions.EnterService(shipment.get("Service"));
-			BookAPickupActions.EnterAccountNumber(shipment.get("AccountNumber"));
-			String s = shipment.get("Whopays");
-			System.out.println("S  " + s);
-			CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
-			String s2 = shipment.get("Mode");
-			System.out.println("S2  " + s2);
-			CreateShipmentActions.SelectMode(Integer.parseInt(s2));
-			CreateShipmentActions.EnterSender(shipment.get("Sender"));
-			CreateShipmentActions.EnterReceiver(shipment.get("Receiver"));
-			CreateShipmentActions.SelectShipmentConsolidationContinue();
-			CreateShipmentActions.EnterDGContactDetails(shipment.get("DGContactName"), shipment.get("DGContactNumber"));
-			/*PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
-					CreateShipmentActions.notifyReceiverCheckBox);*/
-			// CreateShipmentActions.EnterSenderEmail(SenderEmail);
-			CreateShipmentActions.EnterReceiverEmail(shipment.get("ReceiverEmail"));
-			CreateShipmentActions.EnterDropOffDepot(shipment.get("DropOffDepot"));
-			CreateShipmentActions.EnterCollectionDepot(shipment.get("CollectionDepot"));
 
-			PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
-			CreateShipmentActions.EnterShipmentReferences(shipment.get("ShipmentRef1"), shipment.get("ShipmentRef2"));
-			PageBase.MaximumWaitForElementEnabled();
+	@When("^User enters following dangerous goods detail$")
+	public void user_enters_following_dangerous_goods_detail(DataTable shipmentTestData) throws Throwable {
+
+			CreateShipmentActions.EnterSenderReference(shipment.get("SenderReference"),
+					shipment.get("ReceiverReference"));
+
 		}
 	     
 	}
-
+*/
 
 
 	@When("^User enters following dangerous goods detail$")
@@ -122,9 +136,5 @@ public class MYT_7077_UN_number_delete_clear_check
 		//PageBase.verifyTextExist(CreateShipmentActions.dgDetailsClass, "");
 		//PageBase.verifyTextExist(CreateShipmentActions.dgDetailsProperShoppingName, "");
 	}
-	
-//	@Then("^User Closes the Browser$")
-//	public void UserClosestheBrowser() throws Throwable {
-	//	BaseWebdriver.tearDown();
-//	}
+
 }

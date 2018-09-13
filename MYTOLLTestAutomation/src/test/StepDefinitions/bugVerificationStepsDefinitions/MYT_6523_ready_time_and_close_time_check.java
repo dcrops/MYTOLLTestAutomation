@@ -29,7 +29,7 @@ public class MYT_6523_ready_time_and_close_time_check{
 		MyTollHomePageActions.ClickBookAPIckupMenu();		
 	}
 
-	@When("^User selects Toll Carrier and an Account Number$")
+	/*@When("^User selects Toll Carrier and an Account Number$")
 	public void user_selects_Toll_Carrier_and_an_Account_Number(DataTable bookAPickupTestData) throws Throwable {
 	  
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
@@ -38,17 +38,17 @@ public class MYT_6523_ready_time_and_close_time_check{
 			BookAPickupActions.EnterAccountNumber(bookAPickup.get("AccountNumber"));
 		}
 
-	}
+	}*/
 
-	@When("^User selects an existing Sender address from the Sender field$")
+	/*@When("^User selects an existing Sender address from the Sender field$")
 	public void user_selects_an_existing_Sender_address_from_the_Sender_field(DataTable bookAPickupTestData) throws Throwable {
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
 			// Add Address
 			BookAPickupActions.EnterLocation(bookAPickup.get("Sender"));
 		}
-	}
+	}*/
 
-	@When("^User enter following input data to Add Item$")
+/*	@When("^User enter following input data to Add Item$")
 	public void user_enter_following_input_data_to_Add_Item(DataTable bookAPickupTestData) throws Throwable {
 	for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
 			
@@ -67,8 +67,8 @@ public class MYT_6523_ready_time_and_close_time_check{
 		}
 		
 	}
-
-	@When("^User Selects Charge to Account as below$")
+*/
+/*	@When("^User Selects Charge to Account as below$")
 	public void user_Selects_Charge_to_Account_as_below(DataTable bookAPickupTestData) throws Throwable {
 	    
 	for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
@@ -76,9 +76,9 @@ public class MYT_6523_ready_time_and_close_time_check{
 			String chargeToAccount = BookAPickupActions.SelectChargeToAccount2(Integer.parseInt(bookAPickup.get("ChargeToAccount")));
 			
 		}
-	}
+	}*/
 
-	@When("^User enter following details$")
+/*	@When("^User enter following details$")
 	public void user_enter_following_details(DataTable bookAPickupTestData) throws Throwable {
 	
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
@@ -88,9 +88,9 @@ public class MYT_6523_ready_time_and_close_time_check{
 					bookAPickup.get("Height"), bookAPickup.get("Weight"));
 		}
 		
-	}
+	}*/
 
-	@When("^User selects Contains Food or food packaging$")
+	/*@When("^User selects Contains Food or food packaging$")
 	public void user_selects_Contains_Food_or_food_packaging(DataTable arg1) throws Throwable {
 		
 		PageBase.MaximumWaitForElementEnabled();
@@ -98,9 +98,9 @@ public class MYT_6523_ready_time_and_close_time_check{
 		BookAPickupActions.selectContainFoodItem();
 		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.dangerousGoodNo);
 		
-	}
+	}*/
 
-	@When("^User selects Dangerous Goods as below$")
+/*	@When("^User selects Dangerous Goods as below$")
 	public void user_selects_Dangerous_Goods_as_below(DataTable bookAPickupTestData) throws Throwable {
 	   
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
@@ -110,14 +110,14 @@ public class MYT_6523_ready_time_and_close_time_check{
 		
 		}
 	}
-
+*/
 	@When("^User selects Dispatch date as Today$")
 	public void user_selects_Dispatch_date_as_Today() throws Throwable {
 	PageBase.FindElement(BookAPickupActions.pickupDate).click();
 		
 	}
 
-	@When("^User selects Ready Time$")
+/*	@When("^User selects Ready Time$")
 	public void user_selects_Ready_Time(DataTable bookAPickupTestData) throws Throwable {
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
 
@@ -126,7 +126,7 @@ public class MYT_6523_ready_time_and_close_time_check{
 			 PageBase.MaximumWaitForElementEnabled();
 		}
 		
-	}
+	}*/
 	
 	@When("^User selects Closing Time$")
 	public void user_selects_Closing_Time(DataTable bookAPickupTestData) throws Throwable {
@@ -139,12 +139,12 @@ public class MYT_6523_ready_time_and_close_time_check{
 		}
 	}
 
-	
+	/*
 	@When("^User clicks on Review & Book$")
 	public void user_clicks_on_Review_Book() throws Throwable {
 		BaseWebdriver.driver.findElement(BookAPickupActions.specialInstructions).click();
 		BookAPickupActions.ClickReviewBook();		
-	}
+	}*/
 
 	@Then("^error message is displayed$")
 	public void error_message_is_displayed() throws Throwable {
