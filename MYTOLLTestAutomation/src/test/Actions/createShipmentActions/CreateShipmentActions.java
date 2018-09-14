@@ -734,7 +734,9 @@ public class CreateShipmentActions {//Nishant
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(quoteNumber).click();
 		BaseWebdriver.driver.findElement(quoteNumber).clear();
-		BaseWebdriver.driver.findElement(quoteNumber).sendKeys(pQuoteNumber);
+		if (pQuoteNumber != null && !pQuoteNumber.isEmpty()) {
+			BaseWebdriver.driver.findElement(quoteNumber).sendKeys(pQuoteNumber);
+		}
 
 	}
 
