@@ -1,61 +1,71 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>MYTOLL</groupId>
-  <artifactId>MYTOLLTestAutomation</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+    <groupId>MYTOLL</groupId>
+    <artifactId>MYTOLLTestAutomation</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
-  <name>Maven</name>
-  <url>http://maven.apache.org/</url>
-  <inceptionYear>2001</inceptionYear>
+    <name>My Toll Test Automation</name>
 
-  <distributionManagement>
-    <site>
-      <id>website</id>
-      <url>scp://webhost.company.com/www/website</url>
-    </site>
-  </distributionManagement>
-<dependencies>
-<dependency>
-    <groupId>info.cukes</groupId>
-    <artifactId>cucumber-java</artifactId>
-    <version>1.2.5</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/com.jayway.restassured/rest-assured -->
-<dependency>
-    <groupId>com.jayway.restassured</groupId>
-    <artifactId>rest-assured</artifactId>
-    <version>2.9.0</version>
-    <scope>compile</scope>
-    <exclusions>
-    	<exclusion>
-    		<groupId>org.codehaus.groovy</groupId>
-    		<artifactId>groovy</artifactId>
-    	</exclusion>
-    	<exclusion>
-    		<groupId>org.codehaus.groovy</groupId>
-    		<artifactId>groovy-xml</artifactId>
-    	</exclusion>
-    </exclusions>
-</dependency>
-<dependency>
-    <groupId>net.sourceforge.javacsv</groupId>
-    <artifactId>javacsv</artifactId>
-    <version>2.0</version>
-</dependency>
+    <build>
+        <directory>${project.basedir}/target</directory>
+        <outputDirectory>${project.build.directory}/classes</outputDirectory>
+        <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
+        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <configuration>
+                    <locales>en,fr</locales>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <distributionManagement>
+        <site>
+            <id>website</id>
+            <url>scp://webhost.company.com/www/website</url>
+        </site>
+    </distributionManagement>
+    <dependencies>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.jayway.restassured/rest-assured -->
+        <dependency>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>2.9.0</version>
+            <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.codehaus.groovy</groupId>
+                    <artifactId>groovy</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.groovy</groupId>
+                    <artifactId>groovy-xml</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.javacsv</groupId>
+            <artifactId>javacsv</artifactId>
+            <version>2.0</version>
+        </dependency>
 
-</dependencies>
- 
+    </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <locales>en,fr</locales>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>
