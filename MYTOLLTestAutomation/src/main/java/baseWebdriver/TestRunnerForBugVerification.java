@@ -20,7 +20,9 @@ import cucumber.api.testng.*;
          		"src/test/Resources/bugVerification/MYT_6126_Rate_enquiry_disclaimer_content.feature",
          		"src/test/Resources/bugVerification/MYT_9027_Grammar_error_on_the_My_Returns_page.feature",
         		"src/test/Resources/bugVerification/MYT_8887Shipment_International_Domestic_Addresses.feature",
-         		"src/test/Resources/bugVerification/MYT_8628 Users are unable to view certain POD.feature"
+         		"src/test/Resources/bugVerification/MYT_8628 Users are unable to view certain POD.feature",
+				"src/test/Resources/bugVerification/MYT_9205_Toll_Energy_default_payer_to_be_third_party.feature",
+				"src/test/Resources/bugVerification/MYT_8826_Weights_Change_to_zero_at_print_and_close.feature",
                 }
 		, glue= {"bugVerificationStepsDefinitions","ErrorMessagesAreDisplayed","commonStepsDefinitions","createShipmentStepDefinitions"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",
