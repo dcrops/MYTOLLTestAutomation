@@ -75,7 +75,7 @@ Feature: MYT_5757 Edit Address from 'Create Shipment' page
     Then User able to see modified address in MY Contacts in My Profile
       | CompanyName    | Name         | Email              | CountryCode | PhoneNumber | AddressLine1         |
       | Toll Group Inc | John William | john@tollgroup.com | 61-         | 412367897   | 352, Wellington Road |
-    # =======================================================================================
+    # ======================================================================================= Delete everything between these markers
 
     And User Edit the address entering new sender details
       | CompanyName | Name           | PhoneNumber | AddressLine1                              | AddressLine2 |
@@ -94,6 +94,7 @@ Feature: MYT_5757 Edit Address from 'Create Shipment' page
       | Message                       |
       | The address saved sucessfully |
     Then User able to see modified address in MY Contacts in My Profile
+    # ================================================================================
 
   @tag1
   Scenario: User wants edit the Receiver Address when on the 'Create Shipment' page in TGX
