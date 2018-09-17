@@ -558,8 +558,8 @@ public class CreateShipmentActions {//Nishant
 	public static void SelectShipmentConsolidationContinue() {
 		try {
 			PageBase.MaximumWaitForElementEnabled();
-			Boolean results = BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).isDisplayed();
-			if (results == true) {
+			boolean results = BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).isDisplayed();
+			if (results) {
 				BaseWebdriver.driver.findElement(shipmentConsolidatedContinue).click();
 				PageBase.MaximumWaitForElementEnabled();
 				System.out.println("line 564");
