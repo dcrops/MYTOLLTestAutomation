@@ -5,15 +5,11 @@ import GlobalActions.PageBase;
 import createShipmentActions.CreateShipmentActions;
 import manifestActions.ManifestActions;
 import myTollHomePageActions.MyTollHomePageActions;
-import reviewYourPickupActions.ReviewYourPickupActions;
 
 import static org.junit.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
@@ -22,8 +18,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
-
-import com.gargoylesoftware.htmlunit.Page;
 
 import baseWebdriver.BaseWebdriver;
 import rateEnquiryActions.RateEnquiryActions;
@@ -247,7 +241,7 @@ public class BookAPickupActions {
 	
 	// Edit Address
 
-	public static By EditAddressIcon = By.xpath("//*[@id=\"location-selector\"]/div[1]/div[1]/a/i");
+	public static By EditSenderAddressIcon = By.xpath("//*[@id=\"sender-selector\"]//*[text()=\"EDIT \"]/i");
 	public static By EditAddressScreenHeading = By.xpath("//*[@id=\"edit-addr\"]/header/h2");
 	public static By EditAddressPleaseClickHereText = By.xpath("//*[@id=\"edit-addr\"]/header/label");
 	public static By EditAddressCompanyName = By.id("edit-addr-company");
@@ -1988,7 +1982,12 @@ public class BookAPickupActions {
 
 	public static void ClickEditSenderAddress() {
 
-		PageBase.ClickOn(EditAddressIcon, 5);
+		PageBase.ClickOn(EditSenderAddressIcon, 5);
+
+	}
+	public static void ClickEditReceiverAddress() {
+
+		PageBase.ClickOn(EditSenderAddressIcon, 5);
 
 	}
 

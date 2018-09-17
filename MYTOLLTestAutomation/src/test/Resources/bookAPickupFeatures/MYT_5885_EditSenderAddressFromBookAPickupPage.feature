@@ -14,8 +14,8 @@ Feature: MYT-5885 User needs to Edit Sender Address from 'Book a pickup' page
     And User selects a existing Sender address from the Sender field
       | Sender   |
       | AccessHQ |
-    And User Press Edit button
-    Then User be able to EDIT the Sender address using Edit button
+    And User Press Edit Sender button
+    Then User be able to EDIT the address using Edit button
       | Heading      |
       | Edit Address |
     And User Edit the address entering new sender details
@@ -44,8 +44,8 @@ Feature: MYT-5885 User needs to Edit Sender Address from 'Book a pickup' page
     And User selects a existing Sender address from the Sender field
       | Sender      |
       | NZ Post Ltd |
-    And User Press Edit button
-    Then User be able to EDIT the Sender address using Edit button
+    And User Press Edit Sender button
+    Then User be able to EDIT the address using Edit button
       | Heading      |
       | Edit Address |
     And User Edit the address entering new sender details
