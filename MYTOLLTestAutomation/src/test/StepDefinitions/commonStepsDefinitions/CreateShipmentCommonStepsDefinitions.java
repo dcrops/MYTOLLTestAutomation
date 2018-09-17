@@ -96,18 +96,7 @@ public class CreateShipmentCommonStepsDefinitions {
 			String s4 = shipment.get("Receiver");
 			System.out.println("S4  " + s4);
 			CreateShipmentActions.SelectReceiver(Integer.parseInt(s4));
-
 			CreateShipmentActions.SelectShipmentConsolidationContinue();
-
-			PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
-					CreateShipmentActions.notifyReceiverCheckBox);
-			// CreateShipmentActions.EnterSenderEmail(SenderEmail);
-			CreateShipmentActions.EnterReceiverEmail(shipment.get("ReceiverEmail"));
-			CreateShipmentActions.EnterDropOffDepot(shipment.get("DropOffDepot"));
-			CreateShipmentActions.EnterCollectionDepot(shipment.get("CollectionDepot"));
-
-			PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
-			CreateShipmentActions.EnterShipmentReferences(shipment.get("ShipmentRef1"), shipment.get("ShipmentRef2"));
 		}
 	}
 
