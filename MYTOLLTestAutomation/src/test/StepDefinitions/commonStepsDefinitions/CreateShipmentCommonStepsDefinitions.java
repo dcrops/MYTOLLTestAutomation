@@ -85,11 +85,15 @@ public class CreateShipmentCommonStepsDefinitions {
 			String s = shipment.get("Whopays");
 			System.out.println("S  " + s);
 			CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
-			CreateShipmentActions.EnterQuoteNumber(shipment.get("QuoteNumber"));
-			String s2 = shipment.get("Mode");
-			System.out.println("S2  " + s2);
-			CreateShipmentActions.SelectMode(Integer.parseInt(s2));
-			PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
+			if (shipment.get("QuoteNumber") != null && !shipment.get("QuoteNumber").isEmpty()) {
+				CreateShipmentActions.EnterQuoteNumber(shipment.get("QuoteNumber"));
+			}
+			if (shipment.get("Mode") != null && !shipment.get("Mode").isEmpty()) {
+				String s2 = shipment.get("Mode");
+				System.out.println("S2  " + s2);
+				CreateShipmentActions.SelectMode(Integer.parseInt(s2));
+			}
+
 			String s3 = shipment.get("Sender");
 			System.out.println("S3  " + s3);
 			CreateShipmentActions.SelectSender(Integer.parseInt(s3));
