@@ -732,9 +732,9 @@ public class CreateShipmentActions {//Nishant
 
 	public static void EnterQuoteNumber(String pQuoteNumber) {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(quoteNumber).click();
-		BaseWebdriver.driver.findElement(quoteNumber).clear();
 		if (pQuoteNumber != null && !pQuoteNumber.isEmpty()) {
+			BaseWebdriver.driver.findElement(quoteNumber).click();
+			BaseWebdriver.driver.findElement(quoteNumber).clear();
 			BaseWebdriver.driver.findElement(quoteNumber).sendKeys(pQuoteNumber);
 		}
 
