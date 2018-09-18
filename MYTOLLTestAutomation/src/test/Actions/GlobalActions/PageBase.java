@@ -345,6 +345,16 @@ public class PageBase
 		return we;
 	}
 	
+	
+	public static WebElement clear(By locator, int waitSeconds) 
+	{
+		WebElement we = click(locator, waitSeconds);
+		we.clear();
+		return we;
+	}
+	
+	
+	
 	public static WebElement click(WebElement _element, int waitSeconds) 
 	{
 		if(waitSeconds<=20)
