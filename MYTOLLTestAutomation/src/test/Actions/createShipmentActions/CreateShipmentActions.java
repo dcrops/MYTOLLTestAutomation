@@ -346,7 +346,10 @@ public class CreateShipmentActions {//Nishant
 		/*BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()='" + pSender + "']"))
 				.click();*/
-		PageBase.click(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()='" + pSender + "']"), 20);
+		String xpath = "//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()='" + pSender + "']";
+		
+		System.out.println(xpath);
+		PageBase.click(By.xpath(xpath), 20);
 		
 
 	}
@@ -792,14 +795,17 @@ public class CreateShipmentActions {//Nishant
 
 	public static void EnterDropOffDepot(String pDropOffDepot) {
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference1);
+		//PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference1);
 		BaseWebdriver.driver.findElement(dropoffDepotTextField).click();
+		PageBase.click(dropoffDepotTextField, 50);
 		PageBase.MinimumWaitForElementEnabled();
 		
 		/*BaseWebdriver.driver
 				.findElement(By
 						.xpath("//*[@id=\"drop-off-depot-selector\"]/div[2]/ul/li/div[text()='" + pDropOffDepot + "']"))
 				.click(); // *[@id="drop-off-depot-selector"]/div[2]/ul/li[1]/div*/
+		String xpath = "//*[@id=\"drop-off-depot-selector\"]/div[2]/ul/li/div[text()='" + pDropOffDepot + "']";
+		System.out.println("Drop off depot xpath is " +xpath);
 		PageBase.click(By
 						.xpath("//*[@id=\"drop-off-depot-selector\"]/div[2]/ul/li/div[text()='" + pDropOffDepot + "']"), 20);
 		PageBase.MinimumWaitForElementEnabled();

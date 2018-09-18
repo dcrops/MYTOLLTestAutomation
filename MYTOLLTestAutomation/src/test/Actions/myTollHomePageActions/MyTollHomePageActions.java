@@ -167,6 +167,9 @@ public class MyTollHomePageActions {
 	public static By shareShipment = By.xpath("//*[@id=\"shareShipment\"]");
 	public static By shareShipmentEmail = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"share-email\"]");
 	public static By shareShipmentEmailErrorMsg = By.xpath("//body//div[@id=\"modal-content-box-0\"]//*[@id=\"to-email-sec\"]/div");
+	public static By shareShipmentMessageBox = By.xpath("//*[@id=\"modal-content-overlay-0\"]//*[@id=\"share-message\"]");
+	public static By shareShipmentMessageError = By.xpath("//*[@id=\"modal-content-overlay-0\"]//*[@id=\"share-form-area\"]/div[3]/div[2]");
+	
 	//public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\"]");
 
 //	public static By shareShipmentSubmit = By.xpath("//*[@id=\"share-submit\" and (contains(@class,'toll-blue-bg'))]");
