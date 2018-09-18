@@ -1,5 +1,7 @@
 package advanceSearchStepDefinitions;
 
+import static org.junit.Assert.assertFalse;
+
 import java.util.Iterator;
 import java.util.Map;
 
@@ -1065,9 +1067,10 @@ public class advanceSearchStepDefinitions {
 			try {
 				PageBase.sendText(MyTollHomePageActions.LoadSearchDropDown, 5, SaveSearchName);
 				PageBase.MaximumWaitForElementEnabled_1();
-				PageBase.click(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']"), 5);
-				System.out.println("FAILED: Saved Seacrh Not Deleted");
-				Assert.fail("FAILED: Saved Seacrh Not Deleted");
+				assertFalse(PageBase.isElementPresent(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']")));
+				//PageBase.click(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']"), 5);
+				System.out.println("PASSED: Saved Search Deleted");
+				//Assert.fail("FAILED: Saved Search Deleted");
 				
 			}
 			catch (Exception Ex) {
