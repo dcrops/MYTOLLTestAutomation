@@ -224,8 +224,8 @@
 	  
 	<groups>
 	    <run>
-	     <!--  <include name="E2E"  />  -->
-	      <include name="tolladd"  />  
+	     <include name="E2E"  />  
+	      
 
 	    </run>
 	 </groups>
@@ -233,14 +233,14 @@
 	<classes>
 	
 
-			<!-- <class name="bookAPickupE2ETests.TollPriorityNZTest"/> 
+			<class name="bookAPickupE2ETests.TollPriorityNZTest"/> 
 			 <class name="bookAPickupE2ETests.TollPriorityAusTest" />   
 			<class name="bookAPickupE2ETests.IntermodalSpecializedTest"/>
 			<class name="bookAPickupE2ETests.TollTasmaniaTest"/> 
 			<class name="bookAPickupE2ETests.TollIPECTest" />
-			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/>  -->
+			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/> 
 			<class name="bookAPickupE2ETests.Toll_Add_Template" />  
-<!-- 			<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress"/>-->						
+			<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress"/>			
 		</classes>
 		<!-- Blocked> <classes>   <class name="bookAPickupE2ETests.TollPriorityNZTest" 
 			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 

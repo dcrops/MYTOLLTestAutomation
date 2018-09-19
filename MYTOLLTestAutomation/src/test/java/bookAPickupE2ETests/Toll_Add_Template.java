@@ -60,7 +60,7 @@ public class Toll_Add_Template {
 	}
 	
 	
-	@Test(groups = { "Shakeout Testing", "E2E", "tolladd" })
+	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({"TollIntermodalSpecialised", "ServiceGeneral","NumberOfItems","Length", "Width", "Height", "Weight", "OriginSuburb","OriginPostCode", "DesSuburb", "DesPostCode"})
 	public void addTemplateTollIntermodalSpecialised(String Carrier, String Service, String NumberOfItems, String Length, String Width,String Height, String Weight, String OriginSuburb,String OriginPostCode, String DesSuburb, String DesPostCode) {
 		this.addTemplate(Carrier, NumberOfItems, Length, Width, Height, Weight);
