@@ -7,6 +7,7 @@ import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import cucumber.api.DataTable;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -201,4 +202,9 @@ public class CreateShipmentCommonStepsDefinitions {
 	public void userVerifiesWhoPaysAs(String payer) throws Throwable {
 		PageBase.verifyTextExistAttribute(CreateShipmentActions.whoPaysDropdownText, payer);
 	}
+
+    @Given("^User add random receiver address$")
+    public void userAddRandomReceiverAddress() throws Throwable {
+        CreateShipmentActions.addReceiverAddress();
+    }
 }
