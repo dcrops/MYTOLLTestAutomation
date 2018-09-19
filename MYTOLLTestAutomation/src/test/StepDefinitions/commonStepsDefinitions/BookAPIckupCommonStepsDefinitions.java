@@ -7,8 +7,8 @@ import java.util.Map;
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
-import createShipmentActions.CreateShipmentActions;
 import cucumber.api.DataTable;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -87,7 +87,7 @@ public class BookAPIckupCommonStepsDefinitions {
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
 			// Add Address Prio Aus
 
-			BookAPickupActions.AddAddressManuallyPrioAUSInternational(bookAPickup.get("CompanyName"), bookAPickup.get("Country"),
+			BookAPickupActions.AddSenderAddressManually(bookAPickup.get("CompanyName"), bookAPickup.get("Country"),
 					bookAPickup.get("AddressLine1"), bookAPickup.get("AddressLine2"), bookAPickup.get("Suburb"),
 					bookAPickup.get("Postcode"), bookAPickup.get("Email"), bookAPickup.get("PhoneNumber"),
 					bookAPickup.get("Phone Country"));
@@ -255,6 +255,18 @@ public class BookAPIckupCommonStepsDefinitions {
 		}
 		
 	}
-	
 
+
+	@Given("^User add Address for the receiver in TGX$")
+	public void userAddAddressForTheReceiverInTGX(DataTable bookAPickupTestData) throws Throwable {
+		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
+
+			BookAPickupActions.AddReceiverAddressManually(bookAPickup.get("CompanyName"), bookAPickup.get("Country"),
+					bookAPickup.get("AddressLine1"), bookAPickup.get("AddressLine2"), bookAPickup.get("Suburb"),
+					bookAPickup.get("Postcode"), bookAPickup.get("Email"), bookAPickup.get("PhoneNumber"),
+					bookAPickup.get("Phone Country"));
+
+		}
+
+	}
 }
