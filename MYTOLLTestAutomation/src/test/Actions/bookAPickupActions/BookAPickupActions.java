@@ -105,7 +105,12 @@ public class BookAPickupActions {
 
 	public static By add = By.id("add-dg-item");
 	public static By saveAsTemplateBtn = By.id("save-as-template");
+	public static By updateTemplateBtn = By.id("update-fidt-template");
+	public static By updateTemplateMsg = By.id("update-fidt-template");
+	public static By deleteTemplateBtn = By.id("delete-fidt-template");
+	public static By clearTemplateBtn = By.id("default-item-form-clear");
 
+	//*[@id="alert-box-wrapper"]//div[2]
 	public static By pickupDate = By.id("pickup-date");
 	public static By pickupDateToday = By.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[1]/div/div/ul/li[1]");
 	public static By pickupDateTomorrow = By.xpath("//*[@id=\"steps-3\"]/div[1]/div/div[1]/div/div/ul/li[2]");
@@ -1172,9 +1177,10 @@ public class BookAPickupActions {
 
 	public static void EnterTechnicalName(String pTechnicalName) {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(technicalName).click();
-		BaseWebdriver.driver.findElement(technicalName).clear();
-		BaseWebdriver.driver.findElement(technicalName).sendKeys(pTechnicalName);
+		PageBase.sendText(technicalName, 50, pTechnicalName);
+//		BaseWebdriver.driver.findElement(technicalName).click();
+//		BaseWebdriver.driver.findElement(technicalName).clear();
+//		BaseWebdriver.driver.findElement(technicalName).sendKeys(pTechnicalName);
 	}
 
 	public static void ClickAdd() {
@@ -1529,11 +1535,15 @@ public class BookAPickupActions {
 	public static void SelectPackgingGroupString(String packagingGroup) {
 		try {
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(packingGroupDropdown).click();
-			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver
-					.findElement(By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li/div[text()='" + packagingGroup + "']"))
-					.click();
+			PageBase.click(packingGroupDropdown, 50);
+		//	BaseWebdriver.driver.findElement(packingGroupDropdown).click();
+		//	PageBase.MaximumWaitForElementEnabled();
+			PageBase.click(By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li/div[text()='" + packagingGroup + "']"), 50);
+								//	"//*[@id="packaging-grp-selector-"]//div[text()="I"]"
+//			BaseWebdriver.driver
+	//				.findElement(By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li/div[text()='" + packagingGroup + "']"))
+		//			.click();			  
+			//"//*[@id=\"packaging-grp-selector-"\]/div/ul/li/div[text()="'+packagingGroup+'"]"
 		} catch (Exception ex) {
 			CreateShipmentActions.SelectPackgingGroupString(packagingGroup);
 		}

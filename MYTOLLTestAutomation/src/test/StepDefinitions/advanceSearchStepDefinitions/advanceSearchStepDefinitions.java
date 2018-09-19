@@ -1,5 +1,7 @@
 package advanceSearchStepDefinitions;
 
+import static org.junit.Assert.assertFalse;
+
 import java.util.Iterator;
 import java.util.Map;
 
@@ -1065,9 +1067,10 @@ public class advanceSearchStepDefinitions {
 			try {
 				PageBase.sendText(MyTollHomePageActions.LoadSearchDropDown, 5, SaveSearchName);
 				PageBase.MaximumWaitForElementEnabled_1();
-				PageBase.click(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']"), 5);
-				System.out.println("FAILED: Saved Seacrh Not Deleted");
-				Assert.fail("FAILED: Saved Seacrh Not Deleted");
+				assertFalse(PageBase.isElementPresent(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']")));
+				//PageBase.click(By.xpath("//*[@id=\"advSecSavedSecDropdown\"]/li[text()='"+SaveSearchName+" ']"), 5);
+				System.out.println("PASSED: Saved Search Deleted");
+				//Assert.fail("FAILED: Saved Search Deleted");
 				
 			}
 			catch (Exception Ex) {
@@ -1124,13 +1127,14 @@ public class advanceSearchStepDefinitions {
 		public void UserVerifiesSavedSearchDoesNotExistOnDashboard() throws Throwable {
 			PageBase.MaximumWaitForElementEnabled_1();
 			try {
-				PageBase.click(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]"), 5);
-				System.out.println("FAILED: Saved Seacrh Not Deleted");
-				Assert.fail("FAILED: Saved Seacrh Not Deleted");
+				//PageBase.click(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]"), 5);
+				assertFalse(PageBase.isElementPresent(By.xpath("//*[@id=\"saved-search-list\"]/li[1]/a[contains(text(),'"+SaveSearchName+"')]")));
+				System.out.println("PASSED: Saved Search Deleted");
+				//Assert.fail("FAILED: Saved Search Not Deleted");
 				
 			}
 			catch (Exception Ex) {
-				System.out.println("Saved Seacrh Does Not Exist and has been Deleted as Expected");
+				System.out.println("Saved Search Does Not Exist and has been Deleted as Expected");
 			}
 			
 		}
