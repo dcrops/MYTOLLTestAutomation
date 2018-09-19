@@ -39,8 +39,19 @@ public class ShareShipment {
 		PageBase.click(MyTollHomePageActions.shareShipment, 2);
 		PageBase.MaximumWaitForElementEnabled_1();
 		Reporter.log("User Enters 5 Shipment Numbers");
+		
+		////test for MYT-4746	
+		PageBase.sendText(MyTollHomePageActions.shareShipmentMessageBox, 50, "$%^invalid characters^&^");
+		PageBase.verifyTextExist(MyTollHomePageActions.shareShipmentMessageError, "Invalid message which includes special characters");
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.clear(MyTollHomePageActions.shareShipmentMessageBox, 50);
+		PageBase.sendText(MyTollHomePageActions.shareShipmentMessageBox, 50, "Test");
+		////
+		
 		PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, EmailAddress1);
 		PageBase.click(MyTollHomePageActions.shareShipmentEmailAdd, 5);
+			
+
 		PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, EmailAddress2);
 		PageBase.click(MyTollHomePageActions.shareShipmentEmailAdd, 5);
 		PageBase.sendText(MyTollHomePageActions.shareShipmentEmail, 5, EmailAddress3);

@@ -7,65 +7,65 @@ Feature: MYT-9043  - User tries to save and edit shipment with minimal info
   Scenario: User wants to Save a Shipment with multiple line items as a 'Draft Shipment'in TDF
 
   When User navigates to Shipment from MyDashboard
-  When User selects 'Dispatch date' in to create a shipment
-  Then User MUST have an option to save the Shipment as a Draft
-  | ButtonName |
-  | SAVE DRAFT |
+#  When User selects 'Dispatch date' in to create a shipment
+#  Then User MUST have an option to save the Shipment as a Draft
+#  | ButtonName |
+#  | SAVE DRAFT |
+
   When User enters following fields
   | TollCarrier              | Service | AccountNumber |
   | Intermodal & Specialised | Express |        137289 |
-  When User Clicks on the Save Draft option
-  Then User be able to see UI prompt displaying the Shipment has been Saved as a Draft
-  | Message                |
-  | Draft Shipment Created |
-  Then User MUST have an option in the UI prompt to Go back to the 'Create Shipment' page
-  | ButtonName |
-  | Go back    |
+  Then User can see all data in the draft shipment transferred to the 'Create Shipment' page
+  | TollCarrier              | Service | AccountNumber |
+  | Intermodal & Specialised | Express |        137289 |
+
+
+  When User continue enters shipment overview details as below to create a shipment
+  | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot   | CollectionDepot      |
+  | Dangerous Goods Express |        137289 |    1 |       1 | TestSender7492 | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ADELAIDE TNQX | ADELAIDE S-LINE TNQX |
+
+  When User enters following input data for the line item
+  | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | Weight | SenderReference | ReceiverReference |
+  | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |               50 |    900 | Ref123          | Ref456            |
+  When User selects Dangerous Goods
+  | DgGoods |
+  |       1 |
+  And User enters following dangerous goods details
+  | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |
+  |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |
   
-#  When User Clicks on the Save Draft option
-#  Then User MUST have an option in the UI prompt to be re-directed to 'My Dashboard'
-#  | ButtonName         |
-#  | Go to my dashboard |
-#  Then User can see pre-filled data available in 'Draft Shipments'
-#  | TollCarrier              | Sender | Receiver |
-#  | Intermodal & Specialised |        |          |
-#  Then Draft Shipment MUST be saved under 'Draft Shipments' tab in 'My Dashboard'
-#  | TabName         |
-#  | draft shipments |
-#  When User selects a Draft Shipment
-#  Then User can see all data in the draft shipment transferred to the 'Create Shipment' page
-#  | TollCarrier              | Service | AccountNumber |
-#  | Intermodal & Specialised | Express |        137289 |
-#  When User changes either of the fields
-#  | TollCarrier              | Service | AccountNumber |
-#  | Intermodal & Specialised | Express |        371065 |
-#  Then User can see all other fields cleared
-#  | TollCarrier | Service | Account number |
-#  |             |         |                |
-#  When User continue enters shipment overview details as below to create a shipment
-#  | Service    | AccountNumber | Mode | Whopays | Sender   | Receiver     | DGContactName | DGContactNumber | SenderEmail                 | ReceiverEmail               | ShipmentRef1 | ShipmentRef2 | DropOffDepot   | CollectionDepot      |
-#  | Dangerous Goods Express |        137289 |    1 |       1 | AccessHQ | Dialog Group | John          |      0142356789 | NNAutomationUser1@gmail.com | NNAutomationUser2@gmail.com |        12345 |       234567 | ADELAIDE TNQX | ADELAIDE S-LINE TNQX |
-#  When User Clicks on the Save Draft option
-#  Then User MUST have an option in the UI prompt to be re-directed to 'My Dashboard'
-#  | ButtonName         |
-#  | Go to my dashboard |
-#  Then User can see pre-filled data available in 'Draft Shipments'
-#  | TollCarrier              | Sender   | Receiver     |
-#  | Intermodal & Specialised | AccessHQ | Dialog Group |
-#  When User selects a Draft Shipment
-#  And user moves to shipment reference number
-#  When User enters following input data for the line item
-#  | Item description     | Billing Type    | No of Items | Item Type | Length | Width | Height | TotalCubicVolume | Weight | SenderReference | ReceiverReference |
-#  | Automation Template1 | General Freight |          10 | Misc      |    100 |   100 |    100 |               50 |    900 | Ref123          | Ref456            |
-#  When User selects Dangerous Goods
-#  | DgGoods |
-#  |       1 |
-#  And User enters following dangerous goods details
-#  | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |
-#  |     2025 | II           |            20 |             10 | Test Package Description | Test Technical Name |
-#  Then User be able to see following fields are autopopulated.
-#  | Class/Div | SubRisk | PackingGroup | Proper Shoping Name            |
-#  |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
+  Then User be able to see following fields are autopopulated.
+  | Class/Div | SubRisk | PackingGroup | Proper Shoping Name            |
+  |       6.1 | NA      | II           | MERCURY COMPOUND, SOLID, N.O.S |
+  
+  
+  When user clicks save template
+  
+  Then template is saved
+  
+  When user updates the remaining data
+  | No of Items |  Length  | Width | Height |
+  |     50      |    50    |    60 |   70   |
+  
+  And user clicks on update template
+  
+  Then template is updated
+  
+  When user clicks on 'clear' template
+  
+  Then all the template description fields go empty
+  #verify no text exist
+  
+  When user enters the template name in the Item Description
+  | Item description     |
+  |Automation Template1|
+  
+  Then the remaining fields are autopopulated
+  When User clicks on delete template
+  Then the template is deleted
+  
+  
+  
 #  When User clicks on 'ADD' to add dangerous goods details
 #  When User Clicks on the Save Draft option
 #  Then User MUST have an option in the UI prompt to be re-directed to 'My Dashboard'
@@ -100,6 +100,8 @@ Feature: MYT-9043  - User tries to save and edit shipment with minimal info
 #  And User enters Loscam other information as below
 #  | LoscamOtherExchange | LoscamOtherTransfer | LoscamOtherDocketNo |
 #  |                1112 |                1113 |                1114 |
+#  
+#  
 #  When User Clicks on the Save Draft option
 #  Then User MUST have an option in the UI prompt to be re-directed to 'My Dashboard'
 #  | ButtonName         |
