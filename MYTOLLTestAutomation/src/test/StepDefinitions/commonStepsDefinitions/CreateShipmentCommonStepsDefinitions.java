@@ -84,7 +84,14 @@ public class CreateShipmentCommonStepsDefinitions {
 			BookAPickupActions.EnterAccountNumber(shipment.get("AccountNumber"));
 			String s = shipment.get("Whopays");
 			System.out.println("S  " + s);
-			CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
+
+
+			if (s.matches("\\d+")) {
+				CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
+			} else {
+				CreateShipmentActions.EnterWhoPays(s);
+			}
+
 			if (shipment.get("QuoteNumber") != null && !shipment.get("QuoteNumber").isEmpty()) {
 				CreateShipmentActions.EnterQuoteNumber(shipment.get("QuoteNumber"));
 			}
@@ -96,10 +103,22 @@ public class CreateShipmentCommonStepsDefinitions {
 
 			String s3 = shipment.get("Sender");
 			System.out.println("S3  " + s3);
-			CreateShipmentActions.SelectSender(Integer.parseInt(s3));
+
+			if (s3.matches("\\d+")) {
+				CreateShipmentActions.SelectSender(Integer.parseInt(s3));
+			} else {
+				CreateShipmentActions.EnterSender(s3);
+			}
+
 			String s4 = shipment.get("Receiver");
 			System.out.println("S4  " + s4);
-			CreateShipmentActions.SelectReceiver(Integer.parseInt(s4));
+
+			if (s4.matches("\\d+")) {
+				CreateShipmentActions.SelectReceiver(Integer.parseInt(s4));
+			} else {
+				CreateShipmentActions.EnterReceiver(s4);
+			}
+
 			CreateShipmentActions.SelectShipmentConsolidationContinue();
 		}
 	}
