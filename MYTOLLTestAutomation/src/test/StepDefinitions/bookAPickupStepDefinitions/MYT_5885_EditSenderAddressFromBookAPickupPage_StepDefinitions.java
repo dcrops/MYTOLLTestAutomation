@@ -35,11 +35,11 @@ public class MYT_5885_EditSenderAddressFromBookAPickupPage_StepDefinitions {
 		}
 	}
 
-	@Then("^User Edit the address entering new sender details$")
-	public void user_Edit_the_address_entering_new_sender_details(DataTable bookAPickupTestData) throws Throwable {
+	@Then("^User Edit the address entering new address details$")
+	public void user_Edit_the_address_entering_new_address_details(DataTable bookAPickupTestData) throws Throwable {
 	
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
-			BookAPickupActions.EditSenderAddressIcon(bookAPickup.get("CompanyName"), bookAPickup.get("Name"),bookAPickup.get("Email"), bookAPickup.get("PhoneNumber"),bookAPickup.get("AddressLine1"), bookAPickup.get("AddressLine2"));
+			BookAPickupActions.EditAddressDetails(bookAPickup.get("CompanyName"), bookAPickup.get("Name"),bookAPickup.get("Email"), bookAPickup.get("PhoneNumber"),bookAPickup.get("AddressLine1"), bookAPickup.get("AddressLine2"));
 			
 			}
 	}

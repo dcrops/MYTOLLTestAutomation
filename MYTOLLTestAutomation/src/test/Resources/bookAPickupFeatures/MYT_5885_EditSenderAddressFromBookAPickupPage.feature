@@ -18,7 +18,7 @@ Feature: MYT-5885 User needs to Edit Sender Address from 'Book a pickup' page
     Then User be able to EDIT the address using Edit button
       | Heading      |
       | Edit Address |
-    And User Edit the address entering new sender details
+    And User Edit the address entering new address details
       | CompanyName    | Name         | Email                       | PhoneNumber | AddressLine1         | AddressLine2  |
       | Toll Group Inc2 | John William | NNAutomationuser1@gmail.com |   412367897 | 352, Wellington Road | Mulgrave, VIC |
     And User can see a text as edit their full address via the My profile section
@@ -48,7 +48,7 @@ Feature: MYT-5885 User needs to Edit Sender Address from 'Book a pickup' page
     Then User be able to EDIT the address using Edit button
       | Heading      |
       | Edit Address |
-    And User Edit the address entering new sender details
+    And User Edit the address entering new address details
       | CompanyName        | Name         | Email                       | PhoneNumber | AddressLine1 | AddressLine2  |
       | Genesis Energy Ltd | John William | NNAutomationuser2@gmail.com |   800300400 | 94 Bryce St  | Hamilton 3204 |
     And User can see a text as edit their full address via the My profile section
