@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
@@ -45,7 +44,7 @@ public class TollIntermodalTests_AddAdress {
 		
 		//Add Address
 		CreateShipmentActions.addSenderAdderess();
-		CreateShipmentActions.addReceiverAdderess(); 
+		CreateShipmentActions.addReceiverAddress();
 		CreateShipmentActions.verifySenderAddress();
 		CreateShipmentActions.verifyReceiverAddress();
 	}

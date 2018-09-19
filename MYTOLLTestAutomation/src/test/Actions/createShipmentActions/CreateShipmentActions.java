@@ -327,6 +327,14 @@ public class CreateShipmentActions {//Nishant
 
 	}
 
+	public static void EnterWhoPays(String pWhoPays) {
+		PageBase.MaximumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(whoPaysdropdown).click();
+		PageBase.sendText(whoPaysDropdownText, 5, pWhoPays);
+		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"payer-selector\"]//div[text()='" + pWhoPays + "'][1]")).click();
+
+	}
+
 	public static void SelectSender(int i) {
 		PageBase.MinimumWaitForElementEnabled_1();
 		//BaseWebdriver.driver.findElement(senderdropdown).click();
@@ -346,7 +354,7 @@ public class CreateShipmentActions {//Nishant
 		/*BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()='" + pSender + "']"))
 				.click();*/
-		String xpath = "//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()='" + pSender + "']";
+		String xpath = "//*[@id=\"sender-selector\"]/div[2]/ul/li/div[text()='" + pSender + "'][1]";
 		
 		System.out.println(xpath);
 		PageBase.click(By.xpath(xpath), 20);
@@ -1520,7 +1528,7 @@ public class CreateShipmentActions {//Nishant
 		}
 	}
 
-	public static void addReceiverAdderess() {
+	public static void addReceiverAddress() {
 		PageBase.waitForElement(receiverdropdown, 10);
 		PageBase.click(receiverdropdown, 20);
 		PageBase.waitForElement(ReceiverAddress_Add_Address, 10);

@@ -1,14 +1,10 @@
 package createShipmentE2ETests;
 
 
-import java.awt.print.Pageable;
-
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import com.gargoylesoftware.htmlunit.Page;
 
 import GlobalActions.PageBase;
 import baseWebdriver.BaseWebdriver;
@@ -49,7 +45,7 @@ public class TollCarrierIntermodalSpecialized_addAddress {
 		
 		//Add Address
 		CreateShipmentActions.addSenderAdderess();
-		CreateShipmentActions.addReceiverAdderess(); 
+		CreateShipmentActions.addReceiverAddress();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
