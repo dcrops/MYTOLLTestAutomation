@@ -5,15 +5,11 @@ import GlobalActions.PageBase;
 import createShipmentActions.CreateShipmentActions;
 import manifestActions.ManifestActions;
 import myTollHomePageActions.MyTollHomePageActions;
-import reviewYourPickupActions.ReviewYourPickupActions;
 
 import static org.junit.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
@@ -22,8 +18,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
-
-import com.gargoylesoftware.htmlunit.Page;
 
 import baseWebdriver.BaseWebdriver;
 import rateEnquiryActions.RateEnquiryActions;
@@ -39,11 +33,12 @@ public class BookAPickupActions {
 	public static By pickupLocation = By.xpath("//*[@id=\"pickup-location\"]/div[1]/div[3]/div/label/span[2]");
 	public static By ServiceDropdown = By.xpath("//*[@id=\"service-type-selector\"]//a/i");
 	public static By BookaPickupScreenHeading = By.cssSelector("h1");   
-	public static By tollCarrier = By.name("placeholder-bu");
+	public static By tollCarrier = By.id("carrier-name");
 	public static By accountNumber = By.name("placeholder-account");
 	public static By locationDropdown = By.xpath("//*[@id=\"location-selector\"]/label/a/i");
 	public static By yesBtn = By.xpath("//*[@id=\"pickup-location\"]/div[1]/div[3]/div/label/span[1]");
 	public static By location = By.name("placeholder-location");
+	public static By receiverLocation = By.id("receiver-label");
 	public static By name = By.id("name");
 	public static By phoneNumber = By.id("phone");
 	public static By countryCode = By.cssSelector("div.selected-dial-code");
@@ -182,7 +177,8 @@ public class BookAPickupActions {
 	// Add Address
 	public static final By BookAPickup_Location_Dropdown = By.xpath("//*[@id=\"location-selector\"]/label/a/i");
 	public static final By BookAPickup_Location_Selected = By.name("placeholder-location");
-	public static final By BookAPickup_Add_Address = By.className("add-new-elem");
+	public static final By BookAPickup_Add_Sender_Address = By.xpath("//div[@id='sender-selector']//div[@class='add-new-elem']");
+	public static final By BookAPickup_Add_Receiver_Address = By.xpath("//div[@id='receiver-selector']//div[@class='add-new-elem']");
 	public static final By BookAPickup_New_AddressCompanName = By.id("add-adrr-company-aut");
 	public static final By BookAPickup_New_AddressSearch = By.id("address-srch");
 	public static final By BookAPickup_New_AddressSearch_Select = By
@@ -252,7 +248,8 @@ public class BookAPickupActions {
 	
 	// Edit Address
 
-	public static By EditAddressIcon = By.xpath("//*[@id=\"location-selector\"]/div[1]/div[1]/a/i");
+	public static By EditSenderAddressIcon = By.xpath("//*[@id=\"sender-selector\"]//*[text()=\"EDIT \"]/i");
+	public static By EditReceiverAddressIcon = By.xpath("//*[@id=\"receiver-selector\"]//*[text()=\"EDIT \"]/i");
 	public static By EditAddressScreenHeading = By.xpath("//*[@id=\"edit-addr\"]/header/h2");
 	public static By EditAddressPleaseClickHereText = By.xpath("//*[@id=\"edit-addr\"]/header/label");
 	public static By EditAddressCompanyName = By.id("edit-addr-company");
@@ -425,7 +422,7 @@ public class BookAPickupActions {
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
 			BaseWebdriver.driver
-					.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='Intermodal & Specialised']"))
+					.findElement(By.xpath("//*[@id=\"BU-selector\"]//div[text()='" +pTollCarrierName+"']"))
 					.click();
 			PageBase.MaximumWaitForElementEnabled();
 
@@ -440,7 +437,7 @@ public class BookAPickupActions {
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
 			BaseWebdriver.driver
-					.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='Intermodal & Specialised']"))
+					.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='" + pTollCarrierName + "']"))
 					.click();
 			PageBase.MaximumWaitForElementEnabled();
 		}
@@ -1638,8 +1635,8 @@ public class BookAPickupActions {
 		PageBase.waitForElement(BookAPickup_Location_Dropdown, 10);
 		PageBase.click(BookAPickup_Location_Dropdown, 10);
 
-		PageBase.waitForElement(BookAPickup_Add_Address, 10);
-		PageBase.click(BookAPickup_Add_Address, 10);
+		PageBase.waitForElement(BookAPickup_Add_Sender_Address, 10);
+		PageBase.click(BookAPickup_Add_Sender_Address, 10);
 
 		int Number = (int) (Math.random() * 10000);
 		String newNumber = String.valueOf(Number);
@@ -1687,8 +1684,8 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.waitForElement(location, 10);
 		PageBase.ClickOn(location, 15);
-		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
-		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.WaitForElement(BookAPickup_Add_Sender_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Sender_Address, 10);
 		PageBase.ClickOn(AddAdressManually, 10);
 		PageBase.SendKeysTo(AddAdressCompanyName, pCompanyName, 5);
 		PageBase.SendKeysTo(AddAdressAddressLine1, pAddAdressAddressLine1, 5);
@@ -1720,8 +1717,8 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.waitForElement(location, 10);
 		PageBase.ClickOn(location, 15);
-		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
-		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.WaitForElement(BookAPickup_Add_Sender_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Sender_Address, 10);
 		PageBase.ClickOn(AddAdressManually, 10);
 		PageBase.SendKeysTo(AddAdressCompanyName, pCompanyName, 5);
 		PageBase.SendKeysTo(AddAdressAddressSuburb, pAddAdressAddressSuburb, 30);
@@ -1758,28 +1755,47 @@ public class BookAPickupActions {
 
 	}
 
-	public static void AddAddressManuallyPrioAUSInternational(String pCompanyName, String pAddAdressCountry,
-			String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb,
-			String pAddAdressAddressPostcode, String pEmail, String pPhoneNumber, String pSelectCountry) {
+	public static void AddSenderAddressManually(String pCompanyName, String pAddAdressCountry,
+												String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb,
+												String pAddAdressAddressPostcode, String pEmail, String pPhoneNumber, String pSelectCountry) {
 		// Add Address
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.waitForElement(location, 10);
 		PageBase.ClickOn(location, 15);
-		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
-		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.WaitForElement(BookAPickup_Add_Sender_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Sender_Address, 10);
+		PageBase.ClickOn(AddAdressManually, 10);
+		InputAddressDetails(pCompanyName, pAddAdressCountry, pAddAdressAddressLine1, pAddAdressAddressLine2, pAddAdressAddressSuburb, pAddAdressAddressPostcode, pEmail, pPhoneNumber, pSelectCountry);
+
+	}
+
+	public static void AddReceiverAddressManually(String pCompanyName, String pAddAdressCountry,
+												String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb,
+												String pAddAdressAddressPostcode, String pEmail, String pPhoneNumber, String pSelectCountry) {
+		// Add Address
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.waitForElement(receiverLocation, 10);
+		PageBase.ClickOn(receiverLocation, 15);
+		PageBase.WaitForElement(BookAPickup_Add_Receiver_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Receiver_Address, 10);
+		InputAddressDetails(pCompanyName, pAddAdressCountry, pAddAdressAddressLine1, pAddAdressAddressLine2, pAddAdressAddressSuburb, pAddAdressAddressPostcode, pEmail, pPhoneNumber, pSelectCountry);
+
+	}
+
+	private static void InputAddressDetails(String pCompanyName, String pAddAdressCountry, String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb, String pAddAdressAddressPostcode, String pEmail, String pPhoneNumber, String pSelectCountry) {
 		PageBase.ClickOn(AddAdressManually, 10);
 		PageBase.SendKeysTo(AddAdressCompanyName, pCompanyName, 5);
 		PageBase.SendKeysTo(AddAdressCountryTGXTextField, pAddAdressCountry, 5);
 		PageBase.MediumWaitForElementEnabled();
 		PageBase.SelectFrom(
-				By.xpath("//*[@id=\"add-addr-country-selector\"]/div/ul/li[text()='" + pAddAdressCountry + "']"), 5);
+				By.xpath("//*[@id=\"add-addr-country-selector\"]/div/ul/li[text()='" + pAddAdressCountry.toUpperCase() + "']"), 5);
 		PageBase.SendKeysTo(AddAdressAddressLine1, pAddAdressAddressLine1, 5);
 		PageBase.SendKeysTo(AddAdressAddressLine2, pAddAdressAddressLine2, 5);
 		PageBase.SendKeysTo(AddAdressAddressPostcode, pAddAdressAddressPostcode, 5);
 		PageBase.SendKeysTo(AddAdressAddressSuburb, pAddAdressAddressSuburb, 5);
 		PageBase.SelectFrom(By.xpath(
-				"//*[@id=\"add-addr-suburb-wrpr\"]/div[2]/ul/li[1]/div[contains(text(),'" + pAddAdressAddressSuburb + "')]"), 15);
-		PageBase.SendKeysTo(AddAdressEmailTGXTextField, pEmail, 5);
+				"//*[@id=\"add-addr-suburb-wrpr\"]//div[contains(text(),'" + pAddAdressAddressSuburb.toUpperCase() + "')]"), 15);
+		PageBase.SendKeysTo(AddAdressEmailTGXTextField, pEmail, 15);
 		PageBase.retryingFindClick(AddAdressAddressContinue);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
@@ -1789,16 +1805,15 @@ public class BookAPickupActions {
 		PageBase.ClickOn(AddAddressCountryCode, 10);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.ClickOn(By.xpath(
-				"//*[@id=\"add-add-form\"]/div[1]/div[4]/div/div/div/ul/li[2]/span[text()='" + pSelectCountry + "']"),
+				"//*[@id=\"add-add-form\"]//span[text()='" + pSelectCountry + "']"),
 				10);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(BookAPickup_New_Address_Email, "NNAutomationuser2@gmail.com", 10);
 		PageBase.ClickOn(BookAPickup_New_Address_Add, 10);
 		PageBase.MaximumWaitForElementEnabled();
-
 	}
-	
+
 	public static void AddAddressManuallyPrioAUSDomestic(String pCompanyName, String pAddAdressCountry,
 			String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb,String pAddAdressAddressSuburbItem,
 			String pAddAdressAddressPostcode, String pEmail, String pPhoneNumber, String pSelectCountry) {
@@ -1806,8 +1821,8 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.waitForElement(location, 10);
 		PageBase.ClickOn(location, 15);
-		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
-		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.WaitForElement(BookAPickup_Add_Sender_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Sender_Address, 10);
 		PageBase.ClickOn(AddAdressManually, 10);
 		PageBase.SendKeysTo(AddAdressCompanyName, pCompanyName, 5);
 		PageBase.SendKeysTo(AddAdressCountryTGXTextField, pAddAdressCountry, 5);
@@ -1848,8 +1863,8 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.waitForElement(location, 10);
 		PageBase.ClickOn(location, 15);
-		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
-		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.WaitForElement(BookAPickup_Add_Sender_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Sender_Address, 10);
 		PageBase.ClickOn(AddAdressManually, 10);
 		PageBase.SendKeysTo(AddAdressCompanyName, pCompanyName, 5);
 		PageBase.SendKeysTo(AddAdressCountryTGXTextField, pAddAdressCountry, 5);
@@ -1890,8 +1905,8 @@ public class BookAPickupActions {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.waitForElement(location, 10);
 		PageBase.ClickOn(location, 15);
-		PageBase.WaitForElement(BookAPickup_Add_Address, 5);
-		PageBase.ClickOn(BookAPickup_Add_Address, 10);
+		PageBase.WaitForElement(BookAPickup_Add_Sender_Address, 5);
+		PageBase.ClickOn(BookAPickup_Add_Sender_Address, 10);
 		PageBase.ClickOn(AddAdressManually, 10);
 		PageBase.SendKeysTo(AddAdressCompanyName, pCompanyName, 5);
 		PageBase.SendKeysTo(AddAdressCountryTGXTextField, pAddAdressCountry, 5);
@@ -1998,12 +2013,17 @@ public class BookAPickupActions {
 
 	public static void ClickEditSenderAddress() {
 
-		PageBase.ClickOn(EditAddressIcon, 5);
+		PageBase.ClickOn(EditSenderAddressIcon, 5);
+
+	}
+	public static void ClickEditReceiverAddress() {
+
+		PageBase.ClickOn(EditReceiverAddressIcon, 5);
 
 	}
 
-	public static void EditSenderAddressIcon(String pCompanyName, String pName, String pEmail, String pPhoneNumber,
-			String pAddressLine1, String pAddressLine2) {
+	public static void EditAddressDetails(String pCompanyName, String pName, String pEmail, String pPhoneNumber,
+										  String pAddressLine1, String pAddressLine2) {
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.SendKeysTo(EditAddressCompanyName, pCompanyName, 5);
 		PageBase.SendKeysTo(EditAddressName, pName, 5);

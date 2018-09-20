@@ -7,6 +7,7 @@ import baseWebdriver.BaseWebdriver;
 import bookAPickupActions.BookAPickupActions;
 import createShipmentActions.CreateShipmentActions;
 import cucumber.api.DataTable;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -84,30 +85,42 @@ public class CreateShipmentCommonStepsDefinitions {
 			BookAPickupActions.EnterAccountNumber(shipment.get("AccountNumber"));
 			String s = shipment.get("Whopays");
 			System.out.println("S  " + s);
-			CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
-			CreateShipmentActions.EnterQuoteNumber(shipment.get("QuoteNumber"));
-			String s2 = shipment.get("Mode");
-			System.out.println("S2  " + s2);
-			CreateShipmentActions.SelectMode(Integer.parseInt(s2));
-			PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
+
+
+			if (s.matches("\\d+")) {
+				CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
+			} else {
+				CreateShipmentActions.EnterWhoPays(s);
+			}
+
+			if (shipment.get("QuoteNumber") != null && !shipment.get("QuoteNumber").isEmpty()) {
+				CreateShipmentActions.EnterQuoteNumber(shipment.get("QuoteNumber"));
+			}
+			if (shipment.get("Mode") != null && !shipment.get("Mode").isEmpty()) {
+				String s2 = shipment.get("Mode");
+				System.out.println("S2  " + s2);
+				CreateShipmentActions.SelectMode(Integer.parseInt(s2));
+			}
+
 			String s3 = shipment.get("Sender");
 			System.out.println("S3  " + s3);
-			CreateShipmentActions.SelectSender(Integer.parseInt(s3));
+
+			if (s3.matches("\\d+")) {
+				CreateShipmentActions.SelectSender(Integer.parseInt(s3));
+			} else {
+				CreateShipmentActions.EnterSender(s3);
+			}
+
 			String s4 = shipment.get("Receiver");
 			System.out.println("S4  " + s4);
-			CreateShipmentActions.SelectReceiver(Integer.parseInt(s4));
+
+			if (s4.matches("\\d+")) {
+				CreateShipmentActions.SelectReceiver(Integer.parseInt(s4));
+			} else {
+				CreateShipmentActions.EnterReceiver(s4);
+			}
 
 			CreateShipmentActions.SelectShipmentConsolidationContinue();
-
-			PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
-					CreateShipmentActions.notifyReceiverCheckBox);
-			// CreateShipmentActions.EnterSenderEmail(SenderEmail);
-			CreateShipmentActions.EnterReceiverEmail(shipment.get("ReceiverEmail"));
-			CreateShipmentActions.EnterDropOffDepot(shipment.get("DropOffDepot"));
-			CreateShipmentActions.EnterCollectionDepot(shipment.get("CollectionDepot"));
-
-			PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference2);
-			CreateShipmentActions.EnterShipmentReferences(shipment.get("ShipmentRef1"), shipment.get("ShipmentRef2"));
 		}
 	}
 
@@ -189,4 +202,9 @@ public class CreateShipmentCommonStepsDefinitions {
 	public void userVerifiesWhoPaysAs(String payer) throws Throwable {
 		PageBase.verifyTextExistAttribute(CreateShipmentActions.whoPaysDropdownText, payer);
 	}
+
+    @Given("^User add random receiver address$")
+    public void userAddRandomReceiverAddress() throws Throwable {
+        CreateShipmentActions.addReceiverAddress();
+    }
 }
