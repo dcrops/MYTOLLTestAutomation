@@ -1,4 +1,4 @@
-package createShipmentE2ETests;
+package seleniumtests.createshipment;
 
 
 import org.testng.annotations.AfterMethod;
@@ -7,9 +7,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 import createShipment.CreateShipmentActions;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 
 

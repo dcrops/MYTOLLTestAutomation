@@ -1,4 +1,4 @@
-package GenericTests;
+package seleniumtests.generictests;
 
 import org.openqa.selenium.By;
 import org.testng.Reporter;
@@ -7,9 +7,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class ShareShipment {
 	

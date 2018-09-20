@@ -1,4 +1,4 @@
-package GenericTests;
+package seleniumtests.generictests;
 
 import java.awt.AWTException;
 
@@ -7,8 +7,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import baseWebdriver.BaseWebdriver;
-import myTollHomePage.MyTollHomePageActions;
-import myContacts.myContactsActions;
+import mytollhomepage.MyTollHomePageActions;
+import mycontacts.myContactsActions;
 
 
 public class ContactsUpload 

@@ -1,4 +1,4 @@
-package manifest.tests;
+package seleniumtests.manifest;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -10,11 +10,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
-import myTollHomePage.MyTollHomePageActions;
-import rateEnquiry.RateEnquiryActions;
+import bookapickup.BookAPickupActions;
+import mytollhomepage.MyTollHomePageActions;
+import rateenquiry.RateEnquiryActions;
 import createShipment.CreateShipmentActions;
 import manifest.ManifestActions;
 

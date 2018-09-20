@@ -1,6 +1,6 @@
-package createShipmentActions;
+package createShipment;
 
-import GlobalActions.PageBase;
+import global.PageBase;
 
 import static org.junit.Assert.assertEquals;
 import static org.testng.Assert.assertEquals;
@@ -16,9 +16,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
-import bookAPickupActions.BookAPickupActions;
-import manifestActions.ManifestActions;
-import myTollHomePageActions.MyTollHomePageActions;
+import bookapickup.BookAPickupActions;
+import manifest.ManifestActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class CreateShipmentActions {//Nishant
 	public static By createShipmentServiceSelector = By.xpath("//*[@id=\"service-label\"]");

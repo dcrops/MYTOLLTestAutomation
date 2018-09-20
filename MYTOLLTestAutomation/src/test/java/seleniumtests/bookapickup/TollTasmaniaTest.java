@@ -1,9 +1,9 @@
-package bookAPickup.tests;
+package seleniumtests.bookapickup;
 
-import Global.PageBase;
+import global.PageBase;
 import java.util.concurrent.TimeUnit;
-import bookAPickup.BookAPickupActions;
-import myTollHomePage.MyTollHomePageActions;
+import bookapickup.BookAPickupActions;
+import mytollhomepage.MyTollHomePageActions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import baseWebdriver.BaseWebdriver;
 
-import reviewYourPickup.ReviewYourPickupActions;
+import reviewyourpickup.ReviewYourPickupActions;
 
 public class TollTasmaniaTest {
 
@@ -130,7 +130,7 @@ public class TollTasmaniaTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 		BookAPickupActions.EnterAccountNumber(AccountNumberTollTas);
-		//bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		//bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Verification of Book A Pickup screen, Toll Carrier, Account number, name,
 		// phoneNumber

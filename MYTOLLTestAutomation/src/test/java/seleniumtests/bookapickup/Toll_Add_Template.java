@@ -1,10 +1,10 @@
 
-package bookAPickup.tests;
+package seleniumtests.bookapickup;
 
-import Global.PageBase;
+import global.PageBase;
 import static org.junit.Assert.assertEquals;
 
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 import createShipment.CreateShipmentActions;
 import manifest.ManifestActions;
 
@@ -16,8 +16,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import baseWebdriver.BaseWebdriver;
-import myTollHomePage.MyTollHomePageActions;
-import rateEnquiry.RateEnquiryActions;
+import mytollhomepage.MyTollHomePageActions;
+import rateenquiry.RateEnquiryActions;
 
 public class Toll_Add_Template {
 

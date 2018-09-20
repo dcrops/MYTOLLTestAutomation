@@ -1,4 +1,4 @@
-package myContactsActions;
+package mycontacts;
 
 import static org.testng.Assert.assertTrue;
 
@@ -13,7 +13,7 @@ import org.testng.Assert;
 
 
 
-import GlobalActions.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 
 public class myContactsActions 

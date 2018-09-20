@@ -1,4 +1,4 @@
-package apiTestData;
+package utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;

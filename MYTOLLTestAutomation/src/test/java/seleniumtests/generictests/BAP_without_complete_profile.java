@@ -1,13 +1,13 @@
-package GenericTests;
+package seleniumtests.generictests;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 import createShipment.CreateShipmentActions;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class BAP_without_complete_profile {
 	

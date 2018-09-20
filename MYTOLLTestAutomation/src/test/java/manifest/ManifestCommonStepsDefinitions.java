@@ -7,7 +7,7 @@ import java.util.Map;
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 import bookapickup.BookAPickupActions;
 import createShipment.CreateShipmentActions;
@@ -15,7 +15,7 @@ import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import rateEnquiry.RateEnquiryActions;
+import rateenquiry.RateEnquiryActions;
 
 public class ManifestCommonStepsDefinitions {
 	
@@ -242,7 +242,7 @@ public class ManifestCommonStepsDefinitions {
 	@Then("^User Verifies Shipment Details on BAP Page$")
 	public void UserVerifiesShipmentDetailsonBAPPage(DataTable manifestTestData) throws Throwable {
 		for (Map<String, String> manifest : manifestTestData.asMaps(String.class, String.class)) {
-			ManifestActions.UserVerifiesShipmentDetailsonBAPPage(manifest.get("Toll carrier"), manifest.get("AccountNumber"), manifest.get("Service"));
+			ManifestActions.UserVerifiesShipmentDetailsonBAPPage(manifest.get("Toll carrier"), manifest.get("AccountNumber"), manifest.get("Service"), SenderContactName, SenderCompanyName);
 		}
 	}
 	

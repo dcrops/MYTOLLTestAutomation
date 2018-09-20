@@ -1,12 +1,12 @@
-package bugVerification.stepDefinitions;
+package bugverification;
 
 import static org.testng.Assert.assertEquals;
 
 import java.util.Map;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 import createShipment.CreateShipmentActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;

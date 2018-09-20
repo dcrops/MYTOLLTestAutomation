@@ -31,22 +31,22 @@
 		
 	 	
 			
-	     	<class name="baseWebdriver.BookAPickupTestRunner" />
-	     	<class name="baseWebdriver.ManifestTestRunner"/>
-	     	<class name="baseWebdriver.RateEnquiryTestRunner"/> 
-	<!--      	<class name="baseWebdriver.FinancialTestRunner"/> -->
-	     	<class name="baseWebdriver.AdvancedSearchTestRunner"/>
-			<class name="baseWebdriver.CreateShipmentTestRunner" />
-	     	<class name="baseWebdriver.ReturnsTestRunner"/>
-	     	<class name="baseWebdriver.DashboardTestRunner"/>
-	     	<class name="baseWebdriver.StationeryTestRunner"/>
+	     	<class name="bookapickup.BookAPickupTestRunner" />
+	     	<class name="manifest.ManifestTestRunner"/>
+	     	<class name="rateenquiry.RateEnquiryTestRunner"/>
+	<!--      	<class name="finance.FinancialTestRunner"/> -->
+	     	<class name="advancedsearch.AdvancedSearchTestRunner"/>
+			<class name="createShipment.CreateShipmentTestRunner" />
+	     	<class name="returns.ReturnsTestRunner"/>
+	     	<class name="dashboard.DashboardTestRunner"/>
+	     	<class name="stationery.StationeryTestRunner"/>
 			
-			<!-- Blocked>   <class name="baseWebdriver.CreateShipmentTestRunner" /><class name="baseWebdriver.BookAPickupTestRunner" />
-			<class 	name="baseWebdriver.ManifestTestRunner"/> <class name="baseWebdriver.AdvancedSearchTestRunner"/> 
-				<class name="baseWebdriver.RateEnquiryTestRunner"/> <class name="baseWebdriver.FinancialTestRunner"/> 
-				<class name="baseWebdriver.DashboardTestRunner"/> <class name="baseWebdriver.ReturnsTestRunner"/> 
-				<class name="baseWebdriver.StationeryTestRunner"/> <class name="baseWebdriver.TollFAST_TAndTTestRunner"/> 
-				<class name="baseWebdriver.TrackAndTraceTestRunner"/> </Blocked -->
+			<!-- Blocked>   <class name="createShipment.CreateShipmentTestRunner" /><class name="bookapickup.BookAPickupTestRunner" />
+			<class 	name="manifest.ManifestTestRunner"/> <class name="advancedsearch.AdvancedSearchTestRunner"/>
+				<class name="rateenquiry.RateEnquiryTestRunner"/> <class name="finance.FinancialTestRunner"/>
+				<class name="dashboard.DashboardTestRunner"/> <class name="returns.ReturnsTestRunner"/>
+				<class name="stationery.StationeryTestRunner"/> <class name="trackandtrace.TollFAST_TAndTTestRunner"/>
+				<class name="trackandtrace.TrackAndTraceTestRunner"/> </Blocked -->
 		</classes>
 	</test> <!-- Test -->
 

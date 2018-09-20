@@ -1,11 +1,10 @@
-package financials.stepDefinitions;
+package finance;
 
 import static org.testng.Assert.assertEquals;
 
 import java.util.Map;
 
-import Finance.FinanceActions;
-import Global.PageBase;
+import global.PageBase;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

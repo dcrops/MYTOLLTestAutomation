@@ -1,11 +1,8 @@
-package api;
+package seleniumtests.api;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.openqa.selenium.remote.http.JsonHttpResponseCodec;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.jayway.restassured.http.ContentType;
@@ -31,7 +28,7 @@ public class APITest {
 	Response response = given()
      .contentType(ContentType.JSON)
      .when()
-     .get(" https://au-ppd-ecs-api-elb.internal.mytoll.com/core/ups-util/v1/profile/users/LOGIN_ID?ID=auto_bvt_ppd@mailinator.com");
+     .get(" https://au-ppd-ecs-seleniumtests.api-elb.internal.mytoll.com/core/ups-util/v1/profile/users/LOGIN_ID?ID=auto_bvt_ppd@mailinator.com");
 	 
 	 String result = response.asString();
 	 System.out.println(result);

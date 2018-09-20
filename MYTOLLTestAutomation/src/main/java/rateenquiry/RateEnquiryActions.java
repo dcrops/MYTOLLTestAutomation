@@ -1,6 +1,6 @@
-package rateEnquiryActions;
+package rateenquiry;
 
-import GlobalActions.PageBase;
+import global.PageBase;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Assert;
@@ -9,8 +9,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
-import bookAPickupActions.BookAPickupActions;
-import createShipmentActions.CreateShipmentActions;
+import bookapickup.BookAPickupActions;
+import createShipment.CreateShipmentActions;
 
 public class RateEnquiryActions {
 

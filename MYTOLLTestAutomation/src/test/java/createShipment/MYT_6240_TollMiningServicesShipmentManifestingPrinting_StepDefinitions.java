@@ -1,4 +1,4 @@
-package createShipment.stepDefinitions;
+package createShipment;
 
 import java.util.Map;
 

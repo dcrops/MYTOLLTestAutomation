@@ -1,4 +1,4 @@
-package rateEnquiryStepDefinitions;
+package rateenquiry;
 
 import java.util.Map;
 
@@ -7,7 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 import createShipment.CreateShipmentActions;
 import cucumber.api.DataTable;
@@ -16,8 +16,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import myTollHomePage.MyTollHomePageActions;
-import rateEnquiry.RateEnquiryActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class RateEnquiryStepDefinitions {
 	
@@ -151,7 +150,7 @@ public class RateEnquiryStepDefinitions {
 				PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentCarrierName, rateEnquiry.get("TollCarrier"));
 				PageBase.verifyTextExistAttribute(RateEnquiryActions.shipmentService, rateEnquiry.get("Service"));
 				PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentAccountNo, rateEnquiry.get("Account"));
-				//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, rateEnquiry.get("Length")+"cm x "+rateEnquiry.get("Width")+" cm x "+rateEnquiry.get("Height")+"cm" );
+				//PageBase.verifyTextExist(RateEnquiryActions.ShipmentDimention, rateenquiry.get("Length")+"cm x "+rateenquiry.get("Width")+" cm x "+rateenquiry.get("Height")+"cm" );
 				PageBase.waitForPageLoadingEnd(RateEnquiryActions.PageLoadingBox, 15, "Create Shipment");
 			}
 	}

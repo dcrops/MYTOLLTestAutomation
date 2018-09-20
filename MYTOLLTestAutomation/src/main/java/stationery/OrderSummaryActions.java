@@ -1,10 +1,10 @@
-package stationeryActions;
+package stationery;
 
 import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.By;
 
-import GlobalActions.PageBase;
+import global.PageBase;
 
 public class OrderSummaryActions {
 

@@ -1,9 +1,9 @@
-package SalesforceActions;
+package salesforce;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
-import GlobalActions.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 
 public class SalesforceActions {

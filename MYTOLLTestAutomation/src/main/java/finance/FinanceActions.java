@@ -1,8 +1,8 @@
-package FinanceActions;
+package finance;
 
+
+import global.PageBase;
 import org.openqa.selenium.By;
-
-import GlobalActions.PageBase;
 
 public class FinanceActions {
 

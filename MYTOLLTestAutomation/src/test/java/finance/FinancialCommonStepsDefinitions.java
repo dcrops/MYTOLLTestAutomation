@@ -1,14 +1,13 @@
-package commonStepsDefinitions;
+package finance;
 
 import java.util.Map;
 
-import Finance.FinanceActions;
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class FinancialCommonStepsDefinitions {
 	

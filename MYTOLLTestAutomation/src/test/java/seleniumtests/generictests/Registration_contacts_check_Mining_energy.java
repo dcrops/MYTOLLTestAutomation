@@ -1,5 +1,5 @@
 //test for MYT-3040
-package GenericTests;
+package seleniumtests.generictests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
@@ -7,9 +7,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class Registration_contacts_check_Mining_energy {
 	

@@ -1,6 +1,6 @@
 package baseWebdriver;
 
-import GlobalActions.PageBase;
+import global.PageBase;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,14 +8,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.*;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 
-import myTollHomePageActions.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class BaseWebdriver {
 

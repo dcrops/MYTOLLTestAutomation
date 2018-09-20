@@ -1,4 +1,4 @@
-package advanceSearchStepDefinitions;
+package advanceSearch;
 
 import static org.junit.Assert.assertFalse;
 
@@ -10,13 +10,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 
 public class advanceSearchStepDefinitions {

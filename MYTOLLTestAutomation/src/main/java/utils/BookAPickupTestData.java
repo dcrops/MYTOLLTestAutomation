@@ -1,4 +1,4 @@
-package bookAPickupTestDataMapping;
+package utils;
 
 public class BookAPickupTestData {
 	

@@ -1,11 +1,11 @@
-package bugVerification.stepDefinitions;
+package bugverification;
 
 import java.util.Map;
 
 import org.openqa.selenium.By;
 
-import Global.PageBase;
-import bookAPickup.BookAPickupActions;
+import global.PageBase;
+import bookapickup.BookAPickupActions;
 import createShipment.CreateShipmentActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;

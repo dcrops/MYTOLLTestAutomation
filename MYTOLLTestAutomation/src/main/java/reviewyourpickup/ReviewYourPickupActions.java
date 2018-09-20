@@ -1,13 +1,13 @@
-package reviewYourPickupActions;
+package reviewyourpickup;
 
 import static org.junit.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.By;
 
-import GlobalActions.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickupActions.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 
 public class ReviewYourPickupActions {
 

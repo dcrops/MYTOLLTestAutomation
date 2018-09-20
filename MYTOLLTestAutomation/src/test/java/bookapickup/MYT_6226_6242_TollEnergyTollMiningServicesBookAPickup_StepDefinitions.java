@@ -1,16 +1,15 @@
-package bookAPickup.stepDefinitions;
+package bookapickup;
 
 import java.util.Map;
 
 import org.openqa.selenium.JavascriptExecutor;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import reviewYourPickup.ReviewYourPickupActions;
+import reviewyourpickup.ReviewYourPickupActions;
 
 public class MYT_6226_6242_TollEnergyTollMiningServicesBookAPickup_StepDefinitions {
 

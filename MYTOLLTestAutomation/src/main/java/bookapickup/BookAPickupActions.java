@@ -1,10 +1,10 @@
 
-package bookAPickupActions;
+package bookapickup;
 
-import GlobalActions.PageBase;
-import createShipmentActions.CreateShipmentActions;
-import manifestActions.ManifestActions;
-import myTollHomePageActions.MyTollHomePageActions;
+import global.PageBase;
+import createShipment.CreateShipmentActions;
+import manifest.ManifestActions;
+import mytollhomepage.MyTollHomePageActions;
 
 import static org.junit.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
@@ -20,7 +20,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 
 import baseWebdriver.BaseWebdriver;
-import rateEnquiryActions.RateEnquiryActions;
+import rateenquiry.RateEnquiryActions;
 
 public class BookAPickupActions {
 

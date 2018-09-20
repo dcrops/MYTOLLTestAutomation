@@ -1,9 +1,9 @@
-package bookAPickup.tests;
+package seleniumtests.bookapickup;
 
-import Global.PageBase;
+import global.PageBase;
 
 import java.util.concurrent.TimeUnit;
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
@@ -11,8 +11,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import baseWebdriver.BaseWebdriver;
-import myTollHomePage.MyTollHomePageActions;
-import reviewYourPickup.ReviewYourPickupActions;
+import mytollhomepage.MyTollHomePageActions;
+import reviewyourpickup.ReviewYourPickupActions;
 
 public class Toll_IntermodalTest {
 

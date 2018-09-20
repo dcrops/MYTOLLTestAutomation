@@ -1,4 +1,4 @@
-package GlobalActions;
+package global;
 
 public class GlobalVariables {
 	

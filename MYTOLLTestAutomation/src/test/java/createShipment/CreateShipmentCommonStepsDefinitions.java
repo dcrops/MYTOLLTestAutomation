@@ -1,17 +1,16 @@
-package commonStepsDefinitions;
+package createShipment;
 
 import java.util.Map;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
-import createShipment.CreateShipmentActions;
+import bookapickup.BookAPickupActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class CreateShipmentCommonStepsDefinitions {
 	

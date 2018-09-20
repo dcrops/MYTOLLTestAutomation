@@ -1,9 +1,8 @@
-package financials.stepDefinitions;
+package finance;
 
 import java.util.Map;
 
-import Finance.FinanceActions;
-import Global.PageBase;
+import global.PageBase;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

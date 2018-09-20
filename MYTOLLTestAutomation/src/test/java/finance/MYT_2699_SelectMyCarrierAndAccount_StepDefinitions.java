@@ -1,11 +1,10 @@
-package financials.stepDefinitions;
+package finance;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.util.Map;
 
-import Finance.FinanceActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 
@@ -21,7 +20,7 @@ public class MYT_2699_SelectMyCarrierAndAccount_StepDefinitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 			
 			assertEquals(finance.get("TollCarrier"), FinanceActions.GetTollCarrier());
-			//assertEquals(finance.get("AccountNumber"), Finance.GetAccountNumber());
+			//assertEquals(finance.get("AccountNumber"), finance.GetAccountNumber());
 			assertTrue(FinanceActions.GetAccountNumber().contains(finance.get("AccountNumber")));
 		}
 		

@@ -1,16 +1,16 @@
-package bookAPickup.tests;
+package seleniumtests.bookapickup;
 
-import Global.PageBase;
+import global.PageBase;
 import static org.junit.Assert.assertEquals;
 
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import baseWebdriver.BaseWebdriver;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 
 public class TollCarrierIntermodalSpecialized_AddAddress {

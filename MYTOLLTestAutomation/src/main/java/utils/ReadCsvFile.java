@@ -1,16 +1,14 @@
-package fileReader;
+package utils;
 import com.csvreader.CsvReader;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
 import com.jayway.restassured.specification.RequestSpecification;
 
-import apiTestData.apiBody;
-import baseWebdriver.BaseWebdriver;
-
 import static com.jayway.restassured.RestAssured.proxy;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 
 import org.apache.log4j.Logger;
 import org.json.JSONException;

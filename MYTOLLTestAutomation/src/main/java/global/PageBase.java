@@ -1,4 +1,4 @@
-package GlobalActions;
+package global;
 
 import java.awt.AWTException;
 import java.awt.Robot;

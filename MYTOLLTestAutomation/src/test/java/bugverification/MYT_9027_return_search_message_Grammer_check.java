@@ -1,14 +1,14 @@
-package bugVerification.stepDefinitions;
+package bugverification;
 
 import static org.testng.Assert.assertEquals;
 
 import java.util.Map;
 
-import Global.PageBase;
+import global.PageBase;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class MYT_9027_return_search_message_Grammer_check
 {

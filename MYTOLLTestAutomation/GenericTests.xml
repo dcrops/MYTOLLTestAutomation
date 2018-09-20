@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test name="GenericTests">
+  <test name="seleniumtests.generictests.GenericTests">
   <!---Toll carriers test data -->
 
 		<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
@@ -34,11 +34,11 @@
 		<parameter name="EmailAddress5" value="Test5@test.com" />
 		
 		  <classes>
-		  	<class name="GenericTests.Registration_contacts_check_Mining_energy" />
-			<class name="GenericTests.RegistrationPage_UserProfileStore" />
-			<class name="GenericTests.ShareShipment" />
-			<class name="GenericTests.BAP_without_complete_profile" />
-			<class name="GenericTests.ContactsUpload" />
+		  	<class name="seleniumtests.generictests.Registration_contacts_check_Mining_energy" />
+			<class name="seleniumtests.generictests.RegistrationPage_UserProfileStore" />
+			<class name="seleniumtests.generictests.ShareShipment" />
+			<class name="seleniumtests.generictests.BAP_without_complete_profile" />
+			<class name="seleniumtests.generictests.ContactsUpload" />
 			
 		</classes>
 		

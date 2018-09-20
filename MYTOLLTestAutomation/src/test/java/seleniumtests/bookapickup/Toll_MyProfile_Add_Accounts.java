@@ -1,9 +1,9 @@
-package bookAPickup.tests;
+package seleniumtests.bookapickup;
 
-import Global.PageBase;
+import global.PageBase;
 import static org.junit.Assert.assertEquals;
 
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -14,7 +14,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import baseWebdriver.BaseWebdriver;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class Toll_MyProfile_Add_Accounts {
 

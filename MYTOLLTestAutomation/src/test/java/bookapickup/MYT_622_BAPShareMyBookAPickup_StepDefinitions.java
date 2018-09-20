@@ -1,11 +1,10 @@
-package bookAPickup.stepDefinitions;
+package bookapickup;
 
 import static org.testng.Assert.assertEquals;
 
 import java.util.Map;
 
-import Global.PageBase;
-import bookAPickup.BookAPickupActions;
+import global.PageBase;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

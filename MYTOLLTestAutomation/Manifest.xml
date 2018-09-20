@@ -15,7 +15,7 @@
 
 		<!---Services test data -->
 
-		<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
+		<parameter name="ServiceGlobalExpressDocuments" value="global - Express Documents" />
 		<parameter name="ServiceDGFreight" value="DG Freight" />
 		<parameter name="ServiceExpress" value="Express" />
 		<parameter name="ServiceGeneral" value="General" />
@@ -29,7 +29,7 @@
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
 		<parameter name="ServiceDGExpress" value="DG Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
-		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
+		<parameter name="ServiceGlobalExpressParcels" value="global - Express Parcels" />
 
 		<!---Create shipment Test data -->
 		<parameter name="AccountNumberTINTER" value="371065" />
@@ -154,24 +154,24 @@
 	<classes>
 	
  		 
-		<class name="manifestE2ETests.ManualManifestTollIPECTest" />
-		<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" />
-		<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
-		<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" />
-		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" /> 
-		<class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />
-		<class name = "manifestE2ETests.TollPriorityAUCommercialInvoice" /> 
+		<class name="seleniumtests.manifest.ManualManifestTollIPECTest" />
+		<class name="seleniumtests.manifest.ManualManifestTollTasmaniaTests" />
+		<class name="seleniumtests.manifest.ManualManifestTollPriorityAUSTests" />
+		<class name="seleniumtests.manifest.ManualManifestTollPriorityNZTests" />
+		<class name="seleniumtests.manifest.ManualTollIntermodalSpecialisedTests" />
+		<class name = "seleniumtests.manifest.ManifestIntermodalSpecializedTests" />
+		<class name = "seleniumtests.manifest.TollPriorityAUCommercialInvoice" />
 		
 	<!-- Blocked>			
-		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
-		<class name = "manifestE2ETests.TollPriorityAUCommercialInvoice" />
+		<class name="seleniumtests.manifest.ManualTollIntermodalSpecialisedTests" />
+		<class name = "seleniumtests.manifest.TollPriorityAUCommercialInvoice" />
 
-	    <class name = "manifestE2ETests.ManifestIntermodalSpecializedTests" />
-		<class name="manifestE2ETests.ManualTollIntermodalSpecialisedTests" />
-		<class name="manifestE2ETests.ManualManifestTollIPECTest" />
-		<class name="manifestE2ETests.ManualManifestTollTasmaniaTests" />
-		<class name="manifestE2ETests.ManualManifestTollPriorityAUSTests" />
-		<class name="manifestE2ETests.ManualManifestTollPriorityNZTests" />
+	    <class name = "seleniumtests.manifest.ManifestIntermodalSpecializedTests" />
+		<class name="seleniumtests.manifest.ManualTollIntermodalSpecialisedTests" />
+		<class name="seleniumtests.manifest.ManualManifestTollIPECTest" />
+		<class name="seleniumtests.manifest.ManualManifestTollTasmaniaTests" />
+		<class name="seleniumtests.manifest.ManualManifestTollPriorityAUSTests" />
+		<class name="seleniumtests.manifest.ManualManifestTollPriorityNZTests" />
 			
 
 			     </Blocked -->

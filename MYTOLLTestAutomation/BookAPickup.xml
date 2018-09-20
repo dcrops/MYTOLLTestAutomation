@@ -20,7 +20,7 @@
 
 	<!---Services test data -->
 
-	<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
+	<parameter name="ServiceGlobalExpressDocuments" value="global - Express Documents" />
 	<parameter name="ServiceDGFreight" value="DG Freight" />
 	<parameter name="ServiceExpress" value="Express" />
 	<parameter name="ServiceGeneral" value="General" />
@@ -233,23 +233,23 @@
 	<classes>
 	
 
-			<class name="bookAPickupE2ETests.TollPriorityNZTest"/> 
-			 <class name="bookAPickupE2ETests.TollPriorityAusTest" />   
-			<class name="bookAPickupE2ETests.IntermodalSpecializedTest"/>
-			<class name="bookAPickupE2ETests.TollTasmaniaTest"/> 
-			<class name="bookAPickupE2ETests.TollIPECTest" />
-			<class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts"/> 
-			<class name="bookAPickupE2ETests.Toll_Add_Template" />  
-			<class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress"/>			
+			<class name="seleniumtests.bookapickup.TollPriorityNZTest"/>
+			 <class name="seleniumtests.bookapickup.TollPriorityAusTest" />
+			<class name="seleniumtests.bookapickup.IntermodalSpecializedTest"/>
+			<class name="seleniumtests.bookapickup.TollTasmaniaTest"/>
+			<class name="seleniumtests.bookapickup.TollIPECTest" />
+			<class name="seleniumtests.bookapickup.Toll_MyProfile_Add_Accounts"/>
+			<class name="seleniumtests.bookapickup.Toll_Add_Template" />
+			<class name="seleniumtests.bookapickup.TollCarrierIntermodalSpecialized_AddAddress"/>
 		</classes>
-		<!-- Blocked> <classes>   <class name="bookAPickupE2ETests.TollPriorityNZTest" 
-			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.IntermodalSpecializedTest" 
-			/> <class name="bookAPickupE2ETests.TollTasmaniaTest" /> <class name="bookAPickupE2ETests.TollIPEC_CutOffTime" 
-			/> <class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_CutOffTime" 
-			/> <class name="bookAPickupE2ETests.TollCarrierIntermodalSpecialized_AddAddress" 
-			/> <class name="bookAPickupE2ETests.TollPriorityAusTest" /> <class name="bookAPickupE2ETests.TollPriorityNZTest" 
-			/> <class name="bookAPickupE2ETests.TollIPECTest" /> <class name="bookAPickupE2ETests.Toll_MyProfile_Add_Accounts" 
-			/> <class name="bookAPickupE2ETests.Toll_Add_Template" /> </Blocked -->
+		<!-- Blocked> <classes>   <class name="seleniumtests.bookapickup.TollPriorityNZTest"
+			/> <class name="seleniumtests.bookapickup.TollPriorityAusTest" /> <class name="seleniumtests.bookapickup.IntermodalSpecializedTest"
+			/> <class name="seleniumtests.bookapickup.TollTasmaniaTest" /> <class name="seleniumtests.bookapickup.TollIPEC_CutOffTime"
+			/> <class name="seleniumtests.bookapickup.TollCarrierIntermodalSpecialized_CutOffTime"
+			/> <class name="seleniumtests.bookapickup.TollCarrierIntermodalSpecialized_AddAddress"
+			/> <class name="seleniumtests.bookapickup.TollPriorityAusTest" /> <class name="seleniumtests.bookapickup.TollPriorityNZTest"
+			/> <class name="seleniumtests.bookapickup.TollIPECTest" /> <class name="seleniumtests.bookapickup.Toll_MyProfile_Add_Accounts"
+			/> <class name="seleniumtests.bookapickup.Toll_Add_Template" /> </Blocked -->
 
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

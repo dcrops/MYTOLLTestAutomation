@@ -1,15 +1,14 @@
-package bookAPickup.stepDefinitions;
+package bookapickup;
 
 import java.util.Map;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import manifest.ManifestActions;
-import reviewYourPickup.ReviewYourPickupActions;
+import reviewyourpickup.ReviewYourPickupActions;
 
 public class BookAPickupStepDefinitions{
 

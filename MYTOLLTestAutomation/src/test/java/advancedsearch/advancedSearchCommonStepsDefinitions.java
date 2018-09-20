@@ -1,9 +1,9 @@
-package commonStepsDefinitions;
+package advancedsearch;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 import cucumber.api.java.en.Given;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class advancedSearchCommonStepsDefinitions {
 

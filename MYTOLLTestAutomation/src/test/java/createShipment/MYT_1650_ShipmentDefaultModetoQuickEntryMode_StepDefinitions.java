@@ -1,9 +1,8 @@
-package createShipment.stepDefinitions;
+package createShipment;
 
 import java.util.Map;
 
-import bookAPickup.BookAPickupActions;
-import createShipment.CreateShipmentActions;
+import bookapickup.BookAPickupActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

@@ -15,7 +15,7 @@
 
 		<!---Services test data -->
 
-		<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
+		<parameter name="ServiceGlobalExpressDocuments" value="global - Express Documents" />
 		<parameter name="ServiceDGFreight" value="DG Freight" />
 		<parameter name="ServiceExpress" value="Express" />
 		<parameter name="ServiceGeneral" value="General" />
@@ -33,7 +33,7 @@
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 		<parameter name="ServiceParcelsSameDays" value="Parcels - Same Day" />
 		<parameter name="ServiceAusWideSatchel" value="Auswide 3kg Satchel - Overnight" />
-		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
+		<parameter name="ServiceGlobalExpressParcels" value="global - Express Parcels" />
 
 		<!---Toll Intermodal test data -->
 		<parameter name="TIAccountNo" value="5685" />
@@ -170,24 +170,24 @@
 
 		<classes>
 			
-	    	<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	
-			<class name="rateEnquiryE2ETests.TollPriorityNZTests" />
-			<class name="rateEnquiryE2ETests.TollPriorityAUSTests" /> 
-			<class name="rateEnquiryE2ETests.TollTasmaniaTests" />
-			 <class name="rateEnquiryE2ETests.TollIPECTests" /> 
-			<class name="rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations" /> 
+	    	<class name="seleniumtests.rateenquiry.TollIntermodalSpecialisedTests" />
+			<class name="seleniumtests.rateenquiry.TollPriorityNZTests" />
+			<class name="seleniumtests.rateenquiry.TollPriorityAUSTests" />
+			<class name="seleniumtests.rateenquiry.TollTasmaniaTests" />
+			 <class name="seleniumtests.rateenquiry.TollIPECTests" />
+			<class name="seleniumtests.rateenquiry.RateEnquiry_ErrorMsgValidations" />
 			
 			
 		</classes>
 
 	    
 	 	<!-- Blocked> <classes>	
-			<class name="rateEnquiryE2ETests.TollIntermodalSpecialisedTests" />	
-			<class name="rateEnquiryE2ETests.TollPriorityNZTests" />
-			<class name="rateEnquiryE2ETests.TollPriorityAUSTests" />
-			<class name="rateEnquiryE2ETests.TollTasmaniaTests" />
-			<class name="rateEnquiryE2ETests.TollIPECTests" />
-			<class name="rateEnquiryE2ETests.RateEnquiry_ErrorMsgValidations" /> 	
+			<class name="seleniumtests.rateenquiry.TollIntermodalSpecialisedTests" />
+			<class name="seleniumtests.rateenquiry.TollPriorityNZTests" />
+			<class name="seleniumtests.rateenquiry.TollPriorityAUSTests" />
+			<class name="seleniumtests.rateenquiry.TollTasmaniaTests" />
+			<class name="seleniumtests.rateenquiry.TollIPECTests" />
+			<class name="seleniumtests.rateenquiry.RateEnquiry_ErrorMsgValidations" />
 	    </classes></Blocked -->
 	</test> <!-- Test -->
 

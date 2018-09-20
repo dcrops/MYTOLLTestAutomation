@@ -1,4 +1,4 @@
-package stationeryStepDefinitions;
+package stationery;
 
 import static org.testng.Assert.assertEquals;
 
@@ -6,15 +6,12 @@ import java.util.Map;
 
 import org.junit.Assert;
 
-import Global.PageBase;
+import global.PageBase;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import myTollHomePage.MyTollHomePageActions;
-import stationery.OrderSummaryActions;
-import stationery.ReviewOrderActions;
-import stationery.StationeryActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class MYT_6079_StationeryOrderStationery 
 {

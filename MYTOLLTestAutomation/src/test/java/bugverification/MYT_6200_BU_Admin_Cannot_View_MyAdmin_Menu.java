@@ -1,12 +1,12 @@
-package bugVerification.stepDefinitions;
+package bugverification;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import myAdmin.MyAdminActions;
-import myTollHomePage.MyTollHomePageActions;
+import myadmin.MyAdminActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class MYT_6200_BU_Admin_Cannot_View_MyAdmin_Menu 
 {

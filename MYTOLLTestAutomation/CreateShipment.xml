@@ -14,7 +14,7 @@
 
 		<!---Services test data -->
 
-		<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
+		<parameter name="ServiceGlobalExpressDocuments" value="global - Express Documents" />
 		<parameter name="ServiceDGFreight" value="DG Freight" />
 		<parameter name="ServiceExpress" value="Express" />
 		<parameter name="ServiceGeneral" value="General" />
@@ -181,7 +181,7 @@
 
 		<!---Services test data -->
 
-		<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
+		<parameter name="ServiceGlobalExpressDocuments" value="global - Express Documents" />
 		<parameter name="ServiceDGFreight" value="DG Freight" />
 		<parameter name="ServiceExpress" value="Express" />
 		<parameter name="ServiceGeneral" value="General" />
@@ -200,7 +200,7 @@
 		<parameter name="ServiceFashion" value="Fashion" />
 		<parameter name="ServiceEconomyPacificAirportToAirport"
 			value="Economy Pacific-Airport to Airport" />
-		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
+		<parameter name="ServiceGlobalExpressParcels" value="global - Express Parcels" />
 
 		<!---Create shipment Test data -->
 		<parameter name="AccountNumberTINTER" value="371065" />
@@ -351,24 +351,24 @@
 	<classes>
 
 
-		<class name="createShipmentE2ETests.IntermodalSpecializedTests" />	
-		<class name="createShipmentE2ETests.TollPriorityAUSTests" />
-		<class name="createShipmentE2ETests.TollPriorityNZ" />
-		<class name="createShipmentE2ETests.TollIPECTests" />
-		<class name="createShipmentE2ETests.TollTasmaniaTests" /> 
-		<class name="createShipmentE2ETests.TollCarrierIntermodalSpecialized_addAddress"/> 
+		<class name="seleniumtests.createshipment.IntermodalSpecializedTests" />
+		<class name="seleniumtests.createshipment.TollPriorityAUSTests" />
+		<class name="seleniumtests.createshipment.TollPriorityNZ" />
+		<class name="seleniumtests.createshipment.TollIPECTests" />
+		<class name="seleniumtests.createshipment.TollTasmaniaTests" />
+		<class name="seleniumtests.createshipment.TollCarrierIntermodalSpecialized_addAddress"/>
 		
 		
 				
 		</classes>
 
      	<!-- Blocked><classes>
-		<class name="createShipmentE2ETests.IntermodalSpecializedTests" />
-		<class name="createShipmentE2ETests.TollPriorityAUSTests" />
-		<class name="createShipmentE2ETests.TollPriorityNZ" />
-		<class name="createShipmentE2ETests.TollIPECTests" />
-		<class name="createShipmentE2ETests.TollTasmaniaTests" /> 
-		<class name="createShipmentE2ETests.TollIntermodalTests_AddAdress"/>
+		<class name="seleniumtests.createshipment.IntermodalSpecializedTests" />
+		<class name="seleniumtests.createshipment.TollPriorityAUSTests" />
+		<class name="seleniumtests.createshipment.TollPriorityNZ" />
+		<class name="seleniumtests.createshipment.TollIPECTests" />
+		<class name="seleniumtests.createshipment.TollTasmaniaTests" />
+		<class name="seleniumtests.createshipment.TollIntermodalTests_AddAdress"/>
 		</Blocked -->
 	
 

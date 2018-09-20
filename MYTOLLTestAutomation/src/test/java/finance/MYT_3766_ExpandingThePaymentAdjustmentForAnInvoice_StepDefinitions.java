@@ -1,11 +1,10 @@
-package financials.stepDefinitions;
+package finance;
 
 import static org.testng.Assert.assertEquals;
 
 import java.util.Map;
 
-import Finance.FinanceActions;
-import Global.PageBase;
+import global.PageBase;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -28,7 +27,7 @@ public class MYT_3766_ExpandingThePaymentAdjustmentForAnInvoice_StepDefinitions 
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 
 			// PageBase.Scrollbar(300, 600);
-			// Finance.ClickOnFuelSurchargesInvoiceSummary();
+			// finance.ClickOnFuelSurchargesInvoiceSummary();
 			PageBase.MoveToElement(FinanceActions.basicChargesInvoiceSummary,
 					FinanceActions.basicChargesInvoiceSummary);
 			PageBase.MaximumWaitForElementEnabled();
@@ -46,7 +45,7 @@ public class MYT_3766_ExpandingThePaymentAdjustmentForAnInvoice_StepDefinitions 
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
-			//assertEquals(Finance.GetPaymentAdjustments(),
+			//assertEquals(finance.GetPaymentAdjustments(),
 			//finance.get("PaymentAdjustments"));
 
 			FinanceActions.ClickOnPaymentAdjustments();

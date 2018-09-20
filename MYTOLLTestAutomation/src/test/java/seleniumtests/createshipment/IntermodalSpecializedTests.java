@@ -1,4 +1,4 @@
-package createShipmentE2ETests;
+package seleniumtests.createshipment;
 
 import static org.testng.Assert.assertEquals;
 
@@ -7,12 +7,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 import createShipment.CreateShipmentActions;
 import createShipment.ShipmentReviewActions;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class IntermodalSpecializedTests {
 

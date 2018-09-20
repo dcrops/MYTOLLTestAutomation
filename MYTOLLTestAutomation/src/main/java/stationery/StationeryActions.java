@@ -1,4 +1,4 @@
-package stationeryActions;
+package stationery;
 
 import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.assertTrue;
@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import GlobalActions.PageBase;
+import global.PageBase;
 
 public class StationeryActions {
 	

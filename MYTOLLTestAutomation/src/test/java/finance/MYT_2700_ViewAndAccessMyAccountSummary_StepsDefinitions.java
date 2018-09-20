@@ -1,4 +1,4 @@
-package financials.stepDefinitions;
+package finance;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -9,13 +9,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-import Finance.FinanceActions;
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 
@@ -27,14 +26,14 @@ public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 
 			assertEquals(FinanceActions.GetTollCarrier(), finance.get("TollCarrier"));
-			//assertEquals(Finance.GetAccountNumber(), finance.get("AccountNumber"));
+			//assertEquals(finance.GetAccountNumber(), finance.get("AccountNumber"));
 			assertTrue(FinanceActions.GetAccountNumber().contains(finance.get("AccountNumber")));
 			assertEquals(FinanceActions.GetCurrent(), finance.get("Total Due"));
 			assertEquals(FinanceActions.Get30Days(), finance.get("30Days"));
 			assertEquals(FinanceActions.Get60Days(), finance.get("60Days"));
 			assertEquals(FinanceActions.Get90Days(), finance.get("90Days"));
 			assertEquals(FinanceActions.Get120Days(), finance.get("120Days"));
-			//assertEquals(Finance.GetToatlChargeAmount().replaceAll("\\s", ""),
+			//assertEquals(finance.GetToatlChargeAmount().replaceAll("\\s", ""),
 					//finance.get("Total ChargeAmount").replaceAll("\\s", ""));
 
 		}
@@ -62,9 +61,9 @@ public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 
 			PageBase.MaximumWaitForElementEnabled();
-			//assertEquals(Finance.GetInvoiceDatePrio(), finance.get("InvoiceDate"));
+			//assertEquals(finance.GetInvoiceDatePrio(), finance.get("InvoiceDate"));
 			assertEquals(FinanceActions.GetInvoiceNumberPrio(), finance.get("InvoiceNumber"));
-		    //assertEquals(Finance.GetChargeAmountPrio(), finance.get("Chargeamount"));
+		    //assertEquals(finance.GetChargeAmountPrio(), finance.get("Chargeamount"));
 			assertEquals(FinanceActions.GetShipmentDocumentsPrio(), finance.get("ShipmentsView"));
 			assertEquals(FinanceActions.GetDownloadBtn(), finance.get("Download"));
 
@@ -89,7 +88,7 @@ public class MYT_2700_ViewAndAccessMyAccountSummary_StepsDefinitions {
 
 	@When("^User selects Search Invoice by Date range$")
 	public void user_selects_Search_Invoice_by_Date_range(DataTable financeTestData) throws Throwable {
-		//Finance.SearchInvoiceDateRange();
+		//finance.SearchInvoiceDateRange();
 		
 		for (Map<String, String> finance : financeTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled();

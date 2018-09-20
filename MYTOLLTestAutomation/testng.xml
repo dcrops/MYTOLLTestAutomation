@@ -9,7 +9,7 @@
 	<suite-file path="Manifest.xml"></suite-file>	
 	<suite-file path="RateEnquiry.xml"></suite-file>
 	<suite-file path="BaseWebdriver.xml"></suite-file>
-    <suite-file path="GenericTests.xml"></suite-file>
+    <suite-file path="seleniumTests.genericTests.GenericTests.xml"></suite-file>
     
     
 

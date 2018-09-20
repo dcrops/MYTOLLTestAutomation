@@ -1,6 +1,6 @@
-package bookAPickup.tests;
+package seleniumtests.bookapickup;
 
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,10 +10,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import myTollHomePage.MyTollHomePageActions;
-import reviewYourPickup.ReviewYourPickupActions;
+import mytollhomepage.MyTollHomePageActions;
+import reviewyourpickup.ReviewYourPickupActions;
 
 public class IntermodalSpecializedTest {
 	public static Integer locationIndex = 4;

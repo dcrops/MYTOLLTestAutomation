@@ -1,4 +1,4 @@
-package rateEnquiryE2ETests;
+package seleniumtests.rateenquiry;
 
 
 import org.testng.Reporter;
@@ -7,10 +7,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import myTollHomePage.MyTollHomePageActions;
-import rateEnquiry.RateEnquiryActions;
+import mytollhomepage.MyTollHomePageActions;
+import rateenquiry.RateEnquiryActions;
 
 public class TollNQXTollExpressTests2 {
 	

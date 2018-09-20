@@ -1,18 +1,17 @@
-package createShipment.stepDefinitions;
+package createShipment;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.util.Map;
 
-import Global.PageBase;
-import bookAPickup.BookAPickupActions;
-import createShipment.CreateShipmentActions;
+import global.PageBase;
+import bookapickup.BookAPickupActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import manifest.ManifestActions;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 

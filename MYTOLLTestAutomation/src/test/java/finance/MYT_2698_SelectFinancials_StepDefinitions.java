@@ -1,16 +1,15 @@
-package financials.stepDefinitions;
+package finance;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 import static org.testng.Assert.assertEquals;
 
 import java.util.Map;
 
-import Finance.FinanceActions;
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
 
 public class MYT_2698_SelectFinancials_StepDefinitions {

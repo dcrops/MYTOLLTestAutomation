@@ -1,6 +1,6 @@
-package bookAPickup.tests;
+package seleniumtests.bookapickup;
 
-import Global.PageBase;
+import global.PageBase;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
@@ -8,9 +8,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
-import myTollHomePage.MyTollHomePageActions;
-import reviewYourPickup.ReviewYourPickupActions;
+import bookapickup.BookAPickupActions;
+import mytollhomepage.MyTollHomePageActions;
+import reviewyourpickup.ReviewYourPickupActions;
 
 public class TollIPECTest {
 
@@ -148,11 +148,11 @@ public class TollIPECTest {
 		System.out.println("Book A Pickup reference  " + reference);
 		System.out.println("ReferenceNumber " + ReferenceNumber);
 //		BaseWebdriver.LaunchSalesforce();
-//		Salesforce.LoginSalesforce(BaseWebdriver.SalesforceUser,BaseWebdriver.SalesforcePassword);
-//		Salesforce.ClickLocation();
-//		Salesforce.searchPickup(ReferenceNumber);
-//		Salesforce.searchPickup(ReferenceNumber);
-//		Salesforce.ClickSearchResultsNumber();
+//		salesforce.LoginSalesforce(BaseWebdriver.SalesforceUser,BaseWebdriver.SalesforcePassword);
+//		salesforce.ClickLocation();
+//		salesforce.searchPickup(ReferenceNumber);
+//		salesforce.searchPickup(ReferenceNumber);
+//		salesforce.ClickSearchResultsNumber();
 		
 	}
 

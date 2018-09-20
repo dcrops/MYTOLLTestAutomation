@@ -1,17 +1,17 @@
-package bugVerification.stepDefinitions;
+package bugverification;
 
 import java.util.Map;
 
 import org.openqa.selenium.By;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 public class MYT_6361_primary_address_verification
 {
 

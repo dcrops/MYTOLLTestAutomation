@@ -1,6 +1,6 @@
-package myTollHomePageActions;
+package mytollhomepage;
 
-import GlobalActions.PageBase;
+import global.PageBase;
 
 import static org.testng.Assert.assertEquals;
 

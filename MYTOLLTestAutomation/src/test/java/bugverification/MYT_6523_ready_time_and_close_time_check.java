@@ -1,16 +1,16 @@
-package bugVerification.stepDefinitions;
+package bugverification;
 
 import java.util.Map;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import manifest.ManifestActions;
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 public class MYT_6523_ready_time_and_close_time_check{
 	@Given("^User is Registered in MyToll and is on Book a Picup Page$")

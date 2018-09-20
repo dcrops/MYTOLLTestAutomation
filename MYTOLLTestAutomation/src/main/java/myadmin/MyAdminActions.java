@@ -1,8 +1,8 @@
-package myAdminActions;
+package myadmin;
 
 import org.openqa.selenium.By;
 
-import GlobalActions.PageBase;
+import global.PageBase;
 
 public class MyAdminActions 
 {

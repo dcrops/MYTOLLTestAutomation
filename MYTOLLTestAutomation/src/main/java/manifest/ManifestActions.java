@@ -1,4 +1,4 @@
-package manifestActions;
+package manifest;
 
 import static org.junit.Assert.assertEquals;
 
@@ -12,13 +12,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 
-import GlobalActions.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickupActions.BookAPickupActions;
-import commonStepsDefinitions.ManifestCommonStepsDefinitions;
-import createShipmentActions.CreateShipmentActions;
-import createShipmentActions.ShipmentReviewActions;
-import rateEnquiryActions.RateEnquiryActions;
+import bookapickup.BookAPickupActions;
+import createShipment.CreateShipmentActions;
+import createShipment.ShipmentReviewActions;
+import rateenquiry.RateEnquiryActions;
 
 public class ManifestActions {
 
@@ -760,12 +759,12 @@ public static void commercialInvoiceItemDetails(String Description, String PartN
 		System.out.println("ReceiverLocation ="+ReceiverLocation);
 	}
 	
-	public static void UserVerifiesShipmentDetailsonBAPPage(String Carrier, String AccountNo, String Service) throws Throwable {
+	public static void UserVerifiesShipmentDetailsonBAPPage(String Carrier, String AccountNo, String Service, String SenderContactName, String SenderCompanyName) throws Throwable {
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.verifyTextExistAttributeContains(BookAPickupActions.TollCarrierTextField, Carrier);
 			PageBase.verifyTextExistAttributeContains(BookAPickupActions.accountNumber, AccountNo);
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.name, ManifestCommonStepsDefinitions.SenderContactName);
-			PageBase.verifyTextExistAttributeContains(BookAPickupActions.location, ManifestCommonStepsDefinitions.SenderCompanyName);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.name, SenderContactName);
+			PageBase.verifyTextExistAttributeContains(BookAPickupActions.location, SenderCompanyName);
 			PageBase.verifyTextExistAttributeContains(BookAPickupActions.serviceSelected, Service);
 	}
 	

@@ -1,6 +1,6 @@
-package rateEnquiryE2ETests;
+package seleniumtests.rateenquiry;
 
-import myTollHomePage.MyTollHomePageActions;
+import mytollhomepage.MyTollHomePageActions;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,9 +10,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import rateEnquiry.RateEnquiryActions;
+import rateenquiry.RateEnquiryActions;
 
 public class TollIPECTests {
 		

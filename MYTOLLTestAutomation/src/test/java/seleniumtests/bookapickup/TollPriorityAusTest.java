@@ -1,4 +1,4 @@
-package bookAPickup.tests;
+package seleniumtests.bookapickup;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
@@ -6,12 +6,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Global.PageBase;
+import global.PageBase;
 import baseWebdriver.BaseWebdriver;
-import bookAPickup.BookAPickupActions;
+import bookapickup.BookAPickupActions;
 import manifest.ManifestActions;
-import myTollHomePage.MyTollHomePageActions;
-import reviewYourPickup.ReviewYourPickupActions;
+import mytollhomepage.MyTollHomePageActions;
+import reviewyourpickup.ReviewYourPickupActions;
 
 public class TollPriorityAusTest {
 
@@ -132,11 +132,11 @@ public class TollPriorityAusTest {
 		System.out.println("Book A Pickup reference  " + reference1);
 		System.out.println("ReferenceNumber " + ReferenceNumber);
 //		BaseWebdriver.LaunchSalesforce();
-//		Salesforce.LoginSalesforce(BaseWebdriver.SalesforceUser,BaseWebdriver.SalesforcePassword);
-//		Salesforce.ClickLocation();
-//		Salesforce.searchPickup(ReferenceNumber);
-//		Salesforce.searchPickup(ReferenceNumber);
-//		Salesforce.ClickSearchResultsNumber();
+//		salesforce.LoginSalesforce(BaseWebdriver.SalesforceUser,BaseWebdriver.SalesforcePassword);
+//		salesforce.ClickLocation();
+//		salesforce.searchPickup(ReferenceNumber);
+//		salesforce.searchPickup(ReferenceNumber);
+//		salesforce.ClickSearchResultsNumber();
 
 	}
 
@@ -157,7 +157,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		// BookAPickupActions.AddAddressManuallyTDF("AccessHQ","ABC","CDE",
@@ -285,7 +285,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2, Suburb1,
@@ -342,7 +342,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2, Suburb1,
@@ -398,7 +398,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2, Suburb1,
@@ -455,7 +455,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2, Suburb1,
@@ -512,7 +512,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2, Suburb1,
@@ -569,7 +569,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2, Suburb1,
@@ -627,7 +627,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2,
@@ -685,7 +685,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2,
@@ -742,7 +742,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2,
@@ -800,7 +800,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2,
@@ -859,7 +859,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2,
@@ -916,7 +916,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2,
@@ -974,7 +974,7 @@ public class TollPriorityAusTest {
 
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
-		bookAPickup.BookAPickupActions.SelectAccountNumber1();
+		bookapickup.BookAPickupActions.SelectAccountNumber1();
 
 		// Add Address
 		BookAPickupActions.AddAddressManuallyPrioAUSDomestic(location, Country, AddressLine1, AddressLine2,
