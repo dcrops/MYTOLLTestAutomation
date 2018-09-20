@@ -17,7 +17,7 @@ import cucumber.api.testng.*;
          		"src/test/Resources/bugVerification/MYT_6523 Ready Time and close time check.feature",
          		"src/test/Resources/bugVerification/MYT_7077_UN_number_delete_clear_check.feature",
          		"src/test/Resources/bugVerification/MYT_6200 BU Admin User cannot see the My Admin Menu.feature" ,
-         		//"src/test/Resources/bugVerification/MYT_6126_Rate_enquiry_disclaimer_content.feature",
+         		"src/test/Resources/bugVerification/MYT_6126_RateEnquiry_RateDisclaimerContentIncorrect.feature",
          		"src/test/Resources/bugVerification/MYT_9027_Grammar_error_on_the_My_Returns_page.feature",
         		"src/test/Resources/bugVerification/MYT_8887Shipment_International_Domestic_Addresses.feature",
          		"src/test/Resources/bugVerification/MYT_8628 Users are unable to view certain POD.feature",
