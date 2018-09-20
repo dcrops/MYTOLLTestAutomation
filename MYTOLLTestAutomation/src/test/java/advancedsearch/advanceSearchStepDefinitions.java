@@ -1,4 +1,4 @@
-package advanceSearch;
+package advancedsearch;
 
 import static org.junit.Assert.assertFalse;
 
@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 
 import global.PageBase;
-import baseWebdriver.BaseWebdriver;
+import basewebdriver.BaseWebdriver;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;

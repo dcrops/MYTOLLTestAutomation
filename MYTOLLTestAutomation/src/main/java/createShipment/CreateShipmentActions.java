@@ -1,4 +1,4 @@
-package createShipment;
+package createshipment;
 
 import global.PageBase;
 
@@ -15,7 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 
-import baseWebdriver.BaseWebdriver;
+import basewebdriver.BaseWebdriver;
 import bookapickup.BookAPickupActions;
 import manifest.ManifestActions;
 import mytollhomepage.MyTollHomePageActions;

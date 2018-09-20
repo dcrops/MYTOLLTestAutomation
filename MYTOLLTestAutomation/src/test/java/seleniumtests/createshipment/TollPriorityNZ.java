@@ -8,10 +8,10 @@ import org.testng.annotations.Test;
 
 import global.PageBase;
 import bookapickup.BookAPickupActions;
-import createShipment.CreateShipmentActions;
-import createShipment.ShipmentReviewActions;
+import createshipment.CreateShipmentActions;
+import createshipment.ShipmentReviewActions;
 import mytollhomepage.MyTollHomePageActions;
-import baseWebdriver.BaseWebdriver;
+import basewebdriver.BaseWebdriver;
 
 public class TollPriorityNZ {
 

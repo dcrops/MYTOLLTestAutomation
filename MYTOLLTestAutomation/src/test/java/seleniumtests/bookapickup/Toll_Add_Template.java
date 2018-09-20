@@ -5,7 +5,7 @@ import global.PageBase;
 import static org.junit.Assert.assertEquals;
 
 import bookapickup.BookAPickupActions;
-import createShipment.CreateShipmentActions;
+import createshipment.CreateShipmentActions;
 import manifest.ManifestActions;
 
 import org.junit.Assert;
@@ -15,7 +15,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import baseWebdriver.BaseWebdriver;
+import basewebdriver.BaseWebdriver;
 import mytollhomepage.MyTollHomePageActions;
 import rateenquiry.RateEnquiryActions;
 

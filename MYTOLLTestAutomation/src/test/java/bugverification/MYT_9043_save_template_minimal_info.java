@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 import global.PageBase;
 import bookapickup.BookAPickupActions;
-import createShipment.CreateShipmentActions;
+import createshipment.CreateShipmentActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

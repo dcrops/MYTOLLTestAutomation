@@ -5,8 +5,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import global.PageBase;
-import baseWebdriver.BaseWebdriver;
-import createShipment.CreateShipmentActions;
+import basewebdriver.BaseWebdriver;
+import createshipment.CreateShipmentActions;
 import mytollhomepage.MyTollHomePageActions;
 
 public class BAP_without_complete_profile {

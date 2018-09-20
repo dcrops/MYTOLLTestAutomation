@@ -11,11 +11,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import global.PageBase;
-import baseWebdriver.BaseWebdriver;
+import basewebdriver.BaseWebdriver;
 import bookapickup.BookAPickupActions;
 import mytollhomepage.MyTollHomePageActions;
 import rateenquiry.RateEnquiryActions;
-import createShipment.CreateShipmentActions;
+import createshipment.CreateShipmentActions;
 import manifest.ManifestActions;
 
 public class TollPriorityAUCommercialInvoice {

@@ -2,7 +2,7 @@
 package bookapickup;
 
 import global.PageBase;
-import createShipment.CreateShipmentActions;
+import createshipment.CreateShipmentActions;
 import manifest.ManifestActions;
 import mytollhomepage.MyTollHomePageActions;
 
@@ -19,7 +19,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 
-import baseWebdriver.BaseWebdriver;
+import basewebdriver.BaseWebdriver;
 import rateenquiry.RateEnquiryActions;
 
 public class BookAPickupActions {

@@ -1,4 +1,4 @@
-package createShipment;
+package createshipment;
 
 
 import static org.junit.Assert.assertEquals;
@@ -7,7 +7,7 @@ import static org.testng.Assert.assertTrue;
 import org.openqa.selenium.By;
 
 import global.PageBase;
-import baseWebdriver.BaseWebdriver;
+import basewebdriver.BaseWebdriver;
 
 
 public class ShipmentReviewActions {

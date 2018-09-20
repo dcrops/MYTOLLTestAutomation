@@ -1,4 +1,4 @@
-package baseWebdriver;
+package basewebdriver;
 
 import global.PageBase;
 

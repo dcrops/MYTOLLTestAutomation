@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import global.PageBase;
-import baseWebdriver.BaseWebdriver;
+import basewebdriver.BaseWebdriver;
 import mytollhomepage.MyTollHomePageActions;
 
 public class RegistrationPage_UserProfileStore {

@@ -1,4 +1,4 @@
-package createShipment;
+package createshipment;
 
 import static org.testng.Assert.assertEquals;
 

@@ -13,10 +13,10 @@ import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 
 import global.PageBase;
-import baseWebdriver.BaseWebdriver;
+import basewebdriver.BaseWebdriver;
 import bookapickup.BookAPickupActions;
-import createShipment.CreateShipmentActions;
-import createShipment.ShipmentReviewActions;
+import createshipment.CreateShipmentActions;
+import createshipment.ShipmentReviewActions;
 import rateenquiry.RateEnquiryActions;
 
 public class ManifestActions {

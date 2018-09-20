@@ -1,8 +1,8 @@
-package createShipment;
+package createshipment;
 
 import java.util.Map;
 
-import createShipment.ShipmentReviewActions;
+import createshipment.ShipmentReviewActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 

@@ -5,16 +5,16 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions( strict=true
 
-//,features = { "src/test/Resources/advancesearch/MYT_6201_Advance_Search_Location_Reference_CreationDate_TollCarrier.feature" }
-,features = { "src/test/Resources/advancesearch/MYT_3482_Advance_Search_LoadSavedSearch.feature",
-		"src/test/Resources/advancesearch/MYT_3482_Advance_Search_Sender_Receiver_Location.feature"
-		  ,"src/test/Resources/advancesearch/MYT_3483_Advance_Search_ViewSearchShipmentResults.feature",
-		  "src/test/Resources/advancesearch/MYT_3540_AccessSavedSearchesInDashboard.feature",
-		  "src/test/Resources/advancesearch/MYT_6201_Advance_Search_Location_Reference_CreationDate_TollCarrier.feature"
-		  ,"src/test/Resources/advancesearch/MYT_6231_Advance_Search_ServiceType_Milestone_Conditions.feature"
+//,features = { "src/test/Resources/advancedsearch/MYT_6201_Advance_Search_Location_Reference_CreationDate_TollCarrier.feature" }
+,features = { "src/test/Resources/advancedsearch/MYT_3482_Advance_Search_LoadSavedSearch.feature",
+		"src/test/Resources/advancedsearch/MYT_3482_Advance_Search_Sender_Receiver_Location.feature"
+		  ,"src/test/Resources/advancedsearch/MYT_3483_Advance_Search_ViewSearchShipmentResults.feature",
+		  "src/test/Resources/advancedsearch/MYT_3540_AccessSavedSearchesInDashboard.feature",
+		  "src/test/Resources/advancedsearch/MYT_6201_Advance_Search_Location_Reference_CreationDate_TollCarrier.feature"
+		  ,"src/test/Resources/advancedsearch/MYT_6231_Advance_Search_ServiceType_Milestone_Conditions.feature"
 		}
 //,tags = {"@tag1"}
-,glue= {"commonStepsDefinitions", "advanceSearchStepDefinitions"}
+,glue= {"advancedsearch", "hooks"}
 , plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\AdvancedSearch\\cucumber-pretty",
 
         "json:C:\\Source\\MYTOLLTestAutomation\\Reports\\AdvancedSearch\\cucumber-json\\CucumberTestReport.json",

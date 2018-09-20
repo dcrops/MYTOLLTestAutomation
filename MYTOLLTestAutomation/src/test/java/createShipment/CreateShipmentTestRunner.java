@@ -1,4 +1,4 @@
-package createShipment;
+package createshipment;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.*;

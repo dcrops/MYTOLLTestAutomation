@@ -8,9 +8,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Reporter;
 
-import baseWebdriver.BaseWebdriver;
+import basewebdriver.BaseWebdriver;
 import bookapickup.BookAPickupActions;
-import createShipment.CreateShipmentActions;
+import createshipment.CreateShipmentActions;
 
 public class RateEnquiryActions {
 
