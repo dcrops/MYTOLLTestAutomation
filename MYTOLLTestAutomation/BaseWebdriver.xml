@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="none">
+<suite name="Suite" parallel="tests">
 
 
 	<test name="chromeTest">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="baseWebdriver.BaseWebdriver" />
+			<class name="basewebdriver.BaseWebdriver" />
 		</classes>
 	</test> <!-- Test -->
 
 	<test name="firefoxTest">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="baseWebdriver.BaseWebdriver" />
+			<class name="basewebdriver.BaseWebdriver" />
 		</classes>
 	</test> <!-- Test -->
 
 	<test name="IETest">
 		<parameter name="browser" value="ie" />
 		<classes>
-			<class name="baseWebdriver.BaseWebdriver" />
+			<class name="basewebdriver.BaseWebdriver" />
 		</classes>
 	</test> <!-- Test -->
 
@@ -31,17 +31,17 @@
 		
 	 	
 			
-	     	<class name="bookapickup.BookAPickupTestRunner" />
-	     	<class name="manifest.ManifestTestRunner"/>
-	     	<class name="rateenquiry.RateEnquiryTestRunner"/>
+	     	<class name="runners.bookapickup.BookAPickupTestRunner" />
+	     	<class name="runners.manifest.ManifestTestRunner"/>
+	     	<class name="runners.rateenquiry.RateEnquiryTestRunner"/>
 	<!--      	<class name="finance.FinancialTestRunner"/> -->
-	     	<class name="advancedsearch.AdvancedSearchTestRunner"/>
-			<class name="createShipment.CreateShipmentTestRunner" />
-	     	<class name="returns.ReturnsTestRunner"/>
-	     	<class name="dashboard.DashboardTestRunner"/>
-	     	<class name="stationery.StationeryTestRunner"/>
+	     	<class name="runners.advancedsearch.AdvancedSearchTestRunner"/>
+			<class name="runners.createshipment.CreateShipmentTestRunner" />
+	     	<class name="runners.returns.ReturnsTestRunner"/>
+	     	<class name="runners.dashboard.DashboardTestRunner"/>
+	     	<class name="runners.stationery.StationeryTestRunner"/>
 			
-			<!-- Blocked>   <class name="createShipment.CreateShipmentTestRunner" /><class name="bookapickup.BookAPickupTestRunner" />
+			<!-- Blocked>   <class name="createshipment.CreateShipmentTestRunner" /><class name="bookapickup.BookAPickupTestRunner" />
 			<class 	name="manifest.ManifestTestRunner"/> <class name="advancedsearch.AdvancedSearchTestRunner"/>
 				<class name="rateenquiry.RateEnquiryTestRunner"/> <class name="finance.FinancialTestRunner"/>
 				<class name="dashboard.DashboardTestRunner"/> <class name="returns.ReturnsTestRunner"/>
