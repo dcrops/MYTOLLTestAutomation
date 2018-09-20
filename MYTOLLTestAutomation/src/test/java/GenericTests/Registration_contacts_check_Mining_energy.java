@@ -49,7 +49,8 @@ public class Registration_contacts_check_Mining_energy {
 				"(08) 9080 9800","(08) 9352 6600","(08) 9172 1951"};
 		for (int i =0; i<PhoneListMining.length; i++)
 		{
-		PageBase.verifyTextExist(By.xpath("//*[@id=\"contact-acdn\"]/div[4]//*//div[2]/a[text()='"+PhoneListMining[i]+"']"), PhoneListMining[i]);			
+		PageBase.verifyTextExist(By.xpath("//*[@id=\"contact-acdn\"]/div[5]/div[2]//div[2]/a[text() = \'"+PhoneListMining[i]+"']"), PhoneListMining[i]);
+					
 		}
 	}
 	
@@ -75,7 +76,7 @@ public class Registration_contacts_check_Mining_energy {
 		
 		for (int i =0; i<PhoneListEnergy.length; i++)
 		{
-		PageBase.verifyTextExist(By.xpath("//*[@id=\"contact-acdn\"]/div[1]/div[2]//*//*//a[text()='"+PhoneListEnergy[i]+"']"), PhoneListEnergy[i]);			
+		PageBase.verifyTextExist(By.xpath("//*[@id=\"contact-acdn\"]/div[2]/div[2]//div[2]/a[text() = '"+PhoneListEnergy[i]+"']"), PhoneListEnergy[i]);
 		}
 	}
 	
@@ -84,7 +85,7 @@ public class Registration_contacts_check_Mining_energy {
 
 	@AfterMethod
 	public void RunTearDown() throws Exception {
-		BaseWebdriver.tearDown();
+		//BaseWebdriver.tearDown();
 
 	}
 }
