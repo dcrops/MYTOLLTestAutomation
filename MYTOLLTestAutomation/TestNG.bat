@@ -1,0 +1,2 @@
+cd C:\Source\MYTOLLTestAutomation
+java -cp C:\Users\Dialog\.m2\repository\info\cukes\gherkin\2.12.2\*;C:\Users\Dialog\.m2\repository\info\cukes\cucumber-java\1.2.5\*;C:\Users\Dialog\.m2\repository\info\cukes\cucumber-jvm-deps\1.0.5;C:\Source\jar_files\*;C:\Source\selenium-java-3.4.0\lib\*;C:\Source\selenium-java-3.4.0\*;C:\Source\MYTOLLTestAutomation\target\test-classes;C:\Source\MYTOLLTestAutomation\target\classes\ org.testng.TestNG testng.xml
