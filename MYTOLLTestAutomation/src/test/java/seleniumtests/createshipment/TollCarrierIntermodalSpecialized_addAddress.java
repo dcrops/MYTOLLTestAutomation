@@ -45,7 +45,7 @@ public class TollCarrierIntermodalSpecialized_addAddress {
 		
 		//Add Address
 		CreateShipmentActions.addSenderAdderess();
-		CreateShipmentActions.addReceiverAdderess(); 
+		CreateShipmentActions.addReceiverAddress();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();

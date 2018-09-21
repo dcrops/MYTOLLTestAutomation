@@ -13,8 +13,8 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import manifest.ManifestActions;
 
-public class CreateShipmentStepsDefinitions  {
-	
+public class CreateShipmentStepsDefinitions {
+
 	public static String AccountNo;
 
 
@@ -56,7 +56,7 @@ public class CreateShipmentStepsDefinitions  {
 
 	@When("^User enters additional information as below$")
 	public void user_enters_additional_information_as_below(DataTable shipmentTestData) throws Throwable {
-		
+
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 
 			CreateShipmentActions.EnterPurchaseOrder(shipment.get("PurchaseOrder"));
@@ -75,9 +75,9 @@ public class CreateShipmentStepsDefinitions  {
 
 	@Then("^User Clicks Review and Create Shipment$")
 	public void UserClicksReviewAndCreateShipment() throws Throwable {
-		PageBase.click(CreateShipmentActions.reviewCreateShipmentBtn,5);
+		PageBase.click(CreateShipmentActions.reviewCreateShipmentBtn, 5);
 	}
-	
+
 	@Then("^User Clicks Continue Manifest on Shipment Review Page$")
 	public void UserClicksContinueManifestonShipmentReviewPage() throws Throwable {
 		PageBase.MaximumWaitForElementEnabled_1();
@@ -90,12 +90,12 @@ public class CreateShipmentStepsDefinitions  {
 		System.out.println("Line 94");
 		System.out.println(ManifestActions.ContinuetoManifest);
 	}
-	
+
 	@And("^User Submits and Prints Manifest$")
 	public void UserSubmitsandPrintsManifest() throws Throwable {
 		ManifestActions.submitandPrintManifest();
 	}
-	
+
 	@When("^User enters following input data for the line item - TCHEM$")
 	public void user_enters_following_input_data_for_the_line_item_TCHEM(DataTable shipmentTestData) throws Throwable {
 
@@ -104,7 +104,7 @@ public class CreateShipmentStepsDefinitions  {
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.MaximumWaitForElementEnabled();
 			BookAPickupActions.EnterItem(shipment.get("Item description"));
-			CreateShipmentActions.EnterBillingType(shipment.get("Billing Type")+ " ");
+			CreateShipmentActions.EnterBillingType(shipment.get("Billing Type") + " ");
 			CreateShipmentActions.NumberOfItem(shipment.get("No of Items"));
 			BookAPickupActions.EnterLengthWidthHeight(shipment.get("Length"), shipment.get("Width"),
 					shipment.get("Height"));
@@ -112,5 +112,4 @@ public class CreateShipmentStepsDefinitions  {
 		}
 
 	}
-	
 }

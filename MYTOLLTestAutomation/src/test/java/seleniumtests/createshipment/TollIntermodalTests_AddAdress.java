@@ -44,7 +44,7 @@ public class TollIntermodalTests_AddAdress {
 		
 		//Add Address
 		CreateShipmentActions.addSenderAdderess();
-		CreateShipmentActions.addReceiverAdderess(); 
+		CreateShipmentActions.addReceiverAddress();
 		CreateShipmentActions.verifySenderAddress();
 		CreateShipmentActions.verifyReceiverAddress();
 	}

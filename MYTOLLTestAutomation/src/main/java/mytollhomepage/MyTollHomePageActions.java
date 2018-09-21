@@ -107,12 +107,12 @@ public class MyTollHomePageActions {
 	//
 	//xpaths of Contact Us page
 	public static By contactUsIcon = By.xpath("//*[@id=\"header-right-ctrls\"]/div/ul/li[3]");
-	public static By TollMiningContactUs = By.xpath("//*[@id=\"contact-acdn\"]/div[4]");
-	public static By TollEnergyContactUs = By.xpath("//*[@id=\"contact-acdn\"]/div[1]/div[1]");
+	public static By TollMiningContactUs = By.xpath("//*[@id=\"contact-acdn\"]/div[5]");
+	public static By TollEnergyContactUs = By.xpath("//*[@id=\"contact-acdn\"]/div[2]");
 	
 
-	public static By WebsiteContactUs = By.xpath("//*[@id=\"contact-acdn\"]/div[4]/div[2]/div[5]/div[2]/div[1]");
-	public static By WebsiteContactUs2 = By.xpath("//*[@id=\"contact-acdn\"]/div[1]/div[2]/div[3]/div[2]/div[1]");
+	public static By WebsiteContactUs = By.xpath(" //*[@id=\"contact-acdn\"]/div[5]//div[1][contains(text(),'Website')]");
+	public static By WebsiteContactUs2 = By.xpath("//*[@id=\"contact-acdn\"]/div[2]//div[1][contains(text(),'Website')]");
 	
 	
 	//

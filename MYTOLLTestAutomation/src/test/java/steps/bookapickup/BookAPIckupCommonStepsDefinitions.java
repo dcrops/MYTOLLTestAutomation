@@ -86,7 +86,7 @@ public class BookAPIckupCommonStepsDefinitions {
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
 			// Add Address Prio Aus
 
-			BookAPickupActions.AddAddressManuallyPrioAUSInternational(bookAPickup.get("CompanyName"), bookAPickup.get("Country"),
+			BookAPickupActions.AddSenderAddressManually(bookAPickup.get("CompanyName"), bookAPickup.get("Country"),
 					bookAPickup.get("AddressLine1"), bookAPickup.get("AddressLine2"), bookAPickup.get("Suburb"),
 					bookAPickup.get("Postcode"), bookAPickup.get("Email"), bookAPickup.get("PhoneNumber"),
 					bookAPickup.get("Phone Country"));
@@ -256,4 +256,16 @@ public class BookAPIckupCommonStepsDefinitions {
 	}
 	
 
+	@Given("^User add Address for the receiver in TGX$")
+	public void userAddAddressForTheReceiverInTGX(DataTable bookAPickupTestData) throws Throwable {
+		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
+
+			BookAPickupActions.AddReceiverAddressManually(bookAPickup.get("CompanyName"), bookAPickup.get("Country"),
+					bookAPickup.get("AddressLine1"), bookAPickup.get("AddressLine2"), bookAPickup.get("Suburb"),
+					bookAPickup.get("Postcode"), bookAPickup.get("Email"), bookAPickup.get("PhoneNumber"),
+					bookAPickup.get("Phone Country"));
+
+		}
+
+	}
 }
