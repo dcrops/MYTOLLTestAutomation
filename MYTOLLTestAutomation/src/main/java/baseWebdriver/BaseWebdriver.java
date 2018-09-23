@@ -2,6 +2,11 @@ package basewebdriver;
 
 import global.PageBase;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
@@ -19,34 +24,64 @@ public class BaseWebdriver {
 	public static StringBuffer verificationErrors = new StringBuffer();
 
 
-	public static String PreprodUrl="https://www-ppd.mytoll.com/";  
-	public static String PerformenceUrl="https://mytoll-per.tollgroup.com";   
-	public static String SitUrl= "https://www-ppd.mytoll.com/"; 
-	public static String PSURL = "https://ps.mytoll.com/";
-	public static String SalesForce= "https://test.salesforce.com/"; 
+	public static final String PreprodUrl;
+	public static final String PerformenceUrl;
+	public static final String SitUrl;
+	public static final String PSURL;
+	public static final String SalesForce;
 
 	// Preprod users - Change accordingly to the Enviornments
-	public static String Username1= "SitAutomationuser@mailinator.com"; 
-	public static String Username2="auto_bvt_ppd@mailinator.com";
-	public static String SitUsername1="SitAutomationuser@mailinator.com";
-	public static String SitUsername2= "SitAutomationuser2@mailinator.com";
-	public static String SitUsername3="SitAutomationuser3@mailinator.com";
-	public static String SitUsername4="SitAutomationuser4@mailinator.com"; 
-	public static String SitUsername5="SitAutomationuser5@mailinator.com";
+	public static final String Username1;
+	public static final String Username2;
+	public static final String SitUsername1;
+	public static final String SitUsername2;
+	public static final String SitUsername3;
+	public static final String SitUsername4;
+	public static final String SitUsername5;
 	
 
 	//Passwords
-	public static String Password="Toll@12345"; 
+	public static final String Password;
 	
 
 	//Nishant
-	public static String AdminUser="milarepa@mailinator.com";
-	public static String AdminPassword="Toll@123";
+	public static final String AdminUser;
+	public static final String AdminPassword;
 
+	public static final String Environment;
 
+	static {
 
+		Properties properties = new Properties();
+		FileInputStream config = null;
 
+		try {
+			config = new FileInputStream("config.properties");
+			properties.load(config);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
+		PreprodUrl = properties.getProperty("PreprodUrl");
+		PerformenceUrl = properties.getProperty("PerformenceUrl");
+		SitUrl = properties.getProperty("SitUrl");
+		PSURL = properties.getProperty("PSURL");
+		SalesForce = properties.getProperty("SalesForce");
+		Username1 = properties.getProperty("Username1");
+		Username2 = properties.getProperty("Username2");
+		SitUsername1 = properties.getProperty("SitUsername1");
+		SitUsername2 = properties.getProperty("SitUsername2");
+		SitUsername3 = properties.getProperty("SitUsername3");
+		SitUsername4 = properties.getProperty("SitUsername4");
+		SitUsername5 = properties.getProperty("SitUsername5");
+		Password = properties.getProperty("Password");
+		AdminUser = properties.getProperty("AdminUser");
+		AdminPassword = properties.getProperty("AdminPassword");
+
+		Environment = properties.getProperty(properties.getProperty("ActiveEnvironment"));
+		System.setProperty("webdriver.chrome.driver", properties.getProperty("chrome"));
+
+	}
 	
 	@BeforeMethod
 	public static void RunSetup(String browser) throws Exception {
@@ -93,7 +128,7 @@ public class BaseWebdriver {
 	@BeforeMethod
 	public static void SetUp(String browser) throws Exception {
 		RunSetup(browser);
-		MyTollHomePageActions.LaunchMyToll(SitUrl);
+		MyTollHomePageActions.LaunchMyToll(Environment);
 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.manage().window().maximize();
