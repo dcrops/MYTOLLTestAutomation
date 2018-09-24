@@ -23,11 +23,6 @@ public class BaseWebdriver {
 	public static WebDriver driver;
 	public static StringBuffer verificationErrors = new StringBuffer();
 
-	public static final String PreprodUrl;
-	public static final String PerformenceUrl;
-	public static final String SitUrl;
-	public static final String PSURL;
-	public static final String SalesForce;
 	public static final String URL;
 
 	// Preprod users - Change accordingly to the Enviornments
@@ -65,22 +60,22 @@ public class BaseWebdriver {
 		}
 
 		URL = envProperties.getProperty("URL");
-		PreprodUrl = envProperties.getProperty("PreprodUrl");
+/*		PreprodUrl = envProperties.getProperty("PreprodUrl");
 		PerformenceUrl = envProperties.getProperty("PerformenceUrl");
 		SitUrl = envProperties.getProperty("SitUrl");
 		PSURL = envProperties.getProperty("PSURL");
-		SalesForce = properties.getProperty("SalesForce");
+		SalesForce = properties.getProperty("SalesForce");*/
 
-		Username1 = properties.getProperty("Username1");
-		Username2 = properties.getProperty("Username2");
-		SitUsername1 = properties.getProperty("SitUsername1");
-		SitUsername2 = properties.getProperty("SitUsername2");
-		SitUsername3 = properties.getProperty("SitUsername3");
-		SitUsername4 = properties.getProperty("SitUsername4");
-		SitUsername5 = properties.getProperty("SitUsername5");
-		Password = properties.getProperty("Password");
-		AdminUser = properties.getProperty("AdminUser");
-		AdminPassword = properties.getProperty("AdminPassword");
+		Username1 = envProperties.getProperty("Username1");
+		Username2 = envProperties.getProperty("Username2");
+		SitUsername1 = envProperties.getProperty("SitUsername1");
+		SitUsername2 = envProperties.getProperty("SitUsername2");
+		SitUsername3 = envProperties.getProperty("SitUsername3");
+		SitUsername4 = envProperties.getProperty("SitUsername4");
+		SitUsername5 = envProperties.getProperty("SitUsername5");
+		Password = envProperties.getProperty("Password");
+		AdminUser = envProperties.getProperty("AdminUser");
+		AdminPassword = envProperties.getProperty("AdminPassword");
 
 		Environment = properties.getProperty(properties.getProperty("ActiveEnvironment"));
 		System.setProperty("webdriver.chrome.driver", properties.getProperty("chrome"));
@@ -167,14 +162,14 @@ public class BaseWebdriver {
 	}
 
 
-	public static void LaunchSalesforce() throws Exception {
-
-		MyTollHomePageActions.LaunchMyToll(SalesForce);
-
-		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.manage().window().maximize();
-
-	}
+//	public static void LaunchSalesforce() throws Exception {
+//
+//		MyTollHomePageActions.LaunchMyToll(SalesForce);
+//
+//		PageBase.MaximumWaitForElementEnabled();
+//		BaseWebdriver.driver.manage().window().maximize();
+//
+//	}
 
 /*	public static void SetUsernameAndPasswordBasedOnEnv(String _selectedURL)
 	{
