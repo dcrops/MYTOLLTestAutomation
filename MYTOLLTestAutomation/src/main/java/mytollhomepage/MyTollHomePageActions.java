@@ -351,18 +351,20 @@ public class MyTollHomePageActions {
 	public static void Login(String userName, String pPassword) throws Exception
 	{
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.navigate().refresh();
+		//BaseWebdriver.driver.navigate().refresh();
+		BaseWebdriver.GetDriver().navigate().refresh();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.retryingFindClick(login);
+		PageBase.click(login, 50);
 		
 		PageBase.MaximumWaitForElementEnabled();
 		try {
-			Boolean results=BaseWebdriver.driver.findElement(emailAddress).isDisplayed();
+			Boolean results=PageBase.IsDisplayed(emailAddress);
+
 			if(results=true)
 			{
-		BaseWebdriver.driver.findElement(emailAddress).sendKeys(userName);
-		BaseWebdriver.driver.findElement(password).sendKeys(pPassword);
-		BaseWebdriver.driver.findElement(loginBtn).sendKeys(Keys.ENTER);
+				BaseWebdriver.driver.findElement(emailAddress).sendKeys(userName);
+				BaseWebdriver.driver.findElement(password).sendKeys(pPassword);
+				BaseWebdriver.driver.findElement(loginBtn).sendKeys(Keys.ENTER);
 		}
 		}
 		
