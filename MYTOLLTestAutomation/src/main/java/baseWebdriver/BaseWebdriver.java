@@ -55,11 +55,12 @@ public class BaseWebdriver {
 			properties.load(config);
 
 			FileInputStream envConfig = new FileInputStream(properties.getProperty("ActiveEnvironment") + ".properties");
+			envProperties.load(envConfig);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		URL = envProperties.getProperty("URL");
+
 /*		PreprodUrl = envProperties.getProperty("PreprodUrl");
 		PerformenceUrl = envProperties.getProperty("PerformenceUrl");
 		SitUrl = envProperties.getProperty("SitUrl");
@@ -77,7 +78,9 @@ public class BaseWebdriver {
 		AdminUser = envProperties.getProperty("AdminUser");
 		AdminPassword = envProperties.getProperty("AdminPassword");
 
-		Environment = properties.getProperty(properties.getProperty("ActiveEnvironment"));
+		Environment = properties.getProperty("ActiveEnvironment");
+        URL = envProperties.getProperty("URL");
+
 		System.setProperty("webdriver.chrome.driver", properties.getProperty("chrome"));
 		System.setProperty("webdriver.gecko.driver", properties.getProperty("firefox"));
 		System.setProperty("webdriver.ie.driver", properties.getProperty("ie"));
@@ -129,7 +132,7 @@ public class BaseWebdriver {
 	@BeforeMethod
 	public static void SetUp(String browser) throws Exception {
 		RunSetup(browser);
-		MyTollHomePageActions.LaunchMyToll(Environment);
+		MyTollHomePageActions.LaunchMyToll(URL);
 
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.manage().window().maximize();
@@ -146,7 +149,7 @@ public class BaseWebdriver {
 		BaseWebdriver.driver = new ChromeDriver();
 		//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 		//BaseWebdriver.driver = new InternetExplorerDriver();
-		MyTollHomePageActions.LaunchMyToll(Environment);
+		MyTollHomePageActions.LaunchMyToll(URL);
 //		SetUsernameAndPasswordBasedOnEnv(PSURL);
 
 		PageBase.MaximumWaitForElementEnabled();
