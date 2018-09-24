@@ -43,7 +43,6 @@ public class BaseWebdriver {
 	public static final String AdminUser;
 	public static final String AdminPassword;
 
-	public static final String Environment;
 
 	static {
 
@@ -78,7 +77,6 @@ public class BaseWebdriver {
 		AdminUser = envProperties.getProperty("AdminUser");
 		AdminPassword = envProperties.getProperty("AdminPassword");
 
-		Environment = properties.getProperty("ActiveEnvironment");
         URL = envProperties.getProperty("URL");
 
 		System.setProperty("webdriver.chrome.driver", properties.getProperty("chrome"));
