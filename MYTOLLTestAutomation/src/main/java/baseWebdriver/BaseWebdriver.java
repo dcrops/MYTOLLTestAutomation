@@ -80,6 +80,8 @@ public class BaseWebdriver {
 
 		Environment = properties.getProperty(properties.getProperty("ActiveEnvironment"));
 		System.setProperty("webdriver.chrome.driver", properties.getProperty("chrome"));
+		System.setProperty("webdriver.gecko.driver", properties.getProperty("firefox"));
+		System.setProperty("webdriver.ie.driver", properties.getProperty("ie"));
 
 	}
 	
@@ -87,7 +89,7 @@ public class BaseWebdriver {
 	public static void RunSetup(String browser) throws Exception {
 
 		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (4)\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (4)\\chromedriver.exe");
 			BaseWebdriver.driver = new ChromeDriver();
 			BaseWebdriver.driver.manage().window().maximize();
 		//	MyTollHomePageActions.LaunchMyToll(PreprodUrl);
@@ -95,7 +97,7 @@ public class BaseWebdriver {
 		}
 
 		else  if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "C:\\Source\\geckodriver-v0.18.0-win64\\geckodriver.exe");
+			//System.setProperty("webdriver.gecko.driver", "C:\\Source\\geckodriver-v0.18.0-win64\\geckodriver.exe");
 			BaseWebdriver.driver = new FirefoxDriver();
 			PageBase.MaximumWaitForElementEnabled();
 			//MyTollHomePageActions.LaunchMyToll(PreprodUrl);
@@ -104,7 +106,7 @@ public class BaseWebdriver {
 		}
 
 		else if (browser.equalsIgnoreCase("ie")) {
-			System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_3.12.0\\IEDriverServer.exe");
+			//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_3.12.0\\IEDriverServer.exe");
 			BaseWebdriver.driver = new InternetExplorerDriver();
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.manage().window().maximize();
@@ -141,11 +143,11 @@ public class BaseWebdriver {
 	@BeforeMethod
 	public static void setUp() throws Exception {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (4)\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "C:\\Source\\chromedriver_win32 (4)\\chromedriver.exe");
 		BaseWebdriver.driver = new ChromeDriver();
 		//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 		//BaseWebdriver.driver = new InternetExplorerDriver();
-		MyTollHomePageActions.LaunchMyToll(SitUrl);
+		MyTollHomePageActions.LaunchMyToll(Environment);
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
