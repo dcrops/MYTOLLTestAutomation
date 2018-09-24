@@ -420,33 +420,17 @@ public class BookAPickupActions {
 			action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();
 			PageBase.retryingFindClick(TollCarrierDropdown);
 			PageBase.MaximumWaitForElementEnabled();
-			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
 			PageBase.sendText(TollCarrierTextField, 50, pTollCarrierName);
-			String xpath = "//*[@id=\"BU-selector\"]//div[contains(text(),'"+pTollCarrierName+"')]";
-			System.out.println(xpath);
-			/*BaseWebdriver.driver
-					.findElement(By.xpath("//*[@id=\"BU-selector\"]//div[text()='" +pTollCarrierName+"']"))
-					.click();*/
-			PageBase.click(By.xpath(xpath), 50);
+			PageBase.click(By.xpath("//*[@id=\"BU-selector\"]//div[contains(text(),'"+pTollCarrierName+"')]"), 50);
+
 			PageBase.MaximumWaitForElementEnabled();
 
 		}
 
 		catch (Exception ex) {
-			BaseWebdriver.driver.navigate().refresh();
-			PageBase.MaximumWaitForElementEnabled();
-			// action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField),
-			// pressTab).perform();//BaseWebdriver.driver.findElement(TollCarrierDropdown).click();
-			PageBase.click(TollCarrierDropdown, 20);
-			//PageBase.MaximumWaitForElementEnabled();
-			PageBase.sendText(TollCarrierTextField, 50, pTollCarrierName);
-			String xpath = "//*[@id=\"BU-selector\"]//div[contains(text(),'"+pTollCarrierName+"')]";
-			System.out.println(xpath);
-			/*BaseWebdriver.driver
-					.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='" + pTollCarrierName + "']"))
-					.click();*/
-			PageBase.click(By.xpath(xpath), 50);
-			PageBase.MaximumWaitForElementEnabled();
+
+		ex.printStackTrace();
+
 		}
 	}
 
