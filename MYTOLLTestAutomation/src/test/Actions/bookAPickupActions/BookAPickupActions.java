@@ -421,9 +421,12 @@ public class BookAPickupActions {
 			PageBase.retryingFindClick(TollCarrierDropdown);
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
+//			BaseWebdriver.driver
+//					.findElement(By.xpath("//*[@id=\"BU-selector\"]//div[text()='" +pTollCarrierName+"']"))
+//					.click();		
 			BaseWebdriver.driver
-					.findElement(By.xpath("//*[@id=\"BU-selector\"]//div[text()='" +pTollCarrierName+"']"))
-					.click();
+			.findElement(By.xpath("//*[@id=\"BU-selector\"]//div[contains(text(),'"+pTollCarrierName+"')]"))
+			.click();
 			PageBase.MaximumWaitForElementEnabled();
 
 		}
@@ -437,7 +440,7 @@ public class BookAPickupActions {
 			PageBase.MaximumWaitForElementEnabled();
 			BaseWebdriver.driver.findElement(TollCarrierTextField).sendKeys(pTollCarrierName);
 			BaseWebdriver.driver
-					.findElement(By.xpath("//*[@id=\"BU-selector\"]/div/ul/li/div[text()='" + pTollCarrierName + "']"))
+			.findElement(By.xpath("//*[@id=\"BU-selector\"]//div[contains(text(),'"+pTollCarrierName+"')]"))
 					.click();
 			PageBase.MaximumWaitForElementEnabled();
 		}
