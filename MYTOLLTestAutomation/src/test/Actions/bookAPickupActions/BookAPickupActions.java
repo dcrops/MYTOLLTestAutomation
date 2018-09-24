@@ -422,11 +422,13 @@ public class BookAPickupActions {
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.sendText(TollCarrierTextField, 50, pTollCarrierName);
 			PageBase.click(By.xpath("//*[@id=\"BU-selector\"]//div[contains(text(),'"+pTollCarrierName+"')]"), 50);
+
 			PageBase.MaximumWaitForElementEnabled();
 
 		}
 
 		catch (Exception ex) {
+
 		ex.printStackTrace();
 
 		}

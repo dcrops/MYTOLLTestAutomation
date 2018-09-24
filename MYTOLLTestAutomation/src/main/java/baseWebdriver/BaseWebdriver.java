@@ -28,15 +28,24 @@ public class BaseWebdriver {
 	public static String SitUrl= "https://www-ppd.mytoll.com/"; 
 	public static String PSURL = "https://ps.mytoll.com/";
 	public static String SalesForce= "https://test.salesforce.com/"; 
-
+	
 	// Preprod users - Change accordingly to the Enviornments
-	public static String Username1= "SitAutomationuser@mailinator.com"; 
+	/*public static String Username1= "SitAutomationuser@mailinator.com"; 
 	public static String Username2="auto_bvt_ppd@mailinator.com";
 	public static String SitUsername1="SitAutomationuser@mailinator.com";
 	public static String SitUsername2= "SitAutomationuser2@mailinator.com";
 	public static String SitUsername3="SitAutomationuser3@mailinator.com";
 	public static String SitUsername4="SitAutomationuser4@mailinator.com"; 
-	public static String SitUsername5="SitAutomationuser5@mailinator.com";
+	public static String SitUsername5="SitAutomationuser5@mailinator.com";*/
+	
+	//PS Users list
+	public static String Username1= "SitAutomationuser1_ps@mailinator.com";
+	public static String Username2="auto_bvt1_ps@mailinator.com";
+	public static String SitUsername1="SitAutomationuser1_ps@mailinator.com";
+	public static String SitUsername2= "SitAutomationuser2_ps@mailinator.com";
+	public static String SitUsername3="SitAutomationuser3_ps@mailinator.com";
+	public static String SitUsername4="SitAutomationuser4_ps@mailinator.com"; 
+	public static String SitUsername5="SitAutomationuser5_ps@mailinator.com";
 	
 
 	//Passwords
@@ -114,7 +123,9 @@ public class BaseWebdriver {
 		BaseWebdriver.driver = new ChromeDriver();
 		//System.setProperty("webdriver.ie.driver", "C:\\Source\\IEDriverServer_Win32_2.39.0\\IEDriverServer.exe");
 		//BaseWebdriver.driver = new InternetExplorerDriver();
-		MyTollHomePageActions.LaunchMyToll(SitUrl);
+		
+		MyTollHomePageActions.LaunchMyToll(PSURL);
+		SetUsernameAndPasswordBasedOnEnv(PSURL);
 
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
@@ -136,6 +147,37 @@ public class BaseWebdriver {
 		PageBase.MaximumWaitForElementEnabled();
 		BaseWebdriver.driver.manage().window().maximize();
 		
+	}
+	
+	public static void SetUsernameAndPasswordBasedOnEnv(String _selectedURL)
+	{
+		if (_selectedURL.equalsIgnoreCase(SitUrl) || _selectedURL.equalsIgnoreCase(PreprodUrl) )
+		{
+			// Preprod users - Change accordingly to the Enviornments
+						Username1= "SitAutomationuser@mailinator.com"; 
+						Username2="auto_bvt_ppd@mailinator.com";
+						SitUsername1="SitAutomationuser@mailinator.com";
+						SitUsername2= "SitAutomationuser2@mailinator.com";
+						SitUsername3="SitAutomationuser3@mailinator.com";
+						SitUsername4="SitAutomationuser4@mailinator.com"; 
+						SitUsername5="SitAutomationuser5@mailinator.com";
+		}
+		else if(_selectedURL.equalsIgnoreCase(PSURL))
+		{
+			//PS Users list
+			Username1= "SitAutomationuser1_ps@mailinator.com";
+			Username2="auto_bvt1_ps@mailinator.com";
+			SitUsername1="SitAutomationuser1_ps@mailinator.com";
+			SitUsername2= "SitAutomationuser2_ps@mailinator.com";
+			SitUsername3="SitAutomationuser3_ps@mailinator.com";
+			SitUsername4="SitAutomationuser4_ps@mailinator.com"; 
+			SitUsername5="SitAutomationuser5_ps@mailinator.com";
+		}
+	}
+	
+	public static WebDriver GetDriver()
+	{
+		return driver;
 	}
 	
 
