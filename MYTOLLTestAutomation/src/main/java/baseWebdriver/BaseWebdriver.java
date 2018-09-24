@@ -28,6 +28,7 @@ public class BaseWebdriver {
 	public static final String SitUrl;
 	public static final String PSURL;
 	public static final String SalesForce;
+	public static final String URL;
 
 	// Preprod users - Change accordingly to the Enviornments
 	public static final String Username1;
@@ -52,20 +53,24 @@ public class BaseWebdriver {
 	static {
 
 		Properties properties = new Properties();
-		FileInputStream config = null;
+		Properties envProperties = new Properties();
 
 		try {
-			config = new FileInputStream("config.properties");
+			FileInputStream config = new FileInputStream("config.properties");
 			properties.load(config);
+
+			FileInputStream envConfig = new FileInputStream(properties.getProperty("ActiveEnvironment") + ".properties");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		PreprodUrl = properties.getProperty("PreprodUrl");
-		PerformenceUrl = properties.getProperty("PerformenceUrl");
-		SitUrl = properties.getProperty("SitUrl");
-		PSURL = properties.getProperty("PSURL");
+		URL = envProperties.getProperty("URL");
+		PreprodUrl = envProperties.getProperty("PreprodUrl");
+		PerformenceUrl = envProperties.getProperty("PerformenceUrl");
+		SitUrl = envProperties.getProperty("SitUrl");
+		PSURL = envProperties.getProperty("PSURL");
 		SalesForce = properties.getProperty("SalesForce");
+
 		Username1 = properties.getProperty("Username1");
 		Username2 = properties.getProperty("Username2");
 		SitUsername1 = properties.getProperty("SitUsername1");
