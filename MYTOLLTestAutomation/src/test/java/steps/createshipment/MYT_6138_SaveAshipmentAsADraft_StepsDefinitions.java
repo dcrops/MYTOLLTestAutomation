@@ -6,6 +6,8 @@ import static org.testng.Assert.assertTrue;
 import java.util.Map;
 
 import createshipment.CreateShipmentActions;
+import cucumber.api.Pending;
+import cucumber.api.PendingException;
 import global.PageBase;
 import bookapickup.BookAPickupActions;
 import cucumber.api.DataTable;
@@ -270,11 +272,11 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 
 	@When("^User enters following input data to complete the shipment as below$")
 	public void user_enters_following_input_data_to_complete_the_shipment_as_below(DataTable arg1) throws Throwable {
-
+		throw new PendingException();
 	}
 
 	@When("^User Clicks on 'Review & Create Shipment' and see all data$")
 	public void user_Clicks_on_Review_Create_Shipment_and_see_all_data(DataTable arg1) throws Throwable {
-
+		throw new PendingException();
 	}
 }
