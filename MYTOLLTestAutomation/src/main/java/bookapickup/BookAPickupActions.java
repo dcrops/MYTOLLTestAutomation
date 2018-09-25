@@ -78,6 +78,7 @@ public class BookAPickupActions {
 	public static By weight = By.id("weight");
 
 	public static By dangerousGoodNo = By.xpath("(//input[@name='dangerous-radios'])[2]");
+	public static By dangerousGoodYes = By.xpath("(//input[@name='dangerous-radios'])[1]");
 	public static By dangerousItemsNewLine = By.xpath("//*[@id=\"dg-radios\"]/label[2]/input");
 	public static By containFoodItem = By.xpath("//*[@id=\"containsFoodItems-no\"]");
 	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector-\"]/label/a/i"); 
@@ -1157,6 +1158,12 @@ public class BookAPickupActions {
 	public static void selectDangerousGood() {
 		PageBase.MinimumWaitForElementEnabled();
 		BaseWebdriver.driver.findElement(dangerousGoodNo).click();
+	}
+
+
+	public static void selectDangerousGoodYes() {
+		PageBase.MinimumWaitForElementEnabled();
+		BaseWebdriver.driver.findElement(dangerousGoodYes).click();
 	}
 
 	public static void selectDangerousGoodNewLine() {
