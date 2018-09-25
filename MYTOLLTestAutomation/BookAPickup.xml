@@ -233,14 +233,14 @@
 	<classes>
 	
 
-	<!--		<class name="seleniumtests.bookapickup.TollPriorityNZTest"/>
+			<class name="seleniumtests.bookapickup.TollPriorityNZTest"/>
 			 <class name="seleniumtests.bookapickup.TollPriorityAusTest" />
 			<class name="seleniumtests.bookapickup.IntermodalSpecializedTest"/>
 			<class name="seleniumtests.bookapickup.TollTasmaniaTest"/>
 			<class name="seleniumtests.bookapickup.TollIPECTest" />
 			<class name="seleniumtests.bookapickup.Toll_MyProfile_Add_Accounts"/>
 			<class name="seleniumtests.bookapickup.Toll_Add_Template" />
-			<class name="seleniumtests.bookapickup.TollCarrierIntermodalSpecialized_AddAddress"/>-->
+			<class name="seleniumtests.bookapickup.TollCarrierIntermodalSpecialized_AddAddress"/>
 			<class name="seleniumtests.bookapickup.DangerousGoodsMYT8780"/>
 		</classes>
 		<!-- Blocked> <classes>   <class name="seleniumtests.bookapickup.TollPriorityNZTest"
