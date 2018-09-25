@@ -304,7 +304,7 @@ public class ShipmentReviewActions {
 		public static void VerifyDangerousGoodsDetails(String pDangerousGoodsHeading, String pUNnumber, String pClassDivision,String pPackingGroup, String pSubrisk, String pProperShippingName, 
 				String pDgPackingGroup, String pDgPKG, String pDgQTY, String pTechnicalName ) {
 			//assertEquals(pDangerousGoodsHeading,BaseWebdriver.driver.findElement(dangerousGoodsHeading).getText());
-			BaseWebdriver.driver.findElement(dangerousGoodsArrowdown).click();
+			PageBase.click(dangerousGoodsArrowdown, 10);
 			 PageBase.MediumWaitForElementEnabled();
 			assertEquals(pUNnumber, BaseWebdriver.driver.findElement(unNumber).getText());
 			assertEquals(pClassDivision,BaseWebdriver.driver.findElement(classDivision).getText());
@@ -316,7 +316,9 @@ public class ShipmentReviewActions {
 			assertEquals(pDgQTY, BaseWebdriver.driver.findElement(dgQTY).getText());
 			assertEquals(pTechnicalName, BaseWebdriver.driver.findElement(technicalName).getText());
 		}
-		
+
+
+
 		// Line item2 Headings verification
 		public static void VerifyLineItem2Headings(String pLineItemHeading, String pItemDescription1, String pNumberOfItems,String pItemDescriptionHeading, String pItemsHeading, String pBillingTypeHeading, 
 			String pDimensionsHeading, String pTotalVolumeHeading, String pWeightHeading, String pReference1Heading, String pReference2Heading, String pShipmentContainDangerousGoodsHeading) {

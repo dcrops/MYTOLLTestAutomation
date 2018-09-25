@@ -92,6 +92,9 @@ public class CreateShipmentActions {//Nishant
 	public static By packingGroupDropdown = By.xpath("//*[@id=\"packaging-grp-selector-\"]/label/a/i");
 	public static By packingGroupItem = By.xpath("//*[@id=\"packaging-grp-selector-\"]/div/ul/li[2]/div");
 	public static By dgPackagingDescription = By.id("packing-description-");
+
+	// Oops, something went wrong error box
+	public static By errorBox = By.xpath("//div[@id=\"modal-content-box-0\"]//span[contains(text(), \"AE4599\")]");
 	
 	public static By dgDetailsClass = By.xpath("//*[@id=\"class-division-\"]");
 	public static By dgDetailsProperShoppingName = By.xpath("//*[@id=\"shipping-name-\"]");
@@ -99,6 +102,7 @@ public class CreateShipmentActions {//Nishant
 	
 	public static By dgPkgQty = By.id("dg-pkg-qty-");
 	public static By dgQtyKg = By.id("dg-qty-");
+	public static final By dgPkgMass = By.xpath("//*[@id=\"dg-line-00\"]//div[@data-type=\"dg-pkg-mass\"]");
 	public static By technicalName = By.id("technical-name-");
 	public static By lineItem1Arrowdown = By.xpath("//*[@id=\"line-item-0\"]/div[1]/div[8]/a/i");
 	public static By dangerousGoodsArrowdown = By.xpath("//*[@id=\"dg-line--0\"]/div[1]/div[8]/a/i");

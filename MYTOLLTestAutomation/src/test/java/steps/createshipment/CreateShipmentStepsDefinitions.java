@@ -4,6 +4,7 @@ import java.util.Map;
 
 import createshipment.CreateShipmentActions;
 import createshipment.ShipmentReviewActions;
+import cucumber.api.PendingException;
 import global.PageBase;
 import basewebdriver.BaseWebdriver;
 import bookapickup.BookAPickupActions;
@@ -111,5 +112,16 @@ public class CreateShipmentStepsDefinitions {
 			CreateShipmentActions.EnterWeight(shipment.get("Weight"));
 		}
 
+	}
+
+	@And("^User adds \"([^\"]*)\" as purchase order number$")
+	public void userAddsAsPurchaseOrderNumber(String purchaseOrderNumber) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		CreateShipmentActions.EnterPurchaseOrder(purchaseOrderNumber);
+	}
+
+	@And("^User adds entered dangerous goods details$")
+	public void userAddsEnteredDangerousGoodsDetails() throws Throwable {
+		BookAPickupActions.addDGItemQME();
 	}
 }
