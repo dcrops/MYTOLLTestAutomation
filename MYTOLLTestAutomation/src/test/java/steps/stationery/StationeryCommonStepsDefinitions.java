@@ -28,6 +28,10 @@ public class StationeryCommonStepsDefinitions {
 	public void user_clicks_on_the_mega_menu() throws Throwable {
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.WaitForElement(MyTollHomePageActions.HmbugerMenu,30);
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
 		MyTollHomePageActions.ClickMenu();
 		
 	}
