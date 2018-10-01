@@ -267,9 +267,9 @@ public class PageBase
 	}
 	
 	public static void AcceptAlert() {
-	 new WebDriverWait(BaseWebdriver.driver,
-			 10).until(ExpectedConditions.alertIsPresent());
-		 BaseWebdriver.driver.switchTo().alert().accept();
+		new WebDriverWait(BaseWebdriver.driver,
+				10).until(ExpectedConditions.alertIsPresent());
+		BaseWebdriver.driver.switchTo().alert().accept();
 	}
 	
 	public static void Scrollbar(Integer coord1, Integer coord2) {
@@ -280,14 +280,14 @@ public class PageBase
 	public static void MoveToElement(By path1,By path2) {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		try {
-		WebElement element =BaseWebdriver.driver.findElement(path1);
-		jse.executeScript("arguments[0].scrollIntoView();", element);
-		element.click();
+			WebElement element = FindElement(path1);
+			jse.executeScript("arguments[0].scrollIntoView();", element);
+			element.click();
 		}
 		
 		catch(Exception ex)
 		{
-			WebElement element =BaseWebdriver.driver.findElement(path2);
+			WebElement element =FindElement(path2);
 			jse.executeScript("arguments[0].scrollIntoView();", element);
 			element.click();
 		}
