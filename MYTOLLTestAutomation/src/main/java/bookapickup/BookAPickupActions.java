@@ -418,8 +418,8 @@ public class BookAPickupActions {
 
 		try {
 			PageBase.MaximumWaitForElementEnabled();
-			action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();
-			PageBase.retryingFindClick(TollCarrierDropdown);
+			//action.sendKeys(BaseWebdriver.driver.findElement(TollCarrierTextField), pressTab).perform();
+			PageBase.click(TollCarrierDropdown, 50);
 			PageBase.MaximumWaitForElementEnabled();
 			PageBase.sendText(TollCarrierTextField, 50, pTollCarrierName);
 			PageBase.click(By.xpath("//*[@id=\"BU-selector\"]//div[contains(text(),'"+pTollCarrierName+"')]"), 50);

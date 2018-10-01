@@ -469,7 +469,7 @@ public class MyTollHomePageActions {
 			});*/
 			
 		//PageBase.WaitForElement(MyTollHomePageActions.HmbugerMenu,30);
-		PageBase.click(HmbugerMenu, 5);
+		PageBase.click(HmbugerMenu, 10);
 		
 	}
 	
@@ -497,7 +497,7 @@ public class MyTollHomePageActions {
 	{
 	
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(stationery, 5);
+		PageBase.ClickOn(stationery, 7);
 	}
 	
 	public static void ClickOrderStationery()
