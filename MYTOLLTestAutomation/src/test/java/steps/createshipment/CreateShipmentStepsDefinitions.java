@@ -4,6 +4,7 @@ import java.util.Map;
 
 import createshipment.CreateShipmentActions;
 import createshipment.ShipmentReviewActions;
+import cucumber.api.PendingException;
 import global.PageBase;
 import basewebdriver.BaseWebdriver;
 import bookapickup.BookAPickupActions;
@@ -12,6 +13,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import manifest.ManifestActions;
+import org.testng.Assert;
 
 public class CreateShipmentStepsDefinitions {
 
@@ -111,5 +113,22 @@ public class CreateShipmentStepsDefinitions {
 			CreateShipmentActions.EnterWeight(shipment.get("Weight"));
 		}
 
+	}
+
+	@And("^User adds \"([^\"]*)\" as purchase order number$")
+	public void userAddsAsPurchaseOrderNumber(String purchaseOrderNumber) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		CreateShipmentActions.EnterPurchaseOrder(purchaseOrderNumber);
+	}
+
+	@And("^User adds entered dangerous goods details$")
+	public void userAddsEnteredDangerousGoodsDetails() throws Throwable {
+		BookAPickupActions.addDGItemQME();
+	}
+
+	@Then("^User does not see AE4599 error message$")
+	public void userDoesNotSeeErrorMessage() throws Throwable {
+
+		Assert.assertFalse(PageBase.isElementPresent(CreateShipmentActions.errorBox), "Oops error box for error AE4599 is displayed");
 	}
 }

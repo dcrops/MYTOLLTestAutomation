@@ -87,16 +87,16 @@ public class ShipmentReviewActions {
 	
 	//Dangerous Goods Details validation  
 	public static By dangerousGoodsHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='clearfix']/h5");
-	public static By dangerousGoodsArrowdown=By.xpath("//*[contains(@id,\"dg-line\")]/div[1]/div[7]/a/i");
-	public static By unNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='UN number']/following::div/p");
-	public static By classDivision=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Class / Division']/following::div/p");
-	public static By packingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Packing group']/following::div/p");
-	public static By subrisk=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Sub risk']/following::div/p");
-	public static By properShippingName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Proper shipping name ']/following::div/p");
-	public static By dgPackingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='DG packaging description']/following::div/p");
-	public static By dgPKG=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='DG pkg (qty)']/following::div/p");
-	public static By dgQTY=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='DG qty (kg or L)']/following::div/p");
-	public static By technicalName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Technical name']/following::div/p");
+	public static By dangerousGoodsArrowdown=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='last']/a/i");
+	public static By unNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='UN number']/following-sibling::div/p");
+	public static By classDivision=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Class / Division']/following-sibling::div/p");
+	public static By packingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Packing group']/following-sibling::div/p");
+	public static By subrisk=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Sub risk']/following-sibling::div/p");
+	public static By properShippingName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Proper shipping name ']/following-sibling::div/p");
+	public static By dgPackingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='DG packaging description']/following-sibling::div/p");
+	public static By dgPKG=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='DG pkg (qty)']/following-sibling::div/p");
+	public static By dgQTY=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='DG qty (kg or L)']/following-sibling::div/p");
+	public static By technicalName=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Technical name']/following-sibling::div/p");
 	
 	//*[@id="shipment-placeholder"]/div[1]/div[1]/div/div[2]/ul/li[1]/div[1]/div[1]/h2
 	//Line Item 2 Headings validation  //*[@id="shipment-placeholder"]/div[1]/div[1]/div/div[2]/ul/li[2]/div[1]/div[1]/h2
@@ -304,19 +304,22 @@ public class ShipmentReviewActions {
 		public static void VerifyDangerousGoodsDetails(String pDangerousGoodsHeading, String pUNnumber, String pClassDivision,String pPackingGroup, String pSubrisk, String pProperShippingName, 
 				String pDgPackingGroup, String pDgPKG, String pDgQTY, String pTechnicalName ) {
 			//assertEquals(pDangerousGoodsHeading,BaseWebdriver.driver.findElement(dangerousGoodsHeading).getText());
-			BaseWebdriver.driver.findElement(dangerousGoodsArrowdown).click();
+			PageBase.click(line1Arrowdown, 10);
+			PageBase.click(dangerousGoodsArrowdown, 20);
 			 PageBase.MediumWaitForElementEnabled();
-			assertEquals(pUNnumber, BaseWebdriver.driver.findElement(unNumber).getText());
-			assertEquals(pClassDivision,BaseWebdriver.driver.findElement(classDivision).getText());
-			assertEquals(pPackingGroup, BaseWebdriver.driver.findElement(packingGroup).getText());
-			assertEquals(pSubrisk,BaseWebdriver.driver.findElement(subrisk).getText());
-			assertEquals(pProperShippingName, BaseWebdriver.driver.findElement(properShippingName).getText());
-			assertEquals(pDgPackingGroup, BaseWebdriver.driver.findElement(dgPackingGroup).getText());
-			assertEquals(pDgPKG, BaseWebdriver.driver.findElement(dgPKG).getText());
-			assertEquals(pDgQTY, BaseWebdriver.driver.findElement(dgQTY).getText());
-			assertEquals(pTechnicalName, BaseWebdriver.driver.findElement(technicalName).getText());
+			assertEquals(pUNnumber, PageBase.GetText(unNumber, 5));
+			assertEquals(pClassDivision,PageBase.GetText(classDivision, 5));
+			assertEquals(pPackingGroup, PageBase.GetText(packingGroup,5));
+			assertEquals(pSubrisk,PageBase.GetText(subrisk, 5));
+			assertEquals(pProperShippingName,PageBase.GetText(properShippingName, 5));
+			assertEquals(pDgPackingGroup, PageBase.GetText(dgPackingGroup, 5));
+			assertEquals(pDgPKG, PageBase.GetText(dgPKG, 5));
+			assertEquals(pDgQTY, PageBase.GetText(dgQTY, 5));
+			assertEquals(pTechnicalName, PageBase.GetText(technicalName, 5));
 		}
-		
+
+
+
 		// Line item2 Headings verification
 		public static void VerifyLineItem2Headings(String pLineItemHeading, String pItemDescription1, String pNumberOfItems,String pItemDescriptionHeading, String pItemsHeading, String pBillingTypeHeading, 
 			String pDimensionsHeading, String pTotalVolumeHeading, String pWeightHeading, String pReference1Heading, String pReference2Heading, String pShipmentContainDangerousGoodsHeading) {

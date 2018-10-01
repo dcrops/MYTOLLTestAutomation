@@ -332,7 +332,7 @@ public class MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition {
 
 		PageBase.Scrollbar(500, 1000);
 		ShipmentReviewActions.VerifyDangerousGoodsDetails(shipment.get("DangerousGoodsDetailsHeading"), shipment.get("UnNumber"),
-				shipment.get("Class/Div"), shipment.get("PackingGroup"), shipment.get("SubRisk"), shipment.get("Proper Shoping Name"),
+				shipment.get("Class/Div"), shipment.get("PackingGroup"), shipment.get("SubRisk"), shipment.get("Proper Shipping Name"),
 				shipment.get("PackageDescription"), shipment.get("DGPackageType"),
 				shipment.get("DGAggregateQty"), shipment.get("Technical Name"));
 		
