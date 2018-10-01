@@ -13,6 +13,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import manifest.ManifestActions;
+import org.testng.Assert;
 
 public class CreateShipmentStepsDefinitions {
 
@@ -123,5 +124,11 @@ public class CreateShipmentStepsDefinitions {
 	@And("^User adds entered dangerous goods details$")
 	public void userAddsEnteredDangerousGoodsDetails() throws Throwable {
 		BookAPickupActions.addDGItemQME();
+	}
+
+	@Then("^User does not see AE4599 error message$")
+	public void userDoesNotSeeErrorMessage() throws Throwable {
+
+		Assert.assertFalse(PageBase.isElementPresent(CreateShipmentActions.errorBox), "Oops error box for error AE4599 is displayed");
 	}
 }

@@ -19,10 +19,11 @@ Feature: MYT_9000_Oops_error_when_creating_shipment_with_decimal_DG
       | 1       |
     And User enters following dangerous goods details
       | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |
-      | 2025     | II           | 20.01         | 10.12          | Test Package Description | Test Technical Name |
+      | 2025     | II           | 12.34         | 11.22          | Test Package Description | Test Technical Name |
     And User adds entered dangerous goods details
     And User adds "123456789" as purchase order number
     When User Clicks Review and Create Shipment
-    Then User can see dangerous good details in shipment review page as below
-      | UnNumber | PackingGroup | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |
-      | 2025     | II           | 20.01         | 10.12          | Test Package Description | Test Technical Name |
+    Then User does not see AE4599 error message
+    And User can see dangerous good details in shipment review page as below
+      | UnNumber | Class/Div | PackingGroup | SubRisk | Proper Shipping Name           | DGPackageType | DGAggregateQty | PackageDescription       | Technical Name      |
+      | 2025     | 6.1       | II           | NA      | MERCURY COMPOUND, SOLID, N.O.S | 12.34         | 11.22          | Test Package Description | Test Technical Name |
