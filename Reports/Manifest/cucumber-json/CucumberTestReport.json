@@ -1,0 +1,2852 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 29393267700,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is Registered in MyToll and is on My Dashboard",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.user_is_Registered_in_MyToll_and_is_on_My_Dashboard()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 114400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.BeforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "User Creates a Manual Manifest from Dashboard and Proceeds to BAP - TEM",
+        "description": "",
+        "id": "e2e-manual-manifest-tem---manual-manifest--\u003e-shipment--\u003e-bap;user-creates-a-manual-manifest-from-dashboard-and-proceeds-to-bap---tem",
+        "after": [
+          {
+            "result": {
+              "duration": 86400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.AfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7317952700,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User Click My Manifest tab on My Dahsboad and Click Add Manifest Manually",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserClickMyManifestTabOnMyDahsboadandClickAddManifestManually()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 12644677700,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User Creates Manual Manifest",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserCreatesManualManifest(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "ManifestName"
+                ],
+                "line": 10
+              },
+              {
+                "cells": [
+                  "Toll Energy and Marine",
+                  "TEM Perth Address",
+                  "RandomNameOnRunTime"
+                ],
+                "line": 11
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3754313400,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User Verify Manifest and Proceed to Shipment",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifyManifestAndProceedtoShipment(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "ManifestName"
+                ],
+                "line": 13
+              },
+              {
+                "cells": [
+                  "Toll Energy and Marine",
+                  "RandomNameOnRunTime"
+                ],
+                "line": 14
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1670234800,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User Selects Service",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserSelectsService(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Service"
+                ],
+                "line": 16
+              },
+              {
+                "cells": [
+                  "General"
+                ],
+                "line": 17
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33734923300,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User enters shipment overview details as below - Manual Manifest",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.User_enters_shipment_overview_details_asbelow_to_get_a_Rate_within_a_Shipment_SpecifcSenderReceiver(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "AccountNumber",
+                  "Whopays",
+                  "Mode",
+                  "Receiver"
+                ],
+                "line": 19
+              },
+              {
+                "cells": [
+                  "G18508",
+                  "1",
+                  "1",
+                  "TEM Brisbane Address"
+                ],
+                "line": 20
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 671827600,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User Retrives Sender and Reciver Locations and Detials",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserRetrivesSenderandReciverLocationsandDetials()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11891051400,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User enters following input data for the line item",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.user_enters_following_input_data_for_the_line_item(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Item description",
+                  "Billing Type",
+                  "No of Items",
+                  "Item Type",
+                  "Length",
+                  "Width",
+                  "Height",
+                  "Weight",
+                  "SenderReference",
+                  "ReceiverReference"
+                ],
+                "line": 23
+              },
+              {
+                "cells": [
+                  "Automation Template1",
+                  "ALL UNITS - PER KG",
+                  "10",
+                  "Items",
+                  "100",
+                  "100",
+                  "100",
+                  "900",
+                  "Ref123",
+                  "Ref456"
+                ],
+                "line": 24
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1606658300,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User selects Dangerous Goods",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.user_selects_Dangerous_Goods(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "DgGoods"
+                ],
+                "line": 26
+              },
+              {
+                "cells": [
+                  "2"
+                ],
+                "line": 27
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 958711400,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "User enters additional information for shipment as below",
+            "match": {
+              "location": "MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition.user_enters_additional_information_for_shipment_as_below(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "PurchaseOrder",
+                  "SpecialInstructions"
+                ],
+                "line": 29
+              },
+              {
+                "cells": [
+                  "Abcd1234",
+                  "Test Special Instructions"
+                ],
+                "line": 30
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 657596800,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "User Clicks Review and Create Shipment",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.UserClicksReviewAndCreateShipment()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8658941600,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "User Clicks Continue Manifest on Shipment Review Page",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.UserClicksContinueManifestonShipmentReviewPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 18213916100,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "User Submits and Prints Manifest",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.UserSubmitsandPrintsManifest()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1784114000,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "User Navigates Back to Dashboard",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserNavigatesBackToDashboard()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5997401000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "User Selects the Shipment for BAP",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserSelectsTheShipmentForBAP(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "ManifestName"
+                ],
+                "line": 36
+              },
+              {
+                "cells": [
+                  "Retreived OnRunTime"
+                ],
+                "line": 37
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1645811700,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "User Verifies Shipment Details on BAP Page",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifiesShipmentDetailsonBAPPage(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "AccountNumber",
+                  "Service"
+                ],
+                "line": 39
+              },
+              {
+                "cells": [
+                  "Toll Energy and Marine",
+                  "Retreived on Runtime",
+                  "G18508",
+                  "General"
+                ],
+                "line": 40
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 120804700,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "User Verifies Line Item on BAP Page",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifiesLineItemOnBAPPage(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Item description",
+                  "No of Items",
+                  "Length",
+                  "Width",
+                  "Height",
+                  "Weight"
+                ],
+                "line": 42
+              },
+              {
+                "cells": [
+                  "Automation Template1",
+                  "10",
+                  "100",
+                  "100",
+                  "100",
+                  "900"
+                ],
+                "line": 43
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2612564400,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "User Selects Dispatch Date and Ready Time",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserSelectsDispatchDateAndReadyTime(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "ReadyTime"
+                ],
+                "line": 45
+              },
+              {
+                "cells": [
+                  "10:00"
+                ],
+                "line": 46
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 617304000,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "User Clicks Review and Book",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserClicksReviewAndBook()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3993255700,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "User Confirms Pick Up and Gets BAP Reference Number",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserConfirmsPickUpAndGetsBAPReferenceNumber()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 712194500,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "User Closes the Browser",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserClosestheBrowser()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@tag1"
+          },
+          {
+            "line": 6,
+            "name": "@Shakeout"
+          }
+        ]
+      }
+    ],
+    "name": "E2E Manual Manifest TEM - Manual Manifest -\u003e Shipment -\u003e BAP",
+    "description": "",
+    "id": "e2e-manual-manifest-tem---manual-manifest--\u003e-shipment--\u003e-bap",
+    "keyword": "Feature",
+    "uri": "src/test/Resources/manifest/E2E_Manual_Manifest_TEM.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 29549114600,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is Registered in MyToll and is on My Dashboard",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.user_is_Registered_in_MyToll_and_is_on_My_Dashboard()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 45000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.BeforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "User Creates a Manual Manifest from Dashboard and Proceeds to BAP  - TMS",
+        "description": "",
+        "id": "e2e-manual-manifest-tms---manual-manifest--\u003e-shipment--\u003e-bap;user-creates-a-manual-manifest-from-dashboard-and-proceeds-to-bap----tms",
+        "after": [
+          {
+            "result": {
+              "duration": 52700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.AfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7324362500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User Click My Manifest tab on My Dahsboad and Click Add Manifest Manually",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserClickMyManifestTabOnMyDahsboadandClickAddManifestManually()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10162454200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User Creates Manual Manifest",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserCreatesManualManifest(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "ManifestName"
+                ],
+                "line": 10
+              },
+              {
+                "cells": [
+                  "Toll Mining Services",
+                  "TMS Port Adelaide",
+                  "RandomNameOnRunTime"
+                ],
+                "line": 11
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6243087600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User Verify Manifest and Proceed to Shipment",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifyManifestAndProceedtoShipment(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "ManifestName"
+                ],
+                "line": 13
+              },
+              {
+                "cells": [
+                  "Toll Mining Services",
+                  "RandomNameOnRunTime"
+                ],
+                "line": 14
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1682484600,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User Selects Service",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserSelectsService(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Service"
+                ],
+                "line": 16
+              },
+              {
+                "cells": [
+                  "General"
+                ],
+                "line": 17
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33675958800,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User enters shipment overview details as below - Manual Manifest",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.User_enters_shipment_overview_details_asbelow_to_get_a_Rate_within_a_Shipment_SpecifcSenderReceiver(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "AccountNumber",
+                  "Whopays",
+                  "Mode",
+                  "Receiver"
+                ],
+                "line": 19
+              },
+              {
+                "cells": [
+                  "790135",
+                  "1",
+                  "1",
+                  "TMS Roxby Downs"
+                ],
+                "line": 20
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 671764700,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User Retrives Sender and Reciver Locations and Detials",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserRetrivesSenderandReciverLocationsandDetials()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11817913000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User enters following input data for the line item",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.user_enters_following_input_data_for_the_line_item(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Item description",
+                  "Billing Type",
+                  "No of Items",
+                  "Item Type",
+                  "Length",
+                  "Width",
+                  "Height",
+                  "Weight",
+                  "SenderReference",
+                  "ReceiverReference"
+                ],
+                "line": 23
+              },
+              {
+                "cells": [
+                  "Automation Template1",
+                  "General Freight",
+                  "10",
+                  "Items",
+                  "100",
+                  "100",
+                  "100",
+                  "900",
+                  "Ref123",
+                  "Ref456"
+                ],
+                "line": 24
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1612972100,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User selects Dangerous Goods",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.user_selects_Dangerous_Goods(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "DgGoods"
+                ],
+                "line": 26
+              },
+              {
+                "cells": [
+                  "2"
+                ],
+                "line": 27
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 954022000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "User enters additional information for shipment as below",
+            "match": {
+              "location": "MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition.user_enters_additional_information_for_shipment_as_below(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "PurchaseOrder",
+                  "SpecialInstructions"
+                ],
+                "line": 29
+              },
+              {
+                "cells": [
+                  "Abcd1234",
+                  "Test Special Instructions"
+                ],
+                "line": 30
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 633547100,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "User Clicks Review and Create Shipment",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.UserClicksReviewAndCreateShipment()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5280232300,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "User Clicks Continue Manifest on Shipment Review Page",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.UserClicksContinueManifestonShipmentReviewPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 18134311000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "User Submits and Prints Manifest",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.UserSubmitsandPrintsManifest()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1683501200,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "User Navigates Back to Dashboard",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserNavigatesBackToDashboard()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7132284900,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "User Selects the Shipment for BAP",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserSelectsTheShipmentForBAP(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "ManifestName"
+                ],
+                "line": 36
+              },
+              {
+                "cells": [
+                  "Retreived OnRunTime"
+                ],
+                "line": 37
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1605515000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "User Verifies Shipment Details on BAP Page",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifiesShipmentDetailsonBAPPage(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "AccountNumber",
+                  "Service"
+                ],
+                "line": 39
+              },
+              {
+                "cells": [
+                  "Intermodal \u0026 Specialised",
+                  "Retreived on Runtime",
+                  "790135",
+                  "General"
+                ],
+                "line": 40
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 705044400,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "User Enters Phone Number",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserEntersPhoneNumber()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 121959100,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "User Verifies Line Item on BAP Page",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifiesLineItemOnBAPPage(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Item description",
+                  "No of Items",
+                  "Length",
+                  "Width",
+                  "Height",
+                  "Weight"
+                ],
+                "line": 43
+              },
+              {
+                "cells": [
+                  "Automation Template1",
+                  "10",
+                  "100",
+                  "100",
+                  "100",
+                  "900"
+                ],
+                "line": 44
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2584316400,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "User Selects Dispatch Date and Ready Time",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserSelectsDispatchDateAndReadyTime(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "ReadyTime"
+                ],
+                "line": 46
+              },
+              {
+                "cells": [
+                  "10:00"
+                ],
+                "line": 47
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 647060200,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "User Clicks Review and Book",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserClicksReviewAndBook()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3822820600,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "User Confirms Pick Up and Gets BAP Reference Number",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserConfirmsPickUpAndGetsBAPReferenceNumber()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 689224000,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "User Closes the Browser",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserClosestheBrowser()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@tag1"
+          },
+          {
+            "line": 6,
+            "name": "@Shakeout"
+          }
+        ]
+      }
+    ],
+    "name": "E2E Manual Manifest TMS - Manual Manifest -\u003e Shipment -\u003e BAP",
+    "description": "",
+    "id": "e2e-manual-manifest-tms---manual-manifest--\u003e-shipment--\u003e-bap",
+    "keyword": "Feature",
+    "uri": "src/test/Resources/manifest/E2E_Manual_Manifest_TMS.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 67811597600,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is Registered in MyToll and is on Shipment Page - Commercial Invoice",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.user_is_Registered_in_MyToll_and_is_on_Shipment_page_Commercial_Invoice()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 93900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.BeforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "User Creates Commercial Invoice for PrioAU and Saves Commercial Invoice",
+        "description": "",
+        "id": "myt-1795-manifest-:-create-commercial-invoice-for-international-order;user-creates-commercial-invoice-for-prioau-and-saves-commercial-invoice",
+        "after": [
+          {
+            "result": {
+              "duration": 731133100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.AfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4496871000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User selects Toll Carrier and select Service",
+            "match": {
+              "location": "CreateShipmentCommonStepsDefinitions.user_selects_Toll_Carrier_and_select_Service(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TollCarrier",
+                  "Service"
+                ],
+                "line": 9
+              },
+              {
+                "cells": [
+                  "Toll Priority (Aus)",
+                  "Global - Express Parcels"
+                ],
+                "line": 10
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 36524538100,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User enters shipment overview details as below Draft Shipment - Specific Sender Receiver - Prio",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.User_enters_shipment_overview_details_asbelow_Draft_Shipment_SpecifcSenderReceiverPrio(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "AccountNumber",
+                  "Whopays",
+                  "Sender",
+                  "Receiver"
+                ],
+                "line": 12
+              },
+              {
+                "cells": [
+                  "401509",
+                  "1",
+                  "IPEC Melbourne",
+                  "NZ Address"
+                ],
+                "line": 13
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 677474400,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "User Retrives Sender and Reciver Locations and Detials",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserRetrivesSenderandReciverLocationsandDetials()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7153855800,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User enters following input data for the line item for Draft Shipment - Prio",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.user_enters_following_input_data_for_the_line_item_ForDraftShipment_Prio(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Item description",
+                  "No of Items",
+                  "Length",
+                  "Width",
+                  "Height",
+                  "Weight",
+                  "SenderReference",
+                  "ReceiverReference"
+                ],
+                "line": 16
+              },
+              {
+                "cells": [
+                  "Automation Template1",
+                  "10",
+                  "10",
+                  "10",
+                  "10",
+                  "90",
+                  "Ref123",
+                  "Ref456"
+                ],
+                "line": 17
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1625539200,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User selects Dangerous Goods",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.user_selects_Dangerous_Goods(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "DgGoods"
+                ],
+                "line": 19
+              },
+              {
+                "cells": [
+                  "2"
+                ],
+                "line": 20
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4485646900,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User Enters Export Declarations",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserEntersExportDeclarations(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TypeOfExport",
+                  "DeclaredValue",
+                  "DeclaredValueCurrency",
+                  "WhoPaysDutiesTaxes",
+                  "CommodityCode"
+                ],
+                "line": 22
+              },
+              {
+                "cells": [
+                  "Permanent",
+                  "5000",
+                  "New Zealand dollar",
+                  "Sender",
+                  "ABC123"
+                ],
+                "line": 23
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3668000300,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User Click Review and Create Shipment",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserClickReviewandCreateShipment()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16754184200,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User Prints Labels and Enables Commercial Invoice",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserPrintsLabelsandEnablesCommercialInvoice()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7844379900,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "User Creates Commercial Invoice and Verifies Page Details",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserCreatesCommercialInvoiceandVerifiesPageDetails()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 576845700,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "User Verifies Shipment Details Commercial Invoice Page",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifiesShipmentDetailsCommercialInvoicePage(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "NumberOfItems",
+                  "Weight",
+                  "DeclaredValue",
+                  "CountryOfExportAU",
+                  "DestinationNZ",
+                  "Other Details"
+                ],
+                "line": 28
+              },
+              {
+                "cells": [
+                  "10",
+                  "90",
+                  "5000",
+                  "AUSTRALIA",
+                  "NEW ZEALAND",
+                  "Retreived on Run Time"
+                ],
+                "line": 29
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7841509300,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "User Enters Commercial Invoice Item Details",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserEntersCommercialInvoiceItemDetails(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "CommercialInvoiceDes",
+                  "PartNo",
+                  "ACHECC",
+                  "NumberOfItems",
+                  "Weight",
+                  "UnitValue",
+                  "DeclaredValue"
+                ],
+                "line": 31
+              },
+              {
+                "cells": [
+                  "CommercialInvoiceDes",
+                  "11",
+                  "Test12",
+                  "10",
+                  "90",
+                  "500",
+                  "5000"
+                ],
+                "line": 32
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2852023200,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "User Enters Commercial Invoice Other Details And Clicks Save",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserEntersCommercialInvoiceOtherItemDetailsAndClicksSave(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TypeOfExport",
+                  "TermsofTrade"
+                ],
+                "line": 34
+              },
+              {
+                "cells": [
+                  "Permanent",
+                  "2"
+                ],
+                "line": 35
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1846436300,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "User Verifies Shipment Details on Commercial Invoice Review Page",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifiesShipmentDetailsOnCommercialInvoiceReviewPage(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "CommercialInvoiceDes",
+                  "PartNo",
+                  "ACHECC",
+                  "NumberOfItems",
+                  "Weight",
+                  "UnitValue",
+                  "DeclaredValue"
+                ],
+                "line": 37
+              },
+              {
+                "cells": [
+                  "CommercialInvoiceDes",
+                  "11",
+                  "Test12",
+                  "10",
+                  "90",
+                  "500",
+                  "5000"
+                ],
+                "line": 38
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1899024400,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "User Prints Commercial Invoice",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserPrintsCommercialInvoice()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@tag1"
+          },
+          {
+            "line": 6,
+            "name": "@Shakeout"
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 30231145800,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is Registered in MyToll and is on Shipment Page - Commercial Invoice",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.user_is_Registered_in_MyToll_and_is_on_Shipment_page_Commercial_Invoice()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 67400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.BeforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 43,
+        "name": "User Creates Commercial Invoice for PrioNZ and Saves Commercial Invoice",
+        "description": "",
+        "id": "myt-1795-manifest-:-create-commercial-invoice-for-international-order;user-creates-commercial-invoice-for-prionz-and-saves-commercial-invoice",
+        "after": [
+          {
+            "result": {
+              "duration": 698330200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.AfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3728126400,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "User selects Toll Carrier and select Service",
+            "match": {
+              "location": "CreateShipmentCommonStepsDefinitions.user_selects_Toll_Carrier_and_select_Service(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TollCarrier",
+                  "Service"
+                ],
+                "line": 45
+              },
+              {
+                "cells": [
+                  "Toll Priority (NZ)",
+                  "Global - Express Parcels"
+                ],
+                "line": 46
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 36671017600,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "User enters shipment overview details as below Draft Shipment - Specific Sender Receiver - Prio",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.User_enters_shipment_overview_details_asbelow_Draft_Shipment_SpecifcSenderReceiverPrio(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "AccountNumber",
+                  "Whopays",
+                  "Sender",
+                  "Receiver"
+                ],
+                "line": 48
+              },
+              {
+                "cells": [
+                  "100181",
+                  "1",
+                  "TEM Perth Address",
+                  "NZ Address"
+                ],
+                "line": 49
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 701707800,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "User Retrives Sender and Reciver Locations and Detials",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserRetrivesSenderandReciverLocationsandDetials()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7313578600,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "User enters following input data for the line item for Draft Shipment - Prio",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.user_enters_following_input_data_for_the_line_item_ForDraftShipment_Prio(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Item description",
+                  "No of Items",
+                  "Length",
+                  "Width",
+                  "Height",
+                  "Weight",
+                  "SenderReference",
+                  "ReceiverReference"
+                ],
+                "line": 52
+              },
+              {
+                "cells": [
+                  "Automation Template1",
+                  "10",
+                  "10",
+                  "10",
+                  "10",
+                  "90",
+                  "Ref123",
+                  "Ref456"
+                ],
+                "line": 53
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1605145800,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "User selects Dangerous Goods",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.user_selects_Dangerous_Goods(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "DgGoods"
+                ],
+                "line": 55
+              },
+              {
+                "cells": [
+                  "2"
+                ],
+                "line": 56
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4497483700,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "User Enters Export Declarations",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserEntersExportDeclarations(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TypeOfExport",
+                  "DeclaredValue",
+                  "DeclaredValueCurrency",
+                  "WhoPaysDutiesTaxes",
+                  "CommodityCode"
+                ],
+                "line": 58
+              },
+              {
+                "cells": [
+                  "Permanent",
+                  "5000",
+                  "New Zealand dollar",
+                  "Sender",
+                  "NZ123"
+                ],
+                "line": 59
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3626556700,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "User Click Review and Create Shipment",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserClickReviewandCreateShipment()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15740552000,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "User Prints Labels and Enables Commercial Invoice",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserPrintsLabelsandEnablesCommercialInvoice()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3765875300,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "User Creates Commercial Invoice and Verifies Page Details",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserCreatesCommercialInvoiceandVerifiesPageDetails()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 575653300,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "User Verifies Shipment Details Commercial Invoice Page",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifiesShipmentDetailsCommercialInvoicePage(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "NumberOfItems",
+                  "Weight",
+                  "DeclaredValue",
+                  "CountryOfExportAU",
+                  "DestinationNZ",
+                  "Other Details"
+                ],
+                "line": 64
+              },
+              {
+                "cells": [
+                  "10",
+                  "90",
+                  "5000",
+                  "AUSTRALIA",
+                  "NEW ZEALAND",
+                  "Retreived on Run Time"
+                ],
+                "line": 65
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7841949000,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "User Enters Commercial Invoice Item Details",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserEntersCommercialInvoiceItemDetails(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "CommercialInvoiceDes",
+                  "PartNo",
+                  "ACHECC",
+                  "NumberOfItems",
+                  "Weight",
+                  "UnitValue",
+                  "DeclaredValue"
+                ],
+                "line": 67
+              },
+              {
+                "cells": [
+                  "CommercialInvoiceDes",
+                  "11",
+                  "Test12",
+                  "10",
+                  "90",
+                  "500",
+                  "5000"
+                ],
+                "line": 68
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2880639100,
+              "status": "passed"
+            },
+            "line": 69,
+            "name": "User Enters Commercial Invoice Other Details And Clicks Save",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserEntersCommercialInvoiceOtherItemDetailsAndClicksSave(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TypeOfExport",
+                  "TermsofTrade"
+                ],
+                "line": 70
+              },
+              {
+                "cells": [
+                  "Permanent",
+                  "2"
+                ],
+                "line": 71
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1717131400,
+              "status": "passed"
+            },
+            "line": 72,
+            "name": "User Verifies Shipment Details on Commercial Invoice Review Page",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifiesShipmentDetailsOnCommercialInvoiceReviewPage(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "CommercialInvoiceDes",
+                  "PartNo",
+                  "ACHECC",
+                  "NumberOfItems",
+                  "Weight",
+                  "UnitValue",
+                  "DeclaredValue"
+                ],
+                "line": 73
+              },
+              {
+                "cells": [
+                  "CommercialInvoiceDes",
+                  "11",
+                  "Test12",
+                  "10",
+                  "90",
+                  "500",
+                  "5000"
+                ],
+                "line": 74
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1667729800,
+              "status": "passed"
+            },
+            "line": 75,
+            "name": "User Prints Commercial Invoice",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserPrintsCommercialInvoice()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 42,
+            "name": "@tag2"
+          }
+        ]
+      }
+    ],
+    "name": "MYT-1795 Manifest : Create Commercial Invoice for International Order",
+    "description": "",
+    "id": "myt-1795-manifest-:-create-commercial-invoice-for-international-order",
+    "keyword": "Feature",
+    "uri": "src/test/Resources/manifest/MYT_1795_Create_Commercial_Invoice.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 35775495700,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is Registered in MyToll and is on My Dashboard",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.user_is_Registered_in_MyToll_and_is_on_My_Dashboard()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 117300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.BeforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "User Saves Shipment In Progress from the Manifest Tab as a Draft - TDF",
+        "description": "",
+        "id": "myt-6292-manifest-:-save-shipment-as-a-draft-from-open-manifests;user-saves-shipment-in-progress-from-the-manifest-tab-as-a-draft---tdf",
+        "after": [
+          {
+            "result": {
+              "duration": 712522800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.AfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7322556500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User Click My Manifest tab on My Dahsboad and Click Add Manifest Manually",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserClickMyManifestTabOnMyDahsboadandClickAddManifestManually()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10193530000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User Creates Manual Manifest",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserCreatesManualManifest(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "ManifestName"
+                ],
+                "line": 10
+              },
+              {
+                "cells": [
+                  "Intermodal \u0026 Specialised",
+                  "TEM Perth Address",
+                  "RandomNameOnRunTime"
+                ],
+                "line": 11
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3911049900,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User Verify Manifest and Proceed to Shipment",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifyManifestAndProceedtoShipment(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "ManifestName"
+                ],
+                "line": 13
+              },
+              {
+                "cells": [
+                  "Intermodal \u0026 Specialised",
+                  "RandomNameOnRunTime"
+                ],
+                "line": 14
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1694620400,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User Selects Service",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserSelectsService(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Service"
+                ],
+                "line": 16
+              },
+              {
+                "cells": [
+                  "General"
+                ],
+                "line": 17
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33700446100,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User enters shipment overview details as below - Manual Manifest",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.User_enters_shipment_overview_details_asbelow_to_get_a_Rate_within_a_Shipment_SpecifcSenderReceiver(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "AccountNumber",
+                  "Whopays",
+                  "Mode",
+                  "Receiver"
+                ],
+                "line": 19
+              },
+              {
+                "cells": [
+                  "614060",
+                  "1",
+                  "1",
+                  "TEM Brisbane Address"
+                ],
+                "line": 20
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12079629400,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User enters following input data for the line item",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.user_enters_following_input_data_for_the_line_item(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Item description",
+                  "Billing Type",
+                  "No of Items",
+                  "Item Type",
+                  "Length",
+                  "Width",
+                  "Height",
+                  "Weight",
+                  "SenderReference",
+                  "ReceiverReference"
+                ],
+                "line": 22
+              },
+              {
+                "cells": [
+                  "Automation Template1",
+                  "General Freight",
+                  "10",
+                  "Misc",
+                  "100",
+                  "100",
+                  "100",
+                  "900",
+                  "Ref123",
+                  "Ref456"
+                ],
+                "line": 23
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1594046900,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User selects Dangerous Goods",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.user_selects_Dangerous_Goods(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "DgGoods"
+                ],
+                "line": 25
+              },
+              {
+                "cells": [
+                  "2"
+                ],
+                "line": 26
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4842304500,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "User Clicks Save Draft on Shipment Page",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserClicksSaveDraftOnShipmentDPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5931485500,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "User Navigates to Draft Shipment Page and Verifies Page Items",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserNavigatesToDraftShipmentPageAndVerifiesPageItems(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "Receiver",
+                  "Dispatch date"
+                ],
+                "line": 29
+              },
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "Receiver",
+                  "Dispatch date"
+                ],
+                "line": 30
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 62589859600,
+              "error_message": "java.lang.AssertionError: element with: By.xpath: \t//*/td[preceding-sibling::td[text()\u003d\u0027Intermodal \u0026 Specialised\u0027]][preceding-sibling::td[text()\u003d\u0027TEM Perth Address\u0027]] [preceding-sibling::td[text()\u003d\u0027TEM Brisbane Address\u0027]] [preceding-sibling::td[text()\u003d\u002726 Sep 2018\u0027]]/a not found\u003cbr\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat global.PageBase.moveToElement(PageBase.java:442)\r\n\tat global.PageBase.click(PageBase.java:330)\r\n\tat steps.dashboard.DashboardCommonStepsDefinitions.UserClickCompleteShipmentandisNavagiatedBacktoCreateShipmentPage(DashboardCommonStepsDefinitions.java:155)\r\n\tat ✽.And User Click Complete Shipment and is Navagiated Back to Create Shipment page(src/test/Resources/manifest/MYT_6292_Manifest_SaveShipmentAsDraft.feature:31)\r\n",
+              "status": "failed"
+            },
+            "line": 31,
+            "name": "User Click Complete Shipment and is Navagiated Back to Create Shipment page",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserClickCompleteShipmentandisNavagiatedBacktoCreateShipmentPage(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "Receiver"
+                ],
+                "line": 32
+              },
+              {
+                "cells": [
+                  "Intermodal \u0026 Specialised",
+                  "TEM Perth Address",
+                  "TEM Brisbane Address"
+                ],
+                "line": 33
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 34,
+            "name": "User Verifies if Shipment Details are correct in the Shipment Page",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserVerifiesIfShipmentDetailsareCorrectforModule1(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TollCarrier",
+                  "Service",
+                  "AccountNumber",
+                  "Whopays",
+                  "Mode",
+                  "Sender",
+                  "Receiver",
+                  "Item description",
+                  "Billing Type",
+                  "No of Items",
+                  "Length",
+                  "Width",
+                  "Height",
+                  "Weight"
+                ],
+                "line": 35
+              },
+              {
+                "cells": [
+                  "Intermodal \u0026 Specialised",
+                  "General",
+                  "614060",
+                  "1",
+                  "1",
+                  "TEM Perth Address",
+                  "TEM Brisbane Address",
+                  "Automation Template1",
+                  "General Freight",
+                  "10",
+                  "100",
+                  "100",
+                  "100",
+                  "900"
+                ],
+                "line": 36
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 37,
+            "name": "User Navigates back to Dashboard and Draft Shipment Tab",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserNavigatesBacktoDashboardandDraftShipment()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 38,
+            "name": "User Deletes Draft Shipment",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserDeletesDraftShipment(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "Receiver"
+                ],
+                "line": 39
+              },
+              {
+                "cells": [
+                  "Intermodal \u0026 Specialised",
+                  "TEM Perth Address",
+                  "TEM Brisbane Address"
+                ],
+                "line": 40
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 41,
+            "name": "User Cancels Delete Draft Search",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserCancelsDeleteSavedSearch()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 42,
+            "name": "User Deletes Draft Shipment",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserDeletesDraftShipment(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "Receiver"
+                ],
+                "line": 43
+              },
+              {
+                "cells": [
+                  "Intermodal \u0026 Specialised",
+                  "TEM Perth Address",
+                  "TEM Brisbane Address"
+                ],
+                "line": 44
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 45,
+            "name": "User Confirms Delete Draft Search",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserConfirmsDeleteSavedSearch()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@tag1"
+          },
+          {
+            "line": 6,
+            "name": "@Fail"
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 28113197800,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is Registered in MyToll and is on My Dashboard",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.user_is_Registered_in_MyToll_and_is_on_My_Dashboard()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 205900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.BeforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 49,
+        "name": "User Saves Shipment In Progress from the Manifest Tab as a Draft - TGX",
+        "description": "",
+        "id": "myt-6292-manifest-:-save-shipment-as-a-draft-from-open-manifests;user-saves-shipment-in-progress-from-the-manifest-tab-as-a-draft---tgx",
+        "after": [
+          {
+            "result": {
+              "duration": 705996600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CucumberHooks.AfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7272483500,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "User Click My Manifest tab on My Dahsboad and Click Add Manifest Manually",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserClickMyManifestTabOnMyDahsboadandClickAddManifestManually()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 9961347600,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "User Creates Manual Manifest",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserCreatesManualManifest(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "ManifestName"
+                ],
+                "line": 52
+              },
+              {
+                "cells": [
+                  "Toll Priority (Aus)",
+                  "TEM Perth Address",
+                  "RandomNameOnRunTime"
+                ],
+                "line": 53
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4064605100,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "User Verify Manifest and Proceed to Shipment",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserVerifyManifestAndProceedtoShipment(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "ManifestName"
+                ],
+                "line": 55
+              },
+              {
+                "cells": [
+                  "Toll Priority (Aus)",
+                  "RandomNameOnRunTime"
+                ],
+                "line": 56
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1692710600,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "User Selects Service",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.UserSelectsService(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Service"
+                ],
+                "line": 58
+              },
+              {
+                "cells": [
+                  "Parcels - Overnight"
+                ],
+                "line": 59
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33210350200,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "User enters shipment overview details as below Draft Shipment - Manual Manifest - Prio",
+            "match": {
+              "location": "ManifestCommonStepsDefinitions.User_enters_shipment_overview_details_asbelow_Draft_Shipment_ManualManifestPrio(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "AccountNumber",
+                  "Whopays",
+                  "Receiver"
+                ],
+                "line": 61
+              },
+              {
+                "cells": [
+                  "401509",
+                  "1",
+                  "TEM Brisbane Address"
+                ],
+                "line": 62
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7119597500,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "User enters following input data for the line item for Draft Shipment - Prio",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.user_enters_following_input_data_for_the_line_item_ForDraftShipment_Prio(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Item description",
+                  "No of Items",
+                  "Length",
+                  "Width",
+                  "Height",
+                  "Weight",
+                  "SenderReference",
+                  "ReceiverReference"
+                ],
+                "line": 64
+              },
+              {
+                "cells": [
+                  "Automation Template1",
+                  "10",
+                  "10",
+                  "10",
+                  "10",
+                  "90",
+                  "Ref123",
+                  "Ref456"
+                ],
+                "line": 65
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1613466500,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "User selects Dangerous Goods",
+            "match": {
+              "location": "CreateShipmentStepsDefinitions.user_selects_Dangerous_Goods(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "DgGoods"
+                ],
+                "line": 67
+              },
+              {
+                "cells": [
+                  "2"
+                ],
+                "line": 68
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4622529800,
+              "status": "passed"
+            },
+            "line": 69,
+            "name": "User Clicks Save Draft on Shipment Page",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserClicksSaveDraftOnShipmentDPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5926231500,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "User Navigates to Draft Shipment Page and Verifies Page Items",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserNavigatesToDraftShipmentPageAndVerifiesPageItems(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "Receiver",
+                  "Dispatch date"
+                ],
+                "line": 71
+              },
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "Receiver",
+                  "Dispatch date"
+                ],
+                "line": 72
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 62597621600,
+              "error_message": "java.lang.AssertionError: element with: By.xpath: \t//*/td[preceding-sibling::td[text()\u003d\u0027Toll Priority (Aus)\u0027]][preceding-sibling::td[text()\u003d\u0027TEM Perth Address\u0027]] [preceding-sibling::td[text()\u003d\u0027TEM Brisbane Address\u0027]] [preceding-sibling::td[text()\u003d\u002726 Sep 2018\u0027]]/a not found\u003cbr\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat global.PageBase.moveToElement(PageBase.java:442)\r\n\tat global.PageBase.click(PageBase.java:330)\r\n\tat steps.dashboard.DashboardCommonStepsDefinitions.UserClickCompleteShipmentandisNavagiatedBacktoCreateShipmentPage(DashboardCommonStepsDefinitions.java:155)\r\n\tat ✽.And User Click Complete Shipment and is Navagiated Back to Create Shipment page(src/test/Resources/manifest/MYT_6292_Manifest_SaveShipmentAsDraft.feature:73)\r\n",
+              "status": "failed"
+            },
+            "line": 73,
+            "name": "User Click Complete Shipment and is Navagiated Back to Create Shipment page",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserClickCompleteShipmentandisNavagiatedBacktoCreateShipmentPage(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "Receiver"
+                ],
+                "line": 74
+              },
+              {
+                "cells": [
+                  "Toll Priority (Aus)",
+                  "TEM Perth Address",
+                  "TEM Brisbane Address"
+                ],
+                "line": 75
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 76,
+            "name": "User Verifies if Shipment Details are correct in the Shipment Page - Prio",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserVerifiesIfShipmentDetailsareCorrectforModule1Prio(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TollCarrier",
+                  "Service",
+                  "AccountNumber",
+                  "Whopays",
+                  "Sender",
+                  "Receiver",
+                  "Item description",
+                  "No of Items",
+                  "Length",
+                  "Width",
+                  "Height",
+                  "Weight"
+                ],
+                "line": 77
+              },
+              {
+                "cells": [
+                  "Toll Priority (Aus)",
+                  "Parcels - Overnight",
+                  "401509",
+                  "1",
+                  "TEM Perth Address",
+                  "TEM Brisbane Address",
+                  "Automation Template1",
+                  "10",
+                  "10",
+                  "10",
+                  "10",
+                  "90"
+                ],
+                "line": 78
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 79,
+            "name": "User Navigates back to Dashboard and Draft Shipment Tab",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserNavigatesBacktoDashboardandDraftShipment()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 80,
+            "name": "User Deletes Draft Shipment",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserDeletesDraftShipment(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "Receiver"
+                ],
+                "line": 81
+              },
+              {
+                "cells": [
+                  "Toll Priority (Aus)",
+                  "TEM Perth Address",
+                  "TEM Brisbane Address"
+                ],
+                "line": 82
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 83,
+            "name": "User Cancels Delete Draft Search",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserCancelsDeleteSavedSearch()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 84,
+            "name": "User Deletes Draft Shipment",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserDeletesDraftShipment(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Toll carrier",
+                  "Sender",
+                  "Receiver"
+                ],
+                "line": 85
+              },
+              {
+                "cells": [
+                  "Toll Priority (Aus)",
+                  "TEM Perth Address",
+                  "TEM Brisbane Address"
+                ],
+                "line": 86
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 87,
+            "name": "User Confirms Delete Draft Search",
+            "match": {
+              "location": "DashboardCommonStepsDefinitions.UserConfirmsDeleteSavedSearch()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 48,
+            "name": "@tag2"
+          },
+          {
+            "line": 48,
+            "name": "@Fail"
+          }
+        ]
+      }
+    ],
+    "name": "MYT-6292 Manifest : Save Shipment as a Draft from open Manifests",
+    "description": "",
+    "id": "myt-6292-manifest-:-save-shipment-as-a-draft-from-open-manifests",
+    "keyword": "Feature",
+    "uri": "src/test/Resources/manifest/MYT_6292_Manifest_SaveShipmentAsDraft.feature"
+  }
+]
