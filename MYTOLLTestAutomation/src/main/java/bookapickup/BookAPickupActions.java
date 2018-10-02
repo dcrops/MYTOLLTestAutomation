@@ -861,7 +861,7 @@ public class BookAPickupActions {
 	}
 
 	public static void VerifyTollCarrier(String tollCarrier1) {
-		assertEquals(tollCarrier1, BaseWebdriver.driver.findElement(tollCarrier).getAttribute("value"));
+		assertEquals(tollCarrier1, PageBase.waitForElement(tollCarrier, 5).getAttribute("value"));
 
 	}
 
