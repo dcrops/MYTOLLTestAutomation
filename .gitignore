@@ -1,6 +1,3 @@
-/.metadata/
-/.recommenders/
+/target/
+/test-output/
 /.idea/
-**/test-output/*
-**/Reports/*
-bin/

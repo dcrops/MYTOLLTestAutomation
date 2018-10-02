@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="seleniumtests.generictests.GenericTests">
+  <!---Toll carriers test data -->
+
+		<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
+		<parameter name="TollCarrierTollPrioNZ" value="Toll Priority (NZ)" />
+	
+		<!---Item test data -->
+
+		<parameter name="ItemTemplateName" value="Automation Template" />
+		<parameter name="NumberOfItems" value="15" />
+		<parameter name="Length" value="100" />
+		<parameter name="Width" value="200" />
+		<parameter name="Height" value="300" />
+		<parameter name="Weight" value="900" />
+		
+		<!---User registration-->
+
+		<parameter name="FirstName" value="BvtTollUser" />
+		<parameter name="LastName" value="Test" />
+		<parameter name="NewEmail" value="BvtTollUser@mailnator.com" />
+		<parameter name="MobileNumber" value="0413234567" />
+		<parameter name="Password" value="Toll@123" />
+		<parameter name="MemorableAnswer" value="TestABC" />
+		
+		<!---Share Shipment-->
+		<parameter name="ShipmentNo" value="ANIB215991" />
+		<parameter name="EmailAddress1" value="Test1@test.com" />
+		<parameter name="EmailAddress2" value="Test2@test.com" />
+		<parameter name="EmailAddress3" value="Test3@test.com" />
+		<parameter name="EmailAddress4" value="Test4@test.com" />
+		<parameter name="EmailAddress5" value="Test5@test.com" />
+		
+		  <classes>
+		  	<class name="seleniumtests.generictests.Registration_contacts_check_Mining_energy" />
+			<class name="seleniumtests.generictests.RegistrationPage_UserProfileStore" />
+			<class name="seleniumtests.generictests.ShareShipment" />
+			<class name="seleniumtests.generictests.BAP_without_complete_profile" />
+			<class name="seleniumtests.generictests.ContactsUpload" />
+			
+		</classes>
+		
+	
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

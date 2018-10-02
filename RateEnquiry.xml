@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rate Enquiry">
+
+	<test name="RateEnquiry">
+		<!---Toll carriers test data -->
+
+		<parameter name="TollCarrierTollIntermodal" value="Toll Intermodal" />
+		<parameter name="TollCarrierTollTasmania" value="Toll Tasmania" />
+		<parameter name="TollCarrierTollNQXTollExpress" value="Toll NQX | Toll Express" />
+		<parameter name="TollCarrierTollIPEC" value="Toll IPEC" />
+		<parameter name="TollCarrierTollPrioAU" value="Toll Priority (Aus)" />
+		<parameter name="TollCarrierTollPrioNZ" value="Toll Priority (NZ)" />
+		<parameter name="TollIntermodalSpecialised" value="Intermodal" />
+
+		<!---Services test data -->
+
+		<parameter name="ServiceGlobalExpressDocuments" value="global - Express Documents" />
+		<parameter name="ServiceDGFreight" value="DG Freight" />
+		<parameter name="ServiceExpress" value="Express" />
+		<parameter name="ServiceGeneral" value="General" />
+		<parameter name="ServiceFCL" value="FCL" />
+		<parameter name="ServicePremium" value="Premium" />
+		<parameter name="ServiceDGFCL" value="DG FCL" />
+		<parameter name="ServiceRailGeneral" value="Rail General" />
+		<parameter name="ServicePremium" value="Premium" />
+		<parameter name="ServiceRefrigeration" value="Refrigeration" />
+		<parameter name="ServiceRoadExpress" value="Road Express" />
+		<parameter name="ServiceDangerousGoods" value="Dangerous Goods" />
+		<parameter name="ServiceDGRefrigerated" value="DG Refrigerated" />
+		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
+		<parameter name="ServiceDGExpress" value="Dangerous Goods Express" />
+		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
+		<parameter name="ServiceParcelsSameDays" value="Parcels - Same Day" />
+		<parameter name="ServiceAusWideSatchel" value="Auswide 3kg Satchel - Overnight" />
+		<parameter name="ServiceGlobalExpressParcels" value="global - Express Parcels" />
+
+		<!---Toll Intermodal test data -->
+		<parameter name="TIAccountNo" value="5685" />
+		<parameter name="ItemTemplateName" value="Automation Template" />
+		<parameter name="TIMode" value="ROAD" />
+		<parameter name="TIBillingType" value="CARTONS - OVER 301KG" />
+		<parameter name="TINumberOfItems" value="1" />
+		<parameter name="TILength" value="20" />
+		<parameter name="TIWidth" value="20" />
+		<parameter name="TIHeight" value="20" />
+		<parameter name="TIWeight" value="100" />
+		<parameter name="TIQtyType" value="Items" />
+		<parameter name="TIOriginSuburb" value="ROWLAND FLAT" />
+		<parameter name="TIOriginPostCode" value="5352" />
+		<parameter name="TIDesSuburb" value="ALBERT PARK" />
+		<parameter name="TIDesPostCode" value="5014" />
+
+		<!---Toll IPEC test data -->
+		<parameter name="TIPAccountNo" value="2230899" />
+		<parameter name="ItemTemplateName" value="Automation Template" />
+		<parameter name="TIPMode" value="ROAD" />
+		<parameter name="TIPBillingType" value="ALL FREIGHT" />
+		<parameter name="TIPNumberOfItems" value="10" />
+		<parameter name="TIPWeight" value="10" />
+		<parameter name="TIPQtyType" value="Items" />
+		<parameter name="TIPDesSuburb" value="FOOTSCRAY" />
+		<parameter name="TIPDesPostCode" value="3011" />
+		<parameter name="TIPLength" value="10" />
+		<parameter name="TIPWidth" value="10" />
+		<parameter name="TIPHeight" value="10" />
+		<parameter name="TIPOriginSuburb" value="MELBOURNE" />
+		<parameter name="TIPOriginPostCode" value="3000" />
+
+		<!---Toll NQX test data / IntermodalSpecialized -->
+		<parameter name="TNAccountNo" value="614060" />
+		<parameter name="TNOriginSuburb" value="MELBOURNE" />
+		<parameter name="TNOriginPostCode" value="3000" />
+		<parameter name="TNDesSuburb" value="SYDNEY" />
+		<parameter name="TNDesPostCode" value="2000" />
+		<parameter name="TNBillingType" value="General Freight" />
+		<parameter name="TNNumberOfItems" value="3" />
+		<parameter name="TNLength" value="33" />
+		<parameter name="TNWidth" value="33" />
+		<parameter name="TNHeight" value="33" />
+		<parameter name="TNWeight" value="3" />
+		<parameter name="TNMode" value="ROAD" />
+		<parameter name="TNQtyType" value="Items" />
+
+		<!---Toll Priority AUS test data -->
+		<parameter name="TPAccountNo" value="401509" />
+		<parameter name="TPALength" value="10" />
+		<parameter name="TPAWidth" value="10" />
+		<parameter name="TPAHeight" value="10" />
+		<parameter name="TPANumberOfItems" value="1" />
+		<parameter name="TPAWeight" value="3" />
+		<parameter name="TPADesSuburb" value="MELBOURNE" />
+		<parameter name="TPADesPostCode" value="3000" />
+		<parameter name="Country" value="HONG KONG" />
+		<parameter name="TPAOriginSuburb" value="MELBOURNE" />
+		<parameter name="TPAOriginPostCode" value="3000" />
+		<parameter name="TPAQtyType" value="Items" />
+
+		<!---Toll Priority NZ test data -->
+		<parameter name="TNZAccountNo" value="100181" />
+		<parameter name="TNZNumberOfItems" value="3" />
+		<parameter name="TNZOriginSuburb" value="NEWTON," />
+		<parameter name="TNZOriginPostCode" value="1001" />
+		<parameter name="TNZDesSuburb" value="BEERESCOURT" />
+		<parameter name="TNZDesPostCode" value="3210" />
+		<parameter name="TNZCountry" value="AUSTRALIA" />
+		<parameter name="CountryPostCode" value="3000" />
+		<parameter name="TNZLength" value="33" />
+		<parameter name="TNZWidth" value="33" />
+		<parameter name="TNZHeight" value="33" />
+		<parameter name="TNZWeight" value="3" />
+		<parameter name="TNZQtyType" value="Items" />
+		<parameter name="TNZOriginSuburb1" value="AUCKLAND" />
+		<parameter name="TNZOriginPostCode1" value="1001" />
+
+
+		<!---Toll Tasmania test data -->
+		<parameter name="TTAccountNo" value="100428" />
+		<parameter name="TTOriginSuburb" value="MULGRAVE" />
+		<parameter name="TTOriginPostCode" value="3170" />
+		<parameter name="TTDesSuburb" value="GLEBE" />
+		<parameter name="TTDesPostCode" value="7000" />
+		<parameter name="TTBillingType" value="General Freight" />
+		<parameter name="TTNumberOfItems" value="3" />
+		<parameter name="TTLength" value="33" />
+		<parameter name="TTWidth" value="33" />
+		<parameter name="TTHeight" value="33" />
+		<parameter name="TTWeight" value="3" />
+		<parameter name="TTQtyType" value="Items" />
+		<parameter name="TTMode" value="*" />
+		
+		<!---IntermodalSpecialized FCL test data -->
+		<parameter name="FCLAccountNo" value="5502" />
+		<parameter name="ItemTemplateName" value="Automation Template" />
+		<parameter name="FCLMode" value="RAIL" />
+		<parameter name="FCLBillingType" value="CONT 12.2 - ALL GOODS" />
+		<parameter name="FCLNumberOfItems" value="1" />
+		<parameter name="FCLLength" value="1000" />
+		<parameter name="FCLWidth" value="240" />
+		<parameter name="FCLHeight" value="240" />
+		<parameter name="FCLWeight" value="12000" />
+		<parameter name="FCLQtyType" value="Misc units" />
+		<parameter name="FCLOriginSuburb" value="ADELAIDE" />
+		<parameter name="FCLOriginPostCode" value="5000" />
+		<parameter name="FCLDesSuburb" value="PERTH" />
+		<parameter name="FCLDesPostCode" value="6000" />
+
+
+		<!---IntermodalSpecialized DGFCL test data -->
+		<parameter name="DGFCLAccountNo" value="101718" />
+		<parameter name="ItemTemplateName" value="Automation Template" />
+		<parameter name="DGFCLMode" value="RAIL" />
+		<parameter name="DGFCLBillingType" value="CONT 6.1 - SIDEDOOR" />
+		<parameter name="DGFCLNumberOfItems" value="34" />
+		<parameter name="DGFCLLength" value="1000" />
+		<parameter name="DGFCLWidth" value="240" />
+		<parameter name="DGFCLHeight" value="240" />
+		<parameter name="DGFCLWeight" value="10000" />
+		<parameter name="DGFCLQtyType" value="Items" />
+		<parameter name="DGFCLOriginSuburb" value="MELBOURNE" />
+		<parameter name="DGFCLOriginPostCode" value="3000" />
+		<parameter name="DGFCLDesSuburb" value="PERTH" />
+		<parameter name="DGFCLDesPostCode" value="6000" />
+		
+		<groups>
+	    <run>
+	      <include name="E2E" />
+	  	    </run>
+	 	</groups>
+
+		<classes>
+			
+	    	<class name="seleniumtests.rateenquiry.TollIntermodalSpecialisedTests" />
+			<class name="seleniumtests.rateenquiry.TollPriorityNZTests" />
+			<class name="seleniumtests.rateenquiry.TollPriorityAUSTests" />
+			<class name="seleniumtests.rateenquiry.TollTasmaniaTests" />
+			 <class name="seleniumtests.rateenquiry.TollIPECTests" />
+			<class name="seleniumtests.rateenquiry.RateEnquiry_ErrorMsgValidations" />
+			
+			
+		</classes>
+
+	    
+	 	<!-- Blocked> <classes>	
+			<class name="seleniumtests.rateenquiry.TollIntermodalSpecialisedTests" />
+			<class name="seleniumtests.rateenquiry.TollPriorityNZTests" />
+			<class name="seleniumtests.rateenquiry.TollPriorityAUSTests" />
+			<class name="seleniumtests.rateenquiry.TollTasmaniaTests" />
+			<class name="seleniumtests.rateenquiry.TollIPECTests" />
+			<class name="seleniumtests.rateenquiry.RateEnquiry_ErrorMsgValidations" />
+	    </classes></Blocked -->
+	</test> <!-- Test -->
+
+
+</suite> <!-- Suite -->
