@@ -300,7 +300,11 @@ public class MyTollHomePageActions {
 	
 	////Nishant
 	public static By edit_ShipmentReview = By .xpath("//*[@id=\"shipment-placeholder\"]/div[1]/header/div[2]/a");
-	
+	public static By myContactDetailsTextbox = By .id("contactDtl");
+	public static By myContactDetailsTextboxName = By .id("cnt_name");
+	public static By myContactDetailsTextboxPhoneNumber = By .id("cnt_phone_no");
+	public static By myContactDetailsTextboxEmail = By .id("cnt_email");
+	public static By myContactDetailsTextboxSaveButton = By .xpath("//*[@id=\"add_contact\"]//footer/a");
 	////
 	
 	public static By addressTextbox = By.xpath("//*[@id=\"my-search-address\"]");
