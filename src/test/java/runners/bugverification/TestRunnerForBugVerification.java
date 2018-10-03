@@ -8,7 +8,7 @@ import cucumber.api.testng.*;
 @CucumberOptions( strict=true
 
 
-        ,features = {/*"src/test/Resources/bugverification/MYT_9043_Save_template_Minimal_info.feature"
+        ,features = {"src/test/Resources/bugverification/MYT_9043_Save_template_Minimal_info.feature"
         		,"src/test/Resources/bugverification/MYT_8447_error messages are displayed even when filled in.feature",
         		"src/test/Resources/bugverification/MYT_550_checking_references_with_spaces_can_be_searched.feature",
         		"src/test/Resources/bugverification/MYT_6850 Add Ship to mode for Intermodal & Specialised.feature",
@@ -22,7 +22,7 @@ import cucumber.api.testng.*;
         		"src/test/Resources/bugverification/MYT_8887Shipment_International_Domestic_Addresses.feature",
          		"src/test/Resources/bugverification/MYT_8628 Users are unable to view certain POD.feature",
 				"src/test/Resources/bugverification/MYT_9205_Toll_Energy_default_payer_to_be_third_party.feature",
-				"src/test/Resources/bugverification/MYT_8826_Weights_Change_to_zero_at_print_and_close.feature",*/
+				"src/test/Resources/bugverification/MYT_8826_Weights_Change_to_zero_at_print_and_close.feature",
 				"src/test/Resources/bugverification/MYT_9154_phone_number_returns.feature"
                 }
 		, glue= {"steps"}
