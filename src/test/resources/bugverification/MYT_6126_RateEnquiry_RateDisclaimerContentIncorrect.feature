@@ -26,9 +26,6 @@ Feature: MYT-6126  - Rate Enquiry Disclaimer Content is Incorrect bug verificati
     And User Selects Item type
       | BillingType  |
       | ALL FREIGHT |
-    And User Selects Quantity type
-      | QtyType |
-      | Items   |
     When User Clicks Price Now
     Then User verifies disclaimer message with text
     """
