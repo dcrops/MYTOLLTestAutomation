@@ -85,7 +85,7 @@ public class advanceSearchStepDefinitions {
 			Iterator tags = advSearch.entrySet().iterator();
 		    while (tags.hasNext()) {
 		        Map.Entry pair = (Map.Entry)tags.next();
-		        PageBase.click(By.xpath("//*[@id=\"receiver-name-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1);
+		        PageBase.click(By.xpath("//*[@id=\"receiver-name-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 2);
 		        Reporter.log("User Deletes Tag - "+(String) pair.getValue());
 				System.out.println("User Deletes Tag - "+(String) pair.getValue());
 		        //PageBase.isElementNotPresent(By.xpath("//*[@id=\"receiver-name-list\"]/li/span[text()='"+(String) pair.getValue()+"']//preceding-sibling::span"), 1,(String) pair.getValue() );
