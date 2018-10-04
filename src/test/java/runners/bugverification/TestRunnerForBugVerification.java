@@ -22,7 +22,8 @@ import cucumber.api.testng.*;
         		"src/test/Resources/bugverification/MYT_8887Shipment_International_Domestic_Addresses.feature",
          		"src/test/Resources/bugverification/MYT_8628 Users are unable to view certain POD.feature",
 				"src/test/Resources/bugverification/MYT_9205_Toll_Energy_default_payer_to_be_third_party.feature",
-				"src/test/Resources/bugverification/MYT_8826_Weights_Change_to_zero_at_print_and_close.feature"
+				"src/test/Resources/bugverification/MYT_8826_Weights_Change_to_zero_at_print_and_close.feature",
+				"src/test/Resources/bugverification/MYT_9154_phone_number_returns.feature"
                 }
 		, glue= {"steps"}
 		, plugin= {"html:C:\\Source\\MYTOLLTestAutomation\\Reports\\cucumber-pretty",

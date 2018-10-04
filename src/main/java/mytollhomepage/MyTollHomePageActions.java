@@ -11,6 +11,7 @@ import java.util.Date;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 
 import basewebdriver.BaseWebdriver;
@@ -49,7 +50,7 @@ public class MyTollHomePageActions {
 		
 	
 	//Add Template
-	public static By MyTemplates=By.xpath("//a[@href='/group/guest/my-templates']"); 
+	public static By MyTemplates=By.xpath("//nav[@id=\"main-mega-nav\"]//span[contains(text(), 'My templates')]");
 	public static By AddTemplates=By.linkText("ADD TEMPLATE");
 	public static By TollCarrierDropdown=By.xpath("//*[@id=\"bu-dropdown-new\"]/label/a/i");
 	public static By TemplateNameTextField=By.xpath("//*[@id=\"newTemplate\"]/div/section/div[2]/div/div/input"); 
@@ -60,6 +61,7 @@ public class MyTollHomePageActions {
 	public static By weight = By.xpath("//*[@id=\"newTemplate\"]/div/section/div[3]/div[1]/div[2]/div/input");
 	public static By SaveTemplate=By.id("templateSave");
 	public static By CloseNewTemplate=By.xpath("//*[@id=\"response-poup-wrpr\"]/div[2]/div/a/i");
+	public static By volume = By.id("addCubicVolume");
 		
 	// User registration  registerlink
 	
@@ -300,7 +302,11 @@ public class MyTollHomePageActions {
 	
 	////Nishant
 	public static By edit_ShipmentReview = By .xpath("//*[@id=\"shipment-placeholder\"]/div[1]/header/div[2]/a");
-	
+	public static By myContactDetailsTextbox = By .id("contactDtl");
+	public static By myContactDetailsTextboxName = By .id("cnt_name");
+	public static By myContactDetailsTextboxPhoneNumber = By .id("cnt_phone_no");
+	public static By myContactDetailsTextboxEmail = By .id("cnt_email");
+	public static By myContactDetailsTextboxSaveButton = By .xpath("//*[@id=\"add_contact\"]//footer/a");
 	////
 	
 	public static By addressTextbox = By.xpath("//*[@id=\"my-search-address\"]");
@@ -639,8 +645,28 @@ public class MyTollHomePageActions {
 		// TODO Auto-generated method stub
 		
 	}
-		
-	
 
+
+	public static void clickMyTemplates() {
+		PageBase.click(MyTemplates, 3);
+	}
+
+	public static void clickAddTemplateButton() {
+		PageBase.click(AddTemplates, 3);
+	}
+
+	public static void enterDimensions(String items, String l, String w, String h) {
+		PageBase.sendText(numberOfItem, 2, items);
+		PageBase.sendText(length, 2, l);
+		PageBase.sendText(width, 2, w);
+		PageBase.sendText(height, 2, h);
+
+	}
+
+	public static String getVolume() {
+		PageBase.MinimumWaitForElementEnabled();
+		return PageBase.GetAttributeValue(volume, 3);
+
+	}
 }
 

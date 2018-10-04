@@ -60,7 +60,23 @@ public class ReturnsCommonStepsDefinitions {
 		PageBase.MaximumWaitForElementEnabled_1();
 		
 	}
-	
+
+	@When("^user click Add My contact details box$")
+	public void user_click_Add_My_contact_details_box() throws Throwable {
+
+		PageBase.click(MyTollHomePageActions.myContactDetailsTextbox,50);
+
+	}
+
+	@When("^Enters the following contact details and clicks save$")
+	public void enters_the_following_contact_details_and_clicks_save(DataTable createReturnTestData) throws Throwable {
+		for (Map<String, String> createReturn : createReturnTestData.asMaps(String.class, String.class)) {
+			PageBase.sendText(MyTollHomePageActions.myContactDetailsTextboxName,50, createReturn.get("Name"));
+			PageBase.sendText(MyTollHomePageActions.myContactDetailsTextboxPhoneNumber,50, createReturn.get("Phone Number"));
+			PageBase.sendText(MyTollHomePageActions.myContactDetailsTextboxEmail,50, createReturn.get("Phone Number"));
+			PageBase.click(MyTollHomePageActions.myContactDetailsTextboxSaveButton,50);
+			}
+	}
 	
 	@Given("^User is Registered in MyToll and is on My Accounts Page$")
 	public void user_is_Registered_in_MyToll_and_is_on_My_AccountsPage() throws Throwable {
