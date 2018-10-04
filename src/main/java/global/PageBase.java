@@ -37,6 +37,7 @@ public class PageBase
 				result = true;
 				break;
 			} catch (StaleElementReferenceException e) {
+				e.printStackTrace();
 			}
 			attempts++;
 		}
@@ -46,7 +47,7 @@ public class PageBase
 	public static WebElement FindElement(By ObjectLocater) 
 	{
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 50);
-		WebElement we = (WebElement) wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectLocater));
+		WebElement we = wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectLocater));
 		if (we == null) {
 			//logger.warn("elemet with: " + locator.toString() + " not found");
 			Reporter.log("element with: " + ObjectLocater.toString() + " not found" +"<br>");
@@ -62,7 +63,7 @@ public class PageBase
 	public static WebElement FindElement(WebElement _element) 
 	{
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 50);
-		WebElement we = (WebElement) wait.until(ExpectedConditions.visibilityOf(_element));
+		WebElement we = wait.until(ExpectedConditions.visibilityOf(_element));
 		if (we == null) {
 			//logger.warn("elemet with: " + locator.toString() + " not found");
 			Reporter.log("element with: " + _element.toString() + " not found" +"<br>");
@@ -173,8 +174,8 @@ public class PageBase
 		return true;
 	}
 
-	public static Boolean isElementPresent(By element) {
-		Boolean elementFound;
+	public static boolean isElementPresent(By element) {
+		boolean elementFound;
 		try {
 			BaseWebdriver.driver.findElement(element);
 			elementFound = true;
@@ -185,8 +186,8 @@ public class PageBase
 		// return true;
 	}
 
-	public static Boolean IsDisplayed(WebElement element) {
-		Boolean result;
+	public static boolean IsDisplayed(WebElement element) {
+		boolean result;
 		try {
 			result = element.isDisplayed();
 		} catch (Exception ex) {
@@ -197,8 +198,8 @@ public class PageBase
 		return result;
 	}
 	//Nishant
-	public static Boolean IsDisplayed(By locator) {
-		Boolean result;
+	public static boolean IsDisplayed(By locator) {
+		boolean result;
 		try {
 			result = findElement(locator, 2);
 //			result = element.isDisplayed();
