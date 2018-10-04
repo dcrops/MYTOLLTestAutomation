@@ -178,7 +178,7 @@ public class BookAPickupActions {
 	// Add Address
 	public static final By BookAPickup_Location_Dropdown = By.xpath("//*[@id=\"location-selector\"]/label/a/i");
 	public static final By BookAPickup_Location_Selected = By.name("placeholder-location");
-	public static final By BookAPickup_Add_Sender_Address = By.xpath("//div[@id='sender-selector']//div[@class='add-new-elem']");
+	public static final By BookAPickup_Add_Sender_Address = By.xpath("//div[@id='location-selector']//div[@class='add-new-elem']");
 	public static final By BookAPickup_Add_Receiver_Address = By.xpath("//div[@id='receiver-selector']//div[@class='add-new-elem']");
 	public static final By BookAPickup_New_AddressCompanName = By.id("add-adrr-company-aut");
 	public static final By BookAPickup_New_AddressSearch = By.id("address-srch");
@@ -249,7 +249,7 @@ public class BookAPickupActions {
 	
 	// Edit Address
 
-	public static By EditSenderAddressIcon = By.xpath("//*[@id=\"sender-selector\"]//*[text()=\"EDIT \"]/i");
+	public static By EditSenderAddressIcon = By.xpath("//*[@id=\"location-selector\"]//i[@class=\"ico-pencil\"]");
 	public static By EditReceiverAddressIcon = By.xpath("//*[@id=\"receiver-selector\"]//*[text()=\"EDIT \"]/i");
 	public static By EditAddressScreenHeading = By.xpath("//*[@id=\"edit-addr\"]/header/h2");
 	public static By EditAddressPleaseClickHereText = By.xpath("//*[@id=\"edit-addr\"]/header/label");
