@@ -59,7 +59,7 @@ Feature: MYT-6126  - Rate Enquiry Disclaimer Content is Incorrect bug verificati
     """
 
   @tag3
-  Scenario: The rate enquiry disclaimer text is the same as displayed in Toll Online Priority AU
+  Scenario: The rate enquiry disclaimer text is the same as displayed in Toll Online Priority NZ
     When User selects Toll Carrier
       | TollCarrier        |
       | Toll Priority (NZ) |
