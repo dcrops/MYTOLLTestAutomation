@@ -33,7 +33,7 @@ public class BookAPickupActions {
 	public static By pickupLocation = By.xpath("//*[@id=\"pickup-location\"]/div[1]/div[3]/div/label/span[2]");
 	public static By ServiceDropdown = By.xpath("//*[@id=\"service-type-selector\"]//a/i");
 	public static By BookaPickupScreenHeading = By.cssSelector("h1");   
-	public static By tollCarrier = By.id("carrier-name");
+	public static By tollCarrier = By.xpath("//*[@id=\"BU-selector\"]//input[contains(@placeholder,'Select Toll carrier')]");
 	public static By accountNumber = By.name("placeholder-account");
 	public static By locationDropdown = By.xpath("//*[@id=\"location-selector\"]/label/a/i");
 	public static By yesBtn = By.xpath("//*[@id=\"pickup-location\"]/div[1]/div[3]/div/label/span[1]");
@@ -48,7 +48,8 @@ public class BookAPickupActions {
 
 	public static By destination = By.id("destination-address");
 	public static By destinationErrorMsg = By.id("error-destination");
-	public static By destinationCountry = By.xpath("//*[@id=\"destination-country-selector\"]/label/input[2]");
+	//public static By destinationCountry = By.xpath("//*[@id=\"destination-country-selector\"]/label/input[2]");
+	public static By destinationCountry = By.id("destination-address");
 	public static By destinationaddress = By.cssSelector("ul.option-list > li > div");
 	public static By destinationCountryItem = By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li[11]/div");
 	public static By service = By.xpath("//*[@id=\"service-type-selector\"]/div[1]/a/i");
@@ -983,13 +984,15 @@ public class BookAPickupActions {
 	public static void SelectDestinationCountry(String pDestination, String pDestinationCountry) {
 
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.retryingFindClick(destinationCountry);
-		PageBase.WaitForElement(destinationCountry, 10);
-		BaseWebdriver.driver.findElement(destinationCountry).clear();
-		BaseWebdriver.driver.findElement(destinationCountry).sendKeys(pDestination);
+		PageBase.click(destinationCountry, 50);
+		//PageBase.WaitForElement(destinationCountry, 10);
+		/*BaseWebdriver.driver.findElement(destinationCountry).clear();
+		BaseWebdriver.driver.findElement(destinationCountry).sendKeys(pDestination);*/
+		PageBase.sendText(destinationCountry, 50, pDestination);
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.retryingFindClick(By.xpath("//*[@id=\"destination-country-selector\"]/div/ul/li/div[text()='" + pDestination + "']"));
-		
+		//String xpath = "//*[@id=\"item-details-sub-form\"]//li/div[contains(text(),'6011, WELLINGTON CENTRAL')]"
+		PageBase.click(By.xpath(destinationCountry+"/div/ul/li/div[text()='" + pDestination + "']"), 50);
+
 	}
 
 	public static void EnterDestination(String pDestination) {

@@ -324,20 +324,20 @@ public class PageBase
 	
 	public static WebElement click(By locator, int waitSeconds) 
 	{
-		if(waitSeconds<=20)
+		if(waitSeconds<=50)
 		{
 			waitSeconds= 50;
 		}
 		PageBase.moveToElement(locator);
 		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, waitSeconds);
-		WebElement we = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(locator));
+		WebElement we = wait.until(ExpectedConditions.elementToBeClickable(locator));
 		if (we == null) {
 			//logger.warn("elemet with: " + locator.toString() + " not found");
 			Reporter.log("element with: " + locator.toString() + " not found" +"<br>");
 			Assert.fail("element with: " + locator.toString() + " not found" +"<br>");
 			//return null;
 		}
-		
+
 		we.click();
 		return we;
 	}
