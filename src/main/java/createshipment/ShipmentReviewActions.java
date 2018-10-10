@@ -61,7 +61,7 @@ public class ShipmentReviewActions {
 	public static By lineItemNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-head']/div[@class='line-item-index']/h2");
 	public static By itemDescription1=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-head']/div[@class='line-item-title']/h3");
 	public static By numberOfItems=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-head']/div[@class='item-numbers']/h3");
-	public static By line1Arrowdown=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[1]/div/div[2]/ul/li[1]/div[1]/div[3]");
+	public static By line1Arrowdown=By.xpath("//*[@id=\"shipment-placeholder\"]//div/h3[text()='Items 10']");
 	
 	public static By itemDescriptionHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='item-inner-col item-desc']/h3");
 	public static By itemsHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']/li[1]//div[@class='line-item-inner']//div[@class='item-inner-col total-items']/h3");
@@ -270,7 +270,8 @@ public class ShipmentReviewActions {
 		assertEquals(pLineItemHeading,BaseWebdriver.driver.findElement(lineItemNumber).getText());
 		assertEquals(pItemDescription1,BaseWebdriver.driver.findElement(itemDescription1).getText());
 		assertEquals(pNumberOfItems, BaseWebdriver.driver.findElement(numberOfItems).getText());
-		 BaseWebdriver.driver.findElement(line1Arrowdown).click();
+		// BaseWebdriver.driver.findElement(line1Arrowdown).click();
+		 PageBase.click(line1Arrowdown, 50);
 		 PageBase.MaximumWaitForElementEnabled();
 		assertEquals(pItemDescriptionHeading, BaseWebdriver.driver.findElement(itemDescriptionHeading).getText());
 		assertEquals(pItemsHeading,BaseWebdriver.driver.findElement(itemsHeading).getText());
@@ -286,15 +287,15 @@ public class ShipmentReviewActions {
 	// Line item1 Values verification
 		public static void VerifyLineItem1Values(String pItemDescription1Value, String pItemsValue,String pBillingTypeValue, String pDimensionsValue, String pTotalVolumeValue, 
 				  String pWeightValue, String pReference1Value, String pReference2Value, String pShipmentContainDangerousGoodsValue) {
-			assertEquals(pItemDescription1Value,BaseWebdriver.driver.findElement(itemDescription1Value).getText());
-			assertEquals(pItemsValue, BaseWebdriver.driver.findElement(itemsValue).getText());
+			assertEquals(pItemDescription1Value,PageBase.GetText(itemDescription1Value, 50));
+			assertEquals(pItemsValue, PageBase.GetText(itemsValue, 50));
 			//assertEquals(pBillingTypeValue, BaseWebdriver.driver.findElement(billingTypeValue).getText());
-			assertEquals(pDimensionsValue,BaseWebdriver.driver.findElement(dimensionsValue).getText());
-			assertEquals(pTotalVolumeValue, BaseWebdriver.driver.findElement(totalVolumeValue).getText());
-			assertEquals(pWeightValue,BaseWebdriver.driver.findElement(weightValue).getText());
-			assertEquals(pReference1Value, BaseWebdriver.driver.findElement(reference1Value).getText());
-			assertEquals(pReference2Value, BaseWebdriver.driver.findElement(reference2Value).getText());
-			assertEquals(pShipmentContainDangerousGoodsValue, BaseWebdriver.driver.findElement(shipmentContainDangerousGoodsValue).getText());
+			assertEquals(pDimensionsValue,PageBase.GetText(dimensionsValue, 50));
+			assertEquals(pTotalVolumeValue, PageBase.GetText(totalVolumeValue, 50));
+			assertEquals(pWeightValue,PageBase.GetText(weightValue, 50));
+			assertEquals(pReference1Value, PageBase.GetText(reference1Value, 50));
+			assertEquals(pReference2Value, PageBase.GetText(reference2Value, 50));
+			assertEquals(pShipmentContainDangerousGoodsValue, PageBase.GetText(shipmentContainDangerousGoodsValue, 50));
 		}
 		public static void VerifyNumberofGarmentsLineItem1(String pNumberofGarments) {
 			
@@ -303,10 +304,9 @@ public class ShipmentReviewActions {
 		
 		public static void VerifyDangerousGoodsDetails(String pDangerousGoodsHeading, String pUNnumber, String pClassDivision,String pPackingGroup, String pSubrisk, String pProperShippingName, 
 				String pDgPackingGroup, String pDgPKG, String pDgQTY, String pTechnicalName ) {
-			//assertEquals(pDangerousGoodsHeading,BaseWebdriver.driver.findElement(dangerousGoodsHeading).getText());
-			PageBase.click(line1Arrowdown, 10);
+
 			PageBase.click(dangerousGoodsArrowdown, 20);
-			 PageBase.MediumWaitForElementEnabled();
+//
 			assertEquals(pUNnumber, PageBase.GetText(unNumber, 5));
 			assertEquals(pClassDivision,PageBase.GetText(classDivision, 5));
 			assertEquals(pPackingGroup, PageBase.GetText(packingGroup,5));

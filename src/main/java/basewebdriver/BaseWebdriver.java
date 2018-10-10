@@ -150,12 +150,12 @@ public class BaseWebdriver {
 		MyTollHomePageActions.LaunchMyToll(URL);
 //		SetUsernameAndPasswordBasedOnEnv(PSURL);
 
+		/*PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();*/
 		BaseWebdriver.driver.manage().window().maximize();
 		System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
