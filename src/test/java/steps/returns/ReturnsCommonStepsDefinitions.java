@@ -290,6 +290,7 @@ public class ReturnsCommonStepsDefinitions {
 		for (Map<String, String> myReturn : myReturnTestData.asMaps(String.class, String.class)) {
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.click(MyTollHomePageActions.MyReturnStatus, 10);
 			PageBase.click(By.xpath("//*[@id=\"status-selector\"]//*//div[text()='"+myReturn.get("Status")+"']"), 5);
 			PageBase.MediumWaitForElementEnabled_1();
@@ -341,6 +342,7 @@ public class ReturnsCommonStepsDefinitions {
 	
 	@Then("^User Downloads the Return Results$")
 	public void UserDownloadstheReturnResults() throws Throwable {
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(MyTollHomePageActions.DownloadSavedSearch, 5);
 		PageBase.MaximumWaitForElementEnabled_1();;

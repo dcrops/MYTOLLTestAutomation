@@ -84,7 +84,7 @@ public class BookAPickupActions {
 	public static By dangerousItemsNewLine = By.xpath("//*[@id=\"dg-radios\"]/label[2]/input");
 	public static By containFoodItem = By.xpath("//*[@id=\"containsFoodItems-no\"]");
 	public static By UNNumberDropdown = By.xpath("//*[@id=\"un-code-selector-\"]/label/a/i"); 
-	public static By UNNumberTextField =By.id("unlookup-"); 
+	public static By UNNumberTextField =By.xpath("//*[@data-dgmap=\"UNtext\"]");
 	public static By UNNumberName = By.xpath("//*[@id=\"un-code-selector-\"]/div/ul/li/div");
 	public static By searchBtn = By.xpath("//*[@id=\"un-code-selector-\"]/div/div/div/span/i");
 
@@ -1425,9 +1425,10 @@ public class BookAPickupActions {
 			String pItemTemplateName, String pNumberOfItems, String palletSpace, String pChargeToAccount,
 			String pLength, String pWidth, String pHeight, String pWeight) {
 
-		PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
-		PageBase.ClickOn(addANewLine, 10);
-		PageBase.MaximumWaitForElementEnabled();
+		//PageBase.MoveToElement(BookAPickupActions.weight, BookAPickupActions.service);
+		//PageBase.ClickOn(addANewLine, 10);
+		PageBase.click(addANewLine,10);
+		PageBase.MaximumWaitForElementEnabled_1();
 		BookAPickupActions.EnterService(pService);
 		BookAPickupActions.EnterItem(pItemTemplateName);
 		BookAPickupActions.EnterQuantity(pNumberOfItems);
@@ -1498,10 +1499,12 @@ public class BookAPickupActions {
 	public static void SelectDangerousGoodsDetails(String lookupItem, String packageDescription, String pDgPkgQty,
 			String pDgQtyKg) {
 
-		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
-		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div")).click();  
+		PageBase.MaximumWaitForElementEnabled_1();
+		//BaseWebdriver.driver.findElement(UNNumberTextField).sendKeys(lookupItem);
+		PageBase.sendText(UNNumberTextField,10,lookupItem);
+		PageBase.MaximumWaitForElementEnabled_1();
+		//sBaseWebdriver.driver.findElement(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div")).click();
+	    PageBase.click(By.xpath("//*[@id=\"dg-form\"]/div/div[2]/div[1]/div[1]/div/div[1]/ul/li/div"), 10);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SendKeysTo(dgPackagingDescription, packageDescription, 10);
