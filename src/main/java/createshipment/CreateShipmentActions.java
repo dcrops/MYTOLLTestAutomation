@@ -576,8 +576,8 @@ public class CreateShipmentActions {//Nishant
 				PageBase.MaximumWaitForElementEnabled();
 				System.out.println("line 564");
 				SelectNotifySenderAndReceiver();
-				PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
-						CreateShipmentActions.notifyReceiverCheckBox);
+				/*PageBase.MoveToElement(CreateShipmentActions.notifySenderCheckBox,
+						CreateShipmentActions.notifyReceiverCheckBox);*/
 
 			}
 		}
