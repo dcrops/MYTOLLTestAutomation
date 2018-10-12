@@ -145,6 +145,7 @@ public class TollTasmaniaTest {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll(0, 250)");
 		BookAPickupActions.setQEMNo();
+		PageBase.MaximumWaitForElementEnabled_1();
 		// Select service
 		BookAPickupActions.EnterService(ServiceRefrigeration);
 		BookAPickupActions.EnterQuantity(NumberOfItems);
