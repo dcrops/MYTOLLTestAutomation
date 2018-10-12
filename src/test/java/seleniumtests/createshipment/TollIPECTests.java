@@ -33,7 +33,7 @@ public class TollIPECTests {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	@Test(groups = { "Shakeout Testing","E2E" })
+	@Test(groups = { "Shakeout Testing","E2E","CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress_CreateShipmentAndShipmentReview" })
 	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "AccountNumberTIPEC", "WhoPays", "whoPays", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -139,7 +139,7 @@ public class TollIPECTests {
 
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E","CreateShipment_TollIPEC_E2ETest_TID_920_Service_Fashion" })
 	@Parameters({ "TollCarrierTollIPEC", "ServiceFashion","AccountNumberTIPEC", "WhoPays", "whoPays", "Sender", "Receiver", "QuoteNumber",
 			"DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail", "ShipmentRef1",
 			"ShipmentRef2", "ItemTemplateName", "NumberOfItems","NumberOfGarments", "Length", "Width", "Height", "Weight", "ItemTemplateName2", "NumberOfItems2", "Length2", "Width2", "Height2", "Weight2",
@@ -196,7 +196,7 @@ public class TollIPECTests {
 		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 
 		CreateShipmentActions.EnterShipmentReference1(ShipmentRef1);
-		PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference1);
+		//PageBase.MoveToElement(CreateShipmentActions.shipmentReference1, CreateShipmentActions.shipmentReference1);
 		//BookAPickupActions.SelectItem(1);
 		//CreateShipmentActions.NumberOfItem(NumberOfItems);
 		BookAPickupActions.EnterItem(ItemTemplateName);
@@ -216,7 +216,7 @@ public class TollIPECTests {
 		// RateEnquiryActions.SelectBillingTypeTDF(1);
 
 		CreateShipmentActions.EnterSenderReference(ShipmentRef1, ShipmentRef2);
-		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
+		//PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
 		//jse.executeScript("scroll(0, 250)");
 		
 
@@ -259,7 +259,7 @@ public class TollIPECTests {
 	
 	}
 	
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E","CreateShipment_TollIPEC_E2ETest_TID_920_Service_RoadExpress_Z_ConsolidateShipments" })
 	@Parameters({ "TollCarrierTollIPEC", "ServiceRoadExpress", "AccountNumberTIPEC", "WhoPays", "whoPays", "Sender",
 			"Receiver", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
