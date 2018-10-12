@@ -271,7 +271,8 @@ public class ShipmentReviewActions {
 		assertEquals(pItemDescription1,BaseWebdriver.driver.findElement(itemDescription1).getText());
 		assertEquals(pNumberOfItems, BaseWebdriver.driver.findElement(numberOfItems).getText());
 		// BaseWebdriver.driver.findElement(line1Arrowdown).click();
-		 PageBase.click(line1Arrowdown, 50);
+		// PageBase.click(line1Arrowdown, 50);
+		PageBase.click(numberOfItems, 50);
 		 PageBase.MaximumWaitForElementEnabled();
 		assertEquals(pItemDescriptionHeading, BaseWebdriver.driver.findElement(itemDescriptionHeading).getText());
 		assertEquals(pItemsHeading,BaseWebdriver.driver.findElement(itemsHeading).getText());
