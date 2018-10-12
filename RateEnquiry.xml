@@ -33,7 +33,7 @@
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
 		<parameter name="ServiceParcelsSameDays" value="Parcels - Same Day" />
 		<parameter name="ServiceAusWideSatchel" value="Auswide 3kg Satchel - Overnight" />
-		<parameter name="ServiceGlobalExpressParcels" value="global - Express Parcels" />
+		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
 
 		<!---Toll Intermodal test data -->
 		<parameter name="TIAccountNo" value="5685" />

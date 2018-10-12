@@ -27,7 +27,7 @@ public class Toll_Add_Template {
 	@BeforeMethod(alwaysRun = true)
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.Username1, BaseWebdriver.Password);
+		MyTollHomePageActions.Login(BaseWebdriver.SitUsername2, BaseWebdriver.Password);
 		
 	}
 	
@@ -168,6 +168,7 @@ public class Toll_Add_Template {
 		MyTollHomePageActions.ClickMenu();
 		Reporter.log("User Navigates to Rate Enquiry Page to Verify Template");
 		MyTollHomePageActions.ClickGetRateEnquiery();
+		PageBase.MaximumWaitForElementEnabled_1();
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterService(Service);
 		BookAPickupActions.SelectAccountNumber1();
@@ -190,13 +191,14 @@ public class Toll_Add_Template {
 		MyTollHomePageActions.ClickMenu();
 		Reporter.log("User Navigates to Create Shipment Page to Verify Template"); 
 		CreateShipmentActions.ClickShipment();
+		PageBase.MaximumWaitForElementEnabled_1();
 		//BookAPickupActions.EnterTollCarrier(Carrier);
 		RateEnquiryActions.EnterTollCarrier(Carrier);
 		CreateShipmentActions.EnterService(Service);
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(1);
+		CreateShipmentActions.SelectReceiver(2);
 		ManifestActions.SelectShipmentConsolidated();
 		
 		//User Enters Template Details and verifies line item

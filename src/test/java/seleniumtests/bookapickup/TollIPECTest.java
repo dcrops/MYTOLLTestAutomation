@@ -75,12 +75,13 @@ public class TollIPECTest {
 		// BookAPickupActions.selectContainFoodItem();
 
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectDispatchDate();
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+
 		BookAPickupActions.EnterReferenceNumber("123456789");
 		BookAPickupActions.SelectPickupFrom(1);
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
+		BookAPickupActions.selectDispatchDate();
+		BookAPickupActions.selectReadyTime();
+		BookAPickupActions.selectClosingTime();
 		BookAPickupActions.ClickReviewBook();
 
 		ReviewYourPickupActions.ClickConfirmPickup();
@@ -127,12 +128,13 @@ public class TollIPECTest {
 		// BookAPickupActions.selectContainFoodItem();
 
 		jse.executeScript("scroll(500, 800)");
-		BookAPickupActions.selectDispatchDate();
-		BookAPickupActions.selectReadyTime();
-		BookAPickupActions.selectClosingTime();
+
 		BookAPickupActions.EnterReferenceNumber("123456789");
 		BookAPickupActions.SelectPickupFrom(1);
 		BookAPickupActions.EnterSpecialInstructions(specialIns);
+		 BookAPickupActions.selectDispatchDate();
+		 BookAPickupActions.selectReadyTime();
+		 BookAPickupActions.selectClosingTime();
 		// Submit Book a pickup details
 		BookAPickupActions.ClickReviewBook();
 		BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
