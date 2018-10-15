@@ -1016,11 +1016,8 @@ public class BookAPickupActions {
 	public static void EnterDestinationNZ(String pDestination, String pDestinationItem) {
 
 		PageBase.MaximumWaitForElementEnabled();
-		PageBase.retryingFindClick(destination);
-		PageBase.waitForElement(destination, 10);
-		PageBase.SendKeysTo(destination, pDestination, 20);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li/div[text()='"+pDestinationItem+"']"),10);
+		PageBase.sendText(destination,10,pDestination);
+		PageBase.click(By.xpath("//*[@id=\"item-details-sub-form\"]/div[1]/div[2]/div/div/ul/li/div[text()='"+pDestinationItem+"']"),10);
 			
 	}
 
@@ -1132,11 +1129,17 @@ public class BookAPickupActions {
 
 	public static void EnterLengthWidthHeightVolumeWeight(String plength, String pwidth, String pheight,
 			String pweight) {
+
+		System.out.println("lenght -"+plength);
+		System.out.println("Width - "+pwidth);
+		System.out.println("Height - "+pheight);
+		System.out.println("Wight - " +pweight);
 		try {
 				PageBase.sendText(length, 50, plength);
 				PageBase.sendText(width, 50, pwidth);
 				PageBase.sendText(height, 50, pheight);
 				PageBase.sendText(weight, 50, pweight);
+				PageBase.sendText(length, 50, plength);
 			}
 
 		catch (Exception ex) {
