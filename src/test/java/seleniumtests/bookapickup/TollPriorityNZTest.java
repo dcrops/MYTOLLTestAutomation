@@ -141,10 +141,14 @@ public class TollPriorityNZTest {
 
 	public void BookAPickup_TollPriority_NZ_E2ETest_TID_619_Service_ParcelsOffPeak_SalesforceVerification(String TollCarrier,
 			String ServiceParcelsOffPeak, String AccountNumberTollPrioNZ, Integer locationIndex,String Receiver,
-			String ItemTemplateName, String Length, String NumberOfItems, String Width, String Height, String Weight,
+			String ItemTemplateName, String NumberOfItems, String Length,  String Width, String Height, String Weight,
 			String DGGoodsNo, String palletSpace, String reference, String destination, String DestinationNZPostcode,
 			String destinationItem, String specialIns) throws Exception {
-
+				System.out.println("noitem -" +NumberOfItems);
+				System.out.println("lenght -"+Length);
+				System.out.println("Width - "+Width);
+				System.out.println("Height - "+Height);
+				System.out.println("Wight - " +Weight);
 		BookAPickupActions.EnterTollCarrier(TollCarrier);
 
 		BookAPickupActions.EnterAccountNumber(AccountNumberTollPrioNZ);
@@ -191,12 +195,14 @@ public class TollPriorityNZTest {
 
 		BookAPickupActions.SelectItemDescription();
 		BookAPickupActions.EnterDestinationNZ(destination, destinationItem);// ,destination);
-		PageBase.MaximumWaitForElementEnabled();
-		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 
-		String TotalWeight = Weight + " kg";
+		BookAPickupActions.EnterLengthWidthHeightVolumeWeight(Length, Width, Height, Weight);
 		BookAPickupActions.EnterQuantity(NumberOfItems);
-		jse.executeScript("scroll(100, 500)");
+		String TotalWeight = Weight + " kg";
+
+
 		BookAPickupActions.SelectDangerousGoods(2);
 
 		// Enter Pickup details

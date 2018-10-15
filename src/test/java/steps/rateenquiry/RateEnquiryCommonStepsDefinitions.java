@@ -104,6 +104,7 @@ public class RateEnquiryCommonStepsDefinitions {
 			String s = shipment.get("Whopays");
 			CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
 			RateEnquiryActions.ShipmentSenderSelect(shipment.get("Sender"));
+			PageBase.MaximumWaitForElementEnabled_1();;
 			RateEnquiryActions.ShipmentReceiverSelect(shipment.get("Receiver"));
 			System.out.println("User checks for shipment Consolidation");
 			CreateShipmentActions.SelectShipmentConsolidationContinue();

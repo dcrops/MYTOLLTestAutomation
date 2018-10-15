@@ -34,19 +34,12 @@
 	     	<class name="runners.bookapickup.BookAPickupTestRunner" />
 	     	<class name="runners.manifest.ManifestTestRunner"/>
 	     	<class name="runners.rateenquiry.RateEnquiryTestRunner"/>
-	<!--      	<class name="finance.FinancialTestRunner"/> -->
 	     	<class name="runners.advancedsearch.AdvancedSearchTestRunner"/>
 			<class name="runners.createshipment.CreateShipmentTestRunner" />
 	     	<class name="runners.returns.ReturnsTestRunner"/>
 	     	<class name="runners.dashboard.DashboardTestRunner"/>
 	     	<class name="runners.stationery.StationeryTestRunner"/>
-			
-			<!-- Blocked>   <class name="createshipment.CreateShipmentTestRunner" /><class name="bookapickup.BookAPickupTestRunner" />
-			<class 	name="manifest.ManifestTestRunner"/> <class name="advancedsearch.AdvancedSearchTestRunner"/>
-				<class name="rateenquiry.RateEnquiryTestRunner"/> <class name="finance.FinancialTestRunner"/>
-				<class name="dashboard.DashboardTestRunner"/> <class name="returns.ReturnsTestRunner"/>
-				<class name="stationery.StationeryTestRunner"/> <class name="trackandtrace.TollFAST_TAndTTestRunner"/>
-				<class name="trackandtrace.TrackAndTraceTestRunner"/> </Blocked -->
+
 		</classes>
 	</test> <!-- Test -->
 

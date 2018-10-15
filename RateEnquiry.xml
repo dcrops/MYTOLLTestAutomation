@@ -15,7 +15,7 @@
 
 		<!---Services test data -->
 
-		<parameter name="ServiceGlobalExpressDocuments" value="global - Express Documents" />
+		<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
 		<parameter name="ServiceDGFreight" value="DG Freight" />
 		<parameter name="ServiceExpress" value="Express" />
 		<parameter name="ServiceGeneral" value="General" />

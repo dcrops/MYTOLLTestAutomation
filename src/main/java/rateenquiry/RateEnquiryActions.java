@@ -624,6 +624,7 @@ public class RateEnquiryActions {
 		PageBase.sendText(BookAPickupActions.width, 2, pwidth );
 		PageBase.sendText(BookAPickupActions.height, 2, pheight);
 		PageBase.sendText(RateEnquiryActions.weight, 2, pweight);
+		PageBase.sendText(BookAPickupActions.length, 2, plength);
 	}
 	
 	public static void verifyNoOfItemsLengthWidthHeightVolumeWeight(String NumberOfItems, String plength, String pwidth, String pheight,
@@ -697,14 +698,14 @@ public class RateEnquiryActions {
 	public static void ShipmentSenderSelect(String Sender) {
 		PageBase.MediumWaitForElementEnabled_1();
 		PageBase.sendText(CreateShipmentActions.senderTextfield, 5, Sender);
-		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"sender-selector\"]//*/div[text()='"+Sender+"']"), 5);
 	}
 	
 	public static void ShipmentReceiverSelect(String Receiver) {
-		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.sendText(CreateShipmentActions.receiverTextfield, 5, Receiver);
-		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.click(By.xpath("//*[@id=\"receiver-selector\"]//*/div[text()='"+Receiver+"']"), 5);
 	}
 	
