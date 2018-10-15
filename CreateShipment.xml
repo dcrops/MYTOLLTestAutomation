@@ -350,8 +350,8 @@
 	<classes>
 
 
-		
-		<class name="seleniumtests.createshipment.TollPriorityAUSTests" />
+		<class name="seleniumtests.createshipment.IntermodalSpecializedTests" />
+		<!--<class name="seleniumtests.createshipment.TollPriorityAUSTests" />-->
 		<class name="seleniumtests.createshipment.TollPriorityNZ" />
 		<class name="seleniumtests.createshipment.TollIPECTests" />
 		<class name="seleniumtests.createshipment.TollTasmaniaTests" />
