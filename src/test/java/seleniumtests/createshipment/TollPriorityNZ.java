@@ -297,7 +297,7 @@ public class TollPriorityNZ {
 
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E","CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_EconomyPacificAirportToAirport" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceEconomyPacificAirportToAirport", "WhoPays", "whoPays", "Sender",
 			"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 			"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",

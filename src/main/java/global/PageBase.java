@@ -85,6 +85,7 @@ public class PageBase
 		}
 		//WebElement element=BaseWebdriver.driver.findElement(ObjectLocater);
 		//WebElement element= FindElement(ObjectLocater);
+       moveToElement(ObjectLocater);
 		return (new WebDriverWait(BaseWebdriver.driver, secsToWait)).until(ExpectedConditions.visibilityOfElementLocated(ObjectLocater)); //.visibilityOfElementLocated(ObjectLocater)); //.presenceOfElementLocated(ObjectLocater));//.visibilityOf());
 	}
 
@@ -277,8 +278,8 @@ public class PageBase
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		jse.executeScript("scroll("+coord1+", "+coord2+")");
 		}
-	
-	public static void MoveToElement(By path1,By path2) {
+
+		public static void MoveToElement(By path1,By path2) {
 		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.driver;
 		try {
 			WebElement element = FindElement(path1);

@@ -14,7 +14,7 @@
 
 		<!---Services test data -->
 
-		<parameter name="ServiceGlobalExpressDocuments" value="global - Express Documents" />
+		<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
 		<parameter name="ServiceDGFreight" value="DG Freight" />
 		<parameter name="ServiceExpress" value="Express" />
 		<parameter name="ServiceGeneral" value="General" />
@@ -181,7 +181,7 @@
 
 		<!---Services test data -->
 
-		<parameter name="ServiceGlobalExpressDocuments" value="global - Express Documents" />
+		<!--<parameter name="ServiceGlobalExpressDocuments" value="Global - Express Documents" />
 		<parameter name="ServiceDGFreight" value="DG Freight" />
 		<parameter name="ServiceExpress" value="Express" />
 		<parameter name="ServiceGeneral" value="General" />
@@ -200,7 +200,7 @@
 		<parameter name="ServiceFashion" value="Fashion" />
 		<parameter name="ServiceEconomyPacificAirportToAirport"
 			value="Economy Pacific-Airport to Airport" />
-		<parameter name="ServiceGlobalExpressParcels" value="global - Express Parcels" />
+		<parameter name="ServiceGlobalExpressParcels" value="global - Express Parcels" />-->
 
 		<!---Create shipment Test data -->
 		<parameter name="AccountNumberTINTER" value="371065" />
@@ -342,9 +342,8 @@
 	<groups>
 	    <run>
 
-	<include name="E2E"  />
-	     <!--  <include name="1234"  /> -->
-	    
+		<include name="E2E"  />
+	     <!-- <include name="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments"  />-->
 	    </run>
 	 </groups>	
 	
@@ -352,7 +351,7 @@
 
 
 		<class name="seleniumtests.createshipment.IntermodalSpecializedTests" />
-		<class name="seleniumtests.createshipment.TollPriorityAUSTests" />
+		<!--<class name="seleniumtests.createshipment.TollPriorityAUSTests" />-->
 		<class name="seleniumtests.createshipment.TollPriorityNZ" />
 		<class name="seleniumtests.createshipment.TollIPECTests" />
 		<class name="seleniumtests.createshipment.TollTasmaniaTests" />
