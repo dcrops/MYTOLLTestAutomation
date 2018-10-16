@@ -442,15 +442,15 @@ public class CreateShipmentActions {//Nishant
 	}
 
 	public static void SelectShipmentConsolidationConsolidate() {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+
 		// PageBase.MaximumWaitForElementEnabled();
 		try {
-			boolean results = BaseWebdriver.driver.findElement(shipmentConsolidatedMSGHeading).isDisplayed();
+			boolean results = PageBase.waitForElementToBeVisible(shipmentConsolidatedMSGHeading, 50).isDisplayed();
 			System.out.println("shipmentConsolidatedMSGHeading");
 			BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
 			System.out.println("click shipmentConsolidatedBtn");
-			if (results == true) {
+			if (results == true)
+			{
 				boolean results2 = BaseWebdriver.driver.findElement(shipmentConsolidatedRadioBtn).isDisplayed();
 				System.out.println("results2" + results2);
 				Actions action = new Actions(BaseWebdriver.driver);
@@ -460,6 +460,10 @@ public class CreateShipmentActions {//Nishant
 				BaseWebdriver.driver.findElement(shipmentConsolidatedBtn).click();
 				PageBase.MaximumWaitForElementEnabled();
 
+			}
+			else
+			{
+				SelectNotifySenderAndReceiver();
 			}
 		}
 
@@ -1375,25 +1379,10 @@ public class CreateShipmentActions {//Nishant
 
 		//PageBase.MoveToElement(BookAPickupActions.specialInstructions, BookAPickupActions.specialInstructions);
 		//BaseWebdriver.driver.findElement(reviewCreateShipmentBtn).click();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+
 		PageBase.click(reviewCreateShipmentBtn, 20);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
+
 		CloseManifestScreenGoToShipmentView();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.MaximumWaitForElementEnabled();
 
 	}
 
