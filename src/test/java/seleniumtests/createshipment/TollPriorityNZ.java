@@ -118,7 +118,7 @@ public class TollPriorityNZ {
 
 	}
 
-	@Test(groups = {"E2E" })
+	@Test(groups = {"E2E","CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_ParcelsOffPeak" })
 	@Parameters({ "TollCarrierTollPrioNZ", "ServiceParcelsOffPeak", "WhoPays", "whoPays", "Sender", "Receiver",
 			"QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail", "ReceiverEmail",
 			"ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width", "Height", "Weight",
@@ -394,7 +394,7 @@ public class TollPriorityNZ {
 
 	}
 	
- 	@Test(groups = {"E2E" })
+ 	@Test(groups = {"E2E","CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_EconomyPacificAirportToAirport_ConsolidateShipment" })
 		@Parameters({ "TollCarrierTollPrioNZ", "ServiceEconomyPacificAirportToAirport", "WhoPays", "whoPays", "Sender",
 				"ReceiverTGX", "QuoteNumber", "DropOffDepot", "CollectionDepot", "DGContactName", "SenderEmail",
 				"ReceiverEmail", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName", "NumberOfItems", "Length", "Width",
@@ -424,12 +424,12 @@ public class TollPriorityNZ {
 		 	BookAPickupActions.EnterTollCarrier(TollCarrier);
 			CreateShipmentActions.EnterService(ServiceEconomyPacificAirportToAirport);
 			BookAPickupActions.SelectAccountNumber1();
-			String AccountNumber = BookAPickupActions.GetAccountNumber().toString();
+			String AccountNumber = BookAPickupActions.GetAccountNumber();
 			System.out.println(AccountNumber);
 			CreateShipmentActions.SelectWhoPays(WhoPays);
 			CreateShipmentActions.SelectSender(Sender);
 			CreateShipmentActions.EnterReceiver(Receiver);
-			String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
+			String sender = CreateShipmentActions.GetSenderCompanyName().replaceAll("\\s", "");
 			
 			System.out.println(sender);
 			String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
@@ -442,7 +442,7 @@ public class TollPriorityNZ {
 			System.out.println(receiverLocation);
 			CreateShipmentActions.SelectShipmentConsolidationConsolidate();
 			
-			PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
+			//PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
 			CreateShipmentActions.ClickReviewCreateShipment();
 
 			// Shipment Review
