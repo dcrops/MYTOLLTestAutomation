@@ -343,15 +343,21 @@
 	    <run>
 
 		<include name="E2E"  />
-	     <!-- <include name="CreateShipment_TollPriorityAUS_E2ETest_TID_920_Service_GlobalExpressDocuments"  />-->
+	     <!-- <include name="CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_EconomyPacificAirportToAirport"  />
+			<include name="CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_EconomyPacificAirportToAirport_ConsolidateShipment"/>
+			<include name="CreateShipment_TollPriorityNZ_E2ETest_TID_921_Service_ParcelsOffPeak"/>
+			<include name="CreateShipment_TollTasmania_E2ETest_TID_920_Service_General"/>
+			<include name="CreateShipment_TollTasmania_E2ETest_TID_920_Service_Refrigeration"/>-->
+
+
 	    </run>
 	 </groups>	
-	
+
 	<classes>
 
 
-		<class name="seleniumtests.createshipment.IntermodalSpecializedTests" />
-		<!--<class name="seleniumtests.createshipment.TollPriorityAUSTests" />-->
+        <class name="seleniumtests.createshipment.IntermodalSpecializedTests" />
+        <class name="seleniumtests.createshipment.TollPriorityAUSTests" />
 		<class name="seleniumtests.createshipment.TollPriorityNZ" />
 		<class name="seleniumtests.createshipment.TollIPECTests" />
 		<class name="seleniumtests.createshipment.TollTasmaniaTests" />
