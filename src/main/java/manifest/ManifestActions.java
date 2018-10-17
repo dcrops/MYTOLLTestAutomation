@@ -216,13 +216,12 @@ public class ManifestActions {
 	}
 	catch(Exception ex)
 	{
-	
 
-			ShipmentReviewActions.ClickAddToManifestManually();
-
-			System.out.println("ClickAddToManifestManually");
-			ManifestActions.MoveToManifestAndCreateNewManifest(pNewManifestName);
-			System.out.println(" NewManifestName passed ");
+		System.out.println("add to manifest tile is not there.");
+//			ShipmentReviewActions.ClickAddToManifestManually();
+//			System.out.println("ClickAddToManifestManually");
+//			ManifestActions.MoveToManifestAndCreateNewManifest(pNewManifestName);
+//			System.out.println(" NewManifestName passed ");
 		
 		
 	}
