@@ -26,7 +26,7 @@ public class ManifestIntermodalSpecializedTests {
 		CreateShipmentActions.ClickShipment();
 	}
 
-	
+
 	@Test(groups = { "Shakeout Testing", "E2E"})
 	@Parameters({"TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
@@ -155,6 +155,7 @@ public class ManifestIntermodalSpecializedTests {
 		//ManifestActions.ClickAddToManifestManually();
 		String NewManifestName=ManifestActions.RandomManifestName(ManifestName);
 		System.out.println(" NewManifestName=  "+  NewManifestName);
+		PageBase.click(ShipmentReviewActions.continueBtn,50);
 		//ShipmentReviewActions.ClickAddToManifestManually();
 		//ManifestActions.MoveToManifestAndCreateNewManifest(NewManifestName);
 		//System.out.println(" NewManifestName passed ");
@@ -162,9 +163,9 @@ public class ManifestIntermodalSpecializedTests {
 		
 		
 	}
-	
 
-	
+
+
 	
 	@Test(groups = { "Shakeout Testing", "E2E","20082018" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
@@ -232,7 +233,8 @@ public class ManifestIntermodalSpecializedTests {
 		System.out.println("RandomManifestName=  "+  RandomManifestName);
 		ManifestActions.AcceptAddToManifestToForAnExistingManifestSubmittingCreateshipment(RandomManifestName);
 		System.out.println("passed1 ");
-	/*	ShipmentReviewActions.ClickAddToManifestManually();
+	/*
+		ShipmentReviewActions.ClickAddToManifestManually();
 
 		String manifestNameFromSaveManifest=ManifestActions.MoveToManifestAndSaveManifest(); 
 		System.out.println("manifestNameFromSaveManifest =  "+ manifestNameFromSaveManifest);
@@ -243,14 +245,14 @@ public class ManifestIntermodalSpecializedTests {
 		//System.out.println("Manifest name =  "+ manifestName);
 		System.out.println("manifestNameHading =  "+ manifestNameHading);	
 		manifestNameFromAddToManifest.equalsIgnoreCase(manifestName);
-		assertEquals(manifestNameFromSaveManifest.equalsIgnoreCase(manifestNameHading), true);*/
+		assertEquals(manifestNameFromSaveManifest.equalsIgnoreCase(manifestNameHading), true);//**/
 		
 	}
 	
 	////////////////////////////////////////////////////
 	
 	
-	
+
 	
 	@Test(groups = { "Shakeout Testing", "E2E" })
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",

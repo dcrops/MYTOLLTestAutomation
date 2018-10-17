@@ -32,7 +32,7 @@
 		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
 
 		<!---Create shipment Test data -->
-		<parameter name="AccountNumberTINTER" value="106119" />
+		<parameter name="AccountNumberTINTER" value="614060" />
 		<parameter name="AccountNumberTNQX" value="371065" />
 		<parameter name="AccountNumberTTas" value="100428" />
 		<parameter name="AccountNumberTIPEC" value="FC3333" />
