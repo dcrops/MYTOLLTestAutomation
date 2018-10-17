@@ -702,14 +702,18 @@ public class RateEnquiryActions {
 		PageBase.click(By.xpath("//*[@id=\"sender-selector\"]//*/div[text()='"+Sender+"']"), 5);
 	}
 	
-	public static void ShipmentReceiverSelect(String Receiver) {
-		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.sendText(CreateShipmentActions.receiverTextfield, 5, Receiver);
-		PageBase.MaximumWaitForElementEnabled_1();
+
+	public static void ShipmentReceiverSelect(String Receiver)
+	{
+		PageBase.MediumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.waitForElement(CreateShipmentActions.receiverTextfield,50);
+		PageBase.sendText(CreateShipmentActions.receiverTextfield, 50, Receiver);
+		PageBase.MediumWaitForElementEnabled_1();
+
 		PageBase.click(By.xpath("//*[@id=\"receiver-selector\"]//*/div[text()='"+Receiver+"']"), 5);
 	}
-	
-	
+
 	
 	public static void VerifyLineItem(String ItemTemplateName, String BillingType, String pnumberOfItem, String QtyType, String plength, String pwidth, String pheight,
 			String pweight) {

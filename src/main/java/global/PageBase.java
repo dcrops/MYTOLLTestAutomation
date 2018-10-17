@@ -493,7 +493,31 @@ public class PageBase
 		}
 		
 	}
-	
+
+	public static Boolean verifyTextExist(By locator, String expectedText, int secsToWait){
+		try {
+			//String getText = BaseWebdriver.driver.findElement(locator).getText();
+			String getText= PageBase.GetText(locator, secsToWait);
+			System.out.println(getText);
+
+			if (getText.equalsIgnoreCase(expectedText)){
+				Reporter.log("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getText);
+				System.out.println("Expected Text : "+expectedText+ " Matched the Text on Screen :" +getText);
+				return true;
+
+			}else{
+				Reporter.log("FAILED: Expected Text : "+expectedText+ " DOES NOT Match the Text on Screen :" +getText);
+				return false;
+
+			}
+		}
+		catch(Exception e) {
+			Reporter.log("xpath not found: " + locator+"<br>");
+			return false;
+		}
+
+	}
+
 	public static boolean verifyTextExistsBoolean(By locator, String expectedText){
 		try {
 			//String getText = BaseWebdriver.driver.findElement(locator).getText();
@@ -519,10 +543,21 @@ public class PageBase
 		
 		 
 	}
-	
-	
-	
-	
+
+
+
+
+	public static Boolean VerifyPageExist(By locator){
+
+		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 50);
+		WebElement we =  wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+		if(we==null)
+		{return false;}
+		else
+		{return true;}
+
+	}
 	
 	
 	

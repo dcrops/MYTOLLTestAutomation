@@ -29,10 +29,10 @@
 		<parameter name="ServiceRailDangerousGoods" value="Rail Dangerous Goods" />
 		<parameter name="ServiceDGExpress" value="DG Express" />
 		<parameter name="ServiceParcelsOffPeak" value="Parcels - Off Peak" />
-		<parameter name="ServiceGlobalExpressParcels" value="global - Express Parcels" />
+		<parameter name="ServiceGlobalExpressParcels" value="Global - Express Parcels" />
 
 		<!---Create shipment Test data -->
-		<parameter name="AccountNumberTINTER" value="371065" />
+		<parameter name="AccountNumberTINTER" value="106119" />
 		<parameter name="AccountNumberTNQX" value="371065" />
 		<parameter name="AccountNumberTTas" value="100428" />
 		<parameter name="AccountNumberTIPEC" value="FC3333" />

@@ -87,7 +87,17 @@ public class TollPriorityAUCommercialInvoice {
 		//Submit Shipment and Print Manifest
 		Reporter.log("User Clicks Review Shipment");
 		PageBase.click(CreateShipmentActions.reviewCreateShipmentBtn,5);
-		
+
+		/////////Nishant///////////////
+		/*if(PageBase.VerifyPageExist(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/header/h2[text()='Add to Manifest']")))
+		{
+
+			//Manifest page is present, then follow these actions
+			PageBase.click(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[2]/input"),50);
+			PageBase.click(By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[2]/div[1]/span[1]/a"),50);
+			PageBase.click(ManifestActions.PrintCloseManifest,50);
+		}*/
+		/////////////
 		//Print Labels to enable commercial Invoice button
 		ManifestActions.printLabelsandEnableComercialInvoice();
 		

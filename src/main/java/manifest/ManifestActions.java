@@ -105,7 +105,7 @@ public class ManifestActions {
 	public static By LabelTab = By.xpath("//*[@id=\"print-mani-popup\"]//*//section/ul/li/a[@title=\"Labels\"]");
 	public static By ShipmentDownloadPDF = By.xpath("//*[@id=\"manifest-ship-download-btn\"]");
 	public static By manifestLabelDownloadPDF = By.xpath("//*[@id=\"manifest-label-download-btn\"]");
-	public static By ShipmentManifestPopupClose = By.xpath("//*[@id=\"print-mani-popup\"]/div/div/a/i");
+	public static By ShipmentManifestPopupClose = By.xpath("//*[@id=\"print-mani-popup\"]/div/div/a");
 	public static By ShipmentManifestID = By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]//*//ul/li[2]/div[1]/p");
 	public static By ShipmentManifestStatus = By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]//*//ul/li[2]/div[2]/p");
 	public static By ShipmentManifestTotalNo = By.xpath("//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]/div/div/div/div/div[1]/div[2]/ul/li");
@@ -115,8 +115,10 @@ public class ManifestActions {
 	public static By RePrintLableCheckBox = By.xpath("//*[@id=\"shipment-check\"]");
 	public static By RePrintShipmentCheckBox = By.xpath("//*[@id=\"cb-header-ship\"]");
 	public static By PrintCloseShipment = By.linkText("PRINT & CLOSE SHIPMENT");
+	public static By PrintCloseManifestPrint = By.xpath("//*[@id=\"ship-print\"]");
 	public static By commericalInvoiceErrorMsg= By.xpath("//*[@id=\"label-comercial-message\"]//*//p");
 	public static By labelDownloadPDF = By.xpath("//*[@id=\"print-mani-popup\"]//*//footer[1]/a[3]");
+	public static By createCommericalInvoicePopup = By.xpath("//*[@id=\"comercial-invoice-popup\"]");
 	public static By createCommericalInvoice= By.xpath("//*[@id=\"commercial-invoice\"]");
 	public static By commericalInvoiceSenderContactName= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[2]/div/form/div[1]/div/p");
 	public static By commericalInvoiceSenderCompanyName= By.xpath("//*[@id=\"commercial-invoice\"]/div[1]/div[2]/div/form/div[2]/div/p");
@@ -643,25 +645,42 @@ public class ManifestActions {
 	}
 	
 	public static void printLabelsandEnableComercialInvoice(){
-		PageBase.click(ManifestActions.PrintCloseShipment, 10);
+
+		/*try {
+			PageBase.click(ManifestActions.PrintCloseManifestPrint,50);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			//if the multiple Manidest open screen shows up
+			PageBase.click(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[2]/input"),50);
+			PageBase.click(By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[2]/div[1]/span[1]/a"),50);
+			PageBase.click(ManifestActions.PrintCloseManifest,50);
+		}*/
+
+		PageBase.click(ManifestActions.PrintCloseShipment, 50);
+//		PageBase.click(By.xpath("//*[@id=\"label-checkbox\"]"),50);
+//		PageBase.click(ManifestActions.labelDownloadPDF,50);
 		PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.verifyTextExist(ManifestActions.commericalInvoiceErrorMsg, "Please note that it is compulsory to have a Commercial invoice. If you do not currently have a commercial invoice, you may create one after printing the label using the Create Commercial Invoice selection.");
-		PageBase.click(ManifestActions.labelDownloadPDF, 10);
+		PageBase.click(ManifestActions.labelDownloadPDF, 100);
 
 		//Close Pop Up
+		/*PageBase.MaximumWaitForElementEnabled_1();
 		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.waitForElement(ManifestActions.ShipmentManifestPopupClose, 2);
-		PageBase.MaximumWaitForElementEnabled_1();
-		PageBase.click(ManifestActions.ShipmentManifestPopupClose, 2);
-		PageBase.MinimumWaitForElementEnabled_1();
-		PageBase.MinimumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();*/
+		//PageBase.waitForElement(ManifestActions.ShipmentManifestPopupClose, 2);
+//		PageBase.MaximumWaitForElementEnabled_1();
+
+//		PageBase.waitForElement(ManifestActions.ShipmentManifestPopupClose,50);
+//		PageBase.click(ManifestActions.ShipmentManifestPopupClose, 100);
+//		PageBase.click(ManifestActions.ShipmentManifestPopupClose, 100);
+//		PageBase.MinimumWaitForElementEnabled_1();
+//		PageBase.MinimumWaitForElementEnabled_1();
 	}
 	
 	public static void verifyCommercialInvoicePageItems() {
 		
-		PageBase.click(ManifestActions.createCommericalInvoice, 10);
+		PageBase.click(ManifestActions.createCommericalInvoicePopup, 50);
 		
 		//Shipment Details Page Item Verifications
 		String[] shipmentDetails = {"Airway Bill (Shipment Number)", "Date of Export","No. of Pieces","Total Weight (kgs)","Declared value"};
