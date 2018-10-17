@@ -1032,7 +1032,7 @@ public class IntermodalSpecializedTest {
 
 	} 
 
-	  @Test(groups = { "E2E","123"})
+	  @Test(groups = { "E21","123"})
 		@Parameters({ "TollCarrierIntermodalSpecialized", "AccountNumberTINTER","ServiceGeneral", "locationIndex", "ItemTemplateName",
 				"NumberOfItems", "Length", "Width", "Height", "Weight", "palletSpace", "Destination", "specialIns" })
 	 public void BookAPickup_IntermodalSpecialized_E2ETest_TID_295_Service_General_PayerAccountNumber_Length_Check(String TollCarrier, String AccountNumberTINTER,
@@ -1079,9 +1079,7 @@ public class IntermodalSpecializedTest {
 			// Submit Book a pickup details
 			BookAPickupActions.ClickReviewBook();
 			BookAPickupActions.ValidatePayersAccountNumber();
-			BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
-			BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-			PageBase.MaximumWaitForElementEnabled();
+
 
 			// Confirm Pickup and Verify pickup confirmation details
 			ReviewYourPickupActions.ClickConfirmPickup();

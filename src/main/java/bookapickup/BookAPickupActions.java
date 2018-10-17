@@ -470,9 +470,9 @@ public class BookAPickupActions {
 	}
 
 	public static void EnterAccountNumber(String pAccountNumber) {
-		PageBase.MinimumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled_1();
 		//PageBase.SendKeysToNonEditableField(AccountNumberTextField, pAccountNumber, 15); 
-		PageBase.ClickOn(AccountNumberDropdown, 5);
+		PageBase.click(AccountNumberDropdown, 5);
 		PageBase.MaximumWaitForElementEnabled();
 		PageBase.SelectFrom(By.xpath("//*[@id=\"account-selector\"]/div/ul/li/div[text()='" + pAccountNumber + "']"),
 				15);
@@ -1778,7 +1778,8 @@ public class BookAPickupActions {
 		PageBase.ClickOn(location, 15);
 		PageBase.WaitForElement(BookAPickup_Add_Sender_Address, 5);
 		PageBase.ClickOn(BookAPickup_Add_Sender_Address, 10);
-		PageBase.ClickOn(AddAdressManually, 10);
+		//PageBase.ClickOn(AddAdressManually, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
 		InputAddressDetails(pCompanyName, pAddAdressCountry, pAddAdressAddressLine1, pAddAdressAddressLine2, pAddAdressAddressSuburb, pAddAdressAddressPostcode, pEmail, pPhoneNumber, pSelectCountry);
 
 	}
@@ -1797,7 +1798,8 @@ public class BookAPickupActions {
 	}
 
 	private static void InputAddressDetails(String pCompanyName, String pAddAdressCountry, String pAddAdressAddressLine1, String pAddAdressAddressLine2, String pAddAdressAddressSuburb, String pAddAdressAddressPostcode, String pEmail, String pPhoneNumber, String pSelectCountry) {
-		PageBase.ClickOn(AddAdressManually, 10);
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.click(AddAdressManually, 10);
 		PageBase.SendKeysTo(AddAdressCompanyName, pCompanyName, 5);
 		PageBase.SendKeysTo(AddAdressCountryTGXTextField, pAddAdressCountry, 5);
 		PageBase.MediumWaitForElementEnabled();
@@ -2420,8 +2422,12 @@ public class BookAPickupActions {
 	
 	public static void ValidatePayersAccountNumber()
 	{
-		if(PageBase.findElement(addAccountNumberError, 50))
+		//if(PageBase.findElement(addAccountNumberError, 50))
+		if (PageBase.isElementNotPresent(addAccountNumberError,2,"Add account number"))
 		{
+		System.out.println("No Payer Account Number Error");
+	}
+		else{
 			Assert.fail();
 		}
 	}

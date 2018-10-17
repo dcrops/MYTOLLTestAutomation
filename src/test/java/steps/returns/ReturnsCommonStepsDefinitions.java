@@ -103,6 +103,7 @@ public class ReturnsCommonStepsDefinitions {
 			System.out.println("S  " + s);
 			CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
 			RateEnquiryActions.ShipmentSenderSelect(createReturn.get("Sender"));
+			PageBase.MaximumWaitForElementEnabled_1();
 			RateEnquiryActions.ShipmentReceiverSelect(createReturn.get("Receiver"));
 			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.sendText(MyTollHomePageActions.ReturnRAN, 5, createReturn.get("RAN"));
