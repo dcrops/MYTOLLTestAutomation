@@ -70,7 +70,7 @@ public class MYT_6079_StationeryOrderStationery
 			 * StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),
 			 * stationery.get("preprintFromContactName"));
 			 */
-			PageBase.MaximumWaitForElementEnabled();
+			//PageBase.MaximumWaitForElementEnabled();
 			StationeryActions.ClickAddDetails();
 
 		}
@@ -84,10 +84,10 @@ public class MYT_6079_StationeryOrderStationery
 			StationeryActions.ClickAddPreprintDetails();
 			StationeryActions.EnterPreprintFromDetails(stationery.get("PreprintFrom"),
 					stationery.get("preprintFromContactName"));
-			/*
-			 * StationeryActions.EnterPreprintToDetails(stationery.get("PreprintTo"),
-			 * stationery.get("preprintToContactName"));
-			 */
+
+			 StationeryActions.EnterPreprintToDetails(stationery.get("PreprintTo"),
+			 stationery.get("preprintToContactName"));
+
 			StationeryActions.ClickAddDetails();
 
 		}
@@ -138,7 +138,7 @@ public class MYT_6079_StationeryOrderStationery
 			 * PageBase.MaximumWaitForElementEnabled();
 			 * PageBase.MaximumWaitForElementEnabled();
 			 */
-			PageBase.WaitForElement(StationeryActions.increaseProductQtyInsideTheCart, 10);
+			//PageBase.WaitForElement(StationeryActions.increaseProductQtyInsideTheCart, 10);
 			StationeryActions.IncreaseProductQtyInsideTheCart();
 			assertEquals(StationeryActions.GetProductQtyInsideTheCart(), stationery.get("NoOfQtyIncrease"));
 			StationeryActions.DecreaseProductQtyInsideTheCart();

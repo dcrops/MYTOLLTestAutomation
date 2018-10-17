@@ -141,59 +141,57 @@ public class StationeryActions {
 	}
 	
 	public static void ClickAddPreprintDetails() {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(addPreprintDetails, 5);
-		PageBase.MaximumWaitForElementEnabled();
+		//PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(addPreprintDetails, 5);
+		//PageBase.MaximumWaitForElementEnabled();
 	}
 	
 	public static void ClickPreprintFrom() {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(preprintFromCheckbox1, 5);
+		//PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(preprintFromCheckbox1, 5);
 		
 		
 	}
 	
 	public static void ClickPreprintTo() {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(preprintToCheckbox1, 5);
+		//PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(preprintToCheckbox1, 5);
 		
 	}
 	
 	public static void ClickAddDetails() {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(addDetailsBtn, 5);
+		//PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(addDetailsBtn, 5);
 				
 	}
 	
 	public static void EnterPreprintFromDetails(String pPreprintFrom, String pPreprintFromContactName) {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.SendKeysTo(preprintFromTextfield, pPreprintFrom, 5);
-		PageBase.ClickOn(By.xpath("//*[@id=\"preprint-modal-from-address-selector-1\"]/div[2]/ul/li/div[text()='" + pPreprintFrom + "']"), 10); 
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.SendKeysTo(preprintFromContactName, pPreprintFromContactName, 5);
+
+		PageBase.sendText(preprintFromTextfield, 5, pPreprintFrom);
+		PageBase.click(By.xpath("//*[@id=\"preprint-modal-from-address-selector-1\"]/div[2]/ul/li/div[text()='" + pPreprintFrom + "']"), 10);
+		PageBase.sendText(preprintFromContactName, 5, pPreprintFromContactName);
 	
 	
 	}
 	
 	public static void EnterPreprintToDetails(String pPreprintTo, String pPreprintToContactName) {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.SendKeysTo(preprintToTextfield, pPreprintTo, 5);
-		PageBase.ClickOn(By.xpath("//*[@id=\"preprint-modal-to-address-selector-1\"]/div[2]/ul/li/div[text()='" + pPreprintTo + "']"), 10);  
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.SendKeysTo(preprintToContactName, pPreprintToContactName, 10);
+
+		PageBase.sendText(preprintToTextfield, 5,pPreprintTo);
+		PageBase.click(By.xpath("//*[@id=\"preprint-modal-to-address-selector-1\"]/div[2]/ul/li/div[text()='" + pPreprintTo + "']"), 10);
+		PageBase.sendText(preprintToContactName,  10, pPreprintToContactName);
 		
 	
 	}  
 	
 	public static void ClickAddToCart(String pProductName) {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(By.xpath("//*[@id=\"main-cont\"]//*//div/h4[text()='"+pProductName+"']//following::P[3]/button"), 5);
+
+		PageBase.click(By.xpath("//*[@id=\"main-cont\"]//*//div/h4[text()='"+pProductName+"']//following::P[3]/button"), 5);
 	
 	}
 
 	public static void ClickAddToCartProduct2() {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(addToCartProduct2, 5);
+		//PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(addToCartProduct2, 5);
 		
 	}
 	
@@ -271,27 +269,27 @@ public class StationeryActions {
 	}
 	
 	public static void EnterPreprintFromDetailsInsideTheCart(String pPreprintFrom, String pPreprintFromContactName) {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.SendKeysTo(preprintFromTextfieldInsideTheCart, pPreprintFrom, 5);
-		PageBase.ClickOn(By.xpath("//*[@id=\"preprint-modal-from-address-selector-1\"]/div[2]/ul/li/div[text()='" + pPreprintFrom + "']"), 5);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.SendKeysTo(preprintFromContactNameInsideTheCart, pPreprintFromContactName, 5);
+
+		PageBase.sendText(preprintFromTextfieldInsideTheCart,  5, pPreprintFrom);
+		PageBase.click(By.xpath("//*[@id=\"preprint-modal-from-address-selector-1\"]/div[2]/ul/li/div[text()='" + pPreprintFrom + "']"), 5);
+		//PageBase.MaximumWaitForElementEnabled();
+		PageBase.sendText(preprintFromContactNameInsideTheCart,  5, pPreprintFromContactName);
 	
 	}
 	
 	public static void EnterPreprintToDetailsInsideTheCart(String pPreprintTo, String pPreprintToContactName) {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.SendKeysTo(preprintToTextfieldInsideTheCart, pPreprintTo, 5);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(By.xpath("//*[@id=\"preprint-modal-to-address-selector-1\"]/div[2]/ul/li/div[text()='" + pPreprintTo + "']"), 5);
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.SendKeysTo(preprintToContactNameInsideTheCart, pPreprintToContactName, 5);
+
+		PageBase.sendText(preprintToTextfieldInsideTheCart,  5, pPreprintTo);
+		//PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(By.xpath("//*[@id=\"preprint-modal-to-address-selector-1\"]/div[2]/ul/li/div[text()='" + pPreprintTo + "']"), 5);
+		//PageBase.MaximumWaitForElementEnabled();
+		PageBase.sendText(preprintToContactNameInsideTheCart,  5, pPreprintToContactName);
 	
 	}
 	
 	public static void ClickAddDetailsInsideTheCart() {
-		PageBase.MaximumWaitForElementEnabled();
-		PageBase.ClickOn(addDetailsBtnInsideTheCart, 5);
+
+		PageBase.click(addDetailsBtnInsideTheCart, 5);
 				
 	}
 	
