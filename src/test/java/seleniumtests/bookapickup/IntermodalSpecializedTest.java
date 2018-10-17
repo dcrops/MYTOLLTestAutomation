@@ -1079,9 +1079,7 @@ public class IntermodalSpecializedTest {
 			// Submit Book a pickup details
 			BookAPickupActions.ClickReviewBook();
 			BookAPickupActions.ValidatePayersAccountNumber();
-			BookAPickupActions.SelectDestinationOnReviewBookAPickup(destination);
-			BookAPickupActions.ConfirmReadyTimeAndConfirmPickup();
-			PageBase.MaximumWaitForElementEnabled();
+
 
 			// Confirm Pickup and Verify pickup confirmation details
 			ReviewYourPickupActions.ClickConfirmPickup();

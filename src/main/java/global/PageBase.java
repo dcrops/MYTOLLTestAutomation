@@ -46,7 +46,7 @@ public class PageBase
 	
 	public static WebElement FindElement(By ObjectLocater) 
 	{
-		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 50);
+		WebDriverWait wait = new WebDriverWait(BaseWebdriver.driver, 30);
 		WebElement we = wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectLocater));
 		if (we == null) {
 			//logger.warn("elemet with: " + locator.toString() + " not found");
@@ -622,19 +622,22 @@ public class PageBase
 		
 	}
 	
-	public static void isElementNotPresent (By locator, int seconds, String itemDescription) {
+	public static boolean isElementNotPresent (By locator, int seconds, String itemDescription) {
 		try {
 			boolean isElementPresent = PageBase.FindElement(locator).isDisplayed();
 		
 		if (isElementPresent == true) {
-			Reporter.log("FAILED: Element : "+itemDescription+ " Exits on Screen");
-			Assert.fail("FAILED: Element : "+itemDescription+ " Exits on Screen");	
-			}
+			Reporter.log("FAILED: Element : " + itemDescription + " Exits on Screen");
+			Assert.fail("FAILED: Element : " + itemDescription + " Exits on Screen");
+
+		}
 		}
 		catch(Exception e) {
 				Reporter.log("Element : "+itemDescription+ " DOES NOT Exits on Screen");
 				System.out.println("Element : "+itemDescription+ " DOES NOT Exits on Screen");
-		}		
+
+		}
+		return true;
 	}
 	
 	public static void MaximumWaitForElementEnabled_1() {

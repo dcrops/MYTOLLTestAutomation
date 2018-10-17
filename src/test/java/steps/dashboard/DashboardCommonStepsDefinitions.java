@@ -72,6 +72,7 @@ public class DashboardCommonStepsDefinitions {
 			System.out.println("S2  " + s2);
 			CreateShipmentActions.SelectMode(Integer.parseInt(s2));
 			RateEnquiryActions.ShipmentSenderSelect(shipment.get("Sender"));
+			PageBase.MaximumWaitForElementEnabled_1();
 			RateEnquiryActions.ShipmentReceiverSelect(shipment.get("Receiver"));
 			System.out.println("User checks for shipment Consolidation");
 			PageBase.MediumWaitForElementEnabled_1();
@@ -91,6 +92,7 @@ public class DashboardCommonStepsDefinitions {
 			String s = shipment.get("Whopays");
 			CreateShipmentActions.SelectWhoPays(Integer.parseInt(s));
 			RateEnquiryActions.ShipmentSenderSelect(shipment.get("Sender"));
+			PageBase.MaximumWaitForElementEnabled_1();
 			RateEnquiryActions.ShipmentReceiverSelect(shipment.get("Receiver"));
 			System.out.println("User checks for shipment Consolidation");
 			PageBase.MediumWaitForElementEnabled_1();
