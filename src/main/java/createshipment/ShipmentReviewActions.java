@@ -136,7 +136,7 @@ public class ShipmentReviewActions {
 	public static By continueBtn=By.xpath("//*[@id=\"shipment-placeholder\"]/div[1]/div[2]/div[1]/span[1]/a"); 
 
 
-	public static By AddToManifestManuallyBtn=By.id("manually-create-manifest");
+	public static By AddToManifestManuallyBtn=By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div//input[contains(@value,'Add to Manifest')]");
 
 	
 	public static void VerifyDispatchDate(String pDispatchDate) {
