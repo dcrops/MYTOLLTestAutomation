@@ -1,9 +1,8 @@
 Feature: MYT_6079 Stationery - Order Stationery
 
-  Background: 
-    Given MyToll Toll Priority AU User logged in and has a Toll Priority AU Standard / Full Financial account and Stationery function is enabled
-
+  @User_has_the_ability_to_order_Toll_Priority_Stationery_online
   Scenario: User has the ability to order Toll Priority Stationery online
+    Given MyToll Toll Priority AU User logged in and has a Toll Priority AU Standard / Full Financial account and Stationery function is enabled
     When User clicks on the mega menu
     Then User must be able to see an option to select Order Stationery
     And User selects Order Stationery
@@ -81,7 +80,7 @@ Feature: MYT_6079 Stationery - Order Stationery
       | PRIO        | 200B1F NHP ELECTRICAL        | Nadiki       | 61-498765432   |
     Then User be able to see Delivery details in the Review page as below
       | Contact name | Phone number | Company name | Address                                                 | Customer reference | Delivery instructions         |
-      | Henry        | 61-498765432 | Toll Group   | Wellington road 352, Mulgrave road MULGRAVE VIC 3170 AU | 98765Ref           | New Test DeliveryInstructions |
+      | Henry        | 61-412345678 | Toll Group   | Wellington road 352, Mulgrave road MULGRAVE VIC 3170 AU | 98765Ref           | New Test DeliveryInstructions |
     Then User be able to see first Line item details as below
       | ProductName                   | Quantity | UnitPrice          | Total       | PreprintFrom                                 |
       | Same Day Consignment (LO6626) | Qty 25   | Unit price : $0.00 | Total $0.00 | 60, Collins Street CDE MELBOURNE VIC 3000 AU |

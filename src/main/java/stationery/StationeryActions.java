@@ -108,7 +108,7 @@ public class StationeryActions {
 	
 	//MyOrders Order Summary Page
 	public static By OrderSummaryPage = By.xpath("//*[@id=\"portlet_myorders_WAR_mytollstationaryportlet\"]/div//h1[contains(text(),'ORDER SUMMARY')]");
-	public static By OrderNumber = By.xpath("//*[@id=\"order-detail-step1\"]//p[contains(text(),'20413606')]");
+	public static By OrderNumber = By.xpath("//*[@id=\"order-detail-step1\"]//p[contains(text(),'20413706')]");
 	public static By AccountNumber = By.xpath("//*[@id=\"order-detail-step1\"]//p[contains(text(),'200BHY NATIONAL PRIORITY FOC')]");
 	public static By PrintBtn = By.id("orderPrint");
 	
@@ -457,7 +457,7 @@ public class StationeryActions {
 	public static void VerifyOrderDetails()
 	{
 		Assert.assertEquals((PageBase.GetText(AccountNumber, 2)),"200BHY NATIONAL PRIORITY FOC");
-		Assert.assertEquals((PageBase.GetText(OrderNumber, 2)), "20413606");
+		Assert.assertEquals((PageBase.GetText(OrderNumber, 2)), "20413706");
 	}
 	
 	public static void PrintOrder()
