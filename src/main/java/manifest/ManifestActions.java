@@ -299,14 +299,14 @@ public class ManifestActions {
 
 	//Issue with code on line 311 - Reuben
 	public static String AddToNewManifestSystemGeneratedManifestSubmittingCreateshipment() {
-		PageBase.Scrollbar(0, 250);
-		System.out.println("scroll successful ");
-		PageBase.MinimumWaitForElementEnabled();
-		List<WebElement> eles=BaseWebdriver.driver.findElements(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li"));
+		//PageBase.Scrollbar(0, 250);
+		//System.out.println("scroll successful ");
+		//PageBase.MinimumWaitForElementEnabled();
+		List<WebElement> eles=PageBase.FindElements(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li"));
 		int listSize=eles.size();
 		System.out.println("listSize" +listSize);
 		PageBase.MinimumWaitForElementEnabled();
-		PageBase.MoveToElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label"), ManifestActions.AddToManifestTtile);
+		//PageBase.MoveToElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label"), ManifestActions.AddToManifestTtile);
 		//boolean results=BaseWebdriver.driver.findElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).isDisplayed();
 		boolean results= PageBase.FindElement(By.xpath("//*[@id=\"manifest-cons-popup-wrpr\"]/div/div/section/div/div[1]/div/div[1]/ul/li["+listSize+"]/div/label")).isDisplayed();
 		System.out.println("results listelement" +results);
@@ -432,7 +432,9 @@ public class ManifestActions {
 
 	public static void submitandPrintManifest() {
 		//Retiving shipment details, printing and completing
-		String ManifestID = BaseWebdriver.driver.findElement(ShipmentManifestID).getText();
+		//String ManifestID = BaseWebdriver.driver.findElement(ShipmentManifestID).getText();
+		String xpath = "//*[@id=\"portlet_shipmentportlet_WAR_mytollshipmentportlet\"]//*//ul/li[2]/div[1]/p";
+		String ManifestID = PageBase.GetText(ShipmentManifestID, 50);
 		System.out.println("Manifest ID : "+ManifestID);
 		Reporter.log("Manifest ID : "+ManifestID);
 		String CurrentStatus = BaseWebdriver.driver.findElement(ShipmentManifestStatus).getText();
@@ -813,5 +815,10 @@ public static void commercialInvoiceItemDetails(String Description, String PartN
 			PageBase.verifyTextExistAttributeContains(BookAPickupActions.height, Height);
 			PageBase.verifyTextExistAttributeContains(BookAPickupActions.weight, Weight);			
 	}
+
+    public static void ClickAddToManifestManually()
+    {
+        PageBase.click(AddToManifestTtile, 50);
+    }
 	
 }

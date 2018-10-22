@@ -330,7 +330,8 @@ public class MYT_6225_TollEnergyShipmentManifestingPrinting_StepDefinition {
 	  
 	for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 
-		PageBase.Scrollbar(500, 1000);
+		//PageBase.Scrollbar(500, 1000);
+
 		ShipmentReviewActions.VerifyDangerousGoodsDetails(shipment.get("DangerousGoodsDetailsHeading"), shipment.get("UnNumber"),
 				shipment.get("Class/Div"), shipment.get("PackingGroup"), shipment.get("SubRisk"), shipment.get("Proper Shipping Name"),
 				shipment.get("PackageDescription"), shipment.get("DGPackageType"),
@@ -394,9 +395,11 @@ public void user_be_able_to_see_second_line_item_headings_as_below(DataTable shi
 	}
 
 	@Then("^User can add shipment to Manifest successfully\\.$")
-	public void user_can_add_shipment_to_Manifest_successfully() throws Throwable {
-
-	}
+	public void user_can_add_shipment_to_Manifest_successfully()
+		{
+			ManifestActions.ClickAddToManifestManually();
+            ManifestActions.ClickAddManifest();
+		}
 
 	@When("^User clicks on Print$")
 	public void user_clicks_on_Print() throws Throwable {
