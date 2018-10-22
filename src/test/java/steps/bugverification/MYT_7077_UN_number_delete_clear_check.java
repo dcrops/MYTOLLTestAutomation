@@ -87,7 +87,7 @@ public class MYT_7077_UN_number_delete_clear_check
 
 			CreateShipmentActions.EnterDangerousGoodsDetails(1, shipment.get("UnNumber"),
 					shipment.get("PackageDescription"), shipment.get("DGPackageType"), shipment.get("DGAggregateQty"));
-			//BookAPickupActions.SelectPackgingGroupString(shipment.get("PackingGroup"));
+			BookAPickupActions.SelectPackgingGroupString(shipment.get("PackingGroup"));
 			//BookAPickupActions.EnterTechnicalName(shipment.get("Technical Name"));
 		}
 	   

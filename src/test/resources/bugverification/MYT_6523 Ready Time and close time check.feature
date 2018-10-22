@@ -4,11 +4,11 @@ Feature: MYT-6850: MODE - Add SHIP to mode for Intermodal & Specialised
     Given User is Registered in MyToll and is on Book a Picup Page
 
 Scenario: Test to verify that the ready time is before the close time. 
- When User selects Toll Carrier and an Account Number
+ When User selects Toll Carrier and Account Number
       | TollCarrier              | AccountNumber |
       | Intermodal & Specialised |        371065 |
 
-    And User selects an existing Sender address from the Sender field
+    And User selects a existing Sender address from the Sender field
       | Sender   |
       | AccessHQ |
     When User enter following input data to Add Item
