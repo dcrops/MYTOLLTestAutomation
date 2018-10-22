@@ -23,7 +23,7 @@ public class myContactsActions
 	public static By ManageContactsTab = By.xpath("//section[@id=\"portlet_mytolladdressbookportlet_WAR_mytollupsportlet\"]"
 											+ "//a[text()='Manage contacts']");
 	
-	public static By FileAddress = By.id("addressFile");
+	public static By FileAddress = By.xpath("//*[@id=\"fileUploadForm\"]/div[1]");
 	public static By UploadedFileNameHolder= By.xpath("//*[@id=\"upload-address-success-placeholder\"]//div//h3[@class='filename']");
 	public static By UploadValidationMessageHolder = By.xpath("//div[@id=\"upload-address-success-placeholder\"]//div[@class='success-list-ind']/h3");
 	private static String UpdateValidationMessage;
@@ -33,14 +33,25 @@ public class myContactsActions
 	
 	public static void UploadFile(String _fileLocation) throws AWTException, InterruptedException
 	{
+		PageBase.MaximumWaitForElementEnabled();
 		String filePath;
 		PageBase.click(FileAddress, 20);
+		PageBase.MaximumWaitForElementEnabled();
 		filePath = FileSystems.getDefault().getPath(_fileLocation).normalize().toAbsolutePath().toString();
-			//System.out.println(filePath);
-		
+		System.out.println(filePath);
+
 		PageBase.CopyToClipboard(filePath);
 		PageBase.PasteFromClipboard(filePath);
 		PageBase.FindElement(UploadFile).click();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.MaximumWaitForElementEnabled();
+		PageBase.click(By.xpath("//*[@id=\"upload-address-success-placeholder\"]/div//div[2]/ul/li[2]//label"),50);
+
+		PageBase.click(By.id("upload-success-continue"),50);
+
+		//PageBase.click(By.xpath("//*[@id=\"alert-ok-btn\"]"),50);
 	}
 	
 	public static void NavigateToManageContactsTab()
@@ -62,8 +73,9 @@ public class myContactsActions
 			assertTrue(UpdateValidationMessage.equalsIgnoreCase("7789 contacts validated"), "Validation Failed for Contacts2.xlsx");
 			//System.out.println("Contacts 2 passed assertion");
 		}
+		PageBase.click(By.xpath("//*[@id=\"alert-ok-btn\"]"),50);
 		
-		
+
 	}
 	
 	public static void DownloadContacts()

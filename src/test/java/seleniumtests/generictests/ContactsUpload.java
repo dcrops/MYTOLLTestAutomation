@@ -45,7 +45,6 @@ public void UploadContactsFile() throws AWTException, InterruptedException
 	  myContactsActions.DownloadContacts();
   }
   
-  
 
   @AfterMethod
 public void afterMethod() throws Exception 
