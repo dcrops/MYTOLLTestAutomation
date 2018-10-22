@@ -23,7 +23,7 @@ public class MYT_6850_Add_Ship_mode
 @Given("^User is Registered in MyToll and is on the Create A Shipment page$")
 public void user_is_Registered_in_MyToll_and_is_on_the_Create_A_Shipment_page() throws Throwable {
 	BaseWebdriver.setUp();
-	MyTollHomePageActions.Login(BaseWebdriver.AdminUser, BaseWebdriver.AdminPassword);
+	MyTollHomePageActions.Login(BaseWebdriver.SitUsername1, BaseWebdriver.Password);
  	PageBase.MaximumWaitForElementEnabled();
 	PageBase.MaximumWaitForElementEnabled();
 	MyTollHomePageActions.ClickMenu();

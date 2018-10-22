@@ -1,4 +1,4 @@
-Feature: MYT-6850: MODE - Add SHIP to mode for Intermodal & Specialised
+Feature: MYT-6361: Primary Address Change Verification
 
   Background: 
     Given User is Registered in MyToll and is on ABOUT ME page
@@ -7,7 +7,7 @@ Scenario: Primary address needs to be changed and it needs to be verified that i
 
 When user changes the address and clicks SAVE
 |Address|
-|13 Hewat Dr, HIGHTON, VIC, 3216, AU|
+|13 Hewat Dr, HIGHTON, VIC, 3216|
 
 Then SUCCESS msg pops up
 #Your profile has been successfully updated.

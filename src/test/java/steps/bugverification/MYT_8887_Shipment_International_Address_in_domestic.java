@@ -30,8 +30,11 @@ public class MYT_8887_Shipment_International_Address_in_domestic
 			CreateShipmentActions.EnterSender(shipment.get("Sender"));
 			PageBase.sendText(By.xpath("//*[@id=\"receiver-label\"]"), 2, shipment.get("Receiver"));
 			
-			PageBase.isElementNotPresent(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li"), 50, "");
-			
+			PageBase.isElementNotPresent(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[6]/div[text()=\"NZ ADD\"]"), 50, "");
+
+			PageBase.MaximumWaitForElementEnabled();
+			PageBase.sendText(By.xpath("//*[@id=\"receiver-label\"]"), 2,"Dialog Group");
+			PageBase.click(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li[6]"),50);
 		}
 	}
 }

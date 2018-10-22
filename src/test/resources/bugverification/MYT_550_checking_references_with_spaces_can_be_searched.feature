@@ -7,24 +7,16 @@ Feature: MYT-550 Checking_references_with_spaces_can_be_searched
 	
 	When user searches for following reference number
 	|Enter shipment number or references|
-	|1 h tam|
+	|8501508967 ccc|
 	
 	Then user is able to see the following shipment number
 	|Enter shipment number or references|
-	|1 h tam|
+	|8501508967 ccc|
 	
 	When user searches for following reference number
 	|Enter shipment number or references|
-	|Stech 1 bag 2 of 2 forrest 1 2 soil x19|
+	|Aaa bbb|
 	
 	Then user is able to see the following shipment number
 	|Enter shipment number or references|
-	|Stech 1 bag 2 of 2 forrest 1 2 soil x19|
-	
-	When user searches for following reference number
-	|Enter shipment number or references|
-	|Tracey t 3|
-	
-	Then user is able to see the following shipment number
-	|Enter shipment number or references|
-	|Tracey t 3|
+	|Aaa bbb|

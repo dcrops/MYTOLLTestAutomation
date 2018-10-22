@@ -39,6 +39,7 @@
 	     	<class name="runners.returns.ReturnsTestRunner"/>
 	     	<class name="runners.dashboard.DashboardTestRunner"/>
 	     	<class name="runners.stationery.StationeryTestRunner"/>
+			<class name="runners.bugverification.TestRunnerForBugVerification"/>
 
 		</classes>
 	</test> <!-- Test -->

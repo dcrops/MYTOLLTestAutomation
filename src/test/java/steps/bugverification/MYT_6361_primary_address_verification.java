@@ -32,7 +32,7 @@ public void user_changes_the_address_and_clicks_SAVE(DataTable addressNew) throw
 	for (Map < String, String>addressUpdated: addressNew.asMaps(String.class, String.class)) {
 		PageBase.sendText(MyTollHomePageActions.addressTextbox, 2, addressUpdated.get("Address"));
 	}   
-	PageBase.click(By.xpath("//*[@id=\"addressSection\"]/div/div/ul"), 2);
+	PageBase.click(By.xpath("//*[@id=\"addressSection\"]/div/div"), 2);
 
 	PageBase.click(MyTollHomePageActions.aboutMeSaveButton, 2);
 	PageBase.MaximumWaitForElementEnabled();
