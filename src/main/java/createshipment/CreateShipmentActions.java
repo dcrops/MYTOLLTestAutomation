@@ -242,13 +242,15 @@ public class CreateShipmentActions {//Nishant
 	 */
 
 	public static void EnterService(String pService) {
-		//PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(servicedropdown).click();
-		BaseWebdriver.driver
-//				.findElement(By.xpath("//*[@id=\"service-selector\"]//div[text()='" + pService + "']"))
-				.findElement(By.xpath("//*[@id=\"service-selector\"]//*//div[text()='" + pService + "']"))
-				.click();
-
+//		//PageBase.MaximumWaitForElementEnabled();
+//		BaseWebdriver.driver.findElement(servicedropdown).click();
+//		BaseWebdriver.driver
+////				.findElement(By.xpath("//*[@id=\"service-selector\"]//div[text()='" + pService + "']"))
+//				.findElement(By.xpath("//*[@id=\"service-selector\"]//*//div[text()='" + pService + "']"))
+//				.click();
+ 		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.click(servicedropdown, 10);
+		PageBase.click(By.xpath("//*[@id=\"service-selector\"]//*//div[text()='" + pService + "']"), 10);
 	}
 
 	public static String GetService() {

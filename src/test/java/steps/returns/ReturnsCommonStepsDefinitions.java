@@ -106,6 +106,7 @@ public class ReturnsCommonStepsDefinitions {
 			PageBase.MaximumWaitForElementEnabled_1();
 			RateEnquiryActions.ShipmentReceiverSelect(createReturn.get("Receiver"));
 			PageBase.MaximumWaitForElementEnabled_1();
+			PageBase.MaximumWaitForElementEnabled_1();
 			PageBase.sendText(MyTollHomePageActions.ReturnRAN, 5, createReturn.get("RAN"));
 			PageBase.MaximumWaitForElementEnabled_1();
 			
@@ -123,6 +124,7 @@ public class ReturnsCommonStepsDefinitions {
 
 		for (Map<String, String> createReturn : createReturnTestData.asMaps(String.class, String.class)) {
 			PageBase.verifyTextExistAttributeContains(RateEnquiryActions.shipmentCarrierName, createReturn.get("TollCarrier"));
+			PageBase.MaximumWaitForElementEnabled_1();
 			CreateShipmentActions.EnterService(createReturn.get("Service"));
 
 		}

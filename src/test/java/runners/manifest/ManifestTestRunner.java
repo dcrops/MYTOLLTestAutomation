@@ -4,9 +4,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions( strict=true
-	,features = { "src/test/Resources/manifest/MYT_1795_Create_Commercial_Invoice.feature", 
+	,features = { "src/test/Resources/manifest/MYT_1795_Create_Commercial_Invoice.feature",
 			 "src/test/Resources/manifest/MYT_6292_Manifest_SaveShipmentAsDraft.feature"  
-			 , "src/test/Resources/manifest/E2E_Manual_Manifest_TEM.feature", 
+			 , "src/test/Resources/manifest/E2E_Manual_Manifest_TEM.feature",
 			"src/test/Resources/manifest/E2E_Manual_Manifest_TMS.feature"
 			
 			}

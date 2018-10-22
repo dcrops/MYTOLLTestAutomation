@@ -90,7 +90,7 @@ public class ManifestIntermodalSpecializedTests {
 
 
 
-	@Test(groups = { "Shakeout Testing", "E2E"})
+	@Test(groups = { "Shakeout Testing", "E2E"} , dependsOnMethods={"Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_VerifyManifestDetailsAddingManifestManually"})
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -166,8 +166,8 @@ public class ManifestIntermodalSpecializedTests {
 
 
 
-	
-	@Test(groups = { "Shakeout Testing", "E2E","20082018" })
+
+	@Test(groups = { "Shakeout Testing", "E2E"} , dependsOnMethods={"Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddManifestManually"})
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -250,11 +250,11 @@ public class ManifestIntermodalSpecializedTests {
 	}
 	
 	////////////////////////////////////////////////////
-	
-	
 
-	
-	@Test(groups = { "Shakeout Testing", "E2E" })
+
+
+
+	@Test(groups = { "Shakeout Testing", "E2E"} , dependsOnMethods={"Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddToManifestForAnExistingManifestSubmittingCreateShipmentAndContinue"})
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -332,8 +332,8 @@ public class ManifestIntermodalSpecializedTests {
 		
 		
 	}
-	
-	@Test(groups = { "Shakeout Testing","E2E"})
+
+	@Test(groups = { "Shakeout Testing", "E2E"} , dependsOnMethods={"Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddToManifestCreateNewManifestSubmittingCreateShipmentAndContinue"})
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",

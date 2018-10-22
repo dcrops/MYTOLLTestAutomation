@@ -313,8 +313,8 @@ public class TollIPECTests {
 		PageBase.MaximumWaitForElementEnabled();
 		CreateShipmentActions.setQEMNo();
 		PageBase.MoveToElement(BookAPickupActions.specialInstructions, CreateShipmentActions.receiverReference);		
-		CreateShipmentActions.SelectTollExtraYes();
-		CreateShipmentActions.EnterTollExtraSrviceAmount(TollExtraSrviceAmount);
+		//CreateShipmentActions.SelectTollExtraYes();
+		//CreateShipmentActions.EnterTollExtraSrviceAmount(TollExtraSrviceAmount);
 
 		BookAPickupActions.EnterSpecialInstructions(SpeceialIns);
 
