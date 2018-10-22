@@ -157,6 +157,8 @@ public class TollPriorityNZ {
 		CreateShipmentActions.SelectShipmentConsolidationContinue();
 		CreateShipmentActions.setQEMNo();
 		CreateShipmentActions.SelectNotifySenderAndReceiver();
+		CreateShipmentActions.EnterSenderEmail(SenderEmail);
+		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
@@ -169,8 +171,7 @@ public class TollPriorityNZ {
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
 
-		CreateShipmentActions.EnterSenderEmail(SenderEmail);
-		CreateShipmentActions.EnterReceiverEmail(ReceiverEmail);
+
 		CreateShipmentActions.EnterShipmentReference1(ShipmentRef1);
 		BookAPickupActions.EnterItem(ItemTemplateName);
 		CreateShipmentActions.NumberOfItem(NumberOfItems);

@@ -334,7 +334,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
 		String mode=CreateShipmentActions.SelectMode(ModeInt);
-		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
+		//PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
@@ -1633,7 +1633,7 @@ public class IntermodalSpecializedTests {
 		CreateShipmentActions.EnterQuoteNumber(QuoteNumber);
 
 		String mode=CreateShipmentActions.SelectMode(ModeInt);
-		PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
+		//PageBase.MoveToElement(CreateShipmentActions.accountNumber, CreateShipmentActions.quoteNumber);
 		CreateShipmentActions.SelectSender(Sender);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
@@ -1646,9 +1646,12 @@ public class IntermodalSpecializedTests {
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
-		CreateShipmentActions.SelectShipmentConsolidationConsolidate(); 
-	
-		PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
+		PageBase.MaximumWaitForElementEnabled_1();
+		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		PageBase.MaximumWaitForElementEnabled_1();
+		//PageBase.MoveToElement(CreateShipmentActions.senderReference, CreateShipmentActions.receiverReference);
 
 		CreateShipmentActions.ClickReviewCreateShipment();
 

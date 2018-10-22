@@ -198,7 +198,7 @@ public class Toll_Add_Template {
 		CreateShipmentActions.SelectWhoPays(1);
 		BookAPickupActions.SelectAccountNumber1();
 		CreateShipmentActions.SelectSender(1);
-		CreateShipmentActions.SelectReceiver(2);
+		CreateShipmentActions.SelectReceiver(1);
 		ManifestActions.SelectShipmentConsolidated();
 		
 		//User Enters Template Details and verifies line item
