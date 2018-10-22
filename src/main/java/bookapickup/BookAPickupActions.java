@@ -354,6 +354,7 @@ public class BookAPickupActions {
 	public static By subRiskQME = By.xpath("//*[@id=\"gv-sub-risk-selector\"]/label/input[2]");
 	public static By properShippingNameQME = By.id("gv-shipping-name");
 	public static By addButtonDGScreenQME = By.id("gv-add-dg-item");
+	public static By addButtonDGScreen = By.id("//*[@id=\"add-dg-item\"]");
 	public static By closeButtonDGScreenQME = By.xpath("//*[@id=\"dg-popup-inner-wrpr\"]/a[2]/i");
 	public static By messageSaveAsTemplateQME = By.xpath("//*[@id=\"alert-box-wrapper\"]/div/div/div[2]");
 	public static By saveCloseButtonDGScreenQME = By.id("gv-cancel-dg-item"); 
@@ -2262,6 +2263,12 @@ public class BookAPickupActions {
 
 	}
 
+	public static void addDGItem() {
+		PageBase.MinimumWaitForElementEnabled();
+		PageBase.click(addButtonDGScreen , 50);
+		//PageBase.ClickOn(addButtonDGScreen, 5);
+
+	}
 	public static void CloseDGScreenQME() {
 		PageBase.MinimumWaitForElementEnabled();
 		PageBase.ClickOn(closeButtonDGScreenQME, 5);
