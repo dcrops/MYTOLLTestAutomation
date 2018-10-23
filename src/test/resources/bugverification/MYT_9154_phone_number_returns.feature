@@ -10,7 +10,7 @@ Feature: MYT-9154 enters a phone number
   	| Toll Priority (Aus)  | 3rd Party Return - OffPeak |
   	And User enters shipment overview details to Create a Return
     | AccountNumber | Whopays | Sender             | Receiver             |RAN    |
-    |        401509 |       2 |  Access hq | TEM Brisbane Address |123456 |
+    |        401509 |       2 |  Access_HQ | TEM Brisbane Address |123456 |
     And User enters following input data for the line item for Return
     | Item description     | No of Items | Length | Width | Height | Weight      | Reference       |
     | Automation Template1 |          10 |    10  |   10  |    10  |          20 | Ref123          |

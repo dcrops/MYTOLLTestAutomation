@@ -33,6 +33,7 @@ public class BaseWebdriver {
 	public static final String SitUsername3;
 	public static final String SitUsername4;
 	public static final String SitUsername5;
+	public static final String SitUsername6;
 
 
 	//Passwords
@@ -73,6 +74,7 @@ public class BaseWebdriver {
 		SitUsername3 = envProperties.getProperty("SitUsername3");
 		SitUsername4 = envProperties.getProperty("SitUsername4");
 		SitUsername5 = envProperties.getProperty("SitUsername5");
+		SitUsername6 = envProperties.getProperty("SitUsername6");
 		Password = envProperties.getProperty("Password");
 		AdminUser = envProperties.getProperty("AdminUser");
 		AdminPassword = envProperties.getProperty("AdminPassword");

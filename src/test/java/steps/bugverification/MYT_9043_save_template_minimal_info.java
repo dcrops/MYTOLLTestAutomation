@@ -66,7 +66,7 @@ public class MYT_9043_save_template_minimal_info
 		
 		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class)) {
 		PageBase.sendText(BookAPickupActions.itemDescriptionTextField, 50, shipment.get("Item description"));
-		PageBase.click(By.xpath("//*[@id=\"freight-type-selector\"]//li[23]/div"), 50);
+		PageBase.click(By.xpath("//*[@id=\"freight-type-selector\"]//div[contains(text(),'"+shipment.get("Item description")+"')]"), 50);
 		}
 	}
 

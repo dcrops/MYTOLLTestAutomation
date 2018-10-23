@@ -17,7 +17,7 @@ public class BAP_without_complete_profile {
 	@BeforeMethod
 	public void RunSetup() throws Exception {
 		BaseWebdriver.setUp();
-		MyTollHomePageActions.Login(BaseWebdriver.SitUsername5, BaseWebdriver.Password);	//logs is using the incomplete profile
+		MyTollHomePageActions.Login(BaseWebdriver.SitUsername6, BaseWebdriver.Password);	//logs is using the incomplete profile
 		MyTollHomePageActions.ClickMenu();
 		MyTollHomePageActions.ClickBookAPIckupMenu();
 	}

@@ -122,8 +122,8 @@ public class CreateShipmentStepsDefinitions {
 	}
 
 	@And("^User adds entered dangerous goods details$")
-	public void userAddsEnteredDangerousGoodsDetails() throws Throwable {
-		BookAPickupActions.addDGItemQME();
+	public void userAddsEnteredDangerousGoodsDetails() {
+		BookAPickupActions.addDGItem();
 	}
 
 	@Then("^User does not see AE4599 error message$")
