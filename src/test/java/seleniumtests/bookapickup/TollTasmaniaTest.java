@@ -51,7 +51,7 @@ public class TollTasmaniaTest {
 		String accno = BookAPickupActions.GetAccountNumber().toString();
 		System.out.println(accno);
 		BookAPickupActions.SelectLocation2(locationIndex);
-
+		PageBase.MaximumWaitForElementEnabled_1();
 		String company = BookAPickupActions.GetCompany(locationIndex).toString();
 		System.out.println(company);
 
