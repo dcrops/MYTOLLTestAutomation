@@ -27,7 +27,7 @@ public class ManifestIntermodalSpecializedTests {
 	}
 
 
-	@Test(groups = { "Shakeout Testing", "E2E"})
+	@Test(groups = { "Shakeout Testing", "E2E"} , priority=1)
 	@Parameters({"TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -90,7 +90,7 @@ public class ManifestIntermodalSpecializedTests {
 
 
 
-	@Test(groups = { "Shakeout Testing", "E2E"} , dependsOnMethods={"Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_VerifyManifestDetailsAddingManifestManually"})
+	@Test(groups = { "Shakeout Testing", "E2E"} ,  priority=2)
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -167,7 +167,7 @@ public class ManifestIntermodalSpecializedTests {
 
 
 
-	@Test(groups = { "Shakeout Testing", "E2E"} , dependsOnMethods={"Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddManifestManually"})
+	@Test(groups = { "Shakeout Testing", "E2E"} , priority=3)
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -254,7 +254,7 @@ public class ManifestIntermodalSpecializedTests {
 
 
 
-	@Test(groups = { "Shakeout Testing", "E2E"} , dependsOnMethods={"Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddToManifestForAnExistingManifestSubmittingCreateShipmentAndContinue"})
+	@Test(groups = { "Shakeout Testing", "E2E"} , priority=4)
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",
@@ -333,7 +333,7 @@ public class ManifestIntermodalSpecializedTests {
 		
 	}
 
-	@Test(groups = { "Shakeout Testing", "E2E"} , dependsOnMethods={"Manifest_IntermodalSpecialized_E2ETest_TID_1121_Service_Express_AddToManifestCreateNewManifestSubmittingCreateShipmentAndContinue"})
+	@Test(groups = { "Shakeout Testing", "E2E"} , priority=5)
 	@Parameters({ "TollCarrierIntermodalSpecialized", "ServiceExpress", "AccountNumberTINTER", "ReceiverName", "ReceiverItem",
 		"DropOffDepot", "CollectionDepot", "DGContactName", "ShipmentRef1", "ShipmentRef2", "ItemTemplateName",
 		"NumberOfItems", "Length", "Width", "Height", "Weight", "DGYes", "DGNo", "BillingType", "SpeceialIns",

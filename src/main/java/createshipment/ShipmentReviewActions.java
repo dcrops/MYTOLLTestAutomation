@@ -87,7 +87,7 @@ public class ShipmentReviewActions {
 	
 	//Dangerous Goods Details validation  
 	public static By dangerousGoodsHeading=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[@class='line-item-inner']//div[@class='clearfix']/h5");
-	public static By dangerousGoodsArrowdown=By.xpath("//*[@id=\"dg-line-00\"]//div[@class='last']/a/i");
+	public static By dangerousGoodsArrowdown=By.xpath("//*[contains(@id,\"dg-line\")]//div[@class='last']/a/i");
 	public static By unNumber=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='UN number']/following-sibling::div/p");
 	public static By classDivision=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Class / Division']/following-sibling::div/p");
 	public static By packingGroup=By.xpath("//*[@id=\"shipment-placeholder\"]//ul[@class='line-item-list']//div[contains(@id,\"dg-line\")]//label[text()='Packing group']/following-sibling::div/p");

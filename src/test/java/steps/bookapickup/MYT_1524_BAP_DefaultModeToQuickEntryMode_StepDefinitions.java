@@ -61,7 +61,7 @@ public class MYT_1524_BAP_DefaultModeToQuickEntryMode_StepDefinitions {
 	public void user_select_the_Service_as_below(DataTable bookAPickupTestData) throws Throwable {
 		
 		for (Map<String, String> bookAPickup : bookAPickupTestData.asMaps(String.class, String.class)) {
-
+			PageBase.MaximumWaitForElementEnabled_1();
 			BookAPickupActions.EnterServiceQME(bookAPickup.get("Service"));
 		}
 	 
