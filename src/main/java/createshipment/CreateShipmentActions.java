@@ -4,6 +4,8 @@ import global.PageBase;
 
 import static org.junit.Assert.assertEquals;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 import java.util.Date;
 import java.util.List;
@@ -39,7 +41,7 @@ public class CreateShipmentActions {//Nishant
 	public static By whoPaysdropdown = By.xpath("//*[@id=\"payer-selector\"]/label/a/i");
 	public static By whoPaysDropdownText = By.id("payer-label");
 	public static By senderdropdown = By.xpath("//*[@id=\"sender-selector\"]/label/a/i");
-	public static By accountNumber = By.name("account-text");
+	public static By accountNumber = By.name("placeholder-account");
 	public static By receiverdropdown = By.xpath("//*[@id=\"receiver-selector\"]/label/a/i");
 	public static By senderTextfield = By.name("placeholder-location");
 
@@ -394,10 +396,14 @@ public class CreateShipmentActions {//Nishant
 	}
 
 	public static void EnterAccountNumber(String pAccountNumber) {
-		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(accountNumber).click();
+//		PageBase.MaximumWaitForElementEnabled();
+    PageBase.click(accountNumber, 50);
+    PageBase.SelectFrom(By.xpath("//*[@id=\"account-selector\"]/div/ul/li[contains(@data-val,'"+pAccountNumber+"')]"),
+            50);
+
+		/*BaseWebdriver.driver.findElement(accountNumber).click();
 		BaseWebdriver.driver.findElement(accountNumber).clear();
-		BaseWebdriver.driver.findElement(accountNumber).sendKeys(pAccountNumber);
+		BaseWebdriver.driver.findElement(accountNumber).sendKeys(pAccountNumber);*/
 
 	}
 
@@ -415,14 +421,17 @@ public class CreateShipmentActions {//Nishant
 
 	public static void EnterReceiver(String Receiver) {
 		PageBase.MaximumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(receiverTextfield).click();
-		BaseWebdriver.driver.findElement(receiverTextfield).clear();
-		BaseWebdriver.driver.findElement(receiverTextfield).sendKeys(Receiver);
-		PageBase.Scrollbar(500, 800);
-		PageBase.MaximumWaitForElementEnabled();
+		//BaseWebdriver.driver.findElement(receiverTextfield).click();
+		PageBase.click(receiverTextfield, 50);
+		//BaseWebdriver.driver.findElement(receiverTextfield).clear();
+		//BaseWebdriver.driver.findElement(receiverTextfield).sendKeys(Receiver);
+		//PageBase.sendText(receiverTextfield, 50, Receiver);
+		//PageBase.Scrollbar(500, 800);
+		//PageBase.MaximumWaitForElementEnabled();
 		/*BaseWebdriver.driver
 				.findElement(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='" + Receiver + "']"))
 				.click(); */
+
 		PageBase.click(By.xpath("//*[@id=\"receiver-selector\"]/div[2]/ul/li/div[text()='" + Receiver + "']"), 20);
 
 		PageBase.MaximumWaitForElementEnabled();
@@ -734,7 +743,8 @@ public class CreateShipmentActions {//Nishant
 
 	public static void EnterDGContactDetails(String pDGContactName, String pDGContactNumber) {
 		PageBase.MinimumWaitForElementEnabled();
-		BaseWebdriver.driver.findElement(dgContactName).click();
+		//BaseWebdriver.driver.findElement(dgContactName).click();
+    PageBase.click(dgContactName, 50);
 		String dgContactname = BaseWebdriver.driver.findElement(dgContactName).getAttribute("value");
 		System.out.println("DG contact name" + dgContactname);
 		if (dgContactname.equals("")
@@ -1803,8 +1813,18 @@ public class CreateShipmentActions {//Nishant
 	public static void VerifyDraftShipmentHasRemovedFromMyDashboard() {
 		PageBase.MaximumWaitForElementEnabled();
 		try {
-			PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5);
-			assertEquals("123", "1234");
+		if(PageBase.isElementNotPresent(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 50, "Draft shipments list"))
+            {
+                assertTrue(true);
+                return;
+            }
+        else
+            {
+            assertFalse(true);
+            return;
+            }
+			//PageBase.GetText(By.xpath("//*[@id=\"draftShipList\"]/tr/td[1]"), 5);
+			//assertEquals("123", "1234");
 		} catch (Exception ex) {
 			System.out.println("Draft Shipment has been removed");
 		}

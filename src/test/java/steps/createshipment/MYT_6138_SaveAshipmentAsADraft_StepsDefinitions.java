@@ -219,9 +219,15 @@ public class MYT_6138_SaveAshipmentAsADraft_StepsDefinitions {
 	}
 
 	@When("^User changes either of the fields$")
-	public void user_changes_either_of_the_fields(DataTable arg1) throws Throwable {
+	public void user_changes_either_of_the_fields(DataTable shipmentTestData) throws Throwable
+		{
+		for (Map<String, String> shipment : shipmentTestData.asMaps(String.class, String.class))
+			{
+				CreateShipmentActions.EnterAccountNumber(shipment.get("AccountNumber"));
+			}
+		}
 
-	}
+
 
 	@Then("^User can see all other fields cleared$")
 	public void user_can_see_all_other_fields_cleared(DataTable arg1) throws Throwable {
