@@ -6,17 +6,11 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.List;
+import java.util.function.Function;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
 
 
 import org.testng.Reporter;
@@ -342,6 +336,23 @@ public class PageBase
 		we.click();
 		return we;
 	}
+
+public static void clickOnFluentWait(By locator)
+    {
+    Wait<WebDriver> wait = new FluentWait<WebDriver>(BaseWebdriver.GetDriver())
+
+            .ignoring(NoSuchElementException.class);
+
+    WebElement foo = wait.until(new Function<WebDriver, WebElement>()
+        {
+        public WebElement apply(WebDriver driver) {
+        return driver.findElement(locator);
+        }
+        });
+    }
+
+
+
 	
 	
 	public static WebElement clear(By locator, int waitSeconds) 
