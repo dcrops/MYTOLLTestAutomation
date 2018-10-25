@@ -68,15 +68,17 @@ public class TollIPECTests {
 		String accountNo = BookAPickupActions.GetAccountNumber();
 		System.out.println(accountNo);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
-		CreateShipmentActions.SelectSender(Sender);
+		//CreateShipmentActions.SelectSender(1);
+	     CreateShipmentActions.EnterSender("IPECSender");
+
+		//CreateShipmentActions.SelectReceiver(Receiver);
+	    CreateShipmentActions.EnterReceiver("IPECReceiver");
+		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
+		System.out.println(receiver);
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s","");
 		System.out.println(sender);
 		String senderLocation = CreateShipmentActions.GetSenderLocation().toString();
 		System.out.println(senderLocation);
-
-		CreateShipmentActions.SelectReceiver(Receiver);
-		String receiver = CreateShipmentActions.GetRecieverCompanyName().toString();
-		System.out.println(receiver);
 
 		String receiverLocation = CreateShipmentActions.GetReceiverLocation().toString();
 		System.out.println(receiverLocation);
@@ -294,8 +296,11 @@ public class TollIPECTests {
 		String accountNumber = BookAPickupActions.GetAccountNumber().toString();
 		System.out.println(accountNumber);
 		CreateShipmentActions.SelectWhoPays(WhoPays);
-		CreateShipmentActions.SelectSender(Sender);
-		CreateShipmentActions.SelectReceiver(Receiver);
+		//CreateShipmentActions.SelectSender(1);
+		CreateShipmentActions.EnterSender("IPECSender");
+
+		//CreateShipmentActions.SelectReceiver(Receiver);
+		CreateShipmentActions.EnterReceiver("IPECReceiver");
 
 		String sender = CreateShipmentActions.GetSenderCompanyName().toString().replaceAll("\\s", "");
 		//String Sender.ccontainText(Sender);
@@ -311,8 +316,9 @@ public class TollIPECTests {
 		System.out.println(receiverLocation);
 		CreateShipmentActions.SelectShipmentConsolidationConsolidate();
 		PageBase.MaximumWaitForElementEnabled();
-		CreateShipmentActions.setQEMNo();
-		PageBase.MoveToElement(BookAPickupActions.specialInstructions, CreateShipmentActions.receiverReference);		
+		PageBase.MaximumWaitForElementEnabled();
+
+
 		//CreateShipmentActions.SelectTollExtraYes();
 		//CreateShipmentActions.EnterTollExtraSrviceAmount(TollExtraSrviceAmount);
 
